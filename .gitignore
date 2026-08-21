@@ -1,0 +1,19 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Node & Build
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# System & Temp
+__pycache__/
+*.pyc
+.firebase/
+.idea/
+.vscode/
+*.log
