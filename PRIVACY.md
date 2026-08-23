@@ -1,49 +1,52 @@
 # 🔒 SIR ModPack — Universal Privacy Policy
-### *Version 1.0.0 • Effective August 2026*
+### *Version 2026.1 • Effective August 2026 • Legally Enforced Compliance*
 
 ---
 
 ## 🛡️ 1. Executive Summary & Privacy-by-Design
-At **SIR ModPack**, we hold privacy as a fundamental human right. The entire SIR Ecosystem—including the **SIR Launcher**, **SIR Installer**, **SIR Server Host Studio**, **Web Platform**, and in-game mods—is engineered from the ground up on the principle of **Zero-Telemetry & Privacy-by-Design**.
+At **SIR ModPack**, user privacy and digital sovereignty are absolute principles. The entire SIR Ecosystem—including the **SIR Desktop Launcher**, **SIR Installer Suite**, **SIR Server Orchestrator Pro**, **Web Platform (`sir-modpack.web.app`)**, and associated client-side modules—is built on the strict principle of **Zero-Telemetry & Privacy-by-Design**.
 
-We do **NOT** track, monetize, sell, rent, or collect your personal gameplay data, browsing history, chat logs, or private credentials.
+We do **NOT** track, monetize, sell, lease, or aggregate your personal gameplay activity, private browsing history, multiplayer chat logs, or personal credentials.
 
 ---
 
 ## 📊 2. Data Minimization & Collection Scope
 
 ### What We DO NOT Collect:
-- ❌ **No Passwords or Credentials:** We never see or store your Microsoft / Mojang passwords. Official logins use secure OAuth 2.0 loopback redirects (`127.0.0.1:52135`).
-- ❌ **No Telemetry or Tracking Cookies:** All external Prism tracking and analytics have been completely purged.
-- ❌ **No Gameplay Surveillance:** We do not inspect singleplayer worlds, local block placements, or private server chats.
+- ❌ **No Passwords or Credentials:** We never store or handle your Microsoft, Xbox Live, or Mojang passwords. Official logins use secure OAuth 2.0 PKCE loopback authentication directly with Microsoft servers.
+- ❌ **No Telemetry or Tracking Trackers:** All third-party analytics, behavioral profiling, and tracking beacons have been completely eliminated.
+- ❌ **No Gameplay Surveillance:** We do not inspect singleplayer worlds, local block coordinates, inventories, or private server communications.
 
-### What Is Stored Locally on Your PC:
-- 💾 **Local Settings (`sir_settings.json`):** Your chosen theme, RAM allocation, resolution, and window state.
-- 💾 **Local Instance Configurations (`instance.cfg`):** Java path, JVM flags, and active mods.
-- 💾 **In-Game Account Switcher Tokens (IAS):** Encrypted local credentials for fast alt switching.
+### What Is Stored Exclusively on Your PC:
+- 💾 **Local Settings:** Visual themes, RAM allocations, JVM runtime flags, screen resolutions, and audio preferences.
+- 💾 **Local Instance Configurations:** Configured mod states, shader options, resource packs, and physical world save files.
+- 💾 **In-Game Account Switcher (IAS):** Local profile tokens for offline/cracked alts stored locally in your `.minecraft` instance directory.
 
-### Optional Cloud Features (With Explicit Consent):
-- ☁️ **Web Account Sync & 3D Skins:** If you claim an In-Game Name (IGN) or upload a custom skin on `sir-modpack.web.app`, it is stored in Google Cloud Firestore with TLS 1.3 encryption to sync with your desktop launcher.
-- ☁️ **Crash Reports & Suggestions:** If you explicitly click *"Send Error Report to Owner"* or *"Send a Suggestion"*, the error stack trace, hardware summary, and notes are logged in Firestore so our development team can diagnose issues.
-
----
-
-## 🌐 3. Network Communication & Third-Party Endpoints
-The launcher only connects to essential community endpoints:
-1. **Mojang API & Cloudflare CDN:** To download authentic Minecraft release manifests and asset libraries.
-2. **Modrinth API & CurseForge Catalog:** For in-launcher mod browsing and 1-click modpack updates.
-3. **Firebase Cloud Highway:** For real-time broadcast announcements and optional web profile synchronization.
+### Optional Cloud Features (Explicit User Consent Only):
+- ☁️ **Web Account Synchronization:** Linking an in-game name (IGN) on `sir-modpack.web.app` creates a temporary 6-digit sync code in Firebase Realtime Database (RTDB) with TLS 1.3 encryption to pre-sync your 3D avatar head and capes.
+- ☁️ **Diagnostic Error Reports:** If you explicitly choose to submit an error report via the launcher or website, only technical stack traces and environment versions are logged to Firestore to assist developers in troubleshooting.
 
 ---
 
-## 🗑️ 4. User Rights & Data Deletion
-You maintain complete sovereignty over your data:
-- **Instant Local Erase:** Use the built-in **`🧹 Deep Storage Cleaner`** to purge all cache, logs, and stored credentials with 1 click.
-- **Cloud Account Deletion:** You may delete your cloud roster or claimed usernames at any time via the Web Account Hub.
+## 🌐 3. Network Communication Endpoints
+The software communicates exclusively with verified endpoints:
+1. **Mojang API & Cloudflare CDN:** Verification of official UUIDs and download of authentic Minecraft libraries.
+2. **Firebase Cloud Gateway:** Checking for optional client updates and real-time announcements.
+3. **Player Head API (`mc-heads.net`):** Dynamic retrieval of public player skin avatars.
 
 ---
 
-## 📬 5. Contact & Inquiries
-For privacy questions or data deletion requests, contact the project maintainer:
+## 🗑️ 4. Data Retention & User Deletion Rights
+- **Instant Local Erase:** Use the built-in Deep Storage Cleaner in the launcher to purge all cache, logs, and stored credentials in 1 click.
+- **Cloud Account Deletion:** Permanent deletion of any linked web profiles is available at any time via the Web Account Hub.
+
+---
+
+## ⚖️ 5. Legal Compliance & Limitation of Liability
+By using the SIR Ecosystem, you acknowledge and agree that your data is processed strictly in accordance with this Privacy Policy and international privacy standards (GDPR, CCPA).
+
+---
+
+## 📬 6. Contact & Legal Inquiries
 * **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-* **Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+* **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)\n
