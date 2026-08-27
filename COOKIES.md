@@ -1,35 +1,29 @@
-# 🍪 SIR ModPack — Cookie & Local Storage Policy
-### *Version 2026.1 • Effective August 2026 • Legally Enforced Compliance*
+# 🍪 SIR ModPack — Cookie & Local Storage Governance Policy
+### *Version 2026.2 • Effective August 2026 • Legally Enforced Transparency*
 
 ---
 
-## ⚡ 1. Purpose of Local Storage & Cookies
-The **SIR Web Platform (`sir-modpack.web.app`)** and **Desktop Launcher** use strictly essential local storage entries, browser cookies, and local caching mechanisms solely for performance acceleration and personalization:
-
-### 1. Essential Functional Cookies & Keys:
-- **`sir_lang`**: Remembers selected interface language (`ar` / `en`) for 365 days.
-- **`sir_theme`**: Remembers dark or light theme preference for 365 days.
-- **`sir_perf_mode`**: Hardware Eco Mode vs. Cinematic glassmorphism preference.
-- **`sir_sound_fx`**: Remembers UI tactile audio sound feedback state.
-- **`sir_legal_agreed_version`**: Records your acceptance of the EULA and legal terms (`2026.1`).
-
-### 2. High-Speed Local Caching (SWR):
-- **`sir_cache_*`**: Pre-caches mod listings, shader catalogs, and server status using Stale-While-Revalidate (SWR) with short TTLs (5–30 minutes) to eliminate server latency and provide **0ms instant page navigation**.
+## 🧭 1. Overview & Zero-Tracker Guarantee
+The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, **zero third-party marketing beacons**, and **zero cross-site tracking scripts**. We only utilize necessary browser storage mechanisms (`localStorage`, `sessionStorage`, and essential functional cookies) to maintain your preferences and accelerate page delivery.
 
 ---
 
-## 🛡️ 2. Zero Advertising or Tracking Cookies
-We do **NOT** use tracking cookies, marketing pixels, cross-site beacons, or data broker integrations. Your storage data remains exclusively on your local device.
+## 📋 2. Storage Matrix & Purpose
+
+| Key / Token | Storage Type | Purpose | Lifespan |
+|---|---|---|---|
+| `sir_lang` | Cookie / LocalStorage | Stores selected interface language (`ar` or `en`) | 365 Days |
+| `sir_theme` | LocalStorage | Remembers visual theme mode (`dark`, `light`, `system`) | Persistent |
+| `sir_perf_mode` | LocalStorage | Remembers Hardware Eco Mode toggle state | Persistent |
+| `sir_cookies_consent` | LocalStorage | Stores cookie governance and consent settings | 365 Days |
+| `swr_cache_*` | SessionStorage | Client-side cache accelerating repeat subpage loads | 5 Minutes (TTL) |
 
 ---
 
-## 🧹 3. User Controls & Cache Management
-You have full control over your stored data:
-- **Interactive Storage Studio:** Visit [https://sir-modpack.web.app/cookies](https://sir-modpack.web.app/cookies) to inspect live storage usage in KB, prune expired caches, or reset all preferences.
-- **Browser Controls:** You can clear cookies and local storage at any time through your browser's security settings.
+## 🛠️ 3. User Controls & 1-Click Cache Management
+- **Interactive Storage Studio:** You can inspect real-time storage usage and prune expired cache items anytime at [`/cookies`](https://sir-modpack.web.app/cookies).
+- **1-Click Local Purge:** You can completely clear all cached profiles and local settings directly in your browser or via the desktop launcher settings.
 
 ---
 
-## 📬 4. Contact & Inquiries
-* **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-* **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)\n
+*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*

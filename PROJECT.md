@@ -10,11 +10,11 @@
 
 ## 📦 Ecosystem Architecture & Deliverables
 
+The release provides a single, unified, high-security desktop executable and a static Next.js 16 web platform with zero-latency navigation and military-grade input validation:
+
 ```
 D:\Projects\SIR ModPack\
-├── SIR Launcher.exe                # Standalone Desktop Launcher v1.0.0
-├── SIR Installer.exe               # Standalone 1-Click Installer v1.0.0
-├── SIR Server Host.exe             # Standalone Dedicated Server Host v1.0.0
+├── SIR ModPack.exe                 # Single public dispatcher EXE
 ├── SIR Package/                    # Complete Offline Distribution Archive (1.1 GB)
 │   ├── SIR Launcher/               # Portable Launcher Directory
 │   ├── instances/                  # Pre-configured 26.2 and 1.8.9 Instances
@@ -22,15 +22,16 @@ D:\Projects\SIR ModPack\
 │   ├── shaderpacks/                # SIR Extreme & Balanced Master Shaders
 │   └── resourcepacks/              # SIR Ultimate Pack 3D POM & Fresh Animations
 ├── development/                    # Core Python / Pywebview Desktop Codebase
-│   ├── launcher_ui/                # Launcher Frontend (HTML5/Tailwind/Lucide/Audio)
+│   ├── dispatcher_source/          # --mode launcher|installer|server entrypoint
+│   ├── launcher_ui/                # Launcher Frontend (HTML5/Tailwind/Lucide/Spring Physics)
 │   ├── launcher_core/              # Win32 Kernel & Minecraft Hardware Services
 │   ├── installer_ui/               # Installer Frontend & Hardware Rig Step-Wizard
 │   ├── server_ui/                  # Server Manager Frontend & Realtime Telemetry
 │   └── launcher_source/            # PyInstaller Python Entry Points
-├── website-next/                   # Next.js 16 Web Platform (27 Static Pages)
+├── website-next/                   # Next.js 16 Web Platform (29 Static Pages)
 │   ├── app/                        # App Router Pages & Legal Gateways
-│   ├── components/                 # Glassmorphic React Components & AI Assistant
-│   └── lib/                        # Firebase, SWR Storage, & Cloudinary CDN
+│   ├── components/                 # Modular Anti-Monolith Glassmorphic React Components
+│   └── lib/                        # Security Sanitization Engine, Firebase, & Cloudinary CDN
 ├── CHANGELOG.md                    # Detailed Release Notes & History
 ├── PROJECT_ARCHITECTURE_EXPLANATION.md # Comprehensive Engineering Blueprint
 ├── PRIVACY.md                      # Legally Enforced Privacy Policy (v2026.1)
@@ -38,6 +39,8 @@ D:\Projects\SIR ModPack\
 ├── COOKIES.md                      # Storage & SWR Cache Policy
 └── README.md                       # Repository Master README
 ```
+
+Canonical runtime data is stored strictly in `%APPDATA%\SIR ModPack\`. It contains sanitized account metadata, launcher settings, managed-file manifests, logs, and the private Prism data directory. Worlds, saves, screenshots, and user preferences are preserved during repair.
 
 ---
 
@@ -50,11 +53,11 @@ D:\Projects\SIR ModPack\
    - **SIR Balanced:** Identical visual styling optimized for 144+ FPS esports responsiveness.
 3. **Dedicated Server Hosting with Playit.gg:**
    - Zero-port forwarding public multiplayer hosting with 1-click friend invite links.
-4. **Zero-Cloud Local Privacy:**
-   - Direct Win32 kernel hardware monitoring, physical log scanner, and real screenshot studio without data collection.
+4. **Zero-Cloud Local Privacy & Multi-Layer Security:**
+   - Strict XSS protection, frame options, input sanitization, and zero-telemetry Win32 kernel hardware monitoring.
 5. **Next.js 16 Web Platform:**
-   - 27 static prerendered pages, bilingual Arabic/English engine, and SWR cache delivering 0ms navigation.
+   - 29 static prerendered pages, bilingual Arabic/English engine, and modular component architecture.
 
 ---
 
-*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*\n
+*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*

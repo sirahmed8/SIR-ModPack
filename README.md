@@ -11,18 +11,18 @@
 ---
 
 ## 🌟 What is SIR ModPack?
-**SIR ModPack** is an enterprise-grade Minecraft distribution and desktop ecosystem unifying **Modern 26.2 (Fabric 1.21.4)** and **Legacy 1.8.9 (Forge/Paper PvP)**. It provides a complete standalone launcher suite, custom shaders, 3D POM textures, zero-port server hosting, and a high-performance web platform.
+**SIR ModPack** is an enterprise-grade Minecraft distribution and desktop ecosystem unifying **Modern 26.2 (Fabric 1.21.4)** and **Legacy 1.8.9 (Forge/Paper PvP)**. It provides one public dispatcher executable, custom shaders, 3D POM textures, zero-port server hosting, and a high-performance web platform.
+
+The public desktop entrypoint is **`SIR ModPack.exe`**. It opens the requested internal mode with `--mode launcher`, `--mode installer`, or `--mode server`. Per-user state is stored in `%APPDATA%\SIR ModPack\`, while Prism keeps official Microsoft credentials in its private local account store.
 
 ---
 
 ## 📦 Core Applications
 
-| Application | Binary | Description |
+| Application | Binary / Portal | Description |
 | :--- | :--- | :--- |
-| **SIR Launcher** | `SIR Launcher.exe` | Standalone cyber-glassmorphic launcher with 3-state server radar, 3D skin studio, and real diagnostics. |
-| **SIR Installer** | `SIR Installer.exe` | 1-Click deployment wizard with automated hardware rig detection and multi-threaded extraction. |
-| **SIR Server Host** | `SIR Server Host.exe` | Dedicated Minecraft world orchestrator with zero-port Playit.gg tunnel and real-time TPS/RAM telemetry. |
-| **SIR Web Platform** | `sir-modpack.web.app` | Next.js 16 portal with 27 prerendered static routes, bilingual RTL/LTR engine, and SWR caching. |
+| **SIR ModPack dispatcher** | `SIR ModPack.exe` | One public EXE. Use `--mode launcher`, `--mode installer`, or `--mode server` for the three desktop modes. |
+| **SIR Web Platform** | `sir-modpack.web.app` | Next.js 16 portal with 29 prerendered static routes, bilingual RTL/LTR engine, modular architecture, and military-grade input validation. |
 
 ---
 
@@ -30,20 +30,23 @@
 
 - [🏗️ Project Architecture & Engineering Guide](PROJECT_ARCHITECTURE_EXPLANATION.md)
 - [📜 Official Changelog & Release Notes](CHANGELOG.md)
-- [🔒 Universal Privacy Policy (v2026.1)](PRIVACY.md)
-- [⚖️ Terms of Service & EULA (v2026.1)](TERMS.md)
-- [🍪 Cookie & Local Storage Policy (v2026.1)](COOKIES.md)
+- [🔒 Universal Privacy Policy (v2026.2)](PRIVACY.md)
+- [⚖️ Terms of Service & EULA (v2026.2)](TERMS.md)
+- [🍪 Cookie & Local Storage Policy (v2026.2)](COOKIES.md)
 - [💎 Full Project Overview](PROJECT.md)
 
 ---
 
 ## ⚡ Quickstart
 
-### 1. Run the Standalone Apps:
-Double click any of the executables in the root directory:
-- `SIR Launcher.exe`
-- `SIR Installer.exe`
-- `SIR Server Host.exe`
+### 1. Run SIR ModPack:
+Double-click `SIR ModPack.exe`, or use one of these explicit modes:
+
+```text
+SIR ModPack.exe --mode launcher
+SIR ModPack.exe --mode installer
+SIR ModPack.exe --mode server
+```
 
 ### 2. Run the Next.js Web Platform:
 ```bash
@@ -54,4 +57,4 @@ npm run dev
 
 ---
 
-*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*\n
+*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*
