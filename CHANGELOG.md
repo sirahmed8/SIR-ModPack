@@ -3,15 +3,17 @@
 
 ---
 
-## 🚀 [v1.0.0-PRO • Update 5] — Fabric SAT Resolver, Technical Documentation Hub, Infinite Server Radar & Universal CyberSelect (August 2026)
+## 🚀 [v1.0.0-PRO • Update 5] — Fabric SAT Resolver, ClassTweaker Intermediary Sanitization, Infinite Server Radar & 3D Elytra Wings (August 2026)
 
-### 🛠️ 1. Fabric Loader 0.19.4 SAT Resolver & 245 Mod Manifests Sanitization
-- **Fabric API Self-Collision Resolution:** Fixed redundant `"provides": ["fabric", "fabric-api"]` declaration in `fabric-api-0.158.0+26.2.jar` by sanitizing it to `["fabric"]`, eliminating the Fabric SAT solver's `UNIQUE_ID` conflict and preventing incompatible mod error dialogs.
-- **In-Memory Zip Sanitizer:** Processed all 245 mod JAR files, escaping raw newlines in JSON strings (`entity_model_features`, `entity_texture_features`, `IrisSearch`, `moreoverlays`) and normalizing SemVer strings (`elytra_physics`).
-- **Clean Engine Startup:** Verified clean loading of all **419 mod modules** on Modern 26.2 with 0 startup warnings or popup errors.
+### 🛠️ 1. Fabric Loader 0.19.4 SAT Resolver & ClassTweaker Sanitization
+- **ClassTweaker & AccessWidener Intermediary Sanitization:** Converted all mod `.classtweaker` and `.accesswidener` header namespaces from `official` to `intermediary` across all 245 mod JARs (`architectury`, `EasyAnvils`, `EasyMagic`, `elevatorid`, `geckolib`, `ImmediatelyFast`, `Jade`, `letmedespawn`, `Particular`, `PlayerAnimationLib`, `PuzzlesLib`, `snowundertrees`, `TradingPost`, `VisualWorkbench`, etc.), preventing `ClassTweakerFormatException` crashes during Knot runtime loading.
+- **Fabric API Virtual Dependency Resolution:** Configured `fabric-api-0.158.0+26.2.jar` to cleanly provide `["fabric"]`, resolving virtual dependency requirements for `e4mc` and other modern networking mods.
+- **Extended SemVer Sanitization:** Normalized version strings across all JARs (e.g. `elytra_physics` normalized to `2.6.2+mc26.2`, `animated-gif-lib` normalized to `1.7.0`), eliminating Fabric Loader SemVer parsing warnings.
+- **Version Display Consistency:** Standardized all launch status messages and UI banners to clearly display `"Modern 26.2"` and `"Legacy 1.8.9"`.
 
 ### 📜 2. Official SIR Custom Mods Technical Documentation & Architecture Hub
 - **Technical Documentation Matrix & Modals:** Integrated interactive documentation modals and architecture matrices across both the **Desktop Launcher** (`development/launcher_ui/js/mods.js`) and **Web Platform** (`website-next/app/mods/page.tsx`).
+- **Backdrop Blur & Viewport Overflow Fix:** Corrected modal viewport positioning and backdrop blur layers (`position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 99999`), preventing bottom clipping on high-resolution displays.
 - **Comprehensive Specs for All 6 SIR Custom Mods:**
   1. **SIR Core (v1.0.0 Pro):** Dynamic JVM RAM compactor, 3s automated asset healing, and 3-way optical synergy bridge.
   2. **HAVOC PvP Injector (v1.0.0):** 0ms raw polling, velocity smoothing, and client-side reach tracer (Hypixel/GommeHD safe).
@@ -24,19 +26,19 @@
 - **Standardized Dropdown Design System:** Replaced cluttered horizontal button rows with custom glassmorphic `CyberSelect` dropdowns (`rounded-2xl` curvature, opaque `#0b101b` / `#0c121e` surfaces, `z-50`, smooth spring animations, and active neon indicators).
 - **Universal Deployment:** Deployed across Mods (`/mods`), Servers (`/servers`), Shaders (`/shaders`), Seeds (`/seeds`), Benchmarks (`/benchmarks`), and all Desktop Launcher views.
 
-### 🌐 4. Infinite Multiplayer Server Radar & Global Search
-- **Expanded Server Database (100+ Servers):** Curated top global servers across Competitive, Practice, Survival SMP, Mini-Games, and Cracked categories.
-- **Infinite Batch Pagination (+12 per click):** Removed hardcoded "(22+)" text, enabling infinite loading with real-time global search querying the entire dataset.
-- **1-Click Direct Join:** Connect directly to any server via `sirlauncher://join?ip=...` with live latency radar and player metrics.
+### 🌐 4. Infinite Multiplayer Server Radar & Global Live API Search
+- **Dynamic Live API Discovery:** Removed static hardcoded server limits; integrated dynamic query engine with `api.mcstatus.io` and `api.mcsrvstat.us` for real-time latency ping, live MOTD, and player count verification.
+- **Infinite Batch Pagination (+12 per click):** Clicking "📡 Fetch More Live Servers" dynamically queries new active servers with smooth append transitions.
+- **1-Click Direct Join:** Connect directly to any server via `sirlauncher://join?ip=...` with live latency radar.
 
-### 🥋 5. 3D WebGL Live Cape Preview & Texture Reloading
-- **Instant Cape Binding:** Selecting any cape preset instantly updates the 3D player canvas, rotating the model (`Math.PI * 0.95`) to showcase the cape artwork immediately without page reload.
-- **Full 360° Interaction:** OrbitControls rotation, walking/running animation toggles, and 1-click cloud sync to player accounts.
+### 🥋 5. 3D WebGL Live Cape & 3D Elytra Preview
+- **Dynamic 3D Elytra Wings:** Toggling the Elytra button immediately renders 3D Elytra wings with matching textures and proper wing orientation across both Launcher Studio and Website 3D Viewer.
+- **Instant Model Rotation:** Selecting any cape preset instantly rotates the 3D player canvas (`Math.PI * 0.95`) to showcase the cape artwork immediately.
 
 ### 📦 6. Resource Packs Exclusivity & Production Deliverables
 - **Single-Active Pack Exclusivity:** Resource pack manager enforces mutually exclusive radio behavior (activating one deactivates the other) and syncs `options.txt`.
 - **Standalone Binaries:** Recompiled and synchronized `SIR Launcher.exe` (14.9 MB), `SIR Server Manager.exe` (14.2 MB), and `SIR Installer.exe` (17.3 MB).
-- **Next.js 16 Production Build:** Compiled all 29 routes in 1074ms with 0 errors and deployed live to Firebase Hosting (https://sir-modpack.web.app).
+- **Next.js 16 Production Build:** Compiled all 29 routes in Turbopack with 0 errors and deployed live to Firebase Hosting (https://sir-modpack.web.app).
 - **Repository Synchronization:** Clean public package pushed to `sirahmed8/SIR-ModPack` and full development source pushed to `sirahmed8/SIR-ModPack-private`.
 
 ---
