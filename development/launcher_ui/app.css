@@ -1,0 +1,1669 @@
+
+/* Universal Lucide Icon Rendering Rules */
+i[data-lucide],
+svg.lucide,
+.lucide {
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+button i[data-lucide],
+button svg.lucide {
+  pointer-events: none;
+}
+
+.header-pill i,
+.header-pill svg {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-btn i,
+.nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.badge-tag i,
+.badge-tag svg {
+  width: 12px;
+  height: 12px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --neon-cyan: #00e5ff;
+  --neon-emerald: #38ef7d;
+  --neon-amber: #f59e0b;
+  --bg-obsidian: #06090e;
+  --bg-surface: rgba(16, 22, 36, 0.75);
+  --border-subtle: rgba(30, 41, 59, 0.8);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Sleek Ultra-Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(6, 9, 14, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* Global Nav Button Styles with Micro-Spring */
+.nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  position: relative;
+}
+.nav-btn:hover {
+  color: var(--neon-cyan);
+  background: rgba(0, 229, 255, 0.08);
+  border-color: rgba(0, 229, 255, 0.25);
+  transform: scale(1.06);
+}
+.nav-btn:active {
+  transform: scale(0.92);
+}
+.nav-btn.active {
+  color: #06090e;
+  background: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.45), inset 0 0 4px rgba(255, 255, 255, 0.6);
+}
+
+/* Header Pills with Tactile Elevation */
+.header-pill {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 14px;
+  background: rgba(16, 22, 36, 0.8);
+  border: 1px solid var(--border-subtle);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+}
+.header-pill:hover {
+  background: rgba(24, 32, 48, 0.95);
+  border-color: rgba(0, 229, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 12px rgba(0, 229, 255, 0.15);
+}
+.header-pill:active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Feature Cards with Luxurious Glassmorphism, Spring Elevation & Hover Shimmer */
+.feature-card,
+.card-modern {
+  padding: 22px;
+  border-radius: 24px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(20px);
+  cursor: pointer;
+  position: relative;
+  overflow: visible;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.22s ease;
+  will-change: transform, box-shadow;
+}
+
+.feature-card::before,
+.card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.6), transparent);
+  opacity: 0;
+  transform: scaleX(0.7);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 24px 24px 0 0;
+  pointer-events: none;
+}
+
+/* Dark Mode Hover */
+html.dark .feature-card:hover,
+html.dark .card-modern:hover {
+  background: rgba(20, 28, 44, 0.95);
+  border-color: rgba(0, 229, 255, 0.45);
+  transform: translateY(-4px) scale(1.008);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 24px rgba(0, 229, 255, 0.16);
+}
+
+/* Light Mode Hover */
+html.light .feature-card:hover,
+html.light .card-modern:hover {
+  background: #ffffff !important;
+  border-color: rgba(2, 132, 199, 0.5) !important;
+  transform: translateY(-4px) scale(1.008);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12), 0 0 20px rgba(0, 229, 255, 0.15) !important;
+}
+
+.feature-card:hover::before,
+.card-modern:hover::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Tactile Active Press Effect */
+.feature-card:active,
+.card-modern:active {
+  transform: translateY(-1px) scale(0.985);
+  transition-duration: 0.1s;
+}
+
+/* Inner Thumbnail / Icon Micro-Zoom on Card Hover */
+.feature-card img,
+.card-modern img {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover img:not([class*="no-zoom"]),
+.card-modern:hover img:not([class*="no-zoom"]) {
+  transform: scale(1.06);
+}
+
+/* Filter Pills with Glowing Active Ring */
+.filter-pill {
+  padding: 7px 16px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  background: rgba(16, 22, 36, 0.8);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+.filter-pill:hover {
+  color: var(--neon-cyan);
+  border-color: rgba(0, 229, 255, 0.4);
+  transform: translateY(-1px);
+}
+.filter-pill:active {
+  transform: scale(0.95);
+}
+.filter-pill.active {
+  color: #00e5ff;
+  background: rgba(0, 229, 255, 0.15);
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.25), inset 0 0 4px rgba(0, 229, 255, 0.1);
+}
+
+/* Badge Tags with Rounded Pill Geometry */
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  font-size: 10px;
+  font-weight: 800;
+  border-width: 1px;
+  letter-spacing: 0.025em;
+}
+
+/* Modern Inputs with Floating Glow */
+.input-modern, input[type="text"], input[type="search"], select {
+  padding: 11px 18px;
+  border-radius: 16px;
+  background: #080c14;
+  border: 1px solid #1e293b;
+  color: #ffffff;
+  outline: none;
+  font-size: 13px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.input-modern:focus, input[type="text"]:focus, input[type="search"]:focus, select:focus {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.2), 0 0 18px rgba(0, 229, 255, 0.25);
+  background: #0c121d;
+  transform: translateY(-1px);
+}
+
+/* Dedicated Search Input Layout with No Text Overlap */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-input-wrapper i, .search-input-wrapper svg, .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 10;
+  color: #94a3b8;
+}
+[dir="rtl"] .search-input-wrapper i, [dir="rtl"] .search-input-wrapper svg, [dir="rtl"] .search-icon {
+  left: auto;
+  right: 14px;
+}
+.search-input-wrapper input, input.search-input, .input-search {
+  padding-left: 42px !important;
+  padding-right: 16px !important;
+}
+[dir="rtl"] .search-input-wrapper input, [dir="rtl"] input.search-input, [dir="rtl"] .input-search {
+  padding-right: 42px !important;
+  padding-left: 16px !important;
+}
+
+/* Scrollbar hiding utility */
+.scrollbar-none, .no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+.scrollbar-none::-webkit-scrollbar, .no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Custom Cyber Checkboxes with Real Universal SVG Checkmark */
+input[type="checkbox"]:not(.sr-only):not(.peer), .cyber-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  min-width: 22px;
+  min-height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  background: #080c14;
+  border: 2px solid #334155;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+}
+
+input[type="checkbox"]:not(.sr-only):not(.peer):hover, .cyber-checkbox:hover {
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  transform: scale(1.05);
+}
+
+input[type="checkbox"]:not(.sr-only):not(.peer):checked, .cyber-checkbox:checked {
+  background-color: var(--neon-cyan) !important;
+  border-color: var(--neon-cyan) !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306090e' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 14px 14px !important;
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.6) !important;
+  transform: scale(1.05);
+}
+
+#legal-agreement-checkbox:checked {
+  background-color: #00e5ff !important;
+  border-color: #00e5ff !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2306090e' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 14px 14px !important;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.7) !important;
+}
+
+
+/* Custom Cyber Range Sliders */
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  background: #1e293b;
+  outline: none;
+  transition: background 0.2s ease;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--neon-cyan);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.25);
+  box-shadow: 0 0 18px rgba(0, 229, 255, 0.9);
+}
+
+/* Animated Buttons */
+button {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s ease, background 0.18s ease;
+}
+button:active {
+  transform: scale(0.96);
+}
+
+/* View Panels Animation */
+.view-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.view-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  animation: panelSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 12, 0.82);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.22s ease-out;
+}
+.modal-backdrop.closing {
+  animation: fadeOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-card {
+  width: 90%;
+  max-width: 480px;
+  background: #0d121f;
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 28px;
+  padding: 26px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), 0 0 30px rgba(0, 229, 255, 0.1);
+  animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-card.closing {
+  animation: popOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92) translateY(-12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes popOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to { opacity: 0; transform: scale(0.92) translateY(-10px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Dropdown Menus & List Expand / Collapse */
+.dropdown-menu, .select-dropdown, details[open] summary ~ * {
+  animation: dropdownOpen 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top;
+}
+@keyframes dropdownOpen {
+  from { opacity: 0; transform: scale(0.96) translateY(-6px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Checkbox Pop Animation */
+input[type="checkbox"]:checked {
+  animation: checkBounce 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes checkBounce {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+[dir="rtl"] .modal-card {
+  text-align: right;
+}
+
+
+/* ==========================================================================
+   SIR LAUNCHER PRO — UNIVERSAL DUAL THEME ENGINE (DARK / LIGHT / SYSTEM AUTO)
+   ========================================================================== */
+
+:root {
+  --neon-cyan: #00e5ff;
+  --neon-emerald: #38ef7d;
+  --neon-amber: #f59e0b;
+}
+
+/* Base transitions for seamless theme morphing */
+body, aside, header, main, .feature-card, .modal-card, .header-pill, .filter-pill, input, select, textarea, button {
+  transition: background-color 0.28s ease, border-color 0.28s ease, color 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* ================= DARK THEME (OBSIDIAN CYBER) ================= */
+html.dark, body.dark {
+  --bg-app: #06090e;
+  --bg-sidebar: rgba(9, 13, 21, 0.95);
+  --bg-header: rgba(9, 13, 21, 0.85);
+  --bg-main: radial-gradient(circle at 50% 0%, #0d1424 0%, #06090e 70%);
+  --bg-surface: #0d121f;
+  --bg-card: #0d121f;
+  --bg-card-hover: #111827;
+  --bg-input: #070a10;
+  --border-subtle: rgba(30, 41, 59, 0.8);
+  --border-card: rgba(30, 41, 59, 0.8);
+  --text-title: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #64748b;
+  --pill-bg: rgba(16, 22, 36, 0.85);
+  --pill-text: #e2e8f0;
+}
+
+html.dark body {
+  background-color: var(--bg-app);
+  color: var(--text-title);
+}
+html.dark aside {
+  background: var(--bg-sidebar);
+  border-right-color: var(--border-subtle);
+}
+html.dark header {
+  background: var(--bg-header);
+  border-bottom-color: var(--border-subtle);
+}
+html.dark main {
+  background: var(--bg-main);
+  color: var(--text-title);
+}
+html.dark .feature-card,
+html.dark .modal-card,
+html.dark .card-modern {
+  background: var(--bg-card);
+  border-color: var(--border-card);
+  color: var(--text-title);
+}
+html.dark .header-pill {
+  background: var(--pill-bg);
+  border-color: var(--border-subtle);
+  color: var(--pill-text);
+}
+html.dark .header-pill:hover {
+  background: rgba(24, 32, 48, 0.95);
+  border-color: rgba(0, 229, 255, 0.4);
+  color: #ffffff;
+}
+html.dark .filter-pill {
+  background: #101624;
+  border-color: #1e293b;
+  color: #94a3b8;
+}
+html.dark input, html.dark select, html.dark textarea {
+  background: #070a10;
+  border-color: #1e293b;
+  color: #f8fafc;
+}
+html.dark #account-menu,
+html.dark #store-sort-menu,
+html.dark .dropdown-menu,
+html.dark .custom-dropdown-panel {
+  background: #0b101b !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(51, 65, 85, 0.9);
+}
+
+
+/* ================= LIGHT THEME (CRISP HIGH-CONTRAST NEOMORPHIC) ================= */
+html.light, body.light {
+  --bg-app: #f1f5f9;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-input: #ffffff;
+  --border-subtle: #cbd5e1;
+  --border-card: #e2e8f0;
+  --text-title: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --pill-bg: #ffffff;
+  --pill-text: #0f172a;
+}
+
+html.light body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light aside {
+  background: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light main {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* All Cards & Containers in Light Mode */
+html.light .feature-card,
+html.light .modal-card,
+html.light .card-modern,
+html.light div[class*="rounded-3xl"],
+html.light div[class*="rounded-2xl"]:not(.badge-tag):not(.theme-segmented-group):not([id*="logs"]):not([class*="bg-cyan-500"]):not([class*="bg-emerald-500"]) {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Inactive dark background overrides */
+html.light [class*="bg-slate-900"],
+html.light [class*="bg-slate-800"],
+html.light [class*="bg-[#101624]"],
+html.light [class*="bg-[#090d15]"],
+html.light [class*="bg-[#0b101b]"],
+html.light [class*="bg-[#0a0e1a]"],
+html.light [class*="bg-[#06090e]"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* High-Contrast Headings & Typography */
+html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6,
+html.light .text-slate-100, html.light .text-slate-200, html.light .text-slate-300 {
+  color: #0f172a !important;
+}
+
+html.light p, html.light span.text-slate-400, html.light .text-slate-500, html.light .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Saturated, High-Contrast Accents on White */
+html.light .text-cyan-400, html.light .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+html.light .text-emerald-400, html.light .text-emerald-300 {
+  color: #059669 !important;
+}
+
+html.light .text-amber-400, html.light .text-amber-300 {
+  color: #d97706 !important;
+}
+
+/* Buttons & Header Pills */
+html.light .header-pill {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light .header-pill:hover {
+  background: #f1f5f9 !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
+
+html.light .nav-btn {
+  color: #64748b !important;
+  background: transparent !important;
+}
+
+html.light .nav-btn:hover {
+  color: #0284c7 !important;
+  background: #e0f2fe !important;
+}
+
+html.light .nav-btn.active {
+  color: #ffffff !important;
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* Settings Sub-Tab Navigation in Light Mode */
+html.light #settings-tab-bar button {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light #settings-tab-bar button[class*="bg-cyan-500"],
+html.light #settings-tab-bar button.active {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* Form Controls & Checkbox Labels */
+html.light label[class*="rounded-"],
+html.light label[class*="rounded-xl"],
+html.light label[class*="rounded-2xl"] {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light input, html.light select, html.light textarea {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light input:focus, html.light select:focus, html.light textarea:focus {
+  border-color: #0284c7 !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* Dropdowns & Modals */
+html.light #account-menu,
+html.light #store-sort-menu,
+html.light .dropdown-menu,
+html.light .custom-dropdown-panel {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(203, 213, 225, 0.8) !important;
+}
+
+/* Log Terminal (Always sleek developer dark) */
+html.light #logs-output-container,
+html.light .terminal-window,
+html.light [id*="terminal"] {
+  background: #0b0f19 !important;
+  color: #38ef7d !important;
+  border: 1px solid #334155 !important;
+}
+
+html.light #logs-output-container span,
+html.light #logs-output-container pre {
+  color: #e2e8f0 !important;
+}
+
+/* 3D Skin Studio Preview Box in Light Mode */
+html.light #skin-canvas-container,
+html.light [id*="skin-preview"] {
+  background: #101624 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Segmented Theme Switcher */
+html.light .theme-segmented-group {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light .theme-seg-btn {
+  color: #64748b !important;
+}
+
+html.light .theme-seg-btn:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #0f172a !important;
+}
+
+html.light .theme-seg-btn.active {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* Quick Presets Bar */
+html.light #quick-presets-bar button:not([class*="bg-cyan-400"]) {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light #quick-presets-bar button[class*="bg-cyan-400"] {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+}
+
+
+/* ==========================================================================
+   DROPDOWN & POPOVER SMOOTH SPRING ANIMATIONS (OPEN & CLOSE)
+   ========================================================================== */
+.dropdown-menu,
+#account-menu,
+#store-sort-menu,
+.custom-dropdown-panel,
+.custom-select-list {
+  border-radius: 16px !important;
+  padding: 8px !important;
+  transform-origin: top right;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+.dropdown-animating-in {
+  display: block !important;
+  animation: dropdownSpringIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  transform-origin: top;
+  will-change: transform, opacity;
+}
+
+.dropdown-animating-out {
+  display: block !important;
+  animation: dropdownSpringOut 0.16s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  transform-origin: top;
+  will-change: transform, opacity;
+  pointer-events: none !important;
+}
+
+@keyframes dropdownSpringIn {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.93) translateY(-10px); 
+  }
+  75% {
+    transform: scale(1.01) translateY(1px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+@keyframes dropdownSpringOut {
+  0% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: scale(0.94) translateY(-8px); 
+  }
+}
+
+/* ==========================================================================
+   THEME SEGMENTED CONTROL (SLEEK ERGONOMIC PILL)
+   ========================================================================== */
+.theme-segmented-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 6px !important;
+  background: rgba(10, 14, 26, 0.85) !important;
+  border: 1px solid rgba(30, 41, 59, 0.8) !important;
+  border-radius: 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.theme-seg-btn {
+  flex: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 8px 12px !important;
+  border-radius: 12px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #94a3b8 !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  outline: none !important;
+}
+
+.theme-seg-btn:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #f8fafc !important;
+}
+
+.theme-seg-btn.active {
+  background: linear-gradient(135deg, #00e5ff 0%, #00b4d8 100%) !important;
+  color: #06090e !important;
+  border-color: #00e5ff !important;
+  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.4) !important;
+}
+
+/* Stability against vibration */
+.feature-card, .modal-card {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  will-change: auto;
+}
+
+/* ==========================================================================
+   LIGHT THEME HIGH-CONTRAST NEOMORPHIC RULES
+   ========================================================================== */
+html.light, body.light {
+  --bg-app: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+  --bg-main: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f5f9;
+  --bg-input: #ffffff;
+  --border-subtle: #cbd5e1;
+  --border-card: #e2e8f0;
+  --text-title: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
+  --pill-bg: #ffffff;
+  --pill-text: #0f172a;
+}
+
+html.light body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light aside {
+  background: #ffffff !important;
+  border-right: 1px solid #e2e8f0 !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+html.light header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+
+html.light main {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Theme Segmented Switcher in Light Mode */
+html.light .theme-segmented-group {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light .theme-seg-btn {
+  color: #475569 !important;
+}
+
+html.light .theme-seg-btn:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .theme-seg-btn.active {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+  color: #ffffff !important;
+  border-color: #0284c7 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* Cards & Containers in Light Mode */
+html.light .feature-card,
+html.light .modal-card,
+html.light .card-modern,
+html.light div[class*="rounded-3xl"],
+html.light div[class*="rounded-2xl"]:not(.badge-tag):not(.theme-segmented-group):not([id*="logs"]):not([class*="bg-cyan-500"]):not([class*="bg-emerald-500"]) {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Inactive Dark Elements in Light Mode -> Clean Slate-100 */
+html.light [class*="bg-slate-900"],
+html.light [class*="bg-slate-800"],
+html.light [class*="bg-[#101624]"],
+html.light [class*="bg-[#090d15]"],
+html.light [class*="bg-[#0b101b]"],
+html.light [class*="bg-[#0a0e1a]"],
+html.light [class*="bg-[#06090e]"] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Headings & Text */
+html.light h1, html.light h2, html.light h3, html.light h4, html.light h5, html.light h6,
+html.light .text-slate-100, html.light .text-slate-200, html.light .text-slate-300 {
+  color: #0f172a !important;
+}
+
+html.light p, html.light span.text-slate-400, html.light .text-slate-500, html.light .text-slate-600 {
+  color: #475569 !important;
+}
+
+/* Badges & Hardware Telemetry in Light Mode */
+html.light .badge-tag,
+html.light span[class*="bg-cyan-950"],
+html.light span[class*="bg-slate-800"] {
+  background-color: #e0f2fe !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+html.light .text-cyan-400, html.light .text-cyan-300 {
+  color: #0284c7 !important;
+}
+
+html.light .text-emerald-400, html.light .text-emerald-300 {
+  color: #059669 !important;
+}
+
+html.light .text-amber-400, html.light .text-amber-300 {
+  color: #d97706 !important;
+}
+
+/* Crash Diagnostics / Action Buttons in Light Mode */
+html.light button[class*="bg-rose-500/10"],
+html.light button[class*="text-rose-400"] {
+  background-color: #ffe4e6 !important;
+  border: 1px solid #fecdd3 !important;
+  color: #e11d48 !important;
+}
+
+/* Filter Pills & Server Categories in Light Mode */
+html.light .filter-pill:not(.active) {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light .filter-pill.active {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* Settings Sub-Tab Navigation in Light Mode */
+html.light #settings-tab-bar button:not([class*="bg-cyan-500"]) {
+  background-color: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light #settings-tab-bar button[class*="bg-cyan-500"] {
+  background-color: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* Form Controls & Checkbox Labels */
+html.light label[class*="rounded-"],
+html.light label[class*="rounded-xl"],
+html.light label[class*="rounded-2xl"] {
+  background-color: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light input, html.light select, html.light textarea {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Dropdown Menus in Light Mode */
+html.light #account-menu,
+html.light #store-sort-menu,
+html.light .dropdown-menu,
+html.light .custom-dropdown-panel {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(203, 213, 225, 0.8) !important;
+}
+
+/* Log Terminal (Always developer dark with clear contrast) */
+html.light #logs-output-container,
+html.light .terminal-window,
+html.light [id*="terminal"] {
+  background: #0b0f19 !important;
+  color: #38ef7d !important;
+  border: 1px solid #334155 !important;
+}
+
+html.light #logs-output-container span,
+html.light #logs-output-container pre {
+  color: #e2e8f0 !important;
+}
+
+/* 3D Skin Studio in Light Mode */
+html.light #skin-canvas-container,
+html.light [id*="skin-preview"] {
+  background: #101624 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+
+/* ==========================================================================
+   EXHAUSTIVE LIGHT MODE OVERRIDES FOR LAUNCHER UI
+   ========================================================================== */
+
+/* 1. Launchpad Hero Card */
+html.light .relative.rounded-3xl.p-10.bg-gradient-to-br,
+html.light div[class*="from-[#101624]/90"] {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06) !important;
+}
+
+html.light #main-launch-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #00e5ff 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.35) !important;
+}
+
+html.light #active-suite-title {
+  color: #0f172a !important;
+}
+
+html.light #active-suite-title + button,
+html.light div:has(#active-suite-title) button {
+  background: #f1f5f9 !important;
+  color: #0284c7 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* 2. Shaders Optical Engine Parameters & Inner Boxes */
+html.light div[class*="bg-[#070a10]"],
+html.light div[class*="bg-[#0b101b]"],
+html.light div[class*="bg-[#101624]"],
+html.light div[class*="bg-[#090d15]"],
+html.light div[class*="bg-[#0a0e1a]"] {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .input-modern,
+html.light select,
+html.light select.input-modern {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light button[onclick="saveFineShaderParams()"] {
+  background: #f1f5f9 !important;
+  color: #0284c7 !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html.light button[onclick="saveFineShaderParams()"]:hover {
+  background: #e2e8f0 !important;
+  color: #0369a1 !important;
+}
+
+/* 3. Filter Pills Across All Views (Modpacks, Mods, Servers, Presets) */
+html.light .filter-pill,
+html.light button[class*="filter-pill"],
+html.light #mods-filter-bar button:not(.active),
+html.light #servers-filter-bar button:not(.active),
+html.light #instances-tab-bar button:not(.active),
+html.light button[onclick*="filter"]:not(.active),
+html.light button[onclick*="switchInstanceTab"]:not(.active) {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light .filter-pill.active,
+html.light button[class*="filter-pill"].active,
+html.light #mods-filter-bar button.active,
+html.light #servers-filter-bar button.active,
+html.light #instances-tab-bar button.active,
+html.light button[onclick*="filter"].active,
+html.light button[onclick*="switchInstanceTab"].active {
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35) !important;
+}
+
+/* 4. Badges (Raytracing Fidelity, 0ms Competitive, 100+ Servers, etc.) */
+html.light .badge-tag,
+html.light span[class*="badge-tag"] {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light span[class*="bg-cyan-950"],
+html.light span[class*="text-cyan-400"].badge-tag {
+  background: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+html.light span[class*="bg-amber-950"],
+html.light span[class*="text-amber-400"].badge-tag {
+  background: #fef3c7 !important;
+  border: 1px solid #fde68a !important;
+  color: #d97706 !important;
+}
+
+html.light span[class*="bg-emerald-950"],
+html.light span[class*="text-emerald-400"].badge-tag {
+  background: #dcfce7 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #15803d !important;
+}
+
+html.light span[class*="bg-rose-950"],
+html.light span[class*="text-rose-400"].badge-tag {
+  background: #ffe4e6 !important;
+  border: 1px solid #fecdd3 !important;
+  color: #e11d48 !important;
+}
+
+/* 5. Hardware Rig Icon & CPU Boxes */
+html.light div[class*="bg-cyan-950/70"],
+html.light div[class*="bg-cyan-950"] {
+  background: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+/* 6. Quick Presets View All & Preset Buttons */
+html.light button[onclick*="openPreset"],
+html.light #quick-presets-bar button:not([class*="bg-cyan-400"]) {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light #quick-presets-bar button:not([class*="bg-cyan-400"]):hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light button:has(> span:contains("View All")),
+html.light button[onclick*="instances"] {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0284c7 !important;
+}
+
+/* 7. Shaders Activation Buttons */
+html.light button[onclick*="activateShader"] {
+  background: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+html.light button[onclick*="activateShader"]:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+
+/* ==========================================================================
+   UNIVERSAL MODALS & POPUPS LIGHT MODE OVERRIDES
+   ========================================================================== */
+
+html.light .modal-backdrop {
+  background: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+html.light .modal-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light .modal-card h2,
+html.light .modal-card h3,
+html.light .modal-card h4,
+html.light .modal-card h5,
+html.light .modal-card label,
+html.light .modal-card strong {
+  color: #0f172a !important;
+}
+
+html.light .modal-card p,
+html.light .modal-card span:not([class*="badge-tag"]):not([class*="text-"]):not([class*="bg-"]) {
+  color: #334155 !important;
+}
+
+/* Inner Modal Information & Notice Boxes */
+html.light .modal-card div[class*="bg-slate-950"],
+html.light .modal-card div[class*="bg-slate-900"],
+html.light .modal-card div[class*="bg-[#"] {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+html.light .modal-card div[class*="bg-emerald-950"] {
+  background: #dcfce7 !important;
+  border: 1px solid #bbf7d0 !important;
+  color: #15803d !important;
+}
+
+html.light .modal-card div[class*="bg-emerald-950"] p,
+html.light .modal-card div[class*="bg-emerald-950"] span {
+  color: #166534 !important;
+}
+
+html.light .modal-card div[class*="bg-cyan-950"] {
+  background: #e0f2fe !important;
+  border: 1px solid #bae6fd !important;
+  color: #0369a1 !important;
+}
+
+html.light .modal-card div[class*="bg-amber-950"] {
+  background: #fef3c7 !important;
+  border: 1px solid #fde68a !important;
+  color: #92400e !important;
+}
+
+html.light .modal-card div[class*="bg-rose-950"] {
+  background: #ffe4e6 !important;
+  border: 1px solid #fecdd3 !important;
+  color: #9f1239 !important;
+}
+
+/* Modal Inputs & Selects */
+html.light .modal-card .input-modern,
+html.light .modal-card input[type="text"],
+html.light .modal-card select {
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light .modal-card select option {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Modal Buttons */
+html.light .modal-card button[class*="bg-slate-800"],
+html.light .modal-card button[class*="bg-slate-900"] {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light .modal-card button[class*="bg-slate-800"]:hover,
+html.light .modal-card button[class*="bg-slate-900"]:hover {
+  background: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .modal-card button[class*="border-slate-800"],
+html.light .modal-card div[class*="border-slate-800"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Legal EULA Scroll Area */
+html.light #legal-doc-content {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+
+/* ==========================================================================
+   3D SKIN STUDIO — COMPLETE LIGHT MODE OVERRIDES
+   ========================================================================== */
+
+/* Preview stage: keep dark background (skin looks best on dark) but clean borders */
+html.light .lg\:col-span-5.feature-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* The inner dark stage preview stays dark intentionally (skin canvas) */
+html.light [class*="from-\[\#080d1a\]"],
+html.light [class*="to-\[\#04060a\]"],
+html.light div[class*="bg-gradient-to-b"][class*="from-\[#080d1a\]"] {
+  background: #101828 !important;
+}
+
+/* Model/Cape selector boxes */
+html.light div[class*="bg-\[\#080c14\]"],
+html.light div.bg-\[\#080c14\] {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light div[class*="bg-\[\#080c14\]"] label,
+html.light div.bg-\[\#080c14\] label {
+  color: #475569 !important;
+}
+
+/* Angle switcher bar inside skin stage — stays dark */
+html.light div[class*="bg-slate-900\/90"][class*="backdrop-blur"] {
+  background: rgba(15, 23, 42, 0.85) !important;
+}
+
+/* Studio right panel headings */
+html.light h3.text-sm.font-bold.text-slate-200,
+html.light #studio-presets-container h3,
+html.light #studio-capes-container h3 {
+  color: #0f172a !important;
+}
+
+html.light #studio-presets-container span.text-slate-400,
+html.light #studio-capes-container span.text-slate-400 {
+  color: #64748b !important;
+}
+
+/* Slim/Classic toggle buttons */
+html.light #model-btn-classic,
+html.light #model-btn-slim {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+}
+html.light #model-btn-classic.bg-cyan-500\/20,
+html.light button[id^="model-btn-"].bg-cyan-500\/20 {
+  background: #e0f2fe !important;
+  color: #0284c7 !important;
+  border-color: #7dd3fc !important;
+}
+
+/* Upload .png label */
+html.light label[class*="bg-slate-800"][class*="cursor-pointer"] {
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border-color: #cbd5e1 !important;
+}
+html.light label[class*="bg-slate-800"][class*="cursor-pointer"]:hover {
+  background: #e2e8f0 !important;
+}
+
+/* Stage badge bg */
+html.light #studio-model-badge {
+  background: rgba(15, 23, 42, 0.8) !important;
+  border-color: rgba(51, 65, 85, 0.6) !important;
+}
+
+/* Skin preset cards in light mode */
+html.light #studio-skins-grid .feature-card,
+html.light #studio-capes-grid .feature-card {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* ==========================================================================
+   GAME LOGS & RCON TERMINAL — Always developer dark on both themes
+   ========================================================================== */
+
+/* Game logs terminal — always dark regardless of theme */
+#game-logs-output,
+#rcon-console-output {
+  background: #04070d !important;
+  color: #38ef7d !important;
+}
+
+/* Terminal window bar — Light Mode */
+html.light #view-logs .feature-card,
+html.light #logs-terminal-card,
+html.light div[class*="bg-[#04070d]"] {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light div[class*="bg-[#090d15]"][class*="border-b"],
+html.light #logs-terminal-card > div:first-child {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #game-logs-output {
+  background: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* RCON console box — Light Mode */
+html.light #view-rcon .feature-card[class*="bg-[#05080e]"],
+html.light div[class*="bg-[#05080e]"] {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+html.light #rcon-console-output {
+  background: #ffffff !important;
+  color: #059669 !important;
+}
+
+/* ==========================================================================
+   HARDWARE TELEMETRY — Light mode card overrides
+   ========================================================================== */
+
+html.light #view-hardware .feature-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #hw-total-ram,
+html.light #hw-avail-ram { color: #0284c7 !important; }
+html.light #hw-load-pct { color: #d97706 !important; }
+html.light #hw-power-tier,
+html.light #hw-rec-ram { color: #059669 !important; }
+html.light #hw-cpu-load { color: #0284c7 !important; }
+
+/* GPU adapter badge in light mode */
+html.light #view-hardware span[class*="bg-cyan-950"] {
+  background: #e0f2fe !important;
+  border-color: #bae6fd !important;
+  color: #0284c7 !important;
+}
+
+/* Recommendation card */
+html.light div[class*="border-cyan-500/40"][class*="bg-[#080e1a]"] {
+  background: #f0f9ff !important;
+  border-color: #7dd3fc !important;
+}
+
+/* ==========================================================================
+   SHADERS FINE-TUNING PANELS — Light mode
+   ========================================================================== */
+
+html.light #view-shaders div[class*="bg-[#07"],
+html.light #view-shaders div[class*="bg-[#0a"],
+html.light #view-shaders div[class*="bg-[#06"] {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Shader active glow card */
+html.light div[class*="border-cyan-500/40"][class*="shadow-cyan"] {
+  border-color: #7dd3fc !important;
+  box-shadow: 0 0 20px rgba(2, 132, 199, 0.12) !important;
+}
+
+/* ==========================================================================
+   SERVERS — RCON QUICK ACTION BUTTONS
+   ========================================================================== */
+
+html.light #view-rcon .filter-pill {
+  background: #f1f5f9 !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #334155 !important;
+}
+
+html.light #view-rcon .filter-pill.active {
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   SATELLITE WAVEFORM — Light mode ping canvas background
+   ========================================================================== */
+
+html.light #ping-waveform-canvas,
+html.light div:has(> canvas#ping-waveform-canvas) {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Satellite node cards in light */
+html.light #satellite-nodes-grid .feature-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* ==========================================================================
+   SCROLLBAR — Light mode clean styling
+   ========================================================================== */
+
+html.light ::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8) !important;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.9) !important;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(2, 132, 199, 0.5) !important;
+  box-shadow: 0 0 8px rgba(2, 132, 199, 0.3) !important;
+}
+
+/* ==========================================================================
+   LEGAL MODAL — Amber border on light stays saturated
+   ========================================================================== */
+
+html.light #legal-eula-modal .modal-card {
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 40px rgba(245, 158, 11, 0.1), 0 25px 50px rgba(15, 23, 42, 0.2) !important;
+}
+
+html.light div[class*="bg-amber-500/15"] {
+  background: #fef3c7 !important;
+}
+
+/* ==========================================================================
+   CUSTOM DIALOG MODAL — Dual theme safe
+   ========================================================================== */
+
+html.light #custom-dialog-modal .modal-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #dialog-title { color: #0f172a !important; }
+html.light #dialog-message { color: #475569 !important; }
+
+/* ==========================================================================
+   MS DEVICE CODE MODAL (Sign in with Microsoft)
+   ========================================================================== */
+
+html.light #ms-device-code-modal .modal-card {
+  background: #ffffff !important;
+}
+
+html.light #ms-device-code-modal div[class*="bg-slate-900"] {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #ms-auth-status { color: #334155 !important; }
+
+/* ==========================================================================
+   GALLERY — Empty state styling
+   ========================================================================== */
+
+html.light #gallery-grid .feature-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light #gallery-grid div[class*="bg-slate-800"] {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* ==========================================================================
+   GLOBAL SIR READY FADE-IN
+   ========================================================================== */
+
+body {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+

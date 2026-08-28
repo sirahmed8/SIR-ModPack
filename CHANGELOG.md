@@ -3,6 +3,30 @@
 
 ---
 
+## 🚀 [v1.0.0-PRO • Update 4] — Auth-Gated Ecosystem, SIR Core v1.0.0 & Professional Showcase (August 2026)
+
+### 🔒 1. Web Platform Authentication Barrier & Feature Protection
+- **Global `AuthGate` Architecture:** Protected all specialized ecosystem modules (`/capes`, `/builder`, `/benchmarks`, `/leaderboards`, `/trainer`, `/seeds`, `/server-guide`, `/skins`, `/profiles`) behind a cyber-dark Google Authentication gate.
+- **Download & Account Creation Protection:** Requires Google login before streaming installer/bundles or creating/syncing cracked/offline profiles.
+- **AI Chatbot Protection:** Chatbot input area is gated with a 1-click Google Sign-In button for verified users.
+- **Publicly Accessible Pages:** Kept Home landing page (`/`), FAQ (`/faq`), Privacy Policy (`/privacy`), Terms of Service (`/terms`), Cookie Policy (`/cookies`), and Changelog (`/changelog`) freely accessible to all visitors.
+
+### ⚡ 2. `SIR_Core-fabric-26.2.jar` (v1.0.0 Pro)
+- **Standardized Versioning:** Renamed and recompiled as **v1.0.0** with full backward and forward compatibility (`>=1.20.0`).
+- **JVM Memory Governor Daemon:** Background daemon monitors heap memory usage every 60s and compactor threshold (>88%) to prevent micro-stutters and frame drops.
+- **3-Way Synergy Bridge:** Automatic optical shader hooks, 3D POM texture hooks, and hardware power tuning.
+
+### 🎨 3. Launcher Profiles, Resource Packs & SIR Custom Mods Showcase
+- **Profile Photo Banners & Badges:** Every instance profile (`SIR 26 Ultra`, `Balanced 144+ FPS`, `Competitive Speed`, `Legacy 1.8.9 Cinematic`, `Legacy 1.8.9 Balanced PvP`, `Legacy 1.8.9 Battle Suite`, `Sandbox Profile`) now includes a high-res themed banner, bulleted feature list, and documentation link.
+- **Official SIR Custom Mods Suite:** Added rich showcase cards in the launcher mods tab for `SIR Core (v1.0.0)`, `HAVOC PvP Injector`, `Super Secret Settings Fix`, `PlayerAPI Integration`, `Sharpness Particles FX`, and `InGameAccountSwitcher (IAS)`.
+- **Resource Packs Studio:** Enriched `SIR_Ultimate_Pack.zip` and `SIR_Legacy_32x.zip` with dedicated 3D POM badges, feature breakdowns, and specification links.
+
+### 👕 4. 3D Cape Showroom & Classic Steve Preview
+- **Local Standard `64x32` Cape Textures:** Generated 6 pixel-perfect Minecraft cape textures (`sir_founder.png`, `ender_dragon.png`, `optifine_banner.png`, `lunar_astral.png`, `cherry_blossom.png`, `diamond_gladiator.png`) eliminating cross-origin CORS errors.
+- **Classic Normal Steve Skin:** Bundled authentic standard Minecraft Steve skin texture (`/skins/steve.png`) and cleaned search bar placeholder.
+
+---
+
 ## 🚀 [v1.0.0-PRO • Update 3] — Cloud Self-Healing Engine & 20+ GB Bloat Elimination (August 2026)
 
 ### 🧹 1. 20+ GB Bloat Elimination & Massive 12+ GB Storage Recovery

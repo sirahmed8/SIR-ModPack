@@ -17,3 +17,5 @@ __pycache__/
 .idea/
 .vscode/
 *.log
+development/tools/source_packs/
+development/tools/source_shaders/

@@ -1,0 +1,1689 @@
+{
+  "modpack": "SIR ModPack Ultimate",
+  "version": "1.0.0",
+  "generated": "2026-08-23",
+  "total_mods": 240,
+  "engine": "Fabric 0.16.10 (Minecraft 1.21.4)",
+  "mods": [
+    {
+      "filename": "1.0.0-better_maces-mod-26.2.jar",
+      "name": "1.0.0-better_maces-mod-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 54.0,
+      "status": "active"
+    },
+    {
+      "filename": "AmbientEnvironment-fabric-26.2-26.2.1.jar",
+      "name": "AmbientEnvironment-26.2-26.2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.5,
+      "status": "active"
+    },
+    {
+      "filename": "AmbientSounds_FABRIC_v6.3.6_mc26.2.jar",
+      "name": "AmbientSounds_FABRIC_v6.3.6",
+      "category": "Audio & Immersion",
+      "size_kb": 82833.4,
+      "status": "active"
+    },
+    {
+      "filename": "AnimatedHearts-Fabric-1.8.1.jar",
+      "name": "AnimatedHearts-Fabric-1.8.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 314.9,
+      "status": "active"
+    },
+    {
+      "filename": "AsyncParticles-26.2.2.4+26.2.jar",
+      "name": "AsyncParticles-26.2.2.4+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 648.7,
+      "status": "active"
+    },
+    {
+      "filename": "AttributeFix-fabric-MC26.2-26.2.0.1.jar",
+      "name": "AttributeFix-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 20.4,
+      "status": "active"
+    },
+    {
+      "filename": "BadOptimizations-2.4.1-26.2-fabric.jar",
+      "name": "BadOptimizations-2.4.1-26.2",
+      "category": "Optimization",
+      "size_kb": 59.3,
+      "status": "active"
+    },
+    {
+      "filename": "BetterAdvancements-Fabric-26.2-0.6.0.72.jar",
+      "name": "BetterAdvancements-Fabric-26.2-0.6.0.72",
+      "category": "Gameplay & Utility",
+      "size_kb": 102.7,
+      "status": "active"
+    },
+    {
+      "filename": "BetterAnimationsCollection-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "BetterAnimationsCollection-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 160.5,
+      "status": "active"
+    },
+    {
+      "filename": "BetterF3-19.0.0-Fabric-26.2.jar",
+      "name": "BetterF3-19.0.0-Fabric-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 702.2,
+      "status": "active"
+    },
+    {
+      "filename": "BiomesOPlenty-fabric-26.2-26.2.0.0.24.jar",
+      "name": "BiomesOPlenty-26.2-26.2.0.0.24",
+      "category": "World Generation",
+      "size_kb": 22702.6,
+      "status": "active"
+    },
+    {
+      "filename": "Bookshelf-fabric-MC26.2-26.2.0.4.jar",
+      "name": "Bookshelf-MC26.2-26.2.0.4",
+      "category": "Gameplay & Utility",
+      "size_kb": 300.6,
+      "status": "active"
+    },
+    {
+      "filename": "BorderlessFullscreen-v2.4.1-mc26.2.jar",
+      "name": "BorderlessFullscreen-v2.4.1-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 199.1,
+      "status": "active"
+    },
+    {
+      "filename": "BridgingMod-2.7.0+26.2.fabric-release.jar",
+      "name": "BridgingMod-2.7.0+26.2.fabric-release",
+      "category": "Gameplay & Utility",
+      "size_kb": 5801.6,
+      "status": "active"
+    },
+    {
+      "filename": "Clumps-fabric-26.2-26.2.1.jar",
+      "name": "Clumps-26.2-26.2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 19.5,
+      "status": "active"
+    },
+    {
+      "filename": "Controlling-fabric-26.2-26.2.2.jar",
+      "name": "Controlling-26.2-26.2.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 83.8,
+      "status": "active"
+    },
+    {
+      "filename": "CreativeCore_FABRIC_v2.14.16_mc26.2.jar",
+      "name": "CreativeCore_FABRIC_v2.14.16",
+      "category": "Gameplay & Utility",
+      "size_kb": 1363.6,
+      "status": "active"
+    },
+    {
+      "filename": "DarkPaintings-fabric-MC26.2-26.2.0.1.jar",
+      "name": "DarkPaintings-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 57.8,
+      "status": "active"
+    },
+    {
+      "filename": "DarkUtilities-fabric-MC26.2-26.2.0.1.jar",
+      "name": "DarkUtilities-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 241.9,
+      "status": "active"
+    },
+    {
+      "filename": "EasyAnvils-v26.2.2-mc26.2.x-Fabric.jar",
+      "name": "EasyAnvils-v26.2.2-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 113.9,
+      "status": "active"
+    },
+    {
+      "filename": "EasyMagic-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "EasyMagic-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 122.7,
+      "status": "active"
+    },
+    {
+      "filename": "ExplorersCompass-26.2-2.5.1-fabric.jar",
+      "name": "ExplorersCompass-26.2-2.5.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 172.7,
+      "status": "active"
+    },
+    {
+      "filename": "Explorify v1.6.5.mod.jar",
+      "name": "Explorify v1.6.5.mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 749.9,
+      "status": "active"
+    },
+    {
+      "filename": "FallingTree-26.2-25.jar",
+      "name": "FallingTree-26.2-25",
+      "category": "Gameplay & Utility",
+      "size_kb": 481.7,
+      "status": "active"
+    },
+    {
+      "filename": "ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric.jar",
+      "name": "ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 595.3,
+      "status": "active"
+    },
+    {
+      "filename": "GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "name": "GlitchCore-26.2-26.2.0.0.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 327.0,
+      "status": "active"
+    },
+    {
+      "filename": "Gnetum-4.5.3+26.2-fabric.jar",
+      "name": "Gnetum-4.5.3+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 89.5,
+      "status": "active"
+    },
+    {
+      "filename": "IAS-9.0.7+26.2-fabric.jar",
+      "name": "IAS-9.0.7+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 303.0,
+      "status": "active"
+    },
+    {
+      "filename": "Iceberg-26.2-fabric-1.4.2.1.jar",
+      "name": "Iceberg-26.2-1.4.2.1",
+      "category": "Core & Libraries",
+      "size_kb": 351.6,
+      "status": "active"
+    },
+    {
+      "filename": "ImmediatelyFast-Fabric-1.16.3+26.2.jar",
+      "name": "ImmediatelyFast-Fabric-1.16.3+26.2",
+      "category": "Optimization",
+      "size_kb": 90.4,
+      "status": "active"
+    },
+    {
+      "filename": "InGameAccountSwitcher-Forge-1.8-8.0.1.jar",
+      "name": "InGameAccountSwitcher-Forge-1.8-8.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 186.6,
+      "status": "active"
+    },
+    {
+      "filename": "InventoryProfilesNext-fabric-26.2-2.3.6.jar",
+      "name": "InventoryProfilesNext-26.2-2.3.6",
+      "category": "Gameplay & Utility",
+      "size_kb": 1421.9,
+      "status": "active"
+    },
+    {
+      "filename": "IrisSearch-1.6.0-fabric.jar",
+      "name": "IrisSearch-1.6.0",
+      "category": "Visuals & Shaders",
+      "size_kb": 218.4,
+      "status": "active"
+    },
+    {
+      "filename": "ItemPhysic_FABRIC_v1.8.15_mc26.2.jar",
+      "name": "ItemPhysic_FABRIC_v1.8.15",
+      "category": "Gameplay & Utility",
+      "size_kb": 60.1,
+      "status": "active"
+    },
+    {
+      "filename": "Ixeris-4.6.5+26.2-fabric.jar",
+      "name": "Ixeris-4.6.5+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 743.7,
+      "status": "active"
+    },
+    {
+      "filename": "Jade-mc26.2-Fabric-26.2.11.jar",
+      "name": "Jade-mc26.2-Fabric-26.2.11",
+      "category": "Gameplay & Utility",
+      "size_kb": 1019.3,
+      "status": "active"
+    },
+    {
+      "filename": "JustEnoughProfessions-fabric-26.2-12.0.0.jar",
+      "name": "JustEnoughProfessions-26.2-12.0.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 25.0,
+      "status": "active"
+    },
+    {
+      "filename": "JustEnoughResources-Fabric-26.2-1.11.0.43.jar",
+      "name": "JustEnoughResources-Fabric-26.2-1.11.0.43",
+      "category": "Gameplay & Utility",
+      "size_kb": 258.7,
+      "status": "active"
+    },
+    {
+      "filename": "Ksyxis-1.4.3.jar",
+      "name": "Ksyxis-1.4.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 26.3,
+      "status": "active"
+    },
+    {
+      "filename": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 40.9,
+      "status": "active"
+    },
+    {
+      "filename": "MaxHealthFix-fabric-MC26.2-26.2.0.1.jar",
+      "name": "MaxHealthFix-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 18.4,
+      "status": "active"
+    },
+    {
+      "filename": "MoogsEndStructures-1.21-2.0.3.jar",
+      "name": "MoogsEndStructures-1.21-2.0.3",
+      "category": "World Generation",
+      "size_kb": 1181.9,
+      "status": "active"
+    },
+    {
+      "filename": "MoogsStructureLib-fabric-26.2-3.1.1.jar",
+      "name": "MoogsStructureLib-26.2-3.1.1",
+      "category": "World Generation",
+      "size_kb": 398.9,
+      "status": "active"
+    },
+    {
+      "filename": "MoogsVoyagerStructures-1.21-5.0.11.jar",
+      "name": "MoogsVoyagerStructures-1.21-5.0.11",
+      "category": "World Generation",
+      "size_kb": 1874.5,
+      "status": "active"
+    },
+    {
+      "filename": "MouseTweaks-fabric-mc26.2-2.31.jar",
+      "name": "MouseTweaks-mc26.2-2.31",
+      "category": "Gameplay & Utility",
+      "size_kb": 74.1,
+      "status": "active"
+    },
+    {
+      "filename": "NaturesCompass-26.2-2.5.1-fabric.jar",
+      "name": "NaturesCompass-26.2-2.5.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 227.2,
+      "status": "active"
+    },
+    {
+      "filename": "Nyctography-fabric-MC26.2-26.2.0.1.jar",
+      "name": "Nyctography-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 56.7,
+      "status": "active"
+    },
+    {
+      "filename": "OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "OverflowingBars-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 85.3,
+      "status": "active"
+    },
+    {
+      "filename": "PacketFixer-fabric-3.3.6.jar",
+      "name": "PacketFixer-3.3.6",
+      "category": "Gameplay & Utility",
+      "size_kb": 30.4,
+      "status": "active"
+    },
+    {
+      "filename": "PickUpNotifier-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "PickUpNotifier-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 70.9,
+      "status": "active"
+    },
+    {
+      "filename": "PigPen-fabric-MC26.2-26.2.0.1.jar",
+      "name": "PigPen-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 45.5,
+      "status": "active"
+    },
+    {
+      "filename": "PlayerAnimationLibMerged-1.2.6+mc.26.2.jar",
+      "name": "PlayerAnimationLibMerged-1.2.6+mc.26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 409.9,
+      "status": "active"
+    },
+    {
+      "filename": "PresenceFootsteps-1.13.3+26.2.jar",
+      "name": "PresenceFootsteps-1.13.3+26.2",
+      "category": "Audio & Immersion",
+      "size_kb": 5614.4,
+      "status": "active"
+    },
+    {
+      "filename": "PrickleMC-fabric-MC26.2-26.2.0.3.jar",
+      "name": "PrickleMC-MC26.2-26.2.0.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 82.9,
+      "status": "active"
+    },
+    {
+      "filename": "PuzzlesLib-v26.2.3-mc26.2.x-Fabric.jar",
+      "name": "PuzzlesLib-v26.2.3-mc26.2.x-Fabric",
+      "category": "Core & Libraries",
+      "size_kb": 1118.6,
+      "status": "active"
+    },
+    {
+      "filename": "RebornCore-6.1.0.jar",
+      "name": "RebornCore-6.1.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 605.3,
+      "status": "active"
+    },
+    {
+      "filename": "ResourcePackOverrides-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "ResourcePackOverrides-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 56.3,
+      "status": "active"
+    },
+    {
+      "filename": "ResourcefulConfig-5.0.0.jar",
+      "name": "ResourcefulConfig-5.0.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 433.6,
+      "status": "active"
+    },
+    {
+      "filename": "ResourcefulLib-5.0.3.jar",
+      "name": "ResourcefulLib-5.0.3",
+      "category": "Core & Libraries",
+      "size_kb": 444.0,
+      "status": "active"
+    },
+    {
+      "filename": "Runelic-fabric-MC26.2-26.2.0.1.jar",
+      "name": "Runelic-MC26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 65.2,
+      "status": "active"
+    },
+    {
+      "filename": "SIR_Core-fabric-26.2.jar",
+      "name": "SIR_Core-26.2",
+      "category": "Core & Libraries",
+      "size_kb": 1931.5,
+      "status": "active"
+    },
+    {
+      "filename": "Saros-Player-Ragdoll-Fabric-26.2-2.0.5.jar",
+      "name": "Saros-Player-Ragdoll-Fabric-26.2-2.0.5",
+      "category": "Gameplay & Utility",
+      "size_kb": 7269.6,
+      "status": "active"
+    },
+    {
+      "filename": "ScalableLux-fabric-0.3.0-alpha.0.3-all.jar",
+      "name": "ScalableLux-0.3.0-alpha.0.3-all",
+      "category": "Optimization",
+      "size_kb": 188.5,
+      "status": "active"
+    },
+    {
+      "filename": "Searchables-fabric-26.2-1.0.1.jar",
+      "name": "Searchables-26.2-1.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 77.1,
+      "status": "active"
+    },
+    {
+      "filename": "SereneSeasons-fabric-26.2-26.1.2.0.4.jar",
+      "name": "SereneSeasons-26.2-26.1.2.0.4",
+      "category": "Gameplay & Utility",
+      "size_kb": 401.6,
+      "status": "active"
+    },
+    {
+      "filename": "ShoulderSurfing-Fabric-26.2-5.0.7.jar",
+      "name": "ShoulderSurfing-Fabric-26.2-5.0.7",
+      "category": "Gameplay & Utility",
+      "size_kb": 335.7,
+      "status": "active"
+    },
+    {
+      "filename": "Structory_26.2_v1.3.7.jar",
+      "name": "Structory_26.2_v1.3.7",
+      "category": "World Generation",
+      "size_kb": 1231.8,
+      "status": "active"
+    },
+    {
+      "filename": "Structory_Towers_26.2_v1.0.17.jar",
+      "name": "Structory_Towers_26.2_v1.0.17",
+      "category": "World Generation",
+      "size_kb": 480.0,
+      "status": "active"
+    },
+    {
+      "filename": "TerraBlender-fabric-26.2-26.2.0.0.2.jar",
+      "name": "TerraBlender-26.2-26.2.0.0.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 349.1,
+      "status": "active"
+    },
+    {
+      "filename": "Terralith_26.2_v2.6.4.jar",
+      "name": "Terralith_26.2_v2.6.4",
+      "category": "World Generation",
+      "size_kb": 2905.1,
+      "status": "active"
+    },
+    {
+      "filename": "TradingPost-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "TradingPost-v26.2.0-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 100.1,
+      "status": "active"
+    },
+    {
+      "filename": "UniLib-1.2.1+26.2-fabric.jar",
+      "name": "UniLib-1.2.1+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1687.8,
+      "status": "active"
+    },
+    {
+      "filename": "VisualWorkbench-v26.2.1-mc26.2.x-Fabric.jar",
+      "name": "VisualWorkbench-v26.2.1-mc26.2.x-Fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 65.9,
+      "status": "active"
+    },
+    {
+      "filename": "adhooks-26.2.0.0-fabric-build.0068.jar",
+      "name": "adhooks-26.2.0.0-build.0068",
+      "category": "Gameplay & Utility",
+      "size_kb": 136.5,
+      "status": "active"
+    },
+    {
+      "filename": "adlods-26.2.0.2-fabric-build.0134.jar",
+      "name": "adlods-26.2.0.2-build.0134",
+      "category": "Gameplay & Utility",
+      "size_kb": 242.6,
+      "status": "active"
+    },
+    {
+      "filename": "almanac-fabric-26.2-1.26.7.3.jar",
+      "name": "almanac-26.2-1.26.7.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 1005.0,
+      "status": "active"
+    },
+    {
+      "filename": "alternate-current-mc26.2-1.9.0.jar",
+      "name": "alternate-current-mc26.2-1.9.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.7,
+      "status": "active"
+    },
+    {
+      "filename": "appleskin-fabric-mc26.2-3.0.10.jar",
+      "name": "appleskin-mc26.2-3.0.10",
+      "category": "Gameplay & Utility",
+      "size_kb": 177.4,
+      "status": "active"
+    },
+    {
+      "filename": "architectury-fabric-21.0.7.jar",
+      "name": "architectury-21.0.7",
+      "category": "Core & Libraries",
+      "size_kb": 573.3,
+      "status": "active"
+    },
+    {
+      "filename": "asynclogger-2.2.2+26.1.2-fabric.jar",
+      "name": "asynclogger-2.2.2+26.1.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 570.5,
+      "status": "active"
+    },
+    {
+      "filename": "atmospherics-2.6.6-mc-26.2.jar",
+      "name": "atmospherics-2.6.6-mc-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 3992.9,
+      "status": "active"
+    },
+    {
+      "filename": "audiothrottle-1.0.0-26.2.jar",
+      "name": "audiothrottle-1.0.0-26.2",
+      "category": "Audio & Immersion",
+      "size_kb": 7.2,
+      "status": "active"
+    },
+    {
+      "filename": "baguettelib-26.2-Fabric-2.0.4.jar",
+      "name": "baguettelib-26.2-Fabric-2.0.4",
+      "category": "Gameplay & Utility",
+      "size_kb": 99.5,
+      "status": "active"
+    },
+    {
+      "filename": "balm-fabric-26.2-26.2.0.6.jar",
+      "name": "balm-26.2-26.2.0.6",
+      "category": "Core & Libraries",
+      "size_kb": 1168.6,
+      "status": "active"
+    },
+    {
+      "filename": "bclib-26.201.2.jar",
+      "name": "bclib-26.201.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1264.1,
+      "status": "active"
+    },
+    {
+      "filename": "better-compatability-checker-fabric-26.2.0.1.jar",
+      "name": "better-compatability-checker-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 30.0,
+      "status": "active"
+    },
+    {
+      "filename": "better-nether-26.201.2.jar",
+      "name": "better-nether-26.201.2",
+      "category": "World Generation",
+      "size_kb": 27222.3,
+      "status": "active"
+    },
+    {
+      "filename": "better-villager-animations-fabric-26.2.jar",
+      "name": "better-villager-animations-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1715.5,
+      "status": "active"
+    },
+    {
+      "filename": "betterarcheology-fabric-26.2-1.3.8.jar",
+      "name": "betterarcheology-26.2-1.3.8",
+      "category": "Gameplay & Utility",
+      "size_kb": 3043.3,
+      "status": "active"
+    },
+    {
+      "filename": "bettercombat-fabric-3.2.2+26.2.jar",
+      "name": "bettercombat-3.2.2+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 908.8,
+      "status": "active"
+    },
+    {
+      "filename": "betterfpsdist-fabric-26.2-6.2.jar",
+      "name": "betterfpsdist-26.2-6.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 19.4,
+      "status": "active"
+    },
+    {
+      "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.43.jar",
+      "name": "c2me-mc26.2-0.4.2-alpha.0.43",
+      "category": "Optimization",
+      "size_kb": 3743.5,
+      "status": "active"
+    },
+    {
+      "filename": "carryon-fabric-26.2-2.11.0.jar",
+      "name": "carryon-26.2-2.11.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 370.8,
+      "status": "active"
+    },
+    {
+      "filename": "catalogue-fabric-26.2-1.12.3.jar",
+      "name": "catalogue-26.2-1.12.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 309.1,
+      "status": "active"
+    },
+    {
+      "filename": "chat_heads-1.2.8-fabric-26.1.jar",
+      "name": "chat_heads-1.2.8-26.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 92.4,
+      "status": "active"
+    },
+    {
+      "filename": "chatanimation-fabric-1.3.0+mc26.2.jar",
+      "name": "chatanimation-1.3.0+mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 388.6,
+      "status": "active"
+    },
+    {
+      "filename": "cherishedworlds-fabric-17.0.0+26.2.jar",
+      "name": "cherishedworlds-17.0.0+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 577.0,
+      "status": "active"
+    },
+    {
+      "filename": "clickadv-fabric-26.2-3.9.jar",
+      "name": "clickadv-26.2-3.9",
+      "category": "Gameplay & Utility",
+      "size_kb": 21.6,
+      "status": "active"
+    },
+    {
+      "filename": "clientcrafting-fabric-26.1-2.1.jar",
+      "name": "clientcrafting-26.1-2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 11.2,
+      "status": "active"
+    },
+    {
+      "filename": "cloth-config-26.2.155.jar",
+      "name": "cloth-config-26.2.155",
+      "category": "Core & Libraries",
+      "size_kb": 1108.6,
+      "status": "active"
+    },
+    {
+      "filename": "collective-26.2.0-8.39.jar",
+      "name": "collective-26.2.0-8.39",
+      "category": "Core & Libraries",
+      "size_kb": 1059.0,
+      "status": "active"
+    },
+    {
+      "filename": "comforts-fabric-16.0.0+26.2.jar",
+      "name": "comforts-16.0.0+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 940.7,
+      "status": "active"
+    },
+    {
+      "filename": "configurable-3.5.2+26.2-fabric.jar",
+      "name": "configurable-3.5.2+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 530.9,
+      "status": "active"
+    },
+    {
+      "filename": "connectedglass-1.1.14-fabric-mc26.2.jar",
+      "name": "connectedglass-1.1.14-mc26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 836.9,
+      "status": "active"
+    },
+    {
+      "filename": "continuity-3.0.1+26.2.jar",
+      "name": "continuity-3.0.1+26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 1015.6,
+      "status": "active"
+    },
+    {
+      "filename": "cristellib-fabric-26.2-3.1.10.jar",
+      "name": "cristellib-26.2-3.1.10",
+      "category": "Gameplay & Utility",
+      "size_kb": 573.5,
+      "status": "active"
+    },
+    {
+      "filename": "croptopia-fabric-26.2-4.3.1.jar",
+      "name": "croptopia-26.2-4.3.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 2481.4,
+      "status": "active"
+    },
+    {
+      "filename": "cupboard-fabric-26.2-4.0.jar",
+      "name": "cupboard-26.2-4.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 37.0,
+      "status": "active"
+    },
+    {
+      "filename": "cyclopscore-26.2-fabric-1.30.0-1066.jar",
+      "name": "cyclopscore-26.2-1.30.0-1066",
+      "category": "Gameplay & Utility",
+      "size_kb": 565.1,
+      "status": "active"
+    },
+    {
+      "filename": "divein-0.1.17-26.2.jar",
+      "name": "divein-0.1.17-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 109.1,
+      "status": "active"
+    },
+    {
+      "filename": "doubledoors-26.2.0-7.2.jar",
+      "name": "doubledoors-26.2.0-7.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 76.4,
+      "status": "active"
+    },
+    {
+      "filename": "dynamic-fps-3.11.9+minecraft-26.2.0-fabric.jar",
+      "name": "dynamic-fps-3.11.9+minecraft-26.2.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 184.3,
+      "status": "active"
+    },
+    {
+      "filename": "e4mc-fabric-6.2.1.jar",
+      "name": "e4mc-6.2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 646.0,
+      "status": "active"
+    },
+    {
+      "filename": "eating-animation-fork-26.2+3.0.0.jar",
+      "name": "eating-animation-fork-26.2+3.0.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 1070.8,
+      "status": "active"
+    },
+    {
+      "filename": "elevatorid-fabric-26.2-1.16.4.jar",
+      "name": "elevatorid-26.2-1.16.4",
+      "category": "Gameplay & Utility",
+      "size_kb": 761.7,
+      "status": "active"
+    },
+    {
+      "filename": "elytra_physics-fabric-2.6.2_mc26.2.jar",
+      "name": "elytra_physics-2.6.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 471.0,
+      "status": "active"
+    },
+    {
+      "filename": "entity_model_features-3.2.6-26.2-fabric.jar",
+      "name": "entity_model_features-3.2.6-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 573.6,
+      "status": "active"
+    },
+    {
+      "filename": "entity_texture_features-7.1.1-26.2-fabric.jar",
+      "name": "entity_texture_features-7.1.1-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 744.3,
+      "status": "active"
+    },
+    {
+      "filename": "epherolib-fabric-26.2-1.3.0.jar",
+      "name": "epherolib-26.2-1.3.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 726.7,
+      "status": "active"
+    },
+    {
+      "filename": "fabric-api-0.158.0+26.2.jar",
+      "name": "fabric-api-0.158.0+26.2",
+      "category": "Core & Libraries",
+      "size_kb": 2476.3,
+      "status": "active"
+    },
+    {
+      "filename": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "name": "fabric-language-kotlin-1.13.13+kotlin.2.4.10",
+      "category": "Gameplay & Utility",
+      "size_kb": 7887.1,
+      "status": "active"
+    },
+    {
+      "filename": "fadeless-2.0.8-26.2.jar",
+      "name": "fadeless-2.0.8-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 69.1,
+      "status": "active"
+    },
+    {
+      "filename": "fallingleaves-2.0.7+26.1.jar",
+      "name": "fallingleaves-2.0.7+26.1",
+      "category": "Visuals & Shaders",
+      "size_kb": 178.2,
+      "status": "active"
+    },
+    {
+      "filename": "fancy-door-anim-1.4.1.jar",
+      "name": "fancy-door-anim-1.4.1",
+      "category": "Visuals & Shaders",
+      "size_kb": 182.6,
+      "status": "active"
+    },
+    {
+      "filename": "fancymenu_fabric_3.9.10_MC_26.2.jar",
+      "name": "fancymenu_fabric_3.9.10_MC_26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 25669.3,
+      "status": "active"
+    },
+    {
+      "filename": "farmingforblockheads-fabric-26.2-26.2.0.3.jar",
+      "name": "farmingforblockheads-26.2-26.2.0.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 1135.7,
+      "status": "active"
+    },
+    {
+      "filename": "fastasyncworldsave-fabric-26.1-2.6.jar",
+      "name": "fastasyncworldsave-26.1-2.6",
+      "category": "Gameplay & Utility",
+      "size_kb": 8.7,
+      "status": "active"
+    },
+    {
+      "filename": "fastquit-3.1.5+mc26.2.jar",
+      "name": "fastquit-3.1.5+mc26.2",
+      "category": "Optimization",
+      "size_kb": 61.8,
+      "status": "active"
+    },
+    {
+      "filename": "ferritecore-9.0.0-fabric.jar",
+      "name": "ferritecore-9.0.0",
+      "category": "Optimization",
+      "size_kb": 71.0,
+      "status": "active"
+    },
+    {
+      "filename": "firstperson-fabric-2.7.2-mc26.2.jar",
+      "name": "firstperson-2.7.2-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1563.3,
+      "status": "active"
+    },
+    {
+      "filename": "fism+26.2-1.0.4.jar",
+      "name": "fism+26.2-1.0.4",
+      "category": "Gameplay & Utility",
+      "size_kb": 22.7,
+      "status": "active"
+    },
+    {
+      "filename": "forgeendertech-26.2.0.1-fabric-build.0084.jar",
+      "name": "forgeendertech-26.2.0.1-build.0084",
+      "category": "Gameplay & Utility",
+      "size_kb": 617.9,
+      "status": "active"
+    },
+    {
+      "filename": "formations-1.0.4-fabric-mc26.2.jar",
+      "name": "formations-1.0.4-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 285.3,
+      "status": "active"
+    },
+    {
+      "filename": "framework-fabric-26.2-0.13.26.jar",
+      "name": "framework-26.2-0.13.26",
+      "category": "Gameplay & Utility",
+      "size_kb": 1762.2,
+      "status": "active"
+    },
+    {
+      "filename": "fusion-1.3.13-fabric-mc26.2.jar",
+      "name": "fusion-1.3.13-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 929.1,
+      "status": "active"
+    },
+    {
+      "filename": "fwa+26.2-1.2.36.jar",
+      "name": "fwa+26.2-1.2.36",
+      "category": "Gameplay & Utility",
+      "size_kb": 199.2,
+      "status": "active"
+    },
+    {
+      "filename": "fzzy_config-0.7.6+26.2.jar",
+      "name": "fzzy_config-0.7.6+26.2",
+      "category": "Core & Libraries",
+      "size_kb": 2317.7,
+      "status": "active"
+    },
+    {
+      "filename": "geckolib-fabric-26.2-5.5.3.jar",
+      "name": "geckolib-26.2-5.5.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 678.7,
+      "status": "active"
+    },
+    {
+      "filename": "globalpacks-fabric-26.2-26.2.0.jar",
+      "name": "globalpacks-26.2-26.2.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 385.7,
+      "status": "active"
+    },
+    {
+      "filename": "goblintraders-fabric-26.2-1.12.0.jar",
+      "name": "goblintraders-26.2-1.12.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 530.4,
+      "status": "active"
+    },
+    {
+      "filename": "gpumemleakfix-fabric-26.2-1.9.jar",
+      "name": "gpumemleakfix-26.2-1.9",
+      "category": "Gameplay & Utility",
+      "size_kb": 6.1,
+      "status": "active"
+    },
+    {
+      "filename": "greenlight-fabric-0.1.0+mc26.2.jar",
+      "name": "greenlight-0.1.0+mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 26.7,
+      "status": "active"
+    },
+    {
+      "filename": "immersive_optimization-fabric-26.2-0.2.0.jar",
+      "name": "immersive_optimization-26.2-0.2.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 54.9,
+      "status": "active"
+    },
+    {
+      "filename": "improved-village-placement-1.2.0-fabric-26.2.jar",
+      "name": "improved-village-placement-1.2.0-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 131.1,
+      "status": "active"
+    },
+    {
+      "filename": "integrated_api-fabric-26.2-1.8.0.jar",
+      "name": "integrated_api-26.2-1.8.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 393.4,
+      "status": "active"
+    },
+    {
+      "filename": "inventoryhud.fabric.26.2-3.4.32.jar",
+      "name": "inventoryhud.fabric.26.2-3.4.32",
+      "category": "Gameplay & Utility",
+      "size_kb": 234.3,
+      "status": "active"
+    },
+    {
+      "filename": "iris-fabric-1.11.2+mc26.2.jar",
+      "name": "iris-1.11.2+mc26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 2754.7,
+      "status": "active"
+    },
+    {
+      "filename": "iris_shader_folder-1.4.1-fabric.jar",
+      "name": "iris_shader_folder-1.4.1",
+      "category": "Visuals & Shaders",
+      "size_kb": 211.0,
+      "status": "active"
+    },
+    {
+      "filename": "jamlib-fabric-2.3.1+26.2.x.jar",
+      "name": "jamlib-2.3.1+26.2.x",
+      "category": "Gameplay & Utility",
+      "size_kb": 258.9,
+      "status": "active"
+    },
+    {
+      "filename": "jei-26.2-fabric-30.25.0.177.jar",
+      "name": "jei-26.2-30.25.0.177",
+      "category": "Gameplay & Utility",
+      "size_kb": 1767.4,
+      "status": "active"
+    },
+    {
+      "filename": "journeymap-fabric-26.2-6.0.5.jar",
+      "name": "journeymap-26.2-6.0.5",
+      "category": "Gameplay & Utility",
+      "size_kb": 4225.3,
+      "status": "active"
+    },
+    {
+      "filename": "justzoom_fabric_2.1.5_MC_26.2.jar",
+      "name": "justzoom_fabric_2.1.5_MC_26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 239.9,
+      "status": "active"
+    },
+    {
+      "filename": "kleeslabs-fabric-26.2-26.2.0.1.jar",
+      "name": "kleeslabs-26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 285.4,
+      "status": "active"
+    },
+    {
+      "filename": "konkrete_fabric_1.11.1_MC_26.2.jar",
+      "name": "konkrete_fabric_1.11.1_MC_26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 747.1,
+      "status": "active"
+    },
+    {
+      "filename": "krypton-0.3.1.jar",
+      "name": "krypton-0.3.1",
+      "category": "Optimization",
+      "size_kb": 262.5,
+      "status": "active"
+    },
+    {
+      "filename": "lambdynamiclights-4.12.3+26.2.jar",
+      "name": "lambdynamiclights-4.12.3+26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 1312.5,
+      "status": "active"
+    },
+    {
+      "filename": "letmedespawn-fabric-26.2-1.26.7.3.jar",
+      "name": "letmedespawn-26.2-1.26.7.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 22.5,
+      "status": "active"
+    },
+    {
+      "filename": "libIPN-fabric-26.2-6.8.3.jar",
+      "name": "libIPN-26.2-6.8.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 622.9,
+      "status": "active"
+    },
+    {
+      "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+      "name": "lithium-0.25.3+mc26.2",
+      "category": "Optimization",
+      "size_kb": 891.5,
+      "status": "active"
+    },
+    {
+      "filename": "lithostitched-1.8.0+beta3-fabric-26.2.jar",
+      "name": "lithostitched-1.8.0+beta3-26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 964.9,
+      "status": "active"
+    },
+    {
+      "filename": "lootintegrations-fabric-26.1-4.8.jar",
+      "name": "lootintegrations-26.1-4.8",
+      "category": "Gameplay & Utility",
+      "size_kb": 41.5,
+      "status": "active"
+    },
+    {
+      "filename": "ly-fishing-expansion-1.3.2-[26.2].jar",
+      "name": "ly-fishing-expansion-1.3.2-[26.2]",
+      "category": "Gameplay & Utility",
+      "size_kb": 360.0,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-bridges-3.1.2-mc26.2fabric.jar",
+      "name": "mcw-bridges-3.1.2-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 703.0,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-doors-1.1.5-mc26.2fabric.jar",
+      "name": "mcw-doors-1.1.5-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 1417.3,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-fences-1.2.1-mc26.2fabric.jar",
+      "name": "mcw-fences-1.2.1-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 688.6,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-furniture-3.4.2-mc26.2fabric.jar",
+      "name": "mcw-furniture-3.4.2-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 2331.0,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-lights-1.1.5-mc26.2fabric.jar",
+      "name": "mcw-lights-1.1.5-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 533.2,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-paths-1.1.1-mc26.2fabric.jar",
+      "name": "mcw-paths-1.1.1-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 796.1,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-roofs-2.3.3-mc26.2fabric.jar",
+      "name": "mcw-roofs-2.3.3-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 1880.0,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-stairs-1.0.2-mc26.2fabric.jar",
+      "name": "mcw-stairs-1.0.2-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 554.9,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-trapdoors-1.1.5-mc26.2fabric.jar",
+      "name": "mcw-trapdoors-1.1.5-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 626.2,
+      "status": "active"
+    },
+    {
+      "filename": "mcw-windows-2.4.2-mc26.2fabric.jar",
+      "name": "mcw-windows-2.4.2-mc26.2fabric",
+      "category": "Gameplay & Utility",
+      "size_kb": 1369.4,
+      "status": "active"
+    },
+    {
+      "filename": "melody_fabric_1.0.17_MC_26.2.jar",
+      "name": "melody_fabric_1.0.17_MC_26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 222.2,
+      "status": "active"
+    },
+    {
+      "filename": "memorysettings-fabric-26.2-6.0.jar",
+      "name": "memorysettings-26.2-6.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 18.2,
+      "status": "active"
+    },
+    {
+      "filename": "midnightlib-fabric-1.9.3+26.2.jar",
+      "name": "midnightlib-1.9.3+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 58.6,
+      "status": "active"
+    },
+    {
+      "filename": "modernfix-5.27.19-build.1.jar",
+      "name": "modernfix-5.27.19-build.1",
+      "category": "Optimization",
+      "size_kb": 1146.4,
+      "status": "active"
+    },
+    {
+      "filename": "modmenu-20.0.1.jar",
+      "name": "modmenu-20.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 599.6,
+      "status": "active"
+    },
+    {
+      "filename": "modonomicon-26.2-fabric-2.4.0.jar",
+      "name": "modonomicon-26.2-2.4.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 2979.1,
+      "status": "active"
+    },
+    {
+      "filename": "moreoverlays-1.24.4-mc26.2-fabric.jar",
+      "name": "moreoverlays-1.24.4-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 142.8,
+      "status": "active"
+    },
+    {
+      "filename": "mru-1.0.33+26.2-fabric.jar",
+      "name": "mru-1.0.33+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 119.9,
+      "status": "active"
+    },
+    {
+      "filename": "nanite-library-fabric-26.2.0.1.jar",
+      "name": "nanite-library-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 123.0,
+      "status": "active"
+    },
+    {
+      "filename": "neruina-3.3.3+26.2-fabric.jar",
+      "name": "neruina-3.3.3+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1768.9,
+      "status": "active"
+    },
+    {
+      "filename": "netherportalfix-fabric-26.2-26.2.0.1.jar",
+      "name": "netherportalfix-26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 210.4,
+      "status": "active"
+    },
+    {
+      "filename": "ohthetreesyoullgrow-fabric-26.2-11.0.1.jar",
+      "name": "ohthetreesyoullgrow-26.2-11.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 144.4,
+      "status": "active"
+    },
+    {
+      "filename": "particle_core-0.3.3+26.2.jar",
+      "name": "particle_core-0.3.3+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 137.9,
+      "status": "active"
+    },
+    {
+      "filename": "particular-26.2-Fabric-1.5.7.jar",
+      "name": "particular-26.2-Fabric-1.5.7",
+      "category": "Gameplay & Utility",
+      "size_kb": 281.2,
+      "status": "active"
+    },
+    {
+      "filename": "physics-mod-3.2.0-mc-26.2-fabric.jar",
+      "name": "physics-mod-3.2.0-mc-26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 87383.7,
+      "status": "active"
+    },
+    {
+      "filename": "placeholder-api-3.1.0-beta.1+26.2.jar",
+      "name": "placeholder-api-3.1.0-beta.1+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 249.0,
+      "status": "active"
+    },
+    {
+      "filename": "polylib-fabric-26.2-2.0.10.jar",
+      "name": "polylib-26.2-2.0.10",
+      "category": "Gameplay & Utility",
+      "size_kb": 1381.9,
+      "status": "active"
+    },
+    {
+      "filename": "prettybeaches-fabric-26.2-26.2.0.1.jar",
+      "name": "prettybeaches-26.2-26.2.0.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 163.1,
+      "status": "active"
+    },
+    {
+      "filename": "quantified api-omni-2.2.0.jar",
+      "name": "quantified api-omni-2.2.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 9339.2,
+      "status": "active"
+    },
+    {
+      "filename": "ragdolls-1.2.3.jar",
+      "name": "ragdolls-1.2.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 1860.7,
+      "status": "active"
+    },
+    {
+      "filename": "realistic-rowing-1.2.1.jar",
+      "name": "realistic-rowing-1.2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 61.9,
+      "status": "active"
+    },
+    {
+      "filename": "realisticbees-26.2.0-4.3.jar",
+      "name": "realisticbees-26.2.0-4.3",
+      "category": "Gameplay & Utility",
+      "size_kb": 65.7,
+      "status": "active"
+    },
+    {
+      "filename": "realisticsunburn-fabric-26.2-1.3.1.jar",
+      "name": "realisticsunburn-26.2-1.3.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 16.1,
+      "status": "active"
+    },
+    {
+      "filename": "rechiseled-1.2.5-fabric-mc26.2.jar",
+      "name": "rechiseled-1.2.5-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 11977.6,
+      "status": "active"
+    },
+    {
+      "filename": "reeses-sodium-options-fabric-2.2.3+mc26.2.jar",
+      "name": "reeses-sodium-options-2.2.3+mc26.2",
+      "category": "Optimization",
+      "size_kb": 253.4,
+      "status": "active"
+    },
+    {
+      "filename": "reflex-fabric-1.0.4+26.2.jar",
+      "name": "reflex-1.0.4+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 20.6,
+      "status": "active"
+    },
+    {
+      "filename": "refurbished_furniture-fabric-26.2-1.0.25.jar",
+      "name": "refurbished_furniture-26.2-1.0.25",
+      "category": "Gameplay & Utility",
+      "size_kb": 7094.2,
+      "status": "active"
+    },
+    {
+      "filename": "rightclickharvest-fabric-4.6.2+26.2.x.jar",
+      "name": "rightclickharvest-4.6.2+26.2.x",
+      "category": "Gameplay & Utility",
+      "size_kb": 272.6,
+      "status": "active"
+    },
+    {
+      "filename": "rsls-1.2.2.jar",
+      "name": "rsls-1.2.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.1,
+      "status": "active"
+    },
+    {
+      "filename": "shatterlib-fabric-0.7.0-beta.1+26.2.jar",
+      "name": "shatterlib-0.7.0-beta.1+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 406.4,
+      "status": "active"
+    },
+    {
+      "filename": "shogi-fabric-26.2-26.2.0.5.jar",
+      "name": "shogi-26.2-26.2.0.5",
+      "category": "Gameplay & Utility",
+      "size_kb": 442.1,
+      "status": "active"
+    },
+    {
+      "filename": "shulkerboxtooltip-fabric-5.4.0+26.2.jar",
+      "name": "shulkerboxtooltip-5.4.0+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 409.3,
+      "status": "active"
+    },
+    {
+      "filename": "simple_snowy_fix-fabric-26.1-26.2-2.2.1.jar",
+      "name": "simple_snowy_fix-26.1-26.2-2.2.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 116.7,
+      "status": "active"
+    },
+    {
+      "filename": "simplemagnets-1.1.12-fabric-mc26.2.jar",
+      "name": "simplemagnets-1.1.12-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 155.3,
+      "status": "active"
+    },
+    {
+      "filename": "skinlayers3d-fabric-1.11.2-mc26.2.jar",
+      "name": "skinlayers3d-1.11.2-mc26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 1920.3,
+      "status": "active"
+    },
+    {
+      "filename": "snowundertrees-fabric-26.1.2-1.6.1.jar",
+      "name": "snowundertrees-26.1.2-1.6.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 246.0,
+      "status": "active"
+    },
+    {
+      "filename": "sodium-extra-fabric-0.9.3+mc26.2.jar",
+      "name": "sodium-extra-0.9.3+mc26.2",
+      "category": "Optimization",
+      "size_kb": 471.3,
+      "status": "active"
+    },
+    {
+      "filename": "sodium-fabric-0.9.1+mc26.2.jar",
+      "name": "sodium-0.9.1+mc26.2",
+      "category": "Optimization",
+      "size_kb": 1791.4,
+      "status": "active"
+    },
+    {
+      "filename": "sodium-shadowy-path-blocks-fabric-7.0.0.jar",
+      "name": "sodium-shadowy-path-blocks-7.0.0",
+      "category": "Optimization",
+      "size_kb": 66.1,
+      "status": "active"
+    },
+    {
+      "filename": "sound-physics-remastered-fabric-1.5.1+26.2.jar",
+      "name": "sound-physics-remastered-1.5.1+26.2",
+      "category": "Audio & Immersion",
+      "size_kb": 196.9,
+      "status": "active"
+    },
+    {
+      "filename": "sounds-2.5.1+edge+26.2-fabric.jar",
+      "name": "sounds-2.5.1+edge+26.2",
+      "category": "Audio & Immersion",
+      "size_kb": 7949.4,
+      "status": "active"
+    },
+    {
+      "filename": "spark-1.10.173-fabric.jar",
+      "name": "spark-1.10.173",
+      "category": "Gameplay & Utility",
+      "size_kb": 3796.1,
+      "status": "active"
+    },
+    {
+      "filename": "spawn-animations-compats-16.0.jar",
+      "name": "spawn-animations-compats-16.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 76.5,
+      "status": "active"
+    },
+    {
+      "filename": "spawnanimations-v1.11.5-mc1.17-26.2.9-mod.jar",
+      "name": "spawnanimations-v1.11.5-mc1.17-26.2.9-mod",
+      "category": "Visuals & Shaders",
+      "size_kb": 220.9,
+      "status": "active"
+    },
+    {
+      "filename": "starterkit-26.2.0-8.1.jar",
+      "name": "starterkit-26.2.0-8.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 272.1,
+      "status": "active"
+    },
+    {
+      "filename": "structureessentials-fabric-26.2-5.0.jar",
+      "name": "structureessentials-26.2-5.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 58.3,
+      "status": "active"
+    },
+    {
+      "filename": "structurify-fabric-2.0.33+mc26.2.jar",
+      "name": "structurify-2.0.33+mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 469.9,
+      "status": "active"
+    },
+    {
+      "filename": "supermartijn642configlib-1.1.8-fabric-mc26.2.jar",
+      "name": "supermartijn642configlib-1.1.8-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 201.3,
+      "status": "active"
+    },
+    {
+      "filename": "supermartijn642corelib-1.1.24-fabric-mc26.2.jar",
+      "name": "supermartijn642corelib-1.1.24-mc26.2",
+      "category": "Core & Libraries",
+      "size_kb": 670.4,
+      "status": "active"
+    },
+    {
+      "filename": "sway-2.4.3-fabric+26.2.jar",
+      "name": "sway-2.4.3+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 73.5,
+      "status": "active"
+    },
+    {
+      "filename": "t_and_t-fabric-neoforge-1.13.11.jar",
+      "name": "t_and_t-neoforge-1.13.11",
+      "category": "Gameplay & Utility",
+      "size_kb": 3483.2,
+      "status": "active"
+    },
+    {
+      "filename": "trashcans-1.1.0-fabric-mc26.2.jar",
+      "name": "trashcans-1.1.0-mc26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 184.9,
+      "status": "active"
+    },
+    {
+      "filename": "trashslot-fabric-26.2-26.2.0.2.jar",
+      "name": "trashslot-26.2-26.2.0.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 145.1,
+      "status": "active"
+    },
+    {
+      "filename": "veinminer-client-fabric-2.12.0.jar",
+      "name": "veinminer-client-2.12.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 192.0,
+      "status": "active"
+    },
+    {
+      "filename": "veinminer-fabric-2.12.0.jar",
+      "name": "veinminer-2.12.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 510.5,
+      "status": "active"
+    },
+    {
+      "filename": "villagernames-26.2.0-8.5.jar",
+      "name": "villagernames-26.2.0-8.5",
+      "category": "Gameplay & Utility",
+      "size_kb": 78.3,
+      "status": "active"
+    },
+    {
+      "filename": "visuality-0.7.14+26.2.jar",
+      "name": "visuality-0.7.14+26.2",
+      "category": "Visuals & Shaders",
+      "size_kb": 79.2,
+      "status": "active"
+    },
+    {
+      "filename": "vmp-fabric-mc26.2-0.2.0+beta.7.236-all.jar",
+      "name": "vmp-mc26.2-0.2.0+beta.7.236-all",
+      "category": "Optimization",
+      "size_kb": 402.6,
+      "status": "active"
+    },
+    {
+      "filename": "voicechat-fabric-2.6.22+26.2.jar",
+      "name": "voicechat-2.6.22+26.2",
+      "category": "Audio & Immersion",
+      "size_kb": 5446.1,
+      "status": "active"
+    },
+    {
+      "filename": "watermedia-3.0.0.23.jar",
+      "name": "watermedia-3.0.0.23",
+      "category": "Gameplay & Utility",
+      "size_kb": 3540.5,
+      "status": "active"
+    },
+    {
+      "filename": "watermedia_binaries-3.0.0.6.jar",
+      "name": "watermedia_binaries-3.0.0.6",
+      "category": "Gameplay & Utility",
+      "size_kb": 140357.2,
+      "status": "active"
+    },
+    {
+      "filename": "waystones-fabric-26.2-26.2.0.9.jar",
+      "name": "waystones-26.2-26.2.0.9",
+      "category": "Gameplay & Utility",
+      "size_kb": 1185.5,
+      "status": "active"
+    },
+    {
+      "filename": "worldweaver-26.201.2.jar",
+      "name": "worldweaver-26.201.2",
+      "category": "World Generation",
+      "size_kb": 2868.2,
+      "status": "active"
+    },
+    {
+      "filename": "xptome-fabric-26.1.2-2.5.1.jar",
+      "name": "xptome-26.1.2-2.5.1",
+      "category": "Gameplay & Utility",
+      "size_kb": 39.4,
+      "status": "active"
+    },
+    {
+      "filename": "yeetusexperimentus-fabric-102.0.0.jar",
+      "name": "yeetusexperimentus-102.0.0",
+      "category": "Gameplay & Utility",
+      "size_kb": 552.6,
+      "status": "active"
+    },
+    {
+      "filename": "yet_another_config_lib_v3-3.9.5+26.2-fabric.jar",
+      "name": "yet_another_config_lib_v3-3.9.5+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 1095.2,
+      "status": "active"
+    },
+    {
+      "filename": "zfastnoise-1.0.40+26.2.jar",
+      "name": "zfastnoise-1.0.40+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 464.2,
+      "status": "active"
+    },
+    {
+      "filename": "zoomify-2.16.1+26.2.jar",
+      "name": "zoomify-2.16.1+26.2",
+      "category": "Gameplay & Utility",
+      "size_kb": 549.0,
+      "status": "active"
+    }
+  ]
+}
