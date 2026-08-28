@@ -63,25 +63,26 @@ flowchart TD
 
 ## 💻 2. Client Application Layer
 
-### 1. Dispatcher and Launcher mode
-- **Technology:** Python 3.14 + `pywebview` 6.2 + Tailwind CSS + Lucide Icons + Spring Physics.
+### 1. `SIR Launcher.exe` (Standalone Desktop Launcher Pro)
+- **Technology:** Python 3.13 + `pywebview` 6.2 + 20 Domain JavaScript Modules + Tailwind CSS + Lucide Icons + Spring Physics.
 - **Key Modules:**
-  - **Launchpad View:** 1-Click launch for Modern 26.2 (Fabric 1.21.4) and Legacy 1.8.9 (Forge/Paper PvP).
+  - **Launchpad View:** 1-Click launch for Modern 26.2 (Fabric) and Legacy 1.8.9 (Forge/Paper PvP) with native Direct JVM Launch Engine.
+  - **Cloud Self-Healing:** `InstanceService.heal_instance_if_needed()` validates instance integrity, auto-downloading missing jars or configs from Cloud CDN.
   - **Server Radar:** Live monitoring of 100+ public and custom multiplayer nodes with 3-state cycling toggle (`Fastest Ping` ➔ `Most Players` ➔ `Default Order`), ping telemetry, and 1-click join.
   - **3D Skin Studio & Capes Wardrobe:** Live 3D avatar viewport with angle rotation, Slim/Classic model switching, 8 creator presets, and 8 official Minecraft capes.
   - **Hardware & RAM Telemetry:** Real-time Win32 kernel telemetry reading CPU load, memory utilization, and dedicated GPU statistics.
   - **Content Managers:** Visual management for Mods, Shaders, Resource Packs, Worlds/Saves, and Game Logs.
-  - **Custom Animated Menus:** Solid obsidian dropdowns with smooth spring animations, click-outside auto-dismissal, and no shadow cropping.
 
-### 2. Installer & Repair mode
-- **Technology:** Standalone executable with multi-threaded extraction and elevated UAC privileges.
+### 2. `SIR Installer.exe` (Standalone Smart Auto-Healing Installer)
+- **Technology:** 16 MB standalone executable with cloud payload streaming and elevated UAC privileges.
 - **Features:**
-  - **Automated Hardware Rig Tuning:** Detects CPU core count, RAM capacity, and GPU vendor to auto-configure optimal memory allocation.
-  - **Power Governor:** User toggle between **Turbo Mode** (max speed decompression) and **Smooth / Eco Mode** (background I/O priority for 0-lag responsiveness).
+  - **Cloud CDN Downloader:** If run standalone without offline bundles, it streams modular archives (`payload_mods_26.2.zip`, `payload_mods_1.8.9.zip`, `payload_packs.zip`, `payload_shaders.zip`, `payload_configs.zip`) from GitHub Releases with live download speed (`MB/s`) and percentage tracking.
+  - **Anti-Compromise & Anti-Corruption Engine:** Structural CRC verification (`is_valid_zip`) quarantines damaged archives and auto-recovers clean copies.
+  - **Power Governor:** User toggle between **Turbo Mode** (all CPU threads) and **Smooth / Eco Mode** (background I/O priority for 0-lag responsiveness).
   - **Zero-Data Loss Deployer:** Non-destructive updates that preserve user save worlds, custom keybinds, and screenshot albums.
 
-### 3. Server Host mode
-- **Technology:** Native server manager with zero port-forwarding integration.
+### 3. `SIR Server Manager.exe` (Standalone Server Host & Tunnel Manager)
+- **Technology:** Native server manager with custom CyberSelect glassmorphic dropdowns and zero port-forwarding integration.
 - **Features:**
   - **Playit.gg Zero-Port Tunnel:** Public TCP tunnel automation allowing friends to join private servers without router configuration.
   - **Live Telemetry Gauges:** Real-time monitoring of tick rate (TPS: 20.0), connected players, and RAM consumption.

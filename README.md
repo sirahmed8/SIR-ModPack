@@ -21,8 +21,10 @@ The public desktop entrypoint is **`SIR ModPack.exe`**. It opens the requested i
 
 | Application | Binary / Portal | Description |
 | :--- | :--- | :--- |
-| **SIR ModPack dispatcher** | `SIR ModPack.exe` | One public EXE. Use `--mode launcher`, `--mode installer`, or `--mode server` for the three desktop modes. |
-| **SIR Web Platform** | `sir-modpack.web.app` | Next.js 16 portal with 29 prerendered static routes, bilingual RTL/LTR engine, modular architecture, and military-grade input validation. |
+| **SIR Launcher** | `SIR Launcher.exe` (14.1 MB) | Standalone desktop launcher with native direct JVM engine, 3D skin studio, and cloud self-healing profile integrity verification. |
+| **SIR Server Manager** | `SIR Server Manager.exe` (13.6 MB) | Dedicated multiplayer server manager with custom CyberSelect menus and Playit.gg zero-port public tunneling. |
+| **SIR Installer** | `SIR Installer.exe` (16.5 MB) | Autonomous auto-healing installer with cloud payload streaming and anti-corruption verification. |
+| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 portal with 29 prerendered static routes, bilingual RTL/LTR engine, modular architecture, and input validation. |
 
 ---
 
@@ -39,16 +41,16 @@ The public desktop entrypoint is **`SIR ModPack.exe`**. It opens the requested i
 
 ## ⚡ Quickstart
 
-### 1. Run SIR ModPack:
-Double-click `SIR ModPack.exe`, or use one of these explicit modes:
+### 1. Launch SIR Launcher:
+Double-click `SIR Launcher.exe` to open the launcher directly.
 
-```text
-SIR ModPack.exe --mode launcher
-SIR ModPack.exe --mode installer
-SIR ModPack.exe --mode server
-```
+### 2. Deploy or Repair via SIR Installer:
+Double-click `SIR Installer.exe` (16 MB) to install the ecosystem into `%APPDATA%\SIR ModPack\` with automatic cloud payload streaming.
 
-### 2. Run the Next.js Web Platform:
+### 3. Host a Server:
+Double-click `SIR Server Manager.exe` to manage local server instances with 1-click zero-port Playit.gg tunnels.
+
+### 4. Run the Next.js Web Platform:
 ```bash
 cd website-next
 npm run dev
