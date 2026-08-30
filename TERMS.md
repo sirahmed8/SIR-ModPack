@@ -1,10 +1,10 @@
-# 📜 SIR ModPack — Terms of Service & End User License Agreement (EULA)
-### *Version 2026.2 • Effective August 2026 • Legally Enforced Compliance*
+# 📜 SIR ModPack — Terms of Service
+### *Version 1.0.0 (2026.2) • Effective August 2026 • Legally Enforced Compliance*
 
 ---
 
 ## ⚖️ 1. Acceptance of Terms
-By downloading, installing, launching, or accessing any component of the SIR Ecosystem (including **SIR Launcher**, **SIR Installer**, custom **Shaders**, **3D Resource Packs**, and **Web Platform**), you acknowledge and agree to be bound by these Terms. If you do not agree with any part of these terms, you must discontinue use immediately.
+By downloading, installing, launching, or accessing any component of the SIR Ecosystem (including **SIR Launcher**, **SIR Installer**, **SIR Server Manager**, custom **Shaders**, **3D Resource Packs**, and **Web Platform**), you acknowledge and agree to be bound by these Terms. If you do not agree with any part of these terms, you must discontinue use immediately.
 
 ---
 
@@ -16,7 +16,7 @@ Minecraft is a registered trademark of Mojang AB / Microsoft Corporation. The SI
 ## 🛡️ 3. Multi-Layer Security & Fair Use Policy
 1. **User Accountability:** Users are responsible for complying with the rules and guidelines of third-party multiplayer servers they join.
 2. **Integrity of Software:** The SIR Ecosystem provides advanced optimization engines, shader enhancements, and account switching utilities for fair, legal gameplay improvement.
-3. **No Malicious Reverse Engineering:** Exploitative modification of the launcher binary or security infrastructure is strictly prohibited.
+3. **No Malicious Modification:** Exploitative modification of the launcher binary or security infrastructure is strictly prohibited.
 
 ---
 
@@ -30,5 +30,11 @@ Minecraft is a registered trademark of Mojang AB / Microsoft Corporation. The SI
 The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express or implied. In no event shall the authors, maintainers, or contributors be held liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use this software.
 
 ---
+
+## 📬 6. Contact & Legal Inquiries
+- **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+- **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **EULA Agreement:** [EULA.md](EULA.md)
+- **Community Agreements:** [AGREEMENTS.md](AGREEMENTS.md)
 
 *© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*

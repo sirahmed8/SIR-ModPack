@@ -1,5 +1,5 @@
 # 🍪 SIR ModPack — Cookie & Local Storage Governance Policy
-### *Version 2026.2 • Effective August 2026 • Legally Enforced Transparency*
+### *Version 1.0.0 (2026.2) • Effective August 2026 • Legally Enforced Transparency*
 
 ---
 
@@ -25,5 +25,10 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 - **1-Click Local Purge:** You can completely clear all cached profiles and local settings directly in your browser or via the desktop launcher settings.
 
 ---
+
+## 📬 4. Contact & Legal Inquiries
+- **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+- **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Privacy Policy:** [PRIVACY.md](PRIVACY.md)
 
 *© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*
