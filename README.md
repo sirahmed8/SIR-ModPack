@@ -5,17 +5,17 @@
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![Python 3.14](https://img.shields.io/badge/Python-3.14-3776ab?logo=python)](https://python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE.md)
+[![Proprietary: Closed Source](https://img.shields.io/badge/Model-Closed--Source%20Suite-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
-[![Tests: 336 Passing](https://img.shields.io/badge/Tests-336%2F336%20Passed-brightgreen.svg)](walkthrough.md)
+[![Tests: 340 Passing](https://img.shields.io/badge/Tests-340%2F340%20Passed-brightgreen.svg)](walkthrough.md)
 
 ---
 
 ## 🌟 What is SIR ModPack?
 
-**SIR ModPack** is an enterprise-grade, high-throughput Minecraft distribution and desktop ecosystem unifying **Modern 26.2 (Fabric 1.21.4)** and **Legacy 1.8.9 (Forge PvP)** into a single, cohesive experience. It provides standalone desktop binaries, direct native JVM execution, custom volumetric shaders, 3D Parallax Occlusion Mapping textures, zero-port multiplayer server hosting, and a high-performance Next.js 16 web hub.
+**SIR ModPack** is a proprietary, closed-source high-throughput Minecraft distribution and desktop suite unifying **Modern 26.2 (Fabric 1.21.4)** and **Legacy 1.8.9 (Forge PvP)** into a single cohesive experience. GitHub is utilized exclusively as a reliable distribution channel for high-speed download mirrors of the standalone desktop binaries, installer, and offline packages.
 
-The public desktop entrypoint is **`SIR ModPack.exe`**, which dispatches to internal modes via `--mode launcher`, `--mode installer`, or `--mode server`. User state and configurations are cleanly separated under `%APPDATA%\SIR ModPack\`.
+The suite provides standalone desktop binaries, direct native JVM execution, the unified **SIR Master Shader** with crystal wave water and 3D POM relief textures, zero-port multiplayer server hosting, and a Next.js 16 web hub.
 
 ---
 
@@ -23,29 +23,27 @@ The public desktop entrypoint is **`SIR ModPack.exe`**, which dispatches to inte
 
 | Application | Binary / Portal | Description |
 | :--- | :--- | :--- |
-| **SIR Launcher Pro** | `SIR Launcher.exe` (14.3 MB) | Standalone desktop launcher with native Direct JVM Launch Pipeline, 3D Skin Studio, Tri-Layer 1-Click Video Presets, and Cloud Self-Healing. |
-| **SIR Installer** | `SIR Installer.exe` (16.6 MB) | Autonomous auto-healing installer with cloud payload streaming, CRC archive validation, and zero-data-loss upgrades. |
-| **SIR Server Manager** | `SIR Server Manager.exe` (13.6 MB) | Dedicated multiplayer server manager with custom CyberSelect menus, live TPS gauges, and Playit.gg zero-port public tunneling. |
-| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 30 prerendered static routes, Gemini 4-tier AI chatbot, live server radar, and skin wardrobe. |
+| **SIR Launcher Pro** | `SIR Launcher.exe` | Standalone desktop launcher with native Direct JVM Launch Pipeline, 3D Skin Studio, Quick Presets, and Cloud Self-Healing. |
+| **SIR Installer** | `SIR Installer.exe` | Autonomous auto-healing installer with cloud payload streaming, CRC archive validation, and zero-data-loss upgrades. |
+| **SIR Server Manager** | `SIR Server Manager.exe` | Dedicated multiplayer server manager with custom CyberSelect menus, live TPS gauges, and Playit.gg zero-port public tunneling. |
+| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 30 prerendered static routes, AI assistant, live server radar, and skin wardrobe. |
 
 ---
 
 ## 🎮 Profile Matrix & Presets
 
-SIR ModPack includes 8 physically provisioned profile archetypes pre-configured for maximum performance and visual fidelity:
+SIR ModPack is streamlined into **6 official high-performance profiles**:
 
 ```
-+---------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
 | ARCHETYPE              | DIRECTORY          | MC VERSION | LOADER       | MEMORY ALLOC | SHADER PACK         | FPS TARGET |
 +------------------------+--------------------+------------+--------------+--------------+---------------------+------------+
-| 26.2 Ultra             | 26.2-ultra         | 1.21.4     | Fabric 0.16  | 6GB – 12GB   | SIR_Extreme_Shader  | 144+ FPS   |
-| 26.2 Balanced          | 26.2-balanced      | 1.21.4     | Fabric 0.16  | 4GB – 8GB    | SIR_Balanced_Shader | 180+ FPS   |
-| 26.2 Performance       | 26.2-performance   | 1.21.4     | Fabric 0.16  | 3GB – 6GB    | OFF (Sodium Boost)  | 350+ FPS   |
-| 26.2 Vanilla+          | 26.2               | 1.21.4     | Fabric 0.16  | 4GB – 8GB    | OFF (OptiFine Sync) | 300+ FPS   |
-| 1.8.9 PvP Battle Suite | 1.8.9              | 1.8.9      | Forge 2318   | 2GB – 4GB    | OFF (OptiFine Fast) | 500+ FPS   |
-| 1.8.9 Ultra Visuals    | 1.8.9-ultra        | 1.8.9      | Forge 2318   | 3GB – 6GB    | SIR_Extreme_Shader  | 300+ FPS   |
-| 1.8.9 Balanced Bedwars | 1.8.9-balanced     | 1.8.9      | Forge 2318   | 2GB – 4GB    | SIR_Balanced_Shader | 450+ FPS   |
-| 1.8.9 Zero-Delay       | 1.8.9-performance  | 1.8.9      | Forge 2318   | 1.5GB – 3GB  | OFF (Raw Mouse In)  | 600+ FPS   |
+| 26.2 Ultra Visuals     | 26.2-ultra         | 1.21.4     | Fabric 0.16  | 6GB – 12GB   | SIR_Master_Shader   | 144+ FPS   |
+| 26.2 Balanced          | 26.2-balanced      | 1.21.4     | Fabric 0.16  | 4GB – 8GB    | SIR_Master_Shader   | 180+ FPS   |
+| 26.2 Performance       | 26.2-performance   | 1.21.4     | Fabric 0.16  | 3GB – 6GB    | OFF (Sodium Boost)  | 500+ FPS   |
+| 1.8.9 Ultra Visuals    | 1.8.9-ultra        | 1.8.9      | Forge 2318   | 3GB – 6GB    | SIR_Master_Shader   | 300+ FPS   |
+| 1.8.9 Balanced PvP     | 1.8.9-balanced     | 1.8.9      | Forge 2318   | 2GB – 4GB    | OFF (Fast Render)   | 450+ FPS   |
+| 1.8.9 Performance      | 1.8.9-performance  | 1.8.9      | Forge 2318   | 2GB – 4GB    | OFF (0ms RawInput)  | 600+ FPS   |
 +------------------------+--------------------+------------+--------------+--------------+---------------------+------------+
 ```
 
