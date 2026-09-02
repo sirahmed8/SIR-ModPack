@@ -16,6 +16,9 @@ import platform
 import ctypes
 import webbrowser
 
+# Historical compatibility shim. The supported installer is the Installer &
+# Repair mode of SIR ModPack.exe. The legacy direct deployment functions below
+# are bypassed whenever the dispatcher build is available.
 SOURCE_ROOT = os.path.dirname(os.path.abspath(__file__))
 MODS_DIR = os.path.join(SOURCE_ROOT, "mods")
 RP_DIR = os.path.join(SOURCE_ROOT, "resourcepacks")
@@ -434,9 +437,8 @@ def create_desktop_shortcut():
         
     # 1. Launcher Shortcut
     launcher_candidates = [
-        os.path.join(PRISM_ROOT, "SIR Launcher.exe"),
-        os.path.join(SOURCE_ROOT, "SIR Package", "SIR Launcher", "SIR Launcher.exe"),
-        os.path.join(SOURCE_ROOT, "SIR Launcher", "SIR Launcher.exe")
+        os.path.join(SOURCE_ROOT, "SIR ModPack.exe"),
+        os.path.join(SOURCE_ROOT, "dist_build", "SIR ModPack.exe"),
     ]
     launcher_exe = next((p for p in launcher_candidates if os.path.exists(p)), None)
     if launcher_exe:
@@ -457,9 +459,8 @@ def create_desktop_shortcut():
 
     # 2. Server Host App Shortcut
     server_candidates = [
-        os.path.join(SOURCE_ROOT, "SIR Server Host.exe"),
-        os.path.join(SOURCE_ROOT, "server", "SIR Server Host.exe"),
-        os.path.join(SOURCE_ROOT, "SIR Package", "SIR Server Host.exe")
+        os.path.join(SOURCE_ROOT, "SIR ModPack.exe"),
+        os.path.join(SOURCE_ROOT, "dist_build", "SIR ModPack.exe"),
     ]
     server_exe = next((p for p in server_candidates if os.path.exists(p)), None)
     if server_exe:
@@ -479,6 +480,15 @@ def create_desktop_shortcut():
             if os.path.exists(vbs_sf): os.remove(vbs_sf)
 
 def main():
+    dispatcher_candidates = [
+        os.path.join(SOURCE_ROOT, "SIR ModPack.exe"),
+        os.path.join(SOURCE_ROOT, "dist_build", "SIR ModPack.exe"),
+    ]
+    dispatcher = next((path for path in dispatcher_candidates if os.path.isfile(path)), None)
+    if dispatcher:
+        print("Opening SIR ModPack Installer & Repair mode...")
+        return subprocess.call([dispatcher, "--mode", "installer"], cwd=os.path.dirname(dispatcher))
+
     target, ram_mb, modern_tiers, legacy_tiers, governor, username = parse_args()
     apply_hardware_governor(governor)
     
