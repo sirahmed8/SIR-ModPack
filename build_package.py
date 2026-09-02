@@ -38,26 +38,39 @@ def zip_directory(src_dir, zip_path, arc_prefix="", exclude_exts=None):
     return sz
 
 def main():
-    print("=== SIR ECOSYSTEM RELEASE PACKAGING PIPELINE ===")
+    print("=== SIR ECOSYSTEM RELEASE PACKAGING PIPELINE ===", flush=True)
     os.makedirs(PAYLOADS_DIR, exist_ok=True)
     os.makedirs(PKG_DIR, exist_ok=True)
 
     # 1. Sync Live Ecosystem Components to Offline SIR Package
-    print("[*] Synchronizing live ecosystem folders to SIR Package...")
-    sync_dirs = ['instances', 'shaderpacks', 'resourcepacks', 'config', 'capes', 'mods']
-    for d in sync_dirs:
+    print("[*] Synchronizing live ecosystem folders to SIR Package...", flush=True)
+    
+    # Sync core folders
+    for d in ['shaderpacks', 'resourcepacks', 'config', 'capes', 'mods']:
         src = os.path.join(ROOT, d)
         dst = os.path.join(PKG_DIR, d)
         if os.path.isdir(src):
             if os.path.exists(dst):
                 shutil.rmtree(dst)
             shutil.copytree(src, dst)
-            print(f"  -> Synced {d}/ to SIR Package")
+            print(f"  -> Synced {d}/ to SIR Package", flush=True)
+
+    # Sync only SIR ModPack instances (skip heavy third-party packs like ATM10/RLCraft)
+    sir_inst_src = os.path.join(ROOT, 'instances')
+    sir_inst_dst = os.path.join(PKG_DIR, 'instances')
+    os.makedirs(sir_inst_dst, exist_ok=True)
+    allowed_instances = ['26.2', '26.2-ultra', '26.2-balanced', '26.2-performance', '1.8.9', '1.8.9-ultra', '1.8.9-balanced', '1.8.9-performance']
+    for inst_name in allowed_instances:
+        s_p = os.path.join(sir_inst_src, inst_name)
+        d_p = os.path.join(sir_inst_dst, inst_name)
+        if os.path.isdir(s_p):
+            if os.path.exists(d_p):
+                shutil.rmtree(d_p)
+            shutil.copytree(s_p, d_p)
+            print(f"  -> Synced instance {inst_name} to SIR Package", flush=True)
 
     # 2. Build Modular Cloud Payloads for Online Installer & Self-Healing
-    print("[*] Generating modular compressed cloud payloads...")
-    # Package instance structure & configurations without duplicate jars or zips (~5 MB)
-    zip_directory(os.path.join(ROOT, 'instances'), os.path.join(PAYLOADS_DIR, 'payload_instances.zip'), exclude_exts=['.jar', '.disabled', '.zip'])
+    print("[*] Generating modular compressed cloud payloads...", flush=True)
     zip_directory(os.path.join(ROOT, 'instances', '26.2-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_26.2.zip'))
     zip_directory(os.path.join(ROOT, 'instances', '1.8.9-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_1.8.9.zip'))
     zip_directory(os.path.join(ROOT, 'resourcepacks'), os.path.join(PAYLOADS_DIR, 'payload_packs.zip'))
@@ -81,20 +94,23 @@ def main():
                         pass
             print(f"  -> Synced {e} to SIR Package and public_repo")
 
-    # 4. Create full standalone distribution zip
-    print(f"[*] Packaging full offline release bundle -> {RELEASE_ZIP}...")
-    zip_directory(PKG_DIR, RELEASE_ZIP)
-    total_sz = os.path.getsize(RELEASE_ZIP)
-    print(f"[+] Successfully built {os.path.basename(RELEASE_ZIP)}: {total_sz / (1024*1024):.2f} MB ({total_sz / (1024*1024*1024):.2f} GB)")
+    # 4. Standalone distribution zip (Only when requested via --make-zip)
+    make_zip = '--make-zip' in sys.argv
+    if make_zip:
+        print(f"[*] Packaging full offline release bundle -> {RELEASE_ZIP}...")
+        zip_directory(PKG_DIR, RELEASE_ZIP)
+        total_sz = os.path.getsize(RELEASE_ZIP)
+        print(f"[+] Successfully built {os.path.basename(RELEASE_ZIP)}: {total_sz / (1024*1024):.2f} MB ({total_sz / (1024*1024*1024):.2f} GB)")
 
-    # 5. Sync release zip to public_repo
-    if os.path.isdir(pub_dir):
-        pub_zip = os.path.join(pub_dir, 'SIR_Package_v1.0.0.zip')
-        try:
-            shutil.copy2(RELEASE_ZIP, pub_zip)
-            print(f"[+] Synced {os.path.basename(RELEASE_ZIP)} to public_repo/")
-        except Exception as ex:
-            print(f"  -> Warning copying zip to public_repo: {ex}")
+        if os.path.isdir(pub_dir):
+            pub_zip = os.path.join(pub_dir, 'SIR_Package_v1.0.0.zip')
+            try:
+                shutil.copy2(RELEASE_ZIP, pub_zip)
+                print(f"[+] Synced {os.path.basename(RELEASE_ZIP)} to public_repo/")
+            except Exception as ex:
+                print(f"  -> Warning copying zip to public_repo: {ex}")
+    else:
+        print("[*] Skipped full zip creation (SIR Package folder is 100% updated and ready). Pass --make-zip when ready to build the release archive.")
 
     print("=== PACKAGING COMPLETE ===")
     return 0
