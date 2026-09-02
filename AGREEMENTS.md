@@ -9,13 +9,13 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 ---
 
 ## 🎮 2. Multi-Profile Gameplay & Competitive Integrity Agreement
-1. **Hypixel & Competitive Multiplayer Servers:**
-   - The SIR Ecosystem provides fair performance enhancements, memory tuning, and visual fidelity passes.
-   - Built-in modules (e.g. `HAVOC`, `InGameAccountSwitcher`) are engineered with client-side velocity smoothing and zero-disruption hit detection.
-   - Users agree to adhere to specific server rules (including Hypixel, Minemen Club, GommeHD, and Bedwars practice servers) regarding alt accounts and game modifications.
-2. **Offline & Cracked Identity Management:**
-   - Offline UUIDv5 generation is provided for local LAN play, private servers, and educational sandbox environments.
-   - Users acknowledge that accessing official Mojang authentication services requires an official, purchased Minecraft account.
+1. **Multiplayer Server Compatibility & Fair Play Protocol:**
+   - The SIR Ecosystem focuses strictly on client-side rendering optimization (Sodium, Iris, ModernFix, FerriteCore, OptiFine HD U M5), memory compaction, and local input responsiveness.
+   - The software does not modify server-side movement packets, reach, or server-side hit detection mechanics. Experimental modules (e.g. HAVOC) are intended exclusively for offline practice and private development environments.
+   - Users agree to adhere to specific multiplayer server rules (including Hypixel, Minemen Club, GommeHD, and Bedwars practice servers). Users are solely responsible for ensuring their active client mods adhere to each server's specific modification rules.
+2. **Offline & Local Sandbox Identity Management:**
+   - Offline UUIDv5 generation is provided strictly for private local LAN play, custom sandbox development, and educational environments.
+   - Users acknowledge that accessing official Mojang authentication services requires an official, purchased Minecraft account. The ecosystem does not facilitate copyright infringement or bypass official account verification.
 
 ---
 

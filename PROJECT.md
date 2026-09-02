@@ -1,4 +1,4 @@
-# Project: SIR Minecraft Ecosystem Full-Stack Hardening
+# Project: SIR Minecraft Ecosystem Full-Stack Hardening & Ecosystem Optimization
 
 ## Architecture
 The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud gaming platform composed of:
@@ -11,16 +11,19 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 2. **Desktop Client UI & HCI Experience (`development/launcher_ui/`, `SIR_Launcher_Modern.py`)**:
    - Hardware-accelerated PyWebView with Windows DWM dark titlebar integration (`0x000E0906`).
    - Cyber-Dark Glassmorphic design system (Plus Jakarta Sans + JetBrains Mono, 60-30-10 palette, 24px/14px curvature, cubic-bezier spring micro-interactions).
-   - Profile & server matrices with instant live filtering and custom instance builder.
-   - Tri-layer 1-Click Video Preset engine (`options.txt`, `sodium-options.json`, `iris.properties`).
+   - Profile & server matrices with instant live filtering, 228 Modern Fabric mods, 28 Legacy Forge mods, and custom instance builder.
+   - Tri-layer 1-Click Video Preset engine (`options.txt`, `sodium-options.json`, `iris.properties`, `optionsshaders.txt`).
+   - Dedicated Dual-Shader Architecture (`SIR Modern Shader.zip` and `SIR Legacy Shader.zip`).
+   - Dual Resource Packs (`SIR Modern.zip` with Patrix 3D POM models and `SIR Legacy.zip` 32x PvP).
+   - Dynamic Ocean Physics simulation (`physics_client_config.json` with realistic waves, whitecap foam, buoyancy physics).
    - Three.js / SkinView3D WebGL studio with 3D walking animations, classic/slim models, and custom cape injection.
    - Account management: Microsoft OAuth 2.0 PKCE loopback listener + offline IAS UUIDv5 accounts + in-game `ias_accounts.json` sync + Firebase cloud sync.
 3. **Web Platform & Cloud Highway (`website-next/`)**:
-   - Next.js 16 App Router platform with React 19, TypeScript strict typing, Tailwind CSS v4, Lucide icons, Framer Motion.
+   - Next.js 16 App Router platform with React 19, TypeScript strict typing, Tailwind CSS v4, Lucide icons, Framer Motion (32 prerendered static routes).
    - Firebase Realtime Database & Firestore: active presence, atomic download metrics, OTA update dispatch, live announcements, and client error reporting.
    - Gemini AI Assistant: 4-tier fallback waterfall (`gemini-3.6-flash` -> `gemini-3.5-flash-lite` -> OpenRouter -> offline expert rules) with domain system instructions and Arabic translation.
 4. **Automated Verification & Test Harness (`tests/`, `ecosystem_doctor.py`)**:
-   - End-to-end programmatic verification of bridge APIs, native JVM runner, classpath resolution, profile permutations (Modern Fabric 26.2 & Legacy Forge 1.8.9), and health checks.
+   - End-to-end programmatic verification of bridge APIs, native JVM runner, classpath resolution, profile permutations (Modern Fabric 26.2 & Legacy Forge 1.8.9), dual-shader isolation, and 100% healthy 6-layer health checks (340 tests).
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |
@@ -45,8 +48,9 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 18 | Feature-Rich AI Chatbot UI | Integrate advanced AiChatbot.tsx (speech synthesis, fullscreen, audio effects) into web layout | M4 | Survey Explorer 3 / R3 |
 | 19 | Firebase Cloud Telemetry & Sync Alignment | Harmonize launcherSyncCodes path, live presence, atomic download metrics, error reporting | M4 | Survey Explorer 3 / R3 |
 | 20 | Gemini Multi-Tier AI Assistant | 4-tier model waterfall with domain prompt tuning and Arabic localization | M4 | Survey Explorer 3 / R3 |
-| 21 | Instance Profile Matrix Parity | Provision and synchronize missing instance directories (26.2-balanced, 26.2-performance, 1.8.9-*) | M5 | Survey Explorer 3 / R4 |
+| 21 | Instance Profile Matrix Parity | Provision and synchronize instance directories (26.2-*, 1.8.9-*) | M5 | Survey Explorer 3 / R4 |
 | 22 | Automated E2E Verification Suite | Complete test suite covering bridge APIs, native JVM runner, profile permutations, and health | M5 | Survey Explorer 3 / R4 |
+| 23 | Update 7 Ecosystem Audit & Expansion | 228 Modern mods, 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, dual shaders isolation | M6 / U7 | Eco Audit / R1-R5 |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
@@ -56,6 +60,7 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 3 | M3: Desktop Client UI, Video Presets & Accounts | Features 13, 14, 15, 16 (Cyber-dark UI, video presets, 3D skin studio, Microsoft OAuth + offline IAS accounts) | M1, M2 | DONE |
 | 4 | M4: Next.js 16 Web Hub, Firebase & Gemini AI | Features 17, 18, 19, 20 (Strict Next.js 16 build/lint, AiChatbot integration, Firebase sync alignment, Gemini AI waterfall) | none | DONE |
 | 5 | M5: Profile Matrix Parity & E2E Verification | Features 21, 22 (Instance directory sync, 100% E2E test pass across Modern 26.2 & Legacy Forge 1.8.9) | M1, M2, M3, M4 | VERIFIED |
+| 6 | M6: Update 7 Multi-Modpack & Ecosystem Audit | Feature 23 (228 Modern / 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, isolated dual shaders, 340 tests) | M1, M2, M3, M4, M5 | VERIFIED |
 
 ## Interface Contracts
 
@@ -82,4 +87,4 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 - `development/server_core/`: Server manager backend and core downloader.
 - `website-next/`: Next.js 16 web application (App router, components, lib/firebase, lib/gemini).
 - `instances/`: Minecraft instance configurations (26.2, 1.8.9, custom profiles).
-- `tests/`: Automated pytest / unittest test suite.
+- `tests/`: Automated pytest / unittest test suite (340 tests).

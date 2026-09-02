@@ -8,15 +8,23 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-## 📋 2. Storage Matrix & Purpose
+## 📋 2. Comprehensive Client Storage Matrix
 
-| Key / Token | Storage Type | Purpose | Lifespan |
-|---|---|---|---|
-| `sir_lang` | Cookie / LocalStorage | Stores selected interface language (`ar` or `en`) | 365 Days |
-| `sir_theme` | LocalStorage | Remembers visual theme mode (`dark`, `light`, `system`) | Persistent |
-| `sir_perf_mode` | LocalStorage | Remembers Hardware Eco Mode toggle state | Persistent |
-| `sir_cookies_consent` | LocalStorage | Stores cookie governance and consent settings | 365 Days |
-| `swr_cache_*` | SessionStorage | Client-side cache accelerating repeat subpage loads | 5 Minutes (TTL) |
+| Storage Key / Token | Storage Mechanism | Category | Technical Purpose | Lifespan |
+|---|---|---|---|---|
+| `sir_lang` | Cookie & LocalStorage | Essential | Stores interface language (`ar` or `en`) | 365 Days |
+| `sir_theme_mode` | LocalStorage & Cookie | Preferences | Remembers visual theme mode (`dark`, `light`, `system`) | Persistent |
+| `sir_perf_mode` | LocalStorage & Cookie | Preferences | Remembers Hardware Eco Mode toggle state | Persistent |
+| `sir_sound_fx` | LocalStorage | Preferences | Remembers UI audio feedback and SFX toggle | Persistent |
+| `sir_cookie_consent` | LocalStorage | Essential | Stores granular user cookie category permissions | 365 Days |
+| `sir_consent_given` | Cookie | Essential | Signals that consent preferences have been recorded | 365 Days |
+| `sir_pref_cache` | Cookie | Functional | Quick-check token for high-speed cache enablement | 365 Days |
+| `sir_fav_mods` | LocalStorage | Preferences | Stores list of user favorited mod IDs | Persistent |
+| `sir_linked_minecraft_user` | LocalStorage | Functional | Caches active display username for fast header rendering | Persistent |
+| `sir_linked_account_type` | LocalStorage | Functional | Caches account category (`microsoft` or `offline`) | Persistent |
+| `sir_custom_skin_data` | LocalStorage | Functional | Caches active 3D skin texture URL | Persistent |
+| `sir_benchmark_records` | LocalStorage | Functional | Caches local CPS, reflex, and aim trainer scores | Persistent |
+| `sir_cache_*` | LocalStorage | Functional (TTL) | Stale-While-Revalidate client cache for mods & shader data | 5 Minutes (TTL) |
 
 ---
 

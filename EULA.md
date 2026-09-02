@@ -11,8 +11,10 @@ By downloading, installing, launching, executing, or using **SIR Launcher**, **S
 ---
 
 ## 🎮 2. Mojang Studios & Microsoft Brand Compliance
+**NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
+
 1. **Independent Community Project:** Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is an independent community project and is **NOT an official Minecraft product**, nor is it approved by, associated with, or affiliated with Mojang AB or Microsoft.
-2. **Commercial Use Guidelines:** This distribution complies with Mojang Studios' Commercial Usage Guidelines and Brand & Asset Guidelines. No proprietary Minecraft source code, game binaries, or official assets are sold or commercialized.
+2. **Commercial Use Guidelines:** This distribution complies with Mojang Studios' Commercial Usage Guidelines and Brand & Asset Guidelines. No proprietary Minecraft source code, vanilla game JARs, or official assets are sold or commercialized. All vanilla assets are fetched dynamically from official Mojang/Microsoft CDNs.
 
 ---
 
@@ -34,8 +36,9 @@ You expressly agree NOT to:
 ## 🔒 5. Zero-Telemetry & Privacy Guarantee
 In accordance with our [Privacy Policy](PRIVACY.md), the SIR Ecosystem operates on a strict **Zero-Telemetry & Privacy-by-Design** standard:
 - No tracking cookies, advertising IDs, or background behavioral monitoring scripts are included.
-- Microsoft account authentication is executed solely via official OAuth 2.0 PKCE loopback servers binding strictly to localhost (`127.0.0.1`).
-- All user configurations, video settings, and custom profiles are stored locally on your device under `%APPDATA%\SIR ModPack\`.
+- Microsoft account authentication is delegated securely to official Microsoft identity servers binding to localhost (`127.0.0.1`), with local tokens stored securely on the client machine.
+- Desktop-to-web profile pairing utilizes a localized loopback bridge binding strictly to localhost (`127.0.0.1:52136`) with constant-time token verification.
+- All user configurations, video presets, and custom profiles are stored locally on your device under `%APPDATA%\SIR ModPack\`.
 
 ---
 

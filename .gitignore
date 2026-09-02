@@ -21,3 +21,5 @@ __pycache__/
 development/
 website-next/
 
+# Distribution Packages (Over 100MB GitHub limit, distributed via Releases/CDN)
+*.zip
