@@ -69,13 +69,8 @@ Double-click `SIR Installer.exe` to deploy or verify instances in `%APPDATA%\SIR
 ### 3. Host a Dedicated Server:
 Double-click `SIR Server Manager.exe` to manage local server instances with 1-click zero-port Playit.gg tunnels.
 
-### 4. Run the Web Platform (Next.js 16):
-```bash
-cd website-next
-npm install
-npm run dev
-# Open http://localhost:3000
-```
+### 4. Access the Live Web Platform:
+Visit [sir-modpack.web.app](https://sir-modpack.web.app) to browse servers, customize skins, explore shader galleries, and access live cloud synchronization.
 
 ---
 

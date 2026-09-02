@@ -94,7 +94,7 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 ---
 
 ## 📬 10. Contact & Legal Inquiries
-* **Data Protection & Legal Email:** `privacy@sir-modpack.web.app`
+* **Data Protection & Legal Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 * **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 * **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 * **Official Documentation:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)

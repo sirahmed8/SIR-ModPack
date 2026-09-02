@@ -41,7 +41,7 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 ---
 
 ## 📬 7. Contact & Legal Inquiries
-- **Legal & Governance Email:** `legal@sir-modpack.web.app`
+- **Legal & Governance Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **EULA Agreement:** [EULA.md](EULA.md)

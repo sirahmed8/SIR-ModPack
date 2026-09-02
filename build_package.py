@@ -56,8 +56,8 @@ def main():
 
     # 2. Build Modular Cloud Payloads for Online Installer & Self-Healing
     print("[*] Generating modular compressed cloud payloads...")
-    # Package instance structure & configurations without duplicate jars (~5 MB)
-    zip_directory(os.path.join(ROOT, 'instances'), os.path.join(PAYLOADS_DIR, 'payload_instances.zip'), exclude_exts=['.jar', '.disabled'])
+    # Package instance structure & configurations without duplicate jars or zips (~5 MB)
+    zip_directory(os.path.join(ROOT, 'instances'), os.path.join(PAYLOADS_DIR, 'payload_instances.zip'), exclude_exts=['.jar', '.disabled', '.zip'])
     zip_directory(os.path.join(ROOT, 'instances', '26.2-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_26.2.zip'))
     zip_directory(os.path.join(ROOT, 'instances', '1.8.9-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_1.8.9.zip'))
     zip_directory(os.path.join(ROOT, 'resourcepacks'), os.path.join(PAYLOADS_DIR, 'payload_packs.zip'))
