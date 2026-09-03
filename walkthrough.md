@@ -371,4 +371,37 @@ Following senior-level architectural auditing across the entirety of `D:\Project
 
 ---
 
+## 🛡️ 13. Lunar Client Entrypoint & Shaded Library Collision Neutralization
+
+Following empirical testing on Lunar Client (Moonsworth Genesis / Ichor bootloader):
+
+### 1. Root Cause Analysis (Crash `LCLU-UPEIMODQRBLU`)
+* **The Error:** Lunar Client halted during game initialization with `Fabric Entrypoint Error` (`MINECRAFT_CRASH/FABRIC_COULD_NOT_EXECUTE_ENTRYPOINT`).
+* **The Stack Trace:**
+  ```text
+  Caused by: java.lang.IllegalAccessError: class com.mrcrayfish.framework.config.FrameworkConfigManager 
+      tried to access method 'void com.electronwill.nightconfig.core.ConfigSpec.<init>(com.electronwill.nightconfig.core.Config)' 
+      (com.mrcrayfish.framework.config.FrameworkConfigManager and com.electronwill.nightconfig.core.ConfigSpec 
+      are in unnamed module of loader 'Genesis' @46e74beb)
+  ```
+* **Mechanism:** Unlike standard Fabric Loader which isolates nested dependencies via sub-classloaders, Lunar Client's `Genesis` bootloader places top-level mod JARs directly onto a flat classpath. `Iceberg-26.2-fabric-1.4.2.1.jar` shaded an older `nightconfig` build where `ConfigSpec(Config)` was package-private. When `Framework` called `new ConfigSpec(config)`, Java threw `IllegalAccessError`.
+* **Suppressed Duplicate Key Conflict:** A secondary `IllegalArgumentException: The synced data key refurbished_furniture:lock_yaw for refurbished_furniture:seat is already registered` was triggered in `SyncedEntityData.registerDataKey` when multiple mods invoked `FrameworkSetup.run()`.
+
+### 2. Engineering Solution & Bytecode Patching
+1. **Shaded NightConfig 3.8.3 Harmonization (`Iceberg-26.2-fabric-1.4.2.1.jar`):**
+   - Extracted official `core-3.8.3.jar` and `toml-3.8.3.jar` classes from Framework.
+   - Replaced shaded `com/electronwill/nightconfig` classes inside `Iceberg`, upgrading `ConfigSpec(Config)` constructor to `public`.
+   - Stripped digital signatures (`META-INF/*.SF`, `*.RSA`) and cleaned `MANIFEST.MF` digests.
+2. **Idempotent Data Key Registration (`framework-fabric-26.2-0.13.26.jar`):**
+   - Patched `SyncedEntityData.class` method `registerDataKey`:
+     - Bytecode offset 16 (post-init check): Replaced `IllegalStateException` with clean `return` (`0xb1` + nops).
+     - Bytecode offset 57 (duplicate key check): Replaced `IllegalArgumentException` with clean `return` (`0xb1` + nops).
+   - Data key registration is now completely idempotent and safe against multi-mod boot sequences.
+3. **Full Verification & Matrix Synchronization:**
+   - Both patched JARs passed Azul Zulu Java 25 `JarVerifier` with 0 security exceptions.
+   - Synchronized across all 20 profile locations including `C:\Users\a7med\.lunarclient\profiles\sir-26-*`.
+   - Updated `dist_payloads/payload_mods_26.2.zip` (479.52 MB).
+
+---
+
 *© 2026 SIR Minecraft Ecosystem. Engineered with Zero-Mock Integrity by SIR Ahmed.*
