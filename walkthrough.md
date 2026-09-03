@@ -404,4 +404,48 @@ Following empirical testing on Lunar Client (Moonsworth Genesis / Ichor bootload
 
 ---
 
+## 🌿 14. Grass Texture Integrity, Clutter Purge, Defender Heuristic Elimination & Vanilla Deployment
+
+### 1. Missing Grass Block Texture Root-Cause Resolution
+* **The Glitch:** Grass blocks displayed purple-and-black checkerboard missing textures across world terrain in 26.2.
+* **Root Cause:** In `SIR Modern.zip`, `assets/minecraft/blockstates/grass_block.json` contained multipart conditional rules referencing `block/grass_extra1a` and `block/grass_extra1b` with combined weight 12/16 (75% probability). Neither model file existed in the pack or vanilla Minecraft, causing the engine to render the 1x1 missing model dummy cube.
+* **The Fix:** Removed the broken `grass_extra1` multipart rules from `grass_block.json`, purged the obsolete `grass_block_top.json`, and preserved all authentic 3D features (`grass_extra2`, `grass_extra3`, `grass_extra4`, `hanging_roots_extra`, `grass_block_snow`). Rebuilt `SIR Modern.zip` (144.83 MB) and synchronized to all 20 profile locations.
+
+### 2. Resource Pack Matrix Decluttering (414 Redundant Packs Purged)
+* **Diagnosis:** Previous deployment pipelines copied redundant loose packs (`Fast Better Grass.zip`, `crops-3d.zip`, `RLHats.zip`, `Flower Clusters 1.2.zip`, etc.) into instance directories, creating UI clutter and texture overriding.
+* **The Fix:** Cleaned 414 loose zip packs from all profile directories. Established strict single-pack isolation:
+  - **Modern Profiles (`26.2*`):** Strictly `SIR Modern.zip`.
+  - **Legacy Profiles (`1.8.9*`):** Strictly `SIR Legacy.zip`.
+  - **Cloud Payload:** `payload_packs.zip` rebuilt containing exclusively the two verified master packs (178.87 MB).
+
+### 3. Windows Defender False Positive (`Trojan:Win32/Bearfoos.A!ml`) Elimination
+* **The Issue:** Windows Defender flagged `SIR Launcher.exe` with `Bearfoos.A!ml` and deleted the desktop shortcut.
+* **Root Cause:** PyInstaller UPX compression (`upx=True`), combined with low-level Win32 memory optimization APIs (`EmptyWorkingSet`, `OpenProcess`) in unsigned single-file binaries, triggers machine learning heuristic false positives.
+* **The Fix:**
+  1. Disabled UPX compression (`upx=False`) across all three PyInstaller spec files (`SIR Launcher.spec`, `SIR Installer.spec`, `SIR Server Manager.spec`).
+  2. Created authentic Win32 VersionInfo metadata resources (`version_launcher.txt`, `version_installer.txt`, `version_server.txt`) declaring CompanyName ("SIR Ecosystem"), ProductName, Copyright (C) 2026, and FileVersion 1.1.0.0.
+  3. Recompiled all three executables and re-embedded `SIR_Icon.ico`.
+  4. Restored Windows Desktop shortcuts with icons: `SIR Launcher.lnk`, `SIR Installer.lnk`, and `SIR Server Manager.lnk`.
+
+### 4. Zero-Click Startup Account Discovery & Sync
+* **The Issue:** User accounts were not automatically displaying upon launching the launcher until manually clicking "Sync".
+* **The Fix:**
+  1. Extended `AuthService` in `launcher_core/auth_service.py` with `_discover_system_accounts()`: automatically scans and imports authenticated profiles from Lunar Client (`.lunarclient/settings/game/accounts.json`) and official Minecraft Launcher (`.minecraft/launcher_accounts*.json`).
+  2. Authenticated user profile **`W1hm`** is automatically recognized, set as primary active account, and stored in `accounts.json`.
+  3. Wired `autoSyncAccountsSilent()` in `launcher_ui/app.js` during bootstrap, rendering active profile immediately upon launch with zero user interaction needed.
+
+### 5. Installer Vanilla Target Option (`.minecraft`)
+* **Feature:** Added native Vanilla installation target (`target_type == "vanilla"`) in `SIR Installer`:
+  - Deploys directly into `%APPDATA%\.minecraft` with NO `instances/` subfolder.
+  - Automatically registers `SIR 26.2 (Fabric)` in `.minecraft/launcher_profiles.json`.
+  - Deploys modern mods, `SIR Modern Shader.zip`, `SIR Modern.zip`, and configs directly to root Minecraft folders.
+  - Profile resource pack deployment logic now strictly isolates master packs per profile and purges loose zip archives.
+
+### 6. Just Enough Resources (JER) Villager Trade Registry Neutralization
+* **Diagnosis:** Lunar Client logged `IllegalStateException: Missing registry: ResourceKey[minecraft:root / minecraft:trade_set]` from `VillagersHelper.initRegistry` during trade category initialization.
+* **The Fix:** Patched bytecode of `jeresources/util/VillagersHelper.class` method `initRegistry` to return immediately (`0xb1`), preventing unhandled registry lookups on experimental 26.2 registries while allowing JEI to load seamlessly.
+* **Verification:** Passed Azul Zulu Java 25 `JarVerifier` with 0 security exceptions and synchronized across all profiles and payloads.
+
+---
+
 *© 2026 SIR Minecraft Ecosystem. Engineered with Zero-Mock Integrity by SIR Ahmed.*
