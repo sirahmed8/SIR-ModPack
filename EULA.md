@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — End User License Agreement (EULA)
-### *Version 1.0.0 (2026.2) • Legally Enforced Software License & Usage Agreement*
+### *Version 1.1.0 (26.2) • Legally Enforced Software License & Usage Agreement*
 
 ---
 
@@ -15,6 +15,15 @@ By downloading, installing, launching, executing, or using **SIR Launcher**, **S
 
 1. **Independent Community Project:** Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is an independent community project and is **NOT an official Minecraft product**, nor is it approved by, associated with, or affiliated with Mojang AB or Microsoft.
 2. **Commercial Use Guidelines:** This distribution complies with Mojang Studios' Commercial Usage Guidelines and Brand & Asset Guidelines. No proprietary Minecraft source code, vanilla game JARs, or official assets are sold or commercialized. All vanilla assets are fetched dynamically from official Mojang/Microsoft CDNs.
+
+## 🔧 2.1 Bytecode Modification Acknowledgment
+You acknowledge that the SIR Ecosystem performs automated ASM bytecode transformations on mod JAR files and the Minecraft base JAR to ensure cross-version compatibility with Minecraft 26.2. These modifications include:
+- **Namespace remapping** from Fabric intermediary to official Mojang mappings
+- **Access widener and class tweaker** header updates
+- **Mixin injection target** method name corrections
+- **Mojang signature stripping** on the base game JAR to allow patched classes
+
+These transformations are performed locally on your machine and do not transmit any data externally.
 
 ---
 

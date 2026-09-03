@@ -1,10 +1,12 @@
 # 💎 SIR ModPack — The Ultimate Minecraft Ecosystem
-### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.0.0)*
+### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.1.0)*
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?logo=tailwindcss)](https://tailwindcss.com/)
 [![Python 3.14](https://img.shields.io/badge/Python-3.14-3776ab?logo=python)](https://python.org/)
+[![Java 25](https://img.shields.io/badge/Java-25-ed8b00?logo=openjdk)](https://openjdk.org/)
+[![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
 [![Proprietary: Closed Source](https://img.shields.io/badge/Model-Closed--Source%20Suite-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
 [![Tests: 340 Passing](https://img.shields.io/badge/Tests-340%2F340%20Passed-brightgreen.svg)](walkthrough.md)
@@ -13,7 +15,7 @@
 
 ## 🌟 What is SIR ModPack?
 
-**SIR ModPack** is an enterprise-grade, high-throughput Minecraft distribution and desktop suite unifying **Modern 26.2 (Fabric 1.21.4 with 228 mods)** and **Legacy 1.8.9 (Forge PvP with 28 mods)** into a single cohesive experience. GitHub is utilized exclusively as a reliable distribution channel for high-speed download mirrors of the standalone desktop binaries, installer, and offline packages.
+**SIR ModPack** is an enterprise-grade, high-throughput Minecraft distribution and desktop suite unifying **Modern 26.2 (Fabric 0.19.4 with 221 active mods + ASM compatibility engine)** and **Legacy 1.8.9 (Forge PvP with 28 mods)** into a single cohesive experience. GitHub is utilized exclusively as a reliable distribution channel for high-speed download mirrors of the standalone desktop binaries, installer, and offline packages.
 
 The suite provides standalone desktop binaries, direct native JVM execution, dedicated isolated dual shaders (**`SIR Modern Shader.zip`** and **`SIR Legacy Shader.zip`**), dual resource packs (**`SIR Modern.zip`** with Patrix 3D POM models and **`SIR Legacy.zip`** 32x PvP), dynamic ocean physics waves, zero-port multiplayer server hosting, and a Next.js 16 web hub.
 
@@ -38,10 +40,10 @@ SIR ModPack is physically provisioned across **8 high-performance instance profi
 +-------------------------------------------------------------------------------------------------------------------------------+
 | ARCHETYPE              | DIRECTORY          | MC VERSION | LOADER       | MODS COUNT | MEMORY ALLOC | SHADER PACK          | TARGET FPS |
 +------------------------+--------------------+------------+--------------+------------+--------------+----------------------+------------+
-| 26.2 Ultra Visuals     | 26.2-ultra         | 1.21.4     | Fabric 0.16  | 228 Mods   | 6GB – 12GB   | SIR Modern Shader    | 144+ FPS   |
-| 26.2 Balanced          | 26.2-balanced      | 1.21.4     | Fabric 0.16  | 228 Mods   | 4GB – 8GB    | SIR Modern Shader    | 180+ FPS   |
-| 26.2 Performance       | 26.2-performance   | 1.21.4     | Fabric 0.16  | 228 Mods   | 3GB – 6GB    | OFF (Sodium Boost)   | 350+ FPS   |
-| 26.2 Vanilla+          | 26.2               | 1.21.4     | Fabric 0.16  | 228 Mods   | 4GB – 8GB    | OFF (Modular Fabric) | 300+ FPS   |
+| 26.2 Ultra Visuals     | 26.2-ultra         | 26.2       | Fabric 0.19  | 221 Mods   | 6GB – 12GB   | SIR Modern Shader    | 144+ FPS   |
+| 26.2 Balanced          | 26.2-balanced      | 26.2       | Fabric 0.19  | 221 Mods   | 4GB – 8GB    | SIR Modern Shader    | 180+ FPS   |
+| 26.2 Performance       | 26.2-performance   | 26.2       | Fabric 0.19  | 221 Mods   | 3GB – 6GB    | OFF (Sodium Boost)   | 350+ FPS   |
+| 26.2 Vanilla+          | 26.2               | 26.2       | Fabric 0.19  | 221 Mods   | 4GB – 8GB    | OFF (Modular Fabric) | 300+ FPS   |
 | 1.8.9 PvP Battle Suite | 1.8.9              | 1.8.9      | Forge 2318   | 28 Mods    | 2GB – 4GB    | OFF (OptiFine Fast)  | 500+ FPS   |
 | 1.8.9 Ultra Visuals    | 1.8.9-ultra        | 1.8.9      | Forge 2318   | 28 Mods    | 3GB – 6GB    | SIR Legacy Shader    | 300+ FPS   |
 | 1.8.9 Balanced PvP     | 1.8.9-balanced     | 1.8.9      | Forge 2318   | 28 Mods    | 2GB – 4GB    | SIR Legacy Shader    | 450+ FPS   |

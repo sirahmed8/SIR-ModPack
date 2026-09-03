@@ -1,5 +1,5 @@
 # 🔒 SIR ModPack — Universal Privacy Policy
-### *Version 1.0.0 (2026.2) • Effective August 2026 • Legally Enforced Compliance*
+### *Version 1.1.0 (26.2) • Effective September 2026 • Legally Enforced Compliance*
 
 ---
 
@@ -84,6 +84,7 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 - **Input Sanitization:** All text strings and player identifiers are filtered against XSS injection, prototype pollution, and malformed characters via `lib/security.ts`.
 - **HTTP Security Headers:** Strict transport security (HSTS), frame-guard protection (`X-Frame-Options: SAMEORIGIN`), and MIME-sniffing prevention (`nosniff`) protect every web transaction.
 - **Loopback Bridge Isolation:** Desktop local endpoints bind strictly to `127.0.0.1` and verify origin integrity with constant-time token comparison.
+- **ASM Bytecode Compatibility Processing:** The SIR Launcher performs local-only ASM bytecode transformations on installed mod JAR files to ensure compatibility with Minecraft 26.2's official namespace. This processing occurs entirely on your local machine — no mod bytecode, class data, or transformation results are ever transmitted externally.
 
 ---
 

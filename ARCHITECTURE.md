@@ -1,5 +1,5 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • September 2026 (Update 7)*
+### *Unified Minecraft Experience • Semantic Versioning v1.1.0 • September 2026 (Update 8)*
 
 ---
 
@@ -205,6 +205,53 @@ All 8 profile permutations are physically provisioned under `instances/`:
    - [Terms of Service](TERMS.md)
    - [Cookie Policy](COOKIES.md)
    - [Open Source License](LICENSE.md)
+
+---
+
+## 🧬 10. MC 26.2 ASM Bytecode Compatibility Engine (Update 8)
+
+### Problem Statement
+Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `intermediary-26.2.jar` is empty (572 bytes). Mods compiled against older MC versions reference `class_XXXX` / `method_XXXX` intermediary names that don't exist in the 26.2 runtime, causing mass `ClassNotFoundException` and `NoSuchMethodError` crashes.
+
+### Architecture
+```
+┌─────────────────────────────────────────────────────┐
+│ Mapping Table Construction                          │
+│ Mojang ProGuard + FabricMC intermediary → TSV maps  │
+│ class_map.tsv | method_map.tsv | field_map.tsv      │
+└──────────────────────┬──────────────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│ EnhancedModRemapper.java (ASM 9.10.1)               │
+│ ├─ ClassRemapper: class_XXXX → official names       │
+│ ├─ StringRemappingClassVisitor: Mixin annotations   │
+│ └─ StringRemappingMethodVisitor: method descriptors  │
+└──────────────────────┬──────────────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│ 5-Pass Namespace Patcher                            │
+│ Pass 1: .accessWidener + .classtweaker headers      │
+│ Pass 2: Case-insensitive .aw extension catch        │
+│ Pass 3: Nested jar-in-jar dependencies (4 levels)   │
+│ Pass 4: fabric.mod.json field + content detection    │
+│ Pass 5: .aw inside nested jars (kirin, etc.)        │
+│ Result: 180+ mods patched to official namespace     │
+└──────────────────────┬──────────────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────────────┐
+│ Mod-Specific ASM Patches                            │
+│ ├─ InventoryTweaks: method_25404 → keyPressed       │
+│ ├─ PlayerAnimationLib: method_5773 → tick            │
+│ ├─ ShatterLib: 67-class merge + bridge method        │
+│ ├─ Cupboard: Identifier access widener (PUBLIC)      │
+│ └─ 26.2.jar: Mojang signature stripping              │
+└─────────────────────────────────────────────────────┘
+```
+
+### Key Technical Decisions
+1. **Why not deploy proper intermediary?** Deploying real intermediary mappings would cause Fabric Loader to remap `26.2.jar` to intermediary namespace, breaking all native 26.2 mods that use official names. The runtime namespace must stay `official`.
+2. **Why ASM over source patches?** Mods are distributed as compiled JARs without source. ASM bytecode transformation is the only viable approach for binary-level compatibility.
+3. **Why 5 scan passes?** Different mods package access wideners with varying file extensions (`.accessWidener`, `.accesswidener`, `.aw`), nesting depths (jar-in-jar up to 4 levels), and declaration mechanisms (`fabric.mod.json` field vs inline headers).
 
 ---
 

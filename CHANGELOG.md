@@ -1,5 +1,47 @@
 # 📜 SIR ModPack — Official Ecosystem Changelog
-### *Unified Minecraft Experience • Semantic Versioning (v1.0.0 • August 2026)*
+### *Unified Minecraft Experience • Semantic Versioning (v1.1.0 • September 2026)*
+
+---
+
+## 🚀 [v1.1.0-PRO • Update 8] — MC 26.2 Native Migration, ASM Bytecode Compatibility Engine & 200+ Mod Namespace Harmonization (September 2026)
+
+### 🔧 1. MC 26.2 Official Namespace Migration
+- **Root Cause Analysis:** Minecraft 26.2 uses **Mojang official** class names natively. FabricMC's `intermediary-26.2.jar` is empty (572 bytes) — official names equal intermediary in 26.2. Mods compiled against older intermediary (`class_XXXX`, `method_XXXX`) crash with `ClassNotFoundException`.
+- **Runtime Namespace Resolution:** Fabric Loader's `computeRuntimeNamespace()` resolves to `official` with the empty intermediary JAR, requiring all mod access wideners and class tweakers to declare `official` namespace.
+- **Mapping Table Construction:** Built proper intermediary→official cross-reference mapping from Mojang ProGuard + FabricMC intermediary for MC 1.21.11, generating `class_map.tsv`, `method_map.tsv`, and `field_map.tsv` with 10,000+ entries.
+
+### 🧬 2. ASM Bytecode Remapping Engine (`EnhancedModRemapper.java`)
+- **Dual-Layer Class Remapper:** ASM 9.10.1 `ClassRemapper` handles `net/minecraft/class_XXXX` bytecode references + custom `StringRemappingClassVisitor` transforms Mixin annotation string constants (`@Inject(method=["method_XXXX"])`) using regex pattern matching.
+- **11 Mods Deep-Remapped:** Full bytecode transformation from intermediary→official for mods with embedded `class_XXXX` references in constant pools, method descriptors, and field accesses.
+- **180+ Mods Namespace-Patched:** Access widener (`.accessWidener`, `.accesswidener`, `.aw`) and class tweaker (`.classtweaker`) header declarations changed from `intermediary` to `official` across 5 progressive scan passes including nested jar-in-jar dependencies up to 4 levels deep.
+
+### 🔐 3. Mojang JAR Signature Stripping
+- **Problem:** ASM-patching `Identifier.class` in `26.2.jar` (to make it `PUBLIC` for cupboard mod) broke Mojang's SHA-384 code signing (`MOJANGCS.SF` / `MOJANGCS.RSA`).
+- **Solution:** Stripped `META-INF/MOJANGCS.SF` and `META-INF/MOJANGCS.RSA`, cleaned `MANIFEST.MF` to remove per-class SHA-384 digests. Backup preserved at `26.2.jar.bak_signed`.
+
+### 🩹 4. Mod-Specific ASM Patches
+- **InventoryTweaks:** Patched `method_25404`→`keyPressed` and `method_25402`→`mouseClicked` in `MixinKeyInputHandler.class` (method was renamed between MC versions, not just deobfuscated).
+- **PlayerAnimationLib:** Patched `method_5773`→`tick` in `AvatarMixin.class`.
+- **ShatterLib 0.7.0-beta.1:** Merged 67 classes from 0.6.0.8 + injected bridge method for backward compatibility.
+- **Cupboard:** Access widener updated to official namespace for `Identifier` class access.
+- **Owo-Lib:** Upgraded to native 26.2 build `0.13.1+26.2` from Modrinth.
+
+### ⚠️ 5. Temporarily Disabled Mods (Incompatible 26.2 API)
+| Mod | Reason |
+|-----|--------|
+| `smoothgui` | Uses removed `Screen.render()` method signature |
+| `IrisSearch` | Uses removed `field_22793` font accessor |
+| `Perception` | 5 hardcoded intermediary method injections in Mixin bytecode |
+| `iris_shader_folder` | 4 intermediary method references targeting obsolete Iris GUI |
+| `PanoramaScreenshot` | Uses removed `Identifier.lambda$read$0` signature |
+| `InventoryTweaks` | Uses removed `Identifier.validPathChar` API |
+| `AnviansLib` | Dependency of InventoryTweaks, same API incompatibility |
+
+### 📊 6. Final Boot Verification
+- **221 active mods** loaded and initialized successfully (228 total, 7 compatibility-disabled).
+- All Mixin applications passed without errors.
+- Sound engine, OpenGL (NVIDIA RTX 4050), texture atlases (8192×4096), shader pipeline, and resource packs all initialized.
+- Game reached title screen with full mod ecosystem operational.
 
 ---
 

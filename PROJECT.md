@@ -51,6 +51,7 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 21 | Instance Profile Matrix Parity | Provision and synchronize instance directories (26.2-*, 1.8.9-*) | M5 | Survey Explorer 3 / R4 |
 | 22 | Automated E2E Verification Suite | Complete test suite covering bridge APIs, native JVM runner, profile permutations, and health | M5 | Survey Explorer 3 / R4 |
 | 23 | Update 7 Ecosystem Audit & Expansion | 228 Modern mods, 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, dual shaders isolation | M6 / U7 | Eco Audit / R1-R5 |
+| 24 | Update 8 MC 26.2 ASM Compatibility Engine | ASM bytecode remapping (intermediary→official), 180+ mod namespace patching, Mojang signature stripping, Mixin injection fixes, Java 25 runtime | M7 / U8 | Compatibility / R1-R6 |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
@@ -61,6 +62,7 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 4 | M4: Next.js 16 Web Hub, Firebase & Gemini AI | Features 17, 18, 19, 20 (Strict Next.js 16 build/lint, AiChatbot integration, Firebase sync alignment, Gemini AI waterfall) | none | DONE |
 | 5 | M5: Profile Matrix Parity & E2E Verification | Features 21, 22 (Instance directory sync, 100% E2E test pass across Modern 26.2 & Legacy Forge 1.8.9) | M1, M2, M3, M4 | VERIFIED |
 | 6 | M6: Update 7 Multi-Modpack & Ecosystem Audit | Feature 23 (228 Modern / 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, isolated dual shaders, 340 tests) | M1, M2, M3, M4, M5 | VERIFIED |
+| 7 | M7: Update 8 MC 26.2 ASM Compatibility Engine | Feature 24 (ASM bytecode remapping, 180+ namespace patches, Mojang signature strip, 221 active mods verified on Java 25) | M1-M6 | VERIFIED |
 
 ## Interface Contracts
 

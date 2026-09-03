@@ -1,5 +1,5 @@
 # 🤝 SIR ModPack — Master User & Distribution Agreements
-### *Version 1.0.0 (2026.2) • Community Governance & Security Framework*
+### *Version 1.1.0 (26.2) • Effective September 2026 • Community Governance & Security Framework*
 
 ---
 

@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — Terms of Service
-### *Version 1.0.0 (2026.2) • Effective August 2026 • Legally Enforced Compliance*
+### *Version 1.1.0 (26.2) • Effective September 2026 • Legally Enforced Compliance*
 
 ---
 
@@ -32,6 +32,10 @@ Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The 
 ## 📄 5. Intellectual Property & Open-Source Attribution
 - **Custom Modules:** Launcher code, installer scripts, and web UI components are distributed under open-source licenses.
 - **Third-Party Assets:** Bundled mods, shaders, and textures remain the intellectual property of their original creators and authors, with attribution preserved in respective directories.
+
+## 🔧 5.1 Mod Compatibility & Bytecode Modifications
+- **ASM Compatibility Layer:** The SIR Ecosystem may perform automated ASM bytecode transformations on third-party mod files to ensure compatibility with Minecraft 26.2's official class namespace. These transformations are functionally equivalent to standard Fabric Loader remapping and do not alter the intellectual property, creative content, or gameplay mechanics of any mod.
+- **Signature Stripping:** Where necessary for compatibility, Mojang code signatures on the base game JAR may be stripped to allow patched classes to load. This does not circumvent DRM or authentication systems.
 
 ---
 
