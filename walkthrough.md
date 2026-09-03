@@ -448,4 +448,52 @@ Following empirical testing on Lunar Client (Moonsworth Genesis / Ichor bootload
 
 ---
 
+## 💎 15. High-DPI Windows Icon Integration, Release 1.0.0 Realignment, Clean Vanilla Profile & Installer GitHub Cloud Recovery Flow
+
+### 1. Multi-Resolution 256x256 Windows Icon & PE Resource Fix
+* **The Glitch:** In Windows Explorer, `SIR Launcher.exe` displayed a generic blank white document icon instead of the custom emerald SIR crest.
+* **Root Cause:**
+  1. The existing `.ico` file lacked a 256x256 PNG-compressed sub-image. Modern Windows 10/11 shells (with standard 125%–150% DPI display scaling and medium/large icon views) require a 256x256 mipmap in the ICO directory; without it, the Windows shell fails to extract the PE resource and falls back to the default executable document icon.
+  2. The PyInstaller spec files specified `icon=['D:/Projects/SIR ModPack/SIR_Icon.ico']` as a list rather than a scalar string, which interfered with Win32 `UpdateResource` mapping.
+* **The Fix:**
+  1. Authored a multi-resolution ICO file (`D:\Projects\SIR ModPack\SIR_Icon.ico`) containing 7 distinct mipmaps: `16x16`, `24x24`, `32x32`, `48x48`, `64x64`, `128x128`, and a full `256x256` PNG-compressed sub-image derived from the master 1024x1024 crest.
+  2. Updated `SIR Launcher.spec`, `SIR Installer.spec`, and `SIR Server Manager.spec` to pass `icon='D:/Projects/SIR ModPack/SIR_Icon.ico'` as a scalar string.
+  3. Recompiled all three standalone executables with PyInstaller and refreshed desktop shortcuts.
+
+### 2. Version Alignment to Official 1.0.0
+* **Requirement:** Reset all application versions, version metadata files, and legal compliance documentation from `1.1.0` back to **`1.0.0`** to reflect the official initial release milestone.
+* **The Changes:**
+  - `version_launcher.txt`: reset `FileVersion` and `ProductVersion` to `1.0.0.0` / `1.0.0`.
+  - `version_installer.txt`: reset `FileVersion` and `ProductVersion` to `1.0.0.0` / `1.0.0`.
+  - `version_server.txt`: reset `FileVersion` and `ProductVersion` to `1.0.0.0` / `1.0.0`.
+  - Legal & compliance documents (`PRIVACY.md`, `TERMS.md`, `COOKIES.md`, `EULA.md`, `AGREEMENTS.md`): reset headers to `Version 1.0.0 (26.2) • Effective August 2026`.
+
+### 3. Pure "SIR 26 Vanilla" Profile & Zero-Mod Zero-State UI
+* **Requirement:** Eliminate the ambiguous "Modular Vanilla+" terminology and replace it with an authentic, pure "SIR 26 Vanilla" profile in SIR Launcher (0 mods, 0 shaders, default vanilla textures).
+* **The Implementation:**
+  - **Instance Configuration:** Configured `instances/26.2` with `name=SIR 26 Vanilla`, `group=Vanilla`. Completely emptied `instances/26.2/minecraft/{mods, shaderpacks, resourcepacks}` so it contains physically 0 mods.
+  - **Instance Service & Mods Service:** Updated `launcher_core/instance_service.py` to register `26.2` with `is_vanilla: True` and `mods_count: 0`. Updated `launcher_core/mods_service.py` so that requests for `26.2` or vanilla profiles immediately return `[]` without scanning root `mods/`.
+  - **Dynamic Quick Presets:** Updated `launcher_ui/js/launch.js` and `launcher_ui/js/instances.js` to filter profiles by `available !== false && is_installed !== false`. Quick Presets on the Launchpad now strictly render **only the profiles actually present on disk**.
+  - **Mods & Shaders Zero-State:** Updated `launcher_ui/js/mods.js` and `launcher_ui/js/shaders.js` to render dedicated "🌿 Pure Clean Vanilla Profile Active" and "🌿 Pure Vanilla Lighting Engine Active" zero-states when Vanilla is selected.
+
+### 4. Smart Offline Package Detection & GitHub Cloud Recovery Flow in Installer
+* **Requirement:** If the installer runs in an environment where the offline package (`SIR_Package.zip` / local payload folders) is absent, provide an immediate, user-friendly button directing the user to the GitHub release page to download the package without crashing or blocking.
+* **The Implementation:**
+  - **Bridge Engine (`installer_bridge.py`):** Added `check_package_status()` and updated `get_install_progress()` to return `package_missing: True`, `missing_payload_name`, and `release_url` (`https://github.com/sirahmed8/SIR-ModPack/releases`).
+  - **Installer UI (`index.html` & `wizard.js`):** Added `#missing-package-banner` with a clear "Download Package from GitHub" button calling `openExternalReleasePage()`.
+  - **Target Environment Validation:** Added `check_target_environment()` in `installer_bridge.py` and dynamic warning banners in `wizard.js` for Lunar Client (`~/.lunarclient` missing) and Vanilla (`%APPDATA%/.minecraft` missing).
+
+### 5. Website Download Hub Refresh & Guest Download Support
+* **Website Updates (`website-next`):**
+  - Updated download links in `firebase.ts`, `app/admin/page.tsx`, and `HeroDownload.tsx` to point to:
+    - **SIR Apps Suite:** `https://github.com/sirahmed8/SIR-ModPack/releases/download/v1.0.0/SIR_Apps_Suite.zip`
+    - **SIR Package:** `https://github.com/sirahmed8/SIR-ModPack/releases/download/v1.0.0/SIR_Package.zip`
+  - Replaced outdated dead release link `SIR_Offline_Bundle_1.1GB.zip`.
+  - Updated `handleDownload` in `HeroDownload.tsx` to enable seamless 1-click guest downloads without forcing or blocking on Google sign-in.
+  - Verified build with `next build` (31/31 static routes prerendered) and deployed live to Firebase Hosting (`https://sir-modpack.web.app`).
+  - Verified live deployment with Chrome DevTools MCP (console log inspection and viewport screenshot).
+
+---
+
 *© 2026 SIR Minecraft Ecosystem. Engineered with Zero-Mock Integrity by SIR Ahmed.*
+

@@ -52,6 +52,7 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 22 | Automated E2E Verification Suite | Complete test suite covering bridge APIs, native JVM runner, profile permutations, and health | M5 | Survey Explorer 3 / R4 |
 | 23 | Update 7 Ecosystem Audit & Expansion | 228 Modern mods, 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, dual shaders isolation | M6 / U7 | Eco Audit / R1-R5 |
 | 24 | Update 8 MC 26.2 ASM Compatibility Engine | ASM bytecode remapping (intermediary→official), 180+ mod namespace patching, Mojang signature stripping, Mixin injection fixes, Java 25 runtime | M7 / U8 | Compatibility / R1-R6 |
+| 25 | High-DPI Windows Assets & v1.0.0 Architecture | Multi-res 256x256 ICO, version reset to 1.0.0, Pure Vanilla profile (0 mods), dynamic quick presets, installer missing-package GitHub recovery | M8 / v1.0 | Release Hardening |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
@@ -63,6 +64,7 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
 | 5 | M5: Profile Matrix Parity & E2E Verification | Features 21, 22 (Instance directory sync, 100% E2E test pass across Modern 26.2 & Legacy Forge 1.8.9) | M1, M2, M3, M4 | VERIFIED |
 | 6 | M6: Update 7 Multi-Modpack & Ecosystem Audit | Feature 23 (228 Modern / 28 Legacy mods, Patrix 3D POM models, Ocean waves physics, isolated dual shaders, 340 tests) | M1, M2, M3, M4, M5 | VERIFIED |
 | 7 | M7: Update 8 MC 26.2 ASM Compatibility Engine | Feature 24 (ASM bytecode remapping, 180+ namespace patches, Mojang signature strip, 221 active mods verified on Java 25) | M1-M6 | VERIFIED |
+| 8 | M8: v1.0.0 Release Architecture & Distribution | Feature 25 (High-DPI icon, 1.0.0 versioning, pure vanilla profile, dynamic quick presets, installer GitHub fallback, website download hub) | M1-M7 | VERIFIED |
 
 ## Interface Contracts
 

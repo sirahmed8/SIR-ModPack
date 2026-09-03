@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — Terms of Service
-### *Version 1.1.0 (26.2) • Effective September 2026 • Legally Enforced Compliance*
+### *Version 1.0.0 (26.2) • Effective September 2026 • Legally Enforced Compliance*
 
 ---
 

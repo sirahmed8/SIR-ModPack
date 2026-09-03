@@ -1,5 +1,5 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.1.0 • September 2026 (Update 8)*
+### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • August-September 2026*
 
 ---
 
@@ -39,7 +39,7 @@ flowchart TD
         M1[26.2-ultra: 16 Chunks, POM, SIR Modern Shader, 144+ FPS]
         M2[26.2-balanced: 12 Chunks, Balanced Shaders, 180+ FPS]
         M3[26.2-performance: 8 Chunks, 0ms Sodium Boost, 350+ FPS]
-        M4[26.2: Vanilla+ Modular Fabric 228 Mods, 300+ FPS]
+        M4[26.2: SIR 26 Vanilla, 0 Mods, Authentic Vanilla Engine, 240+ FPS]
         L1[1.8.9: PvP Battle Suite, 28 Mods, 500+ FPS]
         L2[1.8.9-ultra: HD 32x Skyboxes, SIR Legacy Shader, 300+ FPS]
         L3[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
