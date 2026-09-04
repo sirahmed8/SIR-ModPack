@@ -1,5 +1,5 @@
 # 🤝 SIR ModPack — Master User & Distribution Agreements
-### *Version 1.1.0 (26.2) • Effective September 2026 • Community Governance & Security Framework*
+### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Community Governance & Security Framework*
 
 ---
 
@@ -40,6 +40,7 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ## 🤝 5. Community & Developer Relations
 - **Suggestions & Issues:** Feature requests, performance benchmarks, and bug reports may be submitted through the Web Portal Error Reporter or GitHub issues.
+- **Support & Governance:** For legal inquiries or support, contact [support@sir-modpack.com](mailto:support@sir-modpack.com).
 - **Creator Rights:** All mod developers and shader artists receive full credit and attribution in [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
 
 ---

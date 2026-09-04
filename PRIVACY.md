@@ -1,5 +1,5 @@
 # 🔒 SIR ModPack — Universal Privacy Policy
-### *Version 1.1.0 (26.2) • Effective September 2026 • Legally Enforced Compliance*
+### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Compliance*
 
 ---
 
@@ -95,7 +95,7 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 ---
 
 ## 📬 10. Contact & Legal Inquiries
-* **Data Protection & Legal Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+* **Data Protection & Legal Email:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
 * **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 * **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 * **Official Documentation:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)

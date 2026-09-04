@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — End User License Agreement (EULA)
-### *Version 1.1.0 (26.2) • Legally Enforced Software License & Usage Agreement*
+### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Software License & Usage Agreement*
 
 ---
 
@@ -29,7 +29,7 @@ These transformations are performed locally on your machine and do not transmit 
 
 ## 🛡️ 3. Grant of License & Permitted Use
 1. **Non-Commercial License:** You are granted a personal, non-exclusive, non-transferable, revocable license to download, install, and execute the SIR ModPack binaries and configurations for personal, non-commercial entertainment purposes.
-2. **Open-Source Attribution:** Custom launcher scripts, web components, and orchestration tools authored by SIR Ahmed are licensed under open-source terms. Third-party mod JARs, shader passes, and resource pack textures remain under the copyright and license of their respective original authors.
+2. **Independent Platform Attribution:** Custom launcher scripts, web components, and orchestration tools authored by SIR Ahmed are provided as a 100% free, independent software suite. Third-party mod JARs, shader passes, and resource pack textures remain under the copyright and license of their respective original authors.
 
 ---
 
@@ -63,6 +63,7 @@ This agreement is effective until terminated. Your rights under this license ter
 ---
 
 ## 📬 8. Contact & Legal Inquiries
+- **Legal Support Email:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Official Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **Official Documentation:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)
