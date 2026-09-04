@@ -231,7 +231,7 @@ def sync_launcher_config_and_accounts(launcher_root, default_username=None):
             pass
 
 
-def deploy_sir_launcher(target, ram_mb, modern_tiers, legacy_tiers, governor="smooth", username="SirAhmed1"):
+def deploy_sir_launcher(target, ram_mb, modern_tiers, legacy_tiers, governor="smooth", username="Player"):
     print("\n📦 === DEPLOYING & SYNCHRONIZING SIR LAUNCHER PROFILES ===")
     
     launcher_roots = get_launcher_roots()

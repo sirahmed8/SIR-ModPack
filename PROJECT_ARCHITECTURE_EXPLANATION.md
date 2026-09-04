@@ -204,11 +204,11 @@ All 8 profile permutations are physically provisioned under `instances/`:
    - [Universal Privacy Policy](PRIVACY.md)
    - [Terms of Service](TERMS.md)
    - [Cookie Policy](COOKIES.md)
-   - [Open Source License](LICENSE.md)
+   - [SIR Platform License](LICENSE.md)
 
 ---
 
-## 🧬 10. MC 26.2 ASM Bytecode Compatibility Engine (Update 8)
+## 🧬 10. MC 26.2 ASM Bytecode Compatibility Engine
 
 ### Problem Statement
 Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `intermediary-26.2.jar` is empty (572 bytes). Mods compiled against older MC versions reference `class_XXXX` / `method_XXXX` intermediary names that don't exist in the 26.2 runtime, causing mass `ClassNotFoundException` and `NoSuchMethodError` crashes.

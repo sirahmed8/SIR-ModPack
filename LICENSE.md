@@ -37,7 +37,7 @@ and community use. No monetized features, paywalls, or commercial rights are cla
 All third-party modifications, shaders, textures, audio assets, and libraries
 included, configured, or referenced in this project remain the sole property and
 copyright of their respective original authors and maintainers. These assets are
-utilized and distributed under their respective open-source licenses, creative
+utilized and distributed under their respective licenses, creative
 commons licenses, or public community sharing terms.
 
 4. LIMITATION OF LIABILITY & INDEMNIFICATION:
