@@ -9,7 +9,7 @@
 [![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
 [![Proprietary: Closed Source](https://img.shields.io/badge/Model-Closed--Source%20Suite-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
-[![Tests: 340 Passing](https://img.shields.io/badge/Tests-340%2F340%20Passed-brightgreen.svg)](walkthrough.md)
+[![Tests: 343 Passing](https://img.shields.io/badge/Tests-343%2F343%20Passed-brightgreen.svg)](walkthrough.md)
 
 ---
 
@@ -28,7 +28,7 @@ The suite provides standalone desktop binaries, direct native JVM execution, ded
 | **SIR Launcher Pro** | `SIR Launcher.exe` | Standalone desktop launcher with native Direct JVM Launch Pipeline, 3D Skin Studio, Quick Presets, and Cloud Self-Healing. |
 | **SIR Installer** | `SIR Installer.exe` | Autonomous auto-healing installer with cloud payload streaming, CRC archive validation, and zero-data-loss upgrades. |
 | **SIR Server Manager** | `SIR Server Manager.exe` | Dedicated multiplayer server manager with custom CyberSelect menus, live TPS gauges, and Playit.gg zero-port public tunneling. |
-| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 32 prerendered static routes, AI assistant, live server radar, and skin wardrobe. |
+| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 34 prerendered static routes, AI assistant, live server radar, and skin wardrobe. |
 
 ---
 

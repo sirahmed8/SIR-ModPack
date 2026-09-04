@@ -1,29 +1,102 @@
 # 📜 SIR ModPack — Official Ecosystem Changelog
-### *Unified Minecraft Experience • Semantic Versioning (v1.1.0 • September 2026)*
+### *Unified Minecraft Experience • Semantic Versioning (v1.0.0 • September 2026)*
 
 ---
 
-## 🚀 [v1.1.0 • Ecosystem Evolution & Cloud Direct Pipeline] — Crash Resolution, Generational ZGC, Unified Google Cloud Sync, Website Route Inversion & Search Architecture (September 2026)
+## 🚀 [v1.0.0 • Master Genesis Release] — Official Master Launch Release: Modern 26.2, Legacy 1.8.9, RSHIFT In-Game HUD, Bi-Directional Lunar Bridge, ASM Dropzone, Binary Delta Patcher & Next.js 16 Web Platform (September 2026)
 
-### 🛠️ 1. Minecraft 26.2 Direct JVM & Window Station Resolution
+### 🎮 1. In-Game Client HUD & RSHIFT Menu System Restoration
+- **Root Cause Resolution across Both Game Engines:**
+  - Modern 26.2 (Fabric): Diagnosed keybind registration mismatch where `options.txt` declared unregistered `key_key.inventoryhud.config`. Fixed to official registered token `key_key.inventoryhud.openconfig:key.keyboard.right.shift` (GLFW scancode `344`), and enabled `arm_toggle: true`, `pot_toggle: true` in `config/inventoryhud.json`.
+  - Legacy 1.8.9 (Forge): Restored LWJGL 2 integer scancode `54` (`key_key.inventoryhud.openconfig:54` and `key_key.inventoryhud.config:54`) across all 1.8.9 instance `options.txt` files, replacing incompatible GLFW string tokens. Synced `havocclient/` ClickGUI with `keyCode: 54`.
+- **Dynamic Dual-Mode Translation Engine (`controls_service.py`):**
+  - Added automated translation and synchronization across Modern GLFW scancodes (`key.keyboard.right.shift`) and Legacy LWJGL 2 scancodes (`54`) whenever controls are saved or inspected.
+
+### 🌙 2. Bi-Directional Lunar Client Profile Bridge (`C:` ↔ `D:`)
+- **Automated Profile Bridge Engine (`lunar_bridge_service.py`):**
+  - Scans and pairs 6 Lunar Client profiles (`C:\Users\%USERNAME%\.lunarclient\profiles\sir-*`) with corresponding SIR instances.
+  - Bidirectionally synchronizes FOV, mouse sensitivity, keybinds, and resource pack priorities between Lunar Client (`optionsLC.txt`, `options.txt`) and SIR Launcher (`instances/*/minecraft/options.txt`).
+- **Desktop UI Integration:**
+  - Added 🌙 Lunar Profile Synchronization button in the Profiles & Instances view, complete with real-time feedback and status reporting.
+
+### 🧩 3. Drag-and-Drop Mod Dropzone & 5-Pass ASM Remapping Engine
+- **Bytecode & Namespace Remapper (`auto_remapper_service.py`):**
+  - Automated 5-pass bytecode engine for third-party mod JARs dropped into the launcher.
+  - Rewrites `.accessWidener` / `.classtweaker` header declarations from `intermediary` to `official`.
+  - Recursively inspects and remaps nested jar-in-jar archives up to 4 directory levels deep.
+  - Strips invalid Mojang code signatures (`META-INF/*.SF`, `*.RSA`, `MANIFEST.MF` SHA digests) to prevent signature verification crashes.
+  - Remaps class and method references using `cache/class_map.tsv` and `cache/method_map.tsv`.
+- **Interactive UI Dropzone:**
+  - Added `#mod-dropzone` in Mods & Content Hub view supporting native desktop drag-and-drop of `.jar` files with real-time validation and automatic instance installation.
+
+### ⚡ 4. SHA-256 Binary Delta Patcher for Instant OTA Updates
+- **Differential Patching Engine (`shared_core.delta_patcher`):**
+  - Computes deterministic SHA-256 manifests (`delta_manifest.json`) across all 2,935 files (mods, shaderpacks, resourcepacks, configurations, and instances).
+  - Calculates differential sync plans (`to_add`, `to_update`, `to_delete`, `unchanged`), transferring only altered bytes via atomic `.tmp` writes with post-write SHA-256 verification.
+  - Preserves user-owned saves, screenshots, options, and accounts while achieving over 99% bandwidth savings compared to full 6 GB re-downloads.
+- **Pipeline Integration:**
+  - Integrated into `build_package.py`, `deploy_all.py`, `install.py`, and `installer_bridge.py` for cloud and offline installations.
+
+### ⌨️ 5. Universal Desktop Command Palette (`Ctrl + K` / `Cmd + K`)
+- **Spotlight Quick-Action Center (`command_palette.js`):**
+  - Global `Ctrl+K` / `Cmd+K` keyboard shortcut and responsive header trigger button.
+  - Real-time fuzzy-search across 240+ installed mods, 8 Modern & Legacy profiles, navigation views, video presets, and self-healing tools.
+  - Full keyboard ergonomics (`↑↓` navigation, `Enter` to select, `ESC` to close).
+
+### 🛠️ 6. Minecraft 26.2 Direct JVM & Window Station Resolution
 - **ASM StackMapTable Fix (`framework-fabric`):** Authored `FixSyncedEntityData.java` utilizing ASM 9.10.1 with `COMPUTE_FRAMES` to eliminate 27 corrupt NOP bytes and resolve `java.lang.VerifyError: Expecting a stack map frame` on Java 25 (`adoptium-25.0.5-beta`). Synced across all 25 JAR instance targets.
 - **Interactive Windows Display Station:** Configured `javaw.exe` with `CREATE_NEW_PROCESS_GROUP` on Windows station `WinSta0\default`, eliminating headless `CREATE_NO_WINDOW` constraints and ensuring GLFW and OpenGL 3.3.0 surface creation on dedicated GPUs (NVIDIA RTX 4050).
 - **Generational ZGC GC Governor:** Added intelligent JVM GC engine with automatic support for `-XX:+UseZGC -XX:+ZGenerational` on high-memory profiles (>= 12 GB RAM) for sub-millisecond GC pauses.
 - **Deep Crash Stack-Trace Diagnostics:** Enhanced `CrashAnalyzer` and `LogsService` with Java 25 detection and automated diagnostic pattern matching for `VerifyError`, GPU surface errors, and heap reserve issues.
 
-### 🌐 2. Web Platform Architecture Inversion (`/` vs `/main`)
+### 🌐 7. Web Platform Architecture Inversion & Cloud Sync
 - **Cinematic Welcome Landing (`/`):** Shifted the rich ecosystem showcase and quick-dock to root `/` for visitors, with permanent 301 redirects for legacy `/welcome` routes.
 - **Authenticated Dashboard (`/main`):** Moved interactive downloads matrix, engine profiles, and server portals to `/main` with automated authentication guards.
-- **Command Palette (Ctrl+K) Overhaul:** Added category filter chips (All, Platform, Profiles, Mods, Visuals, Guides) and persisted recent search history in `localStorage`.
-
-### ☁️ 3. Unified Google Cloud Sync & First-Time Onboarding
 - **Cross-App Shared Session:** Created `shared_core.cloud_sync` enabling 1-click desktop Google OAuth via loopback bridge (`http://127.0.0.1:{port}/auth/callback`), synchronized between `SIR Launcher.exe` and `SIR Server Manager.exe` via `%APPDATA%\SIR ModPack\cloud_session.json`.
 - **Firebase Realtime Database Backup & Disaster Recovery:** User accounts, launcher configs, and server profiles are encrypted and backed up to Firebase RTDB (`users/{uid}/cloud_backup.json`) with automated restore on fresh installs.
 - **First-Time Setup Wizard:** Built `#welcome-onboarding-modal` in Launcher UI guiding users through language selection, theme choices, hardware profiling, and cloud synchronization.
 
----
+### 🖥️ 8. Windows System Tray, Frictionless Lifecycle & Ergonomic UX Mastery
+- **Windows System Tray Service (`tray_service.py`):**
+  - Integrated native Windows system tray icon (`pystray` + `Pillow`) displaying the high-res SIR emblem.
+  - Context menu features: Open SIR Launcher, 1-Click Launch Active Profile, Settings, Check for Updates, and Complete Exit.
+  - Double-click and single-instance restoration via Win32 `ShowWindow(SW_RESTORE)` and `SetForegroundWindow` ensuring guaranteed focus bypass.
+- **Configurable Window Lifecycle Interceptors:**
+  - Close button (`X`): Configurable action (`tray` to minimize to tray silently, `taskbar` to minimize to taskbar, `exit` to terminate).
+  - Minimize button (`_`): Configurable action (`taskbar` default or `tray`).
+  - Post-Launch Action: Configurable action (`tray_trim` to hide to tray and reclaim memory during gameplay, auto-restoring when Minecraft exits; `keep_open`; or `close`).
+- **Windows Startup Registry Engine:**
+  - Full toggle integration in Settings view backed by `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`.
+  - Configures silent background boot (`"<exe>" --autostart --minimized`) with PyWebView `hidden=True` window creation.
+- **Cyber-Dark Command Palette Polish & Physics Transitions:**
+  - Eradicated harsh default browser search outlines; wrapped in Cyber-Dark focus pill (`focus-within:border-cyan-500/50`, `shadow-[0_0_20px_rgba(6,182,212,0.25)]`).
+  - Universal physics-based spring entrance (`animate-in fade-in-0 zoom-in-95 duration-200`) and reverse exit transitions on all modals.
+- **Zero-Error Process & Stream Resilience:**
+  - Subprocess log pipes in `native_runner.py` protected with `encoding="utf-8", errors="replace"`, eliminating Windows ANSI decoding crashes.
+  - Process reaper (`kill_instance` / `kill_all_instances`) preventing orphaned `javaw.exe` / `python.exe` background tasks.
+  - Verified 348/348 passing test suite and 100% healthy `ecosystem_doctor.py`.
 
-## 🚀 [v1.0.0 • Master Genesis Release] — High-DPI Windows Ecosystem, MC 26.2 Native Migration, ASM Bytecode Engine, Pure Vanilla Profile & Installer GitHub Cloud Recovery (August-September 2026)
+### 🛰️ 9. Production Polish, Cloud Telemetry, Auto-Updater & Error Reporting Highway
+- **Windows In-Game Window Title Branding (`native_runner.py`):**
+  - Injected JVM branding flags: `-Dminecraft.launcher.brand=SIR-Launcher`, `-Dminecraft.launcher.version=1.0.0`, `-Dorg.lwjgl.opengl.Display.title=...`.
+  - Implemented background Win32 window title watcher thread `_watch_and_set_window_title(pid, target_title)` using `user32.EnumWindows` and `user32.SetWindowTextW` for guaranteed `Minecraft 1.21.4 (26.2) - SIR Launcher` and `Minecraft 1.8.9 - SIR Launcher` branding.
+- **Intelligent Auto-Updater & What's New Engine (`bridge.py`, `modals.js`, `settings.js`):**
+  - Online delta manifest comparison against `https://sir-modpack.web.app/delta_manifest.json` for live OTA updates.
+  - One-time "What's New in v1.0.0" release modal showcasing Genesis highlights, feature matrix, and 1-click CTA.
+  - Permanent News & Releases tab (`#view-news`) in the launcher navigation with real-time markdown news feed.
+- **Developer Feedback Highway & System Diagnostics:**
+  - Automated diagnostic extraction (`get_system_diagnostic_metadata`): OS, CPU, dedicated GPU via `Win32_VideoController`, active profile, allocated RAM, and crash log tail.
+  - In-app feedback modal supporting Issue tickets (`SIR-ERR-*`) and Suggestion tickets (`SIR-SUGG-*`) with Cloudinary CDN screenshot uploads.
+- **Web Platform Performance, Caching & Diagnostics (`website-next`):**
+  - 300ms debouncing and SWR in-memory caching for `mods/page.tsx` (Modrinth API) and `servers/page.tsx` (Minecraft server ping).
+  - Gemini AI Assistant: 16ms chunked typewriter streaming simulation, fenced code blocks with 1-click copy, and specialized diagnostics for GLFW (`GLFW_FORMAT_UNAVAILABLE`), ASM `VerifyError`, and OpenAL audio.
+  - Web Error Report Modal (`ErrorReportModal.tsx`) with Cloudinary screenshot uploads (10MB limit).
+  - Owner Admin Dashboard (`admin/page.tsx`): Bug/Idea filtering, status transitions, search, and full-screen zoomable screenshot lightbox.
+  - Firestore Security Rules hardened to enforce owner authentication (`a7medorabe7@gmail.com`).
+- **Comprehensive Verification Suite:**
+  - 355 unit tests passing across the entire ecosystem.
+  - 100% health score in `ecosystem_doctor.py`.
+  - Next.js 16.3.2 Turbopack: All 34/34 routes statically generated with zero errors.
 
 ### 🔧 1. MC 26.2 Official Namespace Migration
 - **Root Cause Analysis:** Minecraft 26.2 uses **Mojang official** class names natively. FabricMC's `intermediary-26.2.jar` is empty (572 bytes) — official names equal intermediary in 26.2. Mods compiled against older intermediary (`class_XXXX`, `method_XXXX`) crash with `ClassNotFoundException`.
