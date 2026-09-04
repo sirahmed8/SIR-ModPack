@@ -1,5 +1,5 @@
 # 🍪 SIR ModPack — Cookie & Local Storage Governance Policy
-### *Version 1.0.0 (26.2) • Effective September 2026 • Legally Enforced Transparency*
+### *Version 1.1.0 (26.2) • Effective September 2026 • Legally Enforced Transparency*
 
 ---
 

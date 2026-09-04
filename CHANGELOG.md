@@ -1,9 +1,29 @@
 # 📜 SIR ModPack — Official Ecosystem Changelog
-### *Unified Minecraft Experience • Semantic Versioning (v1.0.0 • August-September 2026)*
+### *Unified Minecraft Experience • Semantic Versioning (v1.1.0 • September 2026)*
 
 ---
 
-## 🚀 [v1.0.0-PRO • Master Genesis Release] — High-DPI Windows Ecosystem, MC 26.2 Native Migration, ASM Bytecode Engine, Pure Vanilla Profile & Installer GitHub Cloud Recovery (August-September 2026)
+## 🚀 [v1.1.0 • Ecosystem Evolution & Cloud Direct Pipeline] — Crash Resolution, Generational ZGC, Unified Google Cloud Sync, Website Route Inversion & Search Architecture (September 2026)
+
+### 🛠️ 1. Minecraft 26.2 Direct JVM & Window Station Resolution
+- **ASM StackMapTable Fix (`framework-fabric`):** Authored `FixSyncedEntityData.java` utilizing ASM 9.10.1 with `COMPUTE_FRAMES` to eliminate 27 corrupt NOP bytes and resolve `java.lang.VerifyError: Expecting a stack map frame` on Java 25 (`adoptium-25.0.5-beta`). Synced across all 25 JAR instance targets.
+- **Interactive Windows Display Station:** Configured `javaw.exe` with `CREATE_NEW_PROCESS_GROUP` on Windows station `WinSta0\default`, eliminating headless `CREATE_NO_WINDOW` constraints and ensuring GLFW and OpenGL 3.3.0 surface creation on dedicated GPUs (NVIDIA RTX 4050).
+- **Generational ZGC GC Governor:** Added intelligent JVM GC engine with automatic support for `-XX:+UseZGC -XX:+ZGenerational` on high-memory profiles (>= 12 GB RAM) for sub-millisecond GC pauses.
+- **Deep Crash Stack-Trace Diagnostics:** Enhanced `CrashAnalyzer` and `LogsService` with Java 25 detection and automated diagnostic pattern matching for `VerifyError`, GPU surface errors, and heap reserve issues.
+
+### 🌐 2. Web Platform Architecture Inversion (`/` vs `/main`)
+- **Cinematic Welcome Landing (`/`):** Shifted the rich ecosystem showcase and quick-dock to root `/` for visitors, with permanent 301 redirects for legacy `/welcome` routes.
+- **Authenticated Dashboard (`/main`):** Moved interactive downloads matrix, engine profiles, and server portals to `/main` with automated authentication guards.
+- **Command Palette (Ctrl+K) Overhaul:** Added category filter chips (All, Platform, Profiles, Mods, Visuals, Guides) and persisted recent search history in `localStorage`.
+
+### ☁️ 3. Unified Google Cloud Sync & First-Time Onboarding
+- **Cross-App Shared Session:** Created `shared_core.cloud_sync` enabling 1-click desktop Google OAuth via loopback bridge (`http://127.0.0.1:{port}/auth/callback`), synchronized between `SIR Launcher.exe` and `SIR Server Manager.exe` via `%APPDATA%\SIR ModPack\cloud_session.json`.
+- **Firebase Realtime Database Backup & Disaster Recovery:** User accounts, launcher configs, and server profiles are encrypted and backed up to Firebase RTDB (`users/{uid}/cloud_backup.json`) with automated restore on fresh installs.
+- **First-Time Setup Wizard:** Built `#welcome-onboarding-modal` in Launcher UI guiding users through language selection, theme choices, hardware profiling, and cloud synchronization.
+
+---
+
+## 🚀 [v1.0.0 • Master Genesis Release] — High-DPI Windows Ecosystem, MC 26.2 Native Migration, ASM Bytecode Engine, Pure Vanilla Profile & Installer GitHub Cloud Recovery (August-September 2026)
 
 ### 🔧 1. MC 26.2 Official Namespace Migration
 - **Root Cause Analysis:** Minecraft 26.2 uses **Mojang official** class names natively. FabricMC's `intermediary-26.2.jar` is empty (572 bytes) — official names equal intermediary in 26.2. Mods compiled against older intermediary (`class_XXXX`, `method_XXXX`) crash with `ClassNotFoundException`.

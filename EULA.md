@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — End User License Agreement (EULA)
-### *Version 1.0.0 (26.2) • Legally Enforced Software License & Usage Agreement*
+### *Version 1.1.0 (26.2) • Legally Enforced Software License & Usage Agreement*
 
 ---
 
