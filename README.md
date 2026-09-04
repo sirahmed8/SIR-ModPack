@@ -1,5 +1,5 @@
 # 💎 SIR ModPack — The Ultimate Minecraft Ecosystem
-### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.0.0)*
+### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.0.0 Genesis)*
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
@@ -7,9 +7,9 @@
 [![Python 3.14](https://img.shields.io/badge/Python-3.14-3776ab?logo=python)](https://python.org/)
 [![Java 25](https://img.shields.io/badge/Java-25-ed8b00?logo=openjdk)](https://openjdk.org/)
 [![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
-[![Proprietary: Closed Source](https://img.shields.io/badge/Model-Closed--Source%20Suite-blue.svg)](LICENSE.md)
+[![Model: 100% Free & Independent](https://img.shields.io/badge/Model-100%25%20Free%20%26%20Independent-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
-[![Tests: 343 Passing](https://img.shields.io/badge/Tests-343%2F343%20Passed-brightgreen.svg)](walkthrough.md)
+[![Tests: 355 Passing](https://img.shields.io/badge/Tests-355%2F355%20Passed-brightgreen.svg)](walkthrough.md)
 
 ---
 
@@ -84,7 +84,7 @@ Run the automated 6-layer ecosystem doctor to verify binaries, shaders, packs, m
 # Run ecosystem diagnostics (100% automated health check)
 python ecosystem_doctor.py
 
-# Run the complete automated test harness (340 tests across 25 suites)
+# Run the complete automated test harness (355 tests across 25 suites)
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 
@@ -93,7 +93,7 @@ python -m unittest discover -s tests -p "test_*.py" -v
 ## 📜 Documentation & Legal Policies
 
 - [🏗️ Architectural Blueprint & Specification](PROJECT_ARCHITECTURE_EXPLANATION.md)
-- [💎 Full Engineering Walkthrough (Milestones 1–5 & Update 7)](walkthrough.md)
+- [💎 Full Engineering Walkthrough (v1.0.0 Genesis & Phase 10)](walkthrough.md)
 - [📜 Official Changelog & Release Notes](CHANGELOG.md)
 - [🔒 Universal Privacy Policy](PRIVACY.md)
 - [⚖️ Terms of Service](TERMS.md)
@@ -106,8 +106,9 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ## 📬 Contact & Community
 
+- **Official Support:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **GitHub Organization:** [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
 
-*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*
+*© 2026 SIR ModPack Ecosystem. Developed with craftsmanship by SIR Ahmed.*

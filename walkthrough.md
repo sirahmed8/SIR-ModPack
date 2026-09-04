@@ -35,12 +35,12 @@ The **SIR Minecraft Ecosystem** underwent an end-to-end full-stack transformatio
 | **Desktop Client UI/UX** | Cluttered UI, slow feedback (>500ms), inconsistent styling. | Cyber-Dark Glassmorphic design system (<400ms feedback, 60-30-10 OKLCH palette, 5-state UI). | **M3** |
 | **Graphics Customization** | Manual editing of config files required for performance. | Tri-layer 1-Click Video Preset engine (`options.txt`, `sodium-options.json`, `iris.properties`, `optionsshaders.txt`). | **M3** |
 | **Account Management** | Fragmented accounts, no cloud sync or in-game propagation. | Microsoft OAuth 2.0 PKCE loopback + offline UUIDv5 + in-game `ias_accounts.json` sync. | **M3** |
-| **Web Platform & Build** | Hydration mismatches and loose TypeScript types. | Next.js 16 App Router static export (32 routes), strict typing, Tailwind CSS v4, Lucide icons. | **M4** |
+| **Web Platform & Build** | Hydration mismatches and loose TypeScript types. | Next.js 16 App Router static export (34 routes), strict typing, Tailwind CSS v4, Lucide icons. | **M4** |
 | **AI Assistant** | Fragile single-model chat endpoints failing under rate limit. | 4-tier model waterfall (`gemini-3.6-flash` ➔ `gemini-3.5-flash-lite` ➔ OpenRouter ➔ Expert Rules). | **M4** |
 | **Profile Matrix Parity** | Incomplete instance directories on disk causing launcher errors. | Full 8-profile matrix provisioned (`26.2`, `26.2-ultra`, `26.2-balanced`, `26.2-performance`, `1.8.9`, `1.8.9-ultra`, `1.8.9-balanced`, `1.8.9-performance`). | **M5** |
 | **Shader & Pack Isolation** | Cluttered shader selectors and confusing texture setups. | Single active shader isolation (`SIR Modern Shader.zip` / `SIR Legacy Shader.zip`) and dual packs (`SIR Modern.zip` / `SIR Legacy.zip`). | **Update 7** |
 | **Ocean Physics Simulation** | Flat, static water surfaces without dynamics. | Continuous 3D wave swells (`oceanWeatherClear: 0.6`), whitecap foam, buoyancy physics on boats and items. | **Update 7** |
-| **Automated Verification** | Missing automated tests for complex profile permutations. | 340 automated tests (100% pass rate in 109.4s) and 0-issue 6-layer `ecosystem_doctor.py` diagnostic health. | **Update 7** |
+| **Automated Verification** | Missing automated tests for complex profile permutations. | 355 automated tests (100% pass rate in 140.4s) and 0-issue 6-layer `ecosystem_doctor.py` diagnostic health. | **Phase 10** |
 
 ---
 
@@ -509,6 +509,11 @@ Following empirical testing on Lunar Client (Moonsworth Genesis / Ichor bootload
   - Verified live deployment with Chrome DevTools MCP (console log inspection and viewport screenshot).
 
 ---
+
+## 📬 Contact & Governance
+- **Official Support:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
+- **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 
 *© 2026 SIR Minecraft Ecosystem. Engineered with Zero-Mock Integrity by SIR Ahmed.*
 

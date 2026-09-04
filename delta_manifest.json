@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
   "version": "1.0.0",
-  "generated_at": 1788557944,
-  "iso_timestamp": "2026-09-04T21:39:04Z",
-  "total_files": 3278,
-  "total_size_bytes": 6465270569,
+  "generated_at": 1788562046,
+  "iso_timestamp": "2026-09-04T22:47:26Z",
+  "total_files": 3285,
+  "total_size_bytes": 6465275891,
   "files": {
+    "config/customskinloader.json": {
+      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
+      "size": 261,
+      "mtime": 1788559005,
+      "category": "config"
+    },
     "config/divein.json": {
       "sha256": "770ceec3b177258dd7f3aed8a5ee8eca5cbfa919356b8bfba9949f52f5c93fa3",
       "size": 112,
@@ -2100,6 +2106,12 @@
       "mtime": 1787268938,
       "category": "config"
     },
+    "instances/1.8.9/minecraft/config/customskinloader.json": {
+      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
+      "size": 261,
+      "mtime": 1788559005,
+      "category": "config"
+    },
     "instances/1.8.9/minecraft/config/entity_texture_features.json": {
       "sha256": "2dae6179a9f771b75e5867c6136d063eb3a282167aad26ef1d2807b8bb28c1c1",
       "size": 323,
@@ -2361,7 +2373,7 @@
     "instances/1.8.9/minecraft/options.txt": {
       "sha256": "5cd75b44dfb0bb68d21954a04edf523bf4b074c391ffc7c2b4388024437535d3",
       "size": 735,
-      "mtime": 1788557315,
+      "mtime": 1788561673,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/optionsof.txt": {
@@ -2387,6 +2399,12 @@
       "size": 364279,
       "mtime": 1788554921,
       "category": "shader"
+    },
+    "instances/1.8.9/minecraft/skins/SirAhmed1.png": {
+      "sha256": "41b23290c247305dce33529a6e34bf8e266d9a03d1519ece56aa57cc9f1caa51",
+      "size": 1426,
+      "mtime": 1788559005,
+      "category": "instance_meta"
     },
     "instances/1.8.9/mmc-pack.json": {
       "sha256": "351d358431f7221c842c81472dde9185e7f5a02db47041c93b60c12fd9356ad2",
@@ -2559,7 +2577,7 @@
     "instances/1.8.9/options.txt": {
       "sha256": "89b3937fbd9f4ff5d79d8e05a954c6db62d4c904929719f047c130306a77aacf",
       "size": 541,
-      "mtime": 1788557315,
+      "mtime": 1788561673,
       "category": "instance_meta"
     },
     "instances/1.8.9/optionsof.txt": {
@@ -9477,7 +9495,7 @@
     "instances/26.2-ultra/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "config"
     },
     "instances/26.2-ultra/config/irisSearchSettings.toml": {
@@ -9993,7 +10011,7 @@
     "instances/26.2-ultra/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "config"
     },
     "instances/26.2-ultra/config/sodium-shadowy-path-blocks-options.json": {
@@ -10896,6 +10914,12 @@
       "mtime": 1788192234,
       "category": "config"
     },
+    "instances/26.2-ultra/minecraft/config/customskinloader.json": {
+      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
+      "size": 261,
+      "mtime": 1788559005,
+      "category": "config"
+    },
     "instances/26.2-ultra/minecraft/config/cyclopscore-common.toml": {
       "sha256": "fede2239a8566281381e13f863d6a30a326ea4a89bca5c7b5badad75f9536fd4",
       "size": 273,
@@ -11211,7 +11235,7 @@
     "instances/26.2-ultra/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/irisSearchSettings.toml": {
@@ -11643,7 +11667,7 @@
     "instances/26.2-ultra/minecraft/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sodium-shadowy-path-blocks-options.json": {
@@ -15219,7 +15243,7 @@
     "instances/26.2-ultra/minecraft/options.txt": {
       "sha256": "afa1c97c5961e6a854abb40480ed1a2bfba3acf5305c11ff419b327204ebbb6d",
       "size": 12851,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/resourcepacks/SIR Modern.zip": {
@@ -15245,6 +15269,12 @@
       "size": 1806678,
       "mtime": 1788212003,
       "category": "shader"
+    },
+    "instances/26.2-ultra/minecraft/skins/SirAhmed1.png": {
+      "sha256": "41b23290c247305dce33529a6e34bf8e266d9a03d1519ece56aa57cc9f1caa51",
+      "size": 1426,
+      "mtime": 1788559005,
+      "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/usercache.json": {
       "sha256": "857fd46d2a67aa7dbbea3b100c025a6b47fada846a28de37c77a79c534f651b0",
@@ -16623,7 +16653,7 @@
     "instances/26.2-ultra/options.txt": {
       "sha256": "4f3024eac6c37a3cd8fc6011a298affe14afcf2829471759967a180ed9d4dcfc",
       "size": 13259,
-      "mtime": 1788557307,
+      "mtime": 1788561666,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/resourcepacks/SIR Legacy.zip": {
@@ -16782,6 +16812,12 @@
       "mtime": 1788104272,
       "category": "config"
     },
+    "instances/26.2/minecraft/config/customskinloader.json": {
+      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
+      "size": 261,
+      "mtime": 1788559005,
+      "category": "config"
+    },
     "instances/26.2/minecraft/config/entity_culling.json": {
       "sha256": "0770809f5e98dfcf8e3b254108c7874663b79c0670c96ddefa278f62d3dc329f",
       "size": 147,
@@ -16911,7 +16947,13 @@
     "instances/26.2/minecraft/options.txt": {
       "sha256": "acd6e2ec5630f58d69bc3059840e0b1fb32b00e7f59571862b3ee21534423387",
       "size": 5364,
-      "mtime": 1788557315,
+      "mtime": 1788561673,
+      "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/skins/SirAhmed1.png": {
+      "sha256": "41b23290c247305dce33529a6e34bf8e266d9a03d1519ece56aa57cc9f1caa51",
+      "size": 1426,
+      "mtime": 1788559005,
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/usercache.json": {
@@ -18279,7 +18321,7 @@
     "instances/26.2/options.txt": {
       "sha256": "b72a131e6c33448e74709e0b8d189f732a342380c903dbf0f8af6ff2df8cf2f4",
       "size": 825,
-      "mtime": 1788557315,
+      "mtime": 1788561673,
       "category": "instance_meta"
     },
     "instances/26.2/resourcepacks/SIR Legacy.zip": {

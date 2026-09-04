@@ -1,24 +1,26 @@
-MIT License & Community Disclaimer
+SIR Platform License & Free Independent Software Agreement
 
-Copyright (c) 2026 SIR Ultimate Project Team & Contributors.
+Copyright (c) 2026 SIR Ultimate Project Team & SIR Ahmed.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+of this software, launcher, installer, web applications, and associated
+documentation files (the "Platform"), to use, download, execute, and enjoy
+the Platform for personal, non-commercial community entertainment purposes,
+subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. The Platform is a 100% Free & Independent Platform. Commercial resale,
+   re-bundling behind paid paywalls, or unauthorized trademark redistribution
+   is strictly prohibited.
+2. The above copyright notice and this permission notice shall be included in
+   all copies or substantial distributions of the Platform.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+THE PLATFORM IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE PLATFORM OR THE USE OR OTHER DEALINGS IN THE
+PLATFORM.
 
 ================================================================================
                     LEGAL & THIRD-PARTY DISCLAIMERS
@@ -30,8 +32,9 @@ MICROSOFT. Minecraft is a registered trademark of Mojang AB and Microsoft Corpor
 This project is a non-commercial, community-driven modification package.
 
 2. NON-COMMERCIAL STATUS:
-This project is completely free, non-commercial, and open for personal entertainment
-and community use. No monetized features, paywalls, or commercial rights are claimed.
+This platform is a 100% Free & Independent Platform, non-commercial, and provided for
+personal entertainment and community use. No monetized features, paywalls, or
+commercial rights are claimed. Official Support: support@sir-modpack.com.
 
 3. THIRD-PARTY ASSETS & INTELLECTUAL PROPERTY:
 All third-party modifications, shaders, textures, audio assets, and libraries

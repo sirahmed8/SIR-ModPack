@@ -1,5 +1,5 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • August-September 2026*
+### *Unified Minecraft Experience • Semantic Versioning v1.0.0 Genesis • September 2026*
 
 ---
 
@@ -22,7 +22,7 @@ flowchart TD
         E --> G[SkinStudioService - Three.js 3D WebGL Studio]
         E --> H[LogsService - Non-blocking stdout/stderr Tailer]
         E --> I[HardwareMonitorService - Kernel Win32 Telemetry]
-        E --> J[CloudSyncService - Firebase Sync Codes & RTDB]
+        E --> J[CloudSyncService - Direct Google OAuth & Cloud Backup]
         E --> K[VideoPresetService - Tri-Layer Graphics Engine]
         E --> L[ControlsService - Dual-Mode Keybinding Converter]
         E --> M[CleanerService & Deep Crash Analyzer]
@@ -47,7 +47,7 @@ flowchart TD
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
-        W[Next.js 16 App Router - 32 Static Routes]
+        W[Next.js 16 App Router - 34 Static Routes]
         W --> W1[AiChatbot.tsx: Gemini 4-Tier AI Waterfall]
         W --> W2[Firebase Realtime Database: Presence & OTA Releases]
         W --> W3[Firestore: Telemetry & Client Error Reporting]
@@ -254,5 +254,10 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 3. **Why 5 scan passes?** Different mods package access wideners with varying file extensions (`.accessWidener`, `.accesswidener`, `.aw`), nesting depths (jar-in-jar up to 4 levels), and declaration mechanisms (`fabric.mod.json` field vs inline headers).
 
 ---
+
+## 📬 Contact & Governance
+- **Official Support:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
+- **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 
 *© 2026 SIR ModPack Ecosystem. Developed with Craftsmanship by SIR Ahmed.*
