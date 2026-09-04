@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "version": "1.0.0",
-  "generated_at": 1788501102,
-  "iso_timestamp": "2026-09-04T05:51:42Z",
-  "total_files": 2935,
-  "total_size_bytes": 6465842545,
+  "generated_at": 1788513254,
+  "iso_timestamp": "2026-09-04T09:14:14Z",
+  "total_files": 3262,
+  "total_size_bytes": 6465735636,
   "files": {
     "config/divein.json": {
       "sha256": "770ceec3b177258dd7f3aed8a5ee8eca5cbfa919356b8bfba9949f52f5c93fa3",
@@ -2313,7 +2313,7 @@
     "instances/1.8.9/minecraft/options.txt": {
       "sha256": "5cd75b44dfb0bb68d21954a04edf523bf4b074c391ffc7c2b4388024437535d3",
       "size": 735,
-      "mtime": 1788500973,
+      "mtime": 1788513122,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/optionsof.txt": {
@@ -2511,7 +2511,7 @@
     "instances/1.8.9/options.txt": {
       "sha256": "89b3937fbd9f4ff5d79d8e05a954c6db62d4c904929719f047c130306a77aacf",
       "size": 541,
-      "mtime": 1788500973,
+      "mtime": 1788513122,
       "category": "instance_meta"
     },
     "instances/1.8.9/optionsof.txt": {
@@ -2908,12 +2908,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2-balanced/minecraft/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -3997,9 +3991,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-balanced/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480936,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-balanced/minecraft/shaderpacks/SIR Modern Shader.zip": {
@@ -4276,12 +4270,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2-balanced/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-balanced/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -5365,9 +5353,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-balanced/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480937,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-balanced/shaderpacks/SIR Modern Shader.zip": {
@@ -5746,12 +5734,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2-performance/minecraft/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -6835,9 +6817,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-performance/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480938,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
@@ -7114,12 +7096,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2-performance/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-performance/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -8203,9 +8179,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-performance/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480939,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-performance/shaderpacks/SIR Modern Shader.zip": {
@@ -8271,13 +8247,13 @@
     "instances/26.2-ultra/config/Veinminer/update/veinminer-client-fabric-2.12.1.jar": {
       "sha256": "ebb0af50af6cce11305ee5f578b0e7b033ec323f8486f11abd41fee3045a3287",
       "size": 196694,
-      "mtime": 1788483124,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/config/Veinminer/update/veinminer-fabric-2.12.1.jar": {
       "sha256": "15ddd6e9dbcd7e0a8035f1ed190f880980eed876a1779a28c711fafe691408b9",
       "size": 523832,
-      "mtime": 1788483124,
+      "mtime": 1788510085,
       "category": "config"
     },
     "instances/26.2-ultra/config/adhooks-common.toml": {
@@ -8637,7 +8613,7 @@
     "instances/26.2-ultra/config/asynclogger.toml": {
       "sha256": "e0804713763b355f2d434ae1c930dd9fe5e720db313ca68fad3ea32c208b1d59",
       "size": 2464,
-      "mtime": 1788483098,
+      "mtime": 1788510069,
       "category": "config"
     },
     "instances/26.2-ultra/config/asynclogger/default.toml": {
@@ -8647,15 +8623,15 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/asyncparticles/asyncparticles-mixin.properties": {
-      "sha256": "9fd1a4ab8c928815dc5f411158748831fd5311a97ab1f03b2ba3347c3b2601a9",
+      "sha256": "bb4da28e5d02b126c414cc61a465a00f80f6163555511e7a92c8747fb342c287",
       "size": 1941,
-      "mtime": 1788483099,
+      "mtime": 1788510070,
       "category": "config"
     },
     "instances/26.2-ultra/config/asyncparticles/asyncparticles.json": {
       "sha256": "401c5d2c4fcada5afce4540b07be7fa20c24ceb63f61419445c5765c79ac7d8c",
       "size": 888,
-      "mtime": 1788192459,
+      "mtime": 1788510098,
       "category": "config"
     },
     "instances/26.2-ultra/config/attributefix/betternether/player.obsidian_block_break_speed.json": {
@@ -9069,7 +9045,7 @@
     "instances/26.2-ultra/config/elytra_physics_mixin-flags.txt": {
       "sha256": "6d06b9b5e27b6709bc98a507315c44313cab6a645beb1378b97e85473bebd566",
       "size": 18,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/config/entity_model_features.json": {
@@ -9117,7 +9093,7 @@
     "instances/26.2-ultra/config/fallingtree.json": {
       "sha256": "9704d03d869a866e68c5e783025c8720df6d35e3e76c56080e08e9bf6473a341",
       "size": 1313,
-      "mtime": 1788483118,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/config/fancy-door-anim.json": {
@@ -9303,7 +9279,7 @@
     "instances/26.2-ultra/config/firstperson.json": {
       "sha256": "6d9d8a3708ccf453fb710f4e10591cedd4d1767acde97c7da7bbc2cd2c4d4101",
       "size": 593,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/config/forgeconfigapiport.toml": {
@@ -9339,7 +9315,7 @@
     "instances/26.2-ultra/config/fullscreenfix.properties": {
       "sha256": "1710f659e2d74be2fa1418c86472e1f85f835e9bd147e0c5887cb4a1cdc114e4",
       "size": 177,
-      "mtime": 1788192833,
+      "mtime": 1788510138,
       "category": "config"
     },
     "instances/26.2-ultra/config/fzzy_config/keybinds.toml": {
@@ -9355,9 +9331,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/gnetum.json": {
-      "sha256": "b6080e02805e7af55366b29181035349972e8334ad9c681df60303d83a407112",
-      "size": 3513,
-      "mtime": 1788192459,
+      "sha256": "1c261d77cbad2b8a45e6d30c80970e4bccf35fd847917f6524c546026d0315b8",
+      "size": 3604,
+      "mtime": 1788510101,
       "category": "config"
     },
     "instances/26.2-ultra/config/goblintraders-entities.toml": {
@@ -9423,7 +9399,7 @@
     "instances/26.2-ultra/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788500965,
+      "mtime": 1788513115,
       "category": "config"
     },
     "instances/26.2-ultra/config/irisSearchSettings.toml": {
@@ -9453,7 +9429,7 @@
     "instances/26.2-ultra/config/ixeris.toml": {
       "sha256": "6670075f5a197ad07155acc99568ce9f9d4a45c1c451f4d482f06dfafb7ebf74",
       "size": 2143,
-      "mtime": 1788483100,
+      "mtime": 1788510071,
       "category": "config"
     },
     "instances/26.2-ultra/config/jade/hide-blocks.json": {
@@ -9633,7 +9609,7 @@
     "instances/26.2-ultra/config/memorysettings.json": {
       "sha256": "358975cd98a26997e38ca257efaeb8f86f5c6939ffefb0b38b2d08239b839d7e",
       "size": 611,
-      "mtime": 1788483097,
+      "mtime": 1788510060,
       "category": "config"
     },
     "instances/26.2-ultra/config/midnightlib.json": {
@@ -9645,7 +9621,7 @@
     "instances/26.2-ultra/config/modernfix-mixins.properties": {
       "sha256": "a4f074f2b24a49ebfecdd8e73b710448ea1d6337ae5dd8c2cb600d5eace6f9ee",
       "size": 4546,
-      "mtime": 1788483099,
+      "mtime": 1788510070,
       "category": "config"
     },
     "instances/26.2-ultra/config/modmenu.json": {
@@ -9939,7 +9915,7 @@
     "instances/26.2-ultra/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788500965,
+      "mtime": 1788513115,
       "category": "config"
     },
     "instances/26.2-ultra/config/sodium-shadowy-path-blocks-options.json": {
@@ -10203,19 +10179,19 @@
     "instances/26.2-ultra/config/voicechat/category-volumes.properties": {
       "sha256": "94c1c4f70e5b995fbd71e86d4fa646030437fecae0685875b560a55fbd0d0e56",
       "size": 46,
-      "mtime": 1788192454,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/config/voicechat/player-volumes.properties": {
       "sha256": "0332261861a5ace96f503e85b0d48a8df74ea6c2f3545cd229543a6afb55ad96",
       "size": 44,
-      "mtime": 1788192454,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/config/voicechat/translations.properties": {
       "sha256": "693643b1d393cbb3ea7f062afc4474fcd66e4036c4f8d7c056434979cbf512d1",
       "size": 1182,
-      "mtime": 1788483123,
+      "mtime": 1788510083,
       "category": "config"
     },
     "instances/26.2-ultra/config/voicechat/username-cache.json": {
@@ -10227,13 +10203,13 @@
     "instances/26.2-ultra/config/voicechat/voicechat-client.properties": {
       "sha256": "504e13f9f9603f191540d09f4d22ffc3f79545025064c5512b655440601e1682",
       "size": 5061,
-      "mtime": 1788192454,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/config/voicechat/voicechat-server.properties": {
       "sha256": "c6e0f5e382dd27abbd1db76f04dbd1fe631bc9d12d537c74bd5b6ecbd6f84024",
       "size": 3070,
-      "mtime": 1788483123,
+      "mtime": 1788510083,
       "category": "config"
     },
     "instances/26.2-ultra/config/waterconfig.toml": {
@@ -10329,13 +10305,13 @@
     "instances/26.2-ultra/minecraft/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/READ_ME_IMPORTANT.txt": {
       "sha256": "9ce232e7d5066d24fb33697315579b89c98ff983bef840a86ad818f8a9529cd6",
       "size": 2465,
-      "mtime": 1788193152,
+      "mtime": 1788510142,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/ПРОЧТИ_МЕНЯ_ВАЖНО.txt": {
       "sha256": "9ce232e7d5066d24fb33697315579b89c98ff983bef840a86ad818f8a9529cd6",
       "size": 2465,
-      "mtime": 1788193152,
+      "mtime": 1788510142,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/command_history.txt": {
@@ -10365,19 +10341,25 @@
     "instances/26.2-ultra/minecraft/config/almanac-nbtFix.json5": {
       "sha256": "f6d57ad1094c0c35ec20b9a60f86a7bbd7570844c6cf5180d8ffca5d6a9b2eae",
       "size": 634,
-      "mtime": 1788483116,
+      "mtime": 1788510079,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/ambientfog/biome_fog.json": {
       "sha256": "5f30e4ba6e6ddcd90bd93230ec293d5e521755d52b108bf4afb3201aac601d47",
       "size": 81993,
-      "mtime": 1788192523,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/animatedhearts.properties": {
       "sha256": "ec4cf9664304e1ca33a9ccf4c349ba14407430099fdeab5d4e88fb81016fa68b",
       "size": 1835,
       "mtime": 1788192239,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/animatica.properties": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/appleskin.json5": {
@@ -10389,241 +10371,241 @@
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/air_drag_modifier.json": {
       "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/armor.json": {
       "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
       "size": 389,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/armor_toughness.json": {
       "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
       "size": 389,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/attack_damage.json": {
       "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
       "size": 389,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/attack_knockback.json": {
       "sha256": "b6aa33f20fbc7bb14c930dfcfd93591f37f2ccf12df0b6da9551f7a6fad1e439",
       "size": 389,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/attack_speed.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/below_name_distance.json": {
       "sha256": "6cd57a7ca2f9d04fbacd8ca3e6f4b17b1bab8deec05213ce5847bde562bace5a",
       "size": 383,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/block_break_speed.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/block_interaction_range.json": {
       "sha256": "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/bounciness.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/burning_time.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/camera_distance.json": {
       "sha256": "220b18479d9b6497fc95e3b2ffcca5014d93eca33153fab8f343151c9a553bde",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/entity_interaction_range.json": {
       "sha256": "137e8a8052b2264bc1c881b91b97011e4c33726819f4c434753ad5480ee3d19f",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/explosion_knockback_resistance.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/fall_damage_multiplier.json": {
       "sha256": "6217856e9bb2355a468bbe03fe24bc97bae91f8deb54e9df42f8a4021cde99e6",
       "size": 383,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/flying_speed.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/follow_range.json": {
       "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/friction_modifier.json": {
       "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/gravity.json": {
       "sha256": "84207d0866413a367d92222bd193912a418615f5eb9da342057bafec30173a79",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/jump_strength.json": {
       "sha256": "220b18479d9b6497fc95e3b2ffcca5014d93eca33153fab8f343151c9a553bde",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/knockback_resistance.json": {
       "sha256": "a103b8b62d3f94cc5e16f2157f16f737532a3a77e961d4d6023e60f4bc04b9aa",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/luck.json": {
       "sha256": "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372",
       "size": 393,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/max_absorption.json": {
       "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/max_health.json": {
       "sha256": "9d0ae1c8fda340e80aac17df9999ec1e9c7396a2327f63a40ea8006991201305",
       "size": 389,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/mining_efficiency.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/movement_efficiency.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/movement_speed.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/name_tag_distance.json": {
       "sha256": "6cd57a7ca2f9d04fbacd8ca3e6f4b17b1bab8deec05213ce5847bde562bace5a",
       "size": 383,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/oxygen_bonus.json": {
       "sha256": "6b9b3d0281e3d07f12580d39983e2ac2eac90f30c739d743b84d55024c3651ed",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/safe_fall_distance.json": {
       "sha256": "6bce4756f23cedf273e963254625fa594a32208f99de05db1abd1e77ec671372",
       "size": 393,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/scale.json": {
       "sha256": "0e28210686e7f216d46ba0fee2508c263c7c39e26fb6d8380404789d3185e73a",
       "size": 387,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/sneaking_speed.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/spawn_reinforcements.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/step_height.json": {
       "sha256": "93b4adf5c49377098f3767e46dea7ab8228ad0edd2d0f59904ff9e12a429e8c0",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/submerged_mining_speed.json": {
       "sha256": "f874427dd6754eff702ef41fd35649493094ddd0c79e01623a2cc9ccfe8ce8d7",
       "size": 381,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/sweeping_damage_ratio.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/tempt_range.json": {
       "sha256": "43aa2701d17e26c045533a5b0500fa8c0639d4e62adcccd389ba3426378a80c0",
       "size": 385,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/water_movement_efficiency.json": {
       "sha256": "17ef1233e3020b53a3835793bc771c00114af5b167f57cb03506098dbc49e535",
       "size": 379,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/waypoint_receive_range.json": {
       "sha256": "2d8ef79ff6cbf914b4080e290dafd2bcddd8f497cebc08502f657350035ae323",
       "size": 383,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/attributefix/minecraft/waypoint_transmit_range.json": {
       "sha256": "2d8ef79ff6cbf914b4080e290dafd2bcddd8f497cebc08502f657350035ae323",
       "size": 383,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/badoptimizations.txt": {
@@ -10653,31 +10635,37 @@
     "instances/26.2-ultra/minecraft/config/bettercombat/client.json5": {
       "sha256": "2d853633deff976b16e7e973c168134886fe8c06ec5108a077d835db97b5ff18",
       "size": 721,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/bettercombat/fallback_compatibility.json": {
       "sha256": "754feb4474a3f4d9fe6bd08f38c248fd5a796ed51f38d7d5704680250f3a34ca",
       "size": 2995,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/bettercombat/server.json5": {
       "sha256": "1e5baf044fc358e470d9979a471b0bffcd8f54130023eb6523d9b3d3ea21ce0f",
       "size": 6246,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/bettercombat/weapon_trails.json": {
       "sha256": "fd14cc025b6d6c54bc2ddff136f0298c0ba132dbe98c2c9c845b47b8286fc45c",
       "size": 7127,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/betterfpsdist.json": {
-      "sha256": "d5b9105d96bee68349ad0511a64dc905c1be70013b63bc0e7d479733287ac235",
-      "size": 952,
-      "mtime": 1788192473,
+      "sha256": "f07ab0244d03e80b28796f51fe20f199402bcb67e5b2b4a6ca1a60d9ff1d7159",
+      "size": 1004,
+      "mtime": 1788510121,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/bettergrass.json": {
+      "sha256": "62f287d4e9c8d9e04e89f28990067251731dfa0d011d9de5591bc6b9728c9901",
+      "size": 788,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/bridgingmod.json": {
@@ -10689,7 +10677,7 @@
     "instances/26.2-ultra/minecraft/config/c2me.toml": {
       "sha256": "e6be0c5a9ba0f61f67d9ae62c0718acacbddd6fc4f03d4950868511c5ec0d59a",
       "size": 10651,
-      "mtime": 1788483100,
+      "mtime": 1788510072,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/cardinal-components-api.properties": {
@@ -10701,13 +10689,13 @@
     "instances/26.2-ultra/minecraft/config/carryon-client.json": {
       "sha256": "9909d01cf9427ea5d70a66b5c52d2fb7c5e414d410c2e20ae58460661e780de5",
       "size": 796,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/carryon-common.json": {
       "sha256": "43efb4b904e7888fc0cb4f9871625e0a0c99dd87e91c9471c67eadbebe5a5199",
       "size": 11207,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/catalogue.properties": {
@@ -10719,7 +10707,7 @@
     "instances/26.2-ultra/minecraft/config/chat_heads.json5": {
       "sha256": "e198750061411cf7fca624e38b894ca104ca2cf2c2940da0409ce4240dcc2503",
       "size": 229,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/chatanimation.json": {
@@ -10731,7 +10719,7 @@
     "instances/26.2-ultra/minecraft/config/cherishedworlds-client.toml": {
       "sha256": "8a9beb0407d9e61a68cb814f8afb9a80ddc58a9ac4bec406fef96aa3066dff38",
       "size": 154,
-      "mtime": 1788483115,
+      "mtime": 1788510079,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/clickadv.json": {
@@ -10755,25 +10743,37 @@
     "instances/26.2-ultra/minecraft/config/comforts-common.toml": {
       "sha256": "1f21c10bfce9cd25aea641046a79df88867f68ba8ba3838a5e1662521f9f06a2",
       "size": 189,
-      "mtime": 1788483115,
+      "mtime": 1788510079,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/comforts-server.toml": {
       "sha256": "f05aebe89ee053e71276aec6396ea150d0ff4103a0162f54a7af88c22f2a4517",
       "size": 1896,
-      "mtime": 1788483115,
+      "mtime": 1788510079,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/continuity.json": {
       "sha256": "28eaff624c99a24e49882e5f56496a9e0f55e9a25e583e9313b0360494810b65",
       "size": 61,
-      "mtime": 1788192459,
+      "mtime": 1788510099,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/controlify/controlify.json": {
+      "sha256": "d379f86b1fe8ea2f6fb9d2297da09142e24d43767fd1d776d14f5832d371fd8f",
+      "size": 855,
+      "mtime": 1788510101,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/controlify/profile-1.json": {
+      "sha256": "f3051cdad72a13e4e191fe133f768c588e07a8637e11954b9541f12f0c54a81a",
+      "size": 2184,
+      "mtime": 1788510101,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/creativecore-client.json": {
       "sha256": "acb6c8c1394d4d6f2d0c98d5c314c5ef8ad34b8a76f0a420fc596733bcbc51ac",
       "size": 23,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/creativecore.json": {
@@ -10821,7 +10821,7 @@
     "instances/26.2-ultra/minecraft/config/divein.json": {
       "sha256": "bfe495448078eab10fd72efc4e251863a63b8c6bb63b260d6180af72222fcafd",
       "size": 114,
-      "mtime": 1788483118,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/doubledoors.json5": {
@@ -10839,7 +10839,7 @@
     "instances/26.2-ultra/minecraft/config/e4mc/e4mc.toml": {
       "sha256": "d3236414d0fd31bbc7d361a6b7e239685b7791ae4d2ff4fc554a9bed286a340e",
       "size": 1225,
-      "mtime": 1788483118,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/easyanvils-client.toml": {
@@ -10881,25 +10881,25 @@
     "instances/26.2-ultra/minecraft/config/entity_model_features.json": {
       "sha256": "6bfc37d85bd4e0b76ed3a477d5feeec148c7f758018f741d709f4aa90b0c12b3",
       "size": 1245,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/entity_texture_features.json": {
       "sha256": "d8d72a9ac49bbe45921f1ace5a22c30b65802c5e70829343cf7acfd25f79b8dc",
       "size": 1421,
-      "mtime": 1788483102,
+      "mtime": 1788510142,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/etf_warnings.json": {
       "sha256": "a5ba22e63061c1fb67f0f895f17681351eaeccc225faef966c29ee630593275e",
       "size": 28,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/explorerscompass.json": {
       "sha256": "2d47b22442868ca000a5eab03fab73c6ca7bb3e65b9eb36c37122ed173a44010",
       "size": 2829,
-      "mtime": 1788483118,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fadeless.json": {
@@ -10911,7 +10911,7 @@
     "instances/26.2-ultra/minecraft/config/fallingleaves2.json": {
       "sha256": "cb9d4d481a63cddaf7e90a3e3f8c5bb134cd0be8f1401b1f808c55bf0ab4572f",
       "size": 674,
-      "mtime": 1788192449,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancy-door-anim.json": {
@@ -10941,73 +10941,73 @@
     "instances/26.2-ultra/minecraft/config/fancymenu/legacy_checklist.txt": {
       "sha256": "9a25d3dc708e43eabafce5479a13c02dae15bc7f673afb2745b8b2ba48a97dc0",
       "size": 42,
-      "mtime": 1788192456,
+      "mtime": 1788510094,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/options.txt": {
       "sha256": "6df834ff0756d1d57f5ff20abcc8d5e716f7736fe38f83f390d5b4f539b407ab",
       "size": 4400,
-      "mtime": 1788485584,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/cherry_blossom.json": {
       "sha256": "993c16664fe2d1b9e8ad107bf1c19c1dbb244729c403ed058ca2e54616dc5452",
       "size": 9349,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/cozy_campfire.json": {
       "sha256": "1e7505231b9d99e6315845043ce810dfc7004ce1d8f5a4ceddb4ecb96c03ac50",
       "size": 9347,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/dark.json": {
       "sha256": "01e2a3b5d250c0259a7f97f0d353785bfeab6d7ee2e147c16bb910f1d23e9498",
       "size": 9329,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/dark_high_contrast.json": {
       "sha256": "54316a2b309ddb472b9133f8ccb8694dce9b57be6ebcfb3c2e9d1bbfdade3f26",
       "size": 9359,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/light.json": {
       "sha256": "a05e95f7b62f338049fe0045d9a6a50060d3aba52d5ab83ac1ed6ff55cac1153",
       "size": 9331,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/light_high_contrast.json": {
       "sha256": "7c96ba2f2cb4d59d20eaf88960de7a9308ce8a3460c4e1757e07c42e174ea65a",
       "size": 9361,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/pumpkin_soup.json": {
       "sha256": "7c6a5d5b19e53ca2f88371c2e867f51339b045697aab29864df5877a6bba9311",
       "size": 9345,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/purple_void.json": {
       "sha256": "fa63577441fd576ebac90ecf06b7ded376cbf80ca5103d398bc9a73a25c6c2c0",
       "size": 9343,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/ui_themes/spooky_season.json": {
       "sha256": "cfa46554bbb027efe3c2184a073ee652000acac2500cd5136764f901355ec0cd",
       "size": 9347,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fancymenu/user_variables.db": {
       "sha256": "3d7d4cda73d6bde134a568ccbe4e8d2e7fbe701570012b71fa45acdb2258c823",
       "size": 23,
-      "mtime": 1788192456,
+      "mtime": 1788510094,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/fastitemframes-client.toml": {
@@ -11019,19 +11019,19 @@
     "instances/26.2-ultra/minecraft/config/fastquit.toml": {
       "sha256": "e85f39867513fe26179ba3cf7a00d343e9642ceaa96e7ea3cde6a1c3aa69dd4e",
       "size": 120,
-      "mtime": 1788483128,
+      "mtime": 1788510086,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/ferritecore.mixin.properties": {
       "sha256": "71d5e19e278cb843d92f90a99b8a9772780c62e5611b7c8cc92097cd18399b08",
       "size": 815,
-      "mtime": 1788483099,
+      "mtime": 1788510070,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/forgeconfigapiport.toml": {
       "sha256": "40dbe5b348f89b8ded62bcdfe32807ffc3e78fa8e0f81607a739580019fe5450",
       "size": 523,
-      "mtime": 1788483117,
+      "mtime": 1788510080,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/forgeendertech-common.toml": {
@@ -11070,6 +11070,12 @@
       "mtime": 1788192233,
       "category": "config"
     },
+    "instances/26.2-ultra/minecraft/config/held-item-info.json": {
+      "sha256": "d3adbaca40f3bf3353b98ee95f78d6631354b6841d112492b46ff36922980f65",
+      "size": 1044,
+      "mtime": 1788510086,
+      "category": "config"
+    },
     "instances/26.2-ultra/minecraft/config/ias.json": {
       "sha256": "7ceec2cf98d13743bb29ecdbcd60419ea976550347c274c9bb28085e60dcbed6",
       "size": 280,
@@ -11079,13 +11085,13 @@
     "instances/26.2-ultra/minecraft/config/immediatelyfast.json": {
       "sha256": "869c9d9969c018afd4faccf19b1028a7689866e1b83e1649e8ff161544bc1362",
       "size": 912,
-      "mtime": 1788483099,
+      "mtime": 1788510070,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/improved_village_placement.json": {
       "sha256": "7b54261693df859be612657b6caf06829359f1b0555215d19a6513999abbaecd",
       "size": 132,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/inventoryhud.json": {
@@ -11121,7 +11127,7 @@
     "instances/26.2-ultra/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788500965,
+      "mtime": 1788513115,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/irisSearchSettings.toml": {
@@ -11139,7 +11145,7 @@
     "instances/26.2-ultra/minecraft/config/itemphysic-client.json": {
       "sha256": "92b13601e5e3a9016c0be5b932b585ea74929dd231b1a9bba3fa8daddc405a7b",
       "size": 654,
-      "mtime": 1788192456,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/itemphysic.json": {
@@ -11169,25 +11175,25 @@
     "instances/26.2-ultra/minecraft/config/jade/jade.json": {
       "sha256": "800699dc7f629857780df5750cc00c4bb42b44fa59e9642268ff405f862980c0",
       "size": 3708,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/jade/profiles/1/jade.json": {
       "sha256": "6934c6e89beb2a5e1a0df30072afce1c5d216e242c24da2e8e330441319eae2b",
       "size": 3488,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/jade/profiles/2/jade.json": {
       "sha256": "d335d8709b1ec40491d43c4234533cfbc49be4993ec76e587fb7f9feb36b9cce",
       "size": 3497,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/jade/profiles/3/jade.json": {
       "sha256": "fe0e992ba379f030104fff4330fa3120d72e83fdbd297c12920c094bb741c6c7",
       "size": 3440,
-      "mtime": 1788192457,
+      "mtime": 1788510095,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/jade/server-plugin-overrides.json": {
@@ -11205,7 +11211,7 @@
     "instances/26.2-ultra/minecraft/config/jei-server.properties": {
       "sha256": "01476cbcba114011df19b5663cf228251d1889aa83cac0b2e9317d5e3c3ae2e7",
       "size": 374,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/jei/blacklist.json": {
@@ -11289,13 +11295,13 @@
     "instances/26.2-ultra/minecraft/config/letmedespawn.json": {
       "sha256": "3ca4af27f8cbc1d0274667e806a2cae3e4e08495bd6b0728a32d033f9375f55e",
       "size": 149,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/lithostitched.json": {
       "sha256": "43e35f01fceb40ba4689584c447ae842edf22fe86131f30f5108aae55b1b5ca6",
       "size": 242,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/lootintegrations.json": {
@@ -11307,7 +11313,7 @@
     "instances/26.2-ultra/minecraft/config/maxhealthfix.json": {
       "sha256": "f25e0012be339dc6020bc892faea1c9765466a16fd1bb4174c00d885270a9241",
       "size": 132,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/memorysettings.json": {
@@ -11340,22 +11346,28 @@
       "mtime": 1788192241,
       "category": "config"
     },
+    "instances/26.2-ultra/minecraft/config/moreculling.toml": {
+      "sha256": "976a76d9aeb5c7e9c2a2293dfd1b38a850c20948ffaf813221868089e2fa0953",
+      "size": 495,
+      "mtime": 1788510087,
+      "category": "config"
+    },
     "instances/26.2-ultra/minecraft/config/moreoverlays.json": {
       "sha256": "0ffabda9f319759195ea3d8fe19a8d5e5a49162601c3af7e8e91cedbb35e4f5e",
       "size": 918,
-      "mtime": 1788192451,
+      "mtime": 1788510087,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/naturescompass.json": {
       "sha256": "e80fea0ce55921b76930f2ee0a8e838bb2cb0d84fa03802182c9960cfa706e50",
       "size": 2865,
-      "mtime": 1788483122,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/neruina.json5": {
       "sha256": "bfa343775801d4708d39e86b5fa4893a18185f190f2799a8b6ad828e96027073",
       "size": 352,
-      "mtime": 1788483103,
+      "mtime": 1788510074,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/oreharvester.json5": {
@@ -11409,13 +11421,13 @@
     "instances/26.2-ultra/minecraft/config/presencefootsteps/updater.json": {
       "sha256": "1e7c61df09c105e1eeca8cf3dcbdfeb976700e9904bcb3983fc7791adb7fad2e",
       "size": 68,
-      "mtime": 1788192452,
+      "mtime": 1788510088,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/presencefootsteps/userconfig.json5": {
       "sha256": "90fab4d4fe137ee65a86934eab457c4c679a87f6bd3188a320e8c0ade3ef5112",
       "size": 3341,
-      "mtime": 1788192452,
+      "mtime": 1788510088,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/prettybeaches-common.toml": {
@@ -11439,7 +11451,7 @@
     "instances/26.2-ultra/minecraft/config/reborncore/misc.cfg": {
       "sha256": "a0cbeca6dec02dc81faf60028f9401a4e4bd86d9656679eac4937482399cafac",
       "size": 64,
-      "mtime": 1788483122,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/refurbished_furniture.client.toml": {
@@ -11472,22 +11484,28 @@
       "mtime": 1788192236,
       "category": "config"
     },
+    "instances/26.2-ultra/minecraft/config/rrls.toml": {
+      "sha256": "9f2e3cc1cd587fd9de6fd4a068e4c247fde401d3fc6fd9a0da36627ddc5611a3",
+      "size": 995,
+      "mtime": 1788510088,
+      "category": "config"
+    },
     "instances/26.2-ultra/minecraft/config/rsls.properties": {
-      "sha256": "7db55a3ba6beaf815d95d2d9ba6e2f99b45cae7df279940a705972170d10309c",
+      "sha256": "2d462d2830a9520a04b465b23d52ac3bacbf11fe8cdc79c340a1d2e4d44b926f",
       "size": 130,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sereneseasons/fertility.toml": {
       "sha256": "f63f94b985285add146c73a8747d278cec3d386807855b25de0e1db9962c153f",
       "size": 481,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sereneseasons/seasons.toml": {
       "sha256": "dba45250393df7e4104e9a6c04e826df7c1f012d0f2a146f5d7b615e94efe8e1",
       "size": 13899,
-      "mtime": 1788483121,
+      "mtime": 1788510082,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/shouldersurfing-client.toml": {
@@ -11499,13 +11517,19 @@
     "instances/26.2-ultra/minecraft/config/simplemagnets-common.toml": {
       "sha256": "b0df931e81e13d4e07ef3b8a595d3f07491eead8729d8741ece5e309c2335bbb",
       "size": 2390,
-      "mtime": 1788483127,
+      "mtime": 1788510085,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/skinlayers.json": {
       "sha256": "e555b7e930ac799ac21d487a733a7869877b73da6a1d642b5c2d17216667c832",
       "size": 232,
       "mtime": 1788114416,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/skyboxify.json": {
+      "sha256": "e2b79eaa90ce869352d461a779d2014aad3f954c8ed3dc8b8d921a2d3932afbf",
+      "size": 147,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/snowundertrees-common.toml": {
@@ -11517,7 +11541,7 @@
     "instances/26.2-ultra/minecraft/config/sodium-extra-options.json": {
       "sha256": "c6d02a294a6615c01075925e5d33a15dd513e4ab128bb96dd77d2cf13a4e336b",
       "size": 2110,
-      "mtime": 1788192458,
+      "mtime": 1788510097,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sodium-extra.properties": {
@@ -11535,37 +11559,37 @@
     "instances/26.2-ultra/minecraft/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788500965,
+      "mtime": 1788513115,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sodium-shadowy-path-blocks-options.json": {
       "sha256": "25baba4e198fbefd6656a38dcf0cdc3e7ccef211221b4f5218d22a778d1853fa",
       "size": 107,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sound_physics_remastered/occlusion.properties": {
       "sha256": "ebbac45fbb3ca01487b85ffee9601b213b71896e6606fb297bcb0f3ac9c30ffb",
       "size": 4831,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sound_physics_remastered/reflectivity.properties": {
       "sha256": "e26b00784bb6239988759ed1a64551b9f301dc33c5a855d91e976ee4bf40ac8a",
       "size": 4713,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sound_physics_remastered/sound_rates.properties": {
       "sha256": "d385edf7ef63dcf1918952dc5f09ac43f211b2bd84e86fdb45ca53a21b63db52",
       "size": 90972,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sound_physics_remastered/soundphysics.properties": {
       "sha256": "d29dede3f214ee4b1aa03314f92c3f973c21ee6e26d173eba3d01a2083237b6d",
       "size": 5104,
-      "mtime": 1788483123,
+      "mtime": 1788510083,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sounds/chat.json": {
@@ -11583,7 +11607,7 @@
     "instances/26.2-ultra/minecraft/config/sounds/mod_utils.json": {
       "sha256": "a84e7effdb2c4109b8d56885e1db75e90f3a1d4f3a4f227de33ea975efb3caf1",
       "size": 62,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sounds/ui.json": {
@@ -11607,7 +11631,7 @@
     "instances/26.2-ultra/minecraft/config/spark/tmp-client/about.txt": {
       "sha256": "d7514c0ddb6ae8611a281527bf04ca6cbcea1fa21758534fdcd08ed0f51c19c0",
       "size": 585,
-      "mtime": 1788192453,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/spark/tmp/about.txt": {
@@ -11697,7 +11721,7 @@
     "instances/26.2-ultra/minecraft/config/trashcans-common.toml": {
       "sha256": "052ca7162974c18a4ac077dcc97d651081a7a18da7347431072877447287993d",
       "size": 165,
-      "mtime": 1788483116,
+      "mtime": 1788510079,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/trashslot-common.toml": {
@@ -11733,7 +11757,7 @@
     "instances/26.2-ultra/minecraft/config/visuality.json": {
       "sha256": "1f74f3290cdadbddc0aef4e961a1fa8b97bdd2167a8b8c00b3d2e1e938d091bb",
       "size": 1045,
-      "mtime": 1788192454,
+      "mtime": 1788510089,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/visualworkbench-client.toml": {
@@ -11749,9 +11773,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/vmp.properties": {
-      "sha256": "c8318df95f34ab20d683bbdcd7733cde3b72d91c43ec34be73c82d31dd502f44",
+      "sha256": "8bca57095b0c94e1f27e361ff658fcb52dadb5e2e9d435a1e2fae3139454f570",
       "size": 403,
-      "mtime": 1788483099,
+      "mtime": 1788510070,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/waystones-common.toml": {
@@ -11775,7 +11799,7 @@
     "instances/26.2-ultra/minecraft/config/zfastnoise.mixin.toml": {
       "sha256": "869457ea7a5f78803c7003b694cba54a95c9176b3632f327f7a74a99a62ea454",
       "size": 1091,
-      "mtime": 1788483100,
+      "mtime": 1788510072,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/zoomify.json": {
@@ -11787,13 +11811,19 @@
     "instances/26.2-ultra/minecraft/data/fabric_default_resource_packs.json": {
       "sha256": "6f026fbe04e14d51f801f9bf0b6ede5c7e08edf530eac76a66b67f68001c7758",
       "size": 55,
-      "mtime": 1788192454,
+      "mtime": 1788510090,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/debug/disconnect-2026-08-31_19.17.03-client.txt": {
       "sha256": "4d400953f58ed85b03b2bc4a14d5a5c594c642c29aed2cee08f6be69e8bca374",
       "size": 26788,
       "mtime": 1788193023,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/debug/disconnect-2026-09-04_11.21.48-client.txt": {
+      "sha256": "322e4e63088e6f5eede7e769c0cfe8dd899ae2a1a9da4a8766b7b68ab3863505",
+      "size": 27954,
+      "mtime": 1788510108,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/downloads/log.json": {
@@ -11805,7 +11835,1963 @@
     "instances/26.2-ultra/minecraft/fancymenu_data/last_world.fmdata": {
       "sha256": "90f180522751ea4e743c10a1fec1e99ad91bf325e5012bd6c3e3807abf30cbd7",
       "size": 83,
-      "mtime": 1788193022,
+      "mtime": 1788510107,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.core.config": {
+      "sha256": "1291c75185170254754168552da0ff220468e3d73c646a8b4f31205fd60d564b",
+      "size": 2907,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.fullmap.config": {
+      "sha256": "bbb281d6859517b83a67a6e1bb7c2f304b02be4e8fb1a746ac9cc3ccc6204214",
+      "size": 1428,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.minimap.config": {
+      "sha256": "46e08d8ba163e1c0d713eb623d04bb0e408edd0a7dec5f940eda3d92651b757a",
+      "size": 2430,
+      "mtime": 1788510097,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.minimap2.config": {
+      "sha256": "748092f091b133f9e99a9093db406e4e7609d8e9542d2d2e0fb2cb9d3d80c7f8",
+      "size": 2445,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.rendering.config": {
+      "sha256": "2c0baa147f7462064dee2c7dfd3b253e423c92cf247dd6056bbc7723249797a7",
+      "size": 772,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.topo.config": {
+      "sha256": "6f2d34e22b990e9d9861be55b364e6bad84fe13bbcbd30c141fe7b2b4a883708",
+      "size": 1035,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.waypoint.config": {
+      "sha256": "8f46317676ba0f7bd99e27c6cd3e046460ea4fc93e76b203317417fd620632d8",
+      "size": 1511,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/config/6.0/journeymap.webmap.config": {
+      "sha256": "56263eab386b3a4b436c5cf23bfbdfde11483db0ef0294eaee769c7592a28978",
+      "size": 263,
+      "mtime": 1788510096,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/default.theme.config": {
+      "sha256": "5ed3b4853654cef6243b0b6bb6df0525d512a947ab7485bf2ce8962cdd43cae2",
+      "size": 69,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/DesertTemple.theme2.json": {
+      "sha256": "3fbea9b4f7a132c50c2225f66e31bcc0421abee5ebf4d0faa2ce70055921ccd2",
+      "size": 8925,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/EndCity.theme2.json": {
+      "sha256": "aa20458b3eb842261db12d9ce79509284049021bf8d9624ed1b17e6a43e891cf",
+      "size": 8920,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/ForestMansion.theme2.json": {
+      "sha256": "8c3305e78ac46c4b8a7b84ab4e0707ff4ed9b8011c3e34c153c7ba175864887e",
+      "size": 8926,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/NetherFortress.theme2.json": {
+      "sha256": "ca6f39a57b624ac3a02500a1bcc7671b8d09d0e350b44dde5141f3a1ea833a77",
+      "size": 8927,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/OceanMonument.theme2.json": {
+      "sha256": "174ac660305e06603087f3caa2fd64e3c7bd486a02a5a07723e88c63cf271475",
+      "size": 8926,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/Purist.theme2.json": {
+      "sha256": "654ac99369f348b3373133b3047006f73dec8fcc4158c185416126f19dabb2ad",
+      "size": 8909,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/Stronghold.theme2.json": {
+      "sha256": "70ac933ca3a16895c3826edfac645e6eec2f2b3de07dd86da7c7005157e4b824",
+      "size": 8923,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/htoolbar_begin.png": {
+      "sha256": "bc8e966e662dae481ce2913e7fe0f62b60e8434a3b7bf2a1a642191e13b97776",
+      "size": 148,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/htoolbar_end.png": {
+      "sha256": "bc8e966e662dae481ce2913e7fe0f62b60e8434a3b7bf2a1a642191e13b97776",
+      "size": 148,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/htoolbar_inner.png": {
+      "sha256": "4e9e98131151023530d5a43d33876f84081bfefb9556ba2463bed1ade05540e8",
+      "size": 199,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/vtoolbar_begin.png": {
+      "sha256": "46d97ea83ebb551a27b0fa9fbd9424067ebd0736623569171441c99b50cea2d1",
+      "size": 145,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/vtoolbar_end.png": {
+      "sha256": "46d97ea83ebb551a27b0fa9fbd9424067ebd0736623569171441c99b50cea2d1",
+      "size": 145,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/container/vtoolbar_inner.png": {
+      "sha256": "4e9e98131151023530d5a43d33876f84081bfefb9556ba2463bed1ade05540e8",
+      "size": 199,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_button_disabled.png": {
+      "sha256": "83d32ff15aa0e8f45148de3a3a5ccd71b444feffe87397607483154e3b7c0ae4",
+      "size": 399,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_button_hover.png": {
+      "sha256": "83d32ff15aa0e8f45148de3a3a5ccd71b444feffe87397607483154e3b7c0ae4",
+      "size": 399,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_button_off.png": {
+      "sha256": "83d32ff15aa0e8f45148de3a3a5ccd71b444feffe87397607483154e3b7c0ae4",
+      "size": 399,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_button_on.png": {
+      "sha256": "83d32ff15aa0e8f45148de3a3a5ccd71b444feffe87397607483154e3b7c0ae4",
+      "size": 399,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_toggle_disabled.png": {
+      "sha256": "b8b2aa7682e94d278638afd7682a1b2aebfea4b334af37e81f287ace04373f83",
+      "size": 667,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_toggle_hover.png": {
+      "sha256": "692595968d043f271614f05fad795a25a4c9a049a1721650433f192d37e64ada",
+      "size": 611,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_toggle_off.png": {
+      "sha256": "b8b2aa7682e94d278638afd7682a1b2aebfea4b334af37e81f287ace04373f83",
+      "size": 667,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/control/flat_toggle_on.png": {
+      "sha256": "f5ba4168b5cb5f716b03e20c8804e95d978ed88cf6131427b9d6adcbfe46087c",
+      "size": 611,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/about.png": {
+      "sha256": "4c0c86e6c26ff59f62d0fb9950bf4a941ee68a162e1c2e0ceddd23be2162a051",
+      "size": 651,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/actions.png": {
+      "sha256": "c2b542e624984c33ba16fe6a098554b49f341967a752944e7e269fdcb71c2429",
+      "size": 1371,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/alert.png": {
+      "sha256": "983586f9f7921d2726ac2a53c232d06d722949fa77e157c1a7d98432c6dfc3e1",
+      "size": 1101,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/animals.png": {
+      "sha256": "f69dd9243bd212c311a2341d872b8e79eb3a7ec3b494f33e9eb2affde504984b",
+      "size": 834,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/automap.png": {
+      "sha256": "07cc0644f9f73540edc4615a458467eb74474b7554c0d6f5de0507703e9a77cf",
+      "size": 591,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/biome.png": {
+      "sha256": "58ce31b54f7b1b24c0a027e2c862767ef2b6cf52912f4abdc2adc4054a27ddb3",
+      "size": 1029,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/browser.png": {
+      "sha256": "ff65bb724a08e5349e95a3454b7cc9a139fa8d45a78237796f31cbd33a635892",
+      "size": 1694,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/caves.png": {
+      "sha256": "8c38e6593c9ca8a297447361828c000153a609479472350006306676e37ca290",
+      "size": 1081,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/close.png": {
+      "sha256": "b09d503f492134f700c50c73fc9ceefdda16134e0edf8ecc45198beae4fc6d9e",
+      "size": 1373,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/colorpalette.png": {
+      "sha256": "4f361d7396a293f5dc81f52bf3aed314095ae951ac93b466a45f3a53c58fd4dd",
+      "size": 1174,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/day.png": {
+      "sha256": "2452de72b9e65a58030ca20dc2f65105d383da9b923eaf84f4c09d6b30ca1d3c",
+      "size": 1515,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/delete.png": {
+      "sha256": "7794415179dd56bb063e7629591ddd13e3f2945fc57f6ee794b6d5fa18fdae47",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/disable.png": {
+      "sha256": "66f320dae8440322ce73afc2844873855fd42b5fb2e235b4c24f76ae43f293ac",
+      "size": 833,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/follow.png": {
+      "sha256": "47ebd2bba7b67408bb0445f48f83a45258bc2ebfa4bb42a33083a36db972e9ba",
+      "size": 1274,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/grid.png": {
+      "sha256": "889a0c720d702243e39a7aab3af3a3df1ba13b8366c1c3c5cd2624d26c778cba",
+      "size": 514,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/keys.png": {
+      "sha256": "e5adb9816ef232c459913cb943082a13d5f67b2f55299ab442c98bb16da8dfa1",
+      "size": 456,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/layers.png": {
+      "sha256": "936372844d875f348d9615b3714fc5dd800d943928bac6531ad873af856d624d",
+      "size": 1339,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/monsters.png": {
+      "sha256": "b2962a9f3e435446a08dc7aace83c0eef320f482922dcc7f90f0c98c0539c7a5",
+      "size": 482,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/night.png": {
+      "sha256": "13372b9c000b9395fed397268d756dd8f10b6793690a954c65eed5c4066d79fb",
+      "size": 1035,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/options.png": {
+      "sha256": "28536bc300859895c84561bb0608e100665ea6c162da937e6095fe10f558ce1c",
+      "size": 644,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/pets.png": {
+      "sha256": "ce213a4aa78e802d1e87518079201d58269231f07166839d9e75718760fe1336",
+      "size": 827,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/players.png": {
+      "sha256": "5556bc88f910cc607588aedaffefdafc6a969d904ff77333498488f20b9b72f4",
+      "size": 362,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/reset.png": {
+      "sha256": "e3c62c43cfd56b77b7d9bbafe772d21af1010f891640871b8996227317f689e8",
+      "size": 659,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/savemap.png": {
+      "sha256": "da43846b1c2565f5050f1c69827535666a2ed10f1d3b1ecdd65bf2016b02c24b",
+      "size": 926,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/search.png": {
+      "sha256": "217079791a266e397ab22b81418a4ea116e1803fdcd8b66692f027f59921441c",
+      "size": 1168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/server.png": {
+      "sha256": "210a9eecb61a36b137964c7d7bdbccdd3a50e713f9d2e14af25dd5dbf339d125",
+      "size": 3038,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/topo.png": {
+      "sha256": "9f298c043afab05d762a18d6bae4a25155937f6d2806e4f356466f6cd1d5ca01",
+      "size": 1330,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/villagers.png": {
+      "sha256": "f367f57a1fa2ea48f6766a52a0e667c8654d93ff905b8ab846021b1cb435a184",
+      "size": 659,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/waypoints.png": {
+      "sha256": "1df53677cb2dcfc5c876a062b81000695a770e97d492bfd03467e8d8e79f1d10",
+      "size": 1606,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/zoomin.png": {
+      "sha256": "1eab60c1b3d19355c9ed3a936ea748aded40b1612a5a3a184e9065ed0134c09c",
+      "size": 1305,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/icon/zoomout.png": {
+      "sha256": "76dbdca4e02d0babb60f51b7e47ac85196b8b11f38922065d0f1f33905afae65",
+      "size": 1241,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/flat_compass_point.png": {
+      "sha256": "2ec50be3a53372110fd726f20b53c35b254b91aeda2ec692630ee5864d268b4f",
+      "size": 589,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/flat_mask_256.png": {
+      "sha256": "d45cc0ea6a7bf2f66bc57f982704a713299f2f2e8836362c0da2f99e095424e2",
+      "size": 7020,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/flat_mask_512.png": {
+      "sha256": "c1d5583ac56ad87938cd2d7a385766277c4ca57e49563c5787a9f412ab57f4ea",
+      "size": 20438,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/flat_rim_256.png": {
+      "sha256": "16f249791b986c0cd021de987f64cf59c36cc8c501727817a941942aeace2915",
+      "size": 6751,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/flat_rim_512.png": {
+      "sha256": "ed890971359a4bcb5702f6c230c20c93dc30c4a6c709879256c39522cec03261",
+      "size": 14309,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/pur_compass_point.png": {
+      "sha256": "2e577e98bc9b5a37434d5b446e290d814264f2389c50f0b815bd8c67ce537e53",
+      "size": 959,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/pur_mask_256.png": {
+      "sha256": "0bded5ef2d8ac502c21338c2fcdf413eb43f78923949d6e363d25d56380a82f9",
+      "size": 2067,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/pur_mask_512.png": {
+      "sha256": "0f74c82f31451f880ef0d90a8a566b02b5f3304ebd50cb24234da5d8527c56ca",
+      "size": 10622,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/pur_rim_256.png": {
+      "sha256": "5fb8ebd32460266dd14a59a3e1986b6438131c1d2e751496bec3f8a7ec042a8e",
+      "size": 15210,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/circle/pur_rim_512.png": {
+      "sha256": "ca24f18c51c76b646daa598ca4438f89a83d684e151a77e9de16134d2e235c2f",
+      "size": 37803,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_bottom.png": {
+      "sha256": "0ed5af808f8f5f03cb4c7faf373e6d0a1b630cd08b23de1c9972f83d5e588f15",
+      "size": 154,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_bottomleft.png": {
+      "sha256": "2114d16ad8ca024c022fa74baa05305d569b3f5411e38c0f7598bb5d8f615acb",
+      "size": 159,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_bottomright.png": {
+      "sha256": "e601888a5731292294b34a02afbbf6c9feffa84b323a37f3c8db798bbfcee46c",
+      "size": 162,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_compass_point.png": {
+      "sha256": "beda592f3784f1263f372d6cc2f0d96ab0b44eb0f413a9b2b53bdffc0741a2c8",
+      "size": 199,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_left.png": {
+      "sha256": "8adc7d1cf82ff67f3a89f57a04c122c3247eac7b4745b324489c4dd38cce1de3",
+      "size": 152,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_right.png": {
+      "sha256": "df82f5728a76c1e5444d927fc8abbdc4f6dce2f8af69b91e0c20bb0107a67d0e",
+      "size": 153,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_top.png": {
+      "sha256": "325914f3f24630c3d0fd5c8913dda5c756c6e223cdea9d10c2edf8bbb5cb5451",
+      "size": 154,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_topleft.png": {
+      "sha256": "1c536d3bd14cb7d97c2a1c65bd5bd4eb97e37021e0e9ff7509f14ee12656ee1e",
+      "size": 157,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/flat_topright.png": {
+      "sha256": "8bd7546ab31d772403040589a7d245ee0355b2d55a6f490b97dd2097a6394969",
+      "size": 157,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_bottom.png": {
+      "sha256": "9c872d98dac4d8391088710c621d741dbab8259b956d7c6d04c5fa3eac6e1bad",
+      "size": 164,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_bottomleft.png": {
+      "sha256": "2d43664a74f98a5f79ff649757640eb3f45c64f6b5fa7b39b59b2d1bded8b9b2",
+      "size": 207,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_bottomright.png": {
+      "sha256": "8b36b22cd5d89cdfaca944d18c791f77c525234efa8c6397d7bc9a0eb3f02e8c",
+      "size": 215,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_compass_point.png": {
+      "sha256": "beda592f3784f1263f372d6cc2f0d96ab0b44eb0f413a9b2b53bdffc0741a2c8",
+      "size": 199,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_left.png": {
+      "sha256": "52c056947aba9e6eddad0629f00a5047e652e2b4c4c2dcd93029639c1d1e4a54",
+      "size": 160,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_right.png": {
+      "sha256": "05a92d917a534561d495f14cd3ea90d6228fb8f625dcb429bd8975d2c50f2450",
+      "size": 163,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_top.png": {
+      "sha256": "c9aad7b0b00e2becede24938f9b96e3143c0ec168294e8f232f3c7389b50416d",
+      "size": 159,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_topleft.png": {
+      "sha256": "80ef5b6d0f012cf6b3f231b7a397285e5ea895a1527f4d86acbe1e79f905c1b7",
+      "size": 205,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/flat/minimap/square/pur_topright.png": {
+      "sha256": "7583ad283f7df4e47893d1081eed19da4c09cdeeb22f6378b2f5b012ea532320",
+      "size": 226,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/htoolbar_begin.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/htoolbar_end.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/htoolbar_inner.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/unkown.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/vtoolbar_begin.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/vtoolbar_end.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/container/vtoolbar_inner.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_button_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_button_hover.png": {
+      "sha256": "bbb7161ccc441107f41514acf6643912fc6900fb882e1db5fa2880d524bfa2cb",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_button_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_button_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_toggle_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_toggle_hover.png": {
+      "sha256": "099cacc81687b8c2b2e6f7dc627df8a518978f798556210197255a1d1daa0be0",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_toggle_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/control/flat_toggle_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/about.png": {
+      "sha256": "4c0c86e6c26ff59f62d0fb9950bf4a941ee68a162e1c2e0ceddd23be2162a051",
+      "size": 651,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/actions.png": {
+      "sha256": "119107e903a6d35227fcae043d7147c9b3fbfb77be9343d10f895701946339c9",
+      "size": 1244,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/alert.png": {
+      "sha256": "55eebc1b6375a1da033d3947bc31c3c1a8e0a68e9cda8676fd6ea6e0f866ed25",
+      "size": 818,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/animals.png": {
+      "sha256": "7473956da4e58db7fa5e4b780e125664b853233ceb3cfed4eef262212e54a894",
+      "size": 978,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/automap.png": {
+      "sha256": "201a4ce30bae3339eff9bf16fed8dfc594f7edd3735e3f84f9da796b2c34f55c",
+      "size": 1598,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/biome.png": {
+      "sha256": "58ce31b54f7b1b24c0a027e2c862767ef2b6cf52912f4abdc2adc4054a27ddb3",
+      "size": 1029,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/browser.png": {
+      "sha256": "ff65bb724a08e5349e95a3454b7cc9a139fa8d45a78237796f31cbd33a635892",
+      "size": 1694,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/caves.png": {
+      "sha256": "359dcf716a4a7103e537b31729b202295794664d620aad1bdfa6f7ad5446f331",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/close.png": {
+      "sha256": "5a7d17808089cd25344d430579991f1dfd74c10b2b30f3d450f8f32459a0aaeb",
+      "size": 1021,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/colorpalette.png": {
+      "sha256": "4f361d7396a293f5dc81f52bf3aed314095ae951ac93b466a45f3a53c58fd4dd",
+      "size": 1174,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/day.png": {
+      "sha256": "5b81c0e5b3aa7d2f028d934b860d80335b6fd1d3651328db5611ced1665a7eb2",
+      "size": 1151,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/delete.png": {
+      "sha256": "7794415179dd56bb063e7629591ddd13e3f2945fc57f6ee794b6d5fa18fdae47",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/disable.png": {
+      "sha256": "66f320dae8440322ce73afc2844873855fd42b5fb2e235b4c24f76ae43f293ac",
+      "size": 833,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/follow.png": {
+      "sha256": "58fc1d713c2ac56f204296a67bf51df3c957451a0f7eb683379a5ab10723cf6b",
+      "size": 1139,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/grid.png": {
+      "sha256": "68756478c3f03c7eabe2cd011ea07e3edddd63891fb7fcbfe64a499766b0a7a4",
+      "size": 664,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/keys.png": {
+      "sha256": "e5adb9816ef232c459913cb943082a13d5f67b2f55299ab442c98bb16da8dfa1",
+      "size": 456,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/layers.png": {
+      "sha256": "5b6c567a240f824709114a48a9371e08a5f2e4357690bcf1784c3bf323ac4e1a",
+      "size": 1194,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/monsters.png": {
+      "sha256": "37fd6b6f07fd79f6f8b5c00d98741c5d6bc8aba04e735d35b13a4f6b81391462",
+      "size": 1116,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/night.png": {
+      "sha256": "58356a3aefd83949a4128991fd44272239a17c2b587d5b407d2abdad6f7b5502",
+      "size": 902,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/options.png": {
+      "sha256": "95d4ceca2b848c243baa358de11f5c05cc76ab9faa692bd2962a67fd61156a48",
+      "size": 569,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/pets.png": {
+      "sha256": "0eb51a17c2b0de3815a5248ab64028ccbf17edd6fde03c37e4250902f222d99d",
+      "size": 727,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/players.png": {
+      "sha256": "bd7dd9f69ffb7ee1c8a0bf1c64b1a17b33d027ddd149b267bad4708ddbae7ecc",
+      "size": 1369,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/reset.png": {
+      "sha256": "e3c62c43cfd56b77b7d9bbafe772d21af1010f891640871b8996227317f689e8",
+      "size": 659,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/savemap.png": {
+      "sha256": "bed515da79bb1c1acd8a0a0fcee93bb56265ee82938f537def3f8cf707912d47",
+      "size": 831,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/search.png": {
+      "sha256": "217079791a266e397ab22b81418a4ea116e1803fdcd8b66692f027f59921441c",
+      "size": 1168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/server.png": {
+      "sha256": "210a9eecb61a36b137964c7d7bdbccdd3a50e713f9d2e14af25dd5dbf339d125",
+      "size": 3038,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/topo.png": {
+      "sha256": "9f298c043afab05d762a18d6bae4a25155937f6d2806e4f356466f6cd1d5ca01",
+      "size": 1330,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/villagers.png": {
+      "sha256": "27b1a4e2836d0056f1a22c1bb1e71ffcc036eb5d07b217c10f03b7130ae1f2f8",
+      "size": 1272,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/waypoints.png": {
+      "sha256": "8fae56b87be08863b01ab7b0ac9e76492f795d36fa2ffecd7abbc50c92ecf08c",
+      "size": 620,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/zoomin.png": {
+      "sha256": "836820c93e2e84636a4a9d05f5b5e933a8ab959a21c5c2d899bf5227d5a2dbb2",
+      "size": 1155,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/icon/zoomout.png": {
+      "sha256": "f2324343490020526f921860a2f8c6d4d92cf23c30025d1918175af43ae184f0",
+      "size": 1090,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_bottom.png": {
+      "sha256": "989e0266950e2dbffb216cc2be2a8bae0f98a6a793b002f2eda23f76c316ee95",
+      "size": 214,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_bottomleft.png": {
+      "sha256": "32690d8f0176477702adfd890b2142c9a9fd96ec85bfd281231867252188f54c",
+      "size": 18970,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_bottomright.png": {
+      "sha256": "adca6da02711e934f98c2dd29f11cd8ec72f61605e17103d8061caa39f3ad89b",
+      "size": 10832,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_compass_point.png": {
+      "sha256": "9e3edd90e49e7ec41450e4ced44ad27b1042e025011ab51a745d0e2399120965",
+      "size": 289,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_left.png": {
+      "sha256": "237f0a3a743cc88038738d988032f6111c4de754a6bbff16091904db8e7a6273",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_right.png": {
+      "sha256": "9b850607adb21bcbcfba1837955cf1f0de448fc5ae62e67c00f766aae17b4b96",
+      "size": 224,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_top.png": {
+      "sha256": "8e3fe79f36f38cbf2062ae2538288ed2459fa36ba7e5f98d28719dfc7a386e01",
+      "size": 228,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_topleft.png": {
+      "sha256": "e7be45aa3a314b93915dff96151b72d34928867654c63fe704faac923e6f1fb8",
+      "size": 10437,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/flat_topright.png": {
+      "sha256": "b54d3d791113b6cfb416501782e67d3bb1a50164e0942ef5319d6b042252a2fe",
+      "size": 10851,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/minimap/square/pur_bottom.png": {
+      "sha256": "9c872d98dac4d8391088710c621d741dbab8259b956d7c6d04c5fa3eac6e1bad",
+      "size": 164,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/_flat/vault.theme2.json": {
+      "sha256": "0b06db83ef48682d2101ccd86ff729dffd578b23b0ae77e25a30c59cf2fd1358",
+      "size": 6203,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/htoolbar_begin.png": {
+      "sha256": "6b47f2184f521d86dd0d67f1dfede88faeee30943646db8228de13e34ae5f7cd",
+      "size": 3776,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/htoolbar_end.png": {
+      "sha256": "0262d8e4340c2dd73ced8acc74cbafaddf032a68124bc9036b816f7cb10ec728",
+      "size": 2668,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/htoolbar_inner.png": {
+      "sha256": "ebd7a894d03de371fc9a4b6205451bccb6e0b3942b2ff29c05ca83de37c2a26a",
+      "size": 1438,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/vtoolbar_begin.png": {
+      "sha256": "e68272687637df8d52886debd32c3f8914b0106c08b60d39f9130cc7cb0d8fd7",
+      "size": 2583,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/vtoolbar_end.png": {
+      "sha256": "c20e3ada12970cd29509008e9237316d85c7fdc58b2b6024cc132f5b480a7dc3",
+      "size": 2609,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/container/vtoolbar_inner.png": {
+      "sha256": "c23e3d44f86900d2f04b2d8172da1ed7e5bb46904ea555adc959ef719cc21d32",
+      "size": 490,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_button_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_button_hover.png": {
+      "sha256": "bbb7161ccc441107f41514acf6643912fc6900fb882e1db5fa2880d524bfa2cb",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_button_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_button_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_toggle_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_toggle_hover.png": {
+      "sha256": "099cacc81687b8c2b2e6f7dc627df8a518978f798556210197255a1d1daa0be0",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_toggle_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/control/flat_toggle_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/about.png": {
+      "sha256": "4c0c86e6c26ff59f62d0fb9950bf4a941ee68a162e1c2e0ceddd23be2162a051",
+      "size": 651,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/actions.png": {
+      "sha256": "119107e903a6d35227fcae043d7147c9b3fbfb77be9343d10f895701946339c9",
+      "size": 1244,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/alert.png": {
+      "sha256": "55eebc1b6375a1da033d3947bc31c3c1a8e0a68e9cda8676fd6ea6e0f866ed25",
+      "size": 818,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/animals.png": {
+      "sha256": "7473956da4e58db7fa5e4b780e125664b853233ceb3cfed4eef262212e54a894",
+      "size": 978,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/automap.png": {
+      "sha256": "201a4ce30bae3339eff9bf16fed8dfc594f7edd3735e3f84f9da796b2c34f55c",
+      "size": 1598,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/biome.png": {
+      "sha256": "58ce31b54f7b1b24c0a027e2c862767ef2b6cf52912f4abdc2adc4054a27ddb3",
+      "size": 1029,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/browser.png": {
+      "sha256": "ff65bb724a08e5349e95a3454b7cc9a139fa8d45a78237796f31cbd33a635892",
+      "size": 1694,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/caves.png": {
+      "sha256": "359dcf716a4a7103e537b31729b202295794664d620aad1bdfa6f7ad5446f331",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/close.png": {
+      "sha256": "5a7d17808089cd25344d430579991f1dfd74c10b2b30f3d450f8f32459a0aaeb",
+      "size": 1021,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/colorpalette.png": {
+      "sha256": "4f361d7396a293f5dc81f52bf3aed314095ae951ac93b466a45f3a53c58fd4dd",
+      "size": 1174,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/day.png": {
+      "sha256": "5b81c0e5b3aa7d2f028d934b860d80335b6fd1d3651328db5611ced1665a7eb2",
+      "size": 1151,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/delete.png": {
+      "sha256": "7794415179dd56bb063e7629591ddd13e3f2945fc57f6ee794b6d5fa18fdae47",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/disable.png": {
+      "sha256": "66f320dae8440322ce73afc2844873855fd42b5fb2e235b4c24f76ae43f293ac",
+      "size": 833,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/follow.png": {
+      "sha256": "58fc1d713c2ac56f204296a67bf51df3c957451a0f7eb683379a5ab10723cf6b",
+      "size": 1139,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/grid.png": {
+      "sha256": "68756478c3f03c7eabe2cd011ea07e3edddd63891fb7fcbfe64a499766b0a7a4",
+      "size": 664,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/keys.png": {
+      "sha256": "e5adb9816ef232c459913cb943082a13d5f67b2f55299ab442c98bb16da8dfa1",
+      "size": 456,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/layers.png": {
+      "sha256": "5b6c567a240f824709114a48a9371e08a5f2e4357690bcf1784c3bf323ac4e1a",
+      "size": 1194,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/monsters.png": {
+      "sha256": "37fd6b6f07fd79f6f8b5c00d98741c5d6bc8aba04e735d35b13a4f6b81391462",
+      "size": 1116,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/night.png": {
+      "sha256": "58356a3aefd83949a4128991fd44272239a17c2b587d5b407d2abdad6f7b5502",
+      "size": 902,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/options.png": {
+      "sha256": "95d4ceca2b848c243baa358de11f5c05cc76ab9faa692bd2962a67fd61156a48",
+      "size": 569,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/pets.png": {
+      "sha256": "0eb51a17c2b0de3815a5248ab64028ccbf17edd6fde03c37e4250902f222d99d",
+      "size": 727,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/players.png": {
+      "sha256": "bd7dd9f69ffb7ee1c8a0bf1c64b1a17b33d027ddd149b267bad4708ddbae7ecc",
+      "size": 1369,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/reset.png": {
+      "sha256": "e3c62c43cfd56b77b7d9bbafe772d21af1010f891640871b8996227317f689e8",
+      "size": 659,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/savemap.png": {
+      "sha256": "bed515da79bb1c1acd8a0a0fcee93bb56265ee82938f537def3f8cf707912d47",
+      "size": 831,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/search.png": {
+      "sha256": "217079791a266e397ab22b81418a4ea116e1803fdcd8b66692f027f59921441c",
+      "size": 1168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/server.png": {
+      "sha256": "210a9eecb61a36b137964c7d7bdbccdd3a50e713f9d2e14af25dd5dbf339d125",
+      "size": 3038,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/topo.png": {
+      "sha256": "9f298c043afab05d762a18d6bae4a25155937f6d2806e4f356466f6cd1d5ca01",
+      "size": 1330,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/villagers.png": {
+      "sha256": "27b1a4e2836d0056f1a22c1bb1e71ffcc036eb5d07b217c10f03b7130ae1f2f8",
+      "size": 1272,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/waypoints.png": {
+      "sha256": "8fae56b87be08863b01ab7b0ac9e76492f795d36fa2ffecd7abbc50c92ecf08c",
+      "size": 620,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/zoomin.png": {
+      "sha256": "836820c93e2e84636a4a9d05f5b5e933a8ab959a21c5c2d899bf5227d5a2dbb2",
+      "size": 1155,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/icon/zoomout.png": {
+      "sha256": "f2324343490020526f921860a2f8c6d4d92cf23c30025d1918175af43ae184f0",
+      "size": 1090,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_bottom.png": {
+      "sha256": "989e0266950e2dbffb216cc2be2a8bae0f98a6a793b002f2eda23f76c316ee95",
+      "size": 214,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_bottomleft.png": {
+      "sha256": "32690d8f0176477702adfd890b2142c9a9fd96ec85bfd281231867252188f54c",
+      "size": 18970,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_bottomright.png": {
+      "sha256": "adca6da02711e934f98c2dd29f11cd8ec72f61605e17103d8061caa39f3ad89b",
+      "size": 10832,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_compass_point.png": {
+      "sha256": "9e3edd90e49e7ec41450e4ced44ad27b1042e025011ab51a745d0e2399120965",
+      "size": 289,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_left.png": {
+      "sha256": "237f0a3a743cc88038738d988032f6111c4de754a6bbff16091904db8e7a6273",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_right.png": {
+      "sha256": "9b850607adb21bcbcfba1837955cf1f0de448fc5ae62e67c00f766aae17b4b96",
+      "size": 224,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_top.png": {
+      "sha256": "8e3fe79f36f38cbf2062ae2538288ed2459fa36ba7e5f98d28719dfc7a386e01",
+      "size": 228,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_topleft.png": {
+      "sha256": "e7be45aa3a314b93915dff96151b72d34928867654c63fe704faac923e6f1fb8",
+      "size": 10437,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/flat_topright.png": {
+      "sha256": "b54d3d791113b6cfb416501782e67d3bb1a50164e0942ef5319d6b042252a2fe",
+      "size": 10851,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/minimap/square/pur_bottom.png": {
+      "sha256": "9c872d98dac4d8391088710c621d741dbab8259b956d7c6d04c5fa3eac6e1bad",
+      "size": 164,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault/vault.theme2.json": {
+      "sha256": "04d175f8e226ef9545cb7e6dfbe5b124559097609f651b15c4809a5eb4c5685a",
+      "size": 6007,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/htoolbar_begin.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/htoolbar_end.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/htoolbar_inner.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/unkown.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/vtoolbar_begin.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/vtoolbar_end.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/container/vtoolbar_inner.png": {
+      "sha256": "365ebb64eeea3f725326f70b9d68c3a5231e598c79582c10197ff44acd80cab6",
+      "size": 1189,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_button_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_button_hover.png": {
+      "sha256": "bbb7161ccc441107f41514acf6643912fc6900fb882e1db5fa2880d524bfa2cb",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_button_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_button_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_toggle_disabled.png": {
+      "sha256": "c8c692af6b9c9e8ce9c814cb40ac9ddbb3210fb7ba65258bcba7ec5598b9b2b7",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_toggle_hover.png": {
+      "sha256": "099cacc81687b8c2b2e6f7dc627df8a518978f798556210197255a1d1daa0be0",
+      "size": 231,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_toggle_off.png": {
+      "sha256": "950c4ad4ce83a20f4ffe5027bba39e66dedf52e9f0287639ebde24efaa64c1b2",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/control/flat_toggle_on.png": {
+      "sha256": "8f14da44f7733a13271159558f0bde132e707eeb96da62e4bbae4f0dd5b68834",
+      "size": 221,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/about.png": {
+      "sha256": "4c0c86e6c26ff59f62d0fb9950bf4a941ee68a162e1c2e0ceddd23be2162a051",
+      "size": 651,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/actions.png": {
+      "sha256": "119107e903a6d35227fcae043d7147c9b3fbfb77be9343d10f895701946339c9",
+      "size": 1244,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/alert.png": {
+      "sha256": "55eebc1b6375a1da033d3947bc31c3c1a8e0a68e9cda8676fd6ea6e0f866ed25",
+      "size": 818,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/animals.png": {
+      "sha256": "7473956da4e58db7fa5e4b780e125664b853233ceb3cfed4eef262212e54a894",
+      "size": 978,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/automap.png": {
+      "sha256": "201a4ce30bae3339eff9bf16fed8dfc594f7edd3735e3f84f9da796b2c34f55c",
+      "size": 1598,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/biome.png": {
+      "sha256": "58ce31b54f7b1b24c0a027e2c862767ef2b6cf52912f4abdc2adc4054a27ddb3",
+      "size": 1029,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/browser.png": {
+      "sha256": "ff65bb724a08e5349e95a3454b7cc9a139fa8d45a78237796f31cbd33a635892",
+      "size": 1694,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/caves.png": {
+      "sha256": "359dcf716a4a7103e537b31729b202295794664d620aad1bdfa6f7ad5446f331",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/close.png": {
+      "sha256": "5a7d17808089cd25344d430579991f1dfd74c10b2b30f3d450f8f32459a0aaeb",
+      "size": 1021,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/colorpalette.png": {
+      "sha256": "4f361d7396a293f5dc81f52bf3aed314095ae951ac93b466a45f3a53c58fd4dd",
+      "size": 1174,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/day.png": {
+      "sha256": "5b81c0e5b3aa7d2f028d934b860d80335b6fd1d3651328db5611ced1665a7eb2",
+      "size": 1151,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/delete.png": {
+      "sha256": "7794415179dd56bb063e7629591ddd13e3f2945fc57f6ee794b6d5fa18fdae47",
+      "size": 939,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/disable.png": {
+      "sha256": "66f320dae8440322ce73afc2844873855fd42b5fb2e235b4c24f76ae43f293ac",
+      "size": 833,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/follow.png": {
+      "sha256": "58fc1d713c2ac56f204296a67bf51df3c957451a0f7eb683379a5ab10723cf6b",
+      "size": 1139,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/grid.png": {
+      "sha256": "68756478c3f03c7eabe2cd011ea07e3edddd63891fb7fcbfe64a499766b0a7a4",
+      "size": 664,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/keys.png": {
+      "sha256": "e5adb9816ef232c459913cb943082a13d5f67b2f55299ab442c98bb16da8dfa1",
+      "size": 456,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/layers.png": {
+      "sha256": "5b6c567a240f824709114a48a9371e08a5f2e4357690bcf1784c3bf323ac4e1a",
+      "size": 1194,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/monsters.png": {
+      "sha256": "37fd6b6f07fd79f6f8b5c00d98741c5d6bc8aba04e735d35b13a4f6b81391462",
+      "size": 1116,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/night.png": {
+      "sha256": "58356a3aefd83949a4128991fd44272239a17c2b587d5b407d2abdad6f7b5502",
+      "size": 902,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/options.png": {
+      "sha256": "95d4ceca2b848c243baa358de11f5c05cc76ab9faa692bd2962a67fd61156a48",
+      "size": 569,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/pets.png": {
+      "sha256": "0eb51a17c2b0de3815a5248ab64028ccbf17edd6fde03c37e4250902f222d99d",
+      "size": 727,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/players.png": {
+      "sha256": "bd7dd9f69ffb7ee1c8a0bf1c64b1a17b33d027ddd149b267bad4708ddbae7ecc",
+      "size": 1369,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/reset.png": {
+      "sha256": "e3c62c43cfd56b77b7d9bbafe772d21af1010f891640871b8996227317f689e8",
+      "size": 659,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/savemap.png": {
+      "sha256": "bed515da79bb1c1acd8a0a0fcee93bb56265ee82938f537def3f8cf707912d47",
+      "size": 831,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/search.png": {
+      "sha256": "217079791a266e397ab22b81418a4ea116e1803fdcd8b66692f027f59921441c",
+      "size": 1168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/server.png": {
+      "sha256": "210a9eecb61a36b137964c7d7bdbccdd3a50e713f9d2e14af25dd5dbf339d125",
+      "size": 3038,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/topo.png": {
+      "sha256": "9f298c043afab05d762a18d6bae4a25155937f6d2806e4f356466f6cd1d5ca01",
+      "size": 1330,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/villagers.png": {
+      "sha256": "27b1a4e2836d0056f1a22c1bb1e71ffcc036eb5d07b217c10f03b7130ae1f2f8",
+      "size": 1272,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/waypoints.png": {
+      "sha256": "8fae56b87be08863b01ab7b0ac9e76492f795d36fa2ffecd7abbc50c92ecf08c",
+      "size": 620,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/zoomin.png": {
+      "sha256": "836820c93e2e84636a4a9d05f5b5e933a8ab959a21c5c2d899bf5227d5a2dbb2",
+      "size": 1155,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/icon/zoomout.png": {
+      "sha256": "f2324343490020526f921860a2f8c6d4d92cf23c30025d1918175af43ae184f0",
+      "size": 1090,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_bottom.png": {
+      "sha256": "989e0266950e2dbffb216cc2be2a8bae0f98a6a793b002f2eda23f76c316ee95",
+      "size": 214,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_bottomleft.png": {
+      "sha256": "32690d8f0176477702adfd890b2142c9a9fd96ec85bfd281231867252188f54c",
+      "size": 18970,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_bottomright.png": {
+      "sha256": "adca6da02711e934f98c2dd29f11cd8ec72f61605e17103d8061caa39f3ad89b",
+      "size": 10832,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_compass_point.png": {
+      "sha256": "9e3edd90e49e7ec41450e4ced44ad27b1042e025011ab51a745d0e2399120965",
+      "size": 289,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_left.png": {
+      "sha256": "237f0a3a743cc88038738d988032f6111c4de754a6bbff16091904db8e7a6273",
+      "size": 246,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_right.png": {
+      "sha256": "9b850607adb21bcbcfba1837955cf1f0de448fc5ae62e67c00f766aae17b4b96",
+      "size": 224,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_top.png": {
+      "sha256": "8e3fe79f36f38cbf2062ae2538288ed2459fa36ba7e5f98d28719dfc7a386e01",
+      "size": 228,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_topleft.png": {
+      "sha256": "e7be45aa3a314b93915dff96151b72d34928867654c63fe704faac923e6f1fb8",
+      "size": 10437,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/flat_topright.png": {
+      "sha256": "b54d3d791113b6cfb416501782e67d3bb1a50164e0942ef5319d6b042252a2fe",
+      "size": 10851,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/minimap/square/pur_bottom.png": {
+      "sha256": "9c872d98dac4d8391088710c621d741dbab8259b956d7c6d04c5fa3eac6e1bad",
+      "size": 164,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/vault_flat/vault.theme2.json": {
+      "sha256": "0b06db83ef48682d2101ccd86ff729dffd578b23b0ae77e25a30c59cf2fd1358",
+      "size": 6203,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/htoolbar_begin.png": {
+      "sha256": "97e938c580373d50028c77617181412e5a1b983f8b36dd9a3f088144962d9058",
+      "size": 793,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/htoolbar_end.png": {
+      "sha256": "44c1a9340e33ae81204feaf6e98b908db783bda859456cca0429cae1128c7b20",
+      "size": 814,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/htoolbar_inner.png": {
+      "sha256": "e2b833311ebc2ce33156f8ace3745261b073ae03db462fba385ae2da0c1b7958",
+      "size": 275,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/vtoolbar_begin.png": {
+      "sha256": "d3c9b3525791419c8767cc908cfb77836838ef8fe8ad9735652e0b2a9eba7cd6",
+      "size": 806,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/vtoolbar_end.png": {
+      "sha256": "d819d5d8cd03d2dcd47d95e9188541910b29dadcf5b7ee06833fd78f502e5de8",
+      "size": 802,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/container/vtoolbar_inner.png": {
+      "sha256": "a4b5e3712b2d581157eb32351e349165367d264c44cfc5adfc774653e39f9967",
+      "size": 259,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/button_disabled.png": {
+      "sha256": "137ea470fc551b28a1ac9c468689c4c6bdc97b1f937d12e0f0f22384609a4ff8",
+      "size": 2642,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/button_hover.png": {
+      "sha256": "60e8dcde80397343e745054b741bafe9053aa116eb872744531c1d5136e84b5d",
+      "size": 3912,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/button_off.png": {
+      "sha256": "e50f8af5fc171bf07280d38454ec8bebb5f018398e90ee9153a38129b77b99dc",
+      "size": 3178,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/button_on.png": {
+      "sha256": "60e8dcde80397343e745054b741bafe9053aa116eb872744531c1d5136e84b5d",
+      "size": 3912,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/toggle_disabled.png": {
+      "sha256": "036ab36823a406ee1d23bd4e8fefc1ef14031bb4e7a5abc3899b809a742351a4",
+      "size": 3527,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/toggle_hover.png": {
+      "sha256": "3664dec513c1ce0be4083cf454c6357fff8f862334c53049fb7c1c3f8a071bdb",
+      "size": 5290,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/toggle_off.png": {
+      "sha256": "3664dec513c1ce0be4083cf454c6357fff8f862334c53049fb7c1c3f8a071bdb",
+      "size": 5290,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/control/toggle_on.png": {
+      "sha256": "3df9104ccf5f5a080f54afb6c5876e0362d589361f043739bedc6bd96735bb1f",
+      "size": 5959,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/about.png": {
+      "sha256": "4c0c86e6c26ff59f62d0fb9950bf4a941ee68a162e1c2e0ceddd23be2162a051",
+      "size": 651,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/actions.png": {
+      "sha256": "119107e903a6d35227fcae043d7147c9b3fbfb77be9343d10f895701946339c9",
+      "size": 1244,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/alert.png": {
+      "sha256": "55eebc1b6375a1da033d3947bc31c3c1a8e0a68e9cda8676fd6ea6e0f866ed25",
+      "size": 818,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/animals.png": {
+      "sha256": "7473956da4e58db7fa5e4b780e125664b853233ceb3cfed4eef262212e54a894",
+      "size": 978,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/automap.png": {
+      "sha256": "201a4ce30bae3339eff9bf16fed8dfc594f7edd3735e3f84f9da796b2c34f55c",
+      "size": 1598,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/biome.png": {
+      "sha256": "58ce31b54f7b1b24c0a027e2c862767ef2b6cf52912f4abdc2adc4054a27ddb3",
+      "size": 1029,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/browser.png": {
+      "sha256": "ff65bb724a08e5349e95a3454b7cc9a139fa8d45a78237796f31cbd33a635892",
+      "size": 1694,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/caves.png": {
+      "sha256": "359dcf716a4a7103e537b31729b202295794664d620aad1bdfa6f7ad5446f331",
+      "size": 939,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/close.png": {
+      "sha256": "5a7d17808089cd25344d430579991f1dfd74c10b2b30f3d450f8f32459a0aaeb",
+      "size": 1021,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/colorpalette.png": {
+      "sha256": "4f361d7396a293f5dc81f52bf3aed314095ae951ac93b466a45f3a53c58fd4dd",
+      "size": 1174,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/day.png": {
+      "sha256": "5b81c0e5b3aa7d2f028d934b860d80335b6fd1d3651328db5611ced1665a7eb2",
+      "size": 1151,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/delete.png": {
+      "sha256": "7794415179dd56bb063e7629591ddd13e3f2945fc57f6ee794b6d5fa18fdae47",
+      "size": 939,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/disable.png": {
+      "sha256": "66f320dae8440322ce73afc2844873855fd42b5fb2e235b4c24f76ae43f293ac",
+      "size": 833,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/follow.png": {
+      "sha256": "58fc1d713c2ac56f204296a67bf51df3c957451a0f7eb683379a5ab10723cf6b",
+      "size": 1139,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/grid.png": {
+      "sha256": "68756478c3f03c7eabe2cd011ea07e3edddd63891fb7fcbfe64a499766b0a7a4",
+      "size": 664,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/keys.png": {
+      "sha256": "d02460aa0c17556f8a349a9eb523d0b03a2e300c3b85757234291524ba5ab48c",
+      "size": 444,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/layers.png": {
+      "sha256": "5b6c567a240f824709114a48a9371e08a5f2e4357690bcf1784c3bf323ac4e1a",
+      "size": 1194,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/monsters.png": {
+      "sha256": "37fd6b6f07fd79f6f8b5c00d98741c5d6bc8aba04e735d35b13a4f6b81391462",
+      "size": 1116,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/night.png": {
+      "sha256": "58356a3aefd83949a4128991fd44272239a17c2b587d5b407d2abdad6f7b5502",
+      "size": 902,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/options.png": {
+      "sha256": "95d4ceca2b848c243baa358de11f5c05cc76ab9faa692bd2962a67fd61156a48",
+      "size": 569,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/pets.png": {
+      "sha256": "0eb51a17c2b0de3815a5248ab64028ccbf17edd6fde03c37e4250902f222d99d",
+      "size": 727,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/players.png": {
+      "sha256": "bd7dd9f69ffb7ee1c8a0bf1c64b1a17b33d027ddd149b267bad4708ddbae7ecc",
+      "size": 1369,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/reset.png": {
+      "sha256": "e3c62c43cfd56b77b7d9bbafe772d21af1010f891640871b8996227317f689e8",
+      "size": 659,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/savemap.png": {
+      "sha256": "bed515da79bb1c1acd8a0a0fcee93bb56265ee82938f537def3f8cf707912d47",
+      "size": 831,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/search.png": {
+      "sha256": "217079791a266e397ab22b81418a4ea116e1803fdcd8b66692f027f59921441c",
+      "size": 1168,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/topo.png": {
+      "sha256": "74c6d78eb024a35192745552a0aecf3b8c64baae5d8a369d29ddec5504cc8347",
+      "size": 1316,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/villagers.png": {
+      "sha256": "27b1a4e2836d0056f1a22c1bb1e71ffcc036eb5d07b217c10f03b7130ae1f2f8",
+      "size": 1272,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/waypoints.png": {
+      "sha256": "8fae56b87be08863b01ab7b0ac9e76492f795d36fa2ffecd7abbc50c92ecf08c",
+      "size": 620,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/zoomin.png": {
+      "sha256": "836820c93e2e84636a4a9d05f5b5e933a8ab959a21c5c2d899bf5227d5a2dbb2",
+      "size": 1155,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/icon/zoomout.png": {
+      "sha256": "f2324343490020526f921860a2f8c6d4d92cf23c30025d1918175af43ae184f0",
+      "size": 1090,
+      "mtime": 1788510096,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/circle/compass_point.png": {
+      "sha256": "556070f8bd241073467a727bec2a8f73921e187af391025f11d24e9f24b044d9",
+      "size": 1382,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/circle/mask_256.png": {
+      "sha256": "0bded5ef2d8ac502c21338c2fcdf413eb43f78923949d6e363d25d56380a82f9",
+      "size": 2067,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/circle/mask_512.png": {
+      "sha256": "0f74c82f31451f880ef0d90a8a566b02b5f3304ebd50cb24234da5d8527c56ca",
+      "size": 10622,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/circle/rim_256.png": {
+      "sha256": "6e262cd9a8d21ed1a68644ebbbd6d866ab2cc4bc3093cda06f309aa81f9c67af",
+      "size": 16722,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/circle/rim_512.png": {
+      "sha256": "07773aae3ea94d763cced2569fb4d8b2bdb4817e9a6669e772f34e3deee32bc6",
+      "size": 39120,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_bottom.png": {
+      "sha256": "850f485150addbc06135bceb1d2b018faba9ef60202db9f663180befe15a624b",
+      "size": 176,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_bottomleft.png": {
+      "sha256": "ab6111902aefbd82da31e0800bf3a14ccd53365062c5bd78ea3c65b7470fbbe7",
+      "size": 227,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_bottomright.png": {
+      "sha256": "78cd6aa051aef085d7c7a076ed8dac87328d1190e8859e64f3aba0728aa2c35a",
+      "size": 235,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_left.png": {
+      "sha256": "8c3e9acddfd1cfed9b89b10c67c8819b6b1dc53301f43f897fb362ef68af887f",
+      "size": 172,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_right.png": {
+      "sha256": "4361b97ebccad397397011e6dcdf76d8fba972a2276ae181b87db5cdc1a58398",
+      "size": 175,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_top.png": {
+      "sha256": "6dde804287505c0aa1246e1a33041cb1d46e2af5c117bac8ea9f82901a9a5ede",
+      "size": 171,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_topleft.png": {
+      "sha256": "a0da4decf637999132fb3c12912c8a2b5f6f157dfbc40eb9a761ada74b6601da",
+      "size": 225,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/pur_topright.png": {
+      "sha256": "f1ebbdaaa06e89dcf260d82b91f847a4b5a92b8d175defd172525c019fd8a795",
+      "size": 241,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_bottom.png": {
+      "sha256": "6dac7ecc94e350130fa58d390e9829f37c4b5dd74089b301a3618398c98d092d",
+      "size": 168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_bottomleft.png": {
+      "sha256": "257f0453b3252fa342eb6ca601bc10371d11ded4297a77d09f252cc59cd62a8f",
+      "size": 547,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_bottomright.png": {
+      "sha256": "371a818d10b07f529fdb7188e49fd0418138a74b338261781431f4f994b28489",
+      "size": 526,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_compass_point.png": {
+      "sha256": "843d44d5ac1df4ff78f7c3363e8239d1923fd07d196e525446c4ad6dc9375eb0",
+      "size": 1029,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_left.png": {
+      "sha256": "6b0b5407f0f0c8907899df46c4370d94f0e82c6b701441f72c1776066b83231a",
+      "size": 170,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_right.png": {
+      "sha256": "446ce3c4c0f8f0ac115482e4a7b374b2031c1140b90777178d81acc3c3eb34ff",
+      "size": 168,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_top.png": {
+      "sha256": "3cd81a76556a8c241a6baf376e5f36346fee2cadce150c91d3d9298b7c2b43e3",
+      "size": 175,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_topleft.png": {
+      "sha256": "832e717169b9d50eaacdf8e477e6d0b92ddb66bdb4d6d6a7a376850e182449d4",
+      "size": 554,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/minimap/square/vic_topright.png": {
+      "sha256": "2765ceaed6f26855206f8d4c6a67c4f6175ebae23607c8a4615d4d975afae33e",
+      "size": 518,
+      "mtime": 1788510097,
+      "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/journeymap/icon/theme/victorian_/victorian_.theme2.json": {
+      "sha256": "925729234efc2d64733388bd5dcc91e4fe7eeb82fb46d5ea0fe1c20c52f53b5a",
+      "size": 8728,
+      "mtime": 1788510096,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/mods/1.0.0-better_maces-mod-26.2.jar": {
@@ -12070,12 +14056,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2-ultra/minecraft/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -13153,15 +15133,15 @@
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/options.txt": {
-      "sha256": "d52ab7f53fafb6c7efbbe92ec06e67572685afac2b90eb5707383fad1db91555",
-      "size": 12693,
-      "mtime": 1788500965,
+      "sha256": "afa1c97c5961e6a854abb40480ed1a2bfba3acf5305c11ff419b327204ebbb6d",
+      "size": 12851,
+      "mtime": 1788513115,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480940,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-ultra/minecraft/servers.dat": {
@@ -13462,12 +15442,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467715,
-      "category": "mod"
-    },
-    "instances/26.2-ultra/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2-ultra/mods/OverflowingBars-v21.11.0-mc26.2-Fabric.jar": {
@@ -14143,9 +16117,9 @@
       "category": "mod"
     },
     "instances/26.2-ultra/mods/mod_manifest.json": {
-      "sha256": "c24f684ab96003441c0e47ca94b0ffecb2e19aadad2b4265e73f8b022b72a99e",
-      "size": 50066,
-      "mtime": 1787892732,
+      "sha256": "90147df80c5fec3c2ff22a0dddb33a8f73b91bf16ec68d01eb88dd6d58ca22b0",
+      "size": 49853,
+      "mtime": 1788512616,
       "category": "mod"
     },
     "instances/26.2-ultra/mods/modernfix-5.27.19-build.1.jar": {
@@ -14563,9 +16537,9 @@
       "category": "mod"
     },
     "instances/26.2-ultra/options.txt": {
-      "sha256": "1ea9eae0cf80f285b27bd0bf09ac68264e3888ebf1696801debd0cb1363446f4",
-      "size": 13251,
-      "mtime": 1788500965,
+      "sha256": "4f3024eac6c37a3cd8fc6011a298affe14afcf2829471759967a180ed9d4dcfc",
+      "size": 13259,
+      "mtime": 1788513115,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/resourcepacks/SIR Legacy.zip": {
@@ -14575,9 +16549,9 @@
       "category": "resourcepack"
     },
     "instances/26.2-ultra/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480942,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2-ultra/servers.dat": {
@@ -14841,7 +16815,7 @@
     "instances/26.2/minecraft/options.txt": {
       "sha256": "acd6e2ec5630f58d69bc3059840e0b1fb32b00e7f59571862b3ee21534423387",
       "size": 5364,
-      "mtime": 1788500973,
+      "mtime": 1788513122,
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/usercache.json": {
@@ -15118,12 +17092,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "instances/26.2/mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "instances/26.2/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -16215,7 +18183,7 @@
     "instances/26.2/options.txt": {
       "sha256": "b72a131e6c33448e74709e0b8d189f732a342380c903dbf0f8af6ff2df8cf2f4",
       "size": 825,
-      "mtime": 1788500973,
+      "mtime": 1788513122,
       "category": "instance_meta"
     },
     "instances/26.2/resourcepacks/SIR Legacy.zip": {
@@ -16225,9 +18193,9 @@
       "category": "resourcepack"
     },
     "instances/26.2/resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480942,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "instances/26.2/shaderpacks/SIR Legacy Shader.zip": {
@@ -16504,12 +18472,6 @@
       "sha256": "eae0d0ef5ad1ad27a80b94d2bdb9f3828993bf5c6fb11b8effcc6c618af4d7b6",
       "size": 234155,
       "mtime": 1788467652,
-      "category": "mod"
-    },
-    "mods/Nyctography-fabric-MC26.2-26.2.0.1.jar": {
-      "sha256": "5bac30d1250cc2b9f293c2f4afc8e5507ab4f435b94d2cbe098fdbd297a62557",
-      "size": 58061,
-      "mtime": 1786202774,
       "category": "mod"
     },
     "mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
@@ -17599,9 +19561,9 @@
       "category": "resourcepack"
     },
     "resourcepacks/SIR Modern.zip": {
-      "sha256": "856461d9c41d44b49e0f4ead7950ee42ca2123c9e0c8afb60c76dda607b560d2",
-      "size": 152335589,
-      "mtime": 1788480948,
+      "sha256": "8e8f610d58fb5a0e09a6eb8891073f6d39a9ecbb19b4f968008463c30eb1699e",
+      "size": 152288960,
+      "mtime": 1788512854,
       "category": "resourcepack"
     },
     "shaderpacks/SIR Legacy Shader.zip": {
