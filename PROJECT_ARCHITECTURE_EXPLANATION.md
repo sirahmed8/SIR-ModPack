@@ -256,8 +256,43 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 ---
 
 ## 📬 Contact & Governance
-- **Official Support:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
+- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 
-*© 2026 SIR ModPack Ecosystem. Developed with Craftsmanship by SIR Ahmed.*
+---
+
+# 🏗️ المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
+### *تجربة ماينكرافت الموحدة • الإصدار Genesis v1.0.0 الإنتاجي • منصة مجانية ومستقلة بنسبة 100%*
+
+---
+
+## 🧭 1. نظرة عامة على معمارية النظام
+تعتبر **منظومة SIR ModPack** بيئة تشغيل متكاملة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 221 مود ومحرك معالجة البايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة موحدة خالية من التعقيد.
+
+تتألف المنظومة من 4 طبقات رئيسية:
+1. **طبقة التطبيقات المكتبية:** ملف الموزع التنفيذي المستقل `SIR ModPack.exe` الذي يوجه الأوامر بسلاسة إلى المشغل المكتبي (`--mode launcher`)، أو المثبت الذاتي الشافي (`--mode installer`)، أو مدير الخوادم والأنفاق (`--mode server`).
+2. **محرك الجسر المكتبي:** جسر غير متزامن فائق السرعة (`launcher_core`) يدير المصادقة، وتعديل السكنات بتقنية 3D WebGL، ومراقبة العتاد اللحظية عبر دوال Win32، والتخزين الذري للملفات.
+3. **خط إطلاق JVM المباشر:** استدعاء مباشر لحزم OpenJDK 25 الأصلية 64-bit مع استخراج مكتبات LWJGL 2/3 وتطبيق معاملات إدارة الذاكرة G1GC بدقة.
+4. **مصفوفة البروفايلات الفيزيائية (8 بروفايلات):** 4 بروفايلات للنسخة الحديثة (Ultra, Balanced, Performance, Vanilla+) و 4 بروفايلات للنسخة الكلاسيكية (PvP Battle Suite, Ultra Visuals, Balanced Bedwars, Zero-Delay).
+
+---
+
+## 🔧 2. محرك التوافق ومعالجة البايتكود (ASM Pipeline)
+- **معالجة الأسماء عبر 5 مراحل:** فحص وإصلاح ملفات Access Widener والمودات المتداخلة (Jar-in-Jar) حتى 4 مستويات لضمان التوافق المطلق مع فضاء الأسماء الرسمي لماينكرافت.
+- **تجريد التوقيعات:** إزالة التوقيعات التالفة لملفات اللعبة الأساسية محلياً للسماح بتحميل الكلاسات المعدلة دون أي عوائق تشغيل.
+
+---
+
+## 🔒 3. بروتوكولات الأمان وسيادة البيانات
+- **تخزين ذري شامل (Universal Atomic Persistence):** كتابة الإعدادات أولاً في ملفات مؤقتة واستبدالها بنظام أقفال NTFS التراجعية لمنع تلف الملفات نهائياً.
+- **انعدام التتبع (Zero-Telemetry):** لا يتم جمع أو إرسال أي بيانات شخصية أو سجلات لعب خارجية، وتتم المصادقة السحابية حصرياً عبر Google OAuth و Firebase بتشفير TLS 1.3.
+
+---
+
+## 📬 4. قنوات الدعم والمجتمع
+- **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
+- **بوابة الويب الرسمية:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+
+*© 2026 منظومة SIR ModPack. هندسة وتطوير SIR Ahmed.*

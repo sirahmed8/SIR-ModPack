@@ -35,9 +35,53 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 ---
 
 ## 📬 4. Contact & Legal Inquiries
-- **Legal & Support Email:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
+- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **Privacy Policy:** [PRIVACY.md](PRIVACY.md)
 
-*© 2026 SIR ModPack Ecosystem. Developed by SIR Ahmed.*
+---
+
+# 🍪 وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
+### *الإصدار 1.0.0 Genesis الإنتاجي • منصة مجانية ومستقلة بنسبة 100% • شفافية تقنية كاملة وانعدام تام للتتبع*
+
+---
+
+## 🧭 1. نظرة عامة وضمان انعدام التتبع الإعلاني
+تستخدم منصة SIR ModPack (`sir-modpack.web.app`) **صفر ملفات تعريف ارتباط إعلانية**، و**صفر أدوات تتبع تسويقية**، و**صفر سكريبتات مراقبة عبر المواقع**. نستخدم حصرياً آليات التخزين المحلية الضرورية في المتصفح (`localStorage`، و`sessionStorage`، وكوكيز وظيفية أساسية) لتذكر تفضيلاتك وتسريع استجابة الواجهة.
+
+---
+
+## 📋 2. جدول عناصر التخزين المحلي والتقني
+
+| المفتاح البرمجي | آلية التخزين | الفئة | الغرض التقني والوظيفي | فترة الصلاحية |
+|---|---|---|---|---|
+| `sir_lang` | Cookie & LocalStorage | أساسي | حفظ لغة الواجهة (`ar` أو `en`) | 365 يوماً |
+| `sir_theme_mode` | LocalStorage & Cookie | تفضيلات | تذكر نمط المظهر المفضل (`dark`، `light`، `system`) | دائم |
+| `sir_perf_mode` | LocalStorage & Cookie | تفضيلات | حفظ تفعيل نمط توفير الموارد واستهلاك العتاد | دائم |
+| `sir_sound_fx` | LocalStorage | تفضيلات | تذكر خيار تفعيل أو كتم المؤثرات الصوتية | دائم |
+| `sir_cookie_consent` | LocalStorage | أساسي | تسجيل موافقة المستخدم وخيارات الخصوصية | 365 يوماً |
+| `sir_consent_given` | Cookie | أساسي | إشارة سريعة لتسجيل الموافقة وتخطي النافذة | 365 يوماً |
+| `sir_pref_cache` | Cookie | وظيفي | تمكين التخزين المؤقت فائق السرعة للبيانات | 365 يوماً |
+| `sir_fav_mods` | LocalStorage | تفضيلات | قائمة المودات المفضلة المحفوظة للمستخدم | دائم |
+| `sir_linked_minecraft_user` | LocalStorage | وظيفي | حفظ اسم اللاعب المعروض لتسريع رسم الترويسة | دائم |
+| `sir_linked_account_type` | LocalStorage | وظيفي | نوع الحساب المرتبط (`microsoft` أو `offline`) | دائم |
+| `sir_custom_skin_data` | LocalStorage | وظيفي | حفظ رابط نسيج السكن ثلاثي الأبعاد المطبق | دائم |
+| `sir_benchmark_records` | LocalStorage | وظيفي | تخزين نتائج اختبارات CPS وسرعة رد الفعل محلياً | دائم |
+| `sir_cache_*` | LocalStorage | وظيفي (مؤقت) | تخزين بيانات المودات والشيدرز مؤقتاً لتسريع التصفح | 5 دقائق |
+
+---
+
+## 🛠️ 3. التحكم الإداري ومسح التخزين بضغطة زر
+- **استوديو التخزين التفاعلي:** يمكنك فحص وتعديل أو حذف أي عنصر من عناصر التخزين في أي وقت عبر صفحة [`/cookies`](https://sir-modpack.web.app/cookies).
+- **المسح الشامل الفوري:** يمكنك تفريغ كافة البيانات المؤقتة والإعدادات بضغطة زر واحدة من داخل إعدادات اللانشر المكتبي أو المتصفح.
+
+---
+
+## 📬 4. قنوات الدعم والتواصل
+- **الدعم الفني الرسمي:** أداة الإبلاغ المدمجة في اللانشر (Bug Reporter) وملاحظات المجتمع.
+- **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+- **الموقع الرسمي:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **سياسة الخصوصية:** [PRIVACY.md](PRIVACY.md)
+
+*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*

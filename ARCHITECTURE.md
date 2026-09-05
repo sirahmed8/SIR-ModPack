@@ -1,5 +1,5 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.1.0 • September 2026 (Update 8)*
+### *Unified Minecraft Experience • Semantic Versioning v1.0.0 Genesis • September 2026*
 
 ---
 
@@ -22,7 +22,7 @@ flowchart TD
         E --> G[SkinStudioService - Three.js 3D WebGL Studio]
         E --> H[LogsService - Non-blocking stdout/stderr Tailer]
         E --> I[HardwareMonitorService - Kernel Win32 Telemetry]
-        E --> J[CloudSyncService - Firebase Sync Codes & RTDB]
+        E --> J[CloudSyncService - Direct Google OAuth & Cloud Backup]
         E --> K[VideoPresetService - Tri-Layer Graphics Engine]
         E --> L[ControlsService - Dual-Mode Keybinding Converter]
         E --> M[CleanerService & Deep Crash Analyzer]
@@ -39,7 +39,7 @@ flowchart TD
         M1[26.2-ultra: 16 Chunks, POM, SIR Modern Shader, 144+ FPS]
         M2[26.2-balanced: 12 Chunks, Balanced Shaders, 180+ FPS]
         M3[26.2-performance: 8 Chunks, 0ms Sodium Boost, 350+ FPS]
-        M4[26.2: Vanilla+ Modular Fabric 228 Mods, 300+ FPS]
+        M4[26.2: SIR 26 Vanilla, 0 Mods, Authentic Vanilla Engine, 240+ FPS]
         L1[1.8.9: PvP Battle Suite, 28 Mods, 500+ FPS]
         L2[1.8.9-ultra: HD 32x Skyboxes, SIR Legacy Shader, 300+ FPS]
         L3[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
@@ -47,7 +47,7 @@ flowchart TD
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
-        W[Next.js 16 App Router - 32 Static Routes]
+        W[Next.js 16 App Router - 34 Static Routes]
         W --> W1[AiChatbot.tsx: Gemini 4-Tier AI Waterfall]
         W --> W2[Firebase Realtime Database: Presence & OTA Releases]
         W --> W3[Firestore: Telemetry & Client Error Reporting]
@@ -255,4 +255,44 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 
 ---
 
-*© 2026 SIR ModPack Ecosystem. Developed with Craftsmanship by SIR Ahmed.*
+## 📬 Contact & Governance
+- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
+- **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+
+---
+
+# 🏗️ المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
+### *تجربة ماينكرافت الموحدة • الإصدار Genesis v1.0.0 الإنتاجي • منصة مجانية ومستقلة بنسبة 100%*
+
+---
+
+## 🧭 1. نظرة عامة على معمارية النظام
+تعتبر **منظومة SIR ModPack** بيئة تشغيل متكاملة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 221 مود ومحرك معالجة البايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة موحدة خالية من التعقيد.
+
+تتألف المنظومة من 4 طبقات رئيسية:
+1. **طبقة التطبيقات المكتبية:** ملف الموزع التنفيذي المستقل `SIR ModPack.exe` الذي يوجه الأوامر بسلاسة إلى المشغل المكتبي (`--mode launcher`)، أو المثبت الذاتي الشافي (`--mode installer`)، أو مدير الخوادم والأنفاق (`--mode server`).
+2. **محرك الجسر المكتبي:** جسر غير متزامن فائق السرعة (`launcher_core`) يدير المصادقة، وتعديل السكنات بتقنية 3D WebGL، ومراقبة العتاد اللحظية عبر دوال Win32، والتخزين الذري للملفات.
+3. **خط إطلاق JVM المباشر:** استدعاء مباشر لحزم OpenJDK 25 الأصلية 64-bit مع استخراج مكتبات LWJGL 2/3 وتطبيق معاملات إدارة الذاكرة G1GC بدقة.
+4. **مصفوفة البروفايلات الفيزيائية (8 بروفايلات):** 4 بروفايلات للنسخة الحديثة (Ultra, Balanced, Performance, Vanilla+) و 4 بروفايلات للنسخة الكلاسيكية (PvP Battle Suite, Ultra Visuals, Balanced Bedwars, Zero-Delay).
+
+---
+
+## 🔧 2. محرك التوافق ومعالجة البايتكود (ASM Pipeline)
+- **معالجة الأسماء عبر 5 مراحل:** فحص وإصلاح ملفات Access Widener والمودات المتداخلة (Jar-in-Jar) حتى 4 مستويات لضمان التوافق المطلق مع فضاء الأسماء الرسمي لماينكرافت.
+- **تجريد التوقيعات:** إزالة التوقيعات التالفة لملفات اللعبة الأساسية محلياً للسماح بتحميل الكلاسات المعدلة دون أي عوائق تشغيل.
+
+---
+
+## 🔒 3. بروتوكولات الأمان وسيادة البيانات
+- **تخزين ذري شامل (Universal Atomic Persistence):** كتابة الإعدادات أولاً في ملفات مؤقتة واستبدالها بنظام أقفال NTFS التراجعية لمنع تلف الملفات نهائياً.
+- **انعدام التتبع (Zero-Telemetry):** لا يتم جمع أو إرسال أي بيانات شخصية أو سجلات لعب خارجية، وتتم المصادقة السحابية حصرياً عبر Google OAuth و Firebase بتشفير TLS 1.3.
+
+---
+
+## 📬 4. قنوات الدعم والمجتمع
+- **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
+- **بوابة الويب الرسمية:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+
+*© 2026 منظومة SIR ModPack. هندسة وتطوير SIR Ahmed.*

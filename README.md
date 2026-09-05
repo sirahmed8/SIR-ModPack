@@ -9,7 +9,7 @@
 [![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
 [![Model: 100% Free & Independent](https://img.shields.io/badge/Model-100%25%20Free%20%26%20Independent-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
-[![Tests: 355 Passing](https://img.shields.io/badge/Tests-355%2F355%20Passed-brightgreen.svg)](walkthrough.md)
+[![Tests: 358 Passing](https://img.shields.io/badge/Tests-358%2F358%20Passed-brightgreen.svg)](walkthrough.md)
 
 ---
 
@@ -106,9 +106,54 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ## 📬 Contact & Community
 
-- **Official Support:** [support@sir-modpack.com](mailto:support@sir-modpack.com)
+- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **GitHub Organization:** [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
 
-*© 2026 SIR ModPack Ecosystem. Developed with craftsmanship by SIR Ahmed.*
+---
+
+# 💎 دليل منظومة SIR ModPack الشامل
+### *المنصة الموحدة لماينكرافت • التطبيقات المكتبية • الشيدرز • بوابة الويب (الإصدار Genesis v1.0.0)*
+
+---
+
+## 🌟 ما هي منظومة SIR ModPack؟
+**SIR ModPack** هي بيئة تشغيل موحدة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 221 مود ومحرك معالجة بايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة استثنائية واحدة.
+
+تتضمن المنظومة تطبيقات مكتبية تنفيذية مستقلة، وإطلاقاً مباشراً عبر بيئات JVM الأصلية، وشيدرز حصرية معزولة (**`SIR Modern Shader.zip`** و **`SIR Legacy Shader.zip`**)، وحزم موارد متطورة (**`SIR Modern.zip`** مع مجسمات 3D POM وحزمة **`SIR Legacy.zip`** 32x PvP)، ومحاكاة فيزيائية واقعية للأمواج والمياه، واستضافة خوادم مجانية بضغطة زر واحدة بدون فتح بورتات، وبوابة ويب Next.js 16 كاملة.
+
+---
+
+## 📦 التطبيقات الأساسية
+
+| التطبيق | الملف التنفيذي | الوصف |
+| :--- | :--- | :--- |
+| **مشغل SIR Launcher Pro** | `SIR Launcher.exe` | مشغل مكتبي فائق السرعة مع استوديو سكنات ثلاثي الأبعاد، وأنماط فيديو سريعة، واستشفاء ذاتي سحابي. |
+| **مثبت الحزمة SIR Installer** | `SIR Installer.exe` | مثبت ذكي مع فحص استباقي للعتاد، وسرعة استخراج لحظية، وعدم فقدان لأي بيانات. |
+| **مدير الخوادم SIR Server Manager** | `SIR Server Manager.exe` | مدير خوادم احترافي يدعم أنفاق Playit.gg المجانية، ورسم بياني لـ TPS، ومراقبة الذاكرة. |
+| **بوابة الويب الرسمية** | [sir-modpack.web.app](https://sir-modpack.web.app) | بوابة Next.js 16 تضم 32 مساراً ساكناً، ومساعد ذكاء اصطناعي، ورادار سيرفرات حي، واستوديو سكنات. |
+
+---
+
+## 🎮 مصفوفة البروفايلات (8 بروفايلات فيزيائية مجهزة)
+- **Modern 26.2:** بروفايل Ultra للواقعية السينمائية (144+ FPS)، بروفايل Balanced المتوازن (180+ FPS)، بروفايل Performance عالي الأداء (350+ FPS)، وبروفايل Vanilla+ الأصيل (240+ FPS).
+- **Legacy 1.8.9:** بروفايل PvP Battle Suite التنافسي (500+ FPS)، بروفايل Ultra Visuals، بروفايل Balanced Bedwars، وبروفايل Zero-Delay Max FPS (600+ FPS).
+
+---
+
+## ⚡ دليل البدء السريع
+1. **تشغيل المشغل:** شغّل `SIR Launcher.exe` مباشرة من سطح المكتب.
+2. **التثبيت والإصلاح:** شغّل `SIR Installer.exe` للتحقق من سلامة كافة الملفات محلياً.
+3. **استضافة سيرفر مخصص:** شغّل `SIR Server Manager.exe` لتشغيل خادمك ومشاركة الرابط العام فوراً.
+4. **زيارة بوابة الويب:** افتح [sir-modpack.web.app](https://sir-modpack.web.app) لاستعراض السكنات والأوشحة ومزامنة الحسابات.
+
+---
+
+## 📬 التواصل والدعم
+- **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
+- **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
+- **بوابة الويب:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **منظمة GitHub:** [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
+
+*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*

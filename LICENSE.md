@@ -34,7 +34,7 @@ This project is a non-commercial, community-driven modification package.
 2. NON-COMMERCIAL STATUS:
 This platform is a 100% Free & Independent Platform, non-commercial, and provided for
 personal entertainment and community use. No monetized features, paywalls, or
-commercial rights are claimed. Official Support: support@sir-modpack.com.
+commercial rights are claimed. Official Support: In-App Bug Reporter & Community Feedback.
 
 3. THIRD-PARTY ASSETS & INTELLECTUAL PROPERTY:
 All third-party modifications, shaders, textures, audio assets, and libraries
