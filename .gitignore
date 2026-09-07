@@ -1,0 +1,25 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Node & Build
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# System & Temp
+__pycache__/
+*.pyc
+.firebase/
+.idea/
+.vscode/
+*.log
+# Source Trees (Kept in Private Repositories)
+development/
+website-next/
+
+# Distribution Packages (Over 100MB GitHub limit, distributed via Releases/CDN)
+*.zip
