@@ -21,5 +21,13 @@ __pycache__/
 development/
 website-next/
 
+# Local User State & Settings
+accounts.json
+ias_accounts.json
+launcher_settings.json
+prism/
+.github/
+
 # Distribution Packages (Over 100MB GitHub limit, distributed via Releases/CDN)
 *.zip
+
