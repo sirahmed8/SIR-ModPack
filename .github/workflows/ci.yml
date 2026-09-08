@@ -1,0 +1,61 @@
+name: SIR ModPack Ecosystem CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-manifest:
+    name: Validate Delta Manifest Schema & Hash Integrity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+        continue-on-error: true
+
+      - name: Validate Delta Manifest Schema & Hashes
+        run: python validate_manifest.py
+
+  test-matrix:
+    name: Test Matrix (${{ matrix.os }} • Python ${{ matrix.python-version }})
+    needs: [validate-manifest]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        python-version: ["3.11", "3.12", "3.13"]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: "pip"
+        continue-on-error: true
+
+      - name: Environment Diagnostics
+        run: |
+          python -c "import sys, platform; print(f'✓ Environment: Python {platform.python_version()} on {platform.system()} {platform.release()} ({platform.machine()})')"
+
+      - name: Run Ecosystem Doctor Diagnostics
+        run: python ecosystem_doctor.py
+
+      - name: Run Unit Test Suite
+        run: python -m unittest discover -s tests -p "test_*.py" -v

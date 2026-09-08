@@ -1,0 +1,23 @@
+{
+  "quality": {
+    "leaves_quality": "FANCY",
+    "weather_quality": "FANCY",
+    "cloud_distance": 128,
+    "menu_background_blur": 5,
+    "improved_transparency": true,
+    "weather_radius": 10
+  },
+  "performance": {
+    "chunk_builder": "SEMI_BLOCKING",
+    "animate_only_visible_textures": true,
+    "chunk_builder_threads": 6,
+    "use_entity_culling": true
+  },
+  "notifications": {
+    "hide_donation_prompt": true
+  },
+  "chunk_builder_threads": 6,
+  "use_entity_culling": true,
+  "quality.weather_quality": "FANCY",
+  "quality.leaves_quality": "FANCY"
+}

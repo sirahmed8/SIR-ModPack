@@ -1,0 +1,25 @@
+guiScale:2
+gamma:1.0
+fullscreen:false
+enableVsync:false
+resourcePacks:["SIR Legacy.zip"]
+renderDistance:16
+maxFps:260
+particles:0
+smoothLighting:true
+clouds:true
+anisotropicFiltering:8
+fancyGraphics:true
+ao:2
+key_key.sprint:33
+key_key.sneak:42
+key_key.jump:57
+key_key.inventory:18
+key_key.perspective:63
+key_key.zoom:46
+key_key.attack:-100
+key_key.use:-99
+skipMultiplayerWarning:true
+key_key.modmenu.open_menu:54
+key_key.inventoryhud.openconfig:key.keyboard.right.shift
+key_key.hud.menu:54

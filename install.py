@@ -510,7 +510,7 @@ PROFILE_SPECS = {
         "category": "Modern",
         "group": "Modern",
         "chunks": 24,
-        "shader_name": "SIR_Extreme_Shader.zip",
+        "shader_name": "SIR Modern Shader.zip",
         "is_performance": False,
         "min_ram": 4096,
         "max_ram": 8192,
@@ -522,7 +522,7 @@ PROFILE_SPECS = {
         "category": "Modern",
         "group": "Modern",
         "chunks": 16,
-        "shader_name": "SIR_Balanced_Shader.zip",
+        "shader_name": "SIR Modern Shader.zip",
         "is_performance": False,
         "min_ram": 3072,
         "max_ram": 6144,
@@ -701,12 +701,12 @@ def install_profile(profile_id, target_instances_base, java_path, ram_mb=None, g
     # 3. Copy mods, configs, resourcepacks, shaderpacks
     src_inst_dir = os.path.join(INSTANCES_SRC_DIR, profile_id)
     
-    # Base copy from source instance if exists
-    if os.path.exists(src_inst_dir):
-        governed_copy_tree(src_inst_dir, inst_dir, governor)
-
-    # If modern, synchronize from root shared mods & configs
+    # First, if modern, copy shared base assets from root
     if spec["category"] == "Modern":
+        for sub, s_path in [("config", CONFIG_DIR), ("shaderpacks", SH_DIR), ("resourcepacks", RP_DIR)]:
+            if os.path.exists(s_path):
+                governed_copy_tree(s_path, os.path.join(mc_dir, sub), governor)
+
         mods_dst = os.path.join(mc_dir, "mods")
         os.makedirs(mods_dst, exist_ok=True)
         if os.path.exists(MODS_DIR):
@@ -729,12 +729,11 @@ def install_profile(profile_id, target_instances_base, java_path, ram_mb=None, g
                 if os.path.exists(src_m):
                     governed_copy_file(src_m, os.path.join(mods_dst, m), governor)
 
-        # Copy configs, shaders, resourcepacks
-        for sub, s_path in [("config", CONFIG_DIR), ("shaderpacks", SH_DIR), ("resourcepacks", RP_DIR)]:
-            if os.path.exists(s_path):
-                governed_copy_tree(s_path, os.path.join(mc_dir, sub), governor)
+    # Second, overlay profile-specific pre-configured directory from repository
+    if os.path.exists(src_inst_dir):
+        governed_copy_tree(src_inst_dir, inst_dir, governor)
 
-    elif spec["category"] == "Legacy":
+    if spec["category"] == "Legacy":
         # Legacy instances copy from source instances or lunar client
         mods_dst = os.path.join(mc_dir, "mods")
         os.makedirs(mods_dst, exist_ok=True)
@@ -763,9 +762,10 @@ def install_profile(profile_id, target_instances_base, java_path, ram_mb=None, g
     # 5. Iris shader settings for modern
     if spec["category"] == "Modern":
         iris_props = os.path.join(mc_dir, "config", "iris.properties")
-        os.makedirs(os.path.dirname(iris_props), exist_ok=True)
-        with open(iris_props, "w", encoding="utf-8") as f:
-            f.write(f"enableShaders={'true' if spec['shader_name'] else 'false'}\nshaderPack={spec['shader_name']}\n")
+        if not os.path.exists(iris_props):
+            os.makedirs(os.path.dirname(iris_props), exist_ok=True)
+            with open(iris_props, "w", encoding="utf-8") as f:
+                f.write(f"enableShaders={'true' if spec['shader_name'] else 'false'}\nshaderPack={spec['shader_name']}\n")
 
     # 6. servers.dat synchronization
     src_servers = os.path.join(SOURCE_ROOT, "servers.dat")

@@ -1,0 +1,83 @@
+name: SIR ModPack Production Release Pipeline
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  release-verification:
+    name: Pre-Release Verification & Checksums Generation
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+        continue-on-error: true
+
+      - name: Run Ecosystem Doctor Verification
+        run: python ecosystem_doctor.py
+
+      - name: Run Delta Manifest Validation
+        run: python validate_manifest.py
+
+      - name: Run Unit Test Suite
+        run: python -m unittest discover -s tests -p "test_*.py"
+
+      - name: Generate SHA-256 Release Checksums
+        id: checksums
+        shell: pwsh
+        run: |
+          Write-Host "Generating SHA-256 Checksums for Production Binaries..."
+          $targetBinaries = @("SIR Launcher.exe", "SIR Installer.exe", "SIR Server Manager.exe", "SIR_Apps_Suite.zip")
+          $checksumLines = @()
+          $releaseFiles = @()
+
+          foreach ($bin in $targetBinaries) {
+              if (Test-Path $bin) {
+                  $hash = (Get-FileHash -Algorithm SHA256 -Path $bin).Hash.ToLower()
+                  $sizeMB = [math]::round((Get-Item $bin).Length / 1MB, 2)
+                  $checksumLines += "$hash  $bin"
+                  $releaseFiles += $bin
+                  Write-Host "  ✓ $bin: $hash ($sizeMB MB)"
+              }
+          }
+
+          $checksumsFile = "SHA256SUMS.txt"
+          $checksumLines | Out-File -FilePath $checksumsFile -Encoding ascii
+          Write-Host "✓ Written checksums to $checksumsFile"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: "SIR ModPack ${{ github.ref_name }} — Genesis Production Release"
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            SHA256SUMS.txt
+            SIR Launcher.exe
+            SIR Installer.exe
+            SIR Server Manager.exe
+            SIR_Apps_Suite.zip
+            delta_manifest.json
+            README.md
+            README_AR.md
+            LICENSE.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -17,8 +17,9 @@ __pycache__/
 .idea/
 .vscode/
 *.log
-# Source Trees (Kept in Private Repositories)
-development/
+# Source Trees (Kept in Private Repositories or Third-Party Clones)
+development/PrismLauncher-develop/
+development/tools/
 website-next/
 
 # Local User State & Settings
@@ -28,8 +29,9 @@ launcher_settings.json
 custom_instances.json
 legal_agreement.json
 prism/
-instances/
-.github/
+instances/*/logs/
+instances/*/crash-reports/
+instances/*/natives/
 
 
 # Distribution Packages (Over 100MB GitHub limit, distributed via Releases/CDN)

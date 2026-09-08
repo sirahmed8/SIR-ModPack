@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIR Server Orchestrator Pro</title>
+  <!-- Tailwind CSS via CDN -->
+  
+  
+  <!-- Tailwind CSS (local offline JIT play build) -->
+  <script src="tailwind.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            cyberDark: '#06090e',
+            cyberCard: '#101624',
+            cyberSurface: '#0b0f19',
+            neonCyan: '#00e5ff',
+            neonEmerald: '#38ef7d',
+            neonGold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="lucide.min.js"></script>
+  <link rel="stylesheet" href="app.css">
+  <style>
+    /* Window open fade-in */
+    body { opacity: 1; }
+    body.sir-ready { opacity: 1; }
+  </style>
+</head>
+<body class="flex flex-col h-screen overflow-hidden antialiased select-none dark">
+
+  <!-- ==================== TOP NAVIGATION BAR ==================== -->
+  <header class="min-h-[64px] px-4 md:px-6 py-2.5 theme-header border-b backdrop-blur-2xl flex items-center justify-between z-30 shrink-0 gap-3">
+    <!-- Brand Title -->
+    <div class="flex items-center gap-3 min-w-0 shrink">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-400 p-0.5 shadow-lg shadow-cyan-500/20 flex items-center justify-center shrink-0">
+        <div class="w-full h-full bg-[#090d16] dark:bg-[#090d16] rounded-[10px] flex items-center justify-center">
+          <i data-lucide="server" class="w-4 h-4 text-cyan-400"></i>
+        </div>
+      </div>
+      <div class="min-w-0">
+        <div class="flex items-center gap-2">
+          <h1 class="text-sm font-black tracking-wide text-title uppercase truncate" data-i18n="appTitle">SIR Server Orchestrator</h1>
+          <span class="px-1.5 py-0.5 rounded-full text-[9px] font-extrabold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 shrink-0">PRO</span>
+        </div>
+        <p class="text-[10px] text-muted font-medium hidden md:block truncate" data-i18n="appSubtitle">Dedicated Multi-Threaded Host • PC / Laptop Host & Playit.gg</p>
+      </div>
+    </div>
+
+    <!-- Live Status Banner & Actions -->
+    <div class="flex items-center gap-2 shrink-0">
+      <!-- Live Server State Badge -->
+      <div id="top-status-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl btn-secondary text-xs shrink-0">
+        <span id="top-status-dot" class="w-2.5 h-2.5 rounded-full bg-rose-500 pulse-rose shrink-0"></span>
+        <span id="top-status-text" class="font-bold text-title">Offline</span>
+        <span id="top-uptime-ticker" class="font-mono text-muted border-l border-slate-300 dark:border-slate-700 pl-2 hidden sm:inline">00:00:00</span>
+      </div>
+
+      <!-- Clean Server Address Pill with Copy Tooltip -->
+      <button onclick="copyPublicIp()" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold transition-all cursor-pointer active:scale-95 shrink-0" title="Click to copy server IP">
+        <i data-lucide="copy" class="w-3.5 h-3.5 shrink-0"></i>
+        <span id="top-public-ip-label" class="font-mono truncate max-w-[130px]">127.0.0.1:25565</span>
+      </button>
+
+      <!-- Shared Google Cloud Profile (Streamlined Avatar Pill) -->
+      <div id="server-cloud-profile" onclick="handleServerCloudProfileClick()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700/80 shadow-sm text-xs font-semibold cursor-pointer transition-all active:scale-95 shrink-0" title="Google Cloud Profile — Click to manage sync">
+        <div id="server-cloud-avatar" class="w-5 h-5 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 text-[10px] font-black shrink-0">G</div>
+        <span id="server-cloud-name" class="font-semibold text-slate-300 truncate max-w-[90px] hidden sm:inline">Sign In</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Live Ecosystem Broadcast Ticker -->
+  <div id="server-broadcast-banner" class="hidden px-6 py-2 bg-gradient-to-r from-amber-950/60 via-slate-900/90 to-cyan-950/60 border-b border-amber-500/30 flex items-center justify-between z-20 shrink-0 text-xs text-amber-200">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+      <span class="font-bold text-amber-300 uppercase tracking-wider text-[10px]" id="server-broadcast-category">ANNOUNCEMENT:</span>
+      <span id="server-broadcast-text" class="text-slate-200 font-medium"></span>
+    </div>
+    <div class="flex items-center gap-2" id="server-broadcast-actions"></div>
+  </div>
+
+  <!-- ==================== MAIN WORKSPACE ==================== -->
+  <div class="flex-1 flex overflow-hidden">
+    
+    <!-- Sidebar Navigation -->
+    <!-- Slim Icon Rail Navigation (w-[72px]) -->
+    <aside class="w-[72px] theme-sidebar border-r flex flex-col items-center py-4 justify-between shrink-0 z-30 h-full overflow-hidden">
+      <!-- Top Navigation Group -->
+      <nav class="flex flex-col items-center gap-2.5 w-full">
+        <!-- 1. Mission Control / Dashboard -->
+        <button onclick="switchView('dashboard')" id="nav-dashboard" class="nav-btn active group relative" data-tooltip="Mission Control">
+          <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+          <div class="nav-tooltip" data-i18n="navDashboard">Mission Control</div>
+        </button>
+
+        <!-- 2. Network & Cloud Tunnels Hub -->
+        <button onclick="switchView('network')" id="nav-network" class="nav-btn group relative" data-tooltip="Network & Tunnels">
+          <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i>
+          <div class="nav-tooltip" data-i18n="navNetwork">Network & Cloud Tunnels</div>
+        </button>
+
+        <!-- 3. Live Terminal & Console -->
+        <button onclick="switchView('console')" id="nav-console" class="nav-btn group relative" data-tooltip="Terminal & Logs">
+          <i data-lucide="terminal" class="w-5 h-5 text-emerald-400"></i>
+          <div class="nav-tooltip" data-i18n="navConsole">Live Terminal & Logs</div>
+        </button>
+
+        <!-- 4. 3D Players Studio -->
+        <button onclick="switchView('players')" id="nav-players" class="nav-btn group relative" data-tooltip="Players & Whitelist">
+          <i data-lucide="users" class="w-5 h-5 text-purple-400"></i>
+          <div class="nav-tooltip" data-i18n="navPlayers">3D Player Studio</div>
+        </button>
+
+        <!-- 5. 1-Click Server Plugins Store -->
+        <button onclick="switchView('plugins')" id="nav-plugins" class="nav-btn group relative" data-tooltip="Plugins Store">
+          <i data-lucide="blocks" class="w-5 h-5 text-emerald-400"></i>
+          <div class="nav-tooltip" data-i18n="navPlugins">1-Click Plugins Store</div>
+        </button>
+
+        <!-- 6. Automated World Snapshots & Backups -->
+        <button onclick="switchView('backups')" id="nav-backups" class="nav-btn group relative" data-tooltip="World Backups">
+          <i data-lucide="archive" class="w-5 h-5 text-rose-400"></i>
+          <div class="nav-tooltip" data-i18n="navBackups">Automated Backups</div>
+        </button>
+      </nav>
+
+      <!-- Bottom System & Settings Group -->
+      <div class="flex flex-col items-center gap-2.5 w-full pt-4 border-t border-slate-800/80">
+        <!-- Server Settings & Diagnostics Modal Trigger -->
+        <button onclick="openServerSettingsModal()" id="nav-settings-btn" class="nav-btn group relative" data-tooltip="Server Settings & Suite">
+          <i data-lucide="settings" class="w-5 h-5 text-slate-400 group-hover:text-cyan-400 transition-colors"></i>
+          <div class="nav-tooltip" data-i18n="navSettings">Server Settings</div>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main View Content Area -->
+    <main class="flex-1 p-6 overflow-y-auto theme-main relative custom-scrollbar">
+
+      <!-- ==================== VIEW 1: DASHBOARD ==================== -->
+      <section id="view-dashboard" class="view-panel active max-w-6xl mx-auto space-y-6">
+        
+        <!-- Big Hero Control Station -->
+        <div class="feature-card p-6">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <!-- Left Info & Version Selector -->
+            <div class="space-y-3 flex-1 text-center md:text-left">
+              <div class="flex items-center justify-center md:justify-start gap-2 flex-wrap">
+                <span id="dashboard-hostmode-badge" class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-0.5 text-xs font-black">⚡ SIR HOST ACTIVE</span>
+                <span id="dashboard-version-badge" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-3 py-0.5 text-xs font-mono font-bold">Fabric 1.21.4 (Modern 26.2)</span>
+              </div>
+              <h2 class="text-2xl font-black text-title tracking-tight" data-i18n="heroTitle">Dedicated World Server Station</h2>
+              <p class="text-xs text-body leading-relaxed max-w-xl font-medium" data-i18n="heroDesc">
+                Host your private or community Minecraft world directly on your PC/Laptop with zero port-forwarding or link your free Playit.gg domain.
+              </p>
+
+              <!-- Version Switcher Pills -->
+              <div class="flex items-center justify-center md:justify-start gap-2 pt-1">
+                <button onclick="selectServerVersion('26.2')" id="btn-ver-26" class="px-4 py-1.5 rounded-xl text-xs font-bold bg-cyan-500 text-slate-950 shadow-md">
+                  Modern 26.2 (Fabric)
+                </button>
+                <button onclick="selectServerVersion('1.8.9')" id="btn-ver-18" class="px-4 py-1.5 rounded-xl text-xs font-bold btn-secondary">
+                  Legacy 1.8.9 (Paper/Forge)
+                </button>
+              </div>
+
+              <!-- 3-Way Host Mode Route Selector (Main Dashboard) -->
+              <div class="pt-2 space-y-1.5 text-left">
+                <label class="text-[10px] font-bold text-muted uppercase tracking-wider block">Hosting Route Mode:</label>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <button onclick="selectHostMode('sir_host')" id="mode-btn-sir" class="px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all bg-emerald-500/15 border-emerald-500/50 text-emerald-600 dark:text-emerald-400 shadow-sm">
+                    <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
+                    <span>SIR Host (WLAN)</span>
+                  </button>
+                  <button onclick="selectHostMode('playit_tunnel')" id="mode-btn-playit" class="px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all btn-secondary text-body">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-500"></i>
+                    <span>Playit.gg Tunnel</span>
+                  </button>
+                  <button onclick="selectHostMode('both')" id="mode-btn-both" class="px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all btn-secondary text-body">
+                    <i data-lucide="zap" class="w-3.5 h-3.5 text-amber-500"></i>
+                    <span>Dual Host (BOTH)</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Master Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <button onclick="toggleServerPower()" id="btn-master-power" class="px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-black shadow-xl shadow-emerald-500/25 flex items-center gap-3 active:scale-95 transition-all">
+                <i data-lucide="play" class="w-6 h-6 fill-slate-950"></i>
+                <span id="btn-master-power-text" data-i18n="startServer">START SERVER</span>
+              </button>
+
+              <button onclick="launchWithLauncher()" class="px-5 py-4 rounded-2xl bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 text-cyan-400 text-xs font-black shadow-md flex items-center gap-2 active:scale-95 transition-all cursor-pointer" title="Launch Minecraft & connect instantly">
+                <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                <span id="btn-launch-label" data-i18n="directJoin">Direct Join</span>
+              </button>
+
+              <button onclick="restartServerInstance()" class="p-4 rounded-2xl btn-secondary text-title active:scale-95 transition-all cursor-pointer" title="Restart Server">
+                <i data-lucide="refresh-cw" class="w-6 h-6"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Live Telemetry Gauge Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Card 1: Server TPS & msPT Sparkline -->
+          <div class="feature-card p-4 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-muted font-bold">
+                <span data-i18n="tpsLabel">Tick Rate (TPS)</span>
+                <span id="gauge-mspt" class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">12.0 msPT</span>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="gauge-tps" class="text-3xl font-black text-emerald-600 dark:text-emerald-400 font-mono">0.0</span>
+                <span class="text-xs text-muted font-bold">/ 20.0 TPS</span>
+              </div>
+            </div>
+            <canvas id="tps-sparkline" width="220" height="40" class="telemetry-sparkline w-full h-10 rounded-lg"></canvas>
+            <p id="gauge-tps-hint" class="text-[11px] text-muted font-medium">Server offline</p>
+          </div>
+
+          <!-- Card 2: Online Players -->
+          <div class="feature-card p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs text-muted font-bold">
+              <span data-i18n="playersLabel">Active Players</span>
+              <i data-lucide="users" class="w-4 h-4 text-cyan-500 dark:text-cyan-400"></i>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span id="gauge-players" class="text-3xl font-black text-cyan-600 dark:text-cyan-400 font-mono">0</span>
+              <span class="text-xs text-muted font-bold">/ 20 Max</span>
+            </div>
+            <p class="text-[11px] text-muted font-medium">Cracked & Premium Supported</p>
+          </div>
+
+          <!-- Card 3: Memory Usage & Live Heap Sparkline -->
+          <div class="feature-card p-4 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-muted font-bold">
+                <span data-i18n="ramCardTitle">RAM Allocation</span>
+                <i data-lucide="cpu" class="w-4 h-4 text-amber-500"></i>
+              </div>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span id="gauge-ram-used" class="text-3xl font-black text-amber-500 font-mono">0.0</span>
+                <span id="gauge-ram-allocated" class="text-xs text-muted font-bold">/ 6.0 GB</span>
+              </div>
+            </div>
+            <canvas id="ram-sparkline" width="220" height="40" class="telemetry-sparkline w-full h-10 rounded-lg"></canvas>
+            <button onclick="compactServerRam()" id="btn-compact-ram" class="w-full py-1.5 px-2 rounded-lg bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-[10px] font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95" title="Force JVM Garbage Collection & Trim Working Set">
+              <i data-lucide="sparkles" class="w-3 h-3"></i>
+              <span>Compact RAM (Force GC)</span>
+            </button>
+            <p id="gauge-ram-total-hint" class="text-[11px] text-muted font-medium">Total Physical: 24 GB RAM</p>
+          </div>
+
+          <!-- Card 4: Uptime Clock -->
+          <div class="feature-card p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs text-muted font-bold">
+              <span data-i18n="uptimeLabel">Server Uptime</span>
+              <i data-lucide="clock" class="w-4 h-4 text-purple-500 dark:text-purple-400"></i>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span id="gauge-uptime" class="text-2xl font-black text-purple-600 dark:text-purple-400 font-mono">00:00:00</span>
+            </div>
+            <p class="text-[11px] text-muted font-medium">Local Host Mode Active</p>
+          </div>
+        </div>
+
+        <!-- Quick Terminal Snippet on Dashboard -->
+        <div class="feature-card p-0 overflow-hidden">
+          <div class="px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              <span class="text-[11px] font-mono font-bold text-title ml-2">Live Server Console</span>
+            </div>
+            <button onclick="switchView('console')" class="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1">
+              <span>Expand Terminal</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+          <div id="dashboard-logs-stream" class="h-44 p-4 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[11px] font-mono text-body custom-scrollbar select-text"></div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 2: UNIFIED NETWORK & CLOUD TUNNELS HUB ==================== -->
+      <section id="view-network" class="view-panel max-w-5xl mx-auto space-y-6">
+        <div class="flex items-center justify-between flex-wrap gap-4">
+          <div>
+            <h2 class="text-xl font-bold text-title flex items-center gap-2">
+              <i data-lucide="network" class="w-5 h-5 text-cyan-400"></i>
+              <span data-i18n="navNetwork">Network & Cloud Tunnels Hub</span>
+            </h2>
+            <p class="text-xs text-muted">Unified connectivity: Playit.gg zero-port tunnel relay & high-speed local WLAN station.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Watchdog Active</span>
+            </span>
+            <button onclick="openServerGuideModal()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-md shadow-cyan-500/20 active:scale-95">
+              <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+              <span>Documentation & Guide</span>
+            </button>
+            <button onclick="openQrModal()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5 hover:bg-cyan-500/25 transition-all cursor-pointer">
+              <i data-lucide="qr-code" class="w-3.5 h-3.5"></i>
+              <span>QR Share</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Master Connectivity Overview Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Playit Cloud Tunnel Status Card -->
+          <div class="feature-card p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted font-semibold flex items-center gap-1.5">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Cloud Tunnel</span>
+              </span>
+              <span id="network-tunnel-status-badge" class="font-mono text-[11px] font-bold text-emerald-400">Online (24ms)</span>
+            </div>
+            <p id="network-tunnel-address-label" class="text-xs font-mono font-bold text-title truncate">myserver.playit.gg:25565</p>
+            <button onclick="copyPublicIp()" class="w-full py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="copy" class="w-3 h-3"></i>
+              <span>Copy Public Address</span>
+            </button>
+          </div>
+
+          <!-- Local WLAN Host Status Card -->
+          <div class="feature-card p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted font-semibold flex items-center gap-1.5">
+                <i data-lucide="wifi" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Local WLAN Host</span>
+              </span>
+              <span class="font-mono text-[11px] font-bold text-emerald-400">Port 25565</span>
+            </div>
+            <p id="network-wlan-address-label" class="text-xs font-mono font-bold text-title truncate">192.168.1.x:25565</p>
+            <button onclick="copyWlanIp()" class="w-full py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-[11px] font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="copy" class="w-3 h-3"></i>
+              <span>Copy Local IP</span>
+            </button>
+          </div>
+
+          <!-- Auto-Reconnect Watchdog Card -->
+          <div class="feature-card p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-muted font-semibold flex items-center gap-1.5">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
+                <span>Auto-Reconnect Guard</span>
+              </span>
+              <span class="font-mono text-[11px] font-bold text-purple-400">Protected</span>
+            </div>
+            <p class="text-[11px] text-muted leading-tight">Automatically re-establishes tunnel if internet drops without restarting server.</p>
+            <div class="pt-1 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+              <span>Ping Interval: 5s</span>
+              <span class="text-emerald-400 font-bold">Zero Drops</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Strategic Columns: Playit.gg Cloud Tunnel vs Local Network Station -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- Column 1: Playit.gg Cloud Tunnel -->
+          <div class="feature-card p-5 space-y-4">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <div class="flex items-center gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i>
+                <h3 class="text-sm font-extrabold text-title">Playit.gg Cloud Tunnel Setup</h3>
+              </div>
+              <button onclick="togglePlayitLocalTunnel()" id="btn-toggle-playit-service" class="px-3 py-1 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black shadow-md transition-all cursor-pointer">
+                Launch Tunnel
+              </button>
+            </div>
+            <p class="text-xs text-body leading-relaxed font-medium">
+              Link your assigned public tunnel address from your Playit dashboard to allow players across the globe to connect without port forwarding:
+            </p>
+            <div class="space-y-2">
+              <input type="text" id="input-playit-domain" placeholder="e.g. irvine-speller.tun.ply.gg:25565" class="input-modern w-full font-mono text-xs">
+              <button onclick="savePlayitCustomDomain()" class="w-full py-2 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black shadow-md active:scale-95 transition-all cursor-pointer">
+                💾 Save Active Domain
+              </button>
+            </div>
+            <div class="flex flex-col gap-2 pt-1 border-t border-border-color">
+              <button onclick="openPlayitWebsite()" class="w-full py-2 px-3 rounded-xl btn-secondary text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Open Playit.gg Website ↗</span>
+              </button>
+              <button onclick="openPlayitTunnelsDashboard()" class="w-full py-2 px-3 rounded-xl btn-secondary text-xs font-bold flex items-center justify-center gap-2 transition-all cursor-pointer">
+                <i data-lucide="external-link" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Open Tunnels Dashboard ↗</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Column 2: Local Network & WLAN Station -->
+          <div class="feature-card p-5 space-y-4">
+            <div class="flex items-center justify-between border-b border-border-color pb-3">
+              <div class="flex items-center gap-2">
+                <i data-lucide="wifi" class="w-4 h-4 text-emerald-400"></i>
+                <h3 class="text-sm font-extrabold text-title">Local Wi-Fi & Hotspot Host</h3>
+              </div>
+              <span id="wlan-active-ip-badge" class="text-xs font-mono font-black text-emerald-400 px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30">192.168.1.x:25565</span>
+            </div>
+            <p class="text-xs text-body leading-relaxed font-medium">
+              Share directly with computers or mobile devices connected to your same Wi-Fi router or phone hotspot:
+            </p>
+            <div class="flex items-center gap-2">
+              <button onclick="copyWlanIp()" class="flex-1 py-2 px-4 rounded-xl btn-secondary text-xs font-bold flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Copy WLAN Address</span>
+              </button>
+              <button onclick="downloadServerCore()" id="btn-download-core" class="py-2 px-3 rounded-xl bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5 hover:bg-cyan-500/25 transition-all cursor-pointer">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Core</span>
+              </button>
+            </div>
+            <div class="p-4 rounded-xl feature-card dark:bg-slate-900/60 bg-slate-100 border border-border-color space-y-2 mt-2">
+              <div class="flex items-center gap-2 text-xs font-bold text-title">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Zero-Download In-Game LAN (e4mc)</span>
+              </div>
+              <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+                In singleplayer worlds, press <kbd class="px-1 py-0.5 rounded dark:bg-slate-800 bg-slate-200 text-cyan-600 dark:text-cyan-400 font-mono text-[10px]">Esc</kbd> ➔ <strong class="text-title">"Open to LAN"</strong>. The bundled <code class="text-cyan-600 dark:text-cyan-400 font-mono">e4mc</code> engine automatically generates an instant share link for friends to join without running a dedicated server window.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 4: FULL CONSOLE & TERMINAL ==================== -->
+      <section id="view-console" class="view-panel max-w-6xl mx-auto space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-title flex items-center gap-2">
+              <i data-lucide="terminal" class="w-5 h-5 text-cyan-500 dark:text-cyan-400"></i>
+              <span>Live Interactive Server Terminal</span>
+            </h2>
+            <p class="text-xs text-muted">Dispatch live console commands, broadcast chat announcements, and track RCON outputs.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="copyConsoleLog()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5 hover:bg-cyan-500/25 transition-all">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span>Copy Full Log</span>
+            </button>
+            <button onclick="clearConsoleLog()" class="px-3 py-1.5 rounded-xl btn-secondary text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+              <span>Clear</span>
+            </button>
+            <button onclick="fetchLatestLogs()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Refresh Tail</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terminal Card -->
+        <div class="feature-card p-0 overflow-hidden shadow-2xl rounded-2xl">
+          <div class="px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+              <span class="text-[11px] font-mono font-bold text-title ml-2">Minecraft Server Stdout & RCON Stream</span>
+            </div>
+            <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-[10px] px-2.5 py-0.5 rounded-full border border-cyan-500/30 font-mono">Live Stream</span>
+          </div>
+
+          <div id="full-logs-stream" class="h-[420px] p-4 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[11px] font-mono text-body custom-scrollbar select-text"></div>
+
+          <!-- Command Input Bar -->
+          <div class="p-3 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2">
+            <span class="text-cyan-500 font-mono font-black pl-2">></span>
+            <input type="text" id="terminal-cmd-input" onkeydown="if(event.key==='Enter') sendTerminalCommand()" placeholder="Enter command (e.g. /tps, /op username, /whitelist add, /time set day)..." class="input-modern flex-1 text-xs font-mono">
+            <button onclick="sendTerminalCommand()" class="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black shadow-lg shadow-cyan-500/20 active:scale-95 transition-all">
+              Execute
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== VIEW 5: PLAYERS & WHITELIST ==================== -->
+      <section id="view-players" class="view-panel max-w-5xl mx-auto space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-title flex items-center gap-2">
+            <i data-lucide="users" class="w-5 h-5 text-purple-500 dark:text-purple-400"></i>
+            <span>Connected Players & Permissions</span>
+          </h2>
+          <p class="text-xs text-muted">Manage active players, grant operator privileges, or kick unruly users.</p>
+        </div>
+
+        <div id="players-list-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- ==================== VIEW: 1-CLICK PLUGINS STORE ==================== -->
+      <section id="view-plugins" class="view-panel max-w-5xl mx-auto space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-title flex items-center gap-2">
+              <i data-lucide="blocks" class="w-5 h-5 text-emerald-400"></i>
+              <span data-i18n="pluginsHeader">1-Click Essential Plugins & Mods Store</span>
+            </h2>
+            <p class="text-xs text-muted" data-i18n="pluginsSub">Curated, pre-configured server enhancements with automatic dependency resolution and zero configuration headache.</p>
+          </div>
+          <button onclick="fetchPluginsCatalog()" class="px-3.5 py-1.5 rounded-xl bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30 text-xs font-bold flex items-center gap-1.5 hover:bg-cyan-500/25 transition-all cursor-pointer">
+            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+            <span>Refresh Catalog</span>
+          </button>
+        </div>
+
+        <div id="plugins-catalog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Dynamically populated -->
+        </div>
+      </section>
+
+
+      <!-- ==================== VIEW 7: AUTOMATED BACKUPS ==================== -->
+      <section id="view-backups" class="view-panel max-w-5xl mx-auto space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-title flex items-center gap-2">
+              <i data-lucide="archive" class="w-5 h-5 text-rose-500 dark:text-rose-400"></i>
+              <span>Automated World Snapshots & Backups</span>
+            </h2>
+            <p class="text-xs text-muted">Create compressed .zip archives of your server worlds with 1 click.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="triggerNewBackup()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black shadow-md active:scale-95 transition-all flex items-center gap-2">
+              <i data-lucide="plus-circle" class="w-4 h-4"></i>
+              <span>Create Snapshot Now</span>
+            </button>
+            <button onclick="openBackupsFolder()" class="px-4 py-2.5 rounded-xl btn-secondary text-xs font-bold flex items-center gap-1.5 transition-all">
+              <i data-lucide="folder" class="w-4 h-4 text-cyan-500"></i>
+              <span>Open Folder</span>
+            </button>
+          </div>
+        </div>
+
+        <div id="backups-list-container" class="space-y-3">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ==================== QR CODE SHARING MODAL ==================== -->
+  <div id="modal-qrcode" class="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-200">
+    <div class="feature-card max-w-sm w-full p-6 space-y-4 text-center transform scale-95 transition-all duration-200 border border-slate-700/60 shadow-2xl" id="modal-qrcode-card">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div class="flex items-center gap-2">
+          <i data-lucide="qr-code" class="w-4 h-4 text-cyan-400"></i>
+          <h3 class="text-sm font-bold text-title">Share Server QR Code</h3>
+        </div>
+        <button onclick="closeQrModal()" class="p-1 rounded-lg text-slate-400 hover:text-white cursor-pointer"><i data-lucide="x" class="w-4 h-4"></i></button>
+      </div>
+      <div class="p-3 bg-white rounded-2xl inline-block shadow-lg">
+        <img id="qrcode-img" src="" alt="Server QR Code" class="w-48 h-48 mx-auto rounded-lg">
+      </div>
+      <div class="space-y-1">
+        <p class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400" id="qrcode-address-label">127.0.0.1:25565</p>
+        <p class="text-[11px] text-muted">Scan with phone camera to copy join address or share with friends on the same network</p>
+      </div>
+      <div class="flex gap-2 pt-2">
+        <button onclick="copyPublicIp()" class="flex-1 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black transition-all cursor-pointer">Copy Address</button>
+        <button onclick="closeQrModal()" class="px-4 py-2 rounded-xl btn-secondary text-xs font-bold transition-all cursor-pointer">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== IN-APP SERVER HOSTING GUIDE MODAL ==================== -->
+  <div id="server-guide-modal" class="modal-backdrop hidden fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+    <div class="modal-dialog feature-card max-w-4xl w-full rounded-3xl p-6 flex flex-col max-h-[90vh] border border-border-color shadow-2xl relative overflow-hidden theme-card dark:bg-[#0d121f]/95 bg-white space-y-5">
+      <div class="flex items-center justify-between border-b border-border-color pb-4 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="book-open" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-black text-title flex items-center gap-2">
+              Server Hosting Quick Reference & Architecture Guide
+              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">GENESIS v1.0.0</span>
+            </h3>
+            <p class="text-xs text-muted">Complete walkthrough for LAN, Dedicated Hosting, Playit.gg Cloud Tunnels & Bedrock Cross-Play</p>
+          </div>
+        </div>
+        <button onclick="closeServerGuideModal()" class="p-2 rounded-xl text-slate-400 hover:text-title hover:bg-slate-800/20 transition-all cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto custom-scrollbar space-y-4 pr-1">
+        <!-- 5 Setup Methods -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Method 1: e4mc LAN -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-border-color space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black text-title">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
+              <span>1. Zero-Download In-Game LAN (e4mc)</span>
+            </div>
+            <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+              In any singleplayer world, open the game menu (<kbd class="px-1 py-0.5 rounded dark:bg-slate-800 bg-slate-200 text-cyan-600 dark:text-cyan-400 font-mono text-[10px]">Esc</kbd>) and click <strong>"Open to LAN"</strong>. The bundled e4mc engine creates a secure public tunnel URL instantly without router port forwarding.
+            </p>
+          </div>
+
+          <!-- Method 2: Dedicated Orchestrator -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-border-color space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black text-title">
+              <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+              <span>2. Dedicated Standalone Server</span>
+            </div>
+            <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+              Launch this Server Orchestrator on your PC or secondary machine. Uses bundled Java 21 LTS with Aikar's high-performance G1GC flags, discrete RAM tuning (2 to 24 GB), and an automated background crash recovery watchdog.
+            </p>
+          </div>
+
+          <!-- Method 3: Playit.gg Tunnels -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-border-color space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black text-title">
+              <i data-lucide="globe" class="w-4 h-4 text-emerald-400"></i>
+              <span>3. Playit.gg Zero-Port Forwarding</span>
+            </div>
+            <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+              Under <strong>Network & Cloud Tunnels</strong>, start the Playit tunnel service or paste your secret key. You receive a permanent static domain (e.g., <code class="font-mono text-cyan-600 dark:text-cyan-400">your-host.ply.gg</code>) so external friends can join safely.
+            </p>
+          </div>
+
+          <!-- Method 4: Bedrock Cross-Play -->
+          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-border-color space-y-2">
+            <div class="flex items-center gap-2 text-xs font-black text-title">
+              <i data-lucide="smartphone" class="w-4 h-4 text-purple-400"></i>
+              <span>4. Bedrock Cross-Play (GeyserMC)</span>
+            </div>
+            <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+              Open the <strong>Plugins & Mods Store</strong> tab, find <strong>GeyserMC + Floodgate</strong>, and click 1-Click Install. Mobile (iOS/Android) and console players can connect using port 19132 with Java authentication bypass.
+            </p>
+          </div>
+        </div>
+
+        <!-- Firebase Cloud Sync Summary -->
+        <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/20 via-slate-900/40 to-emerald-950/20 border border-cyan-500/20 space-y-2">
+          <div class="flex items-center gap-2 text-xs font-bold text-title">
+            <i data-lucide="cloud" class="w-4 h-4 text-cyan-400"></i>
+            <span>Cloud Sync & Snapshot Backups</span>
+          </div>
+          <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
+            Connect your Google account via native OAuth in the top navbar. Your server configurations, operator lists, whitelists, and world backup metadata are safely mirrored to Firebase under <code class="font-mono text-cyan-600 dark:text-cyan-400">/users/{uid}/server_orchestrator</code>.
+          </p>
+        </div>
+      </div>
+
+      <div class="pt-3 border-t border-border-color flex items-center justify-between">
+        <button onclick="openServerGuideSite()" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center gap-2 cursor-pointer shadow-md">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          <span>Open Full Online Guide ↗</span>
+        </button>
+        <button onclick="closeServerGuideModal()" class="px-4 py-2 rounded-xl btn-secondary text-xs font-bold transition-all cursor-pointer">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== WINDOWED SERVER SETTINGS & FEEDBACK MODAL ==================== -->
+  <div id="server-settings-modal" class="modal-backdrop hidden fixed inset-0 z-[99999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+    <div class="modal-dialog feature-card max-w-5xl w-full rounded-3xl p-0 flex flex-col h-[700px] max-h-[90vh] border border-border-color shadow-2xl relative overflow-hidden theme-card dark:bg-[#0d121f]/95 bg-white">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-border-color px-6 py-4 shrink-0 theme-header">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="sliders-horizontal" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-black text-title flex items-center gap-2">
+              Server Orchestrator Configuration & Suite
+              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full px-2.5 py-0.5 text-[10px] font-bold font-mono">v1.0.0 Genesis</span>
+            </h3>
+            <p class="text-xs text-muted">JVM allocation, network tunnels, tactile audio, developer feedback & legal governance</p>
+          </div>
+        </div>
+        <button onclick="closeServerSettingsModal()" class="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body: Dual Pane Layout (Left Sidemenu + Right Content) -->
+      <div class="flex-1 flex min-h-0 overflow-hidden">
+        
+        <!-- Left Vertical Slim Icon Rail (w-[72px] shrink-0) -->
+        <div class="w-[72px] shrink-0 border-r border-border-color py-4 px-2 flex flex-col items-center justify-between theme-sidebar">
+          <!-- Icon Navigation Rail -->
+          <nav class="flex flex-col items-center gap-2.5 w-full">
+            <button onclick="switchServerSettingsTab('engine')" id="modal-tab-btn-engine" class="settings-nav-btn active group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Server Engine & JVM">
+              <i data-lucide="cpu" class="w-5 h-5 text-cyan-400"></i>
+              <div class="settings-nav-tooltip">Server Engine & JVM</div>
+            </button>
+            <button onclick="switchServerSettingsTab('network')" id="modal-tab-btn-network" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Network & Tunnels">
+              <i data-lucide="network" class="w-5 h-5 text-emerald-400"></i>
+              <div class="settings-nav-tooltip">Network & Tunnels</div>
+            </button>
+            <button onclick="switchServerSettingsTab('appearance')" id="modal-tab-btn-appearance" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Appearance & Audio">
+              <i data-lucide="palette" class="w-5 h-5 text-purple-400"></i>
+              <div class="settings-nav-tooltip">Appearance & Audio</div>
+            </button>
+            <button onclick="switchServerSettingsTab('feedback')" id="modal-tab-btn-feedback" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Feedback">
+              <i data-lucide="message-square" class="w-5 h-5 text-amber-400"></i>
+              <div class="settings-nav-tooltip">Feedback</div>
+            </button>
+            <button onclick="switchServerSettingsTab('diagnostics')" id="modal-tab-btn-diagnostics" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Diagnostics & Repair">
+              <i data-lucide="activity" class="w-5 h-5 text-rose-400"></i>
+              <div class="settings-nav-tooltip">Diagnostics & Repair</div>
+            </button>
+            <button onclick="switchServerSettingsTab('legal')" id="modal-tab-btn-legal" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Legal & Governance">
+              <i data-lucide="scale" class="w-5 h-5 text-amber-400"></i>
+              <div class="settings-nav-tooltip">Legal & Governance</div>
+            </button>
+            <button onclick="switchServerSettingsTab('cloud')" id="modal-tab-btn-cloud" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Google Cloud Sync">
+              <i data-lucide="cloud" class="w-5 h-5 text-cyan-400"></i>
+              <div class="settings-nav-tooltip">Google Cloud Sync</div>
+            </button>
+          </nav>
+          <!-- Reset Defaults Compact Button -->
+          <button onclick="resetServerSettingsDefaults()" class="w-11 h-11 rounded-2xl border border-transparent hover:border-rose-500/30 text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all flex items-center justify-center group relative cursor-pointer" title="Reset Defaults">
+            <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+            <div class="settings-nav-tooltip">Reset Defaults</div>
+          </button>
+        </div>
+
+        <!-- Right Content Area -->
+        <div class="flex-1 flex flex-col min-h-0 bg-slate-50 dark:bg-slate-900/20">
+          <!-- Scrollable Tab Content Container -->
+          <div class="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
+            
+            <!-- TAB 1: SERVER ENGINE & JVM -->
+            <div id="modal-tab-engine" class="settings-tab-content active space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Port -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                  <label class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center justify-between">
+                    <span>Dedicated Server Port</span>
+                    <span class="text-[10px] font-mono text-cyan-600 dark:text-cyan-400">Default: 25565</span>
+                  </label>
+                  <input type="number" id="modal-setting-port" value="25565" class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-xs font-mono font-bold text-slate-900 dark:text-white focus:outline-none focus:border-cyan-400">
+                  <p class="text-[10px] text-muted">Primary TCP socket for incoming Minecraft clients</p>
+                </div>
+
+                <!-- Online Mode -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Online Mode (Microsoft Auth)</span>
+                      <p class="text-[10px] text-muted">Verify player accounts with Mojang session servers</p>
+                    </div>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" id="modal-setting-online-mode" class="sr-only peer">
+                      <div class="w-11 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+                    </label>
+                  </div>
+                  <p class="text-[10px] text-amber-600 dark:text-amber-400/90 font-medium">Toggle off to allow offline / community accounts to join.</p>
+                </div>
+              </div>
+
+              <!-- Sliders: View Distance & Max Players -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">View Distance (Chunks)</span>
+                    <span id="modal-val-view-distance" class="text-xs font-mono font-black text-cyan-600 dark:text-cyan-400">10 chunks</span>
+                  </div>
+                  <input type="range" id="modal-setting-view-distance" min="3" max="32" value="10" class="w-full cursor-pointer" oninput="document.getElementById('modal-val-view-distance').textContent = this.value + ' chunks'">
+                  <div class="flex justify-between text-[10px] text-muted font-mono"><span>3</span><span>10 (Balanced)</span><span>32</span></div>
+                </div>
+
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Max Player Capacity</span>
+                    <span id="modal-val-max-players" class="text-xs font-mono font-black text-emerald-600 dark:text-emerald-400">20 players</span>
+                  </div>
+                  <input type="range" id="modal-setting-max-players" min="1" max="100" value="20" class="w-full cursor-pointer" oninput="document.getElementById('modal-val-max-players').textContent = this.value + ' players'">
+                  <div class="flex justify-between text-[10px] text-muted font-mono"><span>1</span><span>20 (Normal)</span><span>100</span></div>
+                </div>
+              </div>
+
+              <!-- JVM RAM Allocation (Calibrated Discrete Presets Slider: 2, 4, 6, 8, 10, 12, 16, 20, 24 GB) -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                <div class="flex justify-between items-center">
+                  <div>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">JVM Maximum Heap RAM (-Xmx)</span>
+                    <p class="text-[10px] text-muted">Allocated server memory for entities, chunks, and loaded mods</p>
+                  </div>
+                  <span id="modal-val-ram" class="text-sm font-mono font-black text-cyan-600 dark:text-cyan-400">6 GB</span>
+                </div>
+                <input type="hidden" id="modal-setting-ram" value="6">
+                <input type="range" id="modal-setting-ram-idx" min="0" max="8" step="1" value="2" class="w-full cursor-pointer" oninput="onRamSliderInput(this.value)">
+                <div class="flex justify-between text-[10px] text-muted font-mono pt-1">
+                  <span>2G</span>
+                  <span>4G</span>
+                  <span>6G (Rec)</span>
+                  <span>8G</span>
+                  <span>10G</span>
+                  <span>12G</span>
+                  <span>16G</span>
+                  <span>20G</span>
+                  <span>24G</span>
+                </div>
+              </div>
+
+              <!-- Aikar Flags -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white flex items-center justify-between">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Aikar's Garbage Collection Flags</span>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">G1GC TUNED</span>
+                  </div>
+                  <p class="text-[10px] text-muted">Optimizes G1GC pause times to prevent tick stutter during chunk generation</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="modal-setting-aikar-flags" checked class="sr-only peer">
+                  <div class="w-11 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- TAB 2: NETWORK & TUNNEL -->
+            <div id="modal-tab-network" class="settings-tab-content space-y-4">
+              <!-- Playit Key -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="key" class="w-4 h-4 text-cyan-400"></i>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Playit.gg Secret Key (Optional)</span>
+                  </div>
+                  <button onclick="openPlayitPortal()" class="text-[10px] text-cyan-600 dark:text-cyan-400 hover:text-cyan-500 font-bold underline cursor-pointer">Get Secret Key</button>
+                </div>
+                <input type="password" id="modal-setting-playit-key" placeholder="Enter playit.gg secret key or claim code" class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-xs font-mono font-bold text-slate-900 dark:text-white focus:outline-none focus:border-cyan-400">
+                <p class="text-[10px] text-muted">Allows automatic tunnel establishment without running browser claim flows</p>
+              </div>
+
+              <!-- Auto-Reconnect Watchdog (Aligned) -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white flex items-center justify-between">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Auto-Reconnect Watchdog</span>
+                  </div>
+                  <p class="text-[10px] text-muted">Monitors tunnel heartbeat and auto-restores if connection drops</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="modal-setting-watchdog" checked class="sr-only peer">
+                  <div class="w-11 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+                </label>
+              </div>
+
+              <!-- Preferred WLAN Interface (Custom Cyber Rounded Dropdown) -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-2">
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Preferred Local WLAN Interface</span>
+                <p class="text-[10px] text-muted">Local IP interface advertised to nearby LAN clients</p>
+                <div class="relative">
+                  <input type="hidden" id="modal-setting-wlan-ip" value="auto">
+                  <button type="button" id="wlan-dropdown-btn" onclick="toggleCustomDropdown('wlan-dropdown-menu', 'wlan-dropdown-btn')" class="custom-dropdown-trigger w-full px-4 py-2.5 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700/70 text-xs font-mono font-bold text-slate-900 dark:text-white flex items-center justify-between hover:border-cyan-500/50 transition-all cursor-pointer">
+                    <span id="wlan-dropdown-selected-label">Auto-Detect Primary Adapter</span>
+                    <i data-lucide="chevron-down" class="chevron w-4 h-4 text-cyan-400"></i>
+                  </button>
+                  <div id="wlan-dropdown-menu" class="custom-dropdown-menu">
+                    <div class="custom-dropdown-option selected" onclick="selectCustomDropdownOption('wlan', 'auto', 'Auto-Detect Primary Adapter')">
+                      <span>Auto-Detect Primary Adapter</span>
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    </div>
+                    <div class="custom-dropdown-option" onclick="selectCustomDropdownOption('wlan', '127.0.0.1', '127.0.0.1 (Local Loopback)')">
+                      <span>127.0.0.1 (Local Loopback)</span>
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400 hidden"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 3: APPEARANCE & AUDIO -->
+            <div id="modal-tab-appearance" class="settings-tab-content space-y-4">
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Interface Theme Mode</span>
+                <div class="grid grid-cols-3 gap-3">
+                  <button onclick="setThemeMode('dark')" id="modal-theme-btn-dark" class="theme-choice-btn py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/40">
+                    <i data-lucide="moon" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    <span>Cyber Dark</span>
+                  </button>
+                  <button onclick="setThemeMode('auto')" id="modal-theme-btn-auto" class="theme-choice-btn py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/40">
+                    <i data-lucide="monitor" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <span>System Auto</span>
+                  </button>
+                  <button onclick="setThemeMode('light')" id="modal-theme-btn-light" class="theme-choice-btn py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/40">
+                    <i data-lucide="sun" class="w-3.5 h-3.5 text-amber-400"></i>
+                    <span>Clean Light</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white flex items-center justify-between">
+                <div class="space-y-1">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="volume-2" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Tactile Audio Chimes</span>
+                  </div>
+                  <p class="text-[10px] text-muted">Play synthesized sound notifications on server start, stop, and player join/disconnect</p>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" id="modal-setting-audio-chimes" checked class="sr-only peer">
+                  <div class="w-11 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-500"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- TAB 4: FEEDBACK (RENAMED FROM DEVELOPER HIGHWAY) -->
+            <div id="modal-tab-feedback" class="settings-tab-content space-y-4">
+              <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-50 to-slate-100 dark:from-cyan-950/30 dark:to-slate-900/50 border border-cyan-500/20 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+                    <h4 class="text-xs font-black text-slate-900 dark:text-white">Feedback & Engineering Desk</h4>
+                  </div>
+                  <span class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">24-48H RESPONSE</span>
+                </div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Found an issue or have an architectural idea for the Server Orchestrator? Submit directly through this in-app feedback channel. Every report generates an official tracked Ticket ID (<span class="font-mono text-amber-600 dark:text-amber-400 font-bold">SIR-SRV-XXXXXX</span>).
+                </p>
+              </div>
+
+              <!-- Online FAQ & Documentation Quick Action -->
+              <div class="theme-card p-3 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2 text-xs">
+                  <i data-lucide="help-circle" class="w-4 h-4 text-cyan-400"></i>
+                  <span class="font-bold text-slate-800 dark:text-white">Need Hosting Help or Setup Answers?</span>
+                </div>
+                <button onclick="openExternalUrl('https://sir-modpack.web.app/faq')" class="px-3 py-1.5 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer shadow-sm active:scale-95">
+                  <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                  <span>Open Online FAQ & Documentation</span>
+                </button>
+              </div>
+
+              <!-- Type Selector -->
+              <div class="flex gap-2">
+                <button onclick="switchFeedbackType('bug')" id="feedback-type-bug" class="flex-1 py-2 px-3 rounded-xl border border-rose-500/40 bg-rose-50 dark:bg-rose-500/15 text-rose-700 dark:text-rose-300 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all">
+                  <i data-lucide="bug" class="w-3.5 h-3.5"></i>
+                  <span>Report an Issue</span>
+                </button>
+                <button onclick="switchFeedbackType('feature')" id="feedback-type-feature" class="flex-1 py-2 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all">
+                  <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i>
+                  <span>Feature Suggestion</span>
+                </button>
+              </div>
+
+              <!-- Input Fields -->
+              <div class="space-y-3">
+                <div>
+                  <label class="text-[11px] font-bold text-slate-700 dark:text-slate-300 block mb-1">Description</label>
+                  <textarea id="feedback-modal-desc" rows="3" placeholder="Describe the behavior or idea in detail..." class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-cyan-400 custom-scrollbar resize-none"></textarea>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div>
+                    <label class="text-[11px] font-bold text-slate-700 dark:text-slate-300 block mb-1">Your Email (Optional for updates)</label>
+                    <input type="email" id="feedback-modal-email" placeholder="you@example.com" class="w-full px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700/60 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-cyan-400">
+                  </div>
+                  <div class="flex items-end">
+                    <button onclick="submitServerFeedbackTicket()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 text-xs font-black transition-all cursor-pointer shadow-lg flex items-center justify-center gap-2">
+                      <i data-lucide="send" class="w-3.5 h-3.5 fill-slate-950"></i>
+                      <span>Submit to Developer Desk</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="feedback-result-card" class="hidden p-4 rounded-2xl bg-emerald-950/40 border border-emerald-500/30 text-emerald-300 text-xs space-y-1"></div>
+            </div>
+
+            <!-- TAB 5: SYSTEM DIAGNOSTICS & SELF-REPAIR -->
+            <div id="modal-tab-diagnostics" class="settings-tab-content space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Verify Server Integrity -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
+                    <h4 class="text-xs font-bold text-slate-800 dark:text-white">Verify Server Integrity</h4>
+                  </div>
+                  <p class="text-[11px] text-muted">Audits server JARs, level.dat world headers, eula.txt, and port bindings to repair broken configs.</p>
+                  <button onclick="runServerIntegrityCheck()" class="w-full py-2 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-600 dark:text-emerald-300 text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                    <span>Run Integrity Audit</span>
+                  </button>
+                </div>
+
+                <!-- Clean Temp Logs -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="trash-2" class="w-4 h-4 text-rose-400"></i>
+                    <h4 class="text-xs font-bold text-slate-800 dark:text-white">Clean Temp Server Logs</h4>
+                  </div>
+                  <p class="text-[11px] text-muted">Deletes old compressed log archives (.log.gz) and crash dump files to free system drive space.</p>
+                  <button onclick="cleanServerLogsAction()" class="w-full py-2 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/40 text-rose-600 dark:text-rose-300 text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-1.5">
+                    <i data-lucide="trash" class="w-3.5 h-3.5"></i>
+                    <span>Clean Old Logs</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Real-Time Diagnostic Output Log -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[11px] font-bold text-slate-600 dark:text-slate-400 font-mono">DIAGNOSTIC AUDIT LOG:</span>
+                  <span id="diagnostics-status-pill" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">READY</span>
+                </div>
+                <div id="diagnostics-log-box" class="h-24 p-3 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-xl font-mono text-[11px] text-slate-800 dark:text-slate-300 overflow-y-auto custom-scrollbar leading-relaxed">
+                  Diagnostic engine initialized. Click "Run Integrity Audit" to perform full system scan.
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 6: LEGAL, EULA & GOVERNANCE (RELOCATED FROM SIDEBAR) -->
+            <div id="modal-tab-legal" class="settings-tab-content space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+                <div>
+                  <h4 class="text-sm font-black text-slate-800 dark:text-white flex items-center gap-2">
+                    <i data-lucide="scale" class="w-4 h-4 text-amber-400"></i>
+                    <span>Legal, EULA & Host Governance</span>
+                  </h4>
+                  <p class="text-[11px] text-muted">Mojang Server EULA Compliance • Zero-Telemetry Architecture • Host Terms</p>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">v1.0.0 Genesis</span>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Card 1: Mojang Server EULA -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i>
+                      <h5 class="text-xs font-bold text-slate-800 dark:text-white">Mojang Server EULA</h5>
+                    </div>
+                    <span class="badge-tag bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">COMPLIANT</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Dedicated servers adhere to Mojang's End User License Agreement (<a href="https://minecraft.net/eula" target="_blank" class="text-cyan-600 dark:text-cyan-400 underline font-mono">minecraft.net/eula</a>). SIR ModPack does not monetize server JARs, mods, or Mojang assets.
+                  </p>
+                  <div class="p-2.5 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px]">
+                    <span class="text-slate-600 dark:text-slate-400 font-bold">eula.txt Auto-Sign</span>
+                    <span class="text-emerald-600 dark:text-emerald-400 font-mono font-bold">ACTIVE (eula=true)</span>
+                  </div>
+                </div>
+
+                <!-- Card 2: Zero-Telemetry & Local Security -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="lock" class="w-4 h-4 text-cyan-400"></i>
+                      <h5 class="text-xs font-bold text-slate-800 dark:text-white">Zero-Telemetry & Privacy</h5>
+                    </div>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">LOCAL FIRST</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                    Console logs, player connection logs, whitelists, and world snapshots are stored strictly on your local PC. No telemetry or player metadata is ever tracked or uploaded.
+                  </p>
+                  <div class="p-2.5 bg-slate-50 dark:bg-slate-950/60 rounded-xl border border-slate-200 dark:border-slate-800 text-[10px] text-slate-600 dark:text-slate-400 font-mono">
+                    %APPDATA%\SIR ModPack\server_instances\
+                  </div>
+                </div>
+
+                <!-- Card 3: Host Terms of Service -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
+                      <h5 class="text-xs font-bold text-slate-800 dark:text-white">100% Free Platform Agreement</h5>
+                    </div>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">FREE & INDEPENDENT</span>
+                  </div>
+                  <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                    SIR ModPack is a 100% Free and Independent software platform provided under the Free Independent Software Agreement. Provided AS-IS with zero warranty, no paywalls, and no monetization.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB 7: GOOGLE CLOUD SYNC -->
+            <div id="modal-tab-cloud" class="settings-tab-content space-y-4">
+              <!-- Header -->
+              <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-50 via-slate-100 to-emerald-50 dark:from-cyan-950/30 dark:via-slate-900/60 dark:to-emerald-950/30 border border-cyan-500/20 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="cloud" class="w-5 h-5 text-cyan-400"></i>
+                    <h4 class="text-xs font-black text-slate-900 dark:text-white">Native Google Account Suite & Firebase Cloud Sync</h4>
+                  </div>
+                  <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2.5 py-0.5 text-[9px] font-bold">ENCRYPTED SYNC</span>
+                </div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Link your Google Account to back up server orchestrator configurations, custom domain mappings, and whitelist rules securely to your private cloud storage.
+                </p>
+              </div>
+
+              <!-- Google Profile Status Card -->
+              <div id="server-cloud-auth-card" class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div id="modal-cloud-avatar" class="w-10 h-10 rounded-full bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center font-bold text-cyan-600 dark:text-cyan-300 text-sm overflow-hidden">
+                      G
+                    </div>
+                    <div>
+                      <h5 id="modal-cloud-name" class="text-xs font-bold text-slate-900 dark:text-white">Not Signed In</h5>
+                      <p id="modal-cloud-email" class="text-[11px] text-muted">Connect your Google Account to enable cloud backups</p>
+                    </div>
+                  </div>
+                  <div id="modal-cloud-auth-btn-container">
+                    <button onclick="triggerServerGoogleLogin()" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black flex items-center gap-2 transition-all cursor-pointer shadow-md">
+                      <i data-lucide="log-in" class="w-3.5 h-3.5"></i>
+                      <span>Sign in with Google</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cloud Actions Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Backup to Cloud -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="cloud-upload" class="w-4 h-4 text-emerald-400"></i>
+                    <h5 class="text-xs font-bold text-slate-900 dark:text-white">Backup Config to Cloud</h5>
+                  </div>
+                  <p class="text-[11px] text-muted">Uploads current settings, port configurations, and player whitelists to your secure Firebase Cloud container.</p>
+                  <button onclick="syncServerToCloudAction()" class="w-full py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-600 dark:text-emerald-300 text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <i data-lucide="upload-cloud" class="w-3.5 h-3.5"></i>
+                    <span>Backup Now</span>
+                  </button>
+                </div>
+
+                <!-- Restore from Cloud -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="cloud-download" class="w-4 h-4 text-cyan-400"></i>
+                    <h5 class="text-xs font-bold text-slate-900 dark:text-white">Restore Config from Cloud</h5>
+                  </div>
+                  <p class="text-[11px] text-muted">Retrieves your saved configurations from the cloud and applies them to this machine.</p>
+                  <button onclick="restoreServerFromCloudAction()" class="w-full py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/40 text-cyan-600 dark:text-cyan-300 text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-2">
+                    <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i>
+                    <span>Restore from Cloud</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sync Timestamp Footer -->
+              <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] text-muted font-mono">
+                <span>Last Cloud Synchronization:</span>
+                <span id="server-cloud-sync-timestamp" class="text-cyan-600 dark:text-cyan-400 font-bold">Never synced</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Modal Action Footer -->
+          <div class="flex items-center justify-end gap-2.5 border-t border-slate-200 dark:border-slate-800/80 px-6 py-3.5 shrink-0 bg-slate-50 dark:bg-slate-950/40">
+            <button onclick="closeServerSettingsModal()" class="px-5 py-2 rounded-xl btn-secondary text-xs font-bold transition-all cursor-pointer">
+              Cancel
+            </button>
+            <button onclick="saveServerSettingsFromModal()" class="px-6 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black transition-all cursor-pointer shadow-lg shadow-cyan-500/25 active:scale-95">
+              Save & Apply
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

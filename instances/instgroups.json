@@ -1,0 +1,23 @@
+{
+    "formatVersion": "1",
+    "groups": {
+        "Modern": {
+            "hidden": false,
+            "instances": [
+                "26.2",
+                "26.2-performance",
+                "26.2-balanced",
+                "26.2-ultra"
+            ]
+        },
+        "Legacy": {
+            "hidden": false,
+            "instances": [
+                "1.8.9-performance",
+                "1.8.9-balanced",
+                "1.8.9-ultra",
+                "1.8.9"
+            ]
+        }
+    }
+}

@@ -1,15 +1,69 @@
 {
   "schema_version": 1,
   "version": "1.0.0",
-  "generated_at": 1788838224,
-  "iso_timestamp": "2026-09-08T03:30:24Z",
-  "total_files": 2694,
-  "total_size_bytes": 4490919319,
+  "generated_at": 1788853520,
+  "iso_timestamp": "2026-09-08T07:45:20Z",
+  "total_files": 2783,
+  "total_size_bytes": 5808010594,
   "files": {
+    "capes/TestPlayer_cape.png": {
+      "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
+      "size": 513,
+      "mtime": 1788852921,
+      "category": "cape"
+    },
+    "capes/sir_champion_gold.png": {
+      "sha256": "69468d5608f08194b9f3979dcc514b1a7de51e876fa5b5587c07bf5f05d625b8",
+      "size": 504,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "capes/sir_classic_genesis.png": {
+      "sha256": "d0f73f5da16f062f253ffc46cc5326258bbf5d177a285f2b4e33b803f72069ba",
+      "size": 445,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "capes/sir_cyber_pulse.png": {
+      "sha256": "4998f95572cd7b321490c589bdea66dcb48f221f1fe90b3d8c227e2cb42a3460",
+      "size": 573,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "capes/sir_emerald_prism.png": {
+      "sha256": "281f14487be4778dd63214388d2af4159841dd0acd14f1e38313630868f57419",
+      "size": 547,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "capes/sir_obsidian_neon.png": {
+      "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
+      "size": 513,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "capes/sir_void_dragon.png": {
+      "sha256": "1d84233e173d4b7e1c90c92c35454d306a45b1846615887bd07b4fae7f27d61f",
+      "size": 507,
+      "mtime": 1788853223,
+      "category": "cape"
+    },
+    "config/NoChatReports/NCR-Client.json": {
+      "sha256": "eb5ce0eb5bb0a5edebc05dee8e8adf0ef0469cb61862f611fbd07e3dd28b1c6a",
+      "size": 219,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "config/NoChatReports/NCR-Common.json": {
+      "sha256": "428a44892f4a71e70e22ade7c3af9f2a7e0760a2e1062faa4956f00b3867946f",
+      "size": 236,
+      "mtime": 1788838483,
+      "category": "config"
+    },
     "config/customskinloader.json": {
-      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
-      "size": 261,
-      "mtime": 1788559005,
+      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
+      "size": 341,
+      "mtime": 1788853007,
       "category": "config"
     },
     "config/divein.json": {
@@ -49,9 +103,9 @@
       "category": "config"
     },
     "config/inventoryhud.json": {
-      "sha256": "b1870c9cb026e5db35dbe9643e5b2b92406b1620a78e7ce2282790978c6d4d5c",
-      "size": 1688,
-      "mtime": 1788492523,
+      "sha256": "2cad003b0d354ab6507b4b751a05d4d487376f1f1a99914ce729d326b0c13e90",
+      "size": 1766,
+      "mtime": 1788838483,
       "category": "config"
     },
     "config/iris.properties": {
@@ -70,6 +124,12 @@
       "sha256": "36ead619b870040a6b85fbfb7089e77fca5349c6cf2551ae855611088c9c54cc",
       "size": 305,
       "mtime": 1787313408,
+      "category": "config"
+    },
+    "config/resourcify.json": {
+      "sha256": "280c1c3abbcd746ee2aee76c128899391cbf5c939fe008451bce75d41c6644ce",
+      "size": 230,
+      "mtime": 1788838483,
       "category": "config"
     },
     "config/sir_core.json": {
@@ -103,9 +163,9 @@
       "category": "config"
     },
     "instances/1.8.9-balanced/instance.cfg": {
-      "sha256": "0259ca5cf7e85fa974e092646ed4ba84d212e4d7050e9730ab8782485ab803fa",
-      "size": 365,
-      "mtime": 1788380651,
+      "sha256": "47793f7277fc01ad3be67164fd74421ca3bfa1dc83417da0ab83a6456fc7d1c5",
+      "size": 386,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/1.8.9-balanced/minecraft/assets/lunar/dev_cosmetics.json": {
@@ -276,6 +336,12 @@
       "mtime": 1786226519,
       "category": "mod"
     },
+    "instances/1.8.9-balanced/minecraft/mods/Keystrokes-1.8.9-forge-1.0.0.jar": {
+      "sha256": "a2b25adcecc9c84feb914ba1b81ce36da74d8e9f0d4a8a227cc131d5479e9ab0",
+      "size": 28299,
+      "mtime": 1788838280,
+      "category": "mod"
+    },
     "instances/1.8.9-balanced/minecraft/mods/MemoryFix-0.3.jar": {
       "sha256": "5507f968691be57d741071fb1329021c80081d68db8e5d233f4828c813013623",
       "size": 12002,
@@ -385,9 +451,9 @@
       "category": "mod"
     },
     "instances/1.8.9-balanced/minecraft/options.txt": {
-      "sha256": "1943d0a08e086ec062ecffff2bc7fa85c28e0ecc69a493c67a13acaa61531b5c",
-      "size": 493,
-      "mtime": 1788492554,
+      "sha256": "1b5a5403aa1bfb21ef84809ecd9f1878f17ec4d86f58be5f79da9f1c95581e2d",
+      "size": 515,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-balanced/minecraft/optionsof.txt": {
@@ -408,10 +474,22 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9-balanced/minecraft/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
+    "instances/1.8.9-balanced/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/1.8.9-balanced/minecraft/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-balanced/mmc-pack.json": {
@@ -421,9 +499,9 @@
       "category": "instance_meta"
     },
     "instances/1.8.9-balanced/options.txt": {
-      "sha256": "1943d0a08e086ec062ecffff2bc7fa85c28e0ecc69a493c67a13acaa61531b5c",
-      "size": 493,
-      "mtime": 1788492554,
+      "sha256": "1b5a5403aa1bfb21ef84809ecd9f1878f17ec4d86f58be5f79da9f1c95581e2d",
+      "size": 515,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-balanced/optionsof.txt": {
@@ -444,10 +522,16 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9-balanced/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
     "instances/1.8.9-balanced/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-performance/OneConfig/OneConfig (1.8.9-forge).jar": {
@@ -571,9 +655,9 @@
       "category": "config"
     },
     "instances/1.8.9-performance/instance.cfg": {
-      "sha256": "1dbf15bfa0ac11e0c9029b2f0ee65d49b5db14607cdc70b0628732a6f68be930",
-      "size": 368,
-      "mtime": 1788380651,
+      "sha256": "dc202010d2c898dff111295a7bd5cf7f23fabb360f5dec852ce78340470eccb6",
+      "size": 389,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/1.8.9-performance/minecraft/assets/lunar/dev_cosmetics.json": {
@@ -1062,6 +1146,12 @@
       "mtime": 1788379942,
       "category": "mod"
     },
+    "instances/1.8.9-performance/minecraft/mods/Keystrokes-1.8.9-forge-1.0.0.jar": {
+      "sha256": "a2b25adcecc9c84feb914ba1b81ce36da74d8e9f0d4a8a227cc131d5479e9ab0",
+      "size": 28299,
+      "mtime": 1788838280,
+      "category": "mod"
+    },
     "instances/1.8.9-performance/minecraft/mods/MemoryFix-0.3.jar": {
       "sha256": "5507f968691be57d741071fb1329021c80081d68db8e5d233f4828c813013623",
       "size": 12002,
@@ -1171,9 +1261,9 @@
       "category": "mod"
     },
     "instances/1.8.9-performance/minecraft/options.txt": {
-      "sha256": "e7c2ae85240d010123b6514f874aadbdaab18ca6ee19909f2a3b94b866f5bf36",
-      "size": 495,
-      "mtime": 1788492554,
+      "sha256": "f39a62e63a93328a05b251704e3a5cf397108eb434a21d148e11fa0d4a595255",
+      "size": 517,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-performance/minecraft/optionsof.txt": {
@@ -1194,16 +1284,28 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9-performance/minecraft/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
+    "instances/1.8.9-performance/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -1219,9 +1321,9 @@
       "category": "instance_meta"
     },
     "instances/1.8.9-performance/options.txt": {
-      "sha256": "e7c2ae85240d010123b6514f874aadbdaab18ca6ee19909f2a3b94b866f5bf36",
-      "size": 495,
-      "mtime": 1788492554,
+      "sha256": "f39a62e63a93328a05b251704e3a5cf397108eb434a21d148e11fa0d4a595255",
+      "size": 517,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-performance/optionsof.txt": {
@@ -1242,16 +1344,22 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9-performance/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
     "instances/1.8.9-performance/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-performance/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/1.8.9-performance/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -1381,9 +1489,9 @@
       "category": "config"
     },
     "instances/1.8.9-ultra/instance.cfg": {
-      "sha256": "607813f07745c6ea93b3c027b9b0beb8b165390f445dad462bcc81a988c07b34",
-      "size": 364,
-      "mtime": 1788380651,
+      "sha256": "397a7d4463ec0432d4cd2634317289da0bb6caaad3defb5ec88453ddb720efb8",
+      "size": 385,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/1.8.9-ultra/minecraft/XaeroWaypoints/New World/config.txt": {
@@ -3120,6 +3228,12 @@
       "mtime": 1788832607,
       "category": "mod"
     },
+    "instances/1.8.9-ultra/minecraft/mods/Keystrokes-1.8.9-forge-1.0.0.jar": {
+      "sha256": "a2b25adcecc9c84feb914ba1b81ce36da74d8e9f0d4a8a227cc131d5479e9ab0",
+      "size": 28299,
+      "mtime": 1788838280,
+      "category": "mod"
+    },
     "instances/1.8.9-ultra/minecraft/mods/MemoryFix-0.3.jar": {
       "sha256": "5507f968691be57d741071fb1329021c80081d68db8e5d233f4828c813013623",
       "size": 12002,
@@ -3222,12 +3336,6 @@
       "mtime": 1788832607,
       "category": "mod"
     },
-    "instances/1.8.9-ultra/minecraft/mods/journeymap-1.8.9-5.2.4-unlimited.jar": {
-      "sha256": "378d41eb5b6a76d2a884f8ad2e5e7734f8b3dccb20f5371d4eaff6d6148217ed",
-      "size": 1795836,
-      "mtime": 1788832607,
-      "category": "mod"
-    },
     "instances/1.8.9-ultra/minecraft/mods/sharpnessparticles -PrideSyria.jar": {
       "sha256": "2e5bb429eeb2f53b555235ae9946a968140d149568dd66193538cfbe712ec0f3",
       "size": 2382,
@@ -3235,9 +3343,9 @@
       "category": "mod"
     },
     "instances/1.8.9-ultra/minecraft/options.txt": {
-      "sha256": "b009daeb3b013c121a335f64eb2b27b24d00d9151ec250ebb3a7df2f95563d35",
-      "size": 3461,
-      "mtime": 1788832731,
+      "sha256": "4795b5da453df858cd041437c1d7fdd5e2859ba53c21a5e1f988706eca1c0ff3",
+      "size": 3535,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-ultra/minecraft/optionsof.txt": {
@@ -3264,16 +3372,22 @@
       "mtime": 1788833911,
       "category": "resourcepack"
     },
+    "instances/1.8.9-ultra/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -3301,9 +3415,9 @@
       "category": "instance_meta"
     },
     "instances/1.8.9-ultra/options.txt": {
-      "sha256": "e2dc8a1131199c2ae76e0a13204f2f1d1bd73201c46a899b04d2588a5e57bf75",
-      "size": 493,
-      "mtime": 1788492554,
+      "sha256": "7b3ba2e317199f3b0d0b7d52fe46c70e498625fd7a8dd688d363d0105ccce28a",
+      "size": 515,
+      "mtime": 1788852698,
       "category": "instance_meta"
     },
     "instances/1.8.9-ultra/optionsof.txt": {
@@ -3333,13 +3447,13 @@
     "instances/1.8.9-ultra/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9-ultra/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/1.8.9-ultra/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -3367,15 +3481,21 @@
       "category": "config"
     },
     "instances/1.8.9/instance.cfg": {
-      "sha256": "3a3706b0a044eb88d06c5395b44b5c5910aa550eea443f7f67b42b2cda0b4f63",
-      "size": 382,
-      "mtime": 1788190265,
+      "sha256": "427bed41c3421cd9b6f429641dd9b507df9522553196bce64bc55489abf76fed",
+      "size": 403,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/assets/lunar/dev_cosmetics.json": {
       "sha256": "277874af2d4aa0ff11fdad631d4fe5c0a9ec0226d5c089fecace211225e6c122",
       "size": 25,
       "mtime": 1788547056,
+      "category": "instance_meta"
+    },
+    "instances/1.8.9/minecraft/capes/TestPlayer_cape.png": {
+      "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
+      "size": 513,
+      "mtime": 1788852921,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/config/MouseTweaks.cfg": {
@@ -3397,9 +3517,9 @@
       "category": "config"
     },
     "instances/1.8.9/minecraft/config/customskinloader.json": {
-      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
-      "size": 261,
-      "mtime": 1788559005,
+      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
+      "size": 341,
+      "mtime": 1788853007,
       "category": "config"
     },
     "instances/1.8.9/minecraft/config/entity_texture_features.json": {
@@ -3546,6 +3666,12 @@
       "mtime": 1786226519,
       "category": "mod"
     },
+    "instances/1.8.9/minecraft/mods/Keystrokes-1.8.9-forge-1.0.0.jar": {
+      "sha256": "a2b25adcecc9c84feb914ba1b81ce36da74d8e9f0d4a8a227cc131d5479e9ab0",
+      "size": 28299,
+      "mtime": 1788838280,
+      "category": "mod"
+    },
     "instances/1.8.9/minecraft/mods/MemoryFix-0.3.jar": {
       "sha256": "5507f968691be57d741071fb1329021c80081d68db8e5d233f4828c813013623",
       "size": 12002,
@@ -3657,7 +3783,7 @@
     "instances/1.8.9/minecraft/options.txt": {
       "sha256": "5cd75b44dfb0bb68d21954a04edf523bf4b074c391ffc7c2b4388024437535d3",
       "size": 735,
-      "mtime": 1788837917,
+      "mtime": 1788852922,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/optionsof.txt": {
@@ -3678,16 +3804,34 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9/minecraft/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
+    "instances/1.8.9/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/1.8.9/minecraft/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/1.8.9/minecraft/skins/SirAhmed1.png": {
       "sha256": "41b23290c247305dce33529a6e34bf8e266d9a03d1519ece56aa57cc9f1caa51",
       "size": 1426,
       "mtime": 1788559005,
+      "category": "instance_meta"
+    },
+    "instances/1.8.9/minecraft/skins/TestPlayer.png": {
+      "sha256": "304e757e41f3a68c793ebb7054982977075974dcd38bb5228c384cb06dfcd571",
+      "size": 1995,
+      "mtime": 1788853007,
       "category": "instance_meta"
     },
     "instances/1.8.9/mmc-pack.json": {
@@ -3699,7 +3843,7 @@
     "instances/1.8.9/options.txt": {
       "sha256": "89b3937fbd9f4ff5d79d8e05a954c6db62d4c904929719f047c130306a77aacf",
       "size": 541,
-      "mtime": 1788837917,
+      "mtime": 1788852922,
       "category": "instance_meta"
     },
     "instances/1.8.9/optionsof.txt": {
@@ -3720,10 +3864,16 @@
       "mtime": 1788193941,
       "category": "resourcepack"
     },
+    "instances/1.8.9/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
     "instances/1.8.9/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/26.2-balanced/assets/lunar/dev_cosmetics.json": {
@@ -3731,6 +3881,12 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2-balanced/config/c2me.toml": {
+      "sha256": "5f7a608c0f58cda1e38b932eb2ced056da18f647c450aa0742467f79d54faccd",
+      "size": 159,
+      "mtime": 1788852697,
+      "category": "config"
     },
     "instances/26.2-balanced/config/debugify.json": {
       "sha256": "5b79b0dd590f358142d30ac01571f58051c1649159ded7164fa1ec9535d77f62",
@@ -3775,9 +3931,15 @@
       "category": "config"
     },
     "instances/26.2-balanced/config/physicsmod/physics_client_config.json": {
-      "sha256": "f442efa18f4246579b74a81991533e82f21d627f9cef1b21de993e1e83765306",
-      "size": 895,
-      "mtime": 1788339948,
+      "sha256": "7bd7e40f1bafcced7e7de168fbacee60b3c840a5576c2384c540c45f1fda9ed8",
+      "size": 974,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-balanced/config/puddleflood.json": {
@@ -3793,15 +3955,27 @@
       "category": "config"
     },
     "instances/26.2-balanced/config/sodium-options.json": {
-      "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
-      "size": 384,
-      "mtime": 1788110674,
+      "sha256": "fce017f2d310fa3e606bb42a07ce6b3a48d6a576e242b81ccbacba1134e70870",
+      "size": 587,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-balanced/instance.cfg": {
-      "sha256": "5963026600642f7fd051349e36dc0bf168e39962810e356d8190e2a8e6301173",
-      "size": 318,
-      "mtime": 1788380651,
+      "sha256": "6ff1f36fe7dc6b719802de010fab62913cd97f8c7178756487bb96533980cef1",
+      "size": 388,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/26.2-balanced/minecraft/assets/lunar/dev_cosmetics.json": {
@@ -3809,6 +3983,24 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2-balanced/minecraft/config/NoChatReports/NCR-Client.json": {
+      "sha256": "eb5ce0eb5bb0a5edebc05dee8e8adf0ef0469cb61862f611fbd07e3dd28b1c6a",
+      "size": 219,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/NoChatReports/NCR-Common.json": {
+      "sha256": "428a44892f4a71e70e22ade7c3af9f2a7e0760a2e1062faa4956f00b3867946f",
+      "size": 236,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/c2me.toml": {
+      "sha256": "5f7a608c0f58cda1e38b932eb2ced056da18f647c450aa0742467f79d54faccd",
+      "size": 159,
+      "mtime": 1788852697,
+      "category": "config"
     },
     "instances/26.2-balanced/minecraft/config/entity_texture_features.json": {
       "sha256": "2dae6179a9f771b75e5867c6136d063eb3a282167aad26ef1d2807b8bb28c1c1",
@@ -3829,15 +4021,33 @@
       "category": "config"
     },
     "instances/26.2-balanced/minecraft/config/inventoryhud.json": {
-      "sha256": "b1870c9cb026e5db35dbe9643e5b2b92406b1620a78e7ce2282790978c6d4d5c",
-      "size": 1688,
-      "mtime": 1788492523,
+      "sha256": "2cad003b0d354ab6507b4b751a05d4d487376f1f1a99914ce729d326b0c13e90",
+      "size": 1766,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-balanced/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
       "mtime": 1788342981,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/physicsmod/physics_client_config.json": {
+      "sha256": "f85058516d3cf3c0dd56fb26d7a858beee8f873585bec13f413f3b837bad3953",
+      "size": 82,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/resourcify.json": {
+      "sha256": "280c1c3abbcd746ee2aee76c128899391cbf5c939fe008451bce75d41c6644ce",
+      "size": 230,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-balanced/minecraft/config/skinlayers.json": {
@@ -3847,9 +4057,21 @@
       "category": "config"
     },
     "instances/26.2-balanced/minecraft/config/sodium-options.json": {
-      "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
-      "size": 384,
-      "mtime": 1788110674,
+      "sha256": "fce017f2d310fa3e606bb42a07ce6b3a48d6a576e242b81ccbacba1134e70870",
+      "size": 587,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-balanced/minecraft/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-balanced/minecraft/mods/1.0.0-better_maces-mod-26.2.jar": {
@@ -4704,6 +4926,12 @@
       "mtime": 1786264045,
       "category": "mod"
     },
+    "instances/26.2-balanced/minecraft/mods/keystrokes-mod-1.0.5.jar": {
+      "sha256": "8c4646c1bd0e1b4eb20e2a3bbcf1a4f60145a5fe1e478b7582ebd79d082eaf3b",
+      "size": 102146,
+      "mtime": 1788838286,
+      "category": "mod"
+    },
     "instances/26.2-balanced/minecraft/mods/kleeslabs-fabric-26.2-26.2.0.1.jar": {
       "sha256": "8d5b4a7c647ea44e01816d10aaf7ab4cd508422490b70fff4f517f5d66e52bf6",
       "size": 292219,
@@ -5209,10 +5437,16 @@
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/options.txt": {
-      "sha256": "6af8e88c504174c3391f475bc5c69219f541b2100f44850649e01546466733e1",
-      "size": 533,
-      "mtime": 1788492554,
+      "sha256": "99be665f8d84f8b2985c2ef04611b8655ff468ad3edf00b45ac4ff3ef9b2b06c",
+      "size": 1032,
+      "mtime": 1788852698,
       "category": "instance_meta"
+    },
+    "instances/26.2-balanced/minecraft/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
     },
     "instances/26.2-balanced/minecraft/resourcepacks/SIR Modern.zip": {
       "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
@@ -5220,10 +5454,16 @@
       "mtime": 1788833911,
       "category": "resourcepack"
     },
+    "instances/26.2-balanced/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/26.2-balanced/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-balanced/minecraft/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -5239,10 +5479,16 @@
       "category": "instance_meta"
     },
     "instances/26.2-balanced/options.txt": {
-      "sha256": "6af8e88c504174c3391f475bc5c69219f541b2100f44850649e01546466733e1",
-      "size": 533,
-      "mtime": 1788492554,
+      "sha256": "8a0d00c885ba56cf91d7300ced781c076239902e046dbb52b140d9899202a9e2",
+      "size": 1013,
+      "mtime": 1788852698,
       "category": "instance_meta"
+    },
+    "instances/26.2-balanced/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
     },
     "instances/26.2-balanced/resourcepacks/SIR Modern.zip": {
       "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
@@ -5251,9 +5497,9 @@
       "category": "resourcepack"
     },
     "instances/26.2-balanced/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-balanced/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -5267,6 +5513,12 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2-performance/config/c2me.toml": {
+      "sha256": "5f7a608c0f58cda1e38b932eb2ced056da18f647c450aa0742467f79d54faccd",
+      "size": 159,
+      "mtime": 1788852697,
+      "category": "config"
     },
     "instances/26.2-performance/config/debugify.json": {
       "sha256": "5b79b0dd590f358142d30ac01571f58051c1649159ded7164fa1ec9535d77f62",
@@ -5311,9 +5563,15 @@
       "category": "config"
     },
     "instances/26.2-performance/config/physicsmod/physics_client_config.json": {
-      "sha256": "f442efa18f4246579b74a81991533e82f21d627f9cef1b21de993e1e83765306",
-      "size": 895,
-      "mtime": 1788339948,
+      "sha256": "7bd7e40f1bafcced7e7de168fbacee60b3c840a5576c2384c540c45f1fda9ed8",
+      "size": 974,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-performance/config/puddleflood.json": {
@@ -5329,15 +5587,27 @@
       "category": "config"
     },
     "instances/26.2-performance/config/sodium-options.json": {
-      "sha256": "4025c81ccab62739e60e41030e20b0ba17d19468991745813de43f68a9ff38a1",
-      "size": 377,
-      "mtime": 1788110674,
+      "sha256": "54dd695b643b4baae446277641c59e82045aa9d47e9fba3213f3aa872b231809",
+      "size": 582,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-performance/instance.cfg": {
-      "sha256": "fe8f4a76d55e8ec361a7f0cf62ce2fbd0ab9cdff1aa3d0d8e7ba46735eb7d167",
-      "size": 321,
-      "mtime": 1788380651,
+      "sha256": "431976e5aaa4f60144b48cfd5270119f8f7d05ba3dc5b607356ec8ec0e459dcd",
+      "size": 391,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/26.2-performance/minecraft/assets/lunar/dev_cosmetics.json": {
@@ -5345,6 +5615,24 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2-performance/minecraft/config/NoChatReports/NCR-Client.json": {
+      "sha256": "eb5ce0eb5bb0a5edebc05dee8e8adf0ef0469cb61862f611fbd07e3dd28b1c6a",
+      "size": 219,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/NoChatReports/NCR-Common.json": {
+      "sha256": "428a44892f4a71e70e22ade7c3af9f2a7e0760a2e1062faa4956f00b3867946f",
+      "size": 236,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/c2me.toml": {
+      "sha256": "5f7a608c0f58cda1e38b932eb2ced056da18f647c450aa0742467f79d54faccd",
+      "size": 159,
+      "mtime": 1788852697,
+      "category": "config"
     },
     "instances/26.2-performance/minecraft/config/entity_texture_features.json": {
       "sha256": "2dae6179a9f771b75e5867c6136d063eb3a282167aad26ef1d2807b8bb28c1c1",
@@ -5365,15 +5653,33 @@
       "category": "config"
     },
     "instances/26.2-performance/minecraft/config/inventoryhud.json": {
-      "sha256": "b1870c9cb026e5db35dbe9643e5b2b92406b1620a78e7ce2282790978c6d4d5c",
-      "size": 1688,
-      "mtime": 1788492523,
+      "sha256": "2cad003b0d354ab6507b4b751a05d4d487376f1f1a99914ce729d326b0c13e90",
+      "size": 1766,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-performance/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
       "mtime": 1788342981,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/physicsmod/physics_client_config.json": {
+      "sha256": "f85058516d3cf3c0dd56fb26d7a858beee8f873585bec13f413f3b837bad3953",
+      "size": 82,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/resourcify.json": {
+      "sha256": "280c1c3abbcd746ee2aee76c128899391cbf5c939fe008451bce75d41c6644ce",
+      "size": 230,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-performance/minecraft/config/skinlayers.json": {
@@ -5383,9 +5689,21 @@
       "category": "config"
     },
     "instances/26.2-performance/minecraft/config/sodium-options.json": {
-      "sha256": "4025c81ccab62739e60e41030e20b0ba17d19468991745813de43f68a9ff38a1",
-      "size": 377,
-      "mtime": 1788110674,
+      "sha256": "54dd695b643b4baae446277641c59e82045aa9d47e9fba3213f3aa872b231809",
+      "size": 582,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-performance/minecraft/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-performance/minecraft/mods/1.0.0-better_maces-mod-26.2.jar": {
@@ -6240,6 +6558,12 @@
       "mtime": 1786264045,
       "category": "mod"
     },
+    "instances/26.2-performance/minecraft/mods/keystrokes-mod-1.0.5.jar": {
+      "sha256": "8c4646c1bd0e1b4eb20e2a3bbcf1a4f60145a5fe1e478b7582ebd79d082eaf3b",
+      "size": 102146,
+      "mtime": 1788838286,
+      "category": "mod"
+    },
     "instances/26.2-performance/minecraft/mods/kleeslabs-fabric-26.2-26.2.0.1.jar": {
       "sha256": "8d5b4a7c647ea44e01816d10aaf7ab4cd508422490b70fff4f517f5d66e52bf6",
       "size": 292219,
@@ -6751,10 +7075,16 @@
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/options.txt": {
-      "sha256": "04caad5c4defaef8b9fb7c25ec49b32df0f6e4e2e29ec6e1e4dd11e4aa2afe9e",
-      "size": 826,
-      "mtime": 1788492554,
+      "sha256": "553f98696e6237a0e8210455a6508b24cd4593cc935ad30dfcef7d582f57056b",
+      "size": 1325,
+      "mtime": 1788852698,
       "category": "instance_meta"
+    },
+    "instances/26.2-performance/minecraft/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
     },
     "instances/26.2-performance/minecraft/resourcepacks/SIR Modern.zip": {
       "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
@@ -6762,10 +7092,16 @@
       "mtime": 1788833911,
       "category": "resourcepack"
     },
+    "instances/26.2-performance/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
     "instances/26.2-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-performance/minecraft/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -6781,10 +7117,16 @@
       "category": "instance_meta"
     },
     "instances/26.2-performance/options.txt": {
-      "sha256": "04caad5c4defaef8b9fb7c25ec49b32df0f6e4e2e29ec6e1e4dd11e4aa2afe9e",
-      "size": 826,
-      "mtime": 1788492554,
+      "sha256": "b5c4eed174f3b86229f580d3ae1e96a40702878dbac079d53dbe2595c21f9d15",
+      "size": 1306,
+      "mtime": 1788852698,
       "category": "instance_meta"
+    },
+    "instances/26.2-performance/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
     },
     "instances/26.2-performance/resourcepacks/SIR Modern.zip": {
       "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
@@ -6793,9 +7135,9 @@
       "category": "resourcepack"
     },
     "instances/26.2-performance/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-performance/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -7369,9 +7711,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/c2me.toml": {
-      "sha256": "e6be0c5a9ba0f61f67d9ae62c0718acacbddd6fc4f03d4950868511c5ec0d59a",
-      "size": 10651,
-      "mtime": 1788113360,
+      "sha256": "35edda18bc363ac2871725d4edd24eb7c4d89dc6aeca20d7df89d16bd302341c",
+      "size": 10771,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/config/cardinal-components-api.properties": {
@@ -8019,7 +8361,7 @@
     "instances/26.2-ultra/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788837908,
+      "mtime": 1788852914,
       "category": "config"
     },
     "instances/26.2-ultra/config/irisSearchSettings.toml": {
@@ -8329,9 +8671,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/physicsmod/physics_client_config.json": {
-      "sha256": "a0b9b837a105d1ae7299831557962a3aaf3ec1f142f2ef29632678ec056e0467",
-      "size": 4971,
-      "mtime": 1788339948,
+      "sha256": "6f96f58d59203d6a39c704ebf1c51bf1da494cbe52c062e68d83bb1149a41873",
+      "size": 4987,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/config/physicsmod/physics_cloth_config.json": {
@@ -8389,9 +8731,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/presencefootsteps/userconfig.json5": {
-      "sha256": "90fab4d4fe137ee65a86934eab457c4c679a87f6bd3188a320e8c0ade3ef5112",
-      "size": 3341,
-      "mtime": 1788113381,
+      "sha256": "4e3326182c2457a0455416fa28e902f9a1422cf3c0e5b6a1902d591831d7af08",
+      "size": 929,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/config/prettybeaches-common.toml": {
@@ -8535,7 +8877,7 @@
     "instances/26.2-ultra/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788837908,
+      "mtime": 1788852914,
       "category": "config"
     },
     "instances/26.2-ultra/config/sodium-shadowy-path-blocks-options.json": {
@@ -8563,9 +8905,15 @@
       "category": "config"
     },
     "instances/26.2-ultra/config/sound_physics_remastered/soundphysics.properties": {
-      "sha256": "d29dede3f214ee4b1aa03314f92c3f973c21ee6e26d173eba3d01a2083237b6d",
-      "size": 5104,
-      "mtime": 1788113376,
+      "sha256": "bff1628af8c44cba6746d704d720b9671d7cddd442a3b2e52abeb06bb5d4eb87",
+      "size": 5346,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-ultra/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/config/sounds/chat.json": {
@@ -8917,9 +9265,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/instance.cfg": {
-      "sha256": "6a0df12ac40b65f9d2e822774bbb02dc2e357c9ddf25f358ed1650503705b63c",
-      "size": 317,
-      "mtime": 1788380651,
+      "sha256": "ed9de6ad8a484180a4fc714988aa49a9914c330c985084e0a7e8b0b00d767431",
+      "size": 387,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/READ_ME_IMPORTANT.txt": {
@@ -8950,6 +9298,18 @@
       "sha256": "4069ce1a439d8c37453c1b1e9f2037e0942674c7e48723a39b37eab245792ad4",
       "size": 135,
       "mtime": 1788192241,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/NoChatReports/NCR-Client.json": {
+      "sha256": "eb5ce0eb5bb0a5edebc05dee8e8adf0ef0469cb61862f611fbd07e3dd28b1c6a",
+      "size": 219,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/NoChatReports/NCR-Common.json": {
+      "sha256": "428a44892f4a71e70e22ade7c3af9f2a7e0760a2e1062faa4956f00b3867946f",
+      "size": 236,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/QuantifiedAPI/quantified_config.json": {
@@ -9301,9 +9661,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/c2me.toml": {
-      "sha256": "e6be0c5a9ba0f61f67d9ae62c0718acacbddd6fc4f03d4950868511c5ec0d59a",
-      "size": 10651,
-      "mtime": 1788830519,
+      "sha256": "35edda18bc363ac2871725d4edd24eb7c4d89dc6aeca20d7df89d16bd302341c",
+      "size": 10771,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/cardinal-components-api.properties": {
@@ -9745,9 +10105,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/inventoryhud.json": {
-      "sha256": "2d4339cf160718a4aa08d9fd32519a68dbda23b90d8300a0fa110dc09eafb329",
-      "size": 1686,
-      "mtime": 1788831361,
+      "sha256": "a031d1c5eef32c05a425ee2e847ab8e5bcdb2b4fce9e629d054b9f6bfdea5b6c",
+      "size": 1764,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/inventoryprofilesnext/New World/villager-trading-config-v2.json": {
@@ -9777,7 +10137,7 @@
     "instances/26.2-ultra/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788837908,
+      "mtime": 1788852914,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/irisSearchSettings.toml": {
@@ -10056,6 +10416,12 @@
       "mtime": 1788192236,
       "category": "config"
     },
+    "instances/26.2-ultra/minecraft/config/physicsmod/physics_client_config.json": {
+      "sha256": "f85058516d3cf3c0dd56fb26d7a858beee8f873585bec13f413f3b837bad3953",
+      "size": 82,
+      "mtime": 1788852697,
+      "category": "config"
+    },
     "instances/26.2-ultra/minecraft/config/pickupnotifier-client.toml": {
       "sha256": "878c0031b8433cf27416e34526b481dddcdb819629bc7564f088994317d1cb22",
       "size": 4598,
@@ -10081,9 +10447,9 @@
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/presencefootsteps/userconfig.json5": {
-      "sha256": "90fab4d4fe137ee65a86934eab457c4c679a87f6bd3188a320e8c0ade3ef5112",
-      "size": 3341,
-      "mtime": 1788830534,
+      "sha256": "4e3326182c2457a0455416fa28e902f9a1422cf3c0e5b6a1902d591831d7af08",
+      "size": 929,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/prettybeaches-common.toml": {
@@ -10132,6 +10498,12 @@
       "sha256": "3c62c6e009f24024d6852284b6ed1cb8e5d7a8f9f07d5b6beb6670e652699ca7",
       "size": 86,
       "mtime": 1788192244,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/resourcify.json": {
+      "sha256": "280c1c3abbcd746ee2aee76c128899391cbf5c939fe008451bce75d41c6644ce",
+      "size": 230,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/rightclickharvest.json5": {
@@ -10215,7 +10587,7 @@
     "instances/26.2-ultra/minecraft/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788837908,
+      "mtime": 1788852914,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sodium-shadowy-path-blocks-options.json": {
@@ -10243,9 +10615,15 @@
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sound_physics_remastered/soundphysics.properties": {
-      "sha256": "d29dede3f214ee4b1aa03314f92c3f973c21ee6e26d173eba3d01a2083237b6d",
-      "size": 5104,
-      "mtime": 1788830529,
+      "sha256": "bff1628af8c44cba6746d704d720b9671d7cddd442a3b2e52abeb06bb5d4eb87",
+      "size": 5346,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2-ultra/minecraft/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sounds/chat.json": {
@@ -13824,6 +14202,12 @@
       "mtime": 1786264045,
       "category": "mod"
     },
+    "instances/26.2-ultra/minecraft/mods/keystrokes-mod-1.0.5.jar": {
+      "sha256": "8c4646c1bd0e1b4eb20e2a3bbcf1a4f60145a5fe1e478b7582ebd79d082eaf3b",
+      "size": 102146,
+      "mtime": 1788838286,
+      "category": "mod"
+    },
     "instances/26.2-ultra/minecraft/mods/kleeslabs-fabric-26.2-26.2.0.1.jar": {
       "sha256": "8d5b4a7c647ea44e01816d10aaf7ab4cd508422490b70fff4f517f5d66e52bf6",
       "size": 292219,
@@ -14329,10 +14713,16 @@
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/options.txt": {
-      "sha256": "2f117fe4c0aa0db6e05a735c21f2a335e047597dd54a581ac82fd4065075d5a7",
-      "size": 12852,
-      "mtime": 1788837908,
+      "sha256": "644f5ef40820fbd34606971e84c9b484650b337ebdf69018a8b6f8b8a3bd305c",
+      "size": 13175,
+      "mtime": 1788852914,
       "category": "instance_meta"
+    },
+    "instances/26.2-ultra/minecraft/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
     },
     "instances/26.2-ultra/minecraft/resourcepacks/SIR Modern.zip": {
       "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
@@ -14341,9 +14731,9 @@
       "category": "resourcepack"
     },
     "instances/26.2-ultra/minecraft/servers.dat": {
-      "sha256": "f68f7e9de257172d4dbb0138dcd2f34acf1687d6f7a42b27010f05efc0b10914",
-      "size": 4559,
-      "mtime": 1788193019,
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/servers.dat_old": {
@@ -14353,9 +14743,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-ultra/minecraft/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -14383,9 +14773,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/options.txt": {
-      "sha256": "4f3024eac6c37a3cd8fc6011a298affe14afcf2829471759967a180ed9d4dcfc",
-      "size": 13259,
-      "mtime": 1788837908,
+      "sha256": "659d81262f99e64e4816ca1059ae81edab355ae109d189eb0c7d59ed2503239b",
+      "size": 13582,
+      "mtime": 1788852914,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/resourcepacks/SIR Legacy.zip": {
@@ -14400,12 +14790,6 @@
       "mtime": 1788833911,
       "category": "resourcepack"
     },
-    "instances/26.2-ultra/servers.dat": {
-      "sha256": "f68f7e9de257172d4dbb0138dcd2f34acf1687d6f7a42b27010f05efc0b10914",
-      "size": 4559,
-      "mtime": 1788113436,
-      "category": "instance_meta"
-    },
     "instances/26.2-ultra/servers.dat_old": {
       "sha256": "7914576c50f28b20e013532a4c7a92d5f727e3022add6fdcb06b0f597bad4808",
       "size": 74,
@@ -14415,13 +14799,13 @@
     "instances/26.2-ultra/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/26.2-ultra/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2-ultra/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -14441,6 +14825,12 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2/config/c2me.toml": {
+      "sha256": "5f7a608c0f58cda1e38b932eb2ced056da18f647c450aa0742467f79d54faccd",
+      "size": 159,
+      "mtime": 1788852697,
+      "category": "config"
     },
     "instances/26.2/config/debugify.json": {
       "sha256": "5b79b0dd590f358142d30ac01571f58051c1649159ded7164fa1ec9535d77f62",
@@ -14485,9 +14875,15 @@
       "category": "config"
     },
     "instances/26.2/config/physicsmod/physics_client_config.json": {
-      "sha256": "f442efa18f4246579b74a81991533e82f21d627f9cef1b21de993e1e83765306",
-      "size": 895,
-      "mtime": 1788339948,
+      "sha256": "7bd7e40f1bafcced7e7de168fbacee60b3c840a5576c2384c540c45f1fda9ed8",
+      "size": 974,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2/config/puddleflood.json": {
@@ -14503,15 +14899,27 @@
       "category": "config"
     },
     "instances/26.2/config/sodium-options.json": {
-      "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
-      "size": 384,
-      "mtime": 1788110674,
+      "sha256": "fce017f2d310fa3e606bb42a07ce6b3a48d6a576e242b81ccbacba1134e70870",
+      "size": 587,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2/instance.cfg": {
-      "sha256": "193cfcfd8c5e0a560956723a3709f1df6ab83292eb5138d1a5971aed7aa3b9af",
-      "size": 318,
-      "mtime": 1788476648,
+      "sha256": "0d2a3338480133798c56bcf3303adf1fba5e6103a18c09a27cf1e1da17e944fe",
+      "size": 388,
+      "mtime": 1788838530,
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/assets/lunar/dev_cosmetics.json": {
@@ -14519,6 +14927,24 @@
       "size": 25,
       "mtime": 1788547056,
       "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/capes/TestPlayer_cape.png": {
+      "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
+      "size": 513,
+      "mtime": 1788852921,
+      "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/config/NoChatReports/NCR-Client.json": {
+      "sha256": "eb5ce0eb5bb0a5edebc05dee8e8adf0ef0469cb61862f611fbd07e3dd28b1c6a",
+      "size": 219,
+      "mtime": 1788838483,
+      "category": "config"
+    },
+    "instances/26.2/minecraft/config/NoChatReports/NCR-Common.json": {
+      "sha256": "428a44892f4a71e70e22ade7c3af9f2a7e0760a2e1062faa4956f00b3867946f",
+      "size": 236,
+      "mtime": 1788838483,
+      "category": "config"
     },
     "instances/26.2/minecraft/config/asynclogger.toml": {
       "sha256": "e0804713763b355f2d434ae1c930dd9fe5e720db313ca68fad3ea32c208b1d59",
@@ -14551,15 +14977,15 @@
       "category": "config"
     },
     "instances/26.2/minecraft/config/c2me.toml": {
-      "sha256": "e6be0c5a9ba0f61f67d9ae62c0718acacbddd6fc4f03d4950868511c5ec0d59a",
-      "size": 10651,
-      "mtime": 1788104272,
+      "sha256": "35edda18bc363ac2871725d4edd24eb7c4d89dc6aeca20d7df89d16bd302341c",
+      "size": 10771,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2/minecraft/config/customskinloader.json": {
-      "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
-      "size": 261,
-      "mtime": 1788559005,
+      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
+      "size": 341,
+      "mtime": 1788853007,
       "category": "config"
     },
     "instances/26.2/minecraft/config/entity_culling.json": {
@@ -14605,9 +15031,9 @@
       "category": "config"
     },
     "instances/26.2/minecraft/config/inventoryhud.json": {
-      "sha256": "b1870c9cb026e5db35dbe9643e5b2b92406b1620a78e7ce2282790978c6d4d5c",
-      "size": 1688,
-      "mtime": 1788492523,
+      "sha256": "2cad003b0d354ab6507b4b751a05d4d487376f1f1a99914ce729d326b0c13e90",
+      "size": 1766,
+      "mtime": 1788838483,
       "category": "config"
     },
     "instances/26.2/minecraft/config/iris.properties": {
@@ -14640,6 +15066,24 @@
       "mtime": 1788104270,
       "category": "config"
     },
+    "instances/26.2/minecraft/config/physicsmod/physics_client_config.json": {
+      "sha256": "f85058516d3cf3c0dd56fb26d7a858beee8f873585bec13f413f3b837bad3953",
+      "size": 82,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/minecraft/config/presencefootsteps/userconfig.json5": {
+      "sha256": "5ff5a0764eb53633c62ee8338cca36eaa519abdc1cc80c629c84ae7260da6069",
+      "size": 273,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/minecraft/config/resourcify.json": {
+      "sha256": "280c1c3abbcd746ee2aee76c128899391cbf5c939fe008451bce75d41c6644ce",
+      "size": 230,
+      "mtime": 1788838483,
+      "category": "config"
+    },
     "instances/26.2/minecraft/config/skinlayers.json": {
       "sha256": "e555b7e930ac799ac21d487a733a7869877b73da6a1d642b5c2d17216667c832",
       "size": 232,
@@ -14659,9 +15103,21 @@
       "category": "config"
     },
     "instances/26.2/minecraft/config/sodium-options.json": {
-      "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
-      "size": 384,
-      "mtime": 1788110675,
+      "sha256": "fce017f2d310fa3e606bb42a07ce6b3a48d6a576e242b81ccbacba1134e70870",
+      "size": 587,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/minecraft/config/sound_physics_remastered/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
+      "category": "config"
+    },
+    "instances/26.2/minecraft/config/soundphysics.properties": {
+      "sha256": "f34eb30eed9ae576937adb270c06834db158c73c1c146c931ff4ef1b26e1237a",
+      "size": 407,
+      "mtime": 1788852697,
       "category": "config"
     },
     "instances/26.2/minecraft/config/structureessentials.json": {
@@ -14688,16 +15144,82 @@
       "mtime": 1788478631,
       "category": "instance_meta"
     },
-    "instances/26.2/minecraft/options.txt": {
-      "sha256": "acd6e2ec5630f58d69bc3059840e0b1fb32b00e7f59571862b3ee21534423387",
-      "size": 5364,
+    "instances/26.2/minecraft/mods/NoChatReports-FABRIC-26.2-v2.20.2.jar": {
+      "sha256": "93c761e9fb7d76269a0d5b9807e19db164b3a2fd0b8ebd0550fe94f832cf396f",
+      "size": 239602,
       "mtime": 1788837917,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/mods/Resourcify (26.2-fabric)-1.8.5.jar": {
+      "sha256": "4019e4e515995395eaf8dd6c3805d80219879d869d44999935034c273c9ae249",
+      "size": 2549332,
+      "mtime": 1788837902,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/mods/keystrokes-mod-1.0.5.jar": {
+      "sha256": "8c4646c1bd0e1b4eb20e2a3bbcf1a4f60145a5fe1e478b7582ebd79d082eaf3b",
+      "size": 102146,
+      "mtime": 1788838286,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/mods/krypton-0.3.1.jar": {
+      "sha256": "5ea8901561973d29e51e751469d52d92100f348ab461e1186f67012e93420c48",
+      "size": 268842,
+      "mtime": 1788837888,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/mods/punchy-2.6.0-fabric-26.2.jar": {
+      "sha256": "db324436b81f19fadb9fafb67454f52f958db1261a278cb7f30ab40aa1897501",
+      "size": 2096060,
+      "mtime": 1788833894,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/mods/replaymod-26.2-2.6.27.jar": {
+      "sha256": "68a18bb725ea65cba6217a6a93afd8551b969c36c878d45febfe454d24586999",
+      "size": 15716381,
+      "mtime": 1788837937,
+      "category": "mod"
+    },
+    "instances/26.2/minecraft/options.txt": {
+      "sha256": "e7cfdc8cee87c433cedfd6b84544a8a7df46bb7485bb5788deac520324e6b1e4",
+      "size": 5866,
+      "mtime": 1788852922,
       "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/resourcepacks/SIR Legacy.zip": {
+      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
+      "size": 37567893,
+      "mtime": 1788193941,
+      "category": "resourcepack"
+    },
+    "instances/26.2/minecraft/resourcepacks/SIR Modern.zip": {
+      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
+      "size": 152788067,
+      "mtime": 1788833911,
+      "category": "resourcepack"
+    },
+    "instances/26.2/minecraft/servers.dat": {
+      "sha256": "973e5f18afa98c0fe03ff8a150eda9e704ca8060b258a1c6c267518a9a9c22b3",
+      "size": 79224,
+      "mtime": 1787014599,
+      "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/shaderpacks/SIR Modern Shader.zip": {
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
+      "category": "shader"
     },
     "instances/26.2/minecraft/skins/SirAhmed1.png": {
       "sha256": "41b23290c247305dce33529a6e34bf8e266d9a03d1519ece56aa57cc9f1caa51",
       "size": 1426,
       "mtime": 1788559005,
+      "category": "instance_meta"
+    },
+    "instances/26.2/minecraft/skins/TestPlayer.png": {
+      "sha256": "304e757e41f3a68c793ebb7054982977075974dcd38bb5228c384cb06dfcd571",
+      "size": 1995,
+      "mtime": 1788853007,
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/usercache.json": {
@@ -14725,9 +15247,9 @@
       "category": "instance_meta"
     },
     "instances/26.2/options.txt": {
-      "sha256": "b72a131e6c33448e74709e0b8d189f732a342380c903dbf0f8af6ff2df8cf2f4",
-      "size": 825,
-      "mtime": 1788837917,
+      "sha256": "f2eddc5aba2c47b86951c224abd223790882c16548a01b1d0ea77eed510f8366",
+      "size": 1305,
+      "mtime": 1788852922,
       "category": "instance_meta"
     },
     "instances/26.2/resourcepacks/SIR Legacy.zip": {
@@ -14745,13 +15267,13 @@
     "instances/26.2/shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "instances/26.2/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "instances/26.2/shaderpacks/SIR Modern Shader.zip.txt": {
@@ -14992,6 +15514,12 @@
       "sha256": "1042bee9a087c06f7eb820594b9e16a63695e4d1d2c434727f3d38788298b262",
       "size": 257362,
       "mtime": 1788475045,
+      "category": "mod"
+    },
+    "mods/Keystrokes-1.8.9-forge-1.0.0.jar": {
+      "sha256": "a2b25adcecc9c84feb914ba1b81ce36da74d8e9f0d4a8a227cc131d5479e9ab0",
+      "size": 28299,
+      "mtime": 1788838280,
       "category": "mod"
     },
     "mods/Ksyxis-1.4.3.jar": {
@@ -15624,6 +16152,12 @@
       "mtime": 1786264045,
       "category": "mod"
     },
+    "mods/keystrokes-mod-1.0.5.jar": {
+      "sha256": "8c4646c1bd0e1b4eb20e2a3bbcf1a4f60145a5fe1e478b7582ebd79d082eaf3b",
+      "size": 102146,
+      "mtime": 1788838286,
+      "category": "mod"
+    },
     "mods/kleeslabs-fabric-26.2-26.2.0.1.jar": {
       "sha256": "8d5b4a7c647ea44e01816d10aaf7ab4cd508422490b70fff4f517f5d66e52bf6",
       "size": 292219,
@@ -16155,13 +16689,13 @@
     "shaderpacks/SIR Legacy Shader.zip": {
       "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
       "size": 364346,
-      "mtime": 1788838205,
+      "mtime": 1788838362,
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "076f78aa3e1341d43e2c6021b652908d71f3d2155ff7ab46fb9cfe06cb67fcc0",
-      "size": 1780329,
-      "mtime": 1788833888,
+      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
+      "size": 1781335,
+      "mtime": 1788838344,
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip.txt": {

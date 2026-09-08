@@ -1,0 +1,1 @@
+from .auto_updater import check_for_launcher_updates
