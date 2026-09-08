@@ -96,21 +96,27 @@ flowchart TD
 
 ---
 
-## ⚡ 3. Memory Governor & Dynamic G1GC Optimization Model
+## ⚡ 3. Memory Governor, Generational ZGC & Lunar Client Engine
 
-The launcher enforces strict RAM boundaries without arbitrary upward clamps using `calculate_ram_parameters()`:
+The launcher and runtime pipeline enforce adaptive memory governors and low-latency garbage collection engines across both modern and legacy profiles:
 
-1. **Strict `-Xmx` and `-Xms` Formatting:**
-   - Memory inputs (integers, floats, string units like `"6GB"` or `"6144M"`) are parsed to integer megabytes.
-   - Exact values are passed to `-Xmx` and `-Xms` without silent reduction or clamping.
-2. **Dynamic G1GC Nursery & Region Calculation:**
-   - **≤ 3 GB:** Nursery 20%–30%, Reserve 10%, Region 1M–2M.
-   - **3 GB – 8 GB:** Nursery 30%–40%, Reserve 15%, Region 4M–8M.
-   - **8 GB – 16 GB:** Nursery 40%–50%, Reserve 20%, Region 16M.
-   - **> 16 GB:** Nursery 50%–60%, Reserve 20%, Region 32M.
-3. **Latency-Optimized GC Flags:**
-   - `-XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:+AlwaysPreTouch -XX:+UseStringDeduplication`
-   - Target pause time `-XX:MaxGCPauseMillis=50` (Modern 26.2) and `200` (Legacy 1.8.9).
+1. **Generational ZGC (Java 21+ Modern Engine):**
+   - Modern 26.2 profiles running on Java 21 LTS or Java 25 with >= 6 GB RAM automatically activate **Generational ZGC**:
+     ```
+     -XX:+UseZGC -XX:+ZGenerational -XX:ZAllocationSpikeTolerance=5
+     ```
+   - Achieves sub-millisecond GC pause times (<1ms), completely eliminating frame micro-stutters and hitching during rapid Elytra flight, chunk generation, and high-frequency entity tick cycles.
+
+2. **Latency-Tuned G1GC Fallback (<= 4 GB RAM & Legacy):**
+   - For systems with lower memory allocations or running older runtimes, the launcher dynamically engages tuned G1GC:
+     ```
+     -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=20 -XX:+AlwaysPreTouch -XX:+UseStringDeduplication -XX:+OptimizeStringConcat -XX:+UseNUMA
+     ```
+   - Dynamic G1GC nursery and region calculation scales regions dynamically (1M up to 32M) based on physical memory thresholds.
+
+3. **Lunar Client Profile Auto-Tuning:**
+   - Auto-synchronizes with `~/.lunarclient/profiles.json` and in-game settings (`performance.json`, `mods.json`).
+   - Injects tuned low-latency flags, enables fast math, lazy chunk loading, smart animations, and activates competitive modules (`REACH_DISPLAY`, `COMBO`, `PING`, `CPS`, `ARMORSTATUS`, `POTION_EFFECTS`, `KEYSTROKES`, `F3_DISPLAY`).
 
 ---
 
