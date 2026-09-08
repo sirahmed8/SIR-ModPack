@@ -555,6 +555,16 @@ class LauncherBridgeAPI:
                 "message": f"✓ Scanned {len(hashes)} mods. System is optimized."
             }
 
+    def apply_mod_updates(self, updates_to_apply, instance_dir="26.2"):
+        """Downloads selected mod updates with pre-update safety backup and auto-recovery."""
+        target_inst = "26.2-ultra" if "26" in str(instance_dir) else ("1.8.9-ultra" if "1.8" in str(instance_dir) else str(instance_dir))
+        return self.mods.apply_mod_updates(updates_to_apply, instance_dir=target_inst)
+
+    def rollback_mod_updates(self, instance_dir="26.2"):
+        """Rolls back mod updates from the most recent .backup_updates session."""
+        target_inst = "26.2-ultra" if "26" in str(instance_dir) else ("1.8.9-ultra" if "1.8" in str(instance_dir) else str(instance_dir))
+        return self.mods.auto_rollback_mod_updates(instance_dir=target_inst)
+
 
     # --- SHADERS & PRESETS ---
     def get_shader_presets(self):

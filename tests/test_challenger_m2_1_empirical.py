@@ -187,6 +187,8 @@ class TestChallengerNativesExtractionAdversarial(unittest.TestCase):
 
     def test_scope_locked_dll_fallback_recovery(self):
         """Scope Item 2: Test pre-launch natives extraction when target DLL is locked by an external process."""
+        if sys.platform != "win32":
+            self.skipTest("msvcrt file locking is Windows-specific")
         import msvcrt
 
         target_dir = os.path.join(self.temp_dir, "locked_target")

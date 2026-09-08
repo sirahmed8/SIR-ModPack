@@ -32,6 +32,8 @@ except ImportError:
 
 FIREBASE_RTDB_URL = "https://sir-modpack-default-rtdb.europe-west1.firebasedatabase.app"
 AUTH_BRIDGE_URL = "https://sir-modpack.web.app/auth/desktop"
+FIREBASE_WEB_API_KEY = "AIzaSyBAluMhzbzJJTbcSwa9SqBLXsYCANoC8-M"
+GOOGLE_TOKEN_REFRESH_URL = f"https://securetoken.googleapis.com/v1/token?key={FIREBASE_WEB_API_KEY}"
 
 
 class CloudSyncService:
@@ -90,9 +92,46 @@ class CloudSyncService:
             "lastSync": self.current_session.get("lastSync", 0),
         }
 
+    def refresh_id_token(self) -> Optional[str]:
+        """Refreshes the Firebase ID token using stored refreshToken."""
+        refresh_token = self.current_session.get("refreshToken")
+        if not refresh_token:
+            return self.current_session.get("idToken")
+
+        try:
+            payload = urllib.parse.urlencode({
+                "grant_type": "refresh_token",
+                "refresh_token": refresh_token
+            }).encode("utf-8")
+            req = urllib.request.Request(
+                GOOGLE_TOKEN_REFRESH_URL,
+                data=payload,
+                headers={"Content-Type": "application/x-www-form-urlencoded", "User-Agent": "SIR-Launcher/1.0"},
+                method="POST"
+            )
+            with urllib.request.urlopen(req, timeout=8) as resp:
+                if resp.status == 200:
+                    data = json.loads(resp.read().decode("utf-8"))
+                    new_id_token = data.get("id_token")
+                    if new_id_token:
+                        self.current_session["idToken"] = new_id_token
+                        if data.get("refresh_token"):
+                            self.current_session["refreshToken"] = data["refresh_token"]
+                        self.current_session["tokenExpiresAt"] = int(time.time()) + int(data.get("expires_in", 3600))
+                        atomic_write_json(self.session_file, self.current_session)
+                        return new_id_token
+        except Exception as err:
+            print(f"[CloudSync] Token refresh error: {err}", file=sys.stderr)
+        return self.current_session.get("idToken")
+
     def save_session(self, session_data: Dict[str, Any]) -> None:
         """Saves cloud session and notifies listeners."""
         session_data["updatedAt"] = int(time.time())
+        if not session_data.get("tokenExpiresAt"):
+            session_data["tokenExpiresAt"] = int(time.time()) + 3600
+        # Preserve existing refreshToken if incoming doesn't have it
+        if not session_data.get("refreshToken") and self.current_session.get("refreshToken"):
+            session_data["refreshToken"] = self.current_session.get("refreshToken")
         self.current_session = session_data
         atomic_write_json(self.session_file, session_data)
 
@@ -179,6 +218,15 @@ class CloudSyncService:
 
                         if data.get("uid"):
                             service_ref.save_session(data)
+                            if sys.platform == "win32":
+                                try:
+                                    import ctypes
+                                    hwnd = ctypes.windll.user32.FindWindowW(None, "SIR Launcher — The Ultimate Minecraft Experience")
+                                    if hwnd:
+                                        ctypes.windll.user32.ShowWindow(hwnd, 9)
+                                        ctypes.windll.user32.SetForegroundWindow(hwnd)
+                                except Exception:
+                                    pass
                             self.send_response(200)
                             self.send_header("Content-Type", "application/json")
                             self.send_header("Access-Control-Allow-Origin", "*")
@@ -305,13 +353,19 @@ class CloudSyncService:
 
     # ── Firebase Realtime Database Sync (Backup & Restore) ───────────────────
 
-    def sync_all_to_cloud(self) -> Dict[str, Any]:
+    def sync_all_to_cloud(self, retry: bool = False) -> Dict[str, Any]:
         """Pushes accounts, launcher settings, and server settings to Firebase."""
         if not self.is_authenticated():
             return {"success": False, "error": "Not authenticated with Google."}
 
         uid = self.current_session.get("uid")
-        id_token = self.current_session.get("idToken")
+
+        # Check token expiration (refresh if within 3 minutes of expiry)
+        expires_at = self.current_session.get("tokenExpiresAt", 0)
+        if expires_at and time.time() > (expires_at - 180):
+            id_token = self.refresh_id_token()
+        else:
+            id_token = self.current_session.get("idToken")
 
         # Gather local configuration
         backup_payload: Dict[str, Any] = {
@@ -362,19 +416,31 @@ class CloudSyncService:
                     self.current_session["lastSync"] = int(time.time())
                     atomic_write_json(self.session_file, self.current_session)
                     return {"success": True, "timestamp": self.current_session["lastSync"]}
+        except urllib.error.HTTPError as he:
+            if he.code == 401 and not retry:
+                new_token = self.refresh_id_token()
+                if new_token and new_token != id_token:
+                    return self.sync_all_to_cloud(retry=True)
+            print(f"[CloudSync] Push HTTP error: {he}", file=sys.stderr)
+            return {"success": False, "error": f"Firebase auth error ({he.code}): Please re-connect Google account."}
         except Exception as e:
             print(f"[CloudSync] Push error: {e}", file=sys.stderr)
             return {"success": False, "error": str(e)}
 
         return {"success": False, "error": "Failed to upload to cloud."}
 
-    def restore_from_cloud(self) -> Dict[str, Any]:
+    def restore_from_cloud(self, retry: bool = False) -> Dict[str, Any]:
         """Pulls cloud backup and restores local accounts and settings."""
         if not self.is_authenticated():
             return {"success": False, "error": "Not authenticated with Google."}
 
         uid = self.current_session.get("uid")
-        id_token = self.current_session.get("idToken")
+
+        expires_at = self.current_session.get("tokenExpiresAt", 0)
+        if expires_at and time.time() > (expires_at - 180):
+            id_token = self.refresh_id_token()
+        else:
+            id_token = self.current_session.get("idToken")
 
         endpoint = f"{FIREBASE_RTDB_URL}/users/{uid}/cloud_backup.json"
         if id_token:
@@ -401,6 +467,13 @@ class CloudSyncService:
                     atomic_write_json(server_settings_file, data["server_settings"])
 
                 return {"success": True, "message": "Cloud backup successfully restored!"}
+        except urllib.error.HTTPError as he:
+            if he.code == 401 and not retry:
+                new_token = self.refresh_id_token()
+                if new_token and new_token != id_token:
+                    return self.restore_from_cloud(retry=True)
+            print(f"[CloudSync] Restore HTTP error: {he}", file=sys.stderr)
+            return {"success": False, "error": f"Firebase auth error ({he.code}): Please re-connect Google account."}
         except Exception as e:
             print(f"[CloudSync] Restore error: {e}", file=sys.stderr)
             return {"success": False, "error": str(e)}

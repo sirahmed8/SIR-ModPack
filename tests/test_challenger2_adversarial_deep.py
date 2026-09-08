@@ -352,6 +352,8 @@ class TestTelemetryGovernorAdversarialDeep(unittest.TestCase):
 
     def test_invalid_negative_and_extreme_pids(self):
         """Adversarially pass boundary PIDs (0, negative, None, max uint32, dead PID)."""
+        if sys.platform != "win32":
+            self.skipTest("Telemetry governor process tracking is Win32-specific")
         gov = TelemetryGovernorService.get_instance()
 
         # Zero PID
@@ -375,6 +377,8 @@ class TestTelemetryGovernorAdversarialDeep(unittest.TestCase):
 
     def test_simulated_child_process_lifecycle_telemetry(self):
         """Spawn a real child process, query telemetry while alive, terminate it, and verify graceful post-mortem handling."""
+        if sys.platform != "win32":
+            self.skipTest("Telemetry governor process tracking is Win32-specific")
         gov = TelemetryGovernorService.get_instance()
 
         # Spawn a genuine Python child process that sleeps

@@ -57,14 +57,23 @@ function switchTab(tabId) {
     }
   } else if (tabId === 'packs') {
     renderPacksGrid();
+    if (tabId !== 'logs' && typeof stopLogsPolling === 'function') {
+      stopLogsPolling();
+    }
   } else if (tabId === 'gallery') {
     renderGalleryGrid();
   } else if (tabId === 'skins') {
     renderSkinsStudio();
   } else if (tabId === 'logs') {
-    refreshLogs();
+    if (typeof startLogsPolling === 'function') {
+      startLogsPolling();
+    } else {
+      refreshLogs();
+    }
   } else if (tabId === 'hardware') {
-    refreshHardwareTelemetry();
+    if (typeof refreshHardwareTelemetry === 'function') {
+      refreshHardwareTelemetry();
+    }
   } else if (tabId === 'settings') {
     renderSettings();
   } else if (tabId === 'news') {

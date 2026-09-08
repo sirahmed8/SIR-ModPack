@@ -423,20 +423,54 @@ function searchServers(query) {
   renderServers();
 }
 
+function selectServerSortOption(mode, label) {
+  STATE.serverSortMode = mode;
+  const labelEl = document.getElementById('server-sort-label');
+  if (labelEl) labelEl.textContent = label;
+
+  const menu = document.getElementById('server-sort-dropdown-menu');
+  if (menu) {
+    const items = menu.querySelectorAll('.dropdown-opt');
+    items.forEach(item => {
+      const onclickAttr = item.getAttribute('onclick') || '';
+      if (onclickAttr.includes(`'${mode}'`)) {
+        item.className = 'dropdown-opt flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl cursor-pointer transition-all bg-cyan-500/15 text-cyan-400 border border-cyan-500/30';
+        if (!item.querySelector('i, svg')) {
+          const check = document.createElement('i');
+          check.setAttribute('data-lucide', 'check');
+          check.className = 'w-3.5 h-3.5 text-cyan-400';
+          item.appendChild(check);
+        }
+      } else {
+        item.className = 'dropdown-opt flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl cursor-pointer transition-all text-slate-300 hover:bg-slate-800/80 hover:text-white';
+        const check = item.querySelector('i, svg');
+        if (check) check.remove();
+      }
+    });
+    menu.classList.add('hidden');
+    const arrow = document.getElementById('server-sort-arrow');
+    if (arrow) arrow.classList.remove('rotate-180');
+  }
+
+  renderServers();
+  refreshLucideIcons();
+}
+window.selectServerSortOption = selectServerSortOption;
+
 function toggleServerSorting() {
   const sortText = document.getElementById('server-sort-text');
   if (STATE.serverSortMode === "ping") {
-    STATE.serverSortMode = "players";
+    selectServerSortOption("players", "Most Players");
     if (sortText) sortText.textContent = "Most Players";
   } else if (STATE.serverSortMode === "players") {
-    STATE.serverSortMode = "name";
+    selectServerSortOption("name", "Server Name (A-Z)");
     if (sortText) sortText.textContent = "Server Name";
   } else {
-    STATE.serverSortMode = "ping";
+    selectServerSortOption("ping", "Fastest Ping");
     if (sortText) sortText.textContent = "Fastest Ping";
   }
-  renderServers();
 }
+window.toggleServerSorting = toggleServerSorting;
 
 async function loadServersLive() {
   renderServers();
@@ -839,9 +873,18 @@ async function joinServer(ip) {
 }
 window.joinServer = joinServer;
 
-async function refreshServersLive() {
-  await loadServers();
-  showToast("✓ Server directory radar refreshed", "info");
+async function refreshServersLive(btn) {
+  const icon = btn ? btn.querySelector('i, svg') : document.querySelector('#view-servers button[title*="Refresh"] i, #view-servers button[title*="Refresh"] svg');
+  if (icon) icon.classList.add('animate-spin');
+  try {
+    await loadServersLive();
+    showToast("✓ Server directory radar refreshed", "info");
+  } catch (err) {
+    console.error("Failed to refresh live servers:", err);
+  } finally {
+    if (icon) icon.classList.remove('animate-spin');
+    refreshLucideIcons();
+  }
 }
 window.refreshServersLive = refreshServersLive;
 

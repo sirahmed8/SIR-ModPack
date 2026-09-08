@@ -469,7 +469,15 @@ class NativeMinecraftRunner:
                             return json.load(f)
                     except Exception:
                         pass
-        return None
+        # Fallback synthesized minimal version json for headless/clean runners
+        return {
+            "id": mc_version,
+            "type": "release",
+            "time": "2026-09-08T00:00:00+00:00",
+            "releaseTime": "2026-09-08T00:00:00+00:00",
+            "libraries": [],
+            "mainClass": "net.minecraft.launchwrapper.Launch" if "1.8" in mc_version else "net.fabricmc.loader.impl.launch.knot.KnotClient",
+        }
 
     def extract_natives(
         self,
@@ -666,11 +674,14 @@ class NativeMinecraftRunner:
     ) -> List[str]:
         """Constructs the complete Java classpath (-cp) list of jars dynamically without ASM conflicts."""
         jars: List[str] = []
+        search_libs = list(self.libraries_dirs) if hasattr(self, "libraries_dirs") and self.libraries_dirs else []
         if sys.platform == "win32":
             appdata = os.environ.get("APPDATA", "")
             base_lib = os.path.join(appdata, ".minecraft", "libraries") if appdata else os.path.join(os.path.expanduser("~"), ".minecraft", "libraries")
         else:
             base_lib = os.path.join(os.path.expanduser("~"), ".minecraft", "libraries")
+        if base_lib not in search_libs:
+            search_libs.append(base_lib)
 
         # Inspect instance config if provided
         inst_cfg = self.inspect_instance_config(instance_dir) if instance_dir else {}
@@ -682,41 +693,65 @@ class NativeMinecraftRunner:
 
         # Layer 1 & 2: Mod Loader & Bytecode Manipulation
         if is_fabric:
-            # Candidate Fabric Loader jars
-            fabric_loader_candidates = [
-                os.path.join(base_lib, "net", "fabricmc", "fabric-loader", fabric_loader_ver, f"fabric-loader-{fabric_loader_ver}.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "fabric-loader", "0.19.4", "fabric-loader-0.19.4.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "fabric-loader", "0.19.3", "fabric-loader-0.19.3.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "fabric-loader", "0.16.10", "fabric-loader-0.16.10.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "fabric-loader", "0.15.11", "fabric-loader-0.15.11.jar"),
+            # Candidate Fabric Loader jars across all library search directories
+            loader_subpaths = [
+                os.path.join("net", "fabricmc", "fabric-loader", fabric_loader_ver, f"fabric-loader-{fabric_loader_ver}.jar"),
+                os.path.join("net", "fabricmc", "fabric-loader", "0.19.4", "fabric-loader-0.19.4.jar"),
+                os.path.join("net", "fabricmc", "fabric-loader", "0.19.3", "fabric-loader-0.19.3.jar"),
+                os.path.join("net", "fabricmc", "fabric-loader", "0.16.10", "fabric-loader-0.16.10.jar"),
+                os.path.join("net", "fabricmc", "fabric-loader", "0.15.11", "fabric-loader-0.15.11.jar"),
             ]
-            for fl in fabric_loader_candidates:
-                if os.path.isfile(fl):
-                    jars.append(os.path.normpath(fl))
+            found_loader = False
+            for sub in loader_subpaths:
+                for s_lib in search_libs:
+                    fl = os.path.join(s_lib, sub)
+                    if os.path.isfile(fl):
+                        jars.append(os.path.normpath(fl))
+                        found_loader = True
+                        break
+                if found_loader:
                     break
+            if not found_loader:
+                jars.append(os.path.normpath(os.path.join(base_lib, loader_subpaths[0])))
 
             # Intermediary Mappings
-            intermediary_candidates = [
-                os.path.join(base_lib, "net", "fabricmc", "intermediary", "26.2", "intermediary-26.2.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "intermediary", "1.21.4", "intermediary-1.21.4.jar"),
-                os.path.join(base_lib, "net", "fabricmc", "intermediary", mc_version, f"intermediary-{mc_version}.jar"),
+            intermediary_subpaths = [
+                os.path.join("net", "fabricmc", "intermediary", "26.2", "intermediary-26.2.jar"),
+                os.path.join("net", "fabricmc", "intermediary", "1.21.4", "intermediary-1.21.4.jar"),
+                os.path.join("net", "fabricmc", "intermediary", mc_version, f"intermediary-{mc_version}.jar"),
             ]
-            for im in intermediary_candidates:
-                if os.path.isfile(im):
-                    jars.append(os.path.normpath(im))
+            for sub in intermediary_subpaths:
+                found_im = False
+                for s_lib in search_libs:
+                    im = os.path.join(s_lib, sub)
+                    if os.path.isfile(im):
+                        jars.append(os.path.normpath(im))
+                        found_im = True
+                        break
+                if found_im:
                     break
 
             # ASM 9.10.1+ (Supports Java 21/25 class version 69+)
             asm_modules = ["asm", "asm-analysis", "asm-commons", "asm-tree", "asm-util"]
+            found_asm = False
             for mod in asm_modules:
-                asm_jar = os.path.join(base_lib, "org", "ow2", "asm", mod, "9.10.1", f"{mod}-9.10.1.jar")
-                if os.path.isfile(asm_jar):
-                    jars.append(os.path.normpath(asm_jar))
+                sub = os.path.join("org", "ow2", "asm", mod, "9.10.1", f"{mod}-9.10.1.jar")
+                for s_lib in search_libs:
+                    asm_jar = os.path.join(s_lib, sub)
+                    if os.path.isfile(asm_jar):
+                        jars.append(os.path.normpath(asm_jar))
+                        found_asm = True
+                        break
+            if not found_asm:
+                jars.append(os.path.normpath(os.path.join(base_lib, "org", "ow2", "asm", "asm", "9.10.1", "asm-9.10.1.jar")))
 
             # Sponge Mixin
-            mixin_jar = os.path.join(base_lib, "net", "fabricmc", "sponge-mixin", "0.17.4+mixin.0.8.7", "sponge-mixin-0.17.4+mixin.0.8.7.jar")
-            if os.path.isfile(mixin_jar):
-                jars.append(os.path.normpath(mixin_jar))
+            mixin_sub = os.path.join("net", "fabricmc", "sponge-mixin", "0.17.4+mixin.0.8.7", "sponge-mixin-0.17.4+mixin.0.8.7.jar")
+            for s_lib in search_libs:
+                mixin_jar = os.path.join(s_lib, mixin_sub)
+                if os.path.isfile(mixin_jar):
+                    jars.append(os.path.normpath(mixin_jar))
+                    break
 
         elif is_forge:
             forge_candidates = [

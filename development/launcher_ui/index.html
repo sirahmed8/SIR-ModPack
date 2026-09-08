@@ -136,11 +136,6 @@
             <span>Our Site</span>
           </button>
 
-          <!-- RAM Compactor Quick Pill -->
-          <button onclick="compactRamQuick()" class="header-pill text-amber-400 hover:text-amber-300 border-amber-500/30 bg-amber-950/20 active:scale-95 transition-all flex items-center gap-1.5 px-3 py-1.5 rounded-xl cursor-pointer" title="Purge Working Set RAM (psapi.dll EmptyWorkingSet)">
-            <i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-400"></i>
-            <span class="text-xs font-semibold text-slate-300">Clean RAM</span>
-          </button>
 
             <!-- Account Dropdown Pill -->
             <div class="relative">
@@ -622,14 +617,37 @@
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Real-time Minecraft API status, authentic server icons, live player counts, and latency radar.</p>
             </div>
             <div class="flex items-center gap-2.5 flex-wrap">
-              <button onclick="refreshServersLive()" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold text-cyan-700 dark:text-cyan-400 border border-slate-300 dark:border-cyan-500/30 flex items-center gap-1.5 transition-all shadow-sm">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-                <span>Refresh Live</span>
+              <button onclick="refreshServersLive(this)" class="w-10 h-10 rounded-2xl bg-[#0c121e] hover:bg-[#121927] border border-slate-700/80 hover:border-cyan-500/60 text-cyan-400 flex items-center justify-center transition-all shadow-sm cursor-pointer active:scale-95 shrink-0" title="Refresh Live Servers">
+                <i data-lucide="refresh-cw" class="w-4 h-4"></i>
               </button>
-              <button id="server-sort-toggle-btn" onclick="toggleServerSorting()" class="px-3.5 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-bold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 flex items-center gap-1.5 transition-all shadow-sm cursor-pointer">
-                <i data-lucide="arrow-up-narrow-wide" id="server-sort-icon" class="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400"></i>
-                <span id="server-sort-text">Fastest Ping</span>
-              </button>
+              <!-- Custom Cyber-Dark Server Sort Dropdown -->
+              <div class="relative">
+                <button 
+                  type="button" 
+                  id="server-sort-dropdown-btn" 
+                  onclick="toggleCustomDropdown('server-sort-dropdown-menu')" 
+                  class="flex items-center gap-2 bg-[#0c121e] hover:bg-[#121927] border border-slate-700/80 hover:border-cyan-500/60 rounded-2xl px-4 py-2.5 text-xs font-bold text-slate-200 focus:outline-none transition-all shadow-sm cursor-pointer"
+                >
+                  <i data-lucide="arrow-up-down" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span id="server-sort-label">Most Players</span>
+                  <i data-lucide="chevron-down" id="server-sort-arrow" class="w-3.5 h-3.5 text-cyan-400 transition-transform duration-200"></i>
+                </button>
+                <div 
+                  id="server-sort-dropdown-menu" 
+                  class="hidden absolute right-0 mt-2 w-52 bg-[#0b101b] border border-slate-700 rounded-2xl p-1.5 shadow-2xl z-[9999] animate-pop space-y-0.5"
+                >
+                  <div onclick="selectServerSortOption('players', 'Most Players')" class="dropdown-opt flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl cursor-pointer transition-all bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                    <span>Most Players</span>
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  </div>
+                  <div onclick="selectServerSortOption('ping', 'Fastest Ping')" class="dropdown-opt flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl cursor-pointer transition-all text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                    <span>Fastest Ping</span>
+                  </div>
+                  <div onclick="selectServerSortOption('name', 'Server Name (A-Z)')" class="dropdown-opt flex items-center justify-between px-3 py-2 text-xs font-bold rounded-xl cursor-pointer transition-all text-slate-300 hover:bg-slate-800/80 hover:text-white">
+                    <span>Server Name (A-Z)</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -1025,7 +1043,7 @@
         </section>
 
         <!-- ==================== VIEW 11: HARDWARE & SYSTEM MONITOR ==================== -->
-        <section id="view-hardware" class="view-panel max-w-6xl mx-auto space-y-6">
+        <section id="view-hardware" class="view-panel hidden max-w-6xl mx-auto space-y-6">
           <div class="flex items-center justify-between flex-wrap gap-4">
             <div>
               <div class="flex items-center gap-2">
@@ -1036,6 +1054,13 @@
               </div>
               <p class="text-xs text-slate-400 mt-0.5">Real-time Windows kernel memory status, live CPU load, and automatic hardware power tier detection (0 cloud reads).</p>
             </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-bold">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span id="hw-live-badge">Live Stream Active</span>
+              </span>
+              <span id="hw-timestamp-badge" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 font-mono text-[11px]">Connecting...</span>
+            </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -1044,8 +1069,8 @@
                 <span class="text-[10px] text-slate-400 font-mono">System Physical RAM</span>
                 <i data-lucide="hard-drive" class="w-4 h-4 text-cyan-400"></i>
               </div>
-              <span id="hw-total-ram" class="text-lg font-black text-cyan-400 block">23.8 GB Total</span>
-              <span id="hw-avail-ram" class="text-[10px] text-emerald-400 font-mono block">12.1 GB Available</span>
+              <span id="hw-total-ram" class="text-lg font-black text-cyan-400 block">Detecting...</span>
+              <span id="hw-avail-ram" class="text-[10px] text-emerald-400 font-mono block">Detecting...</span>
             </div>
 
             <div class="feature-card p-4 space-y-2">
@@ -1053,9 +1078,9 @@
                 <span class="text-[10px] text-slate-400 font-mono">RAM Load %</span>
                 <i data-lucide="activity" class="w-4 h-4 text-amber-400"></i>
               </div>
-              <span id="hw-load-pct" class="text-lg font-black text-amber-400 block">48% In Use</span>
+              <span id="hw-load-pct" class="text-lg font-black text-amber-400 block">0% In Use</span>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div id="hw-ram-bar" class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: 48%"></div>
+                <div id="hw-ram-bar" class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: 0%"></div>
               </div>
             </div>
 
@@ -1064,9 +1089,9 @@
                 <span class="text-[10px] text-slate-400 font-mono">CPU Logical Cores</span>
                 <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
               </div>
-              <span id="hw-cpu-cores" class="text-lg font-black text-slate-100 block">20 Logical Cores</span>
+              <span id="hw-cpu-cores" class="text-lg font-black text-slate-100 block">Detecting...</span>
               <div class="flex items-center justify-between text-[10px] text-cyan-400 font-mono">
-                <span id="hw-cpu-load">12% Live Load</span>
+                <span id="hw-cpu-load">0% Live Load</span>
                 <span class="text-slate-400">Parallel Worker</span>
               </div>
             </div>
@@ -1076,8 +1101,8 @@
                 <span class="text-[10px] text-slate-400 font-mono">Hardware Power Tier</span>
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
               </div>
-              <span id="hw-power-tier" class="text-xs font-black text-emerald-300 block truncate">Extreme Enthusiast (24 GB)</span>
-              <span id="hw-rec-ram" class="text-[10px] text-emerald-400 font-mono block">Allocate 8 GB Dedicated</span>
+              <span id="hw-power-tier" class="text-xs font-black text-emerald-300 block truncate">Detecting Power Tier...</span>
+              <span id="hw-rec-ram" class="text-[10px] text-emerald-400 font-mono block">Calculating Allocation...</span>
             </div>
           </div>
 
@@ -1089,7 +1114,7 @@
               </div>
               <div>
                 <span class="text-[10px] text-slate-400 font-mono uppercase tracking-wider block">Detected Primary Graphics Adapter</span>
-                <span id="hw-gpu-name" class="text-sm font-bold text-slate-100 block">NVIDIA GeForce RTX 4050 Laptop GPU</span>
+                <span id="hw-gpu-name" class="text-sm font-bold text-slate-100 block">Detecting GPU...</span>
               </div>
             </div>
             <span class="badge-tag bg-cyan-950/80 text-cyan-400 border border-cyan-800/50 rounded-full px-3 py-1 text-xs">DirectX 12 / Vulkan Ready</span>
@@ -1101,7 +1126,7 @@
               <h4 class="text-xs font-bold text-slate-100">Automatic Telemetry Recommendation</h4>
             </div>
             <p id="hw-recommendation-text" class="text-xs text-slate-300 leading-relaxed">
-              Your system (20 Threads, 23.8 GB RAM, NVIDIA GeForce RTX 4050) has sufficient headroom to run modern Minecraft with SIR Shaders 2.0 at Maximum Raytracing quality with Parallax Occlusion Mapping (POM) active.
+              Reading system hardware topology from Windows Kernel...
             </p>
           </div>
         </section>
@@ -1298,6 +1323,21 @@
                     <p class="text-xs text-slate-400 mt-1">Allocates maximum parallel threads for the fastest possible launch speeds and chunk rendering.</p>
                   </button>
                 </div>
+              </div>
+
+              <!-- Memory Compactor (Clean RAM) -->
+              <div class="flex items-center justify-between p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
+                <div class="space-y-0.5">
+                  <div class="font-bold text-sm text-slate-200 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-4 h-4 text-amber-400"></i>
+                    <span>Memory Compactor (Clean RAM)</span>
+                  </div>
+                  <p class="text-xs text-slate-400">Purges unused process working set pages via Windows psapi.dll kernel driver.</p>
+                </div>
+                <button type="button" onclick="compactRamQuick()" class="px-4 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer active:scale-95 shrink-0 shadow-sm">
+                  <i data-lucide="trash-2" class="w-3.5 h-3.5"></i>
+                  <span>Clean RAM Now</span>
+                </button>
               </div>
 
               <!-- Save Button -->
@@ -3059,6 +3099,101 @@
           <button id="feedback-submit-btn" onclick="submitFeedbackModal()" class="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer">
             <span>Submit</span>
             <i data-lucide="send" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DISCONNECT CONFIRMATION MODAL ==================== -->
+  <div id="disconnect-confirm-modal" class="modal-backdrop hidden" onclick="if(event.target === this) closeDisconnectConfirmModal()">
+    <div class="w-[460px] max-w-[92vw] rounded-3xl bg-[#090d16]/95 border border-rose-500/30 shadow-2xl overflow-hidden flex flex-col animate-in fade-in-0 zoom-in-95 duration-200">
+      <div class="p-6 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center text-rose-400 shrink-0">
+            <i data-lucide="log-out" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-black text-slate-100">Disconnect Google Cloud Sync?</h3>
+            <p class="text-xs text-slate-400 mt-0.5">Your local Minecraft profiles will be preserved safely.</p>
+          </div>
+        </div>
+
+        <div class="p-3.5 rounded-2xl bg-[#06090e] border border-slate-800 space-y-1">
+          <span class="text-[10px] text-slate-500 font-mono uppercase tracking-wider block">Connected Account</span>
+          <span id="disconnect-modal-email" class="text-xs font-bold text-cyan-400 font-mono block truncate">user@gmail.com</span>
+        </div>
+
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Disconnecting removes cloud synchronization from this machine. You can reconnect anytime with 1-click Google Sign-In.
+        </p>
+
+        <div class="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-800">
+          <button onclick="closeDisconnectConfirmModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition-all cursor-pointer">
+            Cancel
+          </button>
+          <button onclick="confirmDisconnectGoogle()" class="px-5 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-black text-xs transition-all flex items-center gap-1.5 shadow-lg shadow-rose-500/20 active:scale-95 cursor-pointer">
+            <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+            <span>Disconnect</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MOD UPDATES SELECTION MODAL ==================== -->
+  <div id="mod-updates-modal" class="modal-backdrop hidden" onclick="if(event.target === this) closeModUpdatesModal()">
+    <div class="w-[720px] max-w-[94vw] max-h-[85vh] rounded-3xl bg-[#090d16]/95 border border-cyan-500/30 shadow-2xl overflow-hidden flex flex-col animate-in fade-in-0 zoom-in-95 duration-200">
+      <!-- Modal Header -->
+      <div class="h-16 px-6 border-b border-slate-800/80 bg-[#070a12]/90 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+            <i data-lucide="download-cloud" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="text-sm font-black text-slate-100 flex items-center gap-2">
+              <span>Verified Mod Updates</span>
+              <span id="mod-updates-count-badge" class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">0 Updates</span>
+            </h3>
+            <p class="text-[11px] text-slate-400">Verified Modrinth versions for your active Minecraft profile</p>
+          </div>
+        </div>
+
+        <button onclick="closeModUpdatesModal()" class="w-8 h-8 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-all cursor-pointer border border-slate-700/60" title="Close">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Controls bar: Select All / Deselect All / Rollback info -->
+      <div class="px-6 py-3 bg-[#060a12] border-b border-slate-800/80 flex items-center justify-between flex-wrap gap-2 shrink-0">
+        <label class="flex items-center gap-2 cursor-pointer select-none text-xs font-bold text-slate-300">
+          <input type="checkbox" id="mod-updates-select-all" onchange="toggleAllModUpdates(this.checked)" checked class="rounded accent-cyan-400 w-4 h-4 cursor-pointer">
+          <span>Select All (<span id="mod-updates-selected-count">0</span> selected)</span>
+        </label>
+        <span class="text-[11px] text-emerald-400 font-mono flex items-center gap-1">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+          <span>Auto-Backup & Rollback Enabled</span>
+        </span>
+      </div>
+
+      <!-- Updates list container -->
+      <div id="mod-updates-list" class="flex-1 overflow-y-auto p-6 space-y-2.5 custom-scrollbar">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Footer Actions -->
+      <div class="p-4 px-6 border-t border-slate-800/80 bg-[#070a12]/90 flex items-center justify-between shrink-0">
+        <button onclick="triggerModUpdatesRollback()" id="mod-rollback-btn" class="px-3.5 py-2 rounded-xl bg-slate-800/60 hover:bg-slate-700 text-slate-400 hover:text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 border border-slate-700/60 cursor-pointer" title="Restore previous JAR versions if a mod caused an issue">
+          <i data-lucide="history" class="w-3.5 h-3.5 text-amber-400"></i>
+          <span>Rollback Previous Updates</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button onclick="closeModUpdatesModal()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-300 transition-all cursor-pointer">
+            Cancel
+          </button>
+          <button onclick="executeSelectedModUpdates()" id="mod-update-execute-btn" class="px-5 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer">
+            <i data-lucide="download" class="w-3.5 h-3.5"></i>
+            <span id="mod-update-btn-text">Update Selected</span>
           </button>
         </div>
       </div>

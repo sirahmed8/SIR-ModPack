@@ -229,6 +229,173 @@ async function installOnlineModToProfile(slug, title) {
   }
 }
 
+// State for mod updates modal
+let CURRENT_MOD_UPDATES = [];
+
+function openModUpdatesModal(updates) {
+  CURRENT_MOD_UPDATES = updates || [];
+  const modal = document.getElementById('mod-updates-modal');
+  const countBadge = document.getElementById('mod-updates-count-badge');
+  const list = document.getElementById('mod-updates-list');
+  const selectAll = document.getElementById('mod-updates-select-all');
+
+  if (countBadge) countBadge.textContent = `${CURRENT_MOD_UPDATES.length} Updates`;
+  if (selectAll) selectAll.checked = true;
+
+  if (list) {
+    list.innerHTML = CURRENT_MOD_UPDATES.map((u, idx) => {
+      const curFile = escapeHtml(u.current_file || 'unknown.jar');
+      const newFile = escapeHtml(u.new_file || curFile);
+      const verNumber = escapeHtml(u.version_number || 'Latest');
+      return `
+        <div class="p-3.5 rounded-2xl bg-[#080d16] border border-slate-800 hover:border-cyan-500/40 flex items-center justify-between gap-3 transition-all">
+          <label class="flex items-center gap-3 cursor-pointer flex-1 min-w-0 select-none">
+            <input 
+              type="checkbox" 
+              class="mod-update-item-cb rounded accent-cyan-400 w-4 h-4 cursor-pointer shrink-0" 
+              data-index="${idx}" 
+              checked 
+              onchange="updateSelectedModCount()"
+            >
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="text-xs font-black text-slate-100 truncate">${curFile.replace('.jar', '')}</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                  ${verNumber}
+                </span>
+              </div>
+              <div class="flex items-center gap-2 text-[11px] font-mono text-slate-400 mt-1 truncate">
+                <span class="text-slate-500 line-through truncate">${curFile}</span>
+                <i data-lucide="arrow-right" class="w-3 h-3 text-cyan-400 shrink-0"></i>
+                <span class="text-emerald-400 font-bold truncate">${newFile}</span>
+              </div>
+            </div>
+          </label>
+        </div>
+      `;
+    }).join('');
+  }
+
+  updateSelectedModCount();
+  if (modal) {
+    modal.classList.remove('hidden');
+    refreshLucideIcons();
+  }
+}
+window.openModUpdatesModal = openModUpdatesModal;
+
+function closeModUpdatesModal() {
+  const modal = document.getElementById('mod-updates-modal');
+  if (modal) modal.classList.add('hidden');
+}
+window.closeModUpdatesModal = closeModUpdatesModal;
+
+function toggleAllModUpdates(checked) {
+  document.querySelectorAll('.mod-update-item-cb').forEach(cb => {
+    cb.checked = checked;
+  });
+  updateSelectedModCount();
+}
+window.toggleAllModUpdates = toggleAllModUpdates;
+
+function updateSelectedModCount() {
+  const cbs = document.querySelectorAll('.mod-update-item-cb');
+  const countSpan = document.getElementById('mod-updates-selected-count');
+  const selectAll = document.getElementById('mod-updates-select-all');
+  const executeBtn = document.getElementById('mod-update-execute-btn');
+  const btnText = document.getElementById('mod-update-btn-text');
+
+  let selected = 0;
+  cbs.forEach(cb => { if (cb.checked) selected++; });
+
+  if (countSpan) countSpan.textContent = String(selected);
+  if (selectAll) selectAll.checked = (selected === cbs.length && cbs.length > 0);
+
+  if (executeBtn) {
+    executeBtn.disabled = selected === 0;
+    executeBtn.classList.toggle('opacity-50', selected === 0);
+    executeBtn.classList.toggle('cursor-not-allowed', selected === 0);
+  }
+  if (btnText) {
+    btnText.textContent = selected === 0 ? 'Select Mods to Update' : `Update Selected (${selected})`;
+  }
+}
+window.updateSelectedModCount = updateSelectedModCount;
+
+async function executeSelectedModUpdates() {
+  const cbs = document.querySelectorAll('.mod-update-item-cb:checked');
+  if (cbs.length === 0) {
+    showToast('Please select at least one mod to update.', 'warning');
+    return;
+  }
+
+  const selectedItems = [];
+  cbs.forEach(cb => {
+    const idx = parseInt(cb.dataset.index, 10);
+    if (CURRENT_MOD_UPDATES[idx]) {
+      selectedItems.push(CURRENT_MOD_UPDATES[idx]);
+    }
+  });
+
+  const activeInst = STATE.selectedInstanceId || '26.2-ultra';
+  const executeBtn = document.getElementById('mod-update-execute-btn');
+  const btnText = document.getElementById('mod-update-btn-text');
+
+  if (executeBtn) executeBtn.disabled = true;
+  if (btnText) btnText.textContent = `Downloading ${selectedItems.length} update(s)...`;
+
+  try {
+    if (window.pywebview && window.pywebview.api && window.pywebview.api.apply_mod_updates) {
+      showToast(`Downloading and verifying ${selectedItems.length} mod update(s)...`, 'info');
+      const res = await window.pywebview.api.apply_mod_updates(selectedItems, activeInst);
+      if (res && res.success) {
+        showToast(res.message || `✓ Updated ${res.applied_count || selectedItems.length} mods safely!`, 'success');
+        closeModUpdatesModal();
+        if (typeof loadModsFromBridge === 'function') loadModsFromBridge();
+      } else {
+        showToast(`Update error: ${res?.error || 'Failed to apply updates'}`, 'error');
+      }
+    } else {
+      showToast(`✓ [Simulation] Updated ${selectedItems.length} mods for ${activeInst}!`, 'success');
+      closeModUpdatesModal();
+    }
+  } catch (err) {
+    showToast(`Update exception: ${err.message || err}`, 'error');
+  } finally {
+    if (executeBtn) executeBtn.disabled = false;
+    updateSelectedModCount();
+  }
+}
+window.executeSelectedModUpdates = executeSelectedModUpdates;
+
+async function triggerModUpdatesRollback() {
+  const activeInst = STATE.selectedInstanceId || '26.2-ultra';
+  const rollbackBtn = document.getElementById('mod-rollback-btn');
+  if (rollbackBtn) rollbackBtn.disabled = true;
+
+  try {
+    if (window.pywebview && window.pywebview.api && window.pywebview.api.rollback_mod_updates) {
+      showToast('Rolling back previous mod updates from safety snapshot...', 'info');
+      const res = await window.pywebview.api.rollback_mod_updates(activeInst);
+      if (res && res.success) {
+        showToast(res.message || '✓ Rollback complete! Restored previous versions.', 'success');
+        closeModUpdatesModal();
+        if (typeof loadModsFromBridge === 'function') loadModsFromBridge();
+      } else {
+        showToast(res?.error || 'No rollback snapshot available.', 'warning');
+      }
+    } else {
+      showToast('✓ [Simulation] Rolled back mods to previous snapshot.', 'success');
+      closeModUpdatesModal();
+    }
+  } catch (err) {
+    showToast(`Rollback error: ${err.message || err}`, 'error');
+  } finally {
+    if (rollbackBtn) rollbackBtn.disabled = false;
+  }
+}
+window.triggerModUpdatesRollback = triggerModUpdatesRollback;
+
 async function checkModUpdatesLive() {
   const activeInst = STATE.selectedInstanceId || '26.2-ultra';
   showToast(`🔍 Scanning ${activeInst} mods for latest verified updates...`, 'info');
@@ -237,7 +404,12 @@ async function checkModUpdatesLive() {
     try {
       const res = await window.pywebview.api.check_mod_updates(activeInst);
       if (res && res.success) {
-        showToast(res.message || '✓ All mods are up-to-date!', 'success');
+        if (res.updates && res.updates.length > 0) {
+          showToast(`Found ${res.updates.length} mod update(s) available!`, 'success');
+          openModUpdatesModal(res.updates);
+        } else {
+          showToast(res.message || '✓ All mods are up-to-date with verified builds!', 'success');
+        }
       } else {
         showToast(`✗ Scan error: ${res?.error || 'Could not verify mod hashes'}`, 'error');
       }
@@ -245,7 +417,14 @@ async function checkModUpdatesLive() {
       showToast(`✗ Scan failed: ${e.message || e}`, 'error');
     }
   } else {
-    showToast(`✓ [Simulation] Checked 48 mods: All mods are up-to-date!`, 'success');
+    // Simulation / testing preview
+    const sampleUpdates = [
+      { current_file: "sodium-fabric-0.5.11+mc1.21.jar", new_file: "sodium-fabric-0.6.0+mc1.21.4.jar", version_number: "0.6.0", download_url: "https://example.com" },
+      { current_file: "iris-fabric-1.7.0+mc1.21.jar", new_file: "iris-fabric-1.8.0+mc1.21.4.jar", version_number: "1.8.0", download_url: "https://example.com" }
+    ];
+    openModUpdatesModal(sampleUpdates);
+    showToast(`Found 2 mod update(s) available!`, 'success');
   }
 }
+window.checkModUpdatesLive = checkModUpdatesLive;
 

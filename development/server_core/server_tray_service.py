@@ -216,13 +216,21 @@ class ServerTrayService:
                 def _on_open(icon, item):
                     self.restore_and_focus_window()
 
-                def _on_start_server(icon, item):
+                def _is_server_running() -> bool:
                     if self.bridge_api:
-                        threading.Thread(target=self.bridge_api.start_server, daemon=True).start()
+                        return bool(getattr(self.bridge_api, "is_running", False))
+                    return False
 
-                def _on_stop_server(icon, item):
-                    if self.bridge_api:
+                def _server_toggle_text(item) -> str:
+                    return "⏹ Stop Server" if _is_server_running() else "▶ Start Server"
+
+                def _on_toggle_server(icon, item):
+                    if not self.bridge_api:
+                        return
+                    if _is_server_running():
                         threading.Thread(target=self.bridge_api.stop_server, daemon=True).start()
+                    else:
+                        threading.Thread(target=self.bridge_api.start_server, daemon=True).start()
 
                 def _on_settings(icon, item):
                     self.restore_and_focus_window()
@@ -296,8 +304,7 @@ class ServerTrayService:
                 menu = pystray.Menu(
                     pystray.MenuItem("✦ Open Server Manager", _on_open, default=True),
                     pystray.Menu.SEPARATOR,
-                    pystray.MenuItem("▶ Start Server", _on_start_server),
-                    pystray.MenuItem("⏹ Stop Server", _on_stop_server),
+                    pystray.MenuItem(_server_toggle_text, _on_toggle_server),
                     pystray.Menu.SEPARATOR,
                     pystray.MenuItem("⚙ Server Settings", _on_settings),
                     pystray.MenuItem("🌐 Open Web Guide", _on_web_guide),

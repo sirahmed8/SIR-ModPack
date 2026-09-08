@@ -23,6 +23,7 @@ class TestAuthAndAccounts(unittest.TestCase):
         self.assertEqual(len(raw_uuid), 32)
 
     def test_get_all_accounts(self):
+        self.auth.add_offline_account('SirAhmed_TestUser')
         res = self.auth.get_all_accounts()
         self.assertIsInstance(res, dict)
         self.assertIn('accounts', res)

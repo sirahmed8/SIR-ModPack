@@ -1083,7 +1083,24 @@ class InstanceService:
             target_dir = os.path.join(self.instances_dir, dir_name)
             os.makedirs(target_dir, exist_ok=True)
         try:
-            os.startfile(target_dir)
+            if sys.platform == "win32":
+                opened = False
+                try:
+                    import ctypes
+                    ret = ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
+                    if int(ret) > 32:
+                        opened = True
+                except Exception:
+                    pass
+                if not opened:
+                    try:
+                        os.startfile(target_dir)
+                    except Exception:
+                        subprocess.Popen(f'explorer "{target_dir}"', shell=True)
+            elif sys.platform == "darwin":
+                subprocess.Popen(["open", target_dir])
+            else:
+                subprocess.Popen(["xdg-open", target_dir])
             return {"success": True, "path": target_dir}
         except Exception as e:
             return {"success": False, "error": str(e)}
@@ -1113,10 +1130,19 @@ class InstanceService:
         target_dir = os.path.normpath(target_dir)
         try:
             if sys.platform == "win32":
+                opened = False
                 try:
-                    os.startfile(target_dir)
+                    import ctypes
+                    ret = ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
+                    if int(ret) > 32:
+                        opened = True
                 except Exception:
-                    subprocess.Popen(f'explorer "{target_dir}"', shell=True)
+                    pass
+                if not opened:
+                    try:
+                        os.startfile(target_dir)
+                    except Exception:
+                        subprocess.Popen(f'explorer "{target_dir}"', shell=True)
             elif sys.platform == "darwin":
                 subprocess.Popen(["open", target_dir])
             else:

@@ -353,6 +353,8 @@ class TestMilestone1Round2Challenger(unittest.TestCase):
         Adversarial Challenge: Simultaneous writes and reads across mixed uppercase and lowercase
         paths on Windows must share the exact same synchronization lock.
         """
+        if sys.platform != "win32":
+            self.skipTest("Case-insensitive path locking is Windows NTFS-specific")
         lower_path = os.path.join(self.test_dir, "matrix_case.json").lower()
         upper_path = os.path.join(self.test_dir, "MATRIX_CASE.JSON").upper()
 

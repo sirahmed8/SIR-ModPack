@@ -1,4 +1,6 @@
 // --- LOGS & DIAGNOSTICS (ZERO FAKE DATA) ---
+let _logsPollingInterval = null;
+
 async function refreshLogs() {
   const container = document.getElementById('game-logs-output') || document.getElementById('logs-output-container');
   if (!container) return;
@@ -37,6 +39,28 @@ async function refreshLogs() {
     <div class="font-mono text-xs text-slate-600 dark:text-slate-400">[${timestamp}] [Client/INFO]: Live terminal output from minecraft/logs/latest.log will stream here in real time upon launch.</div>
   `;
 }
+
+function startLogsPolling() {
+  if (_logsPollingInterval) clearInterval(_logsPollingInterval);
+  refreshLogs();
+  _logsPollingInterval = setInterval(() => {
+    if (typeof STATE !== 'undefined' && STATE.activeTab === 'logs') {
+      refreshLogs();
+    } else {
+      stopLogsPolling();
+    }
+  }, 1500);
+}
+
+function stopLogsPolling() {
+  if (_logsPollingInterval) {
+    clearInterval(_logsPollingInterval);
+    _logsPollingInterval = null;
+  }
+}
+window.refreshLogs = refreshLogs;
+window.startLogsPolling = startLogsPolling;
+window.stopLogsPolling = stopLogsPolling;
 
 async function copyLogs() {
   const container = document.getElementById('game-logs-output') || document.getElementById('logs-output-container');

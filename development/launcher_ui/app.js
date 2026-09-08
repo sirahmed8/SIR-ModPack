@@ -365,25 +365,33 @@ async function applyShader(presetId) {
   showToast(`✓ Activated Shader: ${cleanName}`, 'success');
 }
 
+let _hardwarePollingInterval = null;
+
 async function refreshHardwareTelemetry() {
-  const set = (id, txt) => { const el = document.getElementById(id); if (el) el.innerText = txt; };
+  const set = (id, txt) => { 
+    const el = document.getElementById(id); 
+    if (el && el.innerText !== txt) {
+      el.innerText = txt; 
+    }
+  };
   
-  if (window.pywebview && window.pywebview.api) {
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_hardware_telemetry) {
     try {
       const data = await window.pywebview.api.get_hardware_telemetry();
-      if (data) {
-        const total = data.total_ram_gb || '23.8';
-        const avail = data.avail_ram_gb || '12.1';
-        const ramPct = data.ram_load_pct ?? data.ram_pct ?? 42;
-        const cores = data.cpu_cores ?? data.cpu_count ?? 20;
-        const cpuPct = data.cpu_load_pct ?? data.cpu_pct ?? 15;
+      if (data && data.success !== false) {
+        const total = data.total_ram_gb !== undefined ? `${data.total_ram_gb} GB Total` : 'Detecting...';
+        const avail = data.avail_ram_gb !== undefined ? `${data.avail_ram_gb} GB Available` : 'Detecting...';
+        const ramPct = data.ram_load_pct ?? data.ram_pct ?? 0;
+        const cores = data.cpu_cores ?? data.cpu_count ?? 4;
+        const cpuPct = data.cpu_load_pct ?? data.cpu_pct ?? 0;
         const recRam = data.recommended_ram_gb ?? data.rec_ram_gb ?? 8;
-        const tier = data.power_tier || 'Extreme Enthusiast (23 GB)';
-        const gpu = data.gpu_name || 'NVIDIA GeForce RTX 4050 Laptop GPU';
-        const rec = data.recommendation || `Your system (${cores} Threads, ${total} GB RAM, ${gpu}) has sufficient headroom to run modern Minecraft with SIR Shaders 2.0 at Maximum Raytracing quality with Parallax Occlusion Mapping (POM) active.`;
+        const tier = data.power_tier || 'Detected Hardware Tier';
+        const gpu = data.gpu_name || 'Primary GPU';
+        const rec = data.recommendation || `System detected: ${cores} CPU Threads, ${total}, ${gpu}. Optimal allocation: ${recRam} GB Dedicated Heap.`;
+        const timeStr = data.timestamp || new Date().toLocaleTimeString();
 
-        set('hw-total-ram', `${total} GB Total`);
-        set('hw-avail-ram', `${avail} GB Available`);
+        set('hw-total-ram', total);
+        set('hw-avail-ram', avail);
         set('hw-load-pct', `${ramPct}% In Use`);
         set('hw-cpu-cores', `${cores} Logical Cores`);
         set('hw-cpu-load', `${cpuPct}% Live Load`);
@@ -391,32 +399,44 @@ async function refreshHardwareTelemetry() {
         set('hw-rec-ram', `Allocate ${recRam} GB Dedicated`);
         set('hw-gpu-name', gpu);
         set('hw-recommendation-text', rec);
+        set('hw-timestamp-badge', `Live • ${timeStr}`);
+
+        const liveBadge = document.getElementById('hw-live-badge');
+        if (liveBadge) liveBadge.textContent = 'Live Kernel Stream';
 
         const bar = document.getElementById('hw-ram-bar');
-        if (bar) bar.style.width = `${ramPct}%`;
+        if (bar) bar.style.width = `${Math.min(100, Math.max(0, ramPct))}%`;
         return;
       }
-    } catch {}
+    } catch (e) {
+      console.warn('[HardwareTelemetry] Refresh failed:', e);
+    }
   }
 
-  // Initial / Pending hardware detection state (No synthetic mock data)
+  // Initial / Pending hardware detection state
   set('hw-total-ram', 'Detecting...');
   set('hw-avail-ram', 'Detecting...');
   set('hw-load-pct', '0% In Use');
   set('hw-cpu-cores', 'Detecting...');
   set('hw-cpu-load', '0% Live Load');
-  set('hw-power-tier', 'Detecting System Tier...');
+  set('hw-power-tier', 'Detecting Power Tier...');
   set('hw-rec-ram', 'Calculating Allocation...');
   set('hw-gpu-name', 'Detecting GPU...');
   set('hw-recommendation-text', 'Reading system hardware topology from Windows Kernel...');
+  set('hw-timestamp-badge', 'Querying Kernel...');
   const bar = document.getElementById('hw-ram-bar');
   if (bar) bar.style.width = '0%';
 }
+window.refreshHardwareTelemetry = refreshHardwareTelemetry;
 
-
-// Start live 1.5s real-time hardware telemetry auto-polling
-setInterval(refreshHardwareTelemetry, 1500);
-setTimeout(refreshHardwareTelemetry, 500);
+// Start live real-time hardware telemetry auto-polling (active 1.2s interval)
+if (_hardwarePollingInterval) clearInterval(_hardwarePollingInterval);
+_hardwarePollingInterval = setInterval(() => {
+  if (typeof STATE !== 'undefined' && STATE.activeTab === 'hardware') {
+    refreshHardwareTelemetry();
+  }
+}, 1200);
+setTimeout(refreshHardwareTelemetry, 300);
 
 
 // Auto-render Lucide icons on any DOM change

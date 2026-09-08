@@ -299,17 +299,52 @@ function renderAccountMenuGoogleCard() {
   }
 }
 
+function openDisconnectConfirmModal() {
+  const modal = document.getElementById('disconnect-confirm-modal');
+  const emailEl = document.getElementById('disconnect-modal-email');
+  if (emailEl && window.CLOUD_STATE) {
+    emailEl.textContent = window.CLOUD_STATE.email || 'user@gmail.com';
+  }
+  if (modal) {
+    modal.classList.remove('hidden');
+    if (typeof refreshLucideIcons === 'function') refreshLucideIcons();
+  }
+}
+window.openDisconnectConfirmModal = openDisconnectConfirmModal;
+
+function closeDisconnectConfirmModal() {
+  const modal = document.getElementById('disconnect-confirm-modal');
+  if (modal) modal.classList.add('hidden');
+}
+window.closeDisconnectConfirmModal = closeDisconnectConfirmModal;
+
+async function confirmDisconnectGoogle() {
+  closeDisconnectConfirmModal();
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.logout_google) {
+    try {
+      await window.pywebview.api.logout_google();
+    } catch (e) {
+      console.warn('[CloudSync] logout_google error:', e);
+    }
+  }
+  updateCloudState({ authenticated: false, email: '', displayName: '', photoURL: '' });
+  try {
+    localStorage.removeItem('sir_cloud_session');
+  } catch(e) {}
+  if (window.STATE) {
+    window.STATE.cloudUser = null;
+  }
+  if (typeof loadAccounts === 'function') await loadAccounts();
+  if (typeof renderLaunchpad === 'function') renderLaunchpad();
+  if (typeof showToast === 'function') {
+    showToast('✓ Disconnected from Google Cloud Sync safely.', 'info');
+  }
+}
+window.confirmDisconnectGoogle = confirmDisconnectGoogle;
+
 async function triggerGoogleLogin() {
   if (window.CLOUD_STATE && window.CLOUD_STATE.authenticated) {
-    if (confirm(`You are logged in as ${window.CLOUD_STATE.email}. Do you want to log out from Google Cloud Sync?`)) {
-      if (window.pywebview && window.pywebview.api && window.pywebview.api.logout_google) {
-        await window.pywebview.api.logout_google();
-        updateCloudState({ authenticated: false });
-        if (typeof showToast === 'function') {
-          showToast('Logged out from Google Cloud Sync.', 'info');
-        }
-      }
-    }
+    openDisconnectConfirmModal();
     return;
   }
 

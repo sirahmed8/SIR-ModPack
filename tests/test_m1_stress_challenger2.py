@@ -185,6 +185,8 @@ class TestM1EmpiricalStress(unittest.TestCase):
 
     def test_hardware_monitor_live_win32_metrics(self):
         """Verify HardwareMonitorService queries live Win32 kernel structures."""
+        if sys.platform != "win32":
+            self.skipTest("Live hardware monitor metrics query Win32 kernel structures")
         hw = HardwareMonitorService()
         telemetry = hw.get_hardware_telemetry()
 
@@ -202,6 +204,8 @@ class TestM1EmpiricalStress(unittest.TestCase):
 
     def test_telemetry_governor_process_tracking(self):
         """Verify live Win32 process tracking for the current Python process."""
+        if sys.platform != "win32":
+            self.skipTest("Telemetry governor process tracking is Win32-specific")
         gov = TelemetryGovernorService.get_instance()
         current_pid = os.getpid()
 
@@ -215,6 +219,8 @@ class TestM1EmpiricalStress(unittest.TestCase):
 
     def test_telemetry_governor_high_frequency_and_thread_safety(self):
         """Stress CPU delta calculations under rapid polling and concurrent threads."""
+        if sys.platform != "win32":
+            self.skipTest("Telemetry governor process tracking is Win32-specific")
         gov = TelemetryGovernorService.get_instance()
         pid = os.getpid()
 
@@ -238,6 +244,8 @@ class TestM1EmpiricalStress(unittest.TestCase):
 
     def test_telemetry_governor_invalid_and_nonexistent_pids(self):
         """Verify handling of invalid, zero, negative, and dead PIDs."""
+        if sys.platform != "win32":
+            self.skipTest("Telemetry governor process tracking is Win32-specific")
         gov = TelemetryGovernorService.get_instance()
 
         # PID 0 or negative

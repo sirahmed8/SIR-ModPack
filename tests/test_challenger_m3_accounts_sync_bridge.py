@@ -487,10 +487,11 @@ class TestChallengerM3AccountsSyncBridge(unittest.TestCase):
         self.assertTrue(os.path.exists(os.path.join(mods_dir, "sodium-fabric.jar")))
 
         # 4. open_mods_folder
-        with patch('os.startfile') as mock_startfile:
+        with patch('os.startfile', create=True) as mock_startfile:
             res_open_mods = bridge.open_mods_folder("26.2")
             self.assertTrue(res_open_mods.get("success"))
-            self.assertTrue(mock_startfile.called)
+            if sys.platform == "win32":
+                self.assertTrue(mock_startfile.called)
 
         # 5. set_active_shader
         res_shader = bridge.set_active_shader("26.2", "SIR Modern Shader.zip")
