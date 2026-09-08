@@ -25,8 +25,12 @@ website-next/
 accounts.json
 ias_accounts.json
 launcher_settings.json
+custom_instances.json
+legal_agreement.json
 prism/
+instances/
 .github/
+
 
 # Distribution Packages (Over 100MB GitHub limit, distributed via Releases/CDN)
 *.zip
