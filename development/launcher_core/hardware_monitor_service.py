@@ -9,7 +9,10 @@ import os
 import shutil
 import sys
 import time
-import winreg
+if sys.platform == "win32":
+    import winreg
+else:
+    winreg = None  # type: ignore
 from typing import Any, Dict, List, Optional
 
 from .telemetry_governor_service import TelemetryGovernorService

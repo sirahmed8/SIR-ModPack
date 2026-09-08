@@ -666,8 +666,11 @@ class NativeMinecraftRunner:
     ) -> List[str]:
         """Constructs the complete Java classpath (-cp) list of jars dynamically without ASM conflicts."""
         jars: List[str] = []
-        appdata = os.environ.get("APPDATA", "")
-        base_lib = os.path.join(appdata, ".minecraft", "libraries")
+        if sys.platform == "win32":
+            appdata = os.environ.get("APPDATA", "")
+            base_lib = os.path.join(appdata, ".minecraft", "libraries") if appdata else os.path.join(os.path.expanduser("~"), ".minecraft", "libraries")
+        else:
+            base_lib = os.path.join(os.path.expanduser("~"), ".minecraft", "libraries")
 
         # Inspect instance config if provided
         inst_cfg = self.inspect_instance_config(instance_dir) if instance_dir else {}
@@ -721,13 +724,17 @@ class NativeMinecraftRunner:
                 os.path.join(base_lib, "net", "minecraftforge", "forge", "1.8.9-11.15.1.2318-1.8.9", "forge-1.8.9-11.15.1.2318-1.8.9.jar"),
                 os.path.join(base_lib, "net", "minecraftforge", "forge", "1.8.9-11.15.1.2318", "forge-1.8.9-11.15.1.2318.jar"),
             ]
+            found_forge = False
             for fc in forge_candidates:
                 if os.path.isfile(fc):
                     jars.append(os.path.normpath(fc))
+                    found_forge = True
                     break
+            if not found_forge:
+                jars.append(os.path.normpath(forge_candidates[0]))
 
             launchwrapper_jar = os.path.join(base_lib, "net", "minecraft", "launchwrapper", "1.12", "launchwrapper-1.12.jar")
-            if os.path.isfile(launchwrapper_jar):
+            if os.path.isfile(launchwrapper_jar) or not found_forge:
                 jars.append(os.path.normpath(launchwrapper_jar))
 
             asm_legacy = os.path.join(base_lib, "org", "ow2", "asm", "asm-all", "5.0.3", "asm-all-5.0.3.jar")

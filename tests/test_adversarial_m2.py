@@ -79,6 +79,8 @@ class TestMilestone2AdversarialStress(unittest.TestCase):
 
     def test_adv_natives_winerror32_real_locked_dll(self):
         """Simulate real Windows file locking (WinError 32 / PermissionError) on target DLL; verify temp fallback."""
+        if sys.platform != "win32":
+            self.skipTest("Windows-specific msvcrt file locking test")
         import msvcrt
 
         target_dir = os.path.join(self.temp_dir, "locked_natives")
