@@ -1110,15 +1110,20 @@ class InstanceService:
             except Exception:
                 target_dir = candidates[-1]
                 os.makedirs(target_dir, exist_ok=True)
+        target_dir = os.path.normpath(target_dir)
         try:
-            os.startfile(target_dir)
+            if sys.platform == "win32":
+                try:
+                    os.startfile(target_dir)
+                except Exception:
+                    subprocess.Popen(f'explorer "{target_dir}"', shell=True)
+            elif sys.platform == "darwin":
+                subprocess.Popen(["open", target_dir])
+            else:
+                subprocess.Popen(["xdg-open", target_dir])
             return {"success": True, "path": target_dir}
-        except Exception:
-            try:
-                subprocess.Popen(['explorer', os.path.normpath(target_dir)])
-                return {"success": True, "path": target_dir}
-            except Exception as e:
-                return {"success": False, "error": str(e)}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
 
     def apply_video_preset(self, inst_id="sir-26-ultra", preset_name="balanced"):
         """Applies Display, Quality, and Performance presets directly across Minecraft, Sodium/OptiFine, and Iris/Shader configs."""

@@ -37,17 +37,17 @@ async function renderSatellite() {
     container.innerHTML = nodes.map(node => `
       <div class="feature-card p-4 rounded-2xl border ${
         isLight ? 'bg-white border-slate-200' : 'bg-slate-900/60 border-slate-800'
-      } flex items-center justify-between">
-        <div>
+      } flex items-center justify-between gap-3 overflow-hidden">
+        <div class="min-w-0 flex-1">
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#38ef7d]"></span>
-            <h4 class="text-xs font-black text-slate-900 dark:text-slate-100">${escapeHtml(node.name)}</h4>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#38ef7d] shrink-0"></span>
+            <h4 class="text-xs font-black text-slate-900 dark:text-slate-100 truncate">${escapeHtml(node.name)}</h4>
           </div>
-          <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 font-mono">${escapeHtml(node.region)}</p>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 font-mono truncate" title="${escapeHtml(node.region)}">${escapeHtml(node.region)}</p>
         </div>
-        <div class="text-right">
-          <span class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400">${node.ping}</span>
-          <p class="text-[9px] font-mono text-emerald-500 font-bold">${node.status}</p>
+        <div class="text-right shrink-0">
+          <span class="text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 block">${node.ping}</span>
+          <p class="text-[9px] font-mono text-emerald-500 font-bold mt-0.5">${node.status}</p>
         </div>
       </div>
     `).join('');

@@ -1,0 +1,14 @@
+# Auto-detect text files and normalize line endings
+* text=auto
+
+# Binary files - prevent any line ending alteration
+*.jar binary
+*.zip binary
+*.mrpack binary
+*.exe binary
+*.ico binary
+*.png binary
+*.jpg binary
+*.ogg binary
+*.so binary
+*.dll binary

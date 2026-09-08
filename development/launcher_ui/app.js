@@ -184,25 +184,36 @@ function joinServer(host) {
 }
 
 function openInstanceMods(instId) {
-  if (window.pywebview && window.pywebview.api && window.pywebview.api.open_mods_folder) {
-    try {
-      const p = window.pywebview.api.open_mods_folder(instId);
-      if (p && typeof p.then === 'function') {
-        p.then(res => {
-          if (res && res.success) {
-            showToast('Opened mods folder on disk', 'success');
-          } else if (res && res.error) {
-            showToast(res.error, 'error');
-          }
-        }).catch(() => {});
-      } else {
-        showToast('Opening mods folder for ' + instId, 'info');
+  instId = instId || (typeof STATE !== 'undefined' && STATE.selectedInstanceId) || '26.2-ultra';
+  if (window.pywebview && window.pywebview.api) {
+    const api = window.pywebview.api;
+    const fn = api.open_mods_folder || api.open_instance_mods_folder;
+    if (typeof fn === 'function') {
+      try {
+        const p = fn.call(api, instId);
+        if (p && typeof p.then === 'function') {
+          p.then(res => {
+            if (res && res.success) {
+              showToast('Opened physical mods folder: ' + (res.path || instId), 'success');
+            } else {
+              showToast(res && res.error ? res.error : 'Could not open mods folder', 'error');
+            }
+          }).catch(err => {
+            showToast('Error opening mods folder: ' + err, 'error');
+          });
+          return;
+        } else if (p && p.success) {
+          showToast('Opened physical mods folder: ' + (p.path || instId), 'success');
+          return;
+        }
+      } catch (e) {
+        console.error('Error opening mods folder:', e);
       }
-      return;
-    } catch {}
+    }
   }
-  showToast('Opening mods folder for ' + instId, 'info');
+  showToast('Opening physical mods folder for ' + instId + '...', 'info');
 }
+window.openInstanceMods = openInstanceMods;
 
 function toggleServerSorting() {
   STATE.serverSortOrder = STATE.serverSortOrder === 'ping' ? 'players' : 'ping';

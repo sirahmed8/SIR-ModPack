@@ -5,6 +5,38 @@ STATE.mods = [];
 STATE.modCategory = "all";
 STATE.modSearchQuery = "";
 
+function openInstanceMods(instId) {
+  instId = instId || (typeof STATE !== 'undefined' && STATE.selectedInstanceId) || '26.2-ultra';
+  if (window.pywebview && window.pywebview.api) {
+    const api = window.pywebview.api;
+    const fn = api.open_mods_folder || api.open_instance_mods_folder;
+    if (typeof fn === 'function') {
+      try {
+        const p = fn.call(api, instId);
+        if (p && typeof p.then === 'function') {
+          p.then(res => {
+            if (res && res.success) {
+              showToast('Opened physical mods folder: ' + (res.path || instId), 'success');
+            } else {
+              showToast(res && res.error ? res.error : 'Could not open mods folder', 'error');
+            }
+          }).catch(err => {
+            showToast('Error opening mods folder: ' + err, 'error');
+          });
+          return;
+        } else if (p && p.success) {
+          showToast('Opened physical mods folder: ' + (p.path || instId), 'success');
+          return;
+        }
+      } catch (e) {
+        console.error('Error opening mods folder:', e);
+      }
+    }
+  }
+  showToast('Opening physical mods folder for ' + instId + '...', 'info');
+}
+window.openInstanceMods = openInstanceMods;
+
 function selectModCategoryDropdown(cat, label) {
   STATE.modCategory = cat;
   const labelEl = document.getElementById('mod-category-label');

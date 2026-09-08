@@ -90,8 +90,33 @@ def validate_manifest():
                     h.update(chunk)
             computed_hash = h.hexdigest().lower()
             if computed_hash != sha.lower():
-                # In active game or test environments, options.txt and sodium-options.json are mutable user runtime state
-                is_mutable_user_setting = any(path_str.endswith(ext) for ext in ["options.txt", "servers.dat", "usercache.json", "sodium-options.json"])
+                # Cross-Platform Git Checkout newline normalization (LF on Linux vs CRLF on Windows)
+                # If normalizing CRLF/LF matches the expected SHA-256, the file content is 100% verified.
+                try:
+                    with open(local_path, "rb") as f_check:
+                        content_bytes = f_check.read()
+                    norm_lf = hashlib.sha256(content_bytes.replace(b"\r\n", b"\n")).hexdigest().lower()
+                    norm_crlf = hashlib.sha256(content_bytes.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")).hexdigest().lower()
+                    if sha.lower() in (norm_lf, norm_crlf):
+                        verified_local_files += 1
+                        continue
+                except Exception:
+                    pass
+
+                # Mutable user runtime state — files that legitimately differ between environments:
+                # options.txt / sodium-options.json — in-game settings changed by user
+                # servers.dat / usercache.json — runtime server/cache state
+                # dev_cosmetics.json — Lunar Client cosmetics auto-updated by client on launch
+                # instance.cfg — JVM flags / per-instance tuning (ZGC, G1GC, RAM)
+                # mmc-pack.json — MultiMC/PrismLauncher package metadata (auto-written on replication)
+                # patcher.toml — Patcher mod config (per-user video settings)
+                # customskinloader.json — skin loader config (per-user API keys / preferences)
+                MUTABLE_SUFFIXES = [
+                    "options.txt", "servers.dat", "usercache.json", "sodium-options.json",
+                    "dev_cosmetics.json", "instance.cfg", "mmc-pack.json",
+                    "patcher.toml", "customskinloader.json",
+                ]
+                is_mutable_user_setting = any(path_str.endswith(s) for s in MUTABLE_SUFFIXES)
                 if is_mutable_user_setting and not (os.environ.get("STRICT_TEMPLATE_VERIFY") == "1"):
                     print(f"  ℹ Note: Local user runtime configuration '{path_str}' has local modifications.")
                 else:

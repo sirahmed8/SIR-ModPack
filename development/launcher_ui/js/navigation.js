@@ -346,7 +346,7 @@ function handleIncomingDeepLink(dl) {
     } else {
       switchTab('servers');
     }
-  } else if (action === 'launch' || params.profile) {
+  } else if (action === 'launch' || (action !== 'profile' && !params.name && params.profile)) {
     const prof = params.profile || '';
     if (typeof showToast === 'function' && prof) {
       showToast(`✨ Deep-link connected: Profile ${prof}`, 'info');
@@ -355,6 +355,27 @@ function handleIncomingDeepLink(dl) {
       launchGame(prof);
     } else {
       switchTab('instances');
+    }
+  } else if (action === 'mod/install' || action.startsWith('mod')) {
+    const modId = params.id || params.modId || '';
+    if (modId) {
+      if (typeof showToast === 'function') {
+        showToast(`⚡ Deep-link installing mod: ${modId}`, 'info');
+      }
+      switchTab('mods');
+      if (typeof installOnlineModById === 'function') {
+        installOnlineModById(modId);
+      }
+    }
+  } else if (action === 'profile' || params.name) {
+    const profName = params.name || params.profile || '';
+    if (profName) {
+      if (typeof showToast === 'function') {
+        showToast(`✨ Switched to profile: ${profName}`, 'info');
+      }
+      if (typeof selectInstance === 'function') {
+        selectInstance(profName);
+      }
     }
   } else if (action === 'shaders') {
     switchTab('shaders');
@@ -381,6 +402,36 @@ function handleIncomingDeepLink(dl) {
   }
 }
 window.handleIncomingDeepLink = handleIncomingDeepLink;
+
+async function installOnlineModById(modId) {
+  if (!modId) return;
+  try {
+    if (window.pywebview && window.pywebview.api && typeof window.pywebview.api.install_online_mod === 'function') {
+      const activeInst = (window.STATE && window.STATE.selectedInstanceId) ? window.STATE.selectedInstanceId : '26.2-ultra';
+      if (typeof showToast === 'function') {
+        showToast(`📥 Downloading mod: ${modId}...`, 'info');
+      }
+      const res = await window.pywebview.api.install_online_mod(modId, activeInst);
+      if (res && res.success) {
+        if (typeof showToast === 'function') {
+          showToast(`✓ Successfully installed mod ${modId}!`, 'success');
+        }
+        if (typeof loadModsFromBridge === 'function') {
+          await loadModsFromBridge();
+        }
+      } else {
+        if (typeof showToast === 'function') {
+          showToast(res && res.error ? `Mod install error: ${res.error}` : `Failed to install mod ${modId}`, 'error');
+        }
+      }
+    } else {
+      console.log(`[DeepLink] Mod install queued for id: ${modId}`);
+    }
+  } catch (err) {
+    console.error('[DeepLink] Failed installing mod by id:', err);
+  }
+}
+window.installOnlineModById = installOnlineModById;
 
 function checkAndExecuteDeepLink() {
   if (!window.__SIR_DEEP_LINK__) return;

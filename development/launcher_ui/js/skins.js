@@ -74,6 +74,7 @@ let STUDIO_STATE = {
   animMode: 'walk',
   hasElytra: false,
   viewer: null,
+  orbitControl: null,
   animation: null
 };
 
@@ -153,6 +154,10 @@ function initStudio3DViewer() {
   }
 
   if (STUDIO_STATE.viewer) {
+    if (STUDIO_STATE.orbitControl && typeof STUDIO_STATE.orbitControl.dispose === 'function') {
+      try { STUDIO_STATE.orbitControl.dispose(); } catch {}
+      STUDIO_STATE.orbitControl = null;
+    }
     STUDIO_STATE.viewer.dispose();
     STUDIO_STATE.viewer = null;
   }
@@ -174,6 +179,18 @@ function initStudio3DViewer() {
     viewer.playerObject.rotation.y = Math.PI * 0.95;
     viewer.autoRotate = STUDIO_STATE.isSpinning;
     viewer.autoRotateSpeed = 1.2;
+
+    if (typeof skinview3d.createOrbitControls === 'function') {
+      try {
+        const orbit = skinview3d.createOrbitControls(viewer);
+        orbit.enableRotate = true;
+        orbit.enableZoom = true;
+        orbit.enablePan = false;
+        STUDIO_STATE.orbitControl = orbit;
+      } catch (orbitErr) {
+        console.warn("Orbit controls init notice:", orbitErr);
+      }
+    }
 
     if (STUDIO_STATE.selectedCape && STUDIO_STATE.selectedCape.url) {
       viewer.loadCape(STUDIO_STATE.selectedCape.url, {
