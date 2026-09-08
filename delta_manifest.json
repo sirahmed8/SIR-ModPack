@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "version": "1.0.0",
-  "generated_at": 1788834932,
-  "iso_timestamp": "2026-09-08T02:35:32Z",
-  "total_files": 2674,
-  "total_size_bytes": 4404677088,
+  "generated_at": 1788838224,
+  "iso_timestamp": "2026-09-08T03:30:24Z",
+  "total_files": 2694,
+  "total_size_bytes": 4490919319,
   "files": {
     "config/customskinloader.json": {
       "sha256": "c05d7dd7b0e2069c4fd6e90087e8e485aa771d140561e0332b14a451835e9441",
@@ -409,9 +409,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-balanced/minecraft/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-balanced/mmc-pack.json": {
@@ -445,9 +445,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-balanced/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-performance/OneConfig/OneConfig (1.8.9-forge).jar": {
@@ -1195,9 +1195,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
@@ -1243,9 +1243,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-performance/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-performance/shaderpacks/SIR Modern Shader.zip": {
@@ -3265,9 +3265,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Modern Shader.zip": {
@@ -3331,9 +3331,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-ultra/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9-ultra/shaderpacks/SIR Modern Shader.zip": {
@@ -3657,7 +3657,7 @@
     "instances/1.8.9/minecraft/options.txt": {
       "sha256": "5cd75b44dfb0bb68d21954a04edf523bf4b074c391ffc7c2b4388024437535d3",
       "size": 735,
-      "mtime": 1788834170,
+      "mtime": 1788837917,
       "category": "instance_meta"
     },
     "instances/1.8.9/minecraft/optionsof.txt": {
@@ -3679,9 +3679,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9/minecraft/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/1.8.9/minecraft/skins/SirAhmed1.png": {
@@ -3699,7 +3699,7 @@
     "instances/1.8.9/options.txt": {
       "sha256": "89b3937fbd9f4ff5d79d8e05a954c6db62d4c904929719f047c130306a77aacf",
       "size": 541,
-      "mtime": 1788834170,
+      "mtime": 1788837917,
       "category": "instance_meta"
     },
     "instances/1.8.9/optionsof.txt": {
@@ -3721,9 +3721,9 @@
       "category": "resourcepack"
     },
     "instances/1.8.9/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/26.2-balanced/assets/lunar/dev_cosmetics.json": {
@@ -4116,6 +4116,12 @@
       "mtime": 1788467652,
       "category": "mod"
     },
+    "instances/26.2-balanced/minecraft/mods/NoChatReports-FABRIC-26.2-v2.20.2.jar": {
+      "sha256": "93c761e9fb7d76269a0d5b9807e19db164b3a2fd0b8ebd0550fe94f832cf396f",
+      "size": 239602,
+      "mtime": 1788837917,
+      "category": "mod"
+    },
     "instances/26.2-balanced/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
       "sha256": "331bc337fd821fbf0a7069e882cd9cb5fef1cf4d472a50e3ccce98e2ef929204",
       "size": 88087,
@@ -4186,6 +4192,12 @@
       "sha256": "cebd02a4357089bd157abb2c80e0fd549413fc6d7a21c0b0b07d369024e26695",
       "size": 454660,
       "mtime": 1786263773,
+      "category": "mod"
+    },
+    "instances/26.2-balanced/minecraft/mods/Resourcify (26.2-fabric)-1.8.5.jar": {
+      "sha256": "4019e4e515995395eaf8dd6c3805d80219879d869d44999935034c273c9ae249",
+      "size": 2549332,
+      "mtime": 1788837902,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/SIR_Core-fabric-26.2.jar": {
@@ -4375,9 +4387,9 @@
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/cloth-config-26.2.155.jar": {
-      "sha256": "26e5aeb0f54274845bf09eac03008a0c2eda5f8d9f4d50de98ffb5a71c0ffef2",
-      "size": 1123314,
-      "mtime": 1788467656,
+      "sha256": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "size": 1135186,
+      "mtime": 1788837918,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/collective-26.2.0-8.39.jar": {
@@ -4506,16 +4518,16 @@
       "mtime": 1786877955,
       "category": "mod"
     },
-    "instances/26.2-balanced/minecraft/mods/fabric-api-0.159.0+26.2.jar": {
-      "sha256": "aa92b677756d4e0d70b3da8c11d551a82b7c664709ea9065dc9758c6a38253e8",
-      "size": 2531477,
-      "mtime": 1788467662,
+    "instances/26.2-balanced/minecraft/mods/fabric-api-0.160.0+26.2.jar": {
+      "sha256": "5f3dff88e1661166e222213302b25ace6c36dc3683804cbd4b5acf93138ea05e",
+      "size": 2542898,
+      "mtime": 1788837910,
       "category": "mod"
     },
-    "instances/26.2-balanced/minecraft/mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar": {
-      "sha256": "34ccdacf13bb9351fe43ce61912c2e09b72364e43e787d36ba3d2d04dec75a52",
-      "size": 8076363,
-      "mtime": 1786273063,
+    "instances/26.2-balanced/minecraft/mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar": {
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+      "size": 8142858,
+      "mtime": 1788837908,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/fadeless-2.0.8-26.2.jar": {
@@ -4704,6 +4716,12 @@
       "mtime": 1786264046,
       "category": "mod"
     },
+    "instances/26.2-balanced/minecraft/mods/krypton-0.3.1.jar": {
+      "sha256": "5ea8901561973d29e51e751469d52d92100f348ab461e1186f67012e93420c48",
+      "size": 268842,
+      "mtime": 1788837888,
+      "category": "mod"
+    },
     "instances/26.2-balanced/minecraft/mods/lambdynamiclights-4.12.3+26.2.jar": {
       "sha256": "3572acaad9cd2eb111990bc29b48e65b092c999c0143bd24e61a0b13126522ca",
       "size": 1336211,
@@ -4773,7 +4791,7 @@
     "instances/26.2-balanced/minecraft/mods/modmenu-20.0.1.jar": {
       "sha256": "81bfbca06012c57c74949072f2ffaad06360badee4d00dc59bfaeac80dd24bd8",
       "size": 614002,
-      "mtime": 1788368746,
+      "mtime": 1788837903,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/modonomicon-26.2-fabric-2.4.0.jar": {
@@ -4857,7 +4875,7 @@
     "instances/26.2-balanced/minecraft/mods/placeholder-api-3.1.0-beta.1+26.2.jar": {
       "sha256": "c2ca2b5c397a0c198a32e7af68d2d0a011bc2c7baeae5cffd3996efd65c5069e",
       "size": 254973,
-      "mtime": 1788368747,
+      "mtime": 1788837904,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/polylib-fabric-26.2-2.0.10.jar": {
@@ -4930,6 +4948,12 @@
       "sha256": "4e125eec208cd6a68adc866c48ae3dcb0485289f4cd5115339d50b710bf14eab",
       "size": 6734369,
       "mtime": 1788467687,
+      "category": "mod"
+    },
+    "instances/26.2-balanced/minecraft/mods/replaymod-26.2-2.6.27.jar": {
+      "sha256": "68a18bb725ea65cba6217a6a93afd8551b969c36c878d45febfe454d24586999",
+      "size": 15716381,
+      "mtime": 1788837937,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/rightclickharvest-fabric-4.6.2+26.2.x.jar": {
@@ -5011,9 +5035,9 @@
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/sodium-fabric-0.9.1+mc26.2.jar": {
-      "sha256": "0b222b7ea88bb3ad9b80a67c78649942d753dac1c1bd9b59819c6cd2542e05c7",
-      "size": 1843662,
-      "mtime": 1788467689,
+      "sha256": "de406c7a0ca5e748dfbe44740278400882a44e3109e2584b243ec02d4003344b",
+      "size": 1834384,
+      "mtime": 1788837960,
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/sodium-shadowy-path-blocks-fabric-7.0.0.jar": {
@@ -5628,6 +5652,12 @@
       "mtime": 1788467652,
       "category": "mod"
     },
+    "instances/26.2-performance/minecraft/mods/NoChatReports-FABRIC-26.2-v2.20.2.jar": {
+      "sha256": "93c761e9fb7d76269a0d5b9807e19db164b3a2fd0b8ebd0550fe94f832cf396f",
+      "size": 239602,
+      "mtime": 1788837917,
+      "category": "mod"
+    },
     "instances/26.2-performance/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
       "sha256": "331bc337fd821fbf0a7069e882cd9cb5fef1cf4d472a50e3ccce98e2ef929204",
       "size": 88087,
@@ -5698,6 +5728,12 @@
       "sha256": "cebd02a4357089bd157abb2c80e0fd549413fc6d7a21c0b0b07d369024e26695",
       "size": 454660,
       "mtime": 1786263773,
+      "category": "mod"
+    },
+    "instances/26.2-performance/minecraft/mods/Resourcify (26.2-fabric)-1.8.5.jar": {
+      "sha256": "4019e4e515995395eaf8dd6c3805d80219879d869d44999935034c273c9ae249",
+      "size": 2549332,
+      "mtime": 1788837902,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/SIR_Core-fabric-26.2.jar": {
@@ -5887,9 +5923,9 @@
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/cloth-config-26.2.155.jar": {
-      "sha256": "26e5aeb0f54274845bf09eac03008a0c2eda5f8d9f4d50de98ffb5a71c0ffef2",
-      "size": 1123314,
-      "mtime": 1788467656,
+      "sha256": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "size": 1135186,
+      "mtime": 1788837918,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/collective-26.2.0-8.39.jar": {
@@ -6018,16 +6054,16 @@
       "mtime": 1786877955,
       "category": "mod"
     },
-    "instances/26.2-performance/minecraft/mods/fabric-api-0.159.0+26.2.jar": {
-      "sha256": "aa92b677756d4e0d70b3da8c11d551a82b7c664709ea9065dc9758c6a38253e8",
-      "size": 2531477,
-      "mtime": 1788467662,
+    "instances/26.2-performance/minecraft/mods/fabric-api-0.160.0+26.2.jar": {
+      "sha256": "5f3dff88e1661166e222213302b25ace6c36dc3683804cbd4b5acf93138ea05e",
+      "size": 2542898,
+      "mtime": 1788837910,
       "category": "mod"
     },
-    "instances/26.2-performance/minecraft/mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar": {
-      "sha256": "34ccdacf13bb9351fe43ce61912c2e09b72364e43e787d36ba3d2d04dec75a52",
-      "size": 8076363,
-      "mtime": 1786273063,
+    "instances/26.2-performance/minecraft/mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar": {
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+      "size": 8142858,
+      "mtime": 1788837908,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/fadeless-2.0.8-26.2.jar": {
@@ -6216,6 +6252,12 @@
       "mtime": 1786264046,
       "category": "mod"
     },
+    "instances/26.2-performance/minecraft/mods/krypton-0.3.1.jar": {
+      "sha256": "5ea8901561973d29e51e751469d52d92100f348ab461e1186f67012e93420c48",
+      "size": 268842,
+      "mtime": 1788837888,
+      "category": "mod"
+    },
     "instances/26.2-performance/minecraft/mods/lambdynamiclights-4.12.3+26.2.jar": {
       "sha256": "3572acaad9cd2eb111990bc29b48e65b092c999c0143bd24e61a0b13126522ca",
       "size": 1336211,
@@ -6285,7 +6327,7 @@
     "instances/26.2-performance/minecraft/mods/modmenu-20.0.1.jar": {
       "sha256": "81bfbca06012c57c74949072f2ffaad06360badee4d00dc59bfaeac80dd24bd8",
       "size": 614002,
-      "mtime": 1788368746,
+      "mtime": 1788837903,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/modonomicon-26.2-fabric-2.4.0.jar": {
@@ -6330,6 +6372,12 @@
       "mtime": 1786263777,
       "category": "mod"
     },
+    "instances/26.2-performance/minecraft/mods/nvidium-0.4.4-beta5-26.2.jar": {
+      "sha256": "27edf5fc7e15e7bdbfec3e2bf46519d192bfeffe100b870879abd219dc2fc673",
+      "size": 166464,
+      "mtime": 1788837959,
+      "category": "mod"
+    },
     "instances/26.2-performance/minecraft/mods/optigui-2.3.0-beta.10+26.2.jar": {
       "sha256": "9cb2425da20fab0dc566cb0e1b5b4f1222ec0dfc0f7dc9f757604f1adb944aa5",
       "size": 607284,
@@ -6369,7 +6417,7 @@
     "instances/26.2-performance/minecraft/mods/placeholder-api-3.1.0-beta.1+26.2.jar": {
       "sha256": "c2ca2b5c397a0c198a32e7af68d2d0a011bc2c7baeae5cffd3996efd65c5069e",
       "size": 254973,
-      "mtime": 1788368747,
+      "mtime": 1788837904,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/polylib-fabric-26.2-2.0.10.jar": {
@@ -6442,6 +6490,12 @@
       "sha256": "4e125eec208cd6a68adc866c48ae3dcb0485289f4cd5115339d50b710bf14eab",
       "size": 6734369,
       "mtime": 1788467687,
+      "category": "mod"
+    },
+    "instances/26.2-performance/minecraft/mods/replaymod-26.2-2.6.27.jar": {
+      "sha256": "68a18bb725ea65cba6217a6a93afd8551b969c36c878d45febfe454d24586999",
+      "size": 15716381,
+      "mtime": 1788837937,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/rightclickharvest-fabric-4.6.2+26.2.x.jar": {
@@ -6523,9 +6577,9 @@
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/sodium-fabric-0.9.1+mc26.2.jar": {
-      "sha256": "0b222b7ea88bb3ad9b80a67c78649942d753dac1c1bd9b59819c6cd2542e05c7",
-      "size": 1843662,
-      "mtime": 1788467689,
+      "sha256": "de406c7a0ca5e748dfbe44740278400882a44e3109e2584b243ec02d4003344b",
+      "size": 1834384,
+      "mtime": 1788837960,
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/sodium-shadowy-path-blocks-fabric-7.0.0.jar": {
@@ -7965,7 +8019,7 @@
     "instances/26.2-ultra/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "config"
     },
     "instances/26.2-ultra/config/irisSearchSettings.toml": {
@@ -8481,7 +8535,7 @@
     "instances/26.2-ultra/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "config"
     },
     "instances/26.2-ultra/config/sodium-shadowy-path-blocks-options.json": {
@@ -9723,7 +9777,7 @@
     "instances/26.2-ultra/minecraft/config/iris.properties": {
       "sha256": "fb60ea1ef15b72bd683a4f53486dcbbefe52a5dca96a60ea82f2a9c59f9e7807",
       "size": 54,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/irisSearchSettings.toml": {
@@ -10161,7 +10215,7 @@
     "instances/26.2-ultra/minecraft/config/sodium-options.json": {
       "sha256": "864445184cebbf46e2f23b094a0001fa31d51e7d9196358e66759a293c5c5f2f",
       "size": 384,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "config"
     },
     "instances/26.2-ultra/minecraft/config/sodium-shadowy-path-blocks-options.json": {
@@ -13182,6 +13236,12 @@
       "mtime": 1788467652,
       "category": "mod"
     },
+    "instances/26.2-ultra/minecraft/mods/NoChatReports-FABRIC-26.2-v2.20.2.jar": {
+      "sha256": "93c761e9fb7d76269a0d5b9807e19db164b3a2fd0b8ebd0550fe94f832cf396f",
+      "size": 239602,
+      "mtime": 1788837917,
+      "category": "mod"
+    },
     "instances/26.2-ultra/minecraft/mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
       "sha256": "331bc337fd821fbf0a7069e882cd9cb5fef1cf4d472a50e3ccce98e2ef929204",
       "size": 88087,
@@ -13252,6 +13312,12 @@
       "sha256": "cebd02a4357089bd157abb2c80e0fd549413fc6d7a21c0b0b07d369024e26695",
       "size": 454660,
       "mtime": 1786263773,
+      "category": "mod"
+    },
+    "instances/26.2-ultra/minecraft/mods/Resourcify (26.2-fabric)-1.8.5.jar": {
+      "sha256": "4019e4e515995395eaf8dd6c3805d80219879d869d44999935034c273c9ae249",
+      "size": 2549332,
+      "mtime": 1788837902,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/SIR_Core-fabric-26.2.jar": {
@@ -13441,9 +13507,9 @@
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/cloth-config-26.2.155.jar": {
-      "sha256": "26e5aeb0f54274845bf09eac03008a0c2eda5f8d9f4d50de98ffb5a71c0ffef2",
-      "size": 1123314,
-      "mtime": 1788467656,
+      "sha256": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "size": 1135186,
+      "mtime": 1788837918,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/collective-26.2.0-8.39.jar": {
@@ -13572,16 +13638,16 @@
       "mtime": 1786877955,
       "category": "mod"
     },
-    "instances/26.2-ultra/minecraft/mods/fabric-api-0.159.0+26.2.jar": {
-      "sha256": "aa92b677756d4e0d70b3da8c11d551a82b7c664709ea9065dc9758c6a38253e8",
-      "size": 2531477,
-      "mtime": 1788467662,
+    "instances/26.2-ultra/minecraft/mods/fabric-api-0.160.0+26.2.jar": {
+      "sha256": "5f3dff88e1661166e222213302b25ace6c36dc3683804cbd4b5acf93138ea05e",
+      "size": 2542898,
+      "mtime": 1788837910,
       "category": "mod"
     },
-    "instances/26.2-ultra/minecraft/mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar": {
-      "sha256": "34ccdacf13bb9351fe43ce61912c2e09b72364e43e787d36ba3d2d04dec75a52",
-      "size": 8076363,
-      "mtime": 1786273063,
+    "instances/26.2-ultra/minecraft/mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar": {
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+      "size": 8142858,
+      "mtime": 1788837908,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/fadeless-2.0.8-26.2.jar": {
@@ -13770,6 +13836,12 @@
       "mtime": 1786264046,
       "category": "mod"
     },
+    "instances/26.2-ultra/minecraft/mods/krypton-0.3.1.jar": {
+      "sha256": "5ea8901561973d29e51e751469d52d92100f348ab461e1186f67012e93420c48",
+      "size": 268842,
+      "mtime": 1788837888,
+      "category": "mod"
+    },
     "instances/26.2-ultra/minecraft/mods/lambdynamiclights-4.12.3+26.2.jar": {
       "sha256": "3572acaad9cd2eb111990bc29b48e65b092c999c0143bd24e61a0b13126522ca",
       "size": 1336211,
@@ -13839,7 +13911,7 @@
     "instances/26.2-ultra/minecraft/mods/modmenu-20.0.1.jar": {
       "sha256": "81bfbca06012c57c74949072f2ffaad06360badee4d00dc59bfaeac80dd24bd8",
       "size": 614002,
-      "mtime": 1788368746,
+      "mtime": 1788837903,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/modonomicon-26.2-fabric-2.4.0.jar": {
@@ -13923,7 +13995,7 @@
     "instances/26.2-ultra/minecraft/mods/placeholder-api-3.1.0-beta.1+26.2.jar": {
       "sha256": "c2ca2b5c397a0c198a32e7af68d2d0a011bc2c7baeae5cffd3996efd65c5069e",
       "size": 254973,
-      "mtime": 1788368747,
+      "mtime": 1788837904,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/polylib-fabric-26.2-2.0.10.jar": {
@@ -13996,6 +14068,12 @@
       "sha256": "4e125eec208cd6a68adc866c48ae3dcb0485289f4cd5115339d50b710bf14eab",
       "size": 6734369,
       "mtime": 1788467687,
+      "category": "mod"
+    },
+    "instances/26.2-ultra/minecraft/mods/replaymod-26.2-2.6.27.jar": {
+      "sha256": "68a18bb725ea65cba6217a6a93afd8551b969c36c878d45febfe454d24586999",
+      "size": 15716381,
+      "mtime": 1788837937,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/rightclickharvest-fabric-4.6.2+26.2.x.jar": {
@@ -14077,9 +14155,9 @@
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/sodium-fabric-0.9.1+mc26.2.jar": {
-      "sha256": "0b222b7ea88bb3ad9b80a67c78649942d753dac1c1bd9b59819c6cd2542e05c7",
-      "size": 1843662,
-      "mtime": 1788467689,
+      "sha256": "de406c7a0ca5e748dfbe44740278400882a44e3109e2584b243ec02d4003344b",
+      "size": 1834384,
+      "mtime": 1788837960,
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/sodium-shadowy-path-blocks-fabric-7.0.0.jar": {
@@ -14253,7 +14331,7 @@
     "instances/26.2-ultra/minecraft/options.txt": {
       "sha256": "2f117fe4c0aa0db6e05a735c21f2a335e047597dd54a581ac82fd4065075d5a7",
       "size": 12852,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/resourcepacks/SIR Modern.zip": {
@@ -14307,7 +14385,7 @@
     "instances/26.2-ultra/options.txt": {
       "sha256": "4f3024eac6c37a3cd8fc6011a298affe14afcf2829471759967a180ed9d4dcfc",
       "size": 13259,
-      "mtime": 1788834163,
+      "mtime": 1788837908,
       "category": "instance_meta"
     },
     "instances/26.2-ultra/resourcepacks/SIR Legacy.zip": {
@@ -14335,9 +14413,9 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/26.2-ultra/shaderpacks/SIR Modern Shader.zip": {
@@ -14613,7 +14691,7 @@
     "instances/26.2/minecraft/options.txt": {
       "sha256": "acd6e2ec5630f58d69bc3059840e0b1fb32b00e7f59571862b3ee21534423387",
       "size": 5364,
-      "mtime": 1788834170,
+      "mtime": 1788837917,
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/skins/SirAhmed1.png": {
@@ -14649,7 +14727,7 @@
     "instances/26.2/options.txt": {
       "sha256": "b72a131e6c33448e74709e0b8d189f732a342380c903dbf0f8af6ff2df8cf2f4",
       "size": 825,
-      "mtime": 1788834170,
+      "mtime": 1788837917,
       "category": "instance_meta"
     },
     "instances/26.2/resourcepacks/SIR Legacy.zip": {
@@ -14665,9 +14743,9 @@
       "category": "resourcepack"
     },
     "instances/26.2/shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "instances/26.2/shaderpacks/SIR Modern Shader.zip": {
@@ -14946,6 +15024,12 @@
       "mtime": 1788467652,
       "category": "mod"
     },
+    "mods/NoChatReports-FABRIC-26.2-v2.20.2.jar": {
+      "sha256": "93c761e9fb7d76269a0d5b9807e19db164b3a2fd0b8ebd0550fe94f832cf396f",
+      "size": 239602,
+      "mtime": 1788837917,
+      "category": "mod"
+    },
     "mods/OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar": {
       "sha256": "331bc337fd821fbf0a7069e882cd9cb5fef1cf4d472a50e3ccce98e2ef929204",
       "size": 88087,
@@ -15016,6 +15100,12 @@
       "sha256": "cebd02a4357089bd157abb2c80e0fd549413fc6d7a21c0b0b07d369024e26695",
       "size": 454660,
       "mtime": 1786263773,
+      "category": "mod"
+    },
+    "mods/Resourcify (26.2-fabric)-1.8.5.jar": {
+      "sha256": "4019e4e515995395eaf8dd6c3805d80219879d869d44999935034c273c9ae249",
+      "size": 2549332,
+      "mtime": 1788837902,
       "category": "mod"
     },
     "mods/SIR_Core-fabric-26.2.jar": {
@@ -15205,9 +15295,9 @@
       "category": "mod"
     },
     "mods/cloth-config-26.2.155.jar": {
-      "sha256": "26e5aeb0f54274845bf09eac03008a0c2eda5f8d9f4d50de98ffb5a71c0ffef2",
-      "size": 1123314,
-      "mtime": 1788467656,
+      "sha256": "def4be7639cd66704f7e304d658ea0f6bf490fb4a6eaa2dbf18ec2c3999d6349",
+      "size": 1135186,
+      "mtime": 1788837918,
       "category": "mod"
     },
     "mods/collective-26.2.0-8.39.jar": {
@@ -15342,10 +15432,22 @@
       "mtime": 1788467662,
       "category": "mod"
     },
+    "mods/fabric-api-0.160.0+26.2.jar": {
+      "sha256": "5f3dff88e1661166e222213302b25ace6c36dc3683804cbd4b5acf93138ea05e",
+      "size": 2542898,
+      "mtime": 1788837910,
+      "category": "mod"
+    },
     "mods/fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar": {
       "sha256": "34ccdacf13bb9351fe43ce61912c2e09b72364e43e787d36ba3d2d04dec75a52",
       "size": 8076363,
       "mtime": 1786273063,
+      "category": "mod"
+    },
+    "mods/fabric-language-kotlin-1.14.1+kotlin.2.4.20.jar": {
+      "sha256": "620c2709be2a262b837cf976f6f85f6eda80a56af2ba4242e0bdc83a60fee7a5",
+      "size": 8142858,
+      "mtime": 1788837908,
       "category": "mod"
     },
     "mods/fadeless-2.0.8-26.2.jar": {
@@ -15534,6 +15636,12 @@
       "mtime": 1786264046,
       "category": "mod"
     },
+    "mods/krypton-0.3.1.jar": {
+      "sha256": "5ea8901561973d29e51e751469d52d92100f348ab461e1186f67012e93420c48",
+      "size": 268842,
+      "mtime": 1788837888,
+      "category": "mod"
+    },
     "mods/lambdynamiclights-4.12.3+26.2.jar": {
       "sha256": "3572acaad9cd2eb111990bc29b48e65b092c999c0143bd24e61a0b13126522ca",
       "size": 1336211,
@@ -15609,7 +15717,7 @@
     "mods/modmenu-20.0.1.jar": {
       "sha256": "81bfbca06012c57c74949072f2ffaad06360badee4d00dc59bfaeac80dd24bd8",
       "size": 614002,
-      "mtime": 1788368746,
+      "mtime": 1788837903,
       "category": "mod"
     },
     "mods/modonomicon-26.2-fabric-2.4.0.jar": {
@@ -15654,6 +15762,12 @@
       "mtime": 1786263777,
       "category": "mod"
     },
+    "mods/nvidium-0.4.4-beta5-26.2.jar": {
+      "sha256": "27edf5fc7e15e7bdbfec3e2bf46519d192bfeffe100b870879abd219dc2fc673",
+      "size": 166464,
+      "mtime": 1788837959,
+      "category": "mod"
+    },
     "mods/optigui-2.3.0-beta.10+26.2.jar": {
       "sha256": "9cb2425da20fab0dc566cb0e1b5b4f1222ec0dfc0f7dc9f757604f1adb944aa5",
       "size": 607284,
@@ -15693,7 +15807,7 @@
     "mods/placeholder-api-3.1.0-beta.1+26.2.jar": {
       "sha256": "c2ca2b5c397a0c198a32e7af68d2d0a011bc2c7baeae5cffd3996efd65c5069e",
       "size": 254973,
-      "mtime": 1788368747,
+      "mtime": 1788837904,
       "category": "mod"
     },
     "mods/polylib-fabric-26.2-2.0.10.jar": {
@@ -15766,6 +15880,12 @@
       "sha256": "4e125eec208cd6a68adc866c48ae3dcb0485289f4cd5115339d50b710bf14eab",
       "size": 6734369,
       "mtime": 1788467687,
+      "category": "mod"
+    },
+    "mods/replaymod-26.2-2.6.27.jar": {
+      "sha256": "68a18bb725ea65cba6217a6a93afd8551b969c36c878d45febfe454d24586999",
+      "size": 15716381,
+      "mtime": 1788837937,
       "category": "mod"
     },
     "mods/rightclickharvest-fabric-4.6.2+26.2.x.jar": {
@@ -15847,9 +15967,9 @@
       "category": "mod"
     },
     "mods/sodium-fabric-0.9.1+mc26.2.jar": {
-      "sha256": "0b222b7ea88bb3ad9b80a67c78649942d753dac1c1bd9b59819c6cd2542e05c7",
-      "size": 1843662,
-      "mtime": 1788467689,
+      "sha256": "de406c7a0ca5e748dfbe44740278400882a44e3109e2584b243ec02d4003344b",
+      "size": 1834384,
+      "mtime": 1788837960,
       "category": "mod"
     },
     "mods/sodium-shadowy-path-blocks-fabric-7.0.0.jar": {
@@ -16033,9 +16153,9 @@
       "category": "resourcepack"
     },
     "shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "d4eb02c73573b263dd80c41470e46e9f3abf47f6ab80a26a9fa3dc84e26fd788",
-      "size": 375001,
-      "mtime": 1788834076,
+      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
+      "size": 364346,
+      "mtime": 1788838205,
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip": {

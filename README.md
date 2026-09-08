@@ -9,7 +9,7 @@
 [![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
 [![Model: 100% Free & Independent](https://img.shields.io/badge/Model-100%25%20Free%20%26%20Independent-blue.svg)](LICENSE.md)
 [![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
-[![Tests: 360 Passing](https://img.shields.io/badge/Tests-360%2F360%20Passed-brightgreen.svg)](walkthrough.md)
+[![Tests: 368 Passing](https://img.shields.io/badge/Tests-368%2F368%20Passed-brightgreen.svg)](walkthrough.md)
 
 ---
 
@@ -84,7 +84,7 @@ Run the automated 6-layer ecosystem doctor to verify binaries, shaders, packs, m
 # Run ecosystem diagnostics (100% automated health check)
 python ecosystem_doctor.py
 
-# Run the complete automated test harness (355 tests across 25 suites)
+# Run the complete automated test harness (368 tests across 26 suites)
 python -m unittest discover -s tests -p "test_*.py" -v
 ```
 

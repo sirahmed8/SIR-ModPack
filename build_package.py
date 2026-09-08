@@ -73,6 +73,7 @@ def main():
     print("[*] Generating modular compressed cloud payloads...", flush=True)
     zip_directory(os.path.join(ROOT, 'instances', '26.2-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_26.2.zip'))
     zip_directory(os.path.join(ROOT, 'instances', '1.8.9-ultra', 'minecraft', 'mods'), os.path.join(PAYLOADS_DIR, 'payload_mods_1.8.9.zip'))
+    zip_directory(sir_inst_dst, os.path.join(PAYLOADS_DIR, 'payload_instances.zip'), exclude_exts=['.jar', '.zip'])
     zip_directory(os.path.join(ROOT, 'resourcepacks'), os.path.join(PAYLOADS_DIR, 'payload_packs.zip'))
     zip_directory(os.path.join(ROOT, 'shaderpacks'), os.path.join(PAYLOADS_DIR, 'payload_shaders.zip'))
     zip_directory(os.path.join(ROOT, 'config'), os.path.join(PAYLOADS_DIR, 'payload_configs.zip'))
