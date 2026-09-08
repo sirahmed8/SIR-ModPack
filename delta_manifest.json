@@ -4,7 +4,7 @@
   "generated_at": 1788853520,
   "iso_timestamp": "2026-09-08T07:45:20Z",
   "total_files": 2783,
-  "total_size_bytes": 5808010594,
+  "total_size_bytes": 5808010232,
   "files": {
     "capes/TestPlayer_cape.png": {
       "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
@@ -61,8 +61,8 @@
       "category": "config"
     },
     "config/customskinloader.json": {
-      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
-      "size": 341,
+      "sha256": "bf32140b3180b344fcc9252ca38db679dad82bf8a99ccc00c71d032bf41f0e5d",
+      "size": 223,
       "mtime": 1788853007,
       "category": "config"
     },
@@ -235,8 +235,8 @@
       "category": "config"
     },
     "instances/1.8.9-balanced/minecraft/config/patcher.toml": {
-      "sha256": "524a4f5e5307966e79fcde6886d533d7a1bc096211456b12e40f3b0551426b2c",
-      "size": 6062,
+      "sha256": "d84d2c0a430e76ccfa90175ac7c2d174f93497f2d76ea56cc6f749c70415825e",
+      "size": 6060,
       "mtime": 1787268938,
       "category": "config"
     },
@@ -847,8 +847,8 @@
       "category": "config"
     },
     "instances/1.8.9-performance/minecraft/config/patcher.toml": {
-      "sha256": "524a4f5e5307966e79fcde6886d533d7a1bc096211456b12e40f3b0551426b2c",
-      "size": 6062,
+      "sha256": "d84d2c0a430e76ccfa90175ac7c2d174f93497f2d76ea56cc6f749c70415825e",
+      "size": 6060,
       "mtime": 1787268938,
       "category": "config"
     },
@@ -1711,8 +1711,8 @@
       "category": "config"
     },
     "instances/1.8.9-ultra/minecraft/config/patcher.toml": {
-      "sha256": "524a4f5e5307966e79fcde6886d533d7a1bc096211456b12e40f3b0551426b2c",
-      "size": 6062,
+      "sha256": "d84d2c0a430e76ccfa90175ac7c2d174f93497f2d76ea56cc6f749c70415825e",
+      "size": 6060,
       "mtime": 1787268938,
       "category": "config"
     },
@@ -3517,8 +3517,8 @@
       "category": "config"
     },
     "instances/1.8.9/minecraft/config/customskinloader.json": {
-      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
-      "size": 341,
+      "sha256": "bf32140b3180b344fcc9252ca38db679dad82bf8a99ccc00c71d032bf41f0e5d",
+      "size": 223,
       "mtime": 1788853007,
       "category": "config"
     },
@@ -3565,8 +3565,8 @@
       "category": "config"
     },
     "instances/1.8.9/minecraft/config/patcher.toml": {
-      "sha256": "524a4f5e5307966e79fcde6886d533d7a1bc096211456b12e40f3b0551426b2c",
-      "size": 6062,
+      "sha256": "d84d2c0a430e76ccfa90175ac7c2d174f93497f2d76ea56cc6f749c70415825e",
+      "size": 6060,
       "mtime": 1787268938,
       "category": "config"
     },
@@ -7152,7 +7152,7 @@
       "mtime": 1788113787,
       "category": "instance_meta"
     },
-    "instances/26.2-ultra/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/ПРОЧТИ_МЕНЯ_ВАЖНО.txt": {
+    "instances/26.2-ultra/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/\u041f\u0420\u041e\u0427\u0422\u0418_\u041c\u0415\u041d\u042f_\u0412\u0410\u0416\u041d\u041e.txt": {
       "sha256": "9ce232e7d5066d24fb33697315579b89c98ff983bef840a86ad818f8a9529cd6",
       "size": 2465,
       "mtime": 1788113787,
@@ -9276,7 +9276,7 @@
       "mtime": 1788831822,
       "category": "instance_meta"
     },
-    "instances/26.2-ultra/minecraft/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/ПРОЧТИ_МЕНЯ_ВАЖНО.txt": {
+    "instances/26.2-ultra/minecraft/_IAS_ACCOUNTS_DO_NOT_SEND_TO_ANYONE/\u041f\u0420\u041e\u0427\u0422\u0418_\u041c\u0415\u041d\u042f_\u0412\u0410\u0416\u041d\u041e.txt": {
       "sha256": "9ce232e7d5066d24fb33697315579b89c98ff983bef840a86ad818f8a9529cd6",
       "size": 2465,
       "mtime": 1788831822,
@@ -14983,8 +14983,8 @@
       "category": "config"
     },
     "instances/26.2/minecraft/config/customskinloader.json": {
-      "sha256": "5492b3a46c4d8470dc1dd8b7ce2fe6b8e13a7558733e42cd6dc550fdc268fd8f",
-      "size": 341,
+      "sha256": "bf32140b3180b344fcc9252ca38db679dad82bf8a99ccc00c71d032bf41f0e5d",
+      "size": 223,
       "mtime": 1788853007,
       "category": "config"
     },
