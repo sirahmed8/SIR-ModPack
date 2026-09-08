@@ -1,5 +1,5 @@
 # 💎 SIR ModPack — The Ultimate Minecraft Ecosystem
-### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.0.0 Genesis)*
+### *Unified Minecraft Platform • Desktop Suite • Shaders • Web Platform (v1.0.0 Genesis — Phase 17 Final Release)*
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
@@ -8,8 +8,10 @@
 [![Java 25](https://img.shields.io/badge/Java-25-ed8b00?logo=openjdk)](https://openjdk.org/)
 [![Fabric 0.19.4](https://img.shields.io/badge/Fabric-0.19.4-dbb183)](https://fabricmc.net/)
 [![Model: 100% Free & Independent](https://img.shields.io/badge/Model-100%25%20Free%20%26%20Independent-blue.svg)](LICENSE.md)
-[![Privacy: Zero--Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
+[![Privacy: Zero-Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
 [![Tests: 368 Passing](https://img.shields.io/badge/Tests-368%2F368%20Passed-brightgreen.svg)](walkthrough.md)
+[![Live: sir-modpack.web.app](https://img.shields.io/badge/Live-sir--modpack.web.app-orange.svg)](https://sir-modpack.web.app)
+
 
 ---
 

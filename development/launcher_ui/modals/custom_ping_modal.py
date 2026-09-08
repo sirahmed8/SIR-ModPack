@@ -5,21 +5,22 @@ from sir_core.config import THEMES
 from sir_core.servers.live_pinger import query_minecraft_server_live_status
 
 def open_custom_server_ping_modal(parent):
-    c = THEMES[parent.current_theme]
+    theme_name = getattr(parent, "current_theme", "dark")
+    c = THEMES.get(theme_name, THEMES.get("dark", {}))
     modal = tk.Toplevel(parent)
-    modal.title("Ping Custom Minecraft Server")
-    modal.geometry("540x420")
-    modal.minsize(480, 360)
+    modal.title("Ping Custom Minecraft Server — SIR Launcher")
+    modal.geometry("580x460")
+    modal.minsize(500, 380)
     modal.configure(bg=c["modal_bg"])
     modal.transient(parent)
 
-    m_head = tk.Frame(modal, bg=c["card_bg"], padx=16, pady=10, bd=1, relief="solid", highlightthickness=1, highlightbackground=c["card_border"])
+    m_head = tk.Frame(modal, bg=c["card_bg"], padx=18, pady=12, bd=1, relief="solid", highlightthickness=1, highlightbackground=c["card_border"])
     m_head.pack(fill="x")
 
     btn_close = tk.Button(m_head, text="✖ Close", font=("Segoe UI", 9, "bold"), bg=c["btn_bg"], fg=c["text_primary"], activebackground=c["btn_hover"], bd=0, padx=12, pady=4, cursor="hand2", command=modal.destroy)
     btn_close.pack(side="right", padx=(8, 0))
 
-    lbl_t = tk.Label(m_head, text="➕ Real-Time Custom Server Ping", font=("Segoe UI", 11, "bold"), bg=c["card_bg"], fg=c["accent_cyan"], anchor="w")
+    lbl_t = tk.Label(m_head, text="➕ Real-Time Custom Server Radar", font=("Segoe UI", 12, "bold"), bg=c["card_bg"], fg=c["accent_cyan"], anchor="w")
     lbl_t.pack(side="left", fill="x", expand=True)
 
     body = tk.Frame(modal, bg=c["modal_bg"], padx=20, pady=16)

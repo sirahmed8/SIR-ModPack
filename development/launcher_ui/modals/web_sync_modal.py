@@ -6,11 +6,12 @@ from sir_core.config import THEMES
 from sir_core.auth.firebase_web_sync import sync_profile_by_ign_or_email, sync_profile_by_code
 
 def open_sir_web_account_sync_modal(parent):
-    c = THEMES[parent.current_theme]
+    theme_name = getattr(parent, "current_theme", "dark")
+    c = THEMES.get(theme_name, THEMES.get("dark", {}))
     modal = tk.Toplevel(parent)
-    modal.title("Link Claimed SIR Web Account (Firebase)")
-    modal.geometry("560x520")
-    modal.minsize(500, 460)
+    modal.title("Link Claimed SIR Web Account (Firebase) — SIR Launcher")
+    modal.geometry("580x540")
+    modal.minsize(520, 480)
     modal.configure(bg=c["modal_bg"])
     modal.transient(parent)
 

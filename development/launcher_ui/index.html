@@ -136,6 +136,12 @@
             <span>Our Site</span>
           </button>
 
+          <!-- RAM Compactor Quick Pill -->
+          <button onclick="compactRamQuick()" class="header-pill text-amber-400 hover:text-amber-300 border-amber-500/30 bg-amber-950/20 active:scale-95 transition-all flex items-center gap-1.5 px-3 py-1.5 rounded-xl cursor-pointer" title="Purge Working Set RAM (psapi.dll EmptyWorkingSet)">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-400"></i>
+            <span class="text-xs font-semibold text-slate-300">Clean RAM</span>
+          </button>
+
             <!-- Account Dropdown Pill -->
             <div class="relative">
               <button onclick="toggleDropdown('account-menu')" id="active-account-btn" class="header-pill bg-slate-800/60 text-slate-100 hover:border-cyan-500/50 cursor-pointer">
@@ -311,6 +317,43 @@
                 <span>View All</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
+            </div>
+          </div>
+
+          <!-- Live Multiplayer Ping Radar & Instant Game Diagnostics Section -->
+          <div class="p-5 rounded-3xl bg-[#101624]/90 border border-slate-800/80 shadow-[0_8px_30px_rgba(0,0,0,0.5)] backdrop-blur-2xl space-y-4">
+            <div class="flex items-center justify-between flex-wrap gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/40 flex items-center justify-center text-cyan-400 shrink-0">
+                  <i data-lucide="radar" class="w-5 h-5 animate-pulse"></i>
+                </div>
+                <div>
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-sm font-black text-slate-100 uppercase tracking-wider">Multiplayer Latency Radar</h3>
+                    <span class="px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-400 text-[10px] font-mono font-bold border border-cyan-500/30">Live Direct Connect</span>
+                  </div>
+                  <p class="text-[11px] text-slate-400 mt-0.5">Real-time latency, player telemetry, and verified MOTD before game launch.</p>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-2">
+                <button onclick="runIntegrityDoctorQuick()" class="px-3 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-400 border border-emerald-500/30 text-xs font-bold transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer" title="Instant SHA-256 Hash Audit & Self-Healing against delta_manifest.json">
+                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+                  <span>Game Integrity Doctor</span>
+                </button>
+                <button onclick="compactRamQuick()" class="px-3 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 text-amber-400 border border-amber-500/30 text-xs font-bold transition-all flex items-center gap-1.5 active:scale-95 cursor-pointer" title="Compact Working Set Memory (psapi.dll EmptyWorkingSet)">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                  <span>Compact RAM</span>
+                </button>
+                <button onclick="refreshMultiplayerRadar()" class="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-cyan-400 border border-slate-700/60 transition-all cursor-pointer" title="Rescan Live Servers">
+                  <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Radar Cards Grid -->
+            <div id="launchpad-radar-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+              <!-- Dynamically hydrated by launch.js refreshMultiplayerRadar() -->
             </div>
           </div>
 
@@ -2611,24 +2654,57 @@
       <div class="flex-1 overflow-y-auto p-6 md:p-7 pr-4 space-y-6 custom-scrollbar">
         <!-- Step 1: Welcome Overview -->
         <div id="onboarding-step-1" class="space-y-4">
-        <div class="text-center py-2 space-y-2">
-          <h2 class="text-xl font-black text-white tracking-tight">Welcome to the Next Generation</h2>
-          <p class="text-xs text-slate-300 max-w-md mx-auto leading-relaxed">
-            SIR Ecosystem unifies record-breaking performance, photorealistic 3D shaders, and dual Minecraft engines into one integrated platform.
-          </p>
-        </div>
+          <!-- Hero Banner -->
+          <div class="relative rounded-2xl overflow-hidden bg-gradient-to-br from-cyan-500/10 via-[#090e17] to-emerald-500/8 border border-cyan-500/25 p-5 text-center space-y-2">
+            <div class="absolute inset-0 bg-radial from-cyan-400/8 via-transparent to-transparent pointer-events-none"></div>
+            <!-- Version Badge -->
+            <div class="flex items-center justify-center gap-2 relative z-10">
+              <span class="px-3 py-1 rounded-full text-[10px] font-mono font-bold bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 tracking-widest uppercase">🏆 v1.0.0 Genesis Launch</span>
+            </div>
+            <h2 class="text-xl font-black text-white tracking-tight relative z-10">Welcome to SIR Ecosystem</h2>
+            <p class="text-[11px] text-slate-300 max-w-sm mx-auto leading-relaxed relative z-10">
+              The most advanced free Minecraft platform — photorealistic shaders, dual engines, cloud sync, and a 221-mod optimized experience, all in one launcher.
+            </p>
+          </div>
 
-        <div class="grid grid-cols-2 gap-3 pt-2">
-          <div class="p-4 rounded-2xl bg-cyan-500/5 border border-cyan-500/20 space-y-1">
-            <span class="text-xs font-bold text-cyan-400">Modern 26.2 Engine</span>
-            <p class="text-[11px] text-slate-400 leading-snug">Fabric with 240+ optimization mods, Iris 3D shaders, and sub-second boot times.</p>
+          <!-- Dual Engine Cards -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-2xl bg-cyan-500/5 border border-cyan-500/20 space-y-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#00e5ff]"></span>
+                <span class="text-xs font-bold text-cyan-400">Modern 26.2</span>
+              </div>
+              <p class="text-[10px] text-slate-400 leading-snug">Fabric 0.19 · 221 mods · Iris 3D shaders · Generational ZGC · 144–350+ FPS</p>
+            </div>
+            <div class="p-3.5 rounded-2xl bg-purple-500/5 border border-purple-500/20 space-y-1.5">
+              <div class="flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_6px_#a855f7]"></span>
+                <span class="text-xs font-bold text-purple-400">Legacy 1.8.9</span>
+              </div>
+              <p class="text-[10px] text-slate-400 leading-snug">Forge PvP · 28 mods · OptiFine · Lunar HUD · 500–600+ FPS competitive</p>
+            </div>
           </div>
-          <div class="p-4 rounded-2xl bg-purple-500/5 border border-purple-500/20 space-y-1">
-            <span class="text-xs font-bold text-purple-400">Legacy 1.8.9 Engine</span>
-            <p class="text-[11px] text-slate-400 leading-snug">Forge tuned for competitive Hypixel PvP, 1000+ FPS, and zero input latency.</p>
+
+          <!-- Feature Stat Row -->
+          <div class="grid grid-cols-4 gap-2">
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 text-center">
+              <div class="text-sm font-black text-white">221</div>
+              <div class="text-[9px] text-slate-500 leading-tight mt-0.5">Optimized<br>Mods</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 text-center">
+              <div class="text-sm font-black text-emerald-400">600+</div>
+              <div class="text-[9px] text-slate-500 leading-tight mt-0.5">FPS<br>Target</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 text-center">
+              <div class="text-sm font-black text-cyan-400">37</div>
+              <div class="text-[9px] text-slate-500 leading-tight mt-0.5">Web<br>Pages</div>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 text-center">
+              <div class="text-sm font-black text-amber-400">Free</div>
+              <div class="text-[9px] text-slate-500 leading-tight mt-0.5">Always<br>& Forever</div>
+            </div>
           </div>
         </div>
-      </div>
 
       <!-- Step 2: Language & Theme -->
       <div id="onboarding-step-2" class="hidden space-y-4">
