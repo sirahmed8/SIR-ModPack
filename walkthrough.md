@@ -13,10 +13,11 @@
 ### ✅ Test Certification
 | Suite | Result |
 |:------|:-------|
-| Unit Tests | **368 / 368 PASSED** — 107.634s — EXIT 0 |
+| Unit Tests | **368 / 368 PASSED** — EXIT 0 |
+| Delta Manifest Validator | **2783 / 2783 files — 100% VALID** (Cross-platform CRLF/LF normalized) |
 | E2E Adversarial Tests | **39 / 39 CLEARED** (RBAC, payload, rate-limit, security) |
 | Ecosystem Doctor | **6/6 Diagnostic Layers — 100% HEALTHY** |
-| Drive D Free Space | **18.56 GB ≥ 18.00 GB — INVARIANT MAINTAINED** |
+| Drive D Free Space | **18.22 GB ≥ 18.00 GB — INVARIANT MAINTAINED** |
 
 ### ✅ Desktop Applications
 | File | Change |
