@@ -87,7 +87,8 @@ class TestSystemAuditInvariants(unittest.TestCase):
         if os.environ.get("CI") or os.environ.get("GITHUB_ACTIONS"):
             self.assertGreaterEqual(free_gb, 1.0, f"CI disk free space must be >= 1 GB, currently {free_gb:.2f} GB")
         elif ROOT_DIR.upper().startswith("D:"):
-            self.assertGreaterEqual(free_gb, 15.0, f"Drive D free space must be >= 15 GB, currently {free_gb:.2f} GB")
+            min_free = 17.0 if (os.path.isdir(os.path.join(ROOT_DIR, "website-next", "out")) and os.path.isdir(os.path.join(ROOT_DIR, "dist_apps"))) else 18.0
+            self.assertGreaterEqual(free_gb, min_free, f"Drive D free space must be >= {min_free} GB, currently {free_gb:.2f} GB")
         else:
             self.assertGreaterEqual(free_gb, 1.0, f"Disk free space must be >= 1 GB, currently {free_gb:.2f} GB")
 

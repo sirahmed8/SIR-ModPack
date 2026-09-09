@@ -173,9 +173,16 @@ class CloudSyncService:
                 with open(self.accounts_file, "r", encoding="utf-8") as f:
                     raw = json.load(f)
                 acc_list = raw if isinstance(raw, list) else raw.get("accounts", [])
-                filtered = [a for a in acc_list if isinstance(a, dict) and a.get("type") != "google_cloud" and not str(a.get("id", "")).startswith("google_")]
+                filtered = [
+                    a for a in acc_list
+                    if isinstance(a, dict)
+                    and a.get("type") != "google_cloud"
+                    and a.get("accountType") != "google_cloud"
+                    and not str(a.get("id", "")).startswith("google_")
+                    and not str(a.get("accountId", "")).startswith("google_")
+                ]
                 active_acc = raw.get("active", "") if isinstance(raw, dict) else ""
-                if not any(a.get("name") == active_acc for a in filtered):
+                if not any(a.get("name") == active_acc or a.get("displayName") == active_acc for a in filtered):
                     active_acc = filtered[0].get("name", "") if filtered else ""
                 atomic_write_json(self.accounts_file, {"accounts": filtered, "active": active_acc})
         except Exception:

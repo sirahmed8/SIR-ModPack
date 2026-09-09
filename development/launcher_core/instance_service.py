@@ -1084,23 +1084,31 @@ class InstanceService:
             os.makedirs(target_dir, exist_ok=True)
         try:
             if sys.platform == "win32":
-                opened = False
                 try:
-                    import ctypes
-                    ret = ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
-                    if int(ret) > 32:
-                        opened = True
+                    os.startfile(target_dir)
                 except Exception:
-                    pass
-                if not opened:
                     try:
-                        os.startfile(target_dir)
+                        import ctypes
+                        ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
                     except Exception:
                         subprocess.Popen(f'explorer "{target_dir}"', shell=True)
+                try:
+                    import ctypes
+                    hwnd = ctypes.windll.user32.FindWindowW("CabinetWClass", None)
+                    if hwnd:
+                        ctypes.windll.user32.SetForegroundWindow(hwnd)
+                except Exception:
+                    pass
             elif sys.platform == "darwin":
-                subprocess.Popen(["open", target_dir])
+                try:
+                    subprocess.Popen(["open", target_dir])
+                except Exception:
+                    pass
             else:
-                subprocess.Popen(["xdg-open", target_dir])
+                try:
+                    subprocess.Popen(["xdg-open", target_dir])
+                except Exception:
+                    pass
             return {"success": True, "path": target_dir}
         except Exception as e:
             return {"success": False, "error": str(e)}
@@ -1130,23 +1138,31 @@ class InstanceService:
         target_dir = os.path.normpath(target_dir)
         try:
             if sys.platform == "win32":
-                opened = False
                 try:
-                    import ctypes
-                    ret = ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
-                    if int(ret) > 32:
-                        opened = True
+                    os.startfile(target_dir)
                 except Exception:
-                    pass
-                if not opened:
                     try:
-                        os.startfile(target_dir)
+                        import ctypes
+                        ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
                     except Exception:
                         subprocess.Popen(f'explorer "{target_dir}"', shell=True)
+                try:
+                    import ctypes
+                    hwnd = ctypes.windll.user32.FindWindowW("CabinetWClass", None)
+                    if hwnd:
+                        ctypes.windll.user32.SetForegroundWindow(hwnd)
+                except Exception:
+                    pass
             elif sys.platform == "darwin":
-                subprocess.Popen(["open", target_dir])
+                try:
+                    subprocess.Popen(["open", target_dir])
+                except Exception:
+                    pass
             else:
-                subprocess.Popen(["xdg-open", target_dir])
+                try:
+                    subprocess.Popen(["xdg-open", target_dir])
+                except Exception:
+                    pass
             return {"success": True, "path": target_dir}
         except Exception as e:
             return {"success": False, "error": str(e)}

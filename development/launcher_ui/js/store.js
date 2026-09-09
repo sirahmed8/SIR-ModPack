@@ -400,9 +400,11 @@ async function checkModUpdatesLive() {
   const activeInst = STATE.selectedInstanceId || '26.2-ultra';
   showToast(`🔍 Scanning ${activeInst} mods for latest verified updates...`, 'info');
   
-  if (window.pywebview && window.pywebview.api) {
+  const api = window.pywebview && window.pywebview.api;
+  const checkFn = api && (api.check_mod_updates || (api.mods && api.mods.check_mod_updates));
+  if (typeof checkFn === 'function') {
     try {
-      const res = await window.pywebview.api.check_mod_updates(activeInst);
+      const res = await checkFn.call(api, activeInst);
       if (res && res.success) {
         if (res.updates && res.updates.length > 0) {
           showToast(`Found ${res.updates.length} mod update(s) available!`, 'success');

@@ -42,6 +42,14 @@ class TestLauncherBridge(unittest.TestCase):
     def tearDown(self):
         import shutil
         shutil.rmtree(self.temp_dir, ignore_errors=True)
+        exports_dir = os.path.join(self.root_dir, "exports")
+        if os.path.isdir(exports_dir):
+            for f in os.listdir(exports_dir):
+                if f.startswith("SIR_ModPack_") and f.endswith(".zip"):
+                    try:
+                        os.remove(os.path.join(exports_dir, f))
+                    except Exception:
+                        pass
 
     def test_hardware_telemetry_live(self):
         hw = HardwareMonitorService()

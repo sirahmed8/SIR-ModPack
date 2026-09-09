@@ -169,10 +169,12 @@ def main():
                 pass
 
         cloud_info = api.get_cloud_status() if hasattr(api, "get_cloud_status") else {"authenticated": False}
+        hw_info = api.get_hardware_telemetry() if hasattr(api, "get_hardware_telemetry") else {}
         bootstrap_file = os.path.join(UI_DIR, "bootstrap_cache.js")
         with open(bootstrap_file, "w", encoding="utf-8") as bf:
             bf.write(f"window.__SIR_BOOTSTRAP__ = {json.dumps(acc_info)};\n")
             bf.write(f"window.__SIR_CLOUD_BOOTSTRAP__ = {json.dumps(cloud_info)};\n")
+            bf.write(f"window.__SIR_HW_BOOTSTRAP__ = {json.dumps(hw_info)};\n")
             bf.write("window.__SIR_MODS_COUNT_PRE_HYDRATE__ = 228;\n")
             if deep_link_data:
                 bf.write(f"window.__SIR_DEEP_LINK__ = {json.dumps(deep_link_data)};\n")
