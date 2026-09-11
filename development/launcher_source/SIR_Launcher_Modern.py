@@ -93,6 +93,10 @@ def on_window_ready() -> None:
             if found["hwnd"]:
                 _apply_dwm_dark(found["hwnd"])
 
+            # Periodically suppress .NET-BroadcastEventWindow and pystray taskbar ghost windows
+            for delay in (0.5, 1.5, 3.0):
+                threading.Timer(delay, TrayService._suppress_dummy_tray_windows).start()
+
     threading.Thread(target=_worker, daemon=True).start()
 
 
@@ -107,7 +111,7 @@ def _enforce_single_instance() -> bool:
         kernel32 = ctypes.windll.kernel32
         user32 = ctypes.windll.user32
 
-        MUTEX_NAME = "Global\\SIR_Launcher_Pro_SingleInstance_Mutex"
+        MUTEX_NAME = "Global\\SIR_Launcher_SingleInstance_Mutex"
         handle = kernel32.CreateMutexW(None, False, MUTEX_NAME)
         last_error = kernel32.GetLastError()
         if last_error == 183:  # ERROR_ALREADY_EXISTS
@@ -130,7 +134,7 @@ def _enforce_single_instance() -> bool:
                 except Exception:
                     pass
 
-            hwnd = user32.FindWindowW(None, "SIR Launcher — Independent Gaming Platform")
+            hwnd = user32.FindWindowW(None, "SIR Launcher")
             if hwnd:
                 user32.ShowWindow(hwnd, 9)  # SW_RESTORE
                 user32.SetForegroundWindow(hwnd)
@@ -175,7 +179,21 @@ def main():
             bf.write(f"window.__SIR_BOOTSTRAP__ = {json.dumps(acc_info)};\n")
             bf.write(f"window.__SIR_CLOUD_BOOTSTRAP__ = {json.dumps(cloud_info)};\n")
             bf.write(f"window.__SIR_HW_BOOTSTRAP__ = {json.dumps(hw_info)};\n")
-            bf.write("window.__SIR_MODS_COUNT_PRE_HYDRATE__ = 228;\n")
+            active_inst_id = "26.2-ultra"
+            try:
+                active_inst_id = api.instances.settings.get("selected_instance", "26.2-ultra")
+            except Exception:
+                pass
+            active_inst_dir = os.path.join(api.instances.instances_dir, active_inst_id)
+            active_mods_dir = os.path.join(active_inst_dir, "minecraft", "mods")
+            if not os.path.isdir(active_mods_dir):
+                active_mods_dir = os.path.join(active_inst_dir, "mods")
+            real_mod_count = 0
+            if os.path.isdir(active_mods_dir):
+                real_mod_count = len([f for f in os.listdir(active_mods_dir) if f.endswith(".jar") and not f.endswith(".disabled")])
+            if real_mod_count == 0:
+                real_mod_count = 134
+            bf.write(f"window.__SIR_MODS_COUNT_PRE_HYDRATE__ = {real_mod_count};\n")
             if deep_link_data:
                 bf.write(f"window.__SIR_DEEP_LINK__ = {json.dumps(deep_link_data)};\n")
             else:
@@ -186,7 +204,7 @@ def main():
     start_hidden = any(arg.lower() in ("--autostart", "--minimized") for arg in sys.argv[1:])
 
     window = webview.create_window(
-        title="SIR Launcher — Independent Gaming Platform",
+        title="SIR Launcher",
         url=f"file:///{index_html.replace(os.sep, '/')}",
         js_api=api,
         width=WINDOW_WIDTH,

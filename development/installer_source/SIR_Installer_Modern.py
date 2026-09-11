@@ -90,7 +90,7 @@ def main():
     cx, cy = get_screen_center(WINDOW_WIDTH, WINDOW_HEIGHT)
 
     window = webview.create_window(
-        title="SIR ModPack Installer Pro v1.0.0 — Modern Deployment Engine",
+        title="SIR Installer",
         url=html_file,
         js_api=api,
         width=WINDOW_WIDTH,

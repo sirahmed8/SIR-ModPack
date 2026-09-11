@@ -1,7 +1,7 @@
 const I18N = {
   en: {
-    appTitle: "SIR ModPack Installer",
-    appSubtitle: "Precision Hardware Deployment Engine • Fabric 26.2 & Forge 1.8.9",
+    appTitle: "SIR Installer",
+    appSubtitle: "Fabric 26.2 & Forge 1.8.9",
     cleaner: "Cleaner",
     repair: "Self-Repair",
     step1: "1. Welcome & Rig",
@@ -45,8 +45,8 @@ const I18N = {
     installSuccessDesc: "SIR Launcher and all 240+ mods, shaders, and configs have been successfully installed."
   },
   ar: {
-    appTitle: "مثبت منظومة SIR الاحترافي",
-    appSubtitle: "محرك التثبيت الذكي المتوافق مع عتاد جهازك • فابريك 26.2 وفورج 1.8.9",
+    appTitle: "مثبت SIR",
+    appSubtitle: "فابريك 26.2 وفورج 1.8.9",
     cleaner: "تنظيف الملفات",
     repair: "الفحص والإصلاح",
     step1: "1. فحص العتاد والاتفاقية",

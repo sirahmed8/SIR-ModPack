@@ -50,10 +50,12 @@ class AuthService:
         os.makedirs(self.prism_root, exist_ok=True)
         os.makedirs(self.skins_dir, exist_ok=True)
         self._hidden_prism_ids = self._load_hidden_ids()
-        self.active_account_id = ""
+        self.accounts: list[dict[str, Any]] = []
+        self.active_account_id = self._load_active_id()
         self.active_account_name = ""
         self.accounts = self.load_accounts()
-        self.active_account_id = self._load_active_id()
+        if not self.active_account_id:
+            self.active_account_id = self._load_active_id()
         self.active_account_name = self._active_name()
         self.user_status = "Online"
         self.sync_to_ingame_ias()
@@ -99,10 +101,11 @@ class AuthService:
                     return str(raw["activeAccountId"])
             except Exception:
                 pass
-        for account in self.accounts:
+        accs = getattr(self, "accounts", [])
+        for account in accs:
             if account.get("active"):
                 return account["accountId"]
-        return self.accounts[0]["accountId"] if self.accounts else ""
+        return accs[0]["accountId"] if accs else ""
 
     def _stable_id(self, kind: str, value: str) -> str:
         digest = hashlib.sha256(f"sir:{kind}:{value}".encode("utf-8")).hexdigest()[:24]
@@ -239,6 +242,8 @@ class AuthService:
             try:
                 with open(self.accounts_file, "r", encoding="utf-8") as handle:
                     raw = json.load(handle)
+                if isinstance(raw, dict) and raw.get("activeAccountId") and not self.active_account_id:
+                    self.active_account_id = str(raw["activeAccountId"])
                 values = raw.get("accounts", []) if isinstance(raw, dict) else raw
                 normalized = [self._normalize_legacy(item) for item in values if isinstance(item, dict)]
                 accounts = [item for item in normalized if item]
@@ -406,6 +411,8 @@ class AuthService:
         if refresh:
             self._import_prism_accounts()
         self.active_account_name = self._active_name()
+        for a in self.accounts:
+            a["active"] = (a.get("accountId") == self.active_account_id or a.get("displayName") == self.active_account_name)
         return {"active": self.active_account_name, "activeAccountId": self.active_account_id, "status": self.user_status, "accounts": self.accounts if isinstance(self.accounts, list) else []}
 
     def select_account(self, name_or_id: str) -> dict[str, Any]:
@@ -415,6 +422,8 @@ class AuthService:
             return {"success": False, "errorCode": "ACCOUNT_NOT_FOUND", "error": "Account not found."}
         self.active_account_id = account["accountId"]
         self.active_account_name = account["displayName"]
+        for a in self.accounts:
+            a["active"] = (a.get("accountId") == self.active_account_id)
         self.save_accounts()
         self.sync_to_ingame_ias()
         return {"success": True, "active": self.active_account_name, "accountId": self.active_account_id}

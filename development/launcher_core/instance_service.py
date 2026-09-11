@@ -1411,13 +1411,18 @@ class InstanceService:
         if not os.path.isdir(mods_dir):
             return {"success": False, "error": f"Mods folder not found: {mods_dir}"}
 
-        # If conflicting_mods not provided, inspect latest.log with CrashAnalyzer
+        # If conflicting_mods not provided, inspect latest.log and crash reports with CrashAnalyzer
         diag = {}
         if not conflicting_mods:
             log_candidates = [
                 os.path.join(inst_dir, "logs", "latest.log"),
                 os.path.join(inst_dir, "minecraft", "logs", "latest.log"),
             ]
+            for cr_dir in [os.path.join(inst_dir, "crash-reports"), os.path.join(inst_dir, "minecraft", "crash-reports")]:
+                if os.path.isdir(cr_dir):
+                    reports = sorted(glob.glob(os.path.join(cr_dir, "crash-*.txt")), key=os.path.getmtime, reverse=True)
+                    if reports:
+                        log_candidates.insert(0, reports[0])
             for lp in log_candidates:
                 if os.path.isfile(lp):
                     try:
@@ -1450,28 +1455,51 @@ class InstanceService:
                         else:
                             new_c.append(l)
                     open(cfg_path, "w", encoding="utf-8").write("\n".join(new_c) + "\n")
-                    return {"success": True, "message": "Updated instance runtime to 64-bit Java 25 (Azul Zulu)."}
                 except Exception as e:
                     return {"success": False, "error": f"Failed to update Java: {e}"}
+
+        if not conflicting_mods and diag.get("offending_mod"):
+            conflicting_mods = [diag["offending_mod"]]
 
         if not conflicting_mods:
             return {"success": False, "error": "No conflicting mods identified to auto-fix."}
 
         for fname in os.listdir(mods_dir):
-            if fname.endswith(".jar"):
-                clean_name = fname.lower().replace("-", "_")
-                for c_mod in conflicting_mods:
-                    c_clean = c_mod.lower().replace("-", "_")
-                    if c_clean in clean_name:
-                        src_path = os.path.join(mods_dir, fname)
-                        dst_path = os.path.join(mods_dir, fname + ".disabled")
-                        try:
-                            if os.path.exists(dst_path):
-                                os.remove(dst_path)
-                            os.rename(src_path, dst_path)
-                            fixed_mods.append(fname)
-                        except Exception as e:
-                            print(f"[AutoFix] Error disabling {fname}: {e}")
+            if not fname.endswith(".jar"):
+                continue
+            src_path = os.path.join(mods_dir, fname)
+            dst_path = os.path.join(mods_dir, fname + ".disabled")
+            clean_name = fname.lower().replace("-", "_")
+            matched = False
+
+            for c_mod in conflicting_mods:
+                c_clean = c_mod.lower().replace("-", "_")
+                if c_clean in clean_name or c_clean.replace("_", "") in clean_name.replace("_", ""):
+                    matched = True
+                    break
+
+            # Fallback inspection of fabric.mod.json inside jar
+            if not matched:
+                try:
+                    import zipfile
+                    with zipfile.ZipFile(src_path, "r") as zf:
+                        if "fabric.mod.json" in zf.namelist():
+                            import json as jmod
+                            mdata = jmod.loads(zf.read("fabric.mod.json").decode("utf-8", errors="ignore"))
+                            mid = str(mdata.get("id") or "").lower()
+                            if mid in [c.lower() for c in conflicting_mods]:
+                                matched = True
+                except Exception:
+                    pass
+
+            if matched:
+                try:
+                    if os.path.exists(dst_path):
+                        os.remove(dst_path)
+                    os.rename(src_path, dst_path)
+                    fixed_mods.append(fname)
+                except Exception as e:
+                    print(f"[AutoFix] Error disabling {fname}: {e}")
 
         return {
             "success": len(fixed_mods) > 0,

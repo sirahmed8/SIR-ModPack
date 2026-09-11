@@ -141,12 +141,19 @@ class ServerTrayService:
                     win_text = buf.value
 
                     # Main window title
-                    if "SIR Server Orchestrator Pro" in win_text:
+                    if win_text.startswith("SIR Server"):
                         return True
 
-                    # Suppress ONLY dummy windows created specifically by pystray
-                    is_pystray_dummy = "pystray" in class_name.lower() or "pystray" in win_text.lower()
-                    if is_pystray_dummy:
+                    # Suppress ghost dummy windows created by pystray or .NET WinForms / WebView2 broadcast events
+                    is_ghost_dummy = (
+                        "pystray" in class_name
+                        or "pystray" in win_text.lower()
+                        or "broadcasteventwindow" in class_name
+                        or "broadcastevent" in win_text.lower()
+                        or ".net-broadcast" in class_name
+                        or ".net-broadcast" in win_text.lower()
+                    )
+                    if is_ghost_dummy:
                         ex_style = user32.GetWindowLongW(hwnd, GWL_EXSTYLE)
                         new_style = (ex_style | WS_EX_TOOLWINDOW) & ~WS_EX_APPWINDOW
                         user32.SetWindowLongW(hwnd, GWL_EXSTYLE, new_style)

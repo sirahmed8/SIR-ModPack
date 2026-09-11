@@ -110,8 +110,8 @@ const STATE = {
 
 const I18N = {
   en: {
-    appTitle: "SIR Server Orchestrator",
-    appSubtitle: "Dedicated Multi-Threaded Host • PC / Laptop Host & Playit.gg",
+    appTitle: "SIR Server Manager",
+    appSubtitle: "PC / Laptop Host & Playit.gg",
     directJoin: "Direct Join in Launcher",
     navDashboard: "Dashboard & Controls",
     navTunnel: "Playit.gg Zero-Port Tunnel",
@@ -142,8 +142,8 @@ const I18N = {
     pluginsSub: "Curated, pre-configured server enhancements with automatic dependency resolution and zero configuration headache."
   },
   ar: {
-    appTitle: "مدير خوادم SIR الاحترافي",
-    appSubtitle: "محرك الاستضافة المباشر متعدد الأنوية • استضافة الحاسوب / اللابتوب ونفق Playit.gg",
+    appTitle: "مدير خوادم SIR",
+    appSubtitle: "استضافة الحاسوب / اللابتوب ونفق Playit.gg",
     directJoin: "دخول مباشر عبر اللانشر",
     navDashboard: "لوحة التحكم الرئيسية",
     navTunnel: "الربط السحابي Playit.gg",

@@ -56,10 +56,37 @@ def main():
                     except Exception as e:
                         print(f'  -> Warning on copy to {dst}: {e}')
 
+    # Build SIR_Apps_Suite.zip containing all 3 apps and icon
+    zip_name = "SIR_Apps_Suite.zip"
+    zip_dist_path = os.path.join(DIST, zip_name)
+    print(f"[*] Packaging {zip_name}...")
+    with zipfile.ZipFile(zip_dist_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        for item in exes:
+            item_path = os.path.join(DIST, item) if item.endswith('.exe') else os.path.join(ROOT, item)
+            if not os.path.exists(item_path):
+                item_path = os.path.join(ROOT, item)
+            if os.path.isfile(item_path):
+                zf.write(item_path, arcname=item)
+    print(f"[+] Created {zip_name} ({os.path.getsize(zip_dist_path) / 1024 / 1024:.2f} MB)")
+
+    suite_targets = [
+        ROOT,
+        os.path.expandvars(r'%APPDATA%\SIR ModPack')
+    ]
+    for st in suite_targets:
+        if os.path.isdir(st):
+            dst = os.path.join(st, zip_name)
+            if os.path.abspath(zip_dist_path) != os.path.abspath(dst):
+                try:
+                    shutil.copy2(zip_dist_path, dst)
+                    print(f'  -> Synchronized {zip_name} to {st}')
+                except Exception as e:
+                    print(f'  -> Warning on copy {zip_name} to {dst}: {e}')
+
     if os.path.exists(BUILD):
         shutil.rmtree(BUILD, ignore_errors=True)
 
-    print('=== ALL 3 APPS COMPILED & SYNCHRONIZED ===')
+    print('=== ALL 3 APPS & SUITE ZIP COMPILED & SYNCHRONIZED ===')
     return 0
 
 if __name__ == '__main__':

@@ -140,6 +140,25 @@ class CrashAnalyzer:
             }
 
         # -------------------------------------------------------------
+        # 1c. Fabric Entrypoint Stage Failure (NoClassDefFoundError / missing lib)
+        # -------------------------------------------------------------
+        entrypoint_match = re.search(
+            r"Could not execute entrypoint stage '([^']+)' due to errors, provided by '([^']+)'",
+            content,
+        )
+        if entrypoint_match:
+            stage = entrypoint_match.group(1)
+            offending_mod = entrypoint_match.group(2)
+            return {
+                "type": "ENTRYPOINT_FAILURE",
+                "cause": f"Mod '{offending_mod}' failed during '{stage}' entrypoint initialization",
+                "offending_mod": offending_mod,
+                "conflicting_mods": [offending_mod],
+                "auto_fixable": True,
+                "fix": f"Disable or update mod '{offending_mod}' to allow clean launch.",
+            }
+
+        # -------------------------------------------------------------
         # 2. Fabric / Forge Mixin Conflicts & Injection Failures
         # -------------------------------------------------------------
         mixin_match = re.search(
@@ -162,10 +181,13 @@ class CrashAnalyzer:
             )
             target_class = target_class_match.group(1) if target_class_match else "Target Game Class"
 
+            conf_mods = [offending_mod] if offending_mod and offending_mod != "Unknown Mod" else []
             return {
                 "type": "MIXIN_CONFLICT",
                 "cause": f"Mixin Conflict in Mod '{offending_mod}' on {target_class}",
                 "offending_mod": offending_mod,
+                "conflicting_mods": conf_mods,
+                "auto_fixable": bool(conf_mods),
                 "target_class": target_class,
                 "mixin_config": mixin_config,
                 "fix": f"Update or disable mod '{offending_mod}', or remove conflicting optimization mods.",

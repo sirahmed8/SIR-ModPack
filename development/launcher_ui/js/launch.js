@@ -148,11 +148,14 @@ async function launchGame(instId = null, serverIp = null, serverPort = null) {
               else if (clean.includes('[SIR') || clean.includes('FabricLoader') || clean.includes('Forge')) cls = 'text-cyan-300 font-medium';
               
               // Intelligent Lunar-Style Incompatible Mods Trigger
-              if (clean.includes('ModResolutionException') || clean.includes('Incompatible mods found') || clean.includes('Some of your mods are incompatible')) {
+              if (clean.includes('ModResolutionException') || clean.includes('Incompatible mods found') || clean.includes('Some of your mods are incompatible') || clean.includes('Could not execute entrypoint stage') || clean.includes('MixinApplyError')) {
+                let offending = null;
+                const mMatch = clean.match(/provided by '([^']+)'/);
+                if (mMatch) offending = mMatch[1];
                 showLunarCrashModal(targetInst, {
                   title: STATE.currentLang === 'ar' ? "مودات فابريك غير متوافقة" : "Incompatible Fabric Mods",
                   cause: clean,
-                  conflicting_mods: ["Fabric Mod Resolution Conflict"]
+                  conflicting_mods: offending ? [offending] : ["Incompatible Mod"]
                 });
               }
 
@@ -269,9 +272,9 @@ function showLunarCrashModal(instId, diag = {}) {
   if (titleEl) titleEl.innerText = diag.title || "Incompatible Fabric Mods";
   if (subEl) subEl.innerText = diag.cause || "Some of your Fabric mods are incompatible with the game or each other.";
 
-  const conflicting = Array.isArray(diag.conflicting_mods) && diag.conflicting_mods.length > 0
+  const conflicting = (Array.isArray(diag.conflicting_mods) && diag.conflicting_mods.length > 0)
     ? diag.conflicting_mods
-    : ["Incompatible Mod Conflict"];
+    : (diag.offending_mod ? [diag.offending_mod] : ["Incompatible Mod Conflict"]);
 
   if (modsListEl) {
     modsListEl.innerHTML = conflicting.map(m => `

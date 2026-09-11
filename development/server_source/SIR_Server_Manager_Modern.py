@@ -153,6 +153,11 @@ def on_window_ready() -> None:
             if found["hwnd"]:
                 _apply_dwm_dark(found["hwnd"])
 
+            # Periodically suppress .NET-BroadcastEventWindow and pystray taskbar ghost windows
+            from server_core.server_tray_service import ServerTrayService
+            for delay in (0.5, 1.5, 3.0):
+                threading.Timer(delay, ServerTrayService._suppress_dummy_tray_windows).start()
+
     threading.Thread(target=_worker, daemon=True).start()
 
 
@@ -170,7 +175,7 @@ def main() -> None:
     start_hidden = "--minimized" in sys.argv or "--hidden" in sys.argv
 
     window = webview.create_window(
-        title="SIR Server Orchestrator Pro v1.0.0",
+        title="SIR Server Manager",
         url=f"file:///{html_file.replace(os.sep, '/')}",
         js_api=api,
         width=WINDOW_WIDTH,
