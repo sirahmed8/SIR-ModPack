@@ -69,7 +69,7 @@ def run_diagnostics():
             issues.append(f"Missing or empty binary: {label}")
 
     # 2. Check Shaders
-    print("\n[2/6] Validating Master SIR 2.0 Shaders...")
+    print("\n[2/6] Validating Master SIR Shaders...")
     shaders = ["SIR Modern Shader.zip", "SIR Legacy Shader.zip"]
     for s in shaders:
         p = None

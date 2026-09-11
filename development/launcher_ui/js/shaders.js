@@ -5,8 +5,8 @@
 const SIR_SHADERS = [
   {
     id: "sir_extreme",
-    name: "SIR Extreme Shader 2.0 (Ultra Raytracing)",
-    nameAr: "شيدر SIR إكستريم 2.0 (تتبع الأشعة الفائق)",
+    name: "SIR Extreme Shader (Ultra Raytracing)",
+    nameAr: "شيدر SIR إكستريم (تتبع الأشعة الفائق)",
     tag: "⚡ Ultra Masterpiece",
     tagAr: "⚡ تحفة بصرية فائقة",
     author: "Sir Ahmed",
@@ -17,8 +17,8 @@ const SIR_SHADERS = [
   },
   {
     id: "sir_balanced",
-    name: "SIR Balanced Shader 2.0 (Competitive Standard)",
-    nameAr: "شيدر SIR المتوازن 2.0 (أداء تنافسي عالي)",
+    name: "SIR Balanced Shader (Competitive Standard)",
+    nameAr: "شيدر SIR المتوازن (أداء تنافسي عالي)",
     tag: "💎 Balanced Performance",
     tagAr: "💎 أداء متوازن ومستقر",
     author: "Sir Ahmed",

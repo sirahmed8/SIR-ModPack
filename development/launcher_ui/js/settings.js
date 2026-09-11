@@ -407,19 +407,26 @@ async function checkForAppUpdates(manual = true) {
 }
 window.checkForAppUpdates = checkForAppUpdates;
 
-// ==================== LUNAR FLOATING SETTINGS MODAL ENGINE ====================
+// ==================== SIR FLOATING SETTINGS MODAL ENGINE ====================
 window.openSettingsModal = function(tab = 'general') {
-  const modal = document.getElementById('settings-modal');
-  if (!modal) return;
-  modal.classList.remove('hidden');
+  if (typeof openModal === 'function') {
+    openModal('settings-modal');
+  } else {
+    const modal = document.getElementById('settings-modal');
+    if (modal) modal.classList.remove('hidden');
+  }
   renderSettings();
   switchSettingsTab(tab);
   if (window.refreshLucideIcons) refreshLucideIcons();
 };
 
 window.closeSettingsModal = function() {
-  const modal = document.getElementById('settings-modal');
-  if (modal) modal.classList.add('hidden');
+  if (typeof closeModal === 'function') {
+    closeModal('settings-modal');
+  } else {
+    const modal = document.getElementById('settings-modal');
+    if (modal) modal.classList.add('hidden');
+  }
 };
 
 window.filterSettingsCards = function(query) {

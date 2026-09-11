@@ -305,7 +305,9 @@ function openDisconnectConfirmModal() {
   if (emailEl && window.CLOUD_STATE) {
     emailEl.textContent = window.CLOUD_STATE.email || 'user@gmail.com';
   }
-  if (modal) {
+  if (typeof openModal === 'function') {
+    openModal('disconnect-confirm-modal');
+  } else if (modal) {
     modal.classList.remove('hidden');
     if (typeof refreshLucideIcons === 'function') refreshLucideIcons();
   }
@@ -313,8 +315,12 @@ function openDisconnectConfirmModal() {
 window.openDisconnectConfirmModal = openDisconnectConfirmModal;
 
 function closeDisconnectConfirmModal() {
-  const modal = document.getElementById('disconnect-confirm-modal');
-  if (modal) modal.classList.add('hidden');
+  if (typeof closeModal === 'function') {
+    closeModal('disconnect-confirm-modal');
+  } else {
+    const modal = document.getElementById('disconnect-confirm-modal');
+    if (modal) modal.classList.add('hidden');
+  }
 }
 window.closeDisconnectConfirmModal = closeDisconnectConfirmModal;
 

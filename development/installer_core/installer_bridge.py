@@ -321,40 +321,114 @@ class InstallerBridgeAPI:
         except Exception:
             specs["avx2_pass"] = True
 
-        java21_found = False
-        java_ver_str = "Bundled Java 21 LTS"
-        try:
-            bundled_java = os.path.join(self.root_dir, "runtime", "bin", "java.exe")
-            appdata_java = os.path.join(self.data_root, "runtime", "bin", "java.exe")
-            if os.path.isfile(bundled_java):
-                java21_found = True
-                java_ver_str = "Bundled Java 21 Runtime (Verified)"
-            elif os.path.isfile(appdata_java):
-                java21_found = True
-                java_ver_str = "Installed Java 21 Runtime (Verified)"
-            else:
-                j_cmd = shutil.which("java")
-                if j_cmd:
+        # 5. Pre-flight Java Runtimes (Modern OpenJDK 25/21+ and Legacy Java 8)
+        java25_found = False
+        java25_ver_str = "OpenJDK 25 (Modern 26.2)"
+        java8_found = False
+        java8_ver_str = "Java 8 (Legacy 1.8.9)"
+
+        bundled_java25 = os.path.join(self.root_dir, "runtime", "java-25", "bin", "java.exe")
+        bundled_java_gen = os.path.join(self.root_dir, "runtime", "bin", "java.exe")
+        appdata_java25 = os.path.join(self.data_root, "runtime", "java-25", "bin", "java.exe")
+        appdata_java_gen = os.path.join(self.data_root, "runtime", "bin", "java.exe")
+
+        bundled_java8 = os.path.join(self.root_dir, "runtime", "java-8", "bin", "java.exe")
+        appdata_java8 = os.path.join(self.data_root, "runtime", "java-8", "bin", "java.exe")
+
+        modern_cands = [bundled_java25, appdata_java25, bundled_java_gen, appdata_java_gen]
+        prog_files = os.environ.get("ProgramFiles", "C:\\Program Files")
+        adoptium_dir = os.path.join(prog_files, "Eclipse Adoptium")
+        if os.path.isdir(adoptium_dir):
+            try:
+                for d in os.listdir(adoptium_dir):
+                    if any(k in d for k in ["25", "24", "23", "22", "21"]):
+                        modern_cands.append(os.path.join(adoptium_dir, d, "bin", "java.exe"))
+            except Exception:
+                pass
+
+        for cand in modern_cands:
+            if os.path.isfile(cand):
+                try:
                     si = subprocess.STARTUPINFO()
                     si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
                     si.wShowWindow = subprocess.SW_HIDE
-                    proc = subprocess.run([j_cmd, "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, startupinfo=si, creationflags=0x08000000, timeout=2.0)
+                    proc = subprocess.run([cand, "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, startupinfo=si, creationflags=0x08000000, timeout=1.5)
                     out = proc.stderr or proc.stdout
-                    if any(v in out for v in ["21.", "22.", "23.", "24.", "25."]):
-                        java21_found = True
-                        java_ver_str = "System Java 21+ LTS (Active)"
-                    else:
-                        java21_found = False
-                        java_ver_str = "Legacy Java Detected (Java 21 LTS Recommended)"
-                else:
-                    java21_found = False
-                    java_ver_str = "Java 21 Missing (1-Click Adoptium Available)"
-        except Exception:
-            java21_found = False
-            java_ver_str = "Java Status Unknown"
+                    if "25." in out or "25-" in out or "openjdk version \"25" in out.lower():
+                        java25_found = True
+                        java25_ver_str = "Adoptium OpenJDK 25 (Verified)"
+                        break
+                    elif any(v in out for v in ["21.", "22.", "23.", "24."]):
+                        java25_found = True
+                        java25_ver_str = "OpenJDK 21+ LTS (Verified Modern)"
+                        break
+                except Exception:
+                    pass
 
-        specs["java21_pass"] = java21_found
-        specs["java21_label"] = java_ver_str
+        if not java25_found:
+            j_cmd = shutil.which("java")
+            if j_cmd:
+                try:
+                    si = subprocess.STARTUPINFO()
+                    si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                    si.wShowWindow = subprocess.SW_HIDE
+                    proc = subprocess.run([j_cmd, "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, startupinfo=si, creationflags=0x08000000, timeout=1.5)
+                    out = proc.stderr or proc.stdout
+                    if any(v in out for v in ["25.", "25-", "24.", "23.", "22.", "21."]):
+                        java25_found = True
+                        java25_ver_str = "System OpenJDK 25/21+ (Active)"
+                except Exception:
+                    pass
+
+        if not java25_found:
+            java25_ver_str = "Adoptium OpenJDK 25 Missing (1-Click Install Available)"
+
+        legacy_cands = [
+            bundled_java8,
+            appdata_java8,
+            r"C:\Program Files (x86)\Common Files\Oracle\Java\java8path\java.exe",
+            r"C:\Program Files\Common Files\Oracle\Java\java8path\java.exe",
+        ]
+        java_dir = os.path.join(prog_files, "Java")
+        if os.path.isdir(java_dir):
+            try:
+                for d in os.listdir(java_dir):
+                    if "1.8" in d or "jre8" in d.lower() or "jdk8" in d.lower():
+                        legacy_cands.append(os.path.join(java_dir, d, "bin", "java.exe"))
+            except Exception:
+                pass
+        if os.path.isdir(adoptium_dir):
+            try:
+                for d in os.listdir(adoptium_dir):
+                    if "jdk-8" in d or "jre-8" in d:
+                        legacy_cands.append(os.path.join(adoptium_dir, d, "bin", "java.exe"))
+            except Exception:
+                pass
+
+        for cand in legacy_cands:
+            if os.path.isfile(cand):
+                try:
+                    si = subprocess.STARTUPINFO()
+                    si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+                    si.wShowWindow = subprocess.SW_HIDE
+                    proc = subprocess.run([cand, "-version"], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, startupinfo=si, creationflags=0x08000000, timeout=1.5)
+                    out = proc.stderr or proc.stdout
+                    if "1.8." in out or "version \"8" in out or "build 25." in out:
+                        java8_found = True
+                        java8_ver_str = "Java 8 Runtime (Verified Legacy)"
+                        break
+                except Exception:
+                    pass
+
+        if not java8_found:
+            java8_ver_str = "Java 8 Not Detected (Optional for 1.8.9)"
+
+        specs["java25_pass"] = java25_found
+        specs["java25_label"] = java25_ver_str
+        specs["java8_pass"] = java8_found
+        specs["java8_label"] = java8_ver_str
+        specs["java21_pass"] = java25_found
+        specs["java21_label"] = java25_ver_str
 
         try:
             test_file = os.path.join(self.data_root, ".write_test")
@@ -410,47 +484,74 @@ class InstallerBridgeAPI:
                     pass
         return drives
 
-    def download_adoptium_java21(self, target_dir=None):
-        """1-Click resilient downloader for Adoptium OpenJDK 21 LTS x64 Windows."""
+    def download_adoptium_java(self, target_ver=25, target_dir=None):
+        """1-Click resilient downloader for Adoptium OpenJDK 25 / Java 8 x64 Windows with multi-mirror failover."""
         dest_base = target_dir or self.data_root
-        runtime_dir = os.path.join(dest_base, "runtime")
+        target_ver = 8 if int(target_ver) <= 8 else 25
+        runtime_dir = os.path.join(dest_base, "runtime", f"java-{target_ver}")
         java_bin = os.path.join(runtime_dir, "bin", "java.exe")
 
         if os.path.isfile(java_bin):
+            if target_ver == 25:
+                def_bin = os.path.join(dest_base, "runtime", "bin")
+                os.makedirs(def_bin, exist_ok=True)
+                for f_name in ["java.exe", "javaw.exe"]:
+                    src_f = os.path.join(runtime_dir, "bin", f_name)
+                    dst_f = os.path.join(def_bin, f_name)
+                    if os.path.isfile(src_f) and not os.path.isfile(dst_f):
+                        try: shutil.copy2(src_f, dst_f)
+                        except Exception: pass
             return {
                 "success": True,
-                "message": "Adoptium Java 21 LTS runtime already present.",
+                "message": f"Adoptium OpenJDK {target_ver} runtime already present.",
                 "java_path": java_bin
             }
 
         os.makedirs(runtime_dir, exist_ok=True)
-        zip_dest = os.path.join(dest_base, "adoptium_java21.zip")
-        download_url = "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/eclipse?project=jdk"
-        
-        self.install_status_text = "Downloading Adoptium Java 21 LTS (Eclipse Temurin)..."
-        self.current_log_line = "Connecting to Adoptium API v3 mirror..."
+        zip_dest = os.path.join(dest_base, f"adoptium_java_{target_ver}.zip")
+
+        if target_ver == 25:
+            urls = [
+                "https://api.adoptium.net/v3/binary/latest/25/ga/windows/x64/jdk/hotspot/normal/eclipse?project=jdk",
+                "https://api.adoptium.net/v3/binary/latest/25/ea/windows/x64/jdk/hotspot/normal/eclipse?project=jdk",
+                "https://download.oracle.com/java/25/latest/jdk-25_windows-x64_bin.zip",
+                "https://api.adoptium.net/v3/binary/latest/21/ga/windows/x64/jdk/hotspot/normal/eclipse?project=jdk",
+            ]
+        else:
+            urls = [
+                "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jdk/hotspot/normal/eclipse?project=jdk",
+                "https://api.adoptium.net/v3/binary/latest/8/ga/windows/x64/jre/hotspot/normal/eclipse?project=jdk",
+            ]
+
+        self.install_status_text = f"Downloading Adoptium OpenJDK {target_ver}..."
+        self.current_log_line = f"Connecting to Adoptium API v3 for Java {target_ver}..."
 
         def _on_progress(pct, downloaded, total, speed=0.0):
             mb_d = downloaded / (1024 * 1024)
             mb_t = total / (1024 * 1024) if total > 0 else 0
             self.install_progress = min(95, max(1, pct))
-            self.current_log_line = f"Downloading Java 21 LTS: {pct}% ({mb_d:.1f}/{mb_t:.1f} MB)"
+            self.current_log_line = f"Downloading OpenJDK {target_ver}: {pct}% ({mb_d:.1f}/{mb_t:.1f} MB)"
+
+        downloaded_ok = False
+        for url in urls:
+            try:
+                self.current_log_line = f"Attempting download mirror for OpenJDK {target_ver}..."
+                if download_file_resilient(url, zip_dest, progress_callback=_on_progress, max_retries=3, timeout=90.0):
+                    downloaded_ok = True
+                    break
+            except Exception as ex:
+                self.current_log_line = f"Mirror fallback triggered: {ex}"
+
+        if not downloaded_ok or not os.path.isfile(zip_dest):
+            return {"success": False, "error": f"Failed to download OpenJDK {target_ver} from available mirrors."}
 
         try:
-            download_file_resilient(
-                download_url,
-                zip_dest,
-                progress_callback=_on_progress,
-                max_retries=5
-            )
-
-            self.install_status_text = "Extracting Adoptium Java 21 LTS..."
-            self.current_log_line = "Extracting Java runtime binaries into /runtime..."
+            self.install_status_text = f"Extracting OpenJDK {target_ver}..."
+            self.current_log_line = f"Extracting runtime binaries into /runtime/java-{target_ver}..."
 
             with zipfile.ZipFile(zip_dest, "r") as zf:
                 members = zf.namelist()
                 top_dir = members[0].split("/")[0] if members and "/" in members[0] else ""
-                
                 for member in members:
                     rel_name = member[len(top_dir)+1:] if top_dir and member.startswith(top_dir + "/") else member
                     if not rel_name:
@@ -469,23 +570,38 @@ class InstallerBridgeAPI:
                 pass
 
             if os.path.isfile(java_bin):
-                self.install_status_text = "Adoptium Java 21 LTS Ready."
-                self.current_log_line = f"Java 21 LTS verified at {java_bin}"
+                if target_ver == 25:
+                    def_bin = os.path.join(dest_base, "runtime", "bin")
+                    os.makedirs(def_bin, exist_ok=True)
+                    for f_name in ["java.exe", "javaw.exe"]:
+                        src_f = os.path.join(runtime_dir, "bin", f_name)
+                        dst_f = os.path.join(def_bin, f_name)
+                        if os.path.isfile(src_f) and not os.path.isfile(dst_f):
+                            try: shutil.copy2(src_f, dst_f)
+                            except Exception: pass
+
+                self.install_status_text = f"Adoptium OpenJDK {target_ver} Ready."
+                self.current_log_line = f"OpenJDK {target_ver} verified at {java_bin}"
                 return {
                     "success": True,
-                    "message": "Adoptium Java 21 LTS installed and verified successfully.",
+                    "message": f"Adoptium OpenJDK {target_ver} installed and verified successfully.",
                     "java_path": java_bin
                 }
             else:
-                return {
-                    "success": False,
-                    "error": "Java archive extracted, but bin/java.exe was not found."
-                }
+                return {"success": False, "error": f"OpenJDK archive extracted, but bin/java.exe not found."}
         except Exception as e:
             if os.path.exists(zip_dest):
                 try: os.remove(zip_dest)
                 except Exception: pass
-            return {"success": False, "error": f"Failed to download Adoptium Java 21: {e}"}
+            return {"success": False, "error": f"Failed to extract OpenJDK {target_ver}: {e}"}
+
+    def download_adoptium_java21(self, target_dir=None):
+        """Backward-compatible alias for downloading modern Java runtime (OpenJDK 25/21)."""
+        return self.download_adoptium_java(target_ver=25, target_dir=target_dir)
+
+    def download_adoptium_java8(self, target_dir=None):
+        """Downloader for Legacy 1.8.9 Java 8 runtime."""
+        return self.download_adoptium_java(target_ver=8, target_dir=target_dir)
 
     def browse_folder(self):
         """Native Windows Folder Browser Dialog."""

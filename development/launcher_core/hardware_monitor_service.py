@@ -33,6 +33,25 @@ class MEMORYSTATUSEX(ctypes.Structure):
     ]
 
 
+class PERFORMANCE_INFORMATION(ctypes.Structure):
+    _fields_ = [
+        ("cb", ctypes.c_ulong),
+        ("CommitTotal", ctypes.c_size_t),
+        ("CommitLimit", ctypes.c_size_t),
+        ("CommitPeak", ctypes.c_size_t),
+        ("PhysicalTotal", ctypes.c_size_t),
+        ("PhysicalAvailable", ctypes.c_size_t),
+        ("SystemCache", ctypes.c_size_t),
+        ("KernelTotal", ctypes.c_size_t),
+        ("KernelPaged", ctypes.c_size_t),
+        ("KernelNonpaged", ctypes.c_size_t),
+        ("PageSize", ctypes.c_size_t),
+        ("HandleCount", ctypes.c_ulong),
+        ("ProcessCount", ctypes.c_ulong),
+        ("ThreadCount", ctypes.c_ulong),
+    ]
+
+
 class FILETIME(ctypes.Structure):
     _fields_ = [("dwLowDateTime", ctypes.c_uint), ("dwHighDateTime", ctypes.c_uint)]
 
@@ -222,6 +241,35 @@ class HardwareMonitorService:
             f"Recommended allocation for optimal frametimes: {rec_ram} GB Dedicated Heap."
         )
 
+        # 1b. Live Kernel Performance Counters (Task Manager parity)
+        proc_count, thread_count, handle_count = 0, 0, 0
+        commit_total_gb, commit_limit_gb, cached_gb = 0.0, 0.0, 0.0
+        uptime_str = "0:00:00"
+        if sys.platform == "win32":
+            try:
+                pi = PERFORMANCE_INFORMATION()
+                pi.cb = ctypes.sizeof(PERFORMANCE_INFORMATION)
+                if ctypes.windll.psapi.GetPerformanceInfo(ctypes.byref(pi), ctypes.sizeof(PERFORMANCE_INFORMATION)):
+                    page_mb = pi.PageSize / (1024 * 1024)
+                    commit_total_gb = round(pi.CommitTotal * page_mb / 1024, 1)
+                    commit_limit_gb = round(pi.CommitLimit * page_mb / 1024, 1)
+                    cached_gb = round(pi.SystemCache * page_mb / 1024, 1)
+                    proc_count = int(pi.ProcessCount)
+                    thread_count = int(pi.ThreadCount)
+                    handle_count = int(pi.HandleCount)
+            except Exception:
+                pass
+            try:
+                uptime_ms = ctypes.windll.kernel32.GetTickCount64()
+                secs = uptime_ms // 1000
+                days = secs // 86400
+                hours = (secs % 86400) // 3600
+                mins = (secs % 3600) // 60
+                sec = secs % 60
+                uptime_str = f"{days}:{hours:02d}:{mins:02d}:{sec:02d}" if days > 0 else f"{hours:02d}:{mins:02d}:{sec:02d}"
+            except Exception:
+                pass
+
         return {
             "success": True,
             "total_ram_gb": total_gb,
@@ -233,6 +281,13 @@ class HardwareMonitorService:
             "cpu_count": cpu_count,
             "cpu_load_pct": cpu_load_pct,
             "cpu_pct": cpu_load_pct,
+            "processes_count": proc_count,
+            "threads_count": thread_count,
+            "handles_count": handle_count,
+            "commit_total_gb": commit_total_gb,
+            "commit_limit_gb": commit_limit_gb,
+            "cached_ram_gb": cached_gb,
+            "uptime": uptime_str,
             "gpu_name": gpu_name,
             "all_gpus": self.cached_gpus,
             "disk_total_gb": disk_total_gb,

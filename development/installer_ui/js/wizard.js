@@ -161,20 +161,20 @@ async function selectTarget(type) {
   const dotLunar = document.getElementById('radio-dot-lunar');
 
   [cardSir, cardSirVanilla, cardVanilla, cardLunar].forEach(c => { if (c) c.className = "feature-card selectable p-4 space-y-2"; });
-  [dotSir, dotSirVanilla, dotVanilla, dotLunar].forEach(d => { if (d) d.className = "w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700"; });
+  [dotSir, dotSirVanilla, dotVanilla, dotLunar].forEach(d => { if (d) d.className = "w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 radio-dot-indicator"; });
 
   if (type === 'sir_launcher' && cardSir && dotSir) {
     cardSir.className = "feature-card selectable selected p-4 space-y-2";
-    dotSir.className = "w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-slate-900 shadow-sm";
+    dotSir.className = "w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-slate-900 shadow-sm radio-dot-indicator selected";
   } else if (type === 'sir_vanilla' && cardSirVanilla && dotSirVanilla) {
     cardSirVanilla.className = "feature-card selectable selected p-4 space-y-2";
-    dotSirVanilla.className = "w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-900 shadow-sm";
+    dotSirVanilla.className = "w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-900 shadow-sm radio-dot-indicator selected";
   } else if (type === 'vanilla' && cardVanilla && dotVanilla) {
     cardVanilla.className = "feature-card selectable selected p-4 space-y-2";
-    dotVanilla.className = "w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-900 shadow-sm";
+    dotVanilla.className = "w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-slate-900 shadow-sm radio-dot-indicator selected";
   } else if (type === 'lunar' && cardLunar && dotLunar) {
     cardLunar.className = "feature-card selectable selected p-4 space-y-2";
-    dotLunar.className = "w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-slate-900 shadow-sm";
+    dotLunar.className = "w-3.5 h-3.5 rounded-full bg-amber-400 border-2 border-slate-900 shadow-sm radio-dot-indicator selected";
   }
 
   // Check target environment (Lunar or Vanilla missing warning)
@@ -334,6 +334,14 @@ async function startInstallProcess() {
           logEl.innerText = cleanLog;
         }
         if (barEl) barEl.style.width = `${res.progress}%`;
+        const ringEl = document.getElementById('install-progress-ring');
+        const ringPct = document.getElementById('install-ring-pct');
+        if (ringEl) {
+          const circumference = 326.72;
+          const offset = Math.max(0, circumference - (res.progress / 100) * circumference);
+          ringEl.style.strokeDashoffset = offset;
+        }
+        if (ringPct) ringPct.innerText = `${res.progress}%`;
 
         if (speedVal && res.speed_mbps !== undefined) {
           speedVal.innerText = `${res.speed_mbps.toFixed(1)} MB/s`;
@@ -373,8 +381,10 @@ async function startInstallProcess() {
           clearInterval(STATE.pollInterval);
           STATE.isInstalling = false;
           document.getElementById('install-progress-card').classList.add('hidden');
-          document.getElementById('install-success-card').classList.remove('hidden');
+          const successCard = document.getElementById('install-success-card');
+          if (successCard) successCard.classList.remove('hidden');
           if (stepperContainer) stepperContainer.classList.remove('opacity-40', 'pointer-events-none');
+          if (window.lucide) lucide.createIcons();
 
           const finalBtnLabel = document.getElementById('btn-final-launch-text');
           if (finalBtnLabel) {
@@ -488,8 +498,19 @@ function applySpecsToUI(specs) {
 
   const javaVal = document.getElementById('diag-java-val');
   const javaHint = document.getElementById('diag-java-hint');
-  if (javaVal && specs.java21_label) javaVal.innerText = specs.java21_label;
-  if (javaHint) javaHint.innerText = "✓ Verified Modern 26.2 & Legacy 1.8.9 runtime";
+  const j25 = specs.java25_label || specs.java21_label;
+  if (javaVal && j25) javaVal.innerText = j25;
+  if (javaHint) {
+    if (specs.java25_pass && specs.java8_pass) {
+      javaHint.innerText = "✓ Verified OpenJDK 25 (26.2) & Java 8 (1.8.9) runtimes";
+    } else if (specs.java25_pass) {
+      javaHint.innerText = "✓ Verified OpenJDK 25 Modern runtime (Java 8 optional for 1.8.9)";
+    } else if (specs.java8_pass) {
+      javaHint.innerText = "✓ Verified Java 8 runtime (1-Click OpenJDK 25 available)";
+    } else {
+      javaHint.innerText = "⚡ 1-Click automated OpenJDK 25 runtime download available";
+    }
+  }
 
   const slider = document.getElementById('ram-slider');
   const recomHint = document.getElementById('recommended-ram-hint');

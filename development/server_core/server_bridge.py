@@ -188,6 +188,16 @@ class ServerBridgeAPI:
         """Stores reference to pywebview window instance."""
         self.window = window
 
+    def _notify_tray(self):
+        """Forces the system tray context menu to refresh its dynamic items (Start/Stop toggle)."""
+        try:
+            from server_core.server_tray_service import ServerTrayService
+            tray = ServerTrayService.get_instance()
+            if tray and hasattr(tray, "update_menu"):
+                tray.update_menu()
+        except Exception:
+            pass
+
     def get_hardware_specs(self):
         """Discovers accurate, non-hardcoded Windows hardware specifications."""
         specs = {
@@ -483,6 +493,7 @@ class ServerBridgeAPI:
 
             self.is_running = True
             self.server_start_time = time.time()
+            self._notify_tray()
 
             # Start background log reader
             threading.Thread(target=self._tail_stdout, daemon=True).start()
@@ -494,6 +505,7 @@ class ServerBridgeAPI:
             return {"success": True, "message": f"Server started successfully for version {v}."}
         except Exception as e:
             self.is_running = False
+            self._notify_tray()
             return {"success": False, "error": str(e)}
 
     def download_server_core(self, version="26.2"):
@@ -551,6 +563,7 @@ class ServerBridgeAPI:
                             )
 
             self.is_running = False
+            self._notify_tray()
             rc = self.server_process.poll() if self.server_process else None
             if rc is not None and rc != 0:
                 self.log_buffer.append(f"\n[SIR Host/CRASH]: Dedicated server terminated abnormally with exit code {rc}.\n")
@@ -593,8 +606,10 @@ class ServerBridgeAPI:
                     self.server_process.kill()
                 self.is_running = False
                 self.online_players = []
+                self._notify_tray()
 
             threading.Thread(target=_wait_and_kill, daemon=True).start()
+            self._notify_tray()
             return {"success": True, "message": "Server stopping gracefully..."}
         except Exception as e:
             return {"success": False, "error": str(e)}
@@ -926,44 +941,45 @@ class ServerBridgeAPI:
         try:
             target_dirs = []
             if world_dir and os.path.isdir(world_dir):
-                target_dirs.append(world_dir)
-            
-            backups_dir = os.path.join(self.root_dir, "server_backups")
-            if os.path.isdir(backups_dir) and backups_dir not in target_dirs:
-                target_dirs.append(backups_dir)
+                target_dirs = [os.path.abspath(world_dir)]
+            else:
+                backups_dir = os.path.join(self.root_dir, "server_backups")
+                if os.path.isdir(backups_dir):
+                    target_dirs.append(os.path.abspath(backups_dir))
+                server_dir = self.get_active_server_path(self.active_version)
+                inst_backups = os.path.join(server_dir, "backups")
+                if os.path.isdir(inst_backups) and os.path.abspath(inst_backups) not in target_dirs:
+                    target_dirs.append(os.path.abspath(inst_backups))
 
-            server_dir = self.get_active_server_path(self.active_version)
-            inst_backups = os.path.join(server_dir, "backups")
-            if os.path.isdir(inst_backups) and inst_backups not in target_dirs:
-                target_dirs.append(inst_backups)
-
-            all_archives = []
+            pruned_files = []
+            total_retained = 0
             for d in target_dirs:
+                if not os.path.isdir(d):
+                    continue
+                archives = []
                 for fn in os.listdir(d):
                     if fn.endswith((".zip", ".tar.gz")):
                         fp = os.path.join(d, fn)
                         if os.path.isfile(fp):
-                            all_archives.append((os.path.getmtime(fp), fp))
-
-            all_archives.sort(key=lambda x: x[0], reverse=True)
-
-            pruned_files = []
-            if len(all_archives) > keep:
-                for _, old_file in all_archives[keep:]:
-                    try:
-                        os.remove(old_file)
-                        pruned_files.append(os.path.basename(old_file))
-                    except Exception:
-                        pass
+                            archives.append((os.path.getmtime(fp), fp))
+                archives.sort(key=lambda x: x[0], reverse=True)
+                total_retained += min(len(archives), keep)
+                if len(archives) > keep:
+                    for _, old_file in archives[keep:]:
+                        try:
+                            os.remove(old_file)
+                            pruned_files.append(os.path.basename(old_file))
+                        except Exception:
+                            pass
 
             return {
                 "success": True,
-                "retained_count": min(len(all_archives), keep),
+                "retained_count": total_retained,
                 "pruned_count": len(pruned_files),
                 "pruned_files": pruned_files
             }
         except Exception as e:
-            return {"success": False, "error": str(e), "pruned_count": 0}
+            return {"success": False, "error": str(e), "pruned_count": 0, "pruned_files": []}
 
     def create_backup(self, version=None):
         v = version or self.active_version
@@ -1129,34 +1145,20 @@ class ServerBridgeAPI:
             with tarfile.open(backup_path, "w:gz") as tar:
                 tar.add(world_dir, arcname=os.path.basename(world_dir))
 
-            size_mb = round(os.path.getsize(backup_path) / (1024 * 1024), 2)
+            raw_size = os.path.getsize(backup_path)
+            size_mb = max(0.01, round(raw_size / (1024 * 1024), 2)) if raw_size > 0 else 0.0
 
-            # Strict 5-rotation cleanup: keep newest 5, delete older
-            existing_backups = sorted(
-                [
-                    os.path.join(backups_dir, f)
-                    for f in os.listdir(backups_dir)
-                    if f.startswith("world_backup_") and f.endswith(".tar.gz")
-                ],
-                key=os.path.getmtime,
-                reverse=True
-            )
-
-            pruned_count = 0
-            if len(existing_backups) > 5:
-                for old_backup in existing_backups[5:]:
-                    try:
-                        os.remove(old_backup)
-                        pruned_count += 1
-                    except Exception:
-                        pass
+            # Strict 5-rotation cleanup via prune_world_snapshots
+            prune_res = self.prune_world_snapshots(backups_dir, keep=5)
+            pruned_count = prune_res.get("pruned_count", 0)
+            retained_count = prune_res.get("retained_count", 1)
 
             return {
                 "success": True,
                 "backup_name": backup_filename,
                 "size_mb": size_mb,
                 "path": backup_path,
-                "total_backups": min(len(existing_backups), 5),
+                "total_backups": retained_count,
                 "pruned_old_backups": pruned_count,
                 "message": f"World backup created successfully ({size_mb} MB). Enforcing 5-rotation policy."
             }

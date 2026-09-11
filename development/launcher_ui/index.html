@@ -385,10 +385,10 @@
                   <span class="text-xs font-black text-white">What's New in v1.0.0 Production Genesis</span>
                   <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-black border border-emerald-500/30">Official Release</span>
                 </div>
-                <p class="text-[11px] text-slate-400 mt-0.5">Dual-engine architecture, custom GLSL shaders, Lunar Client profile sync & zero-defect performance.</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">Dual-engine architecture, custom GLSL shaders, SIR profile sync & zero-defect performance.</p>
               </div>
             </div>
-            <button onclick="openModal('whats-new-modal')" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black transition-all flex items-center gap-1.5 shrink-0 shadow-md shadow-cyan-500/20 active:scale-95 cursor-pointer">
+            <button onclick="openModal('welcome-modal')" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black transition-all flex items-center gap-1.5 shrink-0 shadow-md shadow-cyan-500/20 active:scale-95 cursor-pointer">
               <span>View Changelog</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </button>
@@ -1078,10 +1078,11 @@
             </div>
             <div class="flex items-center gap-2">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-[11px] font-bold">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                 <span id="hw-live-badge">Live Stream Active</span>
               </span>
-              <span id="hw-timestamp-badge" class="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 font-mono text-[11px]">Connecting...</span>
+              <span id="hw-timestamp-badge" class="px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 font-mono text-[11px] font-bold shadow-sm shadow-cyan-500/10">Live • 00:00:00</span>
+              <span id="telemetry-conn-state" class="hidden"></span>
             </div>
           </div>
 
@@ -1091,8 +1092,8 @@
                 <span class="text-[10px] text-slate-400 font-mono">System Physical RAM</span>
                 <i data-lucide="hard-drive" class="w-4 h-4 text-cyan-400"></i>
               </div>
-              <span id="hw-total-ram" class="text-lg font-black text-cyan-400 block">23.8 GB Total</span>
-              <span id="hw-avail-ram" class="text-[10px] text-emerald-400 font-mono block">12.3 GB Available</span>
+              <span id="hw-total-ram" class="text-lg font-black text-cyan-400 block">-- GB Total</span>
+              <span id="hw-avail-ram" class="text-[10px] text-emerald-400 font-mono block">-- GB Available</span>
             </div>
 
             <div class="feature-card p-4 space-y-2">
@@ -1100,9 +1101,9 @@
                 <span class="text-[10px] text-slate-400 font-mono">RAM Load %</span>
                 <i data-lucide="activity" class="w-4 h-4 text-amber-400"></i>
               </div>
-              <span id="hw-load-pct" class="text-lg font-black text-amber-400 block">48% In Use</span>
+              <span id="hw-load-pct" class="text-lg font-black text-amber-400 block">--% In Use</span>
               <div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                <div id="hw-ram-bar" class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: 48%"></div>
+                <div id="hw-ram-bar" class="h-full bg-amber-400 rounded-full transition-all duration-500" style="width: 0%"></div>
               </div>
             </div>
 
@@ -1111,10 +1112,10 @@
                 <span class="text-[10px] text-slate-400 font-mono">CPU Logical Cores</span>
                 <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
               </div>
-              <span id="hw-cpu-cores" class="text-lg font-black text-slate-100 block">20 Logical Cores</span>
+              <span id="hw-cpu-cores" class="text-lg font-black text-slate-100 block">-- Logical Cores</span>
               <div class="flex items-center justify-between text-[10px] text-cyan-400 font-mono">
-                <span id="hw-cpu-load">15% Live Load</span>
-                <span class="text-slate-400">Parallel Worker</span>
+                <span id="hw-cpu-load">--% Live Load</span>
+                <span class="text-slate-400">Kernel Polling</span>
               </div>
             </div>
 
@@ -1123,8 +1124,36 @@
                 <span class="text-[10px] text-slate-400 font-mono">Hardware Power Tier</span>
                 <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
               </div>
-              <span id="hw-power-tier" class="text-xs font-black text-emerald-300 block truncate">High Performance Tier (24 GB)</span>
-              <span id="hw-rec-ram" class="text-[10px] text-emerald-400 font-mono block">Allocate 8 GB Dedicated</span>
+              <span id="hw-power-tier" class="text-xs font-black text-emerald-300 block truncate">Detecting Hardware Tier...</span>
+              <span id="hw-rec-ram" class="text-[10px] text-emerald-400 font-mono block">Optimal Dedicated RAM</span>
+            </div>
+          </div>
+
+          <!-- Windows Task Manager Live Subsystem Strip -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 p-3.5 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-inner">
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Processes</span>
+              <span id="hw-proc-count" class="text-sm font-black text-slate-200 font-mono">--</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Threads</span>
+              <span id="hw-thread-count" class="text-sm font-black text-slate-200 font-mono">--</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Handles</span>
+              <span id="hw-handle-count" class="text-sm font-black text-slate-200 font-mono">--</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Up Time</span>
+              <span id="hw-uptime" class="text-sm font-black text-cyan-400 font-mono">--:--:--</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Committed</span>
+              <span id="hw-committed-ram" class="text-sm font-black text-amber-300 font-mono">-- / -- GB</span>
+            </div>
+            <div class="space-y-1">
+              <span class="text-[10px] text-slate-400 font-mono uppercase block">Cached RAM</span>
+              <span id="hw-cached-ram" class="text-sm font-black text-emerald-400 font-mono">-- GB</span>
             </div>
           </div>
 
@@ -1188,13 +1217,8 @@
               <p class="text-xs text-slate-400">Official changelogs, game releases, and ecosystem bulletins.</p>
             </div>
             <div class="flex items-center gap-2.5">
-              <button onclick="renderNewsView()" class="px-3.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 font-bold text-xs transition-all flex items-center gap-2 border border-slate-700/60 cursor-pointer">
-                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-                <span>Refresh</span>
-              </button>
-              <button onclick="openWhatsNewModal()" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer">
-                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                <span>What's New in v1.0.0</span>
+              <button id="news-refresh-btn" onclick="refreshNewsWithSpin(this)" class="w-9 h-9 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 border border-slate-700/80 hover:border-cyan-500/50 flex items-center justify-center transition-all duration-200 shadow-lg shadow-cyan-950/30 hover:shadow-cyan-500/20 active:scale-90 cursor-pointer group" title="Refresh Ecosystem News & Updates">
+                <i data-lucide="refresh-cw" class="w-4 h-4 transition-transform duration-300"></i>
               </button>
             </div>
           </div>
@@ -2902,8 +2926,8 @@
     </div>
   </div>
 
-  <!-- What's New in v1.0.0 Master Genesis Release Modal -->
-  <div id="whats-new-modal" class="modal-backdrop hidden fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
+  <!-- Welcome & What's New in v1.0.0 Master Genesis Release Modal -->
+  <div id="welcome-modal" data-alias="whats-new-modal" class="modal-backdrop hidden fixed inset-0 z-[999999] flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl">
     <div class="w-full max-w-2xl rounded-3xl bg-[#0b0f19]/95 border border-cyan-500/40 shadow-[0_25px_80px_rgba(0,0,0,0.95)] backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-200 text-white max-h-[88vh] overflow-hidden flex flex-col">
       <!-- Decoupled Header -->
       <div class="p-6 md:p-8 pb-4 border-b border-slate-800/80 shrink-0 flex items-start justify-between">
@@ -2987,7 +3011,7 @@
                 <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40">PvP Core</span>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed">
-                1000Hz hit registration, OptiFine HD, Patcher, NotEnoughUpdates, SkyblockAddons, and seamless Lunar HUD integration.
+                1000Hz hit registration, OptiFine HD, Patcher, NotEnoughUpdates, SkyblockAddons, and seamless SIR HUD integration.
               </p>
               <div class="space-y-1 text-[11px] font-mono text-slate-400">
                 <div class="flex items-center justify-between"><span>Loader:</span><span class="text-slate-200">Forge 1.8.9</span></div>
@@ -3014,10 +3038,10 @@
 
             <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-1.5">
               <div class="flex items-center gap-2 text-purple-400 font-bold text-xs">
-                <i data-lucide="moon" class="w-4 h-4"></i>
-                <span>Lunar Bridge & RSHIFT HUD</span>
+                <i data-lucide="crosshair" class="w-4 h-4"></i>
+                <span>SIR Bridge & RSHIFT HUD</span>
               </div>
-              <p class="text-[11px] text-slate-400 leading-relaxed">Synchronize your Lunar Client profile and toggle the in-game cosmetic HUD anytime with Right Shift.</p>
+              <p class="text-[11px] text-slate-400 leading-relaxed">Synchronize your client profile and toggle the in-game cosmetic HUD anytime with Right Shift.</p>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-1.5">
@@ -3051,7 +3075,7 @@
 
             <div class="p-3.5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-center justify-between">
               <div>
-                <span class="text-xs font-bold text-slate-200 block">Lunar HUD & Cosmetics</span>
+                <span class="text-xs font-bold text-slate-200 block">SIR HUD & Cosmetics</span>
                 <span class="text-[10px] text-slate-400 font-mono">In-game overlay and wardrobe</span>
               </div>
               <kbd class="px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700 text-purple-400 font-mono text-xs font-black shadow-inner">RSHIFT</kbd>
@@ -3404,6 +3428,7 @@
   <script src="js/diagnostics.js"></script>
   <script src="js/legal.js"></script>
   <script src="js/command_palette.js"></script>
+  <script src="js/hardware.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

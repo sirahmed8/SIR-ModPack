@@ -522,13 +522,62 @@ button:active {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Modals */
+/* Modals & Keyframe Animations */
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalExit {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes backdropFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+}
+
+@keyframes backdropFadeOut {
+  0% {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  100% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
 .modal-backdrop {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
+  inset: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
   background: rgba(4, 7, 12, 0.88) !important;
@@ -540,13 +589,78 @@ button:active {
   z-index: 99999 !important;
   padding: 1.5rem !important;
   box-sizing: border-box !important;
-  animation: fadeIn 0.22s ease-out;
+  overflow-y: auto !important;
 }
-.modal-backdrop.hidden {
+
+.modal-backdrop:not(.hidden) {
+  animation: backdropFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-backdrop.hidden,
+.modal-backdrop[style*="display: none"] {
   display: none !important;
 }
+
 .modal-backdrop.closing {
-  animation: fadeOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: backdropFadeOut 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+/* Polished Spring Scale 95% -> 100% Across All Modals */
+.modal-enter,
+.modal-card,
+.modal-backdrop:not(.hidden) > div,
+#welcome-modal:not(.hidden) > div,
+#whats-new-modal:not(.hidden) > div,
+#settings-modal:not(.hidden) > div,
+#mod-updates-modal:not(.hidden) > div,
+#disconnect-confirm-modal:not(.hidden) > div,
+#welcome-onboarding-modal:not(.hidden) > div,
+#feedback-modal:not(.hidden) > div,
+#sync-modal:not(.hidden) > div,
+#cleaner-modal:not(.hidden) > div,
+#repair-modal:not(.hidden) > div,
+#add-instance-modal:not(.hidden) > div,
+#account-manager-modal:not(.hidden) > div,
+#add-account-modal:not(.hidden) > div,
+#add-ms-account-modal:not(.hidden) > div,
+#ms-browser-auth-modal:not(.hidden) > div,
+#legal-eula-modal:not(.hidden) > div,
+#mod-docs-modal:not(.hidden) > div,
+#custom-dialog-modal:not(.hidden) > div,
+#confirm-action-modal:not(.hidden) > div,
+#prompt-input-modal:not(.hidden) > div,
+#alert-info-modal:not(.hidden) > div,
+#lunar-style-crash-modal:not(.hidden) > div {
+  animation: modalEnter 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  transform-origin: center center;
+}
+
+.modal-exit,
+.modal-backdrop.closing > div,
+#welcome-modal.closing > div,
+#whats-new-modal.closing > div,
+#settings-modal.closing > div,
+#mod-updates-modal.closing > div,
+#disconnect-confirm-modal.closing > div,
+#welcome-onboarding-modal.closing > div,
+#feedback-modal.closing > div,
+#sync-modal.closing > div,
+#cleaner-modal.closing > div,
+#repair-modal.closing > div,
+#add-instance-modal.closing > div,
+#account-manager-modal.closing > div,
+#add-account-modal.closing > div,
+#add-ms-account-modal.closing > div,
+#ms-browser-auth-modal.closing > div,
+#legal-eula-modal.closing > div,
+#mod-docs-modal.closing > div,
+#custom-dialog-modal.closing > div,
+#confirm-action-modal.closing > div,
+#prompt-input-modal.closing > div,
+#alert-info-modal.closing > div,
+#lunar-style-crash-modal.closing > div {
+  animation: modalExit 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  transform-origin: center center;
 }
 
 .modal-card {

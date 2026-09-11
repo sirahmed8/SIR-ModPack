@@ -297,7 +297,9 @@ function openModUpdatesModal(updates) {
   }
 
   updateSelectedModCount();
-  if (modal) {
+  if (typeof openModal === 'function') {
+    openModal('mod-updates-modal');
+  } else if (modal) {
     modal.classList.remove('hidden');
     refreshLucideIcons();
   }
@@ -305,8 +307,12 @@ function openModUpdatesModal(updates) {
 window.openModUpdatesModal = openModUpdatesModal;
 
 function closeModUpdatesModal() {
-  const modal = document.getElementById('mod-updates-modal');
-  if (modal) modal.classList.add('hidden');
+  if (typeof closeModal === 'function') {
+    closeModal('mod-updates-modal');
+  } else {
+    const modal = document.getElementById('mod-updates-modal');
+    if (modal) modal.classList.add('hidden');
+  }
 }
 window.closeModUpdatesModal = closeModUpdatesModal;
 

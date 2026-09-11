@@ -221,15 +221,26 @@ class ServerTrayService:
                     return False
 
                 def _server_toggle_text(item) -> str:
-                    return "⏹ Stop Server" if _is_server_running() else "▶ Start Server"
+                    return self.get_server_toggle_text()
 
                 def _on_toggle_server(icon, item):
                     if not self.bridge_api:
                         return
                     if _is_server_running():
-                        threading.Thread(target=self.bridge_api.stop_server, daemon=True).start()
+                        def _do_stop():
+                            try:
+                                self.bridge_api.stop_server()
+                            finally:
+                                self.update_menu()
+                        threading.Thread(target=_do_stop, daemon=True).start()
                     else:
-                        threading.Thread(target=self.bridge_api.start_server, daemon=True).start()
+                        def _do_start():
+                            try:
+                                self.bridge_api.start_server()
+                            finally:
+                                self.update_menu()
+                        threading.Thread(target=_do_start, daemon=True).start()
+                    threading.Timer(1.0, self.update_menu).start()
 
                 def _on_settings(icon, item):
                     self.restore_and_focus_window()
@@ -332,6 +343,22 @@ class ServerTrayService:
                 self.icon.notify(message, title)
             except Exception:
                 pass
+
+    def get_server_toggle_text(self) -> str:
+        """Returns the current contextual toggle text based on server running status."""
+        is_running = False
+        if self.bridge_api:
+            is_running = bool(getattr(self.bridge_api, "is_running", False))
+        return "⏹ Stop Server" if is_running else "▶ Start Server"
+
+    def update_menu(self) -> None:
+        """Forces the pystray context menu to re-evaluate dynamic menu items."""
+        with self._lock:
+            if self.icon and hasattr(self.icon, "update_menu"):
+                try:
+                    self.icon.update_menu()
+                except Exception:
+                    pass
 
     def stop(self) -> None:
         """Stops the system tray icon cleanly."""

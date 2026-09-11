@@ -285,7 +285,7 @@
         <div onclick="selectTarget('sir_launcher')" id="target-card-sir" class="feature-card selectable selected p-4 space-y-2">
           <div class="flex items-center justify-between">
             <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-extrabold">RECOMMENDED</span>
-            <div id="radio-dot-sir" class="w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-slate-900 shadow-sm"></div>
+            <div id="radio-dot-sir" class="w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-slate-900 shadow-sm radio-dot-indicator selected"></div>
           </div>
           <h4 class="text-xs font-extrabold text-title flex items-center gap-1.5">
             <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-500 dark:text-cyan-400"></i>
@@ -298,7 +298,7 @@
         <div onclick="selectTarget('sir_vanilla')" id="target-card-sir-vanilla" class="feature-card selectable p-4 space-y-2">
           <div class="flex items-center justify-between">
             <span class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-[9px] font-extrabold">PURE VANILLA</span>
-            <div id="radio-dot-sir-vanilla" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700"></div>
+            <div id="radio-dot-sir-vanilla" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 radio-dot-indicator"></div>
           </div>
           <h4 class="text-xs font-extrabold text-title flex items-center gap-1.5">
             <i data-lucide="leaf" class="w-3.5 h-3.5 text-emerald-500"></i>
@@ -311,7 +311,7 @@
         <div onclick="selectTarget('lunar')" id="target-card-lunar" class="feature-card selectable p-4 space-y-2">
           <div class="flex items-center justify-between">
             <span class="badge-tag bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 text-[9px] font-extrabold">LUNAR CLIENT</span>
-            <div id="radio-dot-lunar" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700"></div>
+            <div id="radio-dot-lunar" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 radio-dot-indicator"></div>
           </div>
           <h4 class="text-xs font-extrabold text-title flex items-center gap-1.5">
             <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-500"></i>
@@ -324,7 +324,7 @@
         <div onclick="selectTarget('vanilla')" id="target-card-vanilla" class="feature-card selectable p-4 space-y-2">
           <div class="flex items-center justify-between">
             <span class="badge-tag btn-secondary rounded-full px-2 py-0.5 text-[9px] font-extrabold">MINECRAFT</span>
-            <div id="radio-dot-vanilla" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700"></div>
+            <div id="radio-dot-vanilla" class="w-3.5 h-3.5 rounded-full bg-slate-400 dark:bg-slate-800 border-2 border-slate-300 dark:border-slate-700 radio-dot-indicator"></div>
           </div>
           <h4 class="text-xs font-extrabold text-title flex items-center gap-1.5">
             <i data-lucide="box" class="w-3.5 h-3.5 text-slate-400"></i>
@@ -470,10 +470,20 @@
       
       <!-- Progress Box -->
       <div id="install-progress-card" class="feature-card p-6 sm:p-8 space-y-6">
-        <div class="text-center space-y-3">
-          <div class="inline-flex p-4 rounded-3xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 shadow-xl shadow-cyan-500/10 animate-pulse">
-            <i data-lucide="cloud-download" class="w-8 h-8"></i>
+        <div class="text-center space-y-4">
+          <!-- Circular Pulsating Neon Ring -->
+          <div class="relative w-32 h-32 mx-auto flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full bg-cyan-500/20 blur-xl animate-pulse"></div>
+            <svg class="w-32 h-32 -rotate-90 transform" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" class="stroke-slate-200 dark:stroke-slate-800/80" stroke-width="7" fill="transparent" />
+              <circle id="install-progress-ring" cx="60" cy="60" r="52" class="stroke-cyan-400 progress-ring-circle" stroke-width="7" stroke-linecap="round" fill="transparent" stroke-dasharray="326.72" stroke-dashoffset="326.72" />
+            </svg>
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+              <i data-lucide="cloud-download" class="w-7 h-7 text-cyan-400 animate-pulse"></i>
+              <span id="install-ring-pct" class="text-xs font-mono font-black text-cyan-300 mt-1">0%</span>
+            </div>
           </div>
+
           <h2 id="install-progress-pct" class="text-4xl sm:text-5xl font-black font-mono tracking-tight text-cyan-600 dark:text-cyan-400">0%</h2>
           <div class="flex items-center justify-center gap-3">
             <span id="install-speed-badge" class="px-3 py-1 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 font-mono text-xs font-black flex items-center gap-1.5 shadow-sm">
@@ -489,8 +499,8 @@
         </div>
 
         <div class="space-y-2">
-          <div class="w-full h-3.5 bg-slate-200 dark:bg-slate-900 rounded-full overflow-hidden border border-slate-300 dark:border-slate-800 p-0.5">
-            <div id="install-progress-bar" class="h-full bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 w-0 rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(0,229,255,0.6)]"></div>
+          <div class="w-full h-3.5 bg-slate-200 dark:bg-slate-900 rounded-full overflow-hidden border border-slate-300 dark:border-slate-800 p-0.5 shadow-inner">
+            <div id="install-progress-bar" class="h-full neon-progress-bar w-0 rounded-full transition-all duration-300"></div>
           </div>
         </div>
 
@@ -500,20 +510,27 @@
         </div>
       </div>
 
+      <!-- Celebration & Success Card with Glowing Checkmark & Particle Sparkles -->
       <div id="install-success-card" class="feature-card p-6 sm:p-8 space-y-6 text-center hidden">
-        <div class="inline-flex p-4 rounded-3xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 shadow-xl shadow-emerald-500/20">
-          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        <div class="relative inline-flex items-center justify-center">
+          <div class="absolute -top-2 -left-2 w-2 h-2 rounded-full bg-cyan-400 particle-spark"></div>
+          <div class="absolute -bottom-2 -right-2 w-2 h-2 rounded-full bg-emerald-400 particle-spark" style="animation-delay: 0.5s;"></div>
+          <div class="absolute top-1/2 -right-4 w-1.5 h-1.5 rounded-full bg-amber-400 particle-spark" style="animation-delay: 1s;"></div>
+          
+          <div class="p-5 rounded-3xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 celebration-badge celebration-icon shadow-xl shadow-emerald-500/20">
+            <i data-lucide="check-circle-2" class="w-12 h-12"></i>
+          </div>
         </div>
         <div class="space-y-2">
-          <h2 class="text-2xl font-black text-title" data-i18n="installSuccessTitle">Deployment Finished Successfully!</h2>
+          <h2 class="text-2xl font-black text-title tracking-tight" data-i18n="installSuccessTitle">Deployment Finished Successfully!</h2>
           <p class="text-xs text-muted max-w-md mx-auto" data-i18n="installSuccessDesc">SIR ModPack Modern 26.2 & Legacy 1.8.9 profiles, custom shaders, and shortcuts are ready.</p>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-          <button onclick="launchSirLauncher()" class="px-7 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black shadow-xl shadow-emerald-500/30 active:scale-95 transition-all inline-flex items-center gap-2">
+          <button onclick="launchSirLauncher()" class="px-7 py-3 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black shadow-xl shadow-emerald-500/30 active:scale-[0.98] transition-all inline-flex items-center gap-2 cursor-pointer">
             <i data-lucide="play" class="w-4 h-4 fill-slate-950"></i>
             <span id="btn-final-launch-text" data-i18n="launchApp">LAUNCH SIR LAUNCHER</span>
           </button>
-          <button onclick="openInstalledFolder()" class="px-5 py-3 rounded-2xl btn-secondary text-xs font-bold transition-all inline-flex items-center gap-2">
+          <button onclick="openInstalledFolder()" class="px-5 py-3 rounded-2xl btn-secondary text-xs font-bold transition-all inline-flex items-center gap-2 active:scale-[0.98] cursor-pointer">
             <i data-lucide="folder" class="w-4 h-4 text-cyan-500 dark:text-cyan-400"></i>
             <span data-i18n="openFolder">Open Folder</span>
           </button>

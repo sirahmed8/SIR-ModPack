@@ -921,7 +921,7 @@ class ModernSIRInstaller(ctk.CTk):
         comp_items = [
             ("Modern 26.2 Profile (Fabric + 240+ Mods)", self.comp_modern),
             ("Legacy 1.8.9 PvP Profile (Hypixel Combat)", self.comp_legacy),
-            ("Master SIR Shaders 2.0 (Extreme & Balanced)", self.comp_shaders),
+            ("Master SIR Shaders (Extreme & Balanced)", self.comp_shaders),
             ("SIR Ultimate 3D POM & Fresh Animations Pack", self.comp_packs),
         ]
 

@@ -126,13 +126,20 @@ function showCustomAlert({ title = "Notice", message = "", buttonText = "OK" }) 
 }
 window.showCustomAlert = showCustomAlert;
 
+function getModalElement(id) {
+  if (id === 'welcome-modal' || id === 'whats-new-modal') {
+    return document.getElementById('welcome-modal') || document.getElementById('whats-new-modal');
+  }
+  return document.getElementById(id);
+}
+
 function openModal(id) {
-  const modal = document.getElementById(id);
+  const modal = getModalElement(id);
   if (modal) {
-    modal.classList.remove('hidden');
+    modal.classList.remove('hidden', 'closing');
     const container = modal.querySelector('div') || modal;
-    container.classList.remove('animate-out', 'fade-out-0', 'zoom-out-95');
-    container.classList.add('animate-in', 'fade-in-0', 'zoom-in-95', 'duration-200', 'ease-out');
+    container.classList.remove('modal-exit', 'animate-out', 'fade-out-0', 'zoom-out-95');
+    container.classList.add('modal-enter');
     if (id === 'account-manager-modal') {
       if (typeof renderGoogleCloudAccountCard === 'function') renderGoogleCloudAccountCard();
       if (typeof renderAccounts === 'function') renderAccounts();
@@ -142,16 +149,18 @@ function openModal(id) {
 }
 
 function closeModal(id) {
-  const modal = document.getElementById(id);
-  if (modal) {
+  const modal = getModalElement(id);
+  if (modal && !modal.classList.contains('hidden')) {
+    modal.classList.add('closing');
     const container = modal.querySelector('div') || modal;
-    container.classList.remove('animate-in', 'fade-in-0', 'zoom-in-95');
-    container.classList.add('animate-out', 'fade-out-0', 'zoom-out-95', 'duration-150', 'ease-in');
+    container.classList.remove('modal-enter', 'animate-in', 'fade-in-0', 'zoom-in-95');
+    container.classList.add('modal-exit');
     setTimeout(() => {
       modal.classList.add('hidden');
-      container.classList.remove('animate-out', 'fade-out-0', 'zoom-out-95');
+      modal.classList.remove('closing');
+      container.classList.remove('modal-exit');
       refreshLucideIcons();
-    }, 150);
+    }, 200);
   }
 }
 
@@ -218,14 +227,15 @@ async function checkWhatsNewOnStartup() {
 window.checkWhatsNewOnStartup = checkWhatsNewOnStartup;
 
 function openWhatsNewModal() {
-  openModal('whats-new-modal');
+  openModal('welcome-modal');
   switchWhatsNewTab('engines');
   refreshLucideIcons();
 }
 window.openWhatsNewModal = openWhatsNewModal;
+window.openWelcomeModal = openWhatsNewModal;
 
 function dismissWhatsNewModal() {
-  closeModal('whats-new-modal');
+  closeModal('welcome-modal');
   localStorage.setItem('sir_last_seen_release', '1.0.0');
   if (window.pywebview && window.pywebview.api && window.pywebview.api.mark_release_seen) {
     // Fire-and-forget: NEVER await bridge calls on modal button click handlers
@@ -233,6 +243,7 @@ function dismissWhatsNewModal() {
   }
 }
 window.dismissWhatsNewModal = dismissWhatsNewModal;
+window.closeWelcomeModal = dismissWhatsNewModal;
 
 function switchWhatsNewTab(tab) {
   const tabs = ['engines', 'innovations', 'shortcuts', 'quickstart'];

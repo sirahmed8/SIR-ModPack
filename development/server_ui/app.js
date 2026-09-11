@@ -284,43 +284,68 @@ function playChime(type) {
   } catch (_) {}
 }
 
-// --- REALTIME SPARKLINE CANVAS RENDERER ---
+// --- REALTIME SPARKLINE CANVAS RENDERER (HiDPI & Responsive Rock-Solid) ---
 function drawSparkline(canvasId, dataPoints, colorType, minVal, maxVal) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const w = canvas.width;
-  const h = canvas.height;
+
+  // HiDPI Pixel Ratio & Responsive Width Calibration
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  const cssW = rect.width > 0 ? rect.width : (canvas.clientWidth || 220);
+  const cssH = rect.height > 0 ? rect.height : (canvas.clientHeight || 40);
+  const targetPxW = Math.round(cssW * dpr);
+  const targetPxH = Math.round(cssH * dpr);
+
+  if (canvas.width !== targetPxW || canvas.height !== targetPxH) {
+    canvas.width = targetPxW;
+    canvas.height = targetPxH;
+  }
+
+  ctx.save();
+  ctx.scale(dpr, dpr);
+  const w = cssW;
+  const h = cssH;
   ctx.clearRect(0, 0, w, h);
 
-  if (!dataPoints || dataPoints.length < 2) return;
+  // Sanitize data points
+  let points = Array.isArray(dataPoints) ? dataPoints.map(v => Number.isFinite(v) ? Number(v) : 0) : [];
+  if (points.length === 0) {
+    points = [0, 0];
+  } else if (points.length === 1) {
+    points = [points[0], points[0]];
+  }
 
-  const min = minVal !== undefined ? minVal : Math.min(...dataPoints);
-  const max = maxVal !== undefined ? maxVal : Math.max(...dataPoints);
-  const range = (max - min) || 1;
+  const min = minVal !== undefined ? minVal : Math.min(...points);
+  const max = maxVal !== undefined ? maxVal : Math.max(...points);
+  const range = (max - min) > 0 ? (max - min) : 1;
 
-  // Grid line at mid
+  // Background subtle guide line at 50%
   const isLight = document.documentElement.classList.contains('light');
-  ctx.strokeStyle = isLight ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.06)';
+  ctx.strokeStyle = isLight ? 'rgba(0, 0, 0, 0.06)' : 'rgba(255, 255, 255, 0.05)';
   ctx.lineWidth = 1;
   ctx.beginPath();
   ctx.moveTo(0, h / 2);
   ctx.lineTo(w, h / 2);
   ctx.stroke();
 
-  // Curve
-  ctx.beginPath();
-  const step = w / (dataPoints.length - 1);
-  dataPoints.forEach((val, i) => {
-    const x = i * step;
-    const y = h - ((val - min) / range) * (h - 8) - 4;
-    if (i === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
+  // Calculate coordinates with clamping
+  const padTop = 4;
+  const padBottom = 4;
+  const usableH = Math.max(1, h - padTop - padBottom);
+
+  const coords = points.map((val, i) => {
+    const x = (i / (points.length - 1)) * w;
+    const normalized = Math.max(0, Math.min(1, (val - min) / range));
+    const y = h - padBottom - (normalized * usableH);
+    return { x, y };
   });
 
+  // Determine stroke color
   let strokeColor = '#38ef7d';
   if (colorType === 'tps') {
-    const lastVal = dataPoints[dataPoints.length - 1];
+    const lastVal = points[points.length - 1];
     if (lastVal >= 19.5) strokeColor = '#38ef7d';
     else if (lastVal >= 15.0) strokeColor = '#f59e0b';
     else strokeColor = '#f43f5e';
@@ -328,9 +353,29 @@ function drawSparkline(canvasId, dataPoints, colorType, minVal, maxVal) {
     strokeColor = '#00e5ff';
   }
 
+  // Draw Smooth Curve
+  ctx.beginPath();
+  ctx.moveTo(coords[0].x, coords[0].y);
+  for (let i = 0; i < coords.length - 1; i++) {
+    const p0 = coords[i];
+    const p1 = coords[i + 1];
+    const midX = (p0.x + p1.x) / 2;
+    const midY = (p0.y + p1.y) / 2;
+    ctx.quadraticCurveTo(p0.x, p0.y, midX, midY);
+  }
+  ctx.lineTo(coords[coords.length - 1].x, coords[coords.length - 1].y);
+
+  // Dynamic glowing curve stroke
+  ctx.shadowColor = strokeColor;
+  ctx.shadowBlur = 8;
   ctx.strokeStyle = strokeColor;
-  ctx.lineWidth = 2;
+  ctx.lineWidth = 2.2;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
   ctx.stroke();
+
+  // Reset shadow for gradient fill
+  ctx.shadowBlur = 0;
 
   // Gradient fill under curve
   ctx.lineTo(w, h);
@@ -341,6 +386,25 @@ function drawSparkline(canvasId, dataPoints, colorType, minVal, maxVal) {
   grad.addColorStop(1, strokeColor + '00');
   ctx.fillStyle = grad;
   ctx.fill();
+
+  // Draw pulsating active head marker at the latest value
+  const lastPoint = coords[coords.length - 1];
+  
+  // Outer soft glowing aura
+  ctx.beginPath();
+  ctx.arc(lastPoint.x, lastPoint.y, 5, 0, Math.PI * 2);
+  ctx.fillStyle = strokeColor + '40';
+  ctx.fill();
+
+  // Inner solid nucleus
+  ctx.beginPath();
+  ctx.arc(lastPoint.x, lastPoint.y, 2.5, 0, Math.PI * 2);
+  ctx.fillStyle = strokeColor;
+  ctx.shadowColor = strokeColor;
+  ctx.shadowBlur = 6;
+  ctx.fill();
+
+  ctx.restore();
 }
 
 // --- VIEW NAVIGATION ---
@@ -442,6 +506,7 @@ async function pollServerStatus() {
       // Update Power Button & Header Status
       const pwrBtn = document.getElementById('btn-master-power');
       const pwrText = document.getElementById('btn-master-power-text');
+      const topBadge = document.getElementById('top-status-badge');
       const topDot = document.getElementById('top-status-dot');
       const topText = document.getElementById('top-status-text');
       const topUptime = document.getElementById('top-uptime-ticker');
@@ -454,12 +519,14 @@ async function pollServerStatus() {
       if (status.is_running) {
         if (pwrBtn) pwrBtn.className = "px-8 py-4 rounded-2xl bg-rose-500 hover:bg-rose-400 text-white text-base font-black shadow-xl shadow-rose-500/25 flex items-center gap-3 active:scale-95 transition-all";
         if (pwrText) pwrText.innerText = I18N[STATE.currentLang].stopServer;
+        if (topBadge) topBadge.classList.add('online');
         if (topDot) topDot.className = "w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-emerald";
         if (topText) topText.innerText = I18N[STATE.currentLang].serverOnline;
         if (topUptime) topUptime.innerText = status.uptime;
       } else {
         if (pwrBtn) pwrBtn.className = "px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-base font-black shadow-xl shadow-emerald-500/25 flex items-center gap-3 active:scale-95 transition-all";
         if (pwrText) pwrText.innerText = I18N[STATE.currentLang].startServer;
+        if (topBadge) topBadge.classList.remove('online');
         if (topDot) topDot.className = "w-2.5 h-2.5 rounded-full bg-rose-500 pulse-rose";
         if (topText) topText.innerText = I18N[STATE.currentLang].serverOffline;
         if (topUptime) topUptime.innerText = "00:00:00";

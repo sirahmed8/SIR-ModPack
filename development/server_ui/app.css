@@ -133,11 +133,28 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: 20px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease;
+  position: relative;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 14px 28px -6px rgba(0, 0, 0, 0.45), 0 0 20px rgba(0, 229, 255, 0.1);
 }
 
 html.light .feature-card {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+html.light .feature-card:hover {
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.08), 0 0 16px rgba(2, 132, 199, 0.12);
 }
 
 .text-title { color: var(--text-title) !important; }
@@ -204,28 +221,116 @@ html.light input[type="text"]:focus, html.light select:focus, html.light .input-
   background-color: var(--btn-secondary-hover) !important;
 }
 
-/* View Panels */
+/* ==========================================================================
+   SPRING PHYSICS KEYFRAME ANIMATIONS & TAB TRANSITIONS
+   ========================================================================== */
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tabFade {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes statusRingPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 239, 125, 0.7), 0 0 8px rgba(56, 239, 125, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(56, 239, 125, 0), 0 0 16px rgba(56, 239, 125, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 239, 125, 0), 0 0 8px rgba(56, 239, 125, 0);
+  }
+}
+
+@keyframes statusRingPulseRose {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.6), 0 0 8px rgba(244, 63, 94, 0.3);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(244, 63, 94, 0), 0 0 14px rgba(244, 63, 94, 0.1);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 63, 94, 0), 0 0 8px rgba(244, 63, 94, 0);
+  }
+}
+
+/* View Panels with Silky Smooth Spring Transitions */
 .view-panel {
   display: none;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .view-panel.active {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
+  animation: tabFade 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Pulse Animations */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.15); }
+.view-panel.active > .feature-card,
+.view-panel.active > div > .feature-card,
+.view-panel.active .feature-card {
+  animation: cardEntrance 0.36s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.pulse-emerald { animation: pulseGlow 2s infinite ease-in-out; }
-.pulse-rose { animation: pulseGlow 2.5s infinite ease-in-out; }
+.view-panel.active .feature-card:nth-child(1) { animation-delay: 25ms; }
+.view-panel.active .feature-card:nth-child(2) { animation-delay: 50ms; }
+.view-panel.active .feature-card:nth-child(3) { animation-delay: 75ms; }
+.view-panel.active .feature-card:nth-child(4) { animation-delay: 100ms; }
+
+/* Status Pulse Badges */
+.pulse-emerald {
+  animation: pulseGlow 2s infinite cubic-bezier(0.16, 1, 0.3, 1), statusRingPulse 2s infinite;
+}
+
+.pulse-rose {
+  animation: pulseGlow 2.5s infinite cubic-bezier(0.16, 1, 0.3, 1), statusRingPulseRose 2.5s infinite;
+}
+
+/* Tactile Micro-Interactions on Buttons */
+button, .btn-action, .nav-btn, .settings-tab-btn, .settings-nav-btn {
+  will-change: transform;
+}
+
+button:active, .btn-action:active, .nav-btn:active, .settings-tab-btn:active, .settings-nav-btn:active {
+  transform: scale(0.98) !important;
+}
 
 
 /* ==========================================================================
@@ -546,12 +651,7 @@ html.light .nav-tooltip {
 }
 
 .modal-dialog {
-  animation: modalPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes modalPop {
-  from { opacity: 0; transform: scale(0.95) translateY(10px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+  animation: modalSlideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .settings-tab-btn {
@@ -698,6 +798,7 @@ html.light .settings-nav-tooltip {
 
 .settings-tab-content.active {
   display: block;
+  animation: tabFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 /* Suppress Native Number Spinners (Directive 5) */

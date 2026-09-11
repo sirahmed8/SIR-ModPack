@@ -47,11 +47,11 @@ Every artifact, configuration, binary, and texture pack in this release has been
 
 ## 🔮 3. Optics, Shaders & Visual Aesthetics
 
-- **SIR Modern Shader 2.0**:
+- **SIR Modern Shader**:
   - Baked physically based rendering (PBR) and parallax occlusion mapping (POM) heightmaps.
   - Puddleflood Translucent Water Synergy with realistic Fresnel water surface reflections and soft ambient shoreline caustics.
   - Built-in performance presets ranging from **Low-End Potato** to **Ultra Cyberpunk**.
-- **SIR Legacy Shader 2.0**:
+- **SIR Legacy Shader**:
   - Re-engineered OptiFine 1.8.9 samplers in `shaders/lib/config.glsl`, eliminating legacy black-screen and geometry-flicker issues.
 - **SIR Modern 3D Resource Pack**:
   - Over 5,300 tactile textures, 3D block models, custom ambient audio soundscapes, and EMF/ETF custom mob entity models.

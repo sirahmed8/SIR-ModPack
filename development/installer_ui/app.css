@@ -157,7 +157,12 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: 20px;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.22s ease;
   position: relative;
 }
 
@@ -167,24 +172,47 @@ html.light .feature-card {
 
 .feature-card.selectable {
   cursor: pointer;
+  transform: translateY(0) scale(1);
 }
 
 .feature-card.selectable:hover {
   border-color: var(--neon-cyan);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.2), 0 0 14px rgba(0, 229, 255, 0.15);
+  transform: translateY(-3px) scale(1.008);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.4), 0 0 18px rgba(0, 229, 255, 0.2);
+}
+
+html.light .feature-card.selectable:hover {
+  border-color: #0284c7;
+  box-shadow: 0 10px 24px -6px rgba(2, 132, 199, 0.15), 0 0 14px rgba(2, 132, 199, 0.15);
+}
+
+.feature-card.selectable:active {
+  transform: scale(0.985) !important;
 }
 
 .feature-card.selected {
   border-color: var(--neon-cyan) !important;
   background-color: var(--bg-card-highlight);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2), inset 0 0 15px rgba(0, 229, 255, 0.04);
+  box-shadow: 0 0 24px rgba(0, 229, 255, 0.22), inset 0 0 16px rgba(0, 229, 255, 0.05);
+  transform: translateY(-1px);
 }
 
 html.light .feature-card.selected {
   border-color: #0284c7 !important;
   background-color: #f0f9ff;
-  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.18);
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.2);
+}
+
+/* Radio dot check animation */
+.radio-dot-indicator {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.radio-dot-indicator.selected {
+  transform: scale(1.15);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 
 /* Text Hierarchy */
@@ -237,7 +265,7 @@ button:hover, .btn-action:hover {
 }
 
 button:active, .btn-action:active {
-  transform: scale(0.96) !important;
+  transform: scale(0.98) !important;
 }
 
 .btn-secondary {
@@ -446,18 +474,134 @@ html.light .switch-input:checked + .switch-track .switch-thumb {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-/* Wizard Stages Visibility */
+/* ==========================================================================
+   SPRING PHYSICS, FLUID STAGE TRANSITIONS & NEON INSTALLATION ANIMATIONS
+   ========================================================================== */
+
+@keyframes stageFadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Wizard Stages Visibility with Fluid Spring Physics */
 .wizard-stage {
   display: none;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .wizard-stage.active {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
+  animation: stageFadeSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.wizard-stage.active .feature-card {
+  animation: cardEntrance 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.wizard-stage.active .feature-card:nth-child(1) { animation-delay: 20ms; }
+.wizard-stage.active .feature-card:nth-child(2) { animation-delay: 45ms; }
+.wizard-stage.active .feature-card:nth-child(3) { animation-delay: 70ms; }
+.wizard-stage.active .feature-card:nth-child(4) { animation-delay: 95ms; }
+
+/* Pulsating Neon Installation Progress Bar & Ring */
+@keyframes neonBarGlow {
+  0%, 100% {
+    box-shadow: 0 0 14px rgba(0, 229, 255, 0.7), 0 0 28px rgba(0, 229, 255, 0.3);
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.5));
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(56, 239, 125, 0.85), 0 0 40px rgba(56, 239, 125, 0.4);
+    filter: drop-shadow(0 0 12px rgba(56, 239, 125, 0.6));
+  }
+}
+
+@keyframes barShimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.neon-progress-bar {
+  background: linear-gradient(90deg, #00e5ff 0%, #38ef7d 50%, #00e5ff 100%);
+  background-size: 200% 200%;
+  animation: neonBarGlow 2.4s infinite ease-in-out, barShimmer 3s infinite linear;
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.6));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(56, 239, 125, 0.85));
+  }
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: ringPulse 2.2s infinite ease-in-out;
+}
+
+/* Celebration & Success Milestone Animations */
+@keyframes checkmarkPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-30deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.18) rotate(6deg);
+  }
+  80% {
+    transform: scale(0.96) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes celebrationPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(56, 239, 125, 0.6), 0 0 24px rgba(56, 239, 125, 0.35);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px rgba(56, 239, 125, 0), 0 0 45px rgba(56, 239, 125, 0.55);
+  }
+}
+
+@keyframes particleSparkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8) translateY(0); }
+  50% { opacity: 1; transform: scale(1.15) translateY(-4px); }
+}
+
+.celebration-icon {
+  animation: checkmarkPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.celebration-badge {
+  animation: celebrationPulse 2s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.particle-spark {
+  animation: particleSparkle 1.8s infinite ease-in-out;
 }
 
 

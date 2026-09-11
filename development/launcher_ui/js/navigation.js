@@ -176,9 +176,9 @@ async function renderNewsView() {
             ]
           },
           {
-            title: "Lunar Bridge & Cloud Sync",
+            title: "SIR Bridge & Cloud Sync",
             items: [
-              "Bi-directional profile synchronization across all 6 Lunar Client profiles (C: ↔ D:).",
+              "Bi-directional profile synchronization across all client profiles (C: ↔ D:).",
               "Cross-app Google Authentication linking SIR Launcher and SIR Server Manager via loopback session.",
               "Real-time SHA-256 delta patcher enabling instant OTA updates with zero redundant downloads."
             ]
@@ -251,14 +251,14 @@ async function renderNewsView() {
 
   // Master v1.0.0 Banner
   html += `
-    <div class="feature-card p-6 border-cyan-500/40 bg-gradient-to-r from-cyan-950/40 via-slate-900/60 to-purple-950/40 space-y-4">
+    <div class="feature-card p-6 border-cyan-500/40 bg-gradient-to-r from-cyan-950/50 via-slate-900/70 to-purple-950/50 space-y-4 shadow-xl">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono font-bold uppercase bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20">Official Launch</span>
-          <h3 class="text-lg font-black text-white">SIR ModPack v1.0.0 — Master Genesis Release</h3>
+          <span class="px-3 py-1 rounded-full text-[11px] font-mono font-black uppercase bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/25">v1.0.0 Genesis Master</span>
+          <h3 class="text-lg font-black text-white tracking-wide">SIR ModPack v1.0.0 — Master Genesis Release</h3>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="openModal('whats-new-modal')" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer">
+          <button onclick="openModal('welcome-modal')" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer">
             <i data-lucide="book-open" class="w-3.5 h-3.5 text-cyan-400"></i>
             <span>What's New</span>
           </button>
@@ -277,21 +277,21 @@ async function renderNewsView() {
             <i data-lucide="sun" class="w-3.5 h-3.5"></i>
             <span>SIR Modern 2048 Shaders</span>
           </div>
-          <p class="text-[11px] text-slate-400">Volumetric fog, screen-space reflections, and 144 FPS balanced presets.</p>
+          <p class="text-[11px] text-slate-400">Volumetric atmosphere, screen-space reflections, and 144 FPS balanced presets.</p>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
           <div class="flex items-center gap-1.5 text-emerald-400 font-bold text-xs">
             <i data-lucide="zap" class="w-3.5 h-3.5"></i>
             <span>Hardware Governor</span>
           </div>
-          <p class="text-[11px] text-slate-400">Dynamic G1GC/ZGC memory trimming flushes background RAM to &lt;45 MB.</p>
+          <p class="text-[11px] text-slate-400">Dynamic kernel memory trimming flushes background RAM to &lt;45 MB.</p>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
           <div class="flex items-center gap-1.5 text-purple-400 font-bold text-xs">
-            <i data-lucide="moon" class="w-3.5 h-3.5"></i>
-            <span>Lunar Client Bridge</span>
+            <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+            <span>SIR HUD & Cosmetics</span>
           </div>
-          <p class="text-[11px] text-slate-400">1-click bi-directional sync across all 6 Lunar profiles and game options.</p>
+          <p class="text-[11px] text-slate-400">Integrated RSHIFT in-game overlay, cosmetic wardrobe, and profile sync.</p>
         </div>
       </div>
     </div>
@@ -336,8 +336,23 @@ async function renderNewsView() {
 
   container.innerHTML = html;
   refreshLucideIcons();
-}
 window.renderNewsView = renderNewsView;
+
+async function refreshNewsWithSpin(btn) {
+  const icon = btn ? (btn.querySelector('i') || btn.querySelector('svg')) : null;
+  if (icon) icon.classList.add('animate-spin');
+  if (btn) btn.classList.add('pointer-events-none', 'opacity-75');
+
+  try {
+    await renderNewsView();
+  } finally {
+    setTimeout(() => {
+      if (icon) icon.classList.remove('animate-spin');
+      if (btn) btn.classList.remove('pointer-events-none', 'opacity-75');
+    }, 600);
+  }
+}
+window.refreshNewsWithSpin = refreshNewsWithSpin;
 
 // --- AUTO EXECUTE DEEP LINK ---
 function handleIncomingDeepLink(dl) {

@@ -4,7 +4,7 @@ from shared_core.runtime import atomic_write_text
 
 class ShadersService:
 
-    """Manages SIR Shaders 2.0 configuration, POM normal/specular maps, and in-game presets."""
+    """Manages SIR Shaders configuration, POM normal/specular maps, and in-game presets."""
 
     def __init__(self, root_dir):
         self.root_dir = root_dir

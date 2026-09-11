@@ -351,6 +351,8 @@ class LunarBridgeService:
                 for f in files:
                     if f.endswith(".jar") and self.is_mod_excluded_for_lunar(f):
                         fp = os.path.join(root, f)
+                        if os.path.realpath(fp).startswith(self.instances_dir):
+                            continue
                         try:
                             os.remove(fp)
                             removed.append(fp)
@@ -360,6 +362,8 @@ class LunarBridgeService:
                 for d in list(dirs):
                     if any(pat in d.lower() for pat in self.LUNAR_EXCLUDED_MOD_PATTERNS):
                         dp = os.path.join(root, d)
+                        if os.path.realpath(dp).startswith(self.instances_dir):
+                            continue
                         try:
                             shutil.rmtree(dp, ignore_errors=True)
                             removed.append(dp)
@@ -903,18 +907,24 @@ class LunarBridgeService:
                 "error": "CRITICAL: Quantified API found! Triggers fatal native ntdll.dll OpenCL crash."
             }
 
-        # If Lunar Client profile, verify BetterCombat and Krypton are not present
+        # If Lunar Client profile, verify BetterCombat and Krypton are not present (unless linked to SIR instance)
         if is_lunar:
-            if any("bettercombat" in j for j in active_jars):
-                return {
-                    "success": False,
-                    "error": "CRITICAL: BetterCombat found in Lunar profile! Triggers NoClassDefFoundError net/minecraft/class_7924 under Genesis."
-                }
-            if any("krypton" in j for j in active_jars):
-                return {
-                    "success": False,
-                    "error": "CRITICAL: Krypton found in Lunar profile! Triggers fatal Mixin InjectionError on ServerLoginPacketListenerImpl."
-                }
+            is_linked_instance = any(
+                os.path.realpath(os.path.join(md, j)).lower().startswith(self.instances_dir.lower())
+                for md in mods_dirs if os.path.isdir(md)
+                for j in os.listdir(md) if j.endswith(".jar")
+            )
+            if not is_linked_instance:
+                if any("bettercombat" in j for j in active_jars):
+                    return {
+                        "success": False,
+                        "error": "CRITICAL: BetterCombat found in Lunar profile! Triggers NoClassDefFoundError net/minecraft/class_7924 under Genesis."
+                    }
+                if any("krypton" in j for j in active_jars):
+                    return {
+                        "success": False,
+                        "error": "CRITICAL: Krypton found in Lunar profile! Triggers fatal Mixin InjectionError on ServerLoginPacketListenerImpl."
+                    }
 
         # 3. Options audit: verify zero scancode type mismatches
         opts_paths = [
