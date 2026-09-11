@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — Terms of Service
-### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Compliance*
+### *Version 1.0.0 • Official Release • Legally Enforced Compliance*
 
 ---
 
@@ -12,7 +12,7 @@
 ## 🎮 2. Official Mojang Studios & Microsoft Brand Compliance
 **NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
 
-Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is a 100% Free & Independent Platform. This project is not affiliated with, endorsed by, or associated with Mojang Studios, Microsoft, or any of their subsidiaries. All rights to Minecraft, its name, assets, and source code are owned exclusively by Mojang AB and Microsoft Corporation. The project strictly upholds Mojang Commercial Usage and Brand Guidelines.
+Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is an independent gaming platform. This project is not affiliated with, endorsed by, or associated with Mojang Studios, Microsoft, or any of their subsidiaries. All rights to Minecraft, its name, assets, and source code are owned exclusively by Mojang AB and Microsoft Corporation. The project strictly upholds Mojang Commercial Usage and Brand Guidelines.
 
 ---
 
@@ -30,7 +30,7 @@ Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The 
 ---
 
 ## 📄 5. Intellectual Property & Community Attribution
-- **Custom Modules:** Launcher code, installer scripts, and web UI components are distributed as a 100% free, independent software suite.
+- **Custom Modules:** Launcher code, installer scripts, and web UI components are distributed as an independent software suite under the SIR Software Agreement.
 - **Third-Party Assets:** Bundled mods, shaders, and textures remain the intellectual property of their original creators and authors, with attribution preserved in respective directories.
 
 ## 🔧 5.1 Mod Compatibility & Bytecode Modifications
@@ -55,7 +55,7 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 ---
 
 # 📜 وثيقة شروط الخدمة الرسمية لمنظومة SIR ModPack
-### *الإصدار 1.0.0 Genesis الإنتاجي • منصة مجانية ومستقلة بنسبة 100% • امتثال قانوني ومعايير مجتمعية ملزمة*
+### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • امتثال قانوني ومعايير مجتمعية ملزمة*
 
 ---
 
@@ -67,7 +67,7 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 
 ## 🎮 2. الامتثال لحقوق Mojang Studios و Microsoft
 **هذا المنتج ليس منتجاً رسمياً لماينكرافت. غير معتمد من أو مرتبط بـ MOJANG أو MICROSOFT.**
-ماينكرافت علامة تجارية مسجلة لشركة Mojang AB و Microsoft Corporation. منظومة SIR ModPack هي منصة مجانية ومستقلة بنسبة 100% ولا تدعي أي ملكية أو صلة تجارية بشركة Mojang أو Microsoft، وتلتزم تماماً بإرشادات الاستخدام التجاري والعلامة التجارية لماينكرافت.
+ماينكرافت علامة تجارية مسجلة لشركة Mojang AB و Microsoft Corporation. منظومة SIR ModPack هي منظومة ألعاب متطورة ومستقلة ولا تدعي أي ملكية أو صلة تجارية بشركة Mojang أو Microsoft، وتلتزم تماماً بإرشادات الاستخدام التجاري والعلامة التجارية لماينكرافت.
 
 ---
 
@@ -85,7 +85,7 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 ---
 
 ## 📄 5. الملكية الفكرية ونسب الحقوق
-- **الوحدات البرمجية المخصصة:** كود اللانشر والمثبت وبوابة الويب موزع كمنظومة برمجية مجانية ومستقلة بنسبة 100%.
+- **الوحدات البرمجية المخصصة:** كود اللانشر والمثبت وبوابة الويب موزع كمنظومة برمجية متطورة ومستقلة.
 - **أصول الطرف الثالث:** تظل كافة المودات والشيدرز والخامات المدمجة ملكاً لأصحابها ومطوريها الأصليين مع حفظ الحقوق والإشارة إليهم.
 
 ---

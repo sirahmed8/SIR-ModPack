@@ -3,8 +3,8 @@
 ===============================================================================
 🌟 SIR ModPack — Master CLI Installer & Portable Deployer Engine
 ===============================================================================
-Release:  v1.0.0 Genesis Production Release
-Platform: 100% Free & Independent Platform (Free Independent Software Agreement)
+Release:  v1.0.0 Official Release
+Platform: Independent Gaming Platform (SIR Software Agreement)
 Contact:  a7medorabe7@gmail.com
 ===============================================================================
 """
@@ -33,9 +33,9 @@ import urllib.error
 import re
 
 APP_NAME = "SIR ModPack"
-VERSION = "v1.0.0 Genesis Production Release"
+VERSION = "v1.0.0 Official Release"
 CONTACT = "a7medorabe7@gmail.com"
-LICENSE_NOTE = "100% Free & Independent Platform under Free Independent Software Agreement"
+LICENSE_NOTE = "Independent Gaming Platform under SIR Software Agreement"
 
 def resolve_source_root():
     """Finds the root repository folder containing mods, instances, and configs."""

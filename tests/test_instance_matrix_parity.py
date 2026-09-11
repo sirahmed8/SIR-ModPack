@@ -34,11 +34,11 @@ class TestInstanceMatrixParity(unittest.TestCase):
         cls.runner = NativeMinecraftRunner(cls.root_dir)
 
         cls.expected_profiles = [
-            "26.2", "26.2-ultra", "26.2-balanced", "26.2-performance",
-            "1.8.9", "1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"
+            "26.2-ultra", "26.2-balanced", "26.2-performance",
+            "1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"
         ]
-        cls.modern_profiles = ["26.2", "26.2-ultra", "26.2-balanced", "26.2-performance"]
-        cls.legacy_profiles = ["1.8.9", "1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"]
+        cls.modern_profiles = ["26.2-ultra", "26.2-balanced", "26.2-performance"]
+        cls.legacy_profiles = ["1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"]
 
     def setUp(self):
         self.instance_svc = InstanceService(self.root_dir)
@@ -348,7 +348,7 @@ class TestInstanceMatrixParity(unittest.TestCase):
 
         res_del_189 = self.instance_svc.delete_instance("sir-189-pvp")
         self.assertTrue(res_del_189.get("success"))
-        self.assertTrue(os.path.isdir(os.path.join(self.instances_dir, "1.8.9")))
+        self.assertTrue(os.path.isdir(os.path.join(self.instances_dir, "1.8.9-balanced")))
 
     def test_custom_instance_creation_and_cloning_lifecycle(self):
         """Verify creating, cloning, and deleting custom instances maintains data integrity."""

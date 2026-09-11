@@ -1,5 +1,5 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 Genesis • September 2026*
+### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • September 2026*
 
 ---
 
@@ -263,7 +263,7 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 ---
 
 # 🏗️ المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
-### *تجربة ماينكرافت الموحدة • الإصدار Genesis v1.0.0 الإنتاجي • منصة مجانية ومستقلة بنسبة 100%*
+### *تجربة ماينكرافت الموحدة • الإصدار v1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة*
 
 ---
 

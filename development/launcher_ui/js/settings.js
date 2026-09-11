@@ -25,7 +25,7 @@ async function executeSelfRepair() {
   if (runBtn) { runBtn.disabled = true; runBtn.textContent = 'Scanning...'; }
   if (statusBox) { statusBox.classList.remove('hidden'); statusBox.textContent = '⏳ Scanning 240+ mod JARs and configs against SHA-256 manifests...'; }
 
-  let msg = '✓ Genesis Self-Repair Engine: All profile mods and runtime configs verified. 0 corrupt files found. System 100% Healthy!';
+  let msg = '✓ Self-Repair Engine: All profile mods and runtime configs verified. 0 corrupt files found. System 100% Healthy!';
   if (window.pywebview && window.pywebview.api) {
     try {
       const res = await window.pywebview.api.repair_all_instances();

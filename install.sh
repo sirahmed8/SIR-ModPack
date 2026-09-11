@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # =============================================================================
 # 🌟 SIR ModPack — Master CLI Installer & Portable Deployer (POSIX / Linux / macOS)
-# Release:  v1.0.0 Genesis Production Release
-# Platform: 100% Free & Independent Platform (Free Independent Software Agreement)
+# Release:  v1.0.0 Official Release
+# Platform: Independent Gaming Platform (SIR Software Agreement)
 # Contact:  a7medorabe7@gmail.com
 # =============================================================================
 
@@ -22,7 +22,7 @@ cd "$SCRIPT_DIR"
 
 echo -e "\n${C_CYAN}===============================================================================${C_RESET}"
 echo -e "${C_BOLD}${C_WHITE}  🌟 SIR MODPACK — MASTER UNIFIED POSIX INSTALLER & DEPLOYER PIPELINE${C_RESET}"
-echo -e "${C_CYAN}  v1.0.0 Genesis Production Release • Free & Independent Ecosystem${C_RESET}"
+echo -e "${C_CYAN}  v1.0.0 Official Release • Independent Ecosystem${C_RESET}"
 echo -e "${C_CYAN}===============================================================================${C_RESET}\n"
 
 # -----------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 # 📜 SIR ModPack — End User License Agreement (EULA)
-### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Software License & Usage Agreement*
+### *Version 1.0.0 • Official Release • Legally Enforced Software License & Usage Agreement*
 
 ---
 
@@ -29,7 +29,7 @@ These transformations are performed locally on your machine and do not transmit 
 
 ## 🛡️ 3. Grant of License & Permitted Use
 1. **Non-Commercial License:** You are granted a personal, non-exclusive, non-transferable, revocable license to download, install, and execute the SIR ModPack binaries and configurations for personal, non-commercial entertainment purposes.
-2. **Independent Platform Attribution:** Custom launcher scripts, web components, and orchestration tools authored by SIR Ahmed are provided as a 100% free, independent software suite. Third-party mod JARs, shader passes, and resource pack textures remain under the copyright and license of their respective original authors.
+2. **Independent Platform Attribution:** Custom launcher scripts, web components, and orchestration tools authored by SIR Ahmed are provided as an independent software suite under the SIR Software Agreement. Third-party mod JARs, shader passes, and resource pack textures remain under the copyright and license of their respective original authors.
 
 ---
 
@@ -72,7 +72,7 @@ This agreement is effective until terminated. Your rights under this license ter
 ---
 
 # 📜 وثيقة اتفاقية ترخيص المستخدم النهائي (EULA) لمنظومة SIR ModPack
-### *الإصدار 1.0.0 Genesis الإنتاجي • ترخيص برمجيات واستخدام ملزم قانوناً • منصة مجانية ومستقلة بنسبة 100%*
+### *الإصدار 1.0.0 الرسمي • ترخيص برمجيات واستخدام ملزم قانوناً • منظومة برمجية متطورة ومستقلة*
 
 ---
 
@@ -92,7 +92,7 @@ This agreement is effective until terminated. Your rights under this license ter
 
 ## 🛡️ 3. منح الترخيص والاستخدام المصرح به
 1. **ترخيص غير تجاري:** يُمنح المستخدم ترخيصاً شخصياً، غير حصري، غير قابل للتحويل، وقابلاً للإلغاء لتحميل وتثبيت وتشغيل برمجيات وإعدادات SIR ModPack للأغراض الترفيهية الشخصية غير التجارية.
-2. **نسب المنصة المستقلة:** كافة السكريبتات المخصصة ومكونات الويب التي طورها SIR Ahmed مقدمة كمنظومة برمجية مجانية ومستقلة بنسبة 100%. وتظل مودات الطرف الثالث والشيدرز محمية بحقوق مؤلفيها الأصليين.
+2. **نسب المنصة المستقلة:** كافة السكريبتات المخصصة ومكونات الويب التي طورها SIR Ahmed مقدمة كمنظومة برمجية متطورة ومستقلة. وتظل مودات الطرف الثالث والشيدرز محمية بحقوق مؤلفيها الأصليين.
 
 ---
 

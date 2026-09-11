@@ -1,5 +1,5 @@
 # 🔒 SIR ModPack — Universal Privacy Policy
-### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Compliance*
+### *Version 1.0.0 • Official Release • Legally Enforced Compliance*
 
 ---
 
@@ -64,7 +64,7 @@ In accordance with GDPR (Articles 15–22) and international privacy frameworks,
 ## 👶 6. Children’s Online Privacy Protection Policy (COPPA)
 Protecting the privacy of young players is of paramount importance:
 - **General Audience Service:** The SIR ModPack Ecosystem is a general audience service. We do NOT knowingly collect, solicit, or maintain personal information from children under the age of 13 without verifiable parental consent.
-- **Local-First Gameplay:** Children under 13 may freely use the SIR Desktop Launcher for local singleplayer and LAN gameplay without registering a cloud account or transmitting personal data. All configurations remain 100% local on the client device under `%APPDATA%\SIR ModPack\`.
+- **Local-First Gameplay:** Children under 13 may use the SIR Desktop Launcher for local singleplayer and LAN gameplay without registering a cloud account or transmitting personal data. All configurations remain 100% local on the client device under `%APPDATA%\SIR ModPack\`.
 - **Parental Inquiries & Deletion:** If a parent or guardian discovers that their child under 13 has submitted personal information (such as an email or profile) without consent, submit an inquiry via the in-app Bug Reporter & Community Feedback portal. We will promptly and permanently purge all such records from our databases.
 
 ---
@@ -104,7 +104,7 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 ---
 
 # 🔒 وثيقة سياسة الخصوصية الرسمية لمنظومة SIR ModPack
-### *الإصدار 1.0.0 Genesis الإنتاجي • منصة مجانية ومستقلة بنسبة 100% • امتثال قانوني وأمان رقمي صارم*
+### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • امتثال قانوني وأمان رقمي صارم*
 
 ---
 

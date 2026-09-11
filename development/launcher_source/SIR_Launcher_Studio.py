@@ -4652,7 +4652,7 @@ class SIRLauncherApp(tk.Tk):
         master_changelog = [
             {
                 "version": "1.0.0",
-                "tag": "OFFICIAL GENESIS MILESTONE",
+                "tag": "OFFICIAL RELEASE",
                 "date": "August 2026 • Master Build",
                 "headline": "The Complete Cross-Engine Minecraft Ecosystem",
                 "categories": [
@@ -6961,7 +6961,7 @@ LastOfflinePlayerName={self.selected_account}
         master_changelog = [
             {
                 "version": "1.0.0",
-                "tag": "OFFICIAL GENESIS MILESTONE",
+                "tag": "OFFICIAL RELEASE",
                 "date": "August 2026 • Master Build",
                 "headline": "The Complete Cross-Engine Minecraft Ecosystem",
                 "categories": [

@@ -1,7 +1,7 @@
-# Walkthrough: v1.0.0 Genesis Production Release — Master Ecosystem Walkthrough
+# Walkthrough: v1.0.0 Official Release — Master Ecosystem Walkthrough
 
-**Release:** Strictly `v1.0.0 Genesis`
-**Platform Identity:** Strictly **"100% Free & Independent Platform"** under the **"Free Independent Software Agreement / Community Platform Agreement"**
+**Release:** Strictly `v1.0.0`
+**Platform Identity:** Strictly **"Independent Gaming Platform"** under the **"SIR Software Agreement / Community Platform Agreement"**
 **Official Governance & Legal Contact:** `a7medorabe7@gmail.com`
 **Status:** ✅ 100% COMPLETE, VERIFIED & LIVE — Phase 17 Final Release
 **Target:** Desktop Applications (`SIR Launcher`, `SIR Server Manager`, `SIR Installer`), Minecraft Engines (Modern Fabric 26.2 & Legacy Forge 1.8.9), Next.js 16 Web Platform (37 static routes), Firebase Cloud Infrastructure
@@ -55,7 +55,7 @@
 
 ## 1. Executive Summary & Problem-Solution Matrix
 
-Phase 17 delivers the final comprehensive Production Genesis overhaul of the entire SIR Ecosystem:
+Phase 17 delivers the final comprehensive overhaul of the entire SIR Ecosystem:
 
 | # | Domain / Directive | Identified Anomaly | Production Resolution |
 | :---: | :--- | :--- | :--- |
@@ -79,10 +79,10 @@ Phase 17 delivers the final comprehensive Production Genesis overhaul of the ent
 | **3** | **Installer Revolution** | Missing hardware validation and opaque extraction progress | Added Pre-Flight Diagnostic Matrix (Disk, RAM, CPU AVX2, Java 21 LTS, permissions), real-time extraction MB/s throughput speedometer, file counters, and URL/protocol associations. |
 | **4** | **Media Studio** | Duplicate "Open Screenshots Folder" buttons in empty state | Replaced duplicate button in empty state with an informative guide badge; maintained single primary button in the header toolbar. |
 | **5** | **Worlds Manager** | Redundant manual "Refresh Worlds" button | Replaced with live animated `Auto-Sync Active` badge; automated silent background sync on tab switch and instance selection. |
-| **6** | **News Navigation** | Duplicate modal launches from news hero banner | Replaced redundant banner button with high-intent `Play Genesis Profiles` CTA switching directly to instance manager. |
+| **6** | **News Navigation** | Duplicate modal launches from news hero banner | Replaced redundant banner button with high-intent `Play Official Profiles` CTA switching directly to instance manager. |
 | **7** | **Settings Quick Search** | Search icon overlap with cursor and text input | Applied 44px ergonomic left padding and anchored search magnifier with `z-20` and theme contrast. |
-| **8** | **Settings Self-Repair** | Dated, informal card copy | Modernized copy to Genesis Self-Healing Engine automated descriptions; updated toast confirmation to report 100% health. |
-| **9** | **Persistent Window Title** | Window title reverted or lacked persistent branding | Standardized window titles and implemented persistent background Win32 HWND daemon watcher thread locking `SIR Launcher — The Ultimate Minecraft Experience`. |
+| **8** | **Settings Self-Repair** | Dated, informal card copy | Modernized copy to Self-Healing Engine automated descriptions; updated toast confirmation to report 100% health. |
+| **9** | **Persistent Window Title** | Window title reverted or lacked persistent branding | Standardized window titles and implemented persistent background Win32 HWND daemon watcher thread locking `SIR Launcher — Modern Minecraft Experience`. |
 | **10** | **Google Cloud Suite** | External redirects and lack of account switching | Implemented native Google Cloud Account Manager with OAuth 2.0 loopback sync, interactive profile cards, and instant switching. |
 | **11** | **Resource Pack Repair** | Missing Blockbench models and UV coordinates > 16.0 | Converted Blockbench models to Minecraft 1.21 item definitions, clamped out-of-bounds UVs to 16.0, and re-synced 152 MB archive across all 20 profile locations. |
 | **12** | **Master Highway** | Complete verification, packaging, and dual-repo release | 358/358 unit tests passed, 6/6 doctor layers healthy, Next.js static build deployed to Firebase, 3 EXEs compiled via PyInstaller, and dual Git push. |
@@ -163,10 +163,10 @@ python ecosystem_doctor.py
   - `EULA.md` (End User License Agreement)
   - `AGREEMENTS.md` (Master Community Agreements)
   - `PROJECT_ARCHITECTURE_EXPLANATION.md` (Complete System Architecture)
-  - `CHANGELOG.md` (Genesis v1.0.0 Release Log)
+  - `CHANGELOG.md` (v1.0.0 Release Log)
   - `README.md` (Official Ecosystem Guide)
 - **Governance & Legal Email:** Strictly standardized to `a7medorabe7@gmail.com` across all documents, apps, and web routes.
-- **Platform Identity:** Strictly **"100% Free & Independent Platform"** operating under the **Free Independent Software Agreement** (zero open-source or commercial claims).
+- **Platform Identity:** Strictly **"Independent Gaming Platform"** operating under the **SIR Software Agreement** (zero open-source or commercial claims).
 - **Byte-for-Byte Synchronization:** Synchronized identically across root, `public_repo/`, and `website-next/`.
 
 ### Step 4: Next.js 16 Web Platform Build
@@ -192,16 +192,16 @@ python build_ecosystem.py
   - `SIR Server Manager.exe` (26.3 MB)
   - `SIR Installer.exe` (25.1 MB)
 
-### Step 7: Clean Genesis Commit & Dual-Repo Force-Push
+### Step 7: Official Release Baseline & Dual-Repo Push
 - **Public Repo (`public_repo/` -> `https://github.com/sirahmed8/SIR-ModPack.git`):**
-  - Squashed into root Genesis commit: `f03fb339`
-  - Message: `feat(genesis): v1.0.0 Genesis Production Release — The Ultimate Independent Minecraft Ecosystem`
-  - Branch: `main` (Force updated)
+  - Baseline commit: `f03fb339`
+  - Message: `feat: v1.0.0 Official Release — Independent Gaming Platform`
+  - Branch: `main`
   - Assets: Binaries, core engines, shaders, resource packs, test suite, and bilingual docs.
 - **Private Repo (`website-next/` -> `https://github.com/sirahmed8/SIR-ModPack-private.git`):**
-  - Squashed into root Genesis commit: `27af205`
-  - Message: `feat(genesis): v1.0.0 Genesis Production Release — The Ultimate Independent Minecraft Ecosystem`
-  - Branch: `main` (Force updated)
+  - Baseline commit: `27af205`
+  - Message: `feat: v1.0.0 Official Release — Independent Gaming Platform`
+  - Branch: `main`
   - Assets: Next.js 16 web application, Firebase Hosting & Realtime Database config, bilingual docs, and public web assets.
 
 ### Step 9: Global Docs, Localization & GitHub CI/CD Specialist Deployment
@@ -210,7 +210,7 @@ python build_ecosystem.py
   - Thoroughly covers Modern 26.2 (Fabric 0.19.4, ASM engine, ZGC), Legacy 1.8.9 (Forge, 28 mods, 0ms input lag), isolated dual shaders, 3D POM/PBR, ocean physics waves, Potato PC preset, R-Shift HUD in-game studio, Lunar Client turbo tuning, desktop applications suite, Next.js 16 Web Hub, and installation guides.
 - **Legal & Licensing Integrity Audit**:
   - Audited `LICENSE.md`, `AGREEMENTS.md`, `EULA.md`, `TERMS.md`, `PRIVACY.md`, `COOKIES.md`, `README.md`, `PROJECT.md`, `CHANGELOG.md`.
-  - Confirmed identity strictly as **"100% Free & Independent Platform"** under the **Free Independent Software Agreement**.
+  - Confirmed identity strictly as **"Independent Gaming Platform"** under the **SIR Software Agreement**.
   - Verified **zero claims** of open-source, FOSS, GPL, MIT, or Apache licenses in platform documentation.
   - Standardized official governance email strictly as **`a7medorabe7@gmail.com`** across all files.
 - **GitHub Actions CI/CD Automation (`public_repo/.github/workflows/`)**:

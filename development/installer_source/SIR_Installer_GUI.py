@@ -126,7 +126,7 @@ TRANSLATIONS = {
         "btn_install": "🚀 Start Full Installation",
         "btn_launch": "🎮 Launch SIR Launcher Now",
         "agree_chk": "I accept the SIR ModPack Terms of Service and EULA",
-        "agree_desc": "100% Free & Independent Platform • Zero Telemetry • Offline Capable",
+        "agree_desc": "Independent Gaming Platform • Zero Telemetry • Offline Capable",
         "ram_label": "Dedicated Memory Allocation (RAM):",
         "governor_label": "Hardware Power Governor (CPU Threading):",
         "gov_smooth": "🍃 Smooth Mode (Zero PC Lag)",
@@ -134,19 +134,19 @@ TRANSLATIONS = {
         "target_label": "Select Installation Target Platform:",
         "target_sir": "🚀 Portable SIR Launcher (Recommended Standalone Suite)",
         "target_lunar": "🦁 Lunar Client Profile Bridge (~/.lunarclient)",
-        "target_vanilla": "🧱 Modular Vanilla+ (%APPDATA%/.minecraft)",
-        "target_dual": "⚡ Dual-Deployment (SIR Launcher + Lunar Bridge)",
-        "hw_tier_ultra": "🌟 ULTRA FIDELITY TIER (Raytracing & 4K Ready)",
-        "hw_tier_balanced": "⚡ BALANCED PERFORMANCE (High Refresh Standard)",
-        "hw_tier_comp": "🏆 COMPETITIVE TIER (Ultra-Low Latency)",
-        "btn_cleaner": "🧹 Cleaner",
-        "btn_repair": "🔧 Self-Repair",
+        "target_vanilla": "🧱 Standard Vanilla Plus (%APPDATA%/.minecraft)",
+        "target_dual": "⚡ Dual Engine (SIR Launcher + Lunar Client)",
+        "hw_tier_ultra": "🌟 Ultra Visuals (Raytracing & 4K Ready)",
+        "hw_tier_balanced": "⚡ Balanced High-Response (Recommended)",
+        "hw_tier_comp": "🏆 Competitive Esports (Maximum FPS & 0ms Latency)",
+        "btn_cleaner": "🧹 Deep Cache Cleaner",
+        "btn_repair": "🔧 Self-Repair Engine",
         "toast_copied": "Copied to clipboard!",
-        "install_success": "🎉 Installation completed successfully with 0 errors!"
+        "install_success": "🎉 Installation completed successfully with zero defects!"
     },
     "ar": {
-        "title": "⚡ مثبت منظومة SIR الاحترافي",
-        "subtitle": "التثبيت المخصص لمودباك وشيدرز ماين كرافت وفق مواصفات عتاد جهازك",
+        "title": "مثبت منظومة SIR الذكي — تجربة ماينكرافت الموحدة",
+        "subtitle": "مثبت احترافي متعدد الأنوية • فابريك 26.2 وفورج 1.8.9 والشيدرز الملحمية",
         "step1": "1. فحص العتاد والاتفاقية",
         "step2": "2. مسار ومنصة التثبيت",
         "step3": "3. التخصيص الذكي والأداء",
@@ -156,7 +156,7 @@ TRANSLATIONS = {
         "btn_install": "🚀 بدء التثبيت الشامل متعدد الأنوية",
         "btn_launch": "🎮 تشغيل مشغل SIR الآن",
         "agree_chk": "أوافق على شروط الخدمة واتفاقية ترخيص منظومة SIR",
-        "agree_desc": "مجاني ومفتوح المصدر 100% • بدون أي تتبع • يعمل بدون إنترنت",
+        "agree_desc": "منظومة برمجيات متطورة ومستقلة • انعدام تام للتتبع • يعمل بدون إنترنت",
         "ram_label": "تخصيص الذاكرة العشوائية (RAM):",
         "governor_label": "منظم استهلاك المعالج ومسارات العتاد:",
         "gov_smooth": "🍃 الوضع السلس (يمنع أي تجميد للحاسوب)",
@@ -648,7 +648,7 @@ class ModernSIRInstaller(ctk.CTk):
 
         eula_text = (
             "SIR ModPack Ecosystem — Terms of Service & EULA Summary\n\n"
-            "1. 100% Free & Independent: SIR ModPack is distributed free of charge with zero paywalls.\n"
+            "1. Official & Independent: SIR ModPack is distributed under the SIR Software Agreement with zero paywalls.\n"
             "2. Zero Telemetry & Complete Privacy: No tracking, analytics, or behavioral cookies are collected.\n"
             "3. Multi-Engine Architecture: Unifies Modern 26.2 (Fabric) & Legacy 1.8.9 (Forge) with Master SIR Shaders.\n"
             "4. Competitive Integrity: Tailored for 1000+ FPS Hypixel PvP with fair-play enhancements only."

@@ -33,7 +33,7 @@ class InstallerBridgeAPI:
         self.current_log_line = ""
         self.is_installing = False
         self.install_complete = False
-        appdata_dir = os.environ.get("APPDATA", os.path.expanduser("~\\AppData\\Roaming"))
+        appdata_dir = os.environ.get("APPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Roaming")
         self.data_root = os.path.abspath(data_root or os.path.join(appdata_dir, "SIR ModPack"))
         os.makedirs(self.data_root, exist_ok=True)
         self.installed_path = self.data_root
@@ -123,7 +123,7 @@ class InstallerBridgeAPI:
 
     def get_default_target_paths(self):
         """Returns standard Windows client installation directories on the C: drive."""
-        user_appdata = os.environ.get("APPDATA", os.path.expanduser("~\\AppData\\Roaming"))
+        user_appdata = os.environ.get("APPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Roaming")
         user_home = os.path.expanduser("~")
         return {
             "sir_launcher": os.path.join(user_appdata, "SIR ModPack"),
@@ -134,7 +134,7 @@ class InstallerBridgeAPI:
 
     def check_target_environment(self, target_type):
         """Validates whether the chosen target client directory exists and returns actionable status."""
-        user_appdata = os.environ.get("APPDATA", os.path.expanduser("~\\AppData\\Roaming"))
+        user_appdata = os.environ.get("APPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Roaming")
         user_home = os.path.expanduser("~")
         
         if target_type == "lunar":
@@ -482,6 +482,29 @@ class InstallerBridgeAPI:
                     })
                 except Exception:
                     pass
+
+        if not drives:
+            # Fallback for Linux / macOS / POSIX or containerized CI environments
+            try:
+                root_path = "/" if sys.platform != "win32" else "C:\\"
+                usage = shutil.disk_usage(root_path)
+                total_gb = round(usage.total / (1024 ** 3), 1)
+                free_gb = round(usage.free / (1024 ** 3), 1)
+                used_gb = round(usage.used / (1024 ** 3), 1)
+                free_pct = round((usage.free / max(1, usage.total)) * 100, 1)
+                drives.append({
+                    "drive": root_path,
+                    "letter": "C" if sys.platform == "win32" else "/",
+                    "label": "System Root (/)" if sys.platform != "win32" else "Local Disk (C:)",
+                    "total_gb": total_gb,
+                    "free_gb": free_gb,
+                    "used_gb": used_gb,
+                    "free_pct": free_pct,
+                    "is_system": True
+                })
+            except Exception:
+                pass
+
         return drives
 
     def download_adoptium_java(self, target_ver=25, target_dir=None):
@@ -663,7 +686,7 @@ class InstallerBridgeAPI:
                     user_home = os.path.expanduser("~")
                     dest_dir = _sanitize_custom_dest(custom_path, os.path.join(user_home, ".lunarclient"))
                 elif target_type == "vanilla":
-                    user_appdata = os.environ.get("APPDATA", os.path.expanduser("~\\AppData\\Roaming"))
+                    user_appdata = os.environ.get("APPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Roaming")
                     dest_dir = _sanitize_custom_dest(custom_path, os.path.join(user_appdata, ".minecraft"))
                 else:
                     dest_dir = _sanitize_custom_dest(custom_path, self.data_root)

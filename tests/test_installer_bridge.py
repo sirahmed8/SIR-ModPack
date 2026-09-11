@@ -88,7 +88,7 @@ class TestInstallerBridge(unittest.TestCase):
         """Verifies multi-profile installation targeting for SIR Launcher, Lunar Client, and Vanilla."""
         # 1. Default SIR Launcher targeting
         cfg_sir = {"target_type": "sir_launcher"}
-        user_appdata = os.environ.get("APPDATA", os.path.expanduser("~\\AppData\\Roaming"))
+        user_appdata = os.environ.get("APPDATA") or os.path.join(os.path.expanduser("~"), "AppData", "Roaming")
         self.assertEqual(self.bridge.installed_path, self.data_root)
 
         # 2. Lunar Client targeting destination logic

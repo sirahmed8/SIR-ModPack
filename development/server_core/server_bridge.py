@@ -376,7 +376,7 @@ class ServerBridgeAPI:
         props_path = os.path.join(path, "server.properties")
         if not os.path.exists(props_path):
             default_props = (
-                "# Minecraft Server Properties (Managed by SIR Server Orchestrator Pro v1.0.0 Genesis)\n"
+                "# Minecraft Server Properties (Managed by SIR Server Orchestrator Pro v1.0.0)\n"
                 "server-port=25565\n"
                 "online-mode=false\n"
                 "difficulty=normal\n"
@@ -389,7 +389,7 @@ class ServerBridgeAPI:
                 "sync-chunk-writes=false\n"
                 "enable-query=true\n"
                 "query.port=25565\n"
-                "motd=\\u00A7b\\u00A7lSIR ModPack Server \\u00A78|\\u00A7f v1.0.0 Genesis \\u00A7a[Low Latency]\n"
+                "motd=\\u00A7b\\u00A7lSIR ModPack Server \\u00A78|\\u00A7f v1.0.0 \\u00A7a[Low Latency]\n"
                 "allow-flight=true\n"
                 "max-tick-time=60000\n"
                 "white-list=false\n"
@@ -665,7 +665,7 @@ class ServerBridgeAPI:
                     {"name": "TPS", "value": f"{self.server_tps:.1f}", "inline": True}
                 ],
                 "footer": {
-                    "text": "SIR ModPack Ecosystem • Free Independent Platform • a7medorabe7@gmail.com"
+                    "text": "SIR ModPack Ecosystem • Independent Gaming Platform • a7medorabe7@gmail.com"
                 },
                 "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
             }]
@@ -873,7 +873,7 @@ class ServerBridgeAPI:
         else:
             # Open web claim portal directly
             webbrowser.open("https://playit.gg/claim")
-            return {"success": True, "message": "Opened Playit.gg portal in browser to link your free domain!"}
+            return {"success": True, "message": "Opened Playit.gg portal in browser to link your tunnel domain!"}
 
     def stop_playit_tunnel(self):
         if self.playit_process:
@@ -927,7 +927,7 @@ class ServerBridgeAPI:
             for k, v in properties_dict.items():
                 existing[str(k).strip()] = str(v).strip()
 
-            lines = ["# Minecraft Server Properties (Managed by SIR Server Orchestrator Pro v1.0.0 Genesis)\n"]
+            lines = ["# Minecraft Server Properties (Managed by SIR Server Orchestrator Pro v1.0.0)\n"]
             for k, v in sorted(existing.items()):
                 lines.append(f"{k}={v}\n")
             atomic_write_text(props_path, "".join(lines))

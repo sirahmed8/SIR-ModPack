@@ -1,5 +1,5 @@
 # 🤝 SIR ModPack — Master User & Distribution Agreements
-### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Community Governance & Security Framework*
+### *Version 1.0.0 • Official Release • Community Governance & Security Framework*
 
 ---
 
@@ -47,7 +47,7 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 ---
 
 # 🤝 وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
-### *الإصدار 1.0.0 Genesis الإنتاجي • منصة مجانية ومستقلة بنسبة 100% • حوكمة مجتمعية وأمان فائق*
+### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
 
 ---
 

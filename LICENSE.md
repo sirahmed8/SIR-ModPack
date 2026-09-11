@@ -1,14 +1,14 @@
-SIR Platform License & Free Independent Software Agreement
+SIR Platform License & Software Agreement
 
-Copyright (c) 2026 SIR Ultimate Project Team & SIR Ahmed.
+Copyright (c) 2026 SIR Project Team & SIR Ahmed.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
+Permission is hereby granted to any person obtaining a copy
 of this software, launcher, installer, web applications, and associated
 documentation files (the "Platform"), to use, download, execute, and enjoy
-the Platform for personal, non-commercial community entertainment purposes,
+the Platform for personal community entertainment purposes,
 subject to the following conditions:
 
-1. The Platform is a 100% Free & Independent Platform. Commercial resale,
+1. The Platform is an Independent Gaming Platform. Commercial resale,
    re-bundling behind paid paywalls, or unauthorized trademark redistribution
    is strictly prohibited.
 2. The above copyright notice and this permission notice shall be included in
@@ -31,10 +31,9 @@ NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT. Minecraft is a registered trademark of Mojang AB and Microsoft Corporation.
 This project is a non-commercial, community-driven modification package.
 
-2. NON-COMMERCIAL STATUS:
-This platform is a 100% Free & Independent Platform, non-commercial, and provided for
-personal entertainment and community use. No monetized features, paywalls, or
-commercial rights are claimed. Official Support & Governance: a7medorabe7@gmail.com | In-App Bug Reporter & Community Feedback.
+2. PLATFORM STATUS:
+This platform is an Independent Gaming Platform provided for
+personal entertainment and community use. Official Support & Governance: a7medorabe7@gmail.com | In-App Bug Reporter & Community Feedback.
 
 3. THIRD-PARTY ASSETS & INTELLECTUAL PROPERTY:
 All third-party modifications, shaders, textures, audio assets, and libraries

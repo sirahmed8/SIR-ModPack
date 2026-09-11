@@ -6,7 +6,7 @@
 =============================================================================
 Ultra-Modern CustomTkinter Dedicated Server Suite:
 - 1-Click Modern 26.2 (Fabric 1.21.4) & Legacy 1.8.9 Server Deployment
-- Zero Port-Forwarding Cloudflare / Playit.gg Free Tunnel Tunneling Wizard
+- Zero Port-Forwarding Cloudflare / Playit.gg Tunneling Wizard
 - Real-Time Live Server Console, Live Telemetry & Interactive Terminal Dispatch
 - Integrated Auto-Restart Crash Watchdog & Scheduled World Backups
 - Visual Player Manager (Live Players, Whitelist, OPs, Kick/Ban)

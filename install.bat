@@ -3,8 +3,8 @@ setlocal EnableDelayedExpansion
 
 REM ===========================================================================
 REM SIR ModPack - Master All-In-One Unified Installer and Deployer
-REM Release:  v1.0.0 Genesis Production Release
-REM Platform: 100%% Free and Independent Platform
+REM Release:  v1.0.0 Official Release
+REM Platform: Independent Gaming Platform
 REM Contact:  a7medorabe7@gmail.com
 REM ===========================================================================
 
@@ -25,7 +25,7 @@ set "C_WHITE=%ESC%[1;37m"
 echo.
 echo %C_CYAN%===============================================================================%C_RESET%
 echo %C_BOLD%%C_WHITE%  SIR MODPACK - MASTER UNIFIED INSTALLER AND DEPLOYER PIPELINE%C_RESET%
-echo %C_CYAN%  v1.0.0 Genesis Production Release - Free and Independent Ecosystem%C_RESET%
+echo %C_CYAN%  v1.0.0 Official Release - Independent Ecosystem%C_RESET%
 echo %C_CYAN%===============================================================================%C_RESET%
 echo.
 

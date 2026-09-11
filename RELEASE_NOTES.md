@@ -1,18 +1,26 @@
 # 🚀 SIR ModPack — Release Notes
-## Version: `v1.0.0 Genesis Production Release`
+## Version: `v1.0.0 Official Release`
 **Release Date**: September 2026  
-**Platform Classification**: 100% Free & Independent Platform  
+**Platform Classification**: Independent Gaming Platform  
 **Governance & Legal Contact**: `a7medorabe7@gmail.com`  
-**License Agreement**: Free Independent Software Agreement  
+**License Agreement**: SIR Software Agreement  
 
 ---
 
-## 🌟 Welcome to Genesis
+## 🌟 Welcome to SIR ModPack v1.0.0
 
-The **SIR ModPack Ecosystem** marks its official production release with **v1.0.0 Genesis**. Built from the ground up to deliver an unparalleled, competition-grade Minecraft experience across both Modern (Fabric 26.2) and Legacy (Forge 1.8.9) architectures, SIR ModPack unites bleeding-edge rendering optics, zero-overhead client HUD telemetry, automated JVM runtime memory governors, resilient desktop workstation tools, and a next-generation cloud web platform.
+The **SIR ModPack Ecosystem** marks its official release with **v1.0.0**. Built from the ground up to deliver an unparalleled, competition-grade Minecraft experience across both Modern (Fabric 26.2) and Legacy (Forge 1.8.9) architectures across 6 consolidated performance tiers, SIR ModPack unites bleeding-edge rendering optics, zero-overhead client HUD telemetry, automated JVM runtime memory governors, resilient desktop workstation tools, real-time Windows kernel Task Manager parity, and a next-generation cloud web platform.
 
-Every artifact, configuration, binary, and texture pack in this release has been mathematically audited, SHA-256 hashed, and certified across our 368-case automated test suite and 6-layer diagnostic ecosystem doctor.
+Every artifact, configuration, binary, and texture pack in this release has been mathematically audited, SHA-256 hashed, and certified across our 403-case automated test suite and 6-layer diagnostic ecosystem doctor.
 
+---
+
+## ⚡ v1.0.0 Key Highlights
+- **Consolidated 6-Tier Architecture**: Consolidated into 6 strictly calibrated, high-performance profiles (`26.2-ultra`, `26.2-balanced`, `26.2-performance`, `1.8.9-ultra`, `1.8.9-balanced`, `1.8.9-performance`). Base unoptimized instances have been cleanly retired.
+- **Real-Time Task Manager Hardware Telemetry**: Direct Windows Kernel subsystem telemetry streaming Process, Thread, and Handle counts, System Uptime, Commit Charge, and dynamic CPU oscilloscope waveforms.
+- **Server Manager & Installer Spring Animations**: Fluid cubic-bezier CSS spring transitions (`cubic-bezier(0.16, 1, 0.3, 1)`), glassmorphism backdrops, and interactive wizard steps.
+- **Master SIR Shaders Nomenclature**: Standardized unversioned naming across all shaders (`Master SIR Shaders`, `SIR Modern Shader`, `SIR Legacy Shader`).
+- **Bespoke Lunar Client Profile Artworks**: Custom high-resolution AI-generated profile iconography and banners deployed across all profiles.
 ---
 
 ## ⚡ 1. Ultra-Performance Client Engine & Runtime Governor
@@ -106,7 +114,7 @@ Every artifact, configuration, binary, and texture pack in this release has been
 
 ## 📄 Legal & Compliance
 
-SIR ModPack is a **100% Free & Independent Platform** distributed under the **Free Independent Software Agreement**. It is neither affiliated with nor endorsed by Mojang AB, Microsoft, or any third-party mod developer. All trademarks belong to their respective owners.
+SIR ModPack is an **Independent Gaming Platform** distributed under the **SIR Software Agreement**. It is neither affiliated with nor endorsed by Mojang AB, Microsoft, or any third-party mod developer. All trademarks belong to their respective owners.
 
 For support, feedback, and legal inquiries, contact:  
 📧 **`a7medorabe7@gmail.com`**

@@ -1,5 +1,5 @@
 # 🍪 SIR ModPack — Cookie & Local Storage Governance Policy
-### *Version 1.0.0 Production Genesis • 100% Free & Independent Platform • Legally Enforced Transparency*
+### *Version 1.0.0 • Official Release • Legally Enforced Transparency*
 
 ---
 
@@ -44,7 +44,7 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 ---
 
 # 🍪 وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
-### *الإصدار 1.0.0 Genesis الإنتاجي • منصة مجانية ومستقلة بنسبة 100% • شفافية تقنية كاملة وانعدام تام للتتبع*
+### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • شفافية تقنية كاملة وانعدام تام للتتبع*
 
 ---
 

@@ -150,12 +150,12 @@ async function renderNewsView() {
     } catch (_) {}
   }
 
-  // 3. Fallback to production master genesis if offline
+  // 3. Fallback to official release if offline
   if (changelogs.length === 0) {
     changelogs = [
       {
         version: "v1.0.0",
-        headline: "Production Master Genesis — Dual-Engine Architecture & Zero-Defect Release",
+        headline: "Official Release — Dual-Engine Architecture & Zero-Defect Release",
         date: "September 2026",
         tag: "Official Master Release",
         categories: [
@@ -254,8 +254,8 @@ async function renderNewsView() {
     <div class="feature-card p-6 border-cyan-500/40 bg-gradient-to-r from-cyan-950/50 via-slate-900/70 to-purple-950/50 space-y-4 shadow-xl">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono font-black uppercase bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/25">v1.0.0 Genesis Master</span>
-          <h3 class="text-lg font-black text-white tracking-wide">SIR ModPack v1.0.0 — Master Genesis Release</h3>
+          <span class="px-3 py-1 rounded-full text-[11px] font-mono font-black uppercase bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/25">v1.0.0 Official</span>
+          <h3 class="text-lg font-black text-white tracking-wide">SIR ModPack v1.0.0 — Official Release</h3>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="openModal('welcome-modal')" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer">
@@ -264,12 +264,12 @@ async function renderNewsView() {
           </button>
           <button onclick="switchTab('instances')" class="px-4 py-1.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center gap-1.5 shadow-lg shadow-cyan-500/20 active:scale-95 cursor-pointer">
             <i data-lucide="play" class="w-3.5 h-3.5"></i>
-            <span>Play Genesis Profiles</span>
+            <span>Play Official Profiles</span>
           </button>
         </div>
       </div>
       <p class="text-xs text-slate-300 leading-relaxed">
-        The ultimate unified Minecraft ecosystem has officially arrived! Seamlessly switch between Modern 26.2 (Fabric) and Legacy 1.8.9 (Forge), enjoy 2048 HD ray-traced shaders with 3D parallax textures, and dominate with 1000Hz hit-registration PvP.
+        The unified Minecraft ecosystem has officially arrived! Seamlessly switch between Modern 26.2 (Fabric) and Legacy 1.8.9 (Forge), enjoy 2048 HD ray-traced shaders with 3D parallax textures, and dominate with 1000Hz hit-registration PvP.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">

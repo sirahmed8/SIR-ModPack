@@ -1704,7 +1704,7 @@ window.resetServerSettingsDefaults = function() {
   const audioEl = document.getElementById('modal-setting-audio-chimes');
   if (audioEl) audioEl.checked = true;
 
-  showToast('Reset server configurations to recommended genesis defaults.', 'info');
+  showToast('Reset server configurations to recommended defaults.', 'info');
 };
 
 window.switchFeedbackType = function(type) {

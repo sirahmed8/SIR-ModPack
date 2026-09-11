@@ -109,13 +109,13 @@ function switchInstallerLegalDoc(doc) {
     terms: `
       <div class="space-y-3 text-xs leading-relaxed">
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider">1. Acceptance of Ecosystem Terms</h4>
-        <p>By downloading, installing, deploying, or launching the SIR ModPack Desktop Suite (including SIR Launcher Pro, SIR Installer, and SIR Server Manager), you agree to be bound by these Terms of Service. SIR ModPack is a 100% free, non-commercial, independent client and server ecosystem designed for optimal Minecraft performance, shader fidelity, and multiplayer collaboration.</p>
+        <p>By downloading, installing, deploying, or launching the SIR ModPack Desktop Suite (including SIR Launcher Pro, SIR Installer, and SIR Server Manager), you agree to be bound by these Terms of Service. SIR ModPack is an independent client and server ecosystem designed for optimal Minecraft performance, shader fidelity, and multiplayer collaboration.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">2. User Responsibility & Mod Integrity</h4>
         <p>All mods, shaders, and resource packs provided in SIR ModPack are curated for stability, safety, and security. You agree not to use the suite for malicious network disruption, unauthorized server exploits, piracy, or commercial resale.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">3. Disclaimer & Limitation of Liability</h4>
         <p>SIR Installer and Launcher are provided on an "AS-IS" and "AS-AVAILABLE" basis without warranties of any kind. The developers shall not be liable for any server penalties, third-party mod conflicts, or hardware instability resulting from extreme overclocks.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">4. Governance & Feedback</h4>
-        <p>SIR ModPack operates as a 100% Free and Independent software ecosystem. Support and issue reporting are channeled exclusively through the in-app Developer Desk, Bug Reporter, and official community channels.</p>
+        <p>SIR ModPack operates as an Independent Gaming Platform under the SIR Software Agreement. Support and issue reporting are channeled exclusively through the in-app Developer Desk, Bug Reporter, and official community channels.</p>
       </div>
     `,
     privacy: `
@@ -154,13 +154,13 @@ function switchInstallerLegalDoc(doc) {
     terms: `
       <div class="space-y-3 text-xs leading-relaxed text-right" dir="rtl">
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider">1. قبول شروط المنظومة والترخيص</h4>
-        <p>بتحميل أو تثبيت أو تشغيل حزمة برامج SIR ModPack المكتبية (بما في ذلك SIR Launcher و SIR Installer و SIR Server Manager)، فإنك توافق على الالتزام بشروط الخدمة هذه. تعتبر SIR ModPack منصة مجانية ومستقلة 100%، غير تجارية، ومصممة لتقديم أقصى أداء لماين كرافت وأعلى جودة للشيدرز واللعب المشترك.</p>
+        <p>بتحميل أو تثبيت أو تشغيل حزمة برامج SIR ModPack المكتبية (بما في ذلك SIR Launcher و SIR Installer و SIR Server Manager)، فإنك توافق على الالتزام بشروط الخدمة هذه. تعتبر SIR ModPack منصة برمجية مستقلة ومتطورة، غير تجارية، ومصممة لتقديم أقصى أداء لماين كرافت وأعلى جودة للشيدرز واللعب المشترك.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">2. مسؤولية المستخدم وسلامة الحزمة</h4>
         <p>جميع المودات والشيدرز وحزم الموارد المضمنة في SIR ModPack تم فحصها وتدقيقها بعناية لتحقيق الاستقرار والأمان. توافق على عدم استخدام الحزمة في أي أنشطة إضرار بالشبكة أو استغلال غير مصرح به للسيرفرات أو القرصنة أو إعادة البيع التجاري.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">3. إخلاء المسؤولية وحدود الضمان</h4>
         <p>يتم تقديم مثبت ولانشر SIR "كما هو" و"حسب توفره" دون أي ضمانات صريحة أو ضمنية. لا يتحمل المطورون أي مسؤولية عن أي عقوبات مفروضة من السيرفرات أو تعارض مع مودات خارجية أو عدم استقرار ناتج عن كسر سرعة العتاد.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">4. الحوكمة والتواصل والدعم</h4>
-        <p>تعمل منظومة SIR كمنصة مجانية ومستقلة 100%. يتم توجيه الدعم الفني والإبلاغ عن الأخطاء والملاحظات حصرياً عبر مكتب المطورين (Developer Desk) وأدوات الإبلاغ داخل التطبيق.</p>
+        <p>تعمل منظومة SIR كمنصة برمجية مستقلة ومتطورة تحت اتفاقية برمجيات SIR الرسمية. يتم توجيه الدعم الفني والإبلاغ عن الأخطاء والملاحظات حصرياً عبر مكتب المطورين (Developer Desk) وأدوات الإبلاغ داخل التطبيق.</p>
       </div>
     `,
     privacy: `

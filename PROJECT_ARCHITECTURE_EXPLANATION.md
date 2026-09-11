@@ -1,11 +1,11 @@
 # 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 Genesis • September 2026*
+### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • September 2026*
 
 ---
 
 ## 🧭 1. System Architecture Overview
 
-The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (**`SIR Modern Shader.zip`** & **`SIR Legacy Shader.zip`**), dual resource packs (**`SIR Modern.zip`** with Patrix 3D POM models & **`SIR Legacy.zip`** 32x PvP), a dynamic Ocean Physics simulation engine, and a zero-telemetry hardware diagnostic bridge.
+The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine with real-time Windows kernel Task Manager telemetry, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (**`SIR Modern Shader.zip`** & **`SIR Legacy Shader.zip`**), dual resource packs (**`SIR Modern.zip`** with Patrix 3D POM models & **`SIR Legacy.zip`** 32x PvP), a dynamic Ocean Physics simulation engine, and an automated ecosystem diagnostic bridge.
 
 ```mermaid
 flowchart TD
@@ -35,15 +35,13 @@ flowchart TD
         Q[Stable JRE 21 LTS / JRE 8 Locator]
     end
 
-    subgraph Profile Matrix ["Instances Profile Matrix (instances/)"]
-        M1[26.2-ultra: 16 Chunks, POM, SIR Modern Shader, 144+ FPS]
-        M2[26.2-balanced: 12 Chunks, Balanced Shaders, 180+ FPS]
-        M3[26.2-performance: 8 Chunks, 0ms Sodium Boost, 350+ FPS]
-        M4[26.2: SIR 26 Vanilla, 0 Mods, Authentic Vanilla Engine, 240+ FPS]
-        L1[1.8.9: PvP Battle Suite, 28 Mods, 500+ FPS]
-        L2[1.8.9-ultra: HD 32x Skyboxes, SIR Legacy Shader, 300+ FPS]
-        L3[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
-        L4[1.8.9-performance: Zero-Delay Max FPS Engine, 600+ FPS]
+    subgraph Profile Matrix ["Consolidated 6-Tier Profile Matrix (instances/)"]
+        M1[26.2-ultra: 16 Chunks, POM, Master SIR Modern Shader, 144+ FPS]
+        M2[26.2-balanced: 12 Chunks, Sodium/Lithium Optimized, 180+ FPS]
+        M3[26.2-performance: 8 Chunks, Potato Mode 0ms Boost, 350+ FPS]
+        L1[1.8.9-ultra: HD Skyboxes, Master SIR Legacy Shader, 300+ FPS]
+        L2[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
+        L3[1.8.9-performance: Zero-Delay Max FPS Engine, 600+ FPS]
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
@@ -269,7 +267,7 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 ---
 
 # 🏗️ المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
-### *تجربة ماينكرافت الموحدة • الإصدار Genesis v1.0.0 الإنتاجي • منصة مجانية ومستقلة بنسبة 100%*
+### *تجربة ماينكرافت الموحدة • الإصدار v1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة*
 
 ---
 

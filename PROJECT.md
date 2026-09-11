@@ -18,12 +18,20 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
    - Dynamic Ocean Physics simulation (`physics_client_config.json` with realistic waves, whitecap foam, buoyancy physics).
    - Three.js / SkinView3D WebGL studio with 3D walking animations, classic/slim models, and custom cape injection.
    - Account management: Microsoft OAuth 2.0 PKCE loopback listener + offline IAS UUIDv5 accounts + in-game `ias_accounts.json` sync + Firebase cloud sync.
-3. **Web Platform & Cloud Highway (`website-next/`)**:
-   - Next.js 16 App Router platform with React 19, TypeScript strict typing, Tailwind CSS v4, Lucide icons, Framer Motion (32 prerendered static routes).
-   - Firebase Realtime Database & Firestore: active presence, atomic download metrics, OTA update dispatch, live announcements, and client error reporting.
-   - Gemini AI Assistant: 4-tier fallback waterfall (`gemini-3.6-flash` -> `gemini-3.5-flash-lite` -> OpenRouter -> offline expert rules) with domain system instructions and Arabic translation.
-4. **Automated Verification & Test Harness (`tests/`, `ecosystem_doctor.py`)**:
-   - End-to-end programmatic verification of bridge APIs, native JVM runner, classpath resolution, profile permutations (Modern Fabric 26.2 & Legacy Forge 1.8.9), dual-shader isolation, and 100% healthy 6-layer health checks (340 tests).
+3. **Game Instances & Modpack Runtimes (`instances/`, `%USERPROFILE%/.lunarclient/`)**:
+   - Modern 26.2 Runtimes: `26.2-ultra` (high-end visual), `26.2-balanced` (optimized daily driver), `26.2-performance` (lightweight competitive esports).
+   - Legacy 1.8.9 Runtimes: Forge 1.8.9 PvP profiles (`1.8.9-ultra`, `1.8.9-balanced`, `1.8.9-performance`).
+   - Lunar Client Bridge: Bi-directional synchronization profiles linking launcher instances with Lunar Client's Ichor engine.
+   - Clean modsets, strictly preserving user configuration files (`options.txt`, `optionsof.txt`, shaderpacks).
+4. **Desktop Applications Tier (`development/`)**:
+   - `SIR Launcher Pro`: PyWebView native desktop client with Win32 kernel Task Manager telemetry, folder foregrounding, interactive welcome engine selector, download manager tray, instant Google OAuth, and responsive UI.
+   - `SIR Server Manager Pro`: Background server supervisor with CSS spring animations, restart scheduler, automated world snapshots, and live TPS/RAM metrics.
+   - `SIR Installer Pro`: Multi-stage setup wizard with fluid spring transitions, pre-flight hardware matrix, Adoptium OpenJDK 25/8 silent downloader, and custom drive selection.
+5. **Web Platform Tier (`website-next/`)**:
+   - Next.js 16.3.2 static export (35 routes) deployed to Firebase Hosting (`sir-modpack.web.app`).
+   - Deep-linking (`sirlauncher://`) connecting web catalog to native desktop client.
+6. **Automated Verification & Test Harness (`tests/`, `tests_e2e/`, `ecosystem_doctor.py`)**:
+   - 403 unit tests in `tests/`, 39+ E2E tests in `tests_e2e/`, 100% ecosystem health certified.
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |

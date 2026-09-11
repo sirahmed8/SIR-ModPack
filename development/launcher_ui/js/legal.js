@@ -39,7 +39,7 @@ function switchLegalDoc(doc) {
     terms: `
       <div class="space-y-3 text-xs leading-relaxed">
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider">1. Acceptance of Ecosystem Terms</h4>
-        <p>By downloading, installing, launching, or connecting through the SIR ModPack Desktop Suite (including SIR Launcher, SIR Installer, and SIR Server Manager), you agree to be bound by these Terms of Service. SIR ModPack is a 100% free, non-commercial, independent client and server ecosystem designed for optimal Minecraft performance, shader fidelity, and multiplayer collaboration.</p>
+        <p>By downloading, installing, launching, or connecting through the SIR ModPack Desktop Suite (including SIR Launcher, SIR Installer, and SIR Server Manager), you agree to be bound by these Terms of Service. SIR ModPack is an independent client and server ecosystem designed for optimal Minecraft performance, shader fidelity, and multiplayer collaboration.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">2. User Responsibility & Mod Integrity</h4>
         <p>All mods, shaders, and resource packs provided in SIR ModPack are curated for stability, safety, and security. You agree not to use the suite for malicious network disruption, unauthorized server exploits, piracy, or commercial resale.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">3. Mod Compatibility & Local Bytecode Processing</h4>

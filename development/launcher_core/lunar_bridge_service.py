@@ -172,7 +172,7 @@ class LunarBridgeService:
 
     REVERSE_MAPPING: Dict[str, str] = {v: k for k, v in PROFILE_MAPPING.items()}
 
-    # Incompatible mods under Lunar Client Genesis / Ichor runtime
+    # Incompatible mods under Lunar Client / Ichor runtime
     LUNAR_EXCLUDED_MOD_PATTERNS: List[str] = [
         "bettercombat",
         "krypton",
@@ -914,7 +914,7 @@ class LunarBridgeService:
                 if any("bettercombat" in j for j in active_jars):
                     return {
                         "success": False,
-                        "error": "CRITICAL: BetterCombat found in Lunar profile! Triggers NoClassDefFoundError net/minecraft/class_7924 under Genesis."
+                        "error": "CRITICAL: BetterCombat found in Lunar profile! Triggers NoClassDefFoundError net/minecraft/class_7924."
                     }
                 if any("krypton" in j for j in active_jars):
                     return {
