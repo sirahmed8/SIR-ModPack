@@ -294,7 +294,10 @@ class TestAdversarialLogStreamerReviewer2(unittest.TestCase):
                 streamer = ProcessLogStreamer(
                     mock_proc, log_file, on_crash_callback=lambda c: crashes.append(c)
                 )
-                time.sleep(0.3)
+                if hasattr(streamer, "_exit_thread") and streamer._exit_thread is not None and streamer._exit_thread.is_alive():
+                    streamer._exit_thread.join(timeout=3.0)
+                if hasattr(streamer, "_tail_thread") and streamer._tail_thread is not None and streamer._tail_thread.is_alive():
+                    streamer._tail_thread.join(timeout=3.0)
                 streamer.stop()
 
                 self.assertEqual(streamer.detected_crash_type, expected_type)

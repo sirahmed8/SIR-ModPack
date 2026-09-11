@@ -135,13 +135,13 @@ class ProcessLogStreamer:
     def _exit_watcher(self) -> None:
         """Waits for process termination and triggers crash diagnostics or exit callbacks."""
         exit_code = self.proc.wait()
-        self._stop_event.set()
-        
-        # Give tail worker a short window to flush any pending buffer
+
+        # Give tail worker a reliable window to finish reading remaining stdout and detect crash patterns
         if hasattr(self, "_tail_thread") and self._tail_thread is not None and self._tail_thread.is_alive():
-            self._tail_thread.join(timeout=0.5)
+            self._tail_thread.join(timeout=3.0)
         else:
             time.sleep(0.05)
+        self._stop_event.set()
 
         if exit_code != 0 or self.detected_crash_type:
             # Capture last 200 lines from buffer
