@@ -130,7 +130,7 @@ def _enforce_single_instance() -> bool:
                 except Exception:
                     pass
 
-            hwnd = user32.FindWindowW(None, "SIR Launcher — The Ultimate Minecraft Experience")
+            hwnd = user32.FindWindowW(None, "SIR Launcher — Independent Gaming Platform")
             if hwnd:
                 user32.ShowWindow(hwnd, 9)  # SW_RESTORE
                 user32.SetForegroundWindow(hwnd)
@@ -186,7 +186,7 @@ def main():
     start_hidden = any(arg.lower() in ("--autostart", "--minimized") for arg in sys.argv[1:])
 
     window = webview.create_window(
-        title="SIR Launcher — The Ultimate Minecraft Experience",
+        title="SIR Launcher — Independent Gaming Platform",
         url=f"file:///{index_html.replace(os.sep, '/')}",
         js_api=api,
         width=WINDOW_WIDTH,

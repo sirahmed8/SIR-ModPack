@@ -276,6 +276,20 @@ class NativeMinecraftRunner:
             return best["path"]
 
         which_j = shutil.which("javaw.exe") or shutil.which("java.exe") or shutil.which("java")
+        if which_j:
+            try:
+                from .java_service import parse_java_runtime_info
+            except Exception:
+                try:
+                    from java_service import parse_java_runtime_info
+                except Exception:
+                    from launcher_core.java_service import parse_java_runtime_info
+            info = parse_java_runtime_info(which_j, probe_process=True)
+            if version_hint <= 8 and info.get("major_version") == 8:
+                return which_j
+            elif version_hint >= 25 and info.get("major_version", 0) >= 25:
+                return which_j
+
         return which_j or "java"
 
     def ensure_java_runtime(
@@ -914,6 +928,7 @@ class NativeMinecraftRunner:
             f"-Dorg.lwjgl.opengl.Display.title={target_title}",
             "-Dminecraft.launcher.brand=SIR-Launcher",
             "-Dminecraft.launcher.version=1.0.0",
+            "-Dfabric.gui.disabled=true",
         ]
         if game_dir:
             branding_flags.append(f"-Dminecraft.applet.TargetDirectory={game_dir}")
@@ -1213,7 +1228,23 @@ class NativeMinecraftRunner:
         is_legacy = any(k in str(eff_mc_ver) for k in ["1.8", "1.7"])
         java_hint = 8 if is_legacy else 25
         inst_java = inst_cfg.get("java_path")
+        valid_java = False
         if inst_java and os.path.isfile(inst_java):
+            try:
+                from .java_service import parse_java_runtime_info
+            except Exception:
+                try:
+                    from java_service import parse_java_runtime_info
+                except Exception:
+                    from launcher_core.java_service import parse_java_runtime_info
+            p_info = parse_java_runtime_info(inst_java, probe_process=True)
+            major = p_info.get("major_version", 0)
+            if is_legacy:
+                valid_java = (major == 8 and p_info.get("is_64bit", True))
+            else:
+                valid_java = (major >= 25 and p_info.get("is_64bit", True))
+
+        if valid_java:
             java_exe = inst_java
         else:
             java_exe = self.ensure_java_runtime(java_hint)

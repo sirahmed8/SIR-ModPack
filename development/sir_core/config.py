@@ -1,7 +1,7 @@
 import os
 import sys
 
-APP_TITLE = "SIR Launcher — The Ultimate Minecraft Experience"
+APP_TITLE = "SIR Launcher — Independent Gaming Platform"
 APP_VERSION = "1.0.0"
 MSA_CLIENT_ID = "c36a9fb6-4f2a-41ff-90bd-ae7cc92031eb"
 FIREBASE_RTDB_BASE = "https://sir-modpack-default-rtdb.europe-west1.firebasedatabase.app"

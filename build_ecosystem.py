@@ -56,21 +56,6 @@ def main():
                     except Exception as e:
                         print(f'  -> Warning on copy to {dst}: {e}')
 
-    # Build updated portable SIR Apps Suite zip
-    apps_suite_name = 'SIR_Apps_Suite.zip'
-    suite_tmp = os.path.join(DIST, apps_suite_name)
-    try:
-        with zipfile.ZipFile(suite_tmp, 'w', zipfile.ZIP_DEFLATED) as z_apps:
-            for app_f in ['SIR Launcher.exe', 'SIR Server Manager.exe', 'SIR Installer.exe', 'SIR_Icon.ico', 'README.md']:
-                ap_src = os.path.join(DIST, app_f) if app_f.endswith('.exe') else os.path.join(ROOT, app_f)
-                if not os.path.exists(ap_src):
-                    ap_src = os.path.join(ROOT, app_f)
-                if os.path.exists(ap_src):
-                    z_apps.write(ap_src, app_f)
-        print(f'[+] Created {apps_suite_name} ({os.path.getsize(suite_tmp) / (1024*1024):.2f} MB)')
-    except Exception as e:
-        print(f'[-] Warning packaging {apps_suite_name}: {e}')
-
     if os.path.exists(BUILD):
         shutil.rmtree(BUILD, ignore_errors=True)
 

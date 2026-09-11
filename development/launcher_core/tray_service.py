@@ -141,7 +141,7 @@ class TrayService:
                     win_text = buf.value
 
                     # Main window title
-                    if "SIR Launcher — The Ultimate Minecraft Experience" in win_text:
+                    if "SIR Launcher — Independent Gaming Platform" in win_text:
                         return True
 
                     # Suppress ONLY dummy windows created specifically by pystray
@@ -291,7 +291,7 @@ class TrayService:
                 self.icon = pystray.Icon(
                     "SIR Launcher",
                     image,
-                    "SIR Launcher — The Ultimate Minecraft Experience",
+                    "SIR Launcher — Independent Gaming Platform",
                     menu=menu,
                 )
                 self.icon.run_detached()

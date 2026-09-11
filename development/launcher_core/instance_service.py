@@ -529,13 +529,15 @@ class InstanceService:
 
         is_java_8 = any(v in version for v in ["1.8", "1.7", "1.12", "1.16", "1.15", "1.14"])
         is_java_17 = any(v in version for v in ["1.17", "1.18", "1.19", "1.20.1", "1.20.2", "1.20.4"])
-        java_hint = 8 if is_java_8 else (17 if is_java_17 else 21)
+        is_java_25 = ("26" in version or "1.26" in version)
+        java_hint = 8 if is_java_8 else (17 if is_java_17 else (25 if is_java_25 else 21))
         java_path = detect_system_java(java_hint)
 
         ram_params = calculate_ram_parameters(max_ram=ram_gb, mc_version=version)
         min_mb = ram_params["min_mb"]
         max_mb = ram_params["max_mb"]
         
+        override_loc = "false" if is_java_25 else "true"
         inst_cfg_lines = [
             "[General]",
             "ConfigVersion=1.3",
@@ -544,7 +546,7 @@ class InstanceService:
             f"name={name}",
             "group=Custom Modpacks",
             "AutomaticJava=true",
-            "OverrideJavaLocation=true",
+            f"OverrideJavaLocation={override_loc}",
             f"JavaPath={java_path}",
             "OverrideMemory=true",
             f"MinMemAlloc={min_mb}",
@@ -1410,6 +1412,7 @@ class InstanceService:
             return {"success": False, "error": f"Mods folder not found: {mods_dir}"}
 
         # If conflicting_mods not provided, inspect latest.log with CrashAnalyzer
+        diag = {}
         if not conflicting_mods:
             log_candidates = [
                 os.path.join(inst_dir, "logs", "latest.log"),
@@ -1421,10 +1424,35 @@ class InstanceService:
                         with open(lp, "r", encoding="utf-8", errors="ignore") as f:
                             diag = CrashAnalyzer.diagnose_crash(f.read())
                             conflicting_mods = diag.get("conflicting_mods", [])
-                            if conflicting_mods:
+                            if conflicting_mods or diag.get("type") == "JAVA_VERSION_MISMATCH":
                                 break
                     except Exception:
                         pass
+
+        if diag.get("type") == "JAVA_VERSION_MISMATCH":
+            cfg_path = os.path.join(inst_dir, "instance.cfg")
+            if not os.path.isfile(cfg_path):
+                cfg_path = os.path.join(inst_dir, "minecraft", "instance.cfg")
+            if os.path.isfile(cfg_path):
+                try:
+                    c = open(cfg_path, "r", encoding="utf-8").read().splitlines()
+                    new_c = []
+                    for l in c:
+                        if l.startswith("AutomaticJava="):
+                            new_c.append("AutomaticJava=true")
+                        elif l.startswith("OverrideJavaLocation="):
+                            new_c.append("OverrideJavaLocation=false")
+                        elif l.startswith("JavaPath="):
+                            best = self.java.get_best_runtime_for_version("26.2")
+                            p = best.get("path") if best else ""
+                            if p:
+                                new_c.append(f"JavaPath={p.replace(os.sep, '/')}")
+                        else:
+                            new_c.append(l)
+                    open(cfg_path, "w", encoding="utf-8").write("\n".join(new_c) + "\n")
+                    return {"success": True, "message": "Updated instance runtime to 64-bit Java 25 (Azul Zulu)."}
+                except Exception as e:
+                    return {"success": False, "error": f"Failed to update Java: {e}"}
 
         if not conflicting_mods:
             return {"success": False, "error": "No conflicting mods identified to auto-fix."}

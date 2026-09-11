@@ -228,7 +228,7 @@ class CloudSyncService:
                             if sys.platform == "win32":
                                 try:
                                     import ctypes
-                                    hwnd = ctypes.windll.user32.FindWindowW(None, "SIR Launcher — The Ultimate Minecraft Experience")
+                                    hwnd = ctypes.windll.user32.FindWindowW(None, "SIR Launcher — Independent Gaming Platform")
                                     if hwnd:
                                         ctypes.windll.user32.ShowWindow(hwnd, 9)
                                         ctypes.windll.user32.SetForegroundWindow(hwnd)

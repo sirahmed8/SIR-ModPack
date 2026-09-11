@@ -45,7 +45,7 @@ if sys.platform == "win32":
 ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
-APP_TITLE = "SIR Installer — The Ultimate Minecraft Experience"
+APP_TITLE = "SIR Installer — Independent Gaming Platform"
 APP_VERSION = "1.0.0"
 
 if getattr(sys, 'frozen', False):
@@ -258,7 +258,7 @@ class ModernSIRInstaller(ctk.CTk):
         super().__init__()
         self.withdraw()
         
-        self.title("SIR Installer — The Ultimate Minecraft Experience")
+        self.title("SIR Installer — Independent Gaming Platform")
         self.configure(fg_color="#070a10")
         self.minsize(900, 620)
         

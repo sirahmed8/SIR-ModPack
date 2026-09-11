@@ -57,7 +57,23 @@ class CrashAnalyzer:
             }
 
         # -------------------------------------------------------------
-        # 0. Incompatible Fabric Mods (Lunar-like ModResolutionException)
+        # 0a. Java Version Mismatch (e.g. Java 21 vs 25 on 26.2)
+        # -------------------------------------------------------------
+        if (
+            "requires version 25 or later of 'OpenJDK 64-Bit Server VM'" in content
+            or ("Replace 'OpenJDK 64-Bit Server VM'" in content and "version 25" in content)
+        ):
+            return {
+                "type": "JAVA_VERSION_MISMATCH",
+                "cause": "Minecraft 26.2 requires 64-bit Java 25 or later (Java 21 detected)",
+                "conflicting_mods": [],
+                "solutions": ["Switch instance Java runtime to Java 25 (Azul Zulu 25)"],
+                "auto_fixable": True,
+                "fix": "Switch instance Java runtime to Java 25 and relaunch.",
+            }
+
+        # -------------------------------------------------------------
+        # 0b. Incompatible Fabric Mods (Lunar-like ModResolutionException)
         # -------------------------------------------------------------
         if (
             "ModResolutionException" in content

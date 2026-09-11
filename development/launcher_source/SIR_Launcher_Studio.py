@@ -114,7 +114,7 @@ if sys.platform == "win32":
             pass
 
 # Branding & Constants
-APP_TITLE = "SIR Launcher — The Ultimate Minecraft Experience"
+APP_TITLE = "SIR Launcher — Independent Gaming Platform"
 APP_VERSION = "1.0.0"
 MSA_CLIENT_ID = "c36a9fb6-4f2a-41ff-90bd-ae7cc92031eb"
 FIREBASE_RTDB_BASE = "https://sir-modpack-default-rtdb.europe-west1.firebasedatabase.app"
@@ -185,7 +185,7 @@ THEMES = {
 
 LANGS = {
     "en": {
-        "app_title": "SIR Launcher — The Ultimate Minecraft Experience",
+        "app_title": "SIR Launcher — Independent Gaming Platform",
         "online_status": "● Live | SIR Ecosystem",
         "btn_launch": "🚀 LAUNCH MINECRAFT",
         "btn_launching": "⏳ Launching Engine...",
@@ -4270,7 +4270,7 @@ class SIRLauncherApp(tk.Tk):
         # Live RPC Card Preview
         rpc_preview = tk.Frame(p_disc, bg="#5865F2", padx=14, pady=12, bd=1, relief="solid")
         rpc_preview.pack(fill="x", pady=10)
-        tk.Label(rpc_preview, text="🎮 Playing SIR Launcher — The Ultimate Minecraft Experience", font=("Segoe UI", 9, "bold"), bg="#5865F2", fg="#ffffff").pack(anchor="w")
+        tk.Label(rpc_preview, text="🎮 Playing SIR Launcher — Independent Gaming Platform", font=("Segoe UI", 9, "bold"), bg="#5865F2", fg="#ffffff").pack(anchor="w")
         tk.Label(rpc_preview, text=f"Instance: Modern 26.2 Ultra Extreme (165 FPS) • In Singleplayer World", font=("Segoe UI", 8), bg="#5865F2", fg="#e0e7ff").pack(anchor="w", pady=(2, 0))
 
         # ==========================================
@@ -6579,7 +6579,7 @@ LastOfflinePlayerName={self.selected_account}
         # Live RPC Card Preview
         rpc_preview = tk.Frame(p_disc, bg="#5865F2", padx=14, pady=12, bd=1, relief="solid")
         rpc_preview.pack(fill="x", pady=10)
-        tk.Label(rpc_preview, text="🎮 Playing SIR Launcher — The Ultimate Minecraft Experience", font=("Segoe UI", 9, "bold"), bg="#5865F2", fg="#ffffff").pack(anchor="w")
+        tk.Label(rpc_preview, text="🎮 Playing SIR Launcher — Independent Gaming Platform", font=("Segoe UI", 9, "bold"), bg="#5865F2", fg="#ffffff").pack(anchor="w")
         tk.Label(rpc_preview, text=f"Instance: Modern 26.2 Ultra Extreme (165 FPS) • In Singleplayer World", font=("Segoe UI", 8), bg="#5865F2", fg="#e0e7ff").pack(anchor="w", pady=(2, 0))
 
         # ==========================================
