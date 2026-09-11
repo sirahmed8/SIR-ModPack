@@ -324,9 +324,13 @@ class JavaService:
             os.path.join(local_appdata, "Programs", "Common", "Eclipse Adoptium", "*"),
             os.path.join(user_home, ".jdks", "*"),
             os.path.join(user_home, ".lunarclient", "jre", "*"),
+            os.path.join(user_home, ".lunarclient", "jre", "*", "*"),
             os.path.join(appdata, ".minecraft", "runtime", "*"),
+            os.path.join(appdata, ".minecraft", "runtime", "*", "*"),
             os.path.join(appdata, "SIR ModPack", "runtime", "*"),
+            os.path.join(appdata, "SIR ModPack", "runtime", "*", "*"),
             os.path.join(self.root_dir, "runtime", "*"),
+            os.path.join(self.root_dir, "runtime", "*", "*"),
             os.path.join(self.root_dir, "SIR Launcher", "runtime", "*"),
         ]
 
@@ -368,7 +372,9 @@ class JavaService:
             
             # Highest score comes first
             score = 0
-            if is_64 and is_temurin:
+            if is_64 and major >= 25:
+                score = 110
+            elif is_64 and is_temurin:
                 score = 100
             elif is_64 and is_j21:
                 score = 90
@@ -408,9 +414,9 @@ class JavaService:
                     return inst
             return None
         elif is_modern_26:
-            # Modern 26.2 targets 64-bit Java 21 LTS (optimal Fabric compatibility, avoiding Java 25 stack map errors)
+            # Modern 26.2 officially targets 64-bit Java 25
             for inst in installations:
-                if inst.get("is_64bit") and inst.get("major_version", 0) == 21 and os.path.isfile(inst.get("path", "")):
+                if inst.get("is_64bit") and inst.get("major_version", 0) >= 25 and os.path.isfile(inst.get("path", "")):
                     return inst
             for inst in installations:
                 if inst.get("is_64bit") and inst.get("major_version", 0) >= 21 and os.path.isfile(inst.get("path", "")):
@@ -418,9 +424,6 @@ class JavaService:
             return None
         else:
             # Standard 1.21.x: 64-bit Java 21+
-            for inst in installations:
-                if inst.get("is_64bit") and inst.get("major_version", 0) == 21 and os.path.isfile(inst.get("path", "")):
-                    return inst
             for inst in installations:
                 if inst.get("is_64bit") and inst.get("major_version", 0) >= 21 and os.path.isfile(inst.get("path", "")):
                     return inst

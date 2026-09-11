@@ -695,6 +695,7 @@ class NativeMinecraftRunner:
         if is_fabric:
             # Candidate Fabric Loader jars across all library search directories
             loader_subpaths = [
+                os.path.join("net", "fabricmc", "fabric-loader", "0.19.5", "fabric-loader-0.19.5.jar"),
                 os.path.join("net", "fabricmc", "fabric-loader", fabric_loader_ver, f"fabric-loader-{fabric_loader_ver}.jar"),
                 os.path.join("net", "fabricmc", "fabric-loader", "0.19.4", "fabric-loader-0.19.4.jar"),
                 os.path.join("net", "fabricmc", "fabric-loader", "0.19.3", "fabric-loader-0.19.3.jar"),
@@ -754,27 +755,41 @@ class NativeMinecraftRunner:
                     break
 
         elif is_forge:
-            forge_candidates = [
-                os.path.join(base_lib, "net", "minecraftforge", "forge", f"1.8.9-{forge_ver}-1.8.9", f"forge-1.8.9-{forge_ver}-1.8.9.jar"),
-                os.path.join(base_lib, "net", "minecraftforge", "forge", "1.8.9-11.15.1.2318-1.8.9", "forge-1.8.9-11.15.1.2318-1.8.9.jar"),
-                os.path.join(base_lib, "net", "minecraftforge", "forge", "1.8.9-11.15.1.2318", "forge-1.8.9-11.15.1.2318.jar"),
+            forge_subpaths = [
+                os.path.join("net", "minecraftforge", "forge", f"1.8.9-{forge_ver}-1.8.9", f"forge-1.8.9-{forge_ver}-1.8.9.jar"),
+                os.path.join("net", "minecraftforge", "forge", "1.8.9-11.15.1.2318-1.8.9", "forge-1.8.9-11.15.1.2318-1.8.9.jar"),
+                os.path.join("net", "minecraftforge", "forge", "1.8.9-11.15.1.2318", "forge-1.8.9-11.15.1.2318.jar"),
             ]
             found_forge = False
-            for fc in forge_candidates:
-                if os.path.isfile(fc):
-                    jars.append(os.path.normpath(fc))
-                    found_forge = True
+            for f_sub in forge_subpaths:
+                for s_lib in search_libs:
+                    fc = os.path.join(s_lib, f_sub)
+                    if os.path.isfile(fc):
+                        jars.append(os.path.normpath(fc))
+                        found_forge = True
+                        break
+                if found_forge:
                     break
             if not found_forge:
-                jars.append(os.path.normpath(forge_candidates[0]))
+                jars.append(os.path.normpath(os.path.join(base_lib, forge_subpaths[0])))
 
-            launchwrapper_jar = os.path.join(base_lib, "net", "minecraft", "launchwrapper", "1.12", "launchwrapper-1.12.jar")
-            if os.path.isfile(launchwrapper_jar) or not found_forge:
-                jars.append(os.path.normpath(launchwrapper_jar))
+            launchwrapper_sub = os.path.join("net", "minecraft", "launchwrapper", "1.12", "launchwrapper-1.12.jar")
+            found_lw = False
+            for s_lib in search_libs:
+                lw = os.path.join(s_lib, launchwrapper_sub)
+                if os.path.isfile(lw):
+                    jars.append(os.path.normpath(lw))
+                    found_lw = True
+                    break
+            if not found_lw:
+                jars.append(os.path.normpath(os.path.join(base_lib, launchwrapper_sub)))
 
-            asm_legacy = os.path.join(base_lib, "org", "ow2", "asm", "asm-all", "5.0.3", "asm-all-5.0.3.jar")
-            if os.path.isfile(asm_legacy):
-                jars.append(os.path.normpath(asm_legacy))
+            asm_sub = os.path.join("org", "ow2", "asm", "asm-all", "5.0.3", "asm-all-5.0.3.jar")
+            for s_lib in search_libs:
+                asm_legacy = os.path.join(s_lib, asm_sub)
+                if os.path.isfile(asm_legacy):
+                    jars.append(os.path.normpath(asm_legacy))
+                    break
 
             lzma_candidates = [
                 os.path.join(base_lib, "lzma", "lzma", "0.0.1", "lzma-0.0.1.jar"),

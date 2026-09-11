@@ -174,11 +174,11 @@ class TestNativeRunnerM2(unittest.TestCase):
     # --- Feature 9: Dynamic Classpath Assembly ---
     def test_f9_dynamic_mmc_pack_fabric_resolution(self):
         """F9: Verifies mmc-pack.json parsing for Modern 26.2."""
-        inst_dir = os.path.join(self.instances_dir, "26.2")
+        inst_dir = os.path.join(self.instances_dir, "26.2-ultra") if os.path.isdir(os.path.join(self.instances_dir, "26.2-ultra")) else os.path.join(self.instances_dir, "26.2")
         if os.path.isdir(inst_dir):
             cfg = self.runner.inspect_instance_config(inst_dir)
             self.assertEqual(cfg["loader"], "fabric")
-            self.assertIn(cfg["loader_version"], ["0.19.4", "0.19.3", "0.16.10", "0.15.11"])
+            self.assertIn(cfg["loader_version"], ["0.19.5", "0.19.4", "0.19.3", "0.16.10", "0.15.11"])
 
     def test_f9_dynamic_mmc_pack_forge_resolution(self):
         """F9: Verifies mmc-pack.json parsing for Legacy 1.8.9."""
