@@ -223,23 +223,6 @@ class InstanceService:
                 "instance_id": "26.2-performance"
             },
 
-            # Pure Vanilla Profile (Normal Vanilla inside SIR Launcher)
-            {
-                "id": "26.2",
-                "name": "SIR 26 Vanilla",
-                "version": "Minecraft 26.2 (Vanilla)",
-                "loader": "Vanilla",
-                "shader": "None (Vanilla)",
-                "pack": "Default (Vanilla)",
-                "category": "Vanilla",
-                "tag": "🌿 Pure Clean Vanilla",
-                "desc": "Official pure Minecraft 26.2 without any mods or visual overhaul. Original vanilla gameplay accelerated by SIR Launcher.",
-                "dir_name": "26.2",
-                "instance_id": "26.2",
-                "mods_count": 0,
-                "is_vanilla": True
-            },
-
             # Legacy 1.8.9 Profiles
             {
                 "id": "1.8.9-ultra",

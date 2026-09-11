@@ -162,19 +162,15 @@ class LunarBridgeService:
 
     PROFILE_MAPPING: Dict[str, str] = {
         "sir-189-performance": "1.8.9-performance",
-        "sir-189-pvp": "1.8.9",
+        "sir-189-pvp": "1.8.9-balanced",
         "sir-189-ultra": "1.8.9-ultra",
         "sir-189-balanced": "1.8.9-balanced",
         "sir-26-balanced": "26.2-balanced",
         "sir-26-performance": "26.2-performance",
         "sir-26-ultra": "26.2-ultra",
-        "sir-26": "26.2",
     }
 
     REVERSE_MAPPING: Dict[str, str] = {v: k for k, v in PROFILE_MAPPING.items()}
-    # Extra reverse fallbacks
-    REVERSE_MAPPING["1.8.9"] = "sir-189-pvp"
-    REVERSE_MAPPING["26.2"] = "sir-26"
 
     # Incompatible mods under Lunar Client Genesis / Ichor runtime
     LUNAR_EXCLUDED_MOD_PATTERNS: List[str] = [

@@ -974,7 +974,7 @@ class InstallerBridgeAPI:
                     instances_dst = os.path.join(dest_dir, "instances")
                     os.makedirs(instances_dst, exist_ok=True)
                     
-                    official_instances = ['26.2', '26.2-ultra', '26.2-balanced', '26.2-performance', '1.8.9', '1.8.9-ultra', '1.8.9-balanced', '1.8.9-performance']
+                    official_instances = ['26.2-ultra', '26.2-balanced', '26.2-performance', '1.8.9-ultra', '1.8.9-balanced', '1.8.9-performance']
                     if os.path.isdir(instances_src):
                         for inst_name in official_instances:
                             s_inst = os.path.join(instances_src, inst_name)

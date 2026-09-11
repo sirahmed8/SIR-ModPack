@@ -160,7 +160,7 @@ def run_diagnostics():
 
     # 5. Check Instance Profiles
     print("\n[5/6] Validating Instance Profiles Matrix...")
-    instances = ["26.2", "26.2-ultra", "26.2-balanced", "26.2-performance", "1.8.9", "1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"]
+    instances = ["26.2-ultra", "26.2-balanced", "26.2-performance", "1.8.9-ultra", "1.8.9-balanced", "1.8.9-performance"]
     for inst in instances:
         inst_found = False
         for base in [ROOT, SOURCE_ROOT]:
