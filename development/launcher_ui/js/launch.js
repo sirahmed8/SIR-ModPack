@@ -46,10 +46,6 @@ function renderLaunchpad() {
     window.lucide.createIcons();
   }
 
-  // Trigger Live Multiplayer Radar
-  if (typeof refreshMultiplayerRadar === 'function') {
-    refreshMultiplayerRadar();
-  }
 }
 
 function toggleLaunchConsole(show = true) {
@@ -381,73 +377,11 @@ window.addEventListener('sir_launch_log_line', (e) => {
 });
 
 // =============================================================================
-// LIVE MULTIPLAYER RADAR & SYSTEM OPTIMIZATION ENGINE
+// SYSTEM OPTIMIZATION ENGINE
 // =============================================================================
 
-async function refreshMultiplayerRadar() {
-  const container = document.getElementById('launchpad-radar-list');
-  if (!container) return;
-
-  container.innerHTML = `
-    <div class="col-span-full p-4 text-center text-xs text-slate-400 font-mono flex items-center justify-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-      <span>Pinging multiplayer servers...</span>
-    </div>
-  `;
-
-  let servers = [];
-  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_radar_servers) {
-    try {
-      const res = await window.pywebview.api.get_radar_servers(4);
-      if (res && res.success && Array.isArray(res.servers)) {
-        servers = res.servers;
-      }
-    } catch (e) {
-      console.warn("Could not fetch radar servers:", e);
-    }
-  }
-
-  if (!servers || servers.length === 0) {
-    servers = [
-      { name: "Hypixel Network", ip: "mc.hypixel.net", port: 25565, ping: 24, online: true, players: "42,150", motd_html: "<span style='color:#FFFF55;font-weight:bold;'>HYPIXEL NETWORK</span> <span style='color:#AAAAAA;'>[1.8 - 1.21]</span><br><span style='color:#55FF55;'>BEDWARS • SKYBLOCK • DUELS</span>" },
-      { name: "Minemen Club", ip: "minemen.club", port: 25565, ping: 18, online: true, players: "3,800", motd_html: "<span style='color:#55FFFF;font-weight:bold;'>MINEMEN CLUB</span><br><span style='color:#FFAA00;'>Ranked PvP • Practice • Tournament</span>" },
-      { name: "Lunar Network", ip: "lunar.gg", port: 25565, ping: 32, online: true, players: "1,840", motd_html: "<span style='color:#55FF55;font-weight:bold;'>Lunar Client Network</span> <span style='color:#AAAAAA;'>PvP Practice</span>" },
-      { name: "GommeHD.net", ip: "gommehd.net", port: 25565, ping: 48, online: true, players: "3,200", motd_html: "<span style='color:#FFAA00;font-weight:bold;'>GOMMEHD.NET</span> <span style='color:#AAAAAA;'>The German PvP Giant</span>" }
-    ];
-  }
-
-  container.innerHTML = servers.map(s => {
-    const pingColor = s.ping < 50 ? 'text-emerald-400 bg-emerald-500/15 border-emerald-500/30' : (s.ping < 120 ? 'text-amber-400 bg-amber-500/15 border-amber-500/30' : 'text-rose-400 bg-rose-500/15 border-rose-500/30');
-    return `
-      <div class="p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/40 transition-all flex flex-col justify-between space-y-2 group">
-        <div class="flex items-start justify-between gap-2">
-          <div class="min-w-0">
-            <h4 class="text-xs font-black text-slate-100 truncate group-hover:text-cyan-300 transition-colors">${escapeHtml(s.name)}</h4>
-            <span class="text-[10px] text-slate-400 font-mono truncate block mt-0.5">${escapeHtml(s.ip)}</span>
-          </div>
-          <div class="flex items-center gap-1.5 shrink-0">
-            <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold border ${pingColor}">${s.ping > 0 ? s.ping + 'ms' : 'Offline'}</span>
-          </div>
-        </div>
-        <div class="text-[10px] text-slate-400 leading-snug line-clamp-2 bg-black/30 p-2 rounded-lg border border-slate-800/60 font-mono">
-          ${s.motd_html || escapeHtml(s.motd || 'Minecraft Server')}
-        </div>
-        <div class="flex items-center justify-between pt-1 border-t border-slate-800/60">
-          <span class="text-[10px] text-slate-400 font-mono flex items-center gap-1">
-            <i data-lucide="users" class="w-3 h-3 text-cyan-400"></i>
-            <span>${escapeHtml(String(s.players || '0'))} Online</span>
-          </span>
-          <button onclick="launchGame(null, '${escapeHtml(s.ip)}', ${s.port || 25565})" class="px-3 py-1 rounded-lg text-[10px] font-bold bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 flex items-center gap-1 transition-all active:scale-95 cursor-pointer">
-            <i data-lucide="zap" class="w-3 h-3"></i>
-            <span>Direct Join</span>
-          </button>
-        </div>
-      </div>
-    `;
-  }).join('');
-  if (window.refreshLucideIcons) window.refreshLucideIcons();
-}
-window.refreshMultiplayerRadar = refreshMultiplayerRadar;
+// Radar removed from main launchpad per Milestone 3 spec
+window.refreshMultiplayerRadar = function() {};
 
 async function compactRamQuick() {
   if (window.pywebview && window.pywebview.api && window.pywebview.api.compact_ram) {

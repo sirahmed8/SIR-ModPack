@@ -219,6 +219,7 @@ window.checkWhatsNewOnStartup = checkWhatsNewOnStartup;
 
 function openWhatsNewModal() {
   openModal('whats-new-modal');
+  switchWhatsNewTab('engines');
   refreshLucideIcons();
 }
 window.openWhatsNewModal = openWhatsNewModal;
@@ -232,6 +233,72 @@ function dismissWhatsNewModal() {
   }
 }
 window.dismissWhatsNewModal = dismissWhatsNewModal;
+
+function switchWhatsNewTab(tab) {
+  const tabs = ['engines', 'innovations', 'shortcuts', 'quickstart'];
+  tabs.forEach(t => {
+    const btn = document.getElementById(`wn-tab-${t}`);
+    const view = document.getElementById(`wn-view-${t}`);
+    if (t === tab) {
+      if (btn) btn.className = "px-3.5 py-1.5 rounded-xl bg-cyan-500 text-slate-950 font-black text-xs shadow-md shadow-cyan-500/20 transition-all cursor-pointer";
+      if (view) view.classList.remove('hidden');
+    } else {
+      if (btn) btn.className = "px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-400 hover:text-slate-200 font-bold text-xs transition-all cursor-pointer border border-slate-700/50";
+      if (view) view.classList.add('hidden');
+    }
+  });
+  updateWhatsNewEngineSelection();
+  refreshLucideIcons();
+}
+window.switchWhatsNewTab = switchWhatsNewTab;
+
+function updateWhatsNewEngineSelection() {
+  const currentInst = (typeof STATE !== 'undefined' && STATE.selectedInstanceId) || '26.2-ultra';
+  const isModern = !currentInst.startsWith('1.8');
+  const modernCard = document.getElementById('wn-engine-card-modern');
+  const legacyCard = document.getElementById('wn-engine-card-legacy');
+  const modernBtn = document.getElementById('wn-btn-select-modern');
+  const legacyBtn = document.getElementById('wn-btn-select-legacy');
+
+  if (modernCard && legacyCard) {
+    if (isModern) {
+      modernCard.className = "p-5 rounded-2xl bg-cyan-950/30 border-2 border-cyan-400/80 space-y-3 relative transition-all shadow-lg shadow-cyan-500/10";
+      legacyCard.className = "p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative transition-all hover:border-purple-500/40";
+      if (modernBtn) {
+        modernBtn.className = "w-full py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-default";
+        modernBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i><span>Active Primary Core</span>';
+      }
+      if (legacyBtn) {
+        legacyBtn.className = "w-full py-2.5 rounded-xl bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer";
+        legacyBtn.innerHTML = '<span>Switch to Legacy 1.8.9</span>';
+      }
+    } else {
+      modernCard.className = "p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative transition-all hover:border-cyan-500/40";
+      legacyCard.className = "p-5 rounded-2xl bg-purple-950/30 border-2 border-purple-400/80 space-y-3 relative transition-all shadow-lg shadow-purple-500/10";
+      if (modernBtn) {
+        modernBtn.className = "w-full py-2.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer";
+        modernBtn.innerHTML = '<span>Switch to Modern 26.2</span>';
+      }
+      if (legacyBtn) {
+        legacyBtn.className = "w-full py-2.5 rounded-xl bg-purple-500 text-white font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-default";
+        legacyBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i><span>Active Primary Core</span>';
+      }
+    }
+  }
+}
+window.updateWhatsNewEngineSelection = updateWhatsNewEngineSelection;
+
+function selectEngineFromWhatsNew(engine) {
+  const target = engine === 'legacy' ? '1.8.9-ultra' : '26.2-ultra';
+  if (typeof selectInstance === 'function') {
+    selectInstance(target);
+  } else if (typeof STATE !== 'undefined') {
+    STATE.selectedInstanceId = target;
+  }
+  updateWhatsNewEngineSelection();
+  showToast(engine === 'legacy' ? '✓ Switched to Legacy 1.8.9 Forge Core' : '✓ Switched to Modern 26.2 Fabric Core', 'success');
+}
+window.selectEngineFromWhatsNew = selectEngineFromWhatsNew;
 
 // --- DEVELOPER FEEDBACK HIGHWAY (ERROR REPORT & SUGGESTION) ---
 let _currentFeedbackTab = 'issue';

@@ -8,6 +8,7 @@ import ctypes
 import os
 import shutil
 import sys
+import threading
 import time
 if sys.platform == "win32":
     import winreg
@@ -50,7 +51,40 @@ class HardwareMonitorService:
         self._prev_kernel = 0
         self._prev_user = 0
         self._governor = TelemetryGovernorService.get_instance()
+        self._subscribers: List[Any] = []
+        self._daemon_started = False
+        self._latest_telemetry: Optional[Dict[str, Any]] = None
+        self._telemetry_lock = threading.Lock()
         self._init_cpu_times()
+
+    def start_daemon(self, callback: Optional[Any] = None) -> None:
+        """Starts the continuous 1-second dynamic telemetry daemon."""
+        if callback and callback not in self._subscribers:
+            self._subscribers.append(callback)
+        if self._daemon_started:
+            return
+        self._daemon_started = True
+        t = threading.Thread(target=self._daemon_loop, daemon=True, name="HardwareTelemetryDaemon")
+        t.start()
+
+    def add_subscriber(self, callback: Any) -> None:
+        if callback and callback not in self._subscribers:
+            self._subscribers.append(callback)
+
+    def _daemon_loop(self) -> None:
+        while self._daemon_started:
+            try:
+                data = self.get_hardware_telemetry()
+                with self._telemetry_lock:
+                    self._latest_telemetry = data
+                for sub in list(self._subscribers):
+                    try:
+                        sub(data)
+                    except Exception:
+                        pass
+            except Exception:
+                pass
+            time.sleep(1.0)
 
     def _init_cpu_times(self) -> None:
         if sys.platform != "win32":
@@ -82,6 +116,12 @@ class HardwareMonitorService:
                 k_now = _filetime_to_int(kernel)
                 u_now = _filetime_to_int(user)
 
+                if self._prev_idle == 0 or self._prev_kernel == 0:
+                    self._prev_idle = i_now
+                    self._prev_kernel = k_now
+                    self._prev_user = u_now
+                    return 5
+
                 idle_delta = i_now - self._prev_idle
                 kernel_delta = k_now - self._prev_kernel
                 user_delta = u_now - self._prev_user
@@ -93,10 +133,10 @@ class HardwareMonitorService:
                 total = kernel_delta + user_delta
                 if total > 0:
                     cpu_pct = int(100.0 * (total - idle_delta) / total)
-                    return max(0, min(100, cpu_pct))
+                    return max(1, min(100, cpu_pct))
         except Exception:
             pass
-        return 0
+        return 5
 
     def _detect_gpu(self) -> str:
         gpus = self._detect_all_gpus()

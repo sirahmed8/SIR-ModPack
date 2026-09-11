@@ -408,13 +408,19 @@ class JavaService:
                     return inst
             return None
         elif is_modern_26:
-            # Modern 26.2 requires 64-bit Java 25+
+            # Modern 26.2 targets 64-bit Java 21 LTS (optimal Fabric compatibility, avoiding Java 25 stack map errors)
             for inst in installations:
-                if inst.get("is_64bit") and inst.get("major_version", 0) >= 25 and os.path.isfile(inst.get("path", "")):
+                if inst.get("is_64bit") and inst.get("major_version", 0) == 21 and os.path.isfile(inst.get("path", "")):
+                    return inst
+            for inst in installations:
+                if inst.get("is_64bit") and inst.get("major_version", 0) >= 21 and os.path.isfile(inst.get("path", "")):
                     return inst
             return None
         else:
             # Standard 1.21.x: 64-bit Java 21+
+            for inst in installations:
+                if inst.get("is_64bit") and inst.get("major_version", 0) == 21 and os.path.isfile(inst.get("path", "")):
+                    return inst
             for inst in installations:
                 if inst.get("is_64bit") and inst.get("major_version", 0) >= 21 and os.path.isfile(inst.get("path", "")):
                     return inst

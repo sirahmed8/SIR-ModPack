@@ -144,10 +144,9 @@ class ServerTrayService:
                     if "SIR Server Orchestrator Pro" in win_text:
                         return True
 
-                    # Suppress windows matching pystray, WinForms, .NET broadcast, or GDI+
-                    is_helper = any(h in class_name or h in win_text.lower() for h in ("pystray", "windowsforms", ".net-broadcast", "gdi+"))
-                    is_empty_unowned = not win_text and not any(sub in class_name for sub in ("chrome", "webview", "edge", "intermediate d3d", "hwndhost"))
-                    if is_helper or is_empty_unowned:
+                    # Suppress ONLY dummy windows created specifically by pystray
+                    is_pystray_dummy = "pystray" in class_name.lower() or "pystray" in win_text.lower()
+                    if is_pystray_dummy:
                         ex_style = user32.GetWindowLongW(hwnd, GWL_EXSTYLE)
                         new_style = (ex_style | WS_EX_TOOLWINDOW) & ~WS_EX_APPWINDOW
                         user32.SetWindowLongW(hwnd, GWL_EXSTYLE, new_style)

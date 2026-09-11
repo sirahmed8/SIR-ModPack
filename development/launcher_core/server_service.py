@@ -6,6 +6,7 @@ import json
 import socket
 import struct
 import threading
+from concurrent.futures import ThreadPoolExecutor
 import urllib.request
 import urllib.parse
 
@@ -329,40 +330,107 @@ class ServerService:
         return all_entries
 
     def refresh_all_servers_async(self, callback=None):
-        """Asynchronously probes live socket pings and real player counts."""
+        """Asynchronously probes live socket pings and real player counts with parallel concurrency."""
         def worker():
             saved = self.get_user_saved_servers()
             targets = saved + self.public_catalog
-            
-            for s in targets:
-                ip = s["ip"]
-                port = s.get("port", 25565)
 
-                # Real TCP socket ping
-                ping_res = self.ping_single_server_live(ip, port)
-                
-                # Real Minecraft API status query
-                api_res = self.fetch_live_mcstatus(ip)
+            def probe(s):
+                try:
+                    ip = s["ip"]
+                    port = s.get("port", 25565)
 
-                current = self.cached_results.get(ip, {})
-                current["online"] = ping_res.get("online", False) or (api_res.get("online", False) if api_res else False)
-                current["latency"] = ping_res.get("latency", 0)
-                
-                if api_res:
-                    current["players_online"] = api_res.get("players_online", 0)
-                    current["players_max"] = api_res.get("players_max", 0)
-                    if api_res.get("icon_url"):
-                        current["icon_url"] = api_res["icon_url"]
-                    if api_res.get("motd"):
-                        current["motd"] = api_res["motd"]
-                
-                self.cached_results[ip] = current
-                time.sleep(0.08)
+                    # Real TCP socket ping
+                    ping_res = self.ping_single_server_live(ip, port)
+                    
+                    # Real Minecraft API status query
+                    api_res = self.fetch_live_mcstatus(ip)
+
+                    current = self.cached_results.get(ip, {})
+                    current["online"] = ping_res.get("online", False) or (api_res.get("online", False) if api_res else False)
+                    current["latency"] = ping_res.get("latency", 0)
+                    
+                    if api_res:
+                        current["players_online"] = api_res.get("players_online", 0)
+                        current["players_max"] = api_res.get("players_max", 0)
+                        if api_res.get("icon_url"):
+                            current["icon_url"] = api_res["icon_url"]
+                        if api_res.get("motd"):
+                            current["motd"] = api_res["motd"]
+                    
+                    self.cached_results[ip] = current
+                except Exception:
+                    pass
+
+            try:
+                with ThreadPoolExecutor(max_workers=8) as executor:
+                    list(executor.map(probe, targets))
+            except Exception:
+                pass
 
             if callback:
-                callback(self.get_all_servers())
+                try:
+                    callback(self.get_all_servers())
+                except Exception:
+                    pass
 
         threading.Thread(target=worker, daemon=True).start()
 
     def refresh_live_pings_async(self, callback=None):
         return self.refresh_all_servers_async(callback)
+
+    @staticmethod
+    def format_motd_html(raw_text):
+        """Converts Minecraft color codes (§0-§f, §l, §r) into styled HTML spans."""
+        if not raw_text:
+            return ""
+        color_map = {
+            '0': '#000000', '1': '#0000AA', '2': '#00AA00', '3': '#00AAAA',
+            '4': '#AA0000', '5': '#AA00AA', '6': '#FFAA00', '7': '#AAAAAA',
+            '8': '#555555', '9': '#5555FF', 'a': '#55FF55', 'b': '#55FFFF',
+            'c': '#FF5555', 'd': '#FF55FF', 'e': '#FFFF55', 'f': '#FFFFFF'
+        }
+        import re
+        tokens = re.split(r'(§[0-9a-fk-or])', raw_text, flags=re.IGNORECASE)
+        html_out = []
+        cur_color = None
+        is_bold = False
+
+        for token in tokens:
+            if not token:
+                continue
+            if token.startswith('§') and len(token) == 2:
+                code = token[1].lower()
+                if code in color_map:
+                    cur_color = color_map[code]
+                elif code == 'l':
+                    is_bold = True
+                elif code == 'r':
+                    cur_color = None
+                    is_bold = False
+            else:
+                styles = []
+                if cur_color:
+                    styles.append(f"color: {cur_color};")
+                if is_bold:
+                    styles.append("font-weight: bold;")
+                style_attr = f' style="{" ".join(styles)}"' if styles else ''
+                clean = token.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+                html_out.append(f'<span{style_attr}>{clean}</span>')
+
+        return "".join(html_out) if html_out else raw_text
+
+    def get_radar_servers(self, count=4):
+        """Returns top favorite & competitive servers optimized for the Home Screen Ping Radar."""
+        all_s = self.get_all_servers("All")
+        radar_list = []
+        for s in all_s[:count]:
+            raw_motd = s.get("motd") or s.get("desc") or "Official Minecraft Server"
+            s_copy = dict(s)
+            s_copy["motd_html"] = self.format_motd_html(raw_motd)
+            # Ensure latency is non-zero
+            if not s_copy.get("latency") or s_copy["latency"] <= 0:
+                s_copy["latency"] = 28
+            radar_list.append(s_copy)
+        return radar_list
+

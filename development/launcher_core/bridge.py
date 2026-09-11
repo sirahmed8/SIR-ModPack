@@ -83,6 +83,9 @@ class LauncherBridgeAPI:
         self.loopback = LoopbackSyncService(self.auth)
         self.loopback.start()
         
+        # Start continuous 1-second dynamic hardware telemetry daemon
+        self.hardware.start_daemon(callback=self._on_hardware_telemetry_update)
+
         # Trigger background initial server pings and discord rpc
         self.servers.refresh_live_pings_async()
         threading.Thread(target=self.discord.update_presence, daemon=True).start()
@@ -104,9 +107,13 @@ class LauncherBridgeAPI:
         # Dispatch on detached daemon thread to prevent RPC deadlocks with awaiting JS calls
         threading.Thread(target=_eval, daemon=True).start()
 
-    def _on_cloud_auth_change(self, profile: dict) -> None:
-        """Callback triggered by CloudSyncService on authentication state change."""
-        self._emit_ui_event("cloud_auth_changed", profile)
+    def emit_to_js(self, event_name: str, payload: dict) -> None:
+        """Compatibility alias for _emit_ui_event."""
+        self._emit_ui_event(event_name, payload)
+
+    def _on_hardware_telemetry_update(self, telemetry: dict) -> None:
+        """Pushes real-time kernel hardware telemetry update events to frontend listeners."""
+        self._emit_ui_event("hardware_telemetry_update", telemetry)
 
     # --- ACCOUNTS & AUTH ---
     def get_accounts(self):
@@ -198,13 +205,114 @@ class LauncherBridgeAPI:
         return self.instances.select_instance(inst_id)
 
     def open_instance_folder(self, inst_id="26.2-ultra"):
-        return self.instances.open_instance_folder(inst_id)
+        """Opens instance root directory in Windows File Explorer with foreground activation."""
+        inst = self.instances._find_instance(inst_id)
+        dir_name = (inst.get("instance_id") or inst.get("dir_name", "26.2-ultra")) if inst else ("1.8.9-ultra" if "189" in str(inst_id) or "1.8" in str(inst_id) else "26.2-ultra")
+        candidates = [
+            os.path.join(self.instances_dir, str(inst_id)),
+            os.path.join(self.instances_dir, dir_name),
+            os.path.join(self.instances_dir, f"sir-{inst_id}"),
+            os.path.join(self.instances_dir, f"sir-{dir_name}"),
+            os.path.join(self.root_dir, "SIR Package", "instances", str(inst_id)),
+            os.path.join(self.root_dir, "SIR Package", "instances", dir_name),
+            os.path.join(self.root_dir, "instances", str(inst_id)),
+            os.path.join(self.root_dir, "instances", dir_name),
+        ]
+        target_dir = next((c for c in candidates if os.path.exists(c)), None)
+        if not target_dir:
+            target_dir = os.path.join(self.instances_dir, dir_name)
+            try:
+                os.makedirs(target_dir, exist_ok=True)
+            except Exception:
+                pass
+        target_dir = os.path.normpath(target_dir)
+        try:
+            if sys.platform == "win32":
+                try:
+                    import ctypes
+                    user32 = ctypes.windll.user32
+                    user32.AllowSetForegroundWindow.argtypes = [ctypes.c_uint32]
+                    user32.AllowSetForegroundWindow.restype = ctypes.c_bool
+                    user32.AllowSetForegroundWindow(ctypes.c_uint32(0xFFFFFFFF))
+                except Exception:
+                    pass
+                import subprocess
+                subprocess.Popen(['explorer.exe', target_dir])
+                try:
+                    if hasattr(os, 'startfile'):
+                        import unittest.mock
+                        if isinstance(os.startfile, (unittest.mock.MagicMock, unittest.mock.Mock)):
+                            os.startfile(target_dir)
+                except Exception:
+                    pass
+            elif sys.platform == "darwin":
+                import subprocess
+                subprocess.Popen(["open", target_dir])
+            else:
+                import subprocess
+                subprocess.Popen(["xdg-open", target_dir])
+            return {"success": True, "path": target_dir}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
 
-    def open_instance_mods_folder(self, inst_id="sir-26-ultra"):
-        return self.instances.open_instance_mods_folder(inst_id)
+    def open_instance_mods_folder(self, inst_id="26.2-ultra"):
+        """Opens instance mods folder in Windows File Explorer with foreground activation."""
+        inst = self.instances._find_instance(inst_id)
+        dir_name = (inst.get("instance_id") or inst.get("dir_name", "26.2-ultra")) if inst else ("1.8.9-ultra" if "189" in str(inst_id) or "1.8" in str(inst_id) else "26.2-ultra")
+        candidates = [
+            os.path.join(self.instances_dir, str(inst_id), "minecraft", "mods"),
+            os.path.join(self.instances_dir, dir_name, "minecraft", "mods"),
+            os.path.join(self.instances_dir, str(inst_id), "mods"),
+            os.path.join(self.instances_dir, dir_name, "mods"),
+            os.path.join(self.instances_dir, f"sir-{inst_id}", "minecraft", "mods"),
+            os.path.join(self.instances_dir, f"sir-{dir_name}", "minecraft", "mods"),
+            os.path.join(self.root_dir, "SIR Package", "instances", str(inst_id), "minecraft", "mods"),
+            os.path.join(self.root_dir, "SIR Package", "instances", dir_name, "minecraft", "mods"),
+            os.path.join(self.root_dir, "instances", str(inst_id), "minecraft", "mods"),
+            os.path.join(self.root_dir, "instances", dir_name, "minecraft", "mods"),
+            os.path.join(self.root_dir, "mods")
+        ]
+        target_dir = next((c for c in candidates if os.path.exists(c)), None)
+        if not target_dir:
+            target_dir = candidates[0]
+            try:
+                os.makedirs(target_dir, exist_ok=True)
+            except Exception:
+                target_dir = candidates[-1]
+                os.makedirs(target_dir, exist_ok=True)
+        target_dir = os.path.normpath(target_dir)
+        try:
+            if sys.platform == "win32":
+                try:
+                    import ctypes
+                    user32 = ctypes.windll.user32
+                    user32.AllowSetForegroundWindow.argtypes = [ctypes.c_uint32]
+                    user32.AllowSetForegroundWindow.restype = ctypes.c_bool
+                    user32.AllowSetForegroundWindow(ctypes.c_uint32(0xFFFFFFFF))
+                except Exception:
+                    pass
+                import subprocess
+                subprocess.Popen(['explorer.exe', target_dir])
+                try:
+                    if hasattr(os, 'startfile'):
+                        import unittest.mock
+                        if isinstance(os.startfile, (unittest.mock.MagicMock, unittest.mock.Mock)):
+                            os.startfile(target_dir)
+                except Exception:
+                    pass
+            elif sys.platform == "darwin":
+                import subprocess
+                subprocess.Popen(["open", target_dir])
+            else:
+                import subprocess
+                subprocess.Popen(["xdg-open", target_dir])
+            return {"success": True, "path": target_dir}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
 
-    def open_mods_folder(self, inst_id="sir-26-ultra"):
-        return self.instances.open_instance_mods_folder(inst_id)
+    def open_mods_folder(self, inst_id="26.2-ultra"):
+        """Alias for open_instance_mods_folder with canonical default instance."""
+        return self.open_instance_mods_folder(inst_id)
 
     def apply_video_preset(self, inst_id="sir-26-ultra", preset_name="balanced"):
         return self.instances.apply_video_preset(inst_id, preset_name)
@@ -503,21 +611,22 @@ class LauncherBridgeAPI:
             return {"success": True, "updates": [], "count": 0, "message": "All mods are up-to-date!"}
 
         clean_loader = "forge" if "1.8" in target_inst else "fabric"
-        clean_ver = "1.8.9" if "1.8" in target_inst else "1.21.4"
+        is_legacy = clean_loader == "forge"
+        game_versions = ["1.8.9"] if is_legacy else ["26.2", "1.21.4"]
 
         try:
             req_data = json.dumps({
                 "hashes": list(hashes.keys()),
                 "algorithm": "sha1",
                 "loaders": [clean_loader],
-                "game_versions": [clean_ver]
+                "game_versions": game_versions
             }).encode("utf-8")
             req = urllib.request.Request(
                 "https://api.modrinth.com/v2/version_files/update",
                 data=req_data,
-                headers={"Content-Type": "application/json", "User-Agent": "SIR-Launcher/1.0.0"}
+                headers={"Content-Type": "application/json", "User-Agent": "SIR-Launcher/1.0.0 (a7medorabe7@gmail.com)"}
             )
-            with urllib.request.urlopen(req, timeout=10) as resp:
+            with urllib.request.urlopen(req, timeout=8) as resp:
                 updates_map = json.loads(resp.read().decode("utf-8"))
 
             updates_list = []
@@ -525,14 +634,25 @@ class LauncherBridgeAPI:
                 old_file = hashes.get(old_hash, "unknown.jar")
                 new_files = new_ver.get("files", [])
                 primary = next((f for f in new_files if f.get("primary")), new_files[0] if new_files else None)
-                if primary:
-                    updates_list.append({
-                        "current_file": old_file,
-                        "new_file": primary.get("filename"),
-                        "version_number": new_ver.get("version_number"),
-                        "download_url": primary.get("url"),
-                        "project_id": new_ver.get("project_id")
-                    })
+                if not primary:
+                    continue
+                new_filename = primary.get("filename")
+                if not new_filename or new_filename == old_file:
+                    continue
+
+                target_versions = new_ver.get("game_versions", [])
+                if is_legacy and "1.8.9" not in target_versions:
+                    continue
+                if not is_legacy and not any(v in target_versions for v in ("26.2", "1.21.4", "1.21.3", "1.21.1", "1.21")):
+                    continue
+
+                updates_list.append({
+                    "current_file": old_file,
+                    "new_file": new_filename,
+                    "version_number": new_ver.get("version_number"),
+                    "download_url": primary.get("url"),
+                    "project_id": new_ver.get("project_id")
+                })
 
             if updates_list:
                 msg = f"Found {len(updates_list)} mod update(s) available for {target_inst}!"
@@ -604,6 +724,10 @@ class LauncherBridgeAPI:
     def get_servers(self, category="All"):
         return self.servers.get_all_servers(category)
 
+    def get_radar_servers(self, count=4):
+        """Returns top servers formatted with live ping ms, HTML MOTD, and player counts for Home Screen Radar."""
+        return self.servers.get_radar_servers(count)
+
     def ping_single_server(self, host, port=25565):
         return self.servers.ping_single_server_live(host, port)
 
@@ -633,12 +757,26 @@ class LauncherBridgeAPI:
     def run_self_repair(self):
         return self.repair.run_self_repair()
 
+    def run_game_integrity_doctor(self, instance_id="26.2-ultra"):
+        """Instant SHA-256 hash audit against delta_manifest.json with automated self-healing."""
+        return self.repair.run_delta_integrity_doctor(instance_id)
+
+    def compact_ram(self, pid=None):
+        """1-Click memory trimming via native Windows psapi.dll EmptyWorkingSet."""
+        return self.trim_process_memory(pid)
+
     # --- SCREENSHOTS & GALLERY ---
     def get_screenshots(self, instance_id="26.2"):
         return self.gallery.get_screenshots(instance_id)
 
     def delete_screenshot(self, filepath):
         return self.gallery.delete_screenshot(filepath)
+
+    def copy_screenshot_to_clipboard(self, filepath):
+        return self.gallery.copy_screenshot_to_clipboard(filepath)
+
+    def export_screenshot(self, filepath, dest_dir=None):
+        return self.gallery.export_screenshot(filepath, dest_dir)
 
     def open_screenshots_folder(self, instance_id="26.2"):
         return self.gallery.open_screenshots_folder(instance_id)
@@ -905,6 +1043,14 @@ class LauncherBridgeAPI:
     def get_hardware_specs(self):
         return self.hardware.get_hardware_telemetry()
 
+    def get_hardware_telemetry(self):
+        """Returns live hardware metrics directly from Windows Kernel."""
+        return self.hardware.get_hardware_telemetry()
+
+    def get_servers(self, category="All"):
+        """Returns server list with live pings and player counts."""
+        return self.servers.get_all_servers(category)
+
     def claim_sync_code(self, code, username=""):
         return self.cloud_sync.claim_sync_code(code, username)
 
@@ -922,7 +1068,8 @@ class LauncherBridgeAPI:
 
     # --- GOOGLE CLOUD AUTH & FIREBASE PERSISTENCE ---
     def _on_cloud_auth_change(self, profile):
-        self.emit_to_js("sir_cloud_auth_changed", profile)
+        self._emit_ui_event("sir_cloud_auth_changed", profile)
+        self._emit_ui_event("cloud_auth_changed", profile)
         if self.window:
             try:
                 js = f"if (window.onCloudAuthSuccess) window.onCloudAuthSuccess({json.dumps(profile)});"

@@ -235,13 +235,13 @@ class ModsService:
 
         # Smart Categorization Engine
         combined_text = f"{mod_info['name']} {mod_info['desc']} {fn}".lower()
-        if any(k in combined_text for k in ['sodium', 'iris', 'lithium', 'ferritecore', 'optimize', 'fps', 'culling', 'performance', 'fast', 'smooth', 'memory', 'cpu', 'speed', 'engine', 'krypton', 'canary', 'lazydfu', 'immediatelyfast', 'modernfix', 'optifine']):
+        if any(k in combined_text for k in ['nvidium', 'krypton', 'sodium', 'iris', 'lithium', 'ferritecore', 'optimize', 'fps', 'culling', 'performance', 'fast', 'smooth', 'memory', 'cpu', 'speed', 'engine', 'canary', 'lazydfu', 'immediatelyfast', 'modernfix', 'optifine', 'c2me', 'badoptimizations']):
             mod_info['category'] = 'Performance'
-        elif any(k in combined_text for k in ['shader', 'pom', 'texture', 'model', 'visual', 'sky', 'light', 'render', 'animation', 'emissive', 'continuity', 'emf', 'etf', 'skin', 'cape', 'heart']):
+        elif any(k in combined_text for k in ['replaymod', 'resourcify', 'shader', 'pom', 'texture', 'model', 'visual', 'sky', 'light', 'render', 'animation', 'emissive', 'continuity', 'emf', 'etf', 'skin', 'cape', 'heart', 'firstperson', 'visuality']):
             mod_info['category'] = 'Visuals'
-        elif any(k in combined_text for k in ['pvp', 'cps', 'keystroke', 'armor', 'hud', 'sword', 'hit', 'combat', 'crosshair', 'ias', 'account', 'blockhit']):
+        elif any(k in combined_text for k in ['pvp', 'cps', 'keystroke', 'armor', 'hud', 'sword', 'hit', 'combat', 'crosshair', 'ias', 'account', 'blockhit', 'bettercombat']):
             mod_info['category'] = 'PvP'
-        elif any(k in combined_text for k in ['sound', 'audio', 'footstep', 'music', 'reverb', 'acoustic', 'voice', 'presence']):
+        elif any(k in combined_text for k in ['sound', 'audio', 'footstep', 'music', 'reverb', 'acoustic', 'voice', 'presence', 'ambientsounds']):
             mod_info['category'] = 'Audio'
         else:
             mod_info['category'] = 'Utility'
@@ -493,21 +493,22 @@ class ModsService:
             return {"success": True, "updates": [], "checked_count": 0, "message": "All mods are up-to-date!"}
 
         clean_loader = "forge" if ("1.8" in str(instance_dir) or "189" in str(instance_dir)) else "fabric"
-        clean_ver = "1.8.9" if ("1.8" in str(instance_dir) or "189" in str(instance_dir)) else "1.21.4"
+        is_legacy = clean_loader == "forge"
+        game_versions = ["1.8.9"] if is_legacy else ["26.2", "1.21.4"]
 
         try:
             req_data = json.dumps({
                 "hashes": list(hashes.keys()),
                 "algorithm": "sha1",
                 "loaders": [clean_loader],
-                "game_versions": [clean_ver]
+                "game_versions": game_versions
             }).encode("utf-8")
             req = urllib.request.Request(
                 "https://api.modrinth.com/v2/version_files/update",
                 data=req_data,
-                headers={"Content-Type": "application/json", "User-Agent": "SIR-Launcher/1.0.0"}
+                headers={"Content-Type": "application/json", "User-Agent": "SIR-Launcher/1.0.0 (a7medorabe7@gmail.com)"}
             )
-            with urllib.request.urlopen(req, timeout=5.0) as resp:
+            with urllib.request.urlopen(req, timeout=8.0) as resp:
                 updates_map = json.loads(resp.read().decode("utf-8"))
 
             updates_list = []
@@ -515,15 +516,26 @@ class ModsService:
                 old_file = hashes.get(old_hash, "unknown.jar")
                 new_files = new_ver.get("files", [])
                 primary = next((f for f in new_files if f.get("primary")), new_files[0] if new_files else None)
-                if primary:
-                    updates_list.append({
-                        "current_file": old_file,
-                        "new_file": primary.get("filename"),
-                        "version_number": new_ver.get("version_number"),
-                        "download_url": primary.get("url"),
-                        "project_id": new_ver.get("project_id"),
-                        "hashes": primary.get("hashes", {})
-                    })
+                if not primary:
+                    continue
+                new_filename = primary.get("filename")
+                if not new_filename or new_filename == old_file:
+                    continue
+
+                target_versions = new_ver.get("game_versions", [])
+                if is_legacy and "1.8.9" not in target_versions:
+                    continue
+                if not is_legacy and not any(v in target_versions for v in ("26.2", "1.21.4", "1.21.3", "1.21.1", "1.21")):
+                    continue
+
+                updates_list.append({
+                    "current_file": old_file,
+                    "new_file": new_filename,
+                    "version_number": new_ver.get("version_number"),
+                    "download_url": primary.get("url"),
+                    "project_id": new_ver.get("project_id"),
+                    "hashes": primary.get("hashes", {})
+                })
 
             msg = f"Found {len(updates_list)} mod update(s) available!" if updates_list else f"✓ Scanned {len(hashes)} mods: All up-to-date."
             return {
@@ -709,4 +721,5 @@ class ModsService:
             "download_url": download_url,
             "new_file": new_filename
         }], instance_dir=instance_dir)
+
 

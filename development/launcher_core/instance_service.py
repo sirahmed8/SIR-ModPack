@@ -451,31 +451,49 @@ class InstanceService:
         inst = next((i for i in self.instances if i["id"] == inst_id), self.instances[0])
         ram_gb = self.settings.get("ram_allocated_gb", 8)
         
-        # Calculate strict RAM bounds and dynamic G1GC flags
-        ram_params = calculate_ram_parameters(max_ram=ram_gb, mc_version=inst.get("version", "26.2"))
+        # Calculate strict RAM bounds and dynamic GC flags
+        mc_ver = inst.get("version", "26.2")
+        ram_params = calculate_ram_parameters(max_ram=ram_gb, mc_version=mc_ver)
+        is_legacy = any(v in str(mc_ver) for v in ["1.8", "1.7", "1.12", "1.16"])
+        power_mode = self.settings.get("power_governor", "turbo")
+        use_zgc = not is_legacy and ram_gb >= 6 and power_mode != "battery"
         
         jvm_flags = [
             ram_params["xms_flag"],
             ram_params["xmx_flag"],
             "-XX:+UnlockExperimentalVMOptions",
-            "-XX:+UseG1GC",
-            f"-XX:G1NewSizePercent={ram_params['new_size_pct']}",
-            f"-XX:G1MaxNewSizePercent={ram_params['max_new_size_pct']}",
-            f"-XX:G1ReservePercent={ram_params['reserve_pct']}",
-            f"-XX:MaxGCPauseMillis={ram_params['pause_millis']}",
-            f"-XX:G1HeapRegionSize={ram_params['region_size']}",
             "-XX:+AlwaysPreTouch",
             "-XX:+UseStringDeduplication",
-            "-XX:G1HeapWastePercent=5",
-            "-XX:G1MixedGCCountTarget=4",
-            "-XX:InitiatingHeapOccupancyPercent=15",
-            "-XX:G1MixedGCLiveThresholdPercent=90",
-            "-XX:G1RSetUpdatingPauseTimePercent=5",
-            "-XX:SurvivorRatio=32",
-            "-XX:+PerfDisableSharedMem",
-            "-XX:MaxTenuringThreshold=1",
-            "-Dfile.encoding=UTF-8"
+            "-Dfile.encoding=UTF-8",
+            "-Djava.net.preferIPv4Stack=true"
         ]
+
+        if use_zgc:
+            jvm_flags.extend([
+                "-XX:+UseZGC",
+                "-XX:+ZGenerational",
+                "-XX:ZAllocationSpikeTolerance=5",
+            ])
+        else:
+            jvm_flags.extend([
+                "-XX:+UseG1GC",
+                "-XX:+ParallelRefProcEnabled",
+                "-XX:+UseNUMA",
+                f"-XX:G1NewSizePercent={ram_params['new_size_pct']}",
+                f"-XX:G1MaxNewSizePercent={ram_params['max_new_size_pct']}",
+                f"-XX:G1ReservePercent={ram_params['reserve_pct']}",
+                f"-XX:MaxGCPauseMillis={ram_params['pause_millis']}",
+                f"-XX:G1HeapRegionSize={ram_params['region_size']}",
+                "-XX:G1HeapWastePercent=5",
+                "-XX:G1MixedGCCountTarget=4",
+                "-XX:InitiatingHeapOccupancyPercent=15",
+                "-XX:G1MixedGCLiveThresholdPercent=90",
+                "-XX:G1RSetUpdatingPauseTimePercent=5",
+                "-XX:SurvivorRatio=32",
+                "-XX:+PerfDisableSharedMem",
+                "-XX:MaxTenuringThreshold=1",
+            ])
+
         
         # Power Governor Threading
         if self.settings.get("power_governor") == "smooth":
@@ -788,7 +806,7 @@ class InstanceService:
             os.makedirs(mods_dir, exist_ok=True)
             for m_item in os.listdir(mods_dir):
                 m_item_lower = m_item.lower()
-                if "nyctography" in m_item_lower:
+                if "nyctography" in m_item_lower or "quantified" in m_item_lower:
                     try:
                         os.remove(os.path.join(mods_dir, m_item))
                     except Exception:
@@ -796,10 +814,25 @@ class InstanceService:
             existing_jars = [f for f in os.listdir(mods_dir) if f.endswith('.jar')]
             
             is_modern = "26" in mc_version or "21" in mc_version or "modern" in inst.get("id", "").lower()
-            min_jars = 200 if is_modern else 45
-            payload_name = "payload_mods_26.2.zip" if is_modern else "payload_mods_1.8.9.zip"
+            inst_id_lower = (inst.get("id") or inst.get("instance_id") or inst.get("dir_name") or os.path.basename(inst_dir) or "").lower()
             
-            if len(existing_jars) < min_jars:
+            if is_modern:
+                if inst.get("is_vanilla") or inst_id_lower == "26.2":
+                    min_jars = 0
+                elif "performance" in inst_id_lower:
+                    min_jars = 35
+                elif "balanced" in inst_id_lower:
+                    min_jars = 75
+                elif "ultra" in inst_id_lower:
+                    min_jars = 110
+                else:
+                    min_jars = 35
+                payload_name = "payload_mods_26.2.zip"
+            else:
+                min_jars = 25
+                payload_name = "payload_mods_1.8.9.zip"
+            
+            if min_jars > 0 and len(existing_jars) < min_jars:
                 self._download_payload_if_missing(payload_name, mods_dir)
 
             # 3. Optical Shaders Suite Healing
@@ -1085,20 +1118,17 @@ class InstanceService:
         try:
             if sys.platform == "win32":
                 try:
+                    import ctypes
+                    ctypes.windll.user32.AllowSetForegroundWindow(-1)
+                except Exception:
+                    pass
+                try:
                     os.startfile(target_dir)
                 except Exception:
                     try:
-                        import ctypes
-                        ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
+                        subprocess.Popen(['explorer.exe', os.path.normpath(target_dir)])
                     except Exception:
                         subprocess.Popen(f'explorer "{target_dir}"', shell=True)
-                try:
-                    import ctypes
-                    hwnd = ctypes.windll.user32.FindWindowW("CabinetWClass", None)
-                    if hwnd:
-                        ctypes.windll.user32.SetForegroundWindow(hwnd)
-                except Exception:
-                    pass
             elif sys.platform == "darwin":
                 try:
                     subprocess.Popen(["open", target_dir])
@@ -1139,20 +1169,17 @@ class InstanceService:
         try:
             if sys.platform == "win32":
                 try:
+                    import ctypes
+                    ctypes.windll.user32.AllowSetForegroundWindow(-1)
+                except Exception:
+                    pass
+                try:
                     os.startfile(target_dir)
                 except Exception:
                     try:
-                        import ctypes
-                        ctypes.windll.shell32.ShellExecuteW(None, "explore", target_dir, None, None, 1)
+                        subprocess.Popen(['explorer.exe', os.path.normpath(target_dir)])
                     except Exception:
                         subprocess.Popen(f'explorer "{target_dir}"', shell=True)
-                try:
-                    import ctypes
-                    hwnd = ctypes.windll.user32.FindWindowW("CabinetWClass", None)
-                    if hwnd:
-                        ctypes.windll.user32.SetForegroundWindow(hwnd)
-                except Exception:
-                    pass
             elif sys.platform == "darwin":
                 try:
                     subprocess.Popen(["open", target_dir])

@@ -276,6 +276,7 @@ class TestChallengerM3AccountsSyncBridge(unittest.TestCase):
         """Verify port fallback mechanism when primary ports (52135, 52136) are occupied."""
         occupied_socks = []
         for p in [52135, 52136]:
+            s = None
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -283,7 +284,11 @@ class TestChallengerM3AccountsSyncBridge(unittest.TestCase):
                 s.listen(1)
                 occupied_socks.append(s)
             except Exception:
-                pass
+                if s is not None:
+                    try:
+                        s.close()
+                    except Exception:
+                        pass
 
         try:
             with patch('webbrowser.open'):
@@ -302,6 +307,14 @@ class TestChallengerM3AccountsSyncBridge(unittest.TestCase):
                     s.close()
                 except Exception:
                     pass
+            occupied_socks.clear()
+            if hasattr(self.auth, '_ms_browser_state') and self.auth._ms_browser_state:
+                srv = self.auth._ms_browser_state.get('server')
+                if srv:
+                    try:
+                        srv.server_close()
+                    except Exception:
+                        pass
 
     def test_microsoft_loopback_callback_http_success_and_error(self):
         """Verify the local HTTP callback handler processes ?code= and ?error= requests."""
@@ -487,7 +500,9 @@ class TestChallengerM3AccountsSyncBridge(unittest.TestCase):
         self.assertTrue(os.path.exists(os.path.join(mods_dir, "sodium-fabric.jar")))
 
         # 4. open_mods_folder
-        with patch('os.startfile', create=True) as mock_startfile:
+        with patch('os.startfile', create=True) as mock_startfile, \
+             patch('subprocess.Popen') as mock_popen:
+            mock_popen.return_value = unittest.mock.MagicMock()
             res_open_mods = bridge.open_mods_folder("26.2")
             self.assertTrue(res_open_mods.get("success"))
             if sys.platform == "win32":

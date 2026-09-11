@@ -210,21 +210,41 @@ async function loadMoreStoreProjects() {
 
 async function installOnlineModToProfile(slug, title) {
   const activeInst = STATE.selectedInstanceId || '26.2-ultra';
+  const downloadId = 'mod_' + Date.now() + '_' + (slug || 'mod').replace(/[^a-zA-Z0-9]/g, '');
+  if (typeof window.addActiveDownload === 'function') {
+    window.addActiveDownload(downloadId, title || slug, activeInst);
+  }
   showToast(`⏳ Downloading & installing ${title} to ${activeInst}...`, 'info');
   
   if (window.pywebview && window.pywebview.api) {
     try {
       const res = await window.pywebview.api.install_online_mod(slug, activeInst);
       if (res && res.success) {
+        if (typeof window.completeDownload === 'function') {
+          window.completeDownload(downloadId, true);
+        }
         showToast(res.message || `✓ Installed ${title}!`, 'success');
         if (typeof loadModsFromBridge === 'function') loadModsFromBridge();
       } else {
-        showToast(`✗ Failed to install ${title}: ${res?.error || 'Unknown error'}`, 'error');
+        const errMsg = res?.error || 'Unknown error';
+        if (typeof window.completeDownload === 'function') {
+          window.completeDownload(downloadId, false, errMsg);
+        }
+        showToast(`✗ Failed to install ${title}: ${errMsg}`, 'error');
       }
     } catch (e) {
-      showToast(`✗ Install error: ${e.message || e}`, 'error');
+      const errMsg = e.message || String(e);
+      if (typeof window.completeDownload === 'function') {
+        window.completeDownload(downloadId, false, errMsg);
+      }
+      showToast(`✗ Install error: ${errMsg}`, 'error');
     }
   } else {
+    setTimeout(() => {
+      if (typeof window.completeDownload === 'function') {
+        window.completeDownload(downloadId, true);
+      }
+    }, 1500);
     showToast(`✓ [Simulation] Installed ${title} into profile ${activeInst}!`, 'success');
   }
 }
@@ -344,18 +364,39 @@ async function executeSelectedModUpdates() {
   if (executeBtn) executeBtn.disabled = true;
   if (btnText) btnText.textContent = `Downloading ${selectedItems.length} update(s)...`;
 
+  const downloadIds = selectedItems.map(item => {
+    const dId = 'upd_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5);
+    const modName = (item.new_file || item.current_file || 'Mod Update').replace('.jar', '');
+    if (typeof window.addActiveDownload === 'function') {
+      window.addActiveDownload(dId, modName, activeInst);
+    }
+    return dId;
+  });
+
   try {
     if (window.pywebview && window.pywebview.api && window.pywebview.api.apply_mod_updates) {
       showToast(`Downloading and verifying ${selectedItems.length} mod update(s)...`, 'info');
       const res = await window.pywebview.api.apply_mod_updates(selectedItems, activeInst);
       if (res && res.success) {
+        downloadIds.forEach(dId => {
+          if (typeof window.completeDownload === 'function') window.completeDownload(dId, true);
+        });
         showToast(res.message || `✓ Updated ${res.applied_count || selectedItems.length} mods safely!`, 'success');
         closeModUpdatesModal();
         if (typeof loadModsFromBridge === 'function') loadModsFromBridge();
       } else {
-        showToast(`Update error: ${res?.error || 'Failed to apply updates'}`, 'error');
+        const errMsg = res?.error || 'Failed to apply updates';
+        downloadIds.forEach(dId => {
+          if (typeof window.completeDownload === 'function') window.completeDownload(dId, false, errMsg);
+        });
+        showToast(`Update error: ${errMsg}`, 'error');
       }
     } else {
+      setTimeout(() => {
+        downloadIds.forEach(dId => {
+          if (typeof window.completeDownload === 'function') window.completeDownload(dId, true);
+        });
+      }, 1500);
       showToast(`✓ [Simulation] Updated ${selectedItems.length} mods for ${activeInst}!`, 'success');
       closeModUpdatesModal();
     }

@@ -98,29 +98,40 @@ async function initLauncher() {
 
 let _isLauncherInitializing = false;
 let _launcherInitializedWithBridge = false;
+let _launcherInitializedOnce = false;
+
+async function hydrateBridgeData() {
+  if (window.pywebview && window.pywebview.api) {
+    _launcherInitializedWithBridge = true;
+    try {
+      if (typeof loadAccounts === 'function') await loadAccounts();
+      if (typeof loadInstancesFromBridge === 'function') await loadInstancesFromBridge();
+      if (typeof refreshHardwareTelemetry === 'function') refreshHardwareTelemetry();
+      if (typeof fetchLatestCloudStatus === 'function') fetchLatestCloudStatus();
+    } catch (e) {
+      console.warn('[Startup] Bridge hydration warning:', e);
+    }
+  }
+}
 
 async function safeInitLauncher(forceFromBridge = false) {
-  if (forceFromBridge) {
-    while (_isLauncherInitializing) {
-      await new Promise(r => setTimeout(r, 50));
-    }
+  if (_launcherInitializedWithBridge) return;
+  if (_isLauncherInitializing) return;
+
+  if (forceFromBridge && _launcherInitializedOnce) {
     _isLauncherInitializing = true;
     try {
-      await initLauncher();
-      _launcherInitializedWithBridge = true;
-    } catch (err) {
-      console.error("Launcher bridge init error:", err);
+      await hydrateBridgeData();
     } finally {
-      document.body.classList.add('sir-ready');
       _isLauncherInitializing = false;
     }
     return;
   }
 
-  if (_isLauncherInitializing) return;
   _isLauncherInitializing = true;
   try {
     await initLauncher();
+    _launcherInitializedOnce = true;
     if (window.pywebview && window.pywebview.api) {
       _launcherInitializedWithBridge = true;
     }
@@ -365,9 +376,8 @@ async function applyShader(presetId) {
   showToast(`✓ Activated Shader: ${cleanName}`, 'success');
 }
 
-let _hardwarePollingInterval = null;
-
-async function refreshHardwareTelemetry() {
+function applyHardwareTelemetryData(data) {
+  if (!data || data.success === false) return;
   const set = (id, txt) => { 
     const el = document.getElementById(id); 
     if (el && el.innerText !== txt) {
@@ -375,6 +385,135 @@ async function refreshHardwareTelemetry() {
     }
   };
   
+  const total = data.total_ram_gb !== undefined ? `${data.total_ram_gb} GB Total` : '16.0 GB Total';
+  const avail = data.avail_ram_gb !== undefined ? `${data.avail_ram_gb} GB Available` : '8.0 GB Available';
+  const ramPct = data.ram_load_pct ?? data.ram_pct ?? 45;
+  const cores = data.cpu_cores ?? data.cpu_count ?? 8;
+  const cpuPct = data.cpu_load_pct ?? data.cpu_pct ?? 5;
+  const recRam = data.recommended_ram_gb ?? data.rec_ram_gb ?? 8;
+  const tier = data.power_tier || 'High Performance Tier';
+  const gpu = data.gpu_name || 'Primary GPU';
+  const rec = data.recommendation || `System detected: ${cores} CPU Threads, ${total}, ${gpu}. Optimal allocation: ${recRam} GB Dedicated Heap.`;
+  const timeStr = data.timestamp || new Date().toLocaleTimeString();
+
+  set('hw-total-ram', total);
+  set('hw-avail-ram', avail);
+  set('hw-load-pct', `${ramPct}% In Use`);
+  set('hw-cpu-cores', `${cores} Logical Cores`);
+  set('hw-cpu-load', `${cpuPct}% Live Load`);
+  set('hw-power-tier', tier);
+  set('hw-rec-ram', `Allocate ${recRam} GB Dedicated`);
+  set('hw-gpu-name', gpu);
+  set('hw-recommendation-text', rec);
+  set('hw-timestamp-badge', `Live • ${timeStr}`);
+
+  const liveBadge = document.getElementById('hw-live-badge');
+  if (liveBadge) liveBadge.textContent = 'Live Kernel Stream';
+
+  const bar = document.getElementById('hw-ram-bar');
+  if (bar) bar.style.width = `${Math.min(100, Math.max(0, ramPct))}%`;
+
+  drawCpuSparkline(cpuPct);
+}
+window.applyHardwareTelemetryData = applyHardwareTelemetryData;
+
+let _cpuHistory = new Array(60).fill(15);
+function drawCpuSparkline(cpuPct) {
+  const canvas = document.getElementById('hw-cpu-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+
+  const validPct = Math.max(1, Math.min(100, Math.round(cpuPct)));
+  _cpuHistory.push(validPct);
+  if (_cpuHistory.length > 60) _cpuHistory.shift();
+
+  const lbl = document.getElementById('hw-cpu-canvas-label');
+  if (lbl) lbl.textContent = `${validPct}%`;
+
+  const w = canvas.width;
+  const h = canvas.height;
+
+  ctx.clearRect(0, 0, w, h);
+
+  // Background Grid (Windows Task Manager Green / Cyan phosphor style)
+  ctx.strokeStyle = 'rgba(6, 182, 212, 0.12)';
+  ctx.lineWidth = 1;
+
+  // Horizontal Grid Lines: 25%, 50%, 75%
+  [0.25, 0.5, 0.75].forEach(ratio => {
+    const y = Math.round(h * ratio) + 0.5;
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(w, y);
+    ctx.stroke();
+  });
+
+  // Vertical Grid Lines (every 10s = 6 divisions)
+  for (let i = 1; i < 6; i++) {
+    const x = Math.round((w / 6) * i) + 0.5;
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, h);
+    ctx.stroke();
+  }
+
+  // Draw Area Gradient & Line
+  const step = w / (_cpuHistory.length - 1);
+
+  // Gradient fill under curve
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, 'rgba(34, 211, 238, 0.35)');
+  grad.addColorStop(1, 'rgba(6, 182, 212, 0.02)');
+
+  ctx.beginPath();
+  _cpuHistory.forEach((val, idx) => {
+    const x = idx * step;
+    const y = h - (val / 100) * (h - 6) - 3;
+    if (idx === 0) {
+      ctx.moveTo(x, y);
+    } else {
+      ctx.lineTo(x, y);
+    }
+  });
+
+  ctx.lineTo(w, h);
+  ctx.lineTo(0, h);
+  ctx.closePath();
+  ctx.fillStyle = grad;
+  ctx.fill();
+
+  // Line stroke
+  ctx.beginPath();
+  _cpuHistory.forEach((val, idx) => {
+    const x = idx * step;
+    const y = h - (val / 100) * (h - 6) - 3;
+    if (idx === 0) {
+      ctx.moveTo(x, y);
+    } else {
+      ctx.lineTo(x, y);
+    }
+  });
+  ctx.strokeStyle = '#22d3ee';
+  ctx.lineWidth = 2;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+}
+window.drawCpuSparkline = drawCpuSparkline;
+
+// Pre-hydrate immediately from bootstrap cache if present
+if (window.__SIR_HW_BOOTSTRAP__) {
+  applyHardwareTelemetryData(window.__SIR_HW_BOOTSTRAP__);
+}
+
+window.addEventListener('hardware_telemetry_update', (e) => {
+  if (e && e.detail) {
+    applyHardwareTelemetryData(e.detail);
+  }
+});
+
+let _hardwarePollingInterval = null;
+async function refreshHardwareTelemetry() {
   let data = null;
   const api = window.pywebview && window.pywebview.api;
   const getFn = api && (api.get_hardware_telemetry || (api.hardware && api.hardware.get_telemetry));
@@ -391,50 +530,9 @@ async function refreshHardwareTelemetry() {
     data = window.__SIR_HW_BOOTSTRAP__;
   }
 
-  if (data && data.success !== false) {
-    const total = data.total_ram_gb !== undefined ? `${data.total_ram_gb} GB Total` : '16.0 GB Total';
-    const avail = data.avail_ram_gb !== undefined ? `${data.avail_ram_gb} GB Available` : '8.0 GB Available';
-    const ramPct = data.ram_load_pct ?? data.ram_pct ?? 45;
-    const cores = data.cpu_cores ?? data.cpu_count ?? 8;
-    const cpuPct = data.cpu_load_pct ?? data.cpu_pct ?? 5;
-    const recRam = data.recommended_ram_gb ?? data.rec_ram_gb ?? 8;
-    const tier = data.power_tier || 'High Performance Tier';
-    const gpu = data.gpu_name || 'Primary GPU';
-    const rec = data.recommendation || `System detected: ${cores} CPU Threads, ${total}, ${gpu}. Optimal allocation: ${recRam} GB Dedicated Heap.`;
-    const timeStr = data.timestamp || new Date().toLocaleTimeString();
-
-    set('hw-total-ram', total);
-    set('hw-avail-ram', avail);
-    set('hw-load-pct', `${ramPct}% In Use`);
-    set('hw-cpu-cores', `${cores} Logical Cores`);
-    set('hw-cpu-load', `${cpuPct}% Live Load`);
-    set('hw-power-tier', tier);
-    set('hw-rec-ram', `Allocate ${recRam} GB Dedicated`);
-    set('hw-gpu-name', gpu);
-    set('hw-recommendation-text', rec);
-    set('hw-timestamp-badge', `Live • ${timeStr}`);
-
-    const liveBadge = document.getElementById('hw-live-badge');
-    if (liveBadge) liveBadge.textContent = 'Live Kernel Stream';
-
-    const bar = document.getElementById('hw-ram-bar');
-    if (bar) bar.style.width = `${Math.min(100, Math.max(0, ramPct))}%`;
-    return;
+  if (data) {
+    applyHardwareTelemetryData(data);
   }
-
-  // Fallback defaults if hardware detection is still loading
-  set('hw-total-ram', '16.0 GB Total');
-  set('hw-avail-ram', '8.0 GB Available');
-  set('hw-load-pct', '45% In Use');
-  set('hw-cpu-cores', '8 Logical Cores');
-  set('hw-cpu-load', '5% Live Load');
-  set('hw-power-tier', 'High Performance Tier');
-  set('hw-rec-ram', 'Allocate 8 GB Dedicated');
-  set('hw-gpu-name', 'Dedicated GPU');
-  set('hw-recommendation-text', 'Reading system hardware topology from Windows Kernel...');
-  set('hw-timestamp-badge', 'Querying Kernel...');
-  const bar = document.getElementById('hw-ram-bar');
-  if (bar) bar.style.width = '45%';
 }
 window.refreshHardwareTelemetry = refreshHardwareTelemetry;
 
@@ -444,17 +542,15 @@ window.addEventListener('pywebviewready', () => {
   }
 });
 
-// Start live real-time hardware telemetry auto-polling (active 1.2s interval)
+// Auto-polling interval
 if (_hardwarePollingInterval) clearInterval(_hardwarePollingInterval);
 _hardwarePollingInterval = setInterval(() => {
-  if (typeof STATE !== 'undefined' && STATE.activeTab === 'hardware') {
-    refreshHardwareTelemetry();
-  }
-}, 1200);
-setTimeout(refreshHardwareTelemetry, 100);
+  refreshHardwareTelemetry();
+}, 1000);
+setTimeout(refreshHardwareTelemetry, 50);
 
 
-// Auto-render Lucide icons on any DOM change
+// Auto-render Lucide icons on any DOM change with trailing debounce
 if (typeof MutationObserver !== 'undefined') {
   let iconTimeout = null;
   const observer = new MutationObserver((mutations) => {
@@ -474,11 +570,15 @@ if (typeof MutationObserver !== 'undefined') {
       clearTimeout(iconTimeout);
       iconTimeout = setTimeout(() => {
         refreshLucideIcons();
-      }, 20);
+      }, 150);
     }
   });
   document.addEventListener('DOMContentLoaded', () => {
-    observer.observe(document.body, { childList: true, subtree: true });
+    if (window.__SIR_HW_BOOTSTRAP__) {
+      applyHardwareTelemetryData(window.__SIR_HW_BOOTSTRAP__);
+    }
+    const container = document.getElementById('app-container') || document.querySelector('main') || document.body;
+    observer.observe(container, { childList: true, subtree: true });
     refreshLucideIcons();
   });
 }

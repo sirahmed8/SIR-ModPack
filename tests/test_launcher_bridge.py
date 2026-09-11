@@ -133,10 +133,12 @@ class TestLauncherBridge(unittest.TestCase):
         self.assertEqual(status["status"], "cancelled")
 
     def test_bridge_event_emission(self):
+        self.mock_window.evaluated_js.clear()
         self.bridge._emit_ui_event("custom_test_event", {"status": "ok", "value": 123})
-        self.assertEqual(len(self.mock_window.evaluated_js), 1)
-        self.assertIn("custom_test_event", self.mock_window.evaluated_js[0])
-        self.assertIn('"value": 123', self.mock_window.evaluated_js[0])
+        custom_events = [js for js in self.mock_window.evaluated_js if "custom_test_event" in js]
+        self.assertGreaterEqual(len(custom_events), 1)
+        self.assertIn("custom_test_event", custom_events[0])
+        self.assertIn('"value": 123', custom_events[0])
 
     def test_legal_terms_acceptance_atomic(self):
         res = self.bridge.accept_legal_terms(version="2026.1")

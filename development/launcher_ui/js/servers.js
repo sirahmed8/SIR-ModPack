@@ -478,7 +478,7 @@ async function loadServersLive() {
   // 1. Try to fetch fresh online directory from Web API
   try {
     const apiRes = await fetch("https://sir-modpack.web.app/api/servers?limit=100", {
-      signal: AbortSignal.timeout(4000)
+      signal: AbortSignal.timeout(3000)
     });
     if (apiRes.ok) {
       const data = await apiRes.json();
@@ -491,28 +491,37 @@ async function loadServersLive() {
     }
   } catch {}
 
-  // 2. Query top 20 visible servers with live status API
-  const topVisible = STATE.servers.slice(0, 20);
-  const promises = topVisible.map(async srv => {
-    try {
-      const res = await fetch(`https://api.mcstatus.io/v2/status/java/${srv.host}`, { 
-        signal: AbortSignal.timeout(3500) 
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data && data.online) {
-          srv.ping = Math.round(data.roundTripLatency || srv.ping);
-          srv.players = (data.players?.online || 0).toLocaleString();
-          srv.playersMax = (data.players?.max || 0).toLocaleString();
-          srv.version = data.version?.name_clean || srv.version;
-          if (data.icon) srv.iconUrl = data.icon;
-          if (data.motd?.clean) srv.desc = data.motd.clean.trim().replace(/\n/g, ' ');
-          renderServers();
+  // 2. Query top 20 visible servers with live status API (throttled to max 5 simultaneous fetches)
+  const topVisible = (STATE.servers || []).slice(0, 20);
+  const maxConcurrency = 5;
+  let idx = 0;
+
+  async function worker() {
+    while (idx < topVisible.length) {
+      const srv = topVisible[idx++];
+      if (!srv || !srv.host) continue;
+      try {
+        const res = await fetch(`https://api.mcstatus.io/v2/status/java/${srv.host}`, { 
+          signal: AbortSignal.timeout(2500) 
+        });
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.online) {
+            srv.ping = Math.round(data.roundTripLatency || srv.ping);
+            srv.players = (data.players?.online || 0).toLocaleString();
+            srv.playersMax = (data.players?.max || 0).toLocaleString();
+            srv.version = data.version?.name_clean || srv.version;
+            if (data.icon) srv.iconUrl = data.icon;
+            if (data.motd?.clean) srv.desc = data.motd.clean.trim().replace(/\n/g, ' ');
+            renderServers();
+          }
         }
-      }
-    } catch {}
-  });
-  await Promise.allSettled(promises);
+      } catch {}
+    }
+  }
+
+  const pool = Array.from({ length: Math.min(maxConcurrency, topVisible.length) }, () => worker());
+  await Promise.allSettled(pool);
 }
 
 function getServerInitialsSvg(name, cat) {
@@ -874,15 +883,50 @@ async function joinServer(ip) {
 window.joinServer = joinServer;
 
 async function refreshServersLive(btn) {
-  const icon = btn ? btn.querySelector('i, svg') : document.querySelector('#view-servers button[title*="Refresh"] i, #view-servers button[title*="Refresh"] svg');
-  if (icon) icon.classList.add('animate-spin');
+  const targetBtn = btn || document.querySelector('#view-servers button[title*="Refresh"]');
+  if (targetBtn) {
+    targetBtn.classList.add('pointer-events-none', 'opacity-70');
+    const el = targetBtn.querySelector('i, svg');
+    if (el) el.classList.add('animate-spin');
+  }
   try {
-    await loadServersLive();
+    const doRefresh = async () => {
+      if (window.pywebview && window.pywebview.api && typeof window.pywebview.api.get_servers === 'function') {
+        try {
+          const bridgeServers = await window.pywebview.api.get_servers();
+          if (bridgeServers && Array.isArray(bridgeServers) && bridgeServers.length > 0) {
+            const map = new Map(STATE.servers.map(s => [(s.host || s.ip || '').toLowerCase(), s]));
+            bridgeServers.forEach(s => {
+              const h = (s.ip || s.host || '').toLowerCase();
+              if (h && map.has(h)) {
+                const cur = map.get(h);
+                if (s.latency) cur.ping = s.latency;
+                if (s.players_online !== undefined) cur.players = Number(s.players_online).toLocaleString();
+              }
+            });
+          }
+        } catch (e) {
+          console.warn('Bridge get_servers warning:', e);
+        }
+      }
+      await loadServersLive();
+    };
+
+    await Promise.race([
+      doRefresh(),
+      new Promise(resolve => setTimeout(resolve, 4800))
+    ]);
+
     showToast("✓ Server directory radar refreshed", "info");
   } catch (err) {
     console.error("Failed to refresh live servers:", err);
   } finally {
-    if (icon) icon.classList.remove('animate-spin');
+    if (targetBtn) {
+      targetBtn.classList.remove('pointer-events-none', 'opacity-70');
+      targetBtn.querySelectorAll('.animate-spin').forEach(el => el.classList.remove('animate-spin'));
+    }
+    // Guarantee removal of any lingering spinning icons on refresh buttons across view-servers
+    document.querySelectorAll('#view-servers button[title*="Refresh"] .animate-spin').forEach(el => el.classList.remove('animate-spin'));
     refreshLucideIcons();
   }
 }

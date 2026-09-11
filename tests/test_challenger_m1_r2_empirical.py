@@ -392,12 +392,12 @@ class TestTelemetryGovernorEmpiricalLifecycle(unittest.TestCase):
         if has_handle_count:
             handle_count_after = ctypes.c_ulong(0)
             kernel32.GetProcessHandleCount(h_proc, ctypes.byref(handle_count_after))
-            # Handle count delta should be minimal (less than 10 delta for internal GC/runtime churn, definitely not ~1000)
-            delta = abs(handle_count_after.value - handle_count_before.value)
+            # Handle count increase should be minimal (less than 15 delta for internal GC/runtime churn, definitely not ~1000)
+            leak = max(0, handle_count_after.value - handle_count_before.value)
             self.assertLess(
-                delta,
+                leak,
                 15,
-                f"Possible Win32 Handle leak detected! Started with {handle_count_before.value}, ended with {handle_count_after.value} (delta: {delta})",
+                f"Possible Win32 Handle leak detected! Started with {handle_count_before.value}, ended with {handle_count_after.value} (growth: {leak})",
             )
 
     def test_ephemeral_rapid_spawn_and_churn(self):
@@ -412,15 +412,32 @@ class TestTelemetryGovernorEmpiricalLifecycle(unittest.TestCase):
                 stderr=subprocess.PIPE,
             )
             pid = p.pid
-            # Immediately query while alive
-            r_live = gov.get_process_telemetry(pid)
-            results.append(r_live["success"])
-            # Wait for exit
-            p.wait(timeout=2)
-            if p.stdout:
-                p.stdout.close()
-            if p.stderr:
-                p.stderr.close()
+            try:
+                # Immediately query while alive
+                r_live = gov.get_process_telemetry(pid)
+                results.append(r_live["success"])
+                # Wait for exit
+                p.wait(timeout=3)
+            finally:
+                try:
+                    p.kill()
+                except Exception:
+                    pass
+                try:
+                    p.wait(timeout=1)
+                except Exception:
+                    pass
+                if p.stdout:
+                    try:
+                        p.stdout.close()
+                    except Exception:
+                        pass
+                if p.stderr:
+                    try:
+                        p.stderr.close()
+                    except Exception:
+                        pass
+
             # Query after exit
             r_dead = gov.get_process_telemetry(pid)
             # Post-mortem query should either be dead or 0MB zombie, never an unhandled exception
@@ -444,54 +461,82 @@ class TestTelemetryGovernorEmpiricalLifecycle(unittest.TestCase):
 
         num_children = 4
         processes = []
-        for _ in range(num_children):
-            p = subprocess.Popen(
-                [sys.executable, "-c", child_code],
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-            )
-            processes.append(p)
-
-        time.sleep(0.1)  # Allow children to initialize
-
-        errors = []
+        threads = []
         stop_event = threading.Event()
+        try:
+            for _ in range(num_children):
+                p = subprocess.Popen(
+                    [sys.executable, "-c", child_code],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                )
+                processes.append(p)
 
-        def _poller_worker(proc_list):
-            while not stop_event.is_set():
-                for proc in proc_list:
-                    pid = proc.pid
+            time.sleep(0.1)  # Allow children to initialize
+
+            errors = []
+
+            def _poller_worker(proc_list):
+                while not stop_event.is_set():
+                    for proc in proc_list:
+                        pid = proc.pid
+                        try:
+                            t = gov.get_process_telemetry(pid)
+                            if t["success"]:
+                                if t["working_set_mb"] < 0:
+                                    errors.append(f"Negative working set for PID {pid}: {t}")
+                            if sys.platform == "win32":
+                                trim = gov.trim_process_memory(pid)
+                                # Trim may fail if process exits mid-call, which is handled gracefully
+                        except Exception as ex:
+                            errors.append(f"Unexpected exception on PID {pid}: {ex}")
+                    time.sleep(0.01)
+
+            threads = [threading.Thread(target=_poller_worker, args=(processes,)) for _ in range(6)]
+            for t in threads:
+                t.start()
+
+            # Step-by-step kill child processes one by one while threads are polling
+            for p in processes:
+                time.sleep(0.15)
+                p.kill()
+                if p.stdout:
+                    p.stdout.close()
+                if p.stderr:
+                    p.stderr.close()
+                p.wait(timeout=3)
+
+            stop_event.set()
+            for t in threads:
+                t.join(timeout=2)
+
+            self.assertEqual(len(errors), 0, f"Encountered unexpected lifecycle errors: {errors[:5]}")
+        finally:
+            stop_event.set()
+            for t in threads:
+                try:
+                    t.join(timeout=1)
+                except Exception:
+                    pass
+            for p in processes:
+                try:
+                    p.kill()
+                except Exception:
+                    pass
+                try:
+                    p.wait(timeout=1)
+                except Exception:
+                    pass
+                if p.stdout:
                     try:
-                        t = gov.get_process_telemetry(pid)
-                        if t["success"]:
-                            if t["working_set_mb"] < 0:
-                                errors.append(f"Negative working set for PID {pid}: {t}")
-                        if sys.platform == "win32":
-                            trim = gov.trim_process_memory(pid)
-                            # Trim may fail if process exits mid-call, which is handled gracefully
-                    except Exception as ex:
-                        errors.append(f"Unexpected exception on PID {pid}: {ex}")
-                time.sleep(0.01)
-
-        threads = [threading.Thread(target=_poller_worker, args=(processes,)) for _ in range(6)]
-        for t in threads:
-            t.start()
-
-        # Step-by-step kill child processes one by one while threads are polling
-        for p in processes:
-            time.sleep(0.15)
-            p.kill()
-            if p.stdout:
-                p.stdout.close()
-            if p.stderr:
-                p.stderr.close()
-            p.wait(timeout=3)
-
-        stop_event.set()
-        for t in threads:
-            t.join()
-
-        self.assertEqual(len(errors), 0, f"Encountered unexpected lifecycle errors: {errors[:5]}")
+                        p.stdout.close()
+                    except Exception:
+                        pass
+                if p.stderr:
+                    try:
+                        p.stderr.close()
+                    except Exception:
+                        pass
 
     def test_telemetry_governor_boundary_pids(self):
         """Test boundary conditions: System Idle (PID 0), System (PID 4), negative PIDs, non-integer types."""

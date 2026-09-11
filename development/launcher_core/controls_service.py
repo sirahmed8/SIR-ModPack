@@ -342,14 +342,12 @@ class ControlsService:
         if instance_dir:
             search_dirs.append(instance_dir)
             search_dirs.append(os.path.join(instance_dir, "minecraft"))
-
-        inst_primary = os.path.join(self.root_dir, "instances", instance_id)
-        search_dirs.extend([
-            inst_primary,
-            os.path.join(inst_primary, "minecraft"),
-            os.path.join(self.root_dir, "instances", "26.2", "minecraft"),
-            os.path.join(self.root_dir, "instances", "1.8.9", "minecraft"),
-        ])
+        elif instance_id:
+            inst_primary = os.path.join(self.root_dir, "instances", instance_id)
+            search_dirs.extend([
+                inst_primary,
+                os.path.join(inst_primary, "minecraft"),
+            ])
 
         target_options_files = []
         for d in search_dirs:
