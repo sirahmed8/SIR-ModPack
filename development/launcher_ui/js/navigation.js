@@ -28,56 +28,68 @@ function switchTab(tabId) {
     activeNavBtn.classList.add('active');
   }
 
-  // 4. Load content for specific tab
-  if (tabId === 'launchpad') {
-    renderLaunchpad();
-  } else if (tabId === 'instances') {
-    renderInstances();
-  } else if (tabId === 'mods') {
-    if (!STATE.mods || STATE.mods.length === 0) {
-      if (typeof loadModsFromBridge === 'function') {
-        loadModsFromBridge();
-      } else {
+  // 4. Load content for specific tab with defensive resilience
+  try {
+    if (tabId === 'launchpad') {
+      if (typeof renderLaunchpad === 'function') renderLaunchpad();
+    } else if (tabId === 'instances') {
+      if (typeof renderInstances === 'function') renderInstances();
+    } else if (tabId === 'mods') {
+      if (!STATE.mods || STATE.mods.length === 0) {
+        if (typeof loadModsFromBridge === 'function') {
+          loadModsFromBridge();
+        } else if (typeof renderMods === 'function') {
+          renderMods();
+        }
+      } else if (typeof renderMods === 'function') {
         renderMods();
       }
-    } else {
-      renderMods();
+    } else if (tabId === 'shaders') {
+      if (typeof renderShaders === 'function') renderShaders();
+    } else if (tabId === 'servers') {
+      if (typeof renderServers === 'function') renderServers();
+    } else if (tabId === 'satellite') {
+      if (typeof renderSatellite === 'function') renderSatellite();
+    } else if (tabId === 'worlds') {
+      if (typeof refreshWorlds === 'function') {
+        refreshWorlds(true);
+      } else if (typeof renderWorldsGrid === 'function') {
+        renderWorldsGrid();
+      }
+    } else if (tabId === 'packs') {
+      if (typeof renderPacksGrid === 'function') renderPacksGrid();
+      if (tabId !== 'logs' && typeof stopLogsPolling === 'function') {
+        stopLogsPolling();
+      }
+    } else if (tabId === 'gallery') {
+      if (typeof refreshScreenshots === 'function') {
+        refreshScreenshots();
+      } else if (typeof renderGalleryGrid === 'function') {
+        renderGalleryGrid();
+      }
+    } else if (tabId === 'skins') {
+      if (typeof renderSkinsStudio === 'function') {
+        renderSkinsStudio();
+      } else if (typeof initSkinStudio === 'function') {
+        initSkinStudio();
+      }
+    } else if (tabId === 'logs') {
+      if (typeof startLogsPolling === 'function') {
+        startLogsPolling();
+      } else if (typeof refreshLogs === 'function') {
+        refreshLogs();
+      }
+    } else if (tabId === 'hardware') {
+      if (typeof refreshHardwareTelemetry === 'function') {
+        refreshHardwareTelemetry();
+      }
+    } else if (tabId === 'settings') {
+      if (typeof renderSettings === 'function') renderSettings();
+    } else if (tabId === 'news') {
+      if (typeof renderNewsView === 'function') renderNewsView();
     }
-  } else if (tabId === 'shaders') {
-    renderShaders();
-  } else if (tabId === 'servers') {
-    renderServers();
-  } else if (tabId === 'satellite') {
-    renderSatellite();
-  } else if (tabId === 'worlds') {
-    if (typeof refreshWorlds === 'function') {
-      refreshWorlds(true);
-    } else {
-      renderWorldsGrid();
-    }
-  } else if (tabId === 'packs') {
-    renderPacksGrid();
-    if (tabId !== 'logs' && typeof stopLogsPolling === 'function') {
-      stopLogsPolling();
-    }
-  } else if (tabId === 'gallery') {
-    renderGalleryGrid();
-  } else if (tabId === 'skins') {
-    renderSkinsStudio();
-  } else if (tabId === 'logs') {
-    if (typeof startLogsPolling === 'function') {
-      startLogsPolling();
-    } else {
-      refreshLogs();
-    }
-  } else if (tabId === 'hardware') {
-    if (typeof refreshHardwareTelemetry === 'function') {
-      refreshHardwareTelemetry();
-    }
-  } else if (tabId === 'settings') {
-    renderSettings();
-  } else if (tabId === 'news') {
-    renderNewsView();
+  } catch (tabErr) {
+    console.error(`[Navigation] Error rendering tab ${tabId}:`, tabErr);
   }
 
   // 5. Always refresh Lucide icons
@@ -86,6 +98,7 @@ function switchTab(tabId) {
     setTimeout(() => lucide.createIcons(), 50);
   }
 }
+window.switchTab = switchTab;
 
 async function renderNewsView() {
   const container = document.getElementById('news-feed-container');
@@ -336,6 +349,7 @@ async function renderNewsView() {
 
   container.innerHTML = html;
   refreshLucideIcons();
+}
 window.renderNewsView = renderNewsView;
 
 async function refreshNewsWithSpin(btn) {
