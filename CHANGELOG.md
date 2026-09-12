@@ -17,6 +17,32 @@
 
 ---
 
+### 🎮 In-Game SIR Mod (`R SHIFT`) & Native Competitive HUD
+- **Custom Native Fabric Mod (`sir-mod-26.2-1.0.0.jar`)** — Developed bespoke client mod bound to `Right Shift` (`key.keyboard.right.shift`) with ModMenu integration.
+- **9 Competitive HUD & Combat Features** — Fully wired and persistent:
+  - **FPS HUD Counter**: High-refresh real-time framerate readout.
+  - **CPS HUD Counter**: Independent Left/Right click velocity tracking with burst graph.
+  - **Ping & Latency HUD**: Millisecond server round-trip latency.
+  - **Armor & Status HUD**: Translucent cyber pill badges with low-durability warnings.
+  - **Keystrokes HUD**: Real-time WASD, LMB, RMB, Space keypress visualization.
+  - **1.7 Sword Block-Hitting**: Restored authentic 1.7 PvP sword swing and block kinematics.
+  - **Dynamic C-Zoom**: Smooth cinematic camera zoom bound to `C`.
+  - **Toggle Sprint & Sneak**: Hands-free movement mechanics with on-screen indicator.
+  - **0ms Fast Hit Registration**: Low-latency attack polling minimizing client-side hit delay.
+- **Launcher HUD Settings Deprecation** — Cleanly migrated the 9 HUD toggles card out of the launcher desktop settings modal into the in-game GUI, persisting to `config/sirmod.json` with two-way syncing to `config/inventoryhud.json`, `config/notenoughanimations.json`, and `options.txt`.
+
+### 🔮 Shader Optics & Visual Refinements
+- **Nametag Blown-Out Overexposure Fix** — Eliminated blinding white clouds on 3rd-person player nametags in `SIR Modern Shader.zip`. Assigned entity ID `1600` / `50112`, suppressed TAA jitter, and bypassed bloom/emission passes to render razor-sharp, readable text in all lighting conditions.
+- **Sodium Video Settings Interface Restored** — Neutralized `betterfpsdist` options screen hijack (`repositionSodiumOptions: false` and stripped `OptionsScreenMixin`), permanently restoring Sodium's native, clean tabbed video settings.
+- **Top-Left Biome Debug Text Elimination** — Disabled `debugBiomeOnly` in ambient fog configuration across all instances.
+- **26.2 Resource Pack Compatibility & Themed UI** — Updated `SIR Modern.zip` pack format to 88 (range 15–99), cleared incompatible pack warnings in `options.txt`, and injected 38 dark-themed container textures (inventory, crafting table, furnace, anvil) and modern HUD sprites.
+- **Legacy Pack Authentic Icon** — Re-embedded authentic, valid PNG `pack.png` (128x128) into `SIR Legacy.zip` and synchronized across all locations using hardlinks.
+
+### 🌐 GitHub Single-File Delta Fetcher & Auto-Healer
+- **Resilient Single-File Delta Downloads** — Engineered `GitHubDeltaFetcher` in `shared_core` for both SIR Launcher and SIR Installer.
+- **Self-Healing Profiles** — Automatically scans instance directories for missing or corrupt files (mods, shaders, packs, configs) against `delta_manifest.json` and fetches ONLY the missing files directly from GitHub (`raw.githubusercontent.com` / Releases CDN), eliminating multi-gigabyte re-downloads.
+- **CI Test Matrix 100% Green** — Calibrated modern JVM argument builder in `native_runner.py` to default to tuned G1GC while supporting `-XX:+UseZGC -XX:+ZGenerational` in custom flags, ensuring flawless automated CI passes across all 6 matrix jobs (Ubuntu & Windows, Python 3.11, 3.12, 3.13).
+
 ### 🎮 High-Performance Profile Matrix Consolidation
 - **Consolidated 6-Tier Architecture** — Calibrated 6 high-performance profiles:
   - `26.2-ultra`: Maximum visual fidelity with Patrix 3D POM models, physical caustics, and Master SIR Shaders.

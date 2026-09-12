@@ -314,6 +314,25 @@ class LauncherBridgeAPI:
         """Alias for open_instance_mods_folder with canonical default instance."""
         return self.open_instance_mods_folder(inst_id)
 
+    def check_and_repair_instance_delta(self, inst_id="26.2-ultra"):
+        """
+        Uses GitHubDeltaFetcher to inspect the target instance's required files
+        against delta_manifest.json and automatically fetches any missing or corrupt
+        files individually from GitHub without re-downloading the entire profile.
+        """
+        try:
+            from shared_core.github_fetcher import GitHubDeltaFetcher
+            fetcher = GitHubDeltaFetcher(root_dir=self.root_dir)
+            inst = self.instances._find_instance(inst_id)
+            dir_name = (inst.get("instance_id") or inst.get("dir_name", "26.2-ultra")) if inst else str(inst_id)
+            inst_dir = os.path.join(self.instances_dir, dir_name)
+            if not os.path.isdir(inst_dir):
+                inst_dir = os.path.join(self.root_dir, "instances", dir_name)
+            res = fetcher.ensure_instance_files(dir_name, inst_dir)
+            return {"success": True, "result": res}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
+
     def apply_video_preset(self, inst_id="sir-26-ultra", preset_name="balanced"):
         return self.instances.apply_video_preset(inst_id, preset_name)
 

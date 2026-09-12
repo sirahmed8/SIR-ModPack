@@ -184,10 +184,25 @@ class InstallerBridgeAPI:
         
         return {
             "has_local_package": has_local,
+            "has_cloud_fallback": True,
             "release_url": "https://github.com/sirahmed8/SIR-ModPack/releases",
             "package_name": "SIR_Package.zip",
-            "message": "Local installation assets verified." if has_local else "Offline package archive (SIR_Package.zip) was not found in the current folder. Download it from GitHub Releases to proceed."
+            "message": "Local installation assets verified." if has_local else "Local offline package not detected. GitHub Delta Fetcher active (will stream required missing files directly from GitHub on demand)."
         }
+
+    def check_and_heal_missing_files(self, instance_id="26.2-ultra", dest_dir=None):
+        """
+        Scans instance directory for any missing files against delta_manifest.json,
+        and uses GitHubDeltaFetcher to fetch only missing files individually from GitHub.
+        """
+        try:
+            from shared_core.github_fetcher import GitHubDeltaFetcher
+            fetcher = GitHubDeltaFetcher(root_dir=self.root_dir)
+            target_dir = dest_dir or os.path.join(self.installed_path, "instances", instance_id)
+            res = fetcher.ensure_instance_files(instance_id, target_dir)
+            return {"success": True, "result": res}
+        except Exception as e:
+            return {"success": False, "error": str(e)}
 
     def get_hardware_specs(self):
         """Discovers accurate, non-hardcoded Windows hardware specifications using pure Win32 APIs (ZERO CMD windows)."""

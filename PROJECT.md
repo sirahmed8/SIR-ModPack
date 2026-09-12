@@ -23,15 +23,21 @@ The SIR Minecraft Ecosystem is an integrated high-performance desktop and cloud 
    - Legacy 1.8.9 Runtimes: Forge 1.8.9 PvP profiles (`1.8.9-ultra`, `1.8.9-balanced`, `1.8.9-performance`).
    - Lunar Client Bridge: Bi-directional synchronization profiles linking launcher instances with Lunar Client's Ichor engine.
    - Clean modsets, strictly preserving user configuration files (`options.txt`, `optionsof.txt`, shaderpacks).
-4. **Desktop Applications Tier (`development/`)**:
-   - `SIR Launcher Pro`: PyWebView native desktop client with Win32 kernel Task Manager telemetry, folder foregrounding, interactive welcome engine selector, download manager tray, instant Google OAuth, and responsive UI.
-   - `SIR Server Manager Pro`: Background server supervisor with CSS spring animations, restart scheduler, automated world snapshots, and live TPS/RAM metrics.
-   - `SIR Installer Pro`: Multi-stage setup wizard with fluid spring transitions, pre-flight hardware matrix, Adoptium OpenJDK 25/8 silent downloader, and custom drive selection.
-5. **Web Platform Tier (`website-next/`)**:
-   - Next.js 16.3.2 static export (35 routes) deployed to Firebase Hosting (`sir-modpack.web.app`).
+4. **Desktop Applications Tier** (`development/`):
+   - `SIR Launcher` (`development/launcher_source/`, `development/launcher_core/`, `development/launcher_ui/`): PyWebView native desktop client with Win32 kernel Task Manager telemetry, folder foregrounding, interactive welcome engine selector, download manager tray, instant Google OAuth, and GitHub Single-File Delta Fetcher.
+   - `SIR Server Manager` (`development/server_source/`, `development/server_core/`, `development/server_ui/`): Background server supervisor with CSS spring animations, restart scheduler, automated world snapshots, and live TPS/RAM metrics.
+   - `SIR Installer` (`development/installer_source/`, `development/installer_core/`, `development/installer_ui/`): Multi-stage setup wizard with fluid spring transitions, pre-flight hardware matrix, Adoptium OpenJDK 25/8 silent downloader, custom drive selection, and GitHub Single-File Delta Auto-Healer.
+5. **In-Game Client Engine & Optics Tier**:
+   - `sir-mod-26.2-1.0.0.jar`: Native Fabric client mod bound to Right-Shift (`RSHIFT`) with 9 competitive toggles (FPS, CPS, Ping, Armor/Status, Keystrokes, 1.7 Block-Hitting, Dynamic C-Zoom, Toggle Sprint/Sneak, 0ms Hit Registration).
+   - Dedicated Shaders (`SIR Modern Shader.zip` with unbloomed sharp nametags & `SIR Legacy Shader.zip`).
+   - Dedicated Resource Packs (`SIR Modern.zip` with 26.2 pack format 88 & `SIR Legacy.zip` with authentic PNG pack icon).
+6. **Web Platform Tier** (`website-next/`):
+   - Next.js 16.3.2 static export (37 routes) deployed to Firebase Hosting (`sir-modpack.web.app`).
    - Deep-linking (`sirlauncher://`) connecting web catalog to native desktop client.
-6. **Automated Verification & Test Harness (`tests/`, `tests_e2e/`, `ecosystem_doctor.py`)**:
-   - 403 unit tests in `tests/`, 39+ E2E tests in `tests_e2e/`, 100% ecosystem health certified.
+7. **Packaging, Invariants & Verification Tier**:
+   - Master test suite (403 unit tests in `tests/`, 39+ E2E tests in `tests_e2e/`) with 100% green CI matrix across Ubuntu and Windows on Python 3.11, 3.12, 3.13.
+   - System Invariants: Drive D free space $\ge 22.00\text{ GB}$, options.txt GLFW key standards, zero unclosed handles/sockets.
+   - PyInstaller compilation via `build_ecosystem.py` targeting synchronized distribution paths.
 
 ## Feature Inventory
 | # | Feature | Description | Milestone | Source |

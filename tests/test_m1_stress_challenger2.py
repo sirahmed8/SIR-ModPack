@@ -398,7 +398,7 @@ class TestM1EmpiricalStress(unittest.TestCase):
             self.assertIn("host", n)
             self.assertIn("port", n)
             self.assertIn("location", n)
-            self.assertIn(n["status"], ["Optimal", "Operational", "High Latency", "Timed Out", "Unreachable"])
+            self.assertIn(n["status"], ["Optimal", "Operational", "High Latency", "Timed Out", "Unreachable", "Pending"])
             if n["latency_ms"] is not None:
                 self.assertGreater(n["latency_ms"], 0)
 

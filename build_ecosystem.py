@@ -13,6 +13,22 @@ BUILD = os.path.join(ROOT, 'build_apps')
 
 SPECS = ['SIR Launcher.spec', 'SIR Server Manager.spec', 'SIR Installer.spec']
 
+def link_or_copy(src, dst):
+    if os.path.abspath(src) == os.path.abspath(dst):
+        return
+    if os.path.splitdrive(src)[0].upper() == os.path.splitdrive(dst)[0].upper():
+        try:
+            if os.path.exists(dst):
+                if os.stat(src).st_ino == os.stat(dst).st_ino:
+                    return
+                os.remove(dst)
+            os.link(src, dst)
+            return
+        except Exception:
+            pass
+    shutil.copy2(src, dst)
+
+
 def main():
     print('=== SIR ECOSYSTEM MASTER BUILD PIPELINE ===')
     os.makedirs(DIST, exist_ok=True)
@@ -22,18 +38,21 @@ def main():
     if not os.path.isfile(pyinstaller_exe):
         pyinstaller_exe = "pyinstaller"
 
-    for spec in SPECS:
-        spec_path = os.path.join(ROOT, spec)
-        if not os.path.isfile(spec_path):
-            print(f'ERROR: Missing {spec_path}', file=sys.stderr)
-            continue
-        print(f'[*] Compiling {spec}...')
-        cmd = ["py", "-3.13", "-m", "PyInstaller", "--clean", "--noconfirm", spec_path, "--distpath", DIST, "--workpath", BUILD]
-        res = subprocess.run(cmd, cwd=ROOT)
-        if res.returncode != 0:
-            print(f'[-] Build failed for {spec}', file=sys.stderr)
-            return res.returncode
-        print(f'[+] Successfully built {spec}')
+    sync_only = "--sync-only" in sys.argv
+
+    if not sync_only:
+        for spec in SPECS:
+            spec_path = os.path.join(ROOT, spec)
+            if not os.path.isfile(spec_path):
+                print(f'ERROR: Missing {spec_path}', file=sys.stderr)
+                continue
+            print(f'[*] Compiling {spec}...')
+            cmd = ["py", "-3.13", "-m", "PyInstaller", "--clean", "--noconfirm", spec_path, "--distpath", DIST, "--workpath", BUILD]
+            res = subprocess.run(cmd, cwd=ROOT)
+            if res.returncode != 0:
+                print(f'[-] Build failed for {spec}', file=sys.stderr)
+                return res.returncode
+            print(f'[+] Successfully built {spec}')
 
     exes = ['SIR Launcher.exe', 'SIR Server Manager.exe', 'SIR Installer.exe', 'SIR_Icon.ico']
     targets = [
@@ -41,17 +60,22 @@ def main():
         os.path.join(ROOT, 'public_repo'),
         os.path.join(ROOT, 'SIR Package'),
         os.path.join(ROOT, 'SIR Launcher'),
-        os.path.expandvars(r'%APPDATA%\SIR ModPack')
+        os.path.expandvars(r'%APPDATA%\SIR ModPack'),
+        os.path.expandvars(r'%APPDATA%\SIR ModPack\SIR Launcher'),
+        os.path.join(ROOT, 'website-next', 'public', 'share'),
+        os.path.join(ROOT, 'website-next', 'out', 'share')
     ]
 
     for item in exes:
         src = os.path.join(DIST, item) if item.endswith('.exe') else os.path.join(ROOT, item)
+        if not os.path.exists(src) and item.endswith('.exe'):
+            src = os.path.join(ROOT, item)
         if os.path.exists(src):
             for t in targets:
                 if os.path.isdir(t):
                     dst = os.path.join(t, item)
                     try:
-                        shutil.copy2(src, dst)
+                        link_or_copy(src, dst)
                         print(f'  -> Synchronized {item} to {t}')
                     except Exception as e:
                         print(f'  -> Warning on copy to {dst}: {e}')

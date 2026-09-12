@@ -1,0 +1,2168 @@
+{
+  "modpack": "SIR ModPack Ultimate",
+  "version": "1.0.0",
+  "total_mods": 216,
+  "engine": "Fabric 0.16.10 (Minecraft 1.21.4)",
+  "mods": [
+    {
+      "filename": "1.0.0-better_maces-mod-26.2.jar",
+      "name": "Better Mace",
+      "category": "Gameplay & Utility",
+      "size_kb": 54.0,
+      "status": "active",
+      "author": "ElGeroIngles",
+      "desc": "This datapack/mod makes so the smash attack of the mace feels like a real smash attack.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "AmbientEnvironment-fabric-26.2-26.2.1.jar",
+      "name": "AmbientEnvironment",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.5,
+      "status": "active",
+      "author": "Jaredlll08",
+      "desc": "Adds more ambiance to the game.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "AmbientSounds_FABRIC_v6.3.6_mc26.2.jar",
+      "name": "AmbientSounds",
+      "category": "Audio & Immersion",
+      "size_kb": 82833.4,
+      "status": "active",
+      "author": "CreativeMD",
+      "desc": "Expands minecraft's ambient sounds.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "AnimatedHearts-Fabric-1.8.1.jar",
+      "name": "Animated Hearts",
+      "category": "Gameplay & Utility",
+      "size_kb": 314.9,
+      "status": "active",
+      "author": "waa132",
+      "desc": "Adds animated health hearts and visual HUD effects",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "AsyncParticles-26.2.2.4+26.2.jar",
+      "name": "AsyncParticles",
+      "category": "Visuals & Shaders",
+      "size_kb": 644.7,
+      "status": "active",
+      "author": "Harvey_Husky",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "AttributeFix-fabric-MC26.2-26.2.0.1.jar",
+      "name": "AttributeFix",
+      "category": "Gameplay & Utility",
+      "size_kb": 20.4,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Extends the maximum attribute ranges to allow for higher values.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BadOptimizations-2.4.1-26.2-fabric.jar",
+      "name": "BadOptimizations",
+      "category": "Optimization",
+      "size_kb": 58.4,
+      "status": "active",
+      "author": "Thosea",
+      "desc": "Optimization mod that focuses on things other than rendering",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BetterAdvancements-Fabric-26.2-0.6.0.72.jar",
+      "name": "Better Advancements",
+      "category": "Gameplay & Utility",
+      "size_kb": 101.3,
+      "status": "active",
+      "author": "way2muchnoise",
+      "desc": "Improvements to the advancements screen.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BetterAnimationsCollection-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Better Animations Collection",
+      "category": "Gameplay & Utility",
+      "size_kb": 161.3,
+      "status": "active",
+      "author": "KodaichiZero",
+      "desc": "Changing the in-game models to allow for better animations and subtle effects.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BetterF3-19.0.0-Fabric-26.2.jar",
+      "name": "BetterF3",
+      "category": "Gameplay & Utility",
+      "size_kb": 696.8,
+      "status": "active",
+      "author": "cominixo",
+      "desc": "Replaces Minecraft's original debug HUD with a highly customizable, more human-readable HUD.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BetterGrassify-1.8.7+fabric.26.2.jar",
+      "name": "Bettergrassify",
+      "category": "Gameplay & Utility",
+      "size_kb": 86.8,
+      "status": "active",
+      "author": "Community Maintainers",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Bookshelf-fabric-MC26.2-26.2.0.4.jar",
+      "name": "Bookshelf",
+      "category": "Gameplay & Utility",
+      "size_kb": 300.6,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Bookshelf is a library mod that provides code, frameworks, and utilities for other mods. Many mods make use of Bookshelf and are powered by its code.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BorderlessFullscreen-v2.4.1-mc26.2.jar",
+      "name": "Borderless Fullscreen",
+      "category": "Gameplay & Utility",
+      "size_kb": 198.0,
+      "status": "active",
+      "author": "Bestsoft100",
+      "desc": "More configurable fullscreen mode",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "BridgingMod-2.7.0+26.2.fabric-release.jar",
+      "name": "Bridging Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 5799.8,
+      "status": "active",
+      "author": "CG360",
+      "desc": "Adds bridging assist similar to Bedrock & Quark's building mechanics",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Clumps-fabric-26.2-26.2.1.jar",
+      "name": "Clumps",
+      "category": "Gameplay & Utility",
+      "size_kb": 19.5,
+      "status": "active",
+      "author": "Jaredlll08",
+      "desc": "Clumps xp orbs together.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Controlling-fabric-26.2-26.2.2.jar",
+      "name": "Controlling",
+      "category": "Gameplay & Utility",
+      "size_kb": 84.6,
+      "status": "active",
+      "author": "Jaredlll08",
+      "desc": "Adds the ability to search for keybinds using their name in the KeyBinding menu, this allows players to easily find a key binding in the menu.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "CreativeCore_FABRIC_v2.14.16_mc26.2.jar",
+      "name": "CreativeCore",
+      "category": "Gameplay & Utility",
+      "size_kb": 1348.7,
+      "status": "active",
+      "author": "CreativeMD",
+      "desc": "A simple but powerful coremod.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "DarkPaintings-fabric-MC26.2-26.2.0.1.jar",
+      "name": "DarkPaintings",
+      "category": "Gameplay & Utility",
+      "size_kb": 57.8,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Adds a variety of new paintings to the game.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "DarkUtilities-fabric-MC26.2-26.2.0.1.jar",
+      "name": "DarkUtilities",
+      "category": "Gameplay & Utility",
+      "size_kb": 241.9,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "A bit of everything.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "EasyAnvils-v26.2.2-mc26.2.x-Fabric.jar",
+      "name": "Easy Anvils",
+      "category": "Gameplay & Utility",
+      "size_kb": 114.9,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Overhauled anvils with stored items, fairer costs, and no more frustrating repair penalties.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "EasyMagic-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Easy Magic",
+      "category": "Gameplay & Utility",
+      "size_kb": 123.8,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Enchanting tables as they always should have been! Items stay after closing, and easy re-rolls.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ExplorersCompass-26.2-2.5.1-fabric.jar",
+      "name": "Explorer's Compass",
+      "category": "Gameplay & Utility",
+      "size_kb": 174.1,
+      "status": "active",
+      "author": "ChaosTheDude",
+      "desc": "Search for and locate structures anywhere in the world.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "FallingTree-26.2-25.jar",
+      "name": "FallingTree",
+      "category": "Gameplay & Utility",
+      "size_kb": 481.7,
+      "status": "active",
+      "author": "Rakambda",
+      "desc": "Change the way you cut trees.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "FastItemFrames-v26.2.1-mc26.2.x-Fabric.jar",
+      "name": "Fast Item Frames",
+      "category": "Gameplay & Utility",
+      "size_kb": 99.2,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Supercharged item frames! Less lag, better performance, and now they can change color and vanish!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric.jar",
+      "name": "Forge Config API Port",
+      "category": "Core & Libraries",
+      "size_kb": 596.5,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Provides NeoForge's & Forge's config systems to other modding ecosystems. Designed for a multi-loader architecture.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Geophilic v3.6.mod-26.2.jar",
+      "name": "Geophilic",
+      "category": "Gameplay & Utility",
+      "size_kb": 885.3,
+      "status": "active",
+      "author": "bebebea_loste",
+      "desc": "A subtle-ish overhaul of vanilla Overworld biomes.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "GlitchCore-fabric-26.2-26.2.0.0.0.jar",
+      "name": "GlitchCore",
+      "category": "Gameplay & Utility",
+      "size_kb": 327.9,
+      "status": "active",
+      "author": "Adubbz",
+      "desc": "A library mod aimed at abstracting mod loaders and providing various utilities for our mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Gnetum-4.5.3+26.2-fabric.jar",
+      "name": "Gnetum",
+      "category": "Gameplay & Utility",
+      "size_kb": 89.5,
+      "status": "active",
+      "author": "decce",
+      "desc": "Minecraft mod that distributes HUD updates over multiple frames to improve performance.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "IAS-9.0.7+26.2-fabric.jar",
+      "name": "In-Game Account Switcher",
+      "category": "Gameplay & Utility",
+      "size_kb": 303.0,
+      "status": "active",
+      "author": "VidTu",
+      "desc": "Allows you to change which account you are signed in to in-game without restarting Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Iceberg-26.2-fabric-1.4.2.1.jar",
+      "name": "toml",
+      "category": "Core & Libraries",
+      "size_kb": 592.6,
+      "status": "active",
+      "author": "Community Maintainers",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ImmediatelyFast-Fabric-1.16.3+26.2.jar",
+      "name": "ImmediatelyFast",
+      "category": "Optimization",
+      "size_kb": 93.0,
+      "status": "active",
+      "author": "RK_01",
+      "desc": "Speed up and optimize immediate mode rendering in Minecraft",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "InventoryProfilesNext-fabric-26.2-2.3.6.jar",
+      "name": "Inventory Profiles Next",
+      "category": "Gameplay & Utility",
+      "size_kb": 1449.1,
+      "status": "active",
+      "author": "Mirinimi",
+      "desc": "Inventory Profiles Next",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ItemPhysic_FABRIC_v1.8.15_mc26.2.jar",
+      "name": "ItemPhysic",
+      "category": "Gameplay & Utility",
+      "size_kb": 60.1,
+      "status": "active",
+      "author": "CreativeMD",
+      "desc": "Enhances the rendering of items and introduces some more physics.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Ixeris-4.6.5+26.2-fabric.jar",
+      "name": "Ixeris",
+      "category": "Gameplay & Utility",
+      "size_kb": 743.7,
+      "status": "active",
+      "author": "decce",
+      "desc": "Buffered raw input and threaded event polling",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Jade-mc26.2-Fabric-26.2.11.jar",
+      "name": "Jade",
+      "category": "Gameplay & Utility",
+      "size_kb": 1039.5,
+      "status": "active",
+      "author": "Snownee",
+      "desc": "Minecraft mod shows what you are looking at. (Hwyla fork)",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "JustEnoughProfessions-fabric-26.2-12.0.0.jar",
+      "name": "Just Enough Professions (JEP)",
+      "category": "Gameplay & Utility",
+      "size_kb": 25.0,
+      "status": "active",
+      "author": "Mrbysco",
+      "desc": "Adds info about professions to JEI",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "JustEnoughResources-Fabric-26.2-1.11.0.43.jar",
+      "name": "Just Enough Resources",
+      "category": "Gameplay & Utility",
+      "size_kb": 251.3,
+      "status": "active",
+      "author": "way2muchnoise",
+      "desc": "Adds Resources and Mob Drops to JEI",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Ksyxis-1.4.3.jar",
+      "name": "Ksyxis",
+      "category": "Gameplay & Utility",
+      "size_kb": 26.3,
+      "status": "active",
+      "author": "VidTu",
+      "desc": "Speed up your world loading by removing unneeded chunks.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "LeavesBeGone-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Leaves Be Gone",
+      "category": "Gameplay & Utility",
+      "size_kb": 41.4,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Quick leaf decay from cutting down trees. Built for great performance and mod compat!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "MaxHealthFix-fabric-MC26.2-26.2.0.1.jar",
+      "name": "MaxHealthFix",
+      "category": "Gameplay & Utility",
+      "size_kb": 18.4,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Fixes the infamous MC-17876 bug. This bug would cause players with above 20 health to be reset when the restart the game.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "MouseTweaks-fabric-mc26.2-2.31.jar",
+      "name": "Mouse Tweaks",
+      "category": "Gameplay & Utility",
+      "size_kb": 74.1,
+      "status": "active",
+      "author": "Ivan Molodetskikh (YaLTeR)",
+      "desc": "A mod that enhances the inventory management by adding various additional functions to the usual mouse buttons.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "NaturesCompass-26.2-2.5.1-fabric.jar",
+      "name": "Nature's Compass",
+      "category": "Gameplay & Utility",
+      "size_kb": 228.7,
+      "status": "active",
+      "author": "ChaosTheDude",
+      "desc": "Search for a biome and get information about it.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "OverflowingBars-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Overflowing Bars",
+      "category": "Gameplay & Utility",
+      "size_kb": 86.0,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Expand health, armor and armor toughness bars beyond vanilla. Nice and compact without confusing colors.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PickUpNotifier-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Pick Up Notifier",
+      "category": "Gameplay & Utility",
+      "size_kb": 71.4,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Be notified about all the things you've just collected.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PigPen-fabric-MC26.2-26.2.0.1.jar",
+      "name": "PigPen",
+      "category": "Gameplay & Utility",
+      "size_kb": 45.5,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "The classic Pig Pen Cipher now in Minecraft!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PlayerAnimationLibMerged-1.2.6+mc.26.2.jar",
+      "name": "Player Animation Library",
+      "category": "Gameplay & Utility",
+      "size_kb": 407.0,
+      "status": "active",
+      "author": "Zigy",
+      "desc": "A library that allows mods to animate the player, in a way that doesn't conflict with other mods. (and much more!)",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PresenceFootsteps-1.13.3+26.2.jar",
+      "name": "Presence Footsteps",
+      "category": "Audio & Immersion",
+      "size_kb": 5625.0,
+      "status": "active",
+      "author": "Hurricaaane (Ha3)",
+      "desc": "An overly complicated sound mod.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PrickleMC-fabric-MC26.2-26.2.0.3.jar",
+      "name": "PrickleMC",
+      "category": "Gameplay & Utility",
+      "size_kb": 82.9,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Bringing Prickle, the JSON based configuration file format to Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "PuzzlesLib-v26.2.3-mc26.2.x-Fabric.jar",
+      "name": "Puzzles Lib",
+      "category": "Core & Libraries",
+      "size_kb": 1127.1,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Why is it called Puzzles? That's the puzzle.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "RebornCore-6.1.0.jar",
+      "name": "Reborn Core",
+      "category": "Gameplay & Utility",
+      "size_kb": 598.3,
+      "status": "active",
+      "author": "Team Reborn",
+      "desc": "Reborn Core is a library used for many of the Tech Reborn team's mods, including Tech Reborn, Quantum Storage, Fluxed Redstone, Hardcore Map Reset, and many more.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ResourcePackOverrides-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Resource Pack Overrides",
+      "category": "Gameplay & Utility",
+      "size_kb": 56.8,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Ensures important resource packs stay always active and helps clean up the pack selection screen.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ResourcefulConfig-5.0.0.jar",
+      "name": "Resourcefulconfig",
+      "category": "Gameplay & Utility",
+      "size_kb": 433.6,
+      "status": "active",
+      "author": "ThatGravyBoat",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ResourcefulLib-5.0.3.jar",
+      "name": "Resourceful Lib",
+      "category": "Core & Libraries",
+      "size_kb": 444.0,
+      "status": "active",
+      "author": "ThatGravyBoat",
+      "desc": "Library Mod by Team Resourceful",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Runelic-fabric-MC26.2-26.2.0.1.jar",
+      "name": "Runelic",
+      "category": "Gameplay & Utility",
+      "size_kb": 65.2,
+      "status": "active",
+      "author": "Darkhax",
+      "desc": "Adds the Runelic font system to the game.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "SIR_Core-fabric-26.2.jar",
+      "name": "SIR Core",
+      "category": "Core & Libraries",
+      "size_kb": 3.7,
+      "status": "active",
+      "author": "SIR Ahmed",
+      "desc": "Official core ecosystem mod for SIR Ultimate. Features 3-Way Shader/POM synergy, real-time Win32 hardware bridge, JVM Memory Governor, and FPS acceleration.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ScalableLux-fabric-0.3.0-alpha.0.3-all.jar",
+      "name": "ScalableLux",
+      "category": "Optimization",
+      "size_kb": 186.7,
+      "status": "active",
+      "author": "Spottedleaf",
+      "desc": "Rewrites the light engine to fix lighting performance and lighting errors",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "Searchables-fabric-26.2-1.0.1.jar",
+      "name": "Searchables",
+      "category": "Gameplay & Utility",
+      "size_kb": 77.1,
+      "status": "active",
+      "author": "Jaredlll08",
+      "desc": "A library mod to facilitate adding search bars with auto complete and search types.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "SereneSeasons-fabric-26.2-26.1.2.0.4.jar",
+      "name": "SereneSeasons",
+      "category": "Gameplay & Utility",
+      "size_kb": 403.5,
+      "status": "active",
+      "author": "Adubbz",
+      "desc": "Adds seasons with changing colors, temperature shifting, and more!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ShoulderSurfing-Fabric-26.2-5.0.7.jar",
+      "name": "Shoulder Surfing Reloaded",
+      "category": "Gameplay & Utility",
+      "size_kb": 335.7,
+      "status": "active",
+      "author": "Exopandora",
+      "desc": "Shoulder Surfing Reloaded is a highly configurable third person camera mod for minecraft, originally made by Sabar.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "TradingPost-v26.2.0-mc26.2.x-Fabric.jar",
+      "name": "Trading Post",
+      "category": "Gameplay & Utility",
+      "size_kb": 101.2,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Rule the village! Trade with every villager at once!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "UniLib-1.2.1+26.2-fabric.jar",
+      "name": "UniLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 1687.8,
+      "status": "active",
+      "author": "CDAGaming",
+      "desc": "A common set of Utilities, designed for over 50 versions of Minecraft!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "VisualWorkbench-v26.2.1-mc26.2.x-Fabric.jar",
+      "name": "Visual Workbench",
+      "category": "Gameplay & Utility",
+      "size_kb": 66.5,
+      "status": "active",
+      "author": "Fuzs",
+      "desc": "Items stay inside crafting tables and are also rendered on top. It's really fancy!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "almanac-fabric-26.2-1.26.7.3.jar",
+      "name": "Almanac",
+      "category": "Gameplay & Utility",
+      "size_kb": 1005.7,
+      "status": "active",
+      "author": "frikinjay",
+      "desc": "Loader independent library mod for frikinjay's mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "alternate-current-mc26.2-1.9.0.jar",
+      "name": "Alternate Current",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.7,
+      "status": "active",
+      "author": "Space Walker",
+      "desc": "An efficient and non-locational redstone dust implementation.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "animatica-0.6.3+26.2.jar",
+      "name": "Animatica Refabricated",
+      "category": "Gameplay & Utility",
+      "size_kb": 114.7,
+      "status": "active",
+      "author": "FoundationGames, coredex-source",
+      "desc": "Allow for animating more game textures using the MCPatcher/OptiFine animation format",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "appleskin-fabric-mc26.2-3.0.10.jar",
+      "name": "AppleSkin",
+      "category": "Gameplay & Utility",
+      "size_kb": 177.4,
+      "status": "active",
+      "author": "squeek502",
+      "desc": "Adds various food-related HUD improvements",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "architectury-fabric-21.0.7.jar",
+      "name": "Architectury",
+      "category": "Core & Libraries",
+      "size_kb": 565.6,
+      "status": "active",
+      "author": "shedaniel",
+      "desc": "An intermediary api aimed to ease developing multiplatform mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "asynclogger-2.2.2+26.1.2-fabric.jar",
+      "name": "Async Logger",
+      "category": "Gameplay & Utility",
+      "size_kb": 570.5,
+      "status": "active",
+      "author": "decce",
+      "desc": "Asynchronous logging and efficient filtering - performance improvements and utility for keeping your logs clean",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "atmospherics-2.6.6-mc-26.2.jar",
+      "name": "Atmospherics",
+      "category": "Gameplay & Utility",
+      "size_kb": 3992.9,
+      "status": "active",
+      "author": "Beash",
+      "desc": "An editor for fog, sky, clouds, haze, stars, comets, and more...  [To open the menu, press \"B\"]",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "audiothrottle-1.0.0-26.2.jar",
+      "name": "AudioThrottle",
+      "category": "Audio & Immersion",
+      "size_kb": 7.2,
+      "status": "active",
+      "author": "Noslow",
+      "desc": "Improves the Minecraft sound engine",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "baguettelib-26.2-Fabric-2.0.4.jar",
+      "name": "BaguetteLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 99.5,
+      "status": "active",
+      "author": "Leclowndu93150",
+      "desc": "A library mod about adding more events into the modding API (and more stuff)",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "balm-fabric-26.2-26.2.0.6.jar",
+      "name": "Balm",
+      "category": "Core & Libraries",
+      "size_kb": 1168.6,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Abstraction Layer (but not really) for Blay's multiplatform mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "better-compatability-checker-fabric-26.2.0.1.jar",
+      "name": "Better Compatibility Checker",
+      "category": "Gameplay & Utility",
+      "size_kb": 30.0,
+      "status": "active",
+      "author": "Gaz(Gaz492)",
+      "desc": "Modpack compatibility checker for servers",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "better-villager-animations-fabric-26.2.jar",
+      "name": "Better Villager Animations",
+      "category": "Gameplay & Utility",
+      "size_kb": 1715.5,
+      "status": "active",
+      "author": "Haider X",
+      "desc": "Original, standalone procedural character animation. First milestone: the vanilla villager.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "bettercombat-fabric-3.2.2+26.2.jar",
+      "name": "Better Combat",
+      "category": "Gameplay & Utility",
+      "size_kb": 908.8,
+      "status": "active",
+      "author": "Daedelus",
+      "desc": "Easy, spectacular and fun melee combat system from Minecraft Dungeons.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "betterfpsdist-fabric-26.2-6.2.jar",
+      "name": "Better FPS distance Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 19.0,
+      "status": "active",
+      "author": "Someaddons",
+      "desc": "Grants more fps by smarter render distances",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "c2me-fabric-mc26.2-0.4.2-alpha.0.43.jar",
+      "name": "Concurrent Chunk Management Engine",
+      "category": "Optimization",
+      "size_kb": 3742.9,
+      "status": "active",
+      "author": "RelativityMC",
+      "desc": "A Fabric mod designed to improve the chunk performance of Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "carryon-fabric-26.2-2.11.0.jar",
+      "name": "Carry On",
+      "category": "Gameplay & Utility",
+      "size_kb": 370.8,
+      "status": "active",
+      "author": "Tschipp",
+      "desc": "Carry On is a simple mod that improves game interaction by allowing players to pick up, carry, and place single block Tile Entities using only their empty hands.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "catalogue-fabric-26.2-1.12.3.jar",
+      "name": "Catalogue",
+      "category": "Gameplay & Utility",
+      "size_kb": 301.6,
+      "status": "active",
+      "author": "MrCrayfish",
+      "desc": "A modern mod list menu designed for all modloaders",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "chat_heads-1.2.8-fabric-26.1.jar",
+      "name": "Chat Heads",
+      "category": "Gameplay & Utility",
+      "size_kb": 91.1,
+      "status": "active",
+      "author": "dzwdz",
+      "desc": "See who are you chatting with!\nThis mod adds player heads next to their chat messages.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "chatanimation-fabric-1.3.0+mc26.2.jar",
+      "name": "ChatAnimation",
+      "category": "Gameplay & Utility",
+      "size_kb": 388.6,
+      "status": "active",
+      "author": "Ezzenix",
+      "desc": "Adds animations to the chat.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "cherishedworlds-fabric-17.0.0+26.2.jar",
+      "name": "Cherished Worlds",
+      "category": "Gameplay & Utility",
+      "size_kb": 577.0,
+      "status": "active",
+      "author": "Illusive Soulworks",
+      "desc": "Favorite/pin/bookmark certain worlds, which will always be at the top of the list and cannot be deleted.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "clickadv-fabric-26.2-3.9.jar",
+      "name": "Clickable Advancements Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 21.1,
+      "status": "active",
+      "author": "Someaddons",
+      "desc": "Lets you click on advancements in the Chat",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "clientcrafting-fabric-26.1-2.1.jar",
+      "name": "clientcrafting Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 11.6,
+      "status": "active",
+      "author": "",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "cloth-config-26.2.155.jar",
+      "name": "Cloth Config v26.2",
+      "category": "Core & Libraries",
+      "size_kb": 1097.0,
+      "status": "active",
+      "author": "shedaniel",
+      "desc": "An API for config screens.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "collective-26.2.0-8.39.jar",
+      "name": "Collective",
+      "category": "Core & Libraries",
+      "size_kb": 1061.8,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Collective is a shared library with common code for all of Serilum's mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "comforts-fabric-16.0.0+26.2.jar",
+      "name": "Comforts",
+      "category": "Gameplay & Utility",
+      "size_kb": 945.2,
+      "status": "active",
+      "author": "Illusive Soulworks",
+      "desc": "Adds sleeping bags and hammocks for, respectively, portability and turning day to night, without setting new spawns.\\nComes in 16 different colors!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "configurable-3.5.2+26.2-fabric.jar",
+      "name": "Configurable",
+      "category": "Gameplay & Utility",
+      "size_kb": 531.7,
+      "status": "active",
+      "author": "Bawnorton",
+      "desc": "Config library that allows decentralised settings in a mod",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "connectedglass-1.1.14-fabric-mc26.2.jar",
+      "name": "Connected Glass",
+      "category": "Visuals & Shaders",
+      "size_kb": 808.1,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Connected Glass adds new types of glass with connecting textures!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "continuity-3.0.1+26.2.jar",
+      "name": "Continuity",
+      "category": "Visuals & Shaders",
+      "size_kb": 1015.6,
+      "status": "active",
+      "author": "PepperCode1",
+      "desc": "Continuity is a Minecraft mod that allows resource packs that use the OptiFine connected textures format or OptiFine emissive textures format (only for blocks and item models) to work without OptiFine.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "controlify-3.4.1+mc26.2-universal.jar",
+      "name": "Controlify",
+      "category": "Gameplay & Utility",
+      "size_kb": 6169.7,
+      "status": "active",
+      "author": "isXander",
+      "desc": "The most advanced controller mod for Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "cristellib-fabric-26.2-3.1.10.jar",
+      "name": "Cristel Lib",
+      "category": "Gameplay & Utility",
+      "size_kb": 573.5,
+      "status": "active",
+      "author": "Cristelknight",
+      "desc": "A Library mod for easy structure config and runtime datapacks.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "cupboard-fabric-26.2-4.1.jar",
+      "name": "cupboard",
+      "category": "Gameplay & Utility",
+      "size_kb": 37.0,
+      "status": "active",
+      "author": "Someaddon",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "cyclopscore-26.2-fabric-1.30.0-1066.jar",
+      "name": "Cyclops Core",
+      "category": "Gameplay & Utility",
+      "size_kb": 557.0,
+      "status": "active",
+      "author": "rubensworks (aka kroeser)",
+      "desc": "Coremod for Integrated Dynamics, EvilCraft and others.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "debugify-26.2.0.0.jar",
+      "name": "Debugify",
+      "category": "Gameplay & Utility",
+      "size_kb": 360.0,
+      "status": "active",
+      "author": "isXander",
+      "desc": "Fixes Minecraft bugs found on the bug tracker\nCredits:\nj-Tai's TieFix - Code used licensed under LGPLv3\n         FlashyReese's Sodium Extra - Code used licensed under LGPLv3\n         Ampflower's 2x2 Surrounded Saplings Fix - Code used licensed under Zlib\n         NoahvdAa's Thorium - Code used licensed under LGPLv3\n         Moulberry's MoulberryTweaks - Code used licensed under MIT",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "divein-0.1.17-26.2.jar",
+      "name": "Divein",
+      "category": "Gameplay & Utility",
+      "size_kb": 109.1,
+      "status": "active",
+      "author": "NightEpiphany",
+      "desc": "Custom animation to dive into water & lava!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "doubledoors-26.2.0-7.2.jar",
+      "name": "Double Doors",
+      "category": "Gameplay & Utility",
+      "size_kb": 76.4,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Adds the ability for identical double doors, trapdoors and fence gates to be opened simultaneously via click or pressure plates and buttons.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "dynamic-fps-3.11.9+minecraft-26.2.0-fabric.jar",
+      "name": "Dynamic FPS",
+      "category": "Gameplay & Utility",
+      "size_kb": 183.9,
+      "status": "active",
+      "author": "juliand665",
+      "desc": "Reduce resource usage while Minecraft is in the background or idle.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "e4mc-fabric-6.2.1-modern.jar",
+      "name": "e4mc",
+      "category": "Gameplay & Utility",
+      "size_kb": 646.2,
+      "status": "active",
+      "author": "skyevg",
+      "desc": "Open a LAN server to anyone, anywhere, anytime.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "eating-animation-fork-26.2+3.0.0.jar",
+      "name": "Eating Animation Fork",
+      "category": "Gameplay & Utility",
+      "size_kb": 1070.8,
+      "status": "active",
+      "author": "theone_ss",
+      "desc": "Unofficial fork of the Eating Animation mod for Minecraft 26.2. Adds simple sprite animation when you eat or drink something.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "elevatorid-fabric-26.2-1.16.4.jar",
+      "name": "ElevatorMod",
+      "category": "Gameplay & Utility",
+      "size_kb": 758.2,
+      "status": "active",
+      "author": "VsnGamer",
+      "desc": "Simple port of the elevator from OpenBlocks to 1.8+",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "elytra_physics-fabric-2.6.2_mc26.2.jar",
+      "name": "Elytra physics",
+      "category": "Gameplay & Utility",
+      "size_kb": 473.0,
+      "status": "active",
+      "author": "ImJoshh",
+      "desc": "A simple mod that adds cape-like physics to the elytra when worn by the player.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "entity_model_features-3.2.6-26.2-fabric.jar",
+      "name": "Entity Model Features",
+      "category": "Gameplay & Utility",
+      "size_kb": 583.8,
+      "status": "active",
+      "author": "Traben",
+      "desc": "This is an expansion of the ETF mod, it adds support for OptiFine format Custom Entity Model (CEM) resource packs.\nWhile still allowing you to disable this to use a different model mod :)",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "entity_texture_features-7.1.1-26.2-fabric.jar",
+      "name": "Entity Texture Features",
+      "category": "Gameplay & Utility",
+      "size_kb": 755.4,
+      "status": "active",
+      "author": "Traben",
+      "desc": "Adds support for resource-pack driven features for entity textures including some OptiFine features\nSupports OptiFine:\n - Random & Custom textures\n - Emissive textures\nWith more features such as:\n - Blinking textures\n - Player Skin support",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "entityculling-fabric-1.10.5-mc26.2.jar",
+      "name": "EntityCulling",
+      "category": "Optimization",
+      "size_kb": 1546.7,
+      "status": "active",
+      "author": "tr7zw",
+      "desc": "This mod uses async path-tracing to hide Tiles/Entities that are not visible.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "epherolib-fabric-26.2-1.3.0.jar",
+      "name": "EpheroLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 726.7,
+      "status": "active",
+      "author": "iThonk",
+      "desc": "Epherolib for all Epherical Mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fabric-api-0.159.0+26.2.jar",
+      "name": "Fabric API",
+      "category": "Core & Libraries",
+      "size_kb": 2472.1,
+      "status": "active",
+      "author": "FabricMC",
+      "desc": "Core API module providing key hooks and intercompatibility features.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fabric-language-kotlin-1.13.13+kotlin.2.4.10.jar",
+      "name": "Fabric Language Kotlin",
+      "category": "Gameplay & Utility",
+      "size_kb": 7887.1,
+      "status": "active",
+      "author": "FabricMC",
+      "desc": "Fabric language module for Kotlin.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fadeless-2.0.8-26.2.jar",
+      "name": "Fadeless",
+      "category": "Gameplay & Utility",
+      "size_kb": 70.0,
+      "status": "active",
+      "author": "DerpDerpling, UltimateBoomer (Original Author)",
+      "desc": "Removes fade out animations!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fallingleaves-2.0.7+26.1.jar",
+      "name": "Falling Leaves",
+      "category": "Visuals & Shaders",
+      "size_kb": 181.6,
+      "status": "active",
+      "author": "Fourmisain",
+      "desc": "\"How the gentle wind \nbeckons through the leaves \nas autumn colors fall,\ndancing in a swirl \nof golden memories:\nthe loveliest lies of all.\"",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fancy-door-anim-1.4.1.jar",
+      "name": "Fancy Door Animations",
+      "category": "Visuals & Shaders",
+      "size_kb": 182.6,
+      "status": "active",
+      "author": "Yomna",
+      "desc": "Smooth client-side door open/close animation compatible with resource packs.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fancymenu_fabric_3.9.10_MC_26.2.jar",
+      "name": "FancyMenu",
+      "category": "Gameplay & Utility",
+      "size_kb": 25695.0,
+      "status": "active",
+      "author": "Keksuccino",
+      "desc": "Customize Minecraft's menus with ease!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fastasyncworldsave-fabric-26.1-2.6.jar",
+      "name": "fastasyncworldsave Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 9.2,
+      "status": "active",
+      "author": "Someaddon",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fastquit-3.1.5+mc26.2.jar",
+      "name": "FastQuit",
+      "category": "Optimization",
+      "size_kb": 61.8,
+      "status": "active",
+      "author": "contaria",
+      "desc": "This mod lets you return to the Title Screen early while your world is still saving in the background.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ferritecore-9.0.0-fabric.jar",
+      "name": "FerriteCore",
+      "category": "Optimization",
+      "size_kb": 63.9,
+      "status": "active",
+      "author": "malte0811",
+      "desc": "Reduces memory usage",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "firstperson-fabric-2.7.2-mc26.2.jar",
+      "name": "FirstPerson",
+      "category": "Gameplay & Utility",
+      "size_kb": 1563.3,
+      "status": "active",
+      "author": "tr7zw",
+      "desc": "Enables the third person Model in firstperson",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fism+26.2-1.0.4.jar",
+      "name": "Faster Iris Shadow Mapper",
+      "category": "Gameplay & Utility",
+      "size_kb": 22.7,
+      "status": "active",
+      "author": "maDU59_",
+      "desc": "Makes Iris shadow mapping process faster",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "forgeendertech-26.2.0.1-fabric-build.0084.jar",
+      "name": "ForgeEndertech",
+      "category": "Gameplay & Utility",
+      "size_kb": 631.2,
+      "status": "active",
+      "author": "EnderLanky",
+      "desc": "Core library powering Endertech mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "formations-1.0.4-fabric-mc26.2.jar",
+      "name": "Formations",
+      "category": "Gameplay & Utility",
+      "size_kb": 283.5,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Formations adds utilities for structure datapacks!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "framework-fabric-26.2-0.13.26.jar",
+      "name": "Framework",
+      "category": "Gameplay & Utility",
+      "size_kb": 1733.4,
+      "status": "active",
+      "author": "MrCrayfish",
+      "desc": "A library providing powerful utilities for developers",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fusion-1.3.13-fabric-mc26.2.jar",
+      "name": "Fusion",
+      "category": "Gameplay & Utility",
+      "size_kb": 920.5,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Fusion allows resource packs to use additional texture and model types such as connected textures!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "fzzy_config-0.7.6+26.2.jar",
+      "name": "Fzzy Config",
+      "category": "Core & Libraries",
+      "size_kb": 2317.7,
+      "status": "active",
+      "author": "fzzyhmstrs",
+      "desc": "Configuration engine with automatic GUI generation, client-server syncing, powerful validation and error handling, and much more.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "geckolib-fabric-26.2-5.5.3.jar",
+      "name": "GeckoLib 5",
+      "category": "Gameplay & Utility",
+      "size_kb": 671.0,
+      "status": "active",
+      "author": "Tslat",
+      "desc": "GeckoLib is an animation engine for Minecraft Mods, with support for complex 3D keyframe-based animations, 30+ easings, concurrent animation support, sound and particle keyframes, event keyframes, and more.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "globalpacks-fabric-26.2-26.2.0.jar",
+      "name": "Global Data- & Resourcepacks",
+      "category": "Gameplay & Utility",
+      "size_kb": 385.7,
+      "status": "active",
+      "author": "JTK222",
+      "desc": "This is an example description! Tell everyone what your mod is about!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "gpumemleakfix-fabric-26.2-1.9.jar",
+      "name": "Gpu memory leak fix mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 5.9,
+      "status": "active",
+      "author": "",
+      "desc": "High-performance ecosystem modification module.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "greenlight-fabric-0.1.0+mc26.2.jar",
+      "name": "Greenlight",
+      "category": "Gameplay & Utility",
+      "size_kb": 26.7,
+      "status": "active",
+      "author": "FlashyReese",
+      "desc": "A loader-neutral library for server-authorized gameplay-affecting client features.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "held-item-info-1.9.2.jar",
+      "name": "Held Item Info",
+      "category": "Gameplay & Utility",
+      "size_kb": 85.3,
+      "status": "active",
+      "author": "A5b84",
+      "desc": "Shows information about the held item under its name",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "immersive_optimization-fabric-26.2-0.2.0.jar",
+      "name": "Immersive Optimization",
+      "category": "Gameplay & Utility",
+      "size_kb": 54.9,
+      "status": "active",
+      "author": "Luke100000",
+      "desc": "A lightweight entity-tick-scheduler for doubling your TPS.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "improved-village-placement-1.2.0-fabric-26.2.jar",
+      "name": "Improved Village Placement",
+      "category": "Gameplay & Utility",
+      "size_kb": 131.1,
+      "status": "active",
+      "author": "Apollo",
+      "desc": "Forces villages to spawn on flat terrain.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "integrated_api-fabric-26.2-1.8.0.jar",
+      "name": "Integrated API",
+      "category": "Gameplay & Utility",
+      "size_kb": 393.4,
+      "status": "active",
+      "author": "CraisinLord",
+      "desc": "Library mod for the Integrated Structures series",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "inventoryhud.fabric.26.2-3.4.32.jar",
+      "name": "Inventory HUD +",
+      "category": "Gameplay & Utility",
+      "size_kb": 234.3,
+      "status": "active",
+      "author": "DmitryLovin",
+      "desc": "This mod will show you your inventory while playing. Enjoy!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "iris-fabric-1.11.2+mc26.2.jar",
+      "name": "Iris",
+      "category": "Visuals & Shaders",
+      "size_kb": 2794.6,
+      "status": "active",
+      "author": "coderbot",
+      "desc": "A modern shaders mod for Minecraft intended to be compatible with existing OptiFine shader packs",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "jamlib-fabric-2.3.1+26.2.x.jar",
+      "name": "JamLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 258.9,
+      "status": "active",
+      "author": "Jamalam",
+      "desc": "The platform-agnostic library used in all of JamCore's mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "jei-26.2-fabric-30.25.0.177.jar",
+      "name": "Just Enough Items",
+      "category": "Gameplay & Utility",
+      "size_kb": 1749.1,
+      "status": "active",
+      "author": "mezz",
+      "desc": "JEI is an item and recipe viewing mod for Minecraft, built from the ground up for stability and performance.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "journeymap-fabric-26.2-6.0.5.jar",
+      "name": "Journeymap",
+      "category": "Gameplay & Utility",
+      "size_kb": 4242.6,
+      "status": "active",
+      "author": "Mysticdrew",
+      "desc": "JourneyMap: Real-time map in-game or in a web browser as you explore. JourneyMap API: v26.2-2.0.0. Built: 2026-08-15-23:11:51.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "justzoom_fabric_2.1.5_MC_26.2.jar",
+      "name": "Just Zoom",
+      "category": "Gameplay & Utility",
+      "size_kb": 239.9,
+      "status": "active",
+      "author": "Keksuccino",
+      "desc": "Zoom by pressing a hotkey and adjust the zoom factor with your mouse wheel!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "kleeslabs-fabric-26.2-26.2.0.1.jar",
+      "name": "KleeSlabs",
+      "category": "Gameplay & Utility",
+      "size_kb": 285.4,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Break only the half of a double slab that you're looking at.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "konkrete_fabric_1.11.1_MC_26.2.jar",
+      "name": "Konkrete",
+      "category": "Gameplay & Utility",
+      "size_kb": 747.1,
+      "status": "active",
+      "author": "Keksuccino",
+      "desc": "Core library for Keksuccino's mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "lambdynamiclights-4.12.3+26.2.jar",
+      "name": "LambDynamicLights",
+      "category": "Visuals & Shaders",
+      "size_kb": 1304.9,
+      "status": "active",
+      "author": "LambdAurora",
+      "desc": "The most feature-complete dynamic lighting mod.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "letmedespawn-fabric-26.2-1.26.7.3.jar",
+      "name": "LetMeDespawn",
+      "category": "Gameplay & Utility",
+      "size_kb": 23.6,
+      "status": "active",
+      "author": "frikinjay",
+      "desc": "Tweaks mob despawn rules to prevent accidental persistent mobs to increase performance.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "libIPN-fabric-26.2-6.8.3.jar",
+      "name": "libIPN",
+      "category": "Gameplay & Utility",
+      "size_kb": 633.9,
+      "status": "active",
+      "author": "Mirinimi",
+      "desc": "Inventory Profiles Next Settings and GUI Library",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "lithium-fabric-0.25.3+mc26.2.jar",
+      "name": "Lithium",
+      "category": "Optimization",
+      "size_kb": 899.9,
+      "status": "active",
+      "author": "JellySquid",
+      "desc": "Lithium is a free and open-source optimization mod for Minecraft which makes a wide range of performance improvements to the game.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "lithostitched-1.8.0+beta3-fabric-26.2.jar",
+      "name": "Lithostitched",
+      "category": "Gameplay & Utility",
+      "size_kb": 955.4,
+      "status": "active",
+      "author": "Apollo",
+      "desc": "A library mod with new configurability and compatibility enhancements for worldgen",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "lootintegrations-fabric-26.1-4.8.jar",
+      "name": "Loot integration Mod",
+      "category": "Gameplay & Utility",
+      "size_kb": 44.4,
+      "status": "active",
+      "author": "Someaddons",
+      "desc": "Integrates loot into loottables",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "ly-fishing-expansion-1.3.2-[26.2].jar",
+      "name": "Fishing Expansion",
+      "category": "Gameplay & Utility",
+      "size_kb": 360.0,
+      "status": "active",
+      "author": "lullaby",
+      "desc": "Enhance the fishing experience with more loot, new enchantments, new boss, real mob fishing, special fishes, turtle armor and more!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "melody_fabric_1.0.17_MC_26.2.jar",
+      "name": "Melody",
+      "category": "Gameplay & Utility",
+      "size_kb": 222.2,
+      "status": "active",
+      "author": "Keksuccino",
+      "desc": "OpenAL-based library mod to play background music.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "memorysettings-fabric-26.2-6.0.jar",
+      "name": "Memorysettings Mod",
+      "category": "Optimization",
+      "size_kb": 17.8,
+      "status": "active",
+      "author": "Someaddons",
+      "desc": "Checks the memory used on launch",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "midnightlib-fabric-1.9.3+26.2.jar",
+      "name": "MidnightLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 58.6,
+      "status": "active",
+      "author": "Motschen",
+      "desc": "Lightweight config library with config screens and commands.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "modernfix-5.27.19-build.1.jar",
+      "name": "ModernFix",
+      "category": "Optimization",
+      "size_kb": 1140.1,
+      "status": "active",
+      "author": "embeddedt",
+      "desc": "Egregious, yet effective performance improvements for modern Minecraft",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "modmenu-20.0.1.jar",
+      "name": "Mod Menu",
+      "category": "Gameplay & Utility",
+      "size_kb": 599.6,
+      "status": "active",
+      "author": "Prospector",
+      "desc": "Adds a mod menu to view the list of mods you have installed.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "modonomicon-26.2-fabric-2.4.0.jar",
+      "name": "Modonomicon",
+      "category": "Gameplay & Utility",
+      "size_kb": 2965.2,
+      "status": "active",
+      "author": "Kli Kli",
+      "desc": "Data-driven minecraft in-game documentation with progress visualization.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "moreculling-fabric-26.2-1.8.1.jar",
+      "name": "More Culling",
+      "category": "Gameplay & Utility",
+      "size_kb": 356.9,
+      "status": "active",
+      "author": "FX - PR0CESS, 1Foxy2",
+      "desc": "Processes main resources.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "moreoverlays-1.24.4-mc26.2-fabric.jar",
+      "name": "MoreOverlays",
+      "category": "Gameplay & Utility",
+      "size_kb": 141.3,
+      "status": "active",
+      "author": "feldim2425",
+      "desc": "This mod adds some of the overlays back from NEI\nBuilt for MC 26.2 (Fabric)",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "mru-1.0.33+26.2-fabric.jar",
+      "name": "MRU",
+      "category": "Gameplay & Utility",
+      "size_kb": 119.9,
+      "status": "active",
+      "author": "cassiancc",
+      "desc": "A library mod which provides various utilities for Cassian and IMB11's mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "nanite-library-fabric-26.2.0.1.jar",
+      "name": "Nanite Library",
+      "category": "Gameplay & Utility",
+      "size_kb": 123.6,
+      "status": "active",
+      "author": "Nanite Team",
+      "desc": "Library mod for the Nanite family of mods. Provides common code and utilities for the various Nanite mods, as well as a common APIs for cross-loader mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "neruina-3.3.3+26.2-fabric.jar",
+      "name": "Neruina",
+      "category": "Gameplay & Utility",
+      "size_kb": 1768.9,
+      "status": "active",
+      "author": "Bawnorton",
+      "desc": "This is a mod that prevents ticking entity and ticking block entity / tile entity crashes from bricking worlds.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "netherportalfix-fabric-26.2-26.2.0.1.jar",
+      "name": "NetherPortalFix",
+      "category": "Gameplay & Utility",
+      "size_kb": 210.4,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Ensures correct destinations when travelling back and forth through Nether Portals in Multiplayer.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "optigui-2.3.0-beta.10+26.2.jar",
+      "name": "OptiGUI",
+      "category": "Gameplay & Utility",
+      "size_kb": 593.1,
+      "status": "active",
+      "author": "opekope2",
+      "desc": "Blazing fast custom GUI textures on Fabric and Quilt with built-in OptiFine custom GUI resource pack support",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "oreharvester-26.2.0-1.6.jar",
+      "name": "Ore Harvester",
+      "category": "Gameplay & Utility",
+      "size_kb": 84.4,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Harvest entire ore veins instantly and drop ore items at the initial block position. Highly configurable.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "owo-lib-0.13.1+26.2.jar",
+      "name": "oωo",
+      "category": "Gameplay & Utility",
+      "size_kb": 2227.3,
+      "status": "active",
+      "author": "glisco",
+      "desc": "yes its bad i know thanks",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "particle_core-0.3.3+26.2.jar",
+      "name": "Particle Core",
+      "category": "Visuals & Shaders",
+      "size_kb": 137.9,
+      "status": "active",
+      "author": "fzzyhmstrs",
+      "desc": "Particle optimizations. Particle culling, rendering optimization, and configurable disabling of particles.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "particular-26.2-Fabric-1.5.7.jar",
+      "name": "Particular Reforged",
+      "category": "Gameplay & Utility",
+      "size_kb": 292.6,
+      "status": "active",
+      "author": "Leclowndu93150",
+      "desc": "Particular is a mod that enhances Minecraft's ambience with many hand-crafted visual effects.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "physics-mod-3.2.0-mc-26.2-fabric.jar",
+      "name": "Physics Mod",
+      "category": "Visuals & Shaders",
+      "size_kb": 87351.2,
+      "status": "active",
+      "author": "Haubna",
+      "desc": "Welcome to a more destructive Minecraft than you've ever seen before!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "placeholder-api-3.1.0-beta.1+26.2.jar",
+      "name": "Placeholder API",
+      "category": "Gameplay & Utility",
+      "size_kb": 249.0,
+      "status": "active",
+      "author": "Patbox",
+      "desc": "Simple api for mods allowing for user friendly formatting and universal placeholders!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "polylib-fabric-26.2-2.0.10.jar",
+      "name": "Polylib",
+      "category": "Gameplay & Utility",
+      "size_kb": 1366.9,
+      "status": "active",
+      "author": "CreeperHost",
+      "desc": "PolyLib, developed by CreeperHost Ltd.,is a compact Minecraft library mod focused on providing a collection of helper classes. These classes are designed to simplify various aspects of mod development, offering tools for easier GUI creation and other development enhancements to improve efficiency and user experience.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "polytone-26.2-6.4.3-fabric.jar",
+      "name": "Polytone",
+      "category": "Gameplay & Utility",
+      "size_kb": 2484.7,
+      "status": "active",
+      "author": "MehVahdJukaar, Plantkillable",
+      "desc": "Your Resource Packs Best Friend",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "prettybeaches-fabric-26.2-26.2.0.1.jar",
+      "name": "Pretty Beaches",
+      "category": "Gameplay & Utility",
+      "size_kb": 163.1,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Adjusts water physics when digging sand near water to prevent ugly.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "puddleflood-1.1.5+26.2-fabric.jar",
+      "name": "Puddles & Floods",
+      "category": "Gameplay & Utility",
+      "size_kb": 203.1,
+      "status": "active",
+      "author": "pigcart",
+      "desc": "Adds detailed puddles and allows rivers to visually flood their banks",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "quantified api-omni-2.2.0.jar",
+      "name": "Quantified API",
+      "category": "Gameplay & Utility",
+      "size_kb": 9339.2,
+      "status": "active",
+      "author": "Admany",
+      "desc": "Next-gen performance API that aims to unlock the true potential of multithreading with ease. Built to handle insane workloads by utilizing modern hardware to its full extent, while bringing Vulkan-powered GPU acceleration with OpenCL as a fallback for maximum compatibility. License available at: https://github.com/Admany/Quantified-API/blob/master/LICENSE",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "realistic-rowing-1.2.1.jar",
+      "name": "Realistic Rowing",
+      "category": "Gameplay & Utility",
+      "size_kb": 61.9,
+      "status": "active",
+      "author": "moehreag",
+      "desc": "This mod makes rowing and boating more realistic",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "realisticbees-26.2.0-4.3.jar",
+      "name": "Realistic Bees",
+      "category": "Gameplay & Utility",
+      "size_kb": 65.7,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Bees are tiny, more bee spawns and bigger space in beehives.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "realisticsunburn-fabric-26.2-1.3.1.jar",
+      "name": "Realistic Sun Burn",
+      "category": "Gameplay & Utility",
+      "size_kb": 16.1,
+      "status": "active",
+      "author": "Community Maintainers",
+      "desc": "Undead mobs burn based on the real sun direction, not just sky light. Walls, buildings and terrain now cast real shadows. Uses directional raycasting from each mob's head toward the actual sun position.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "reeses-sodium-options-fabric-2.2.3+mc26.2.jar",
+      "name": "Reese's Sodium Options",
+      "category": "Optimization",
+      "size_kb": 253.4,
+      "status": "active",
+      "author": "FlashyReese",
+      "desc": "Replaces Sodium's Options Screen",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "reflex-fabric-1.0.4+26.2.jar",
+      "name": "Reflex AntiLag",
+      "category": "Gameplay & Utility",
+      "size_kb": 20.6,
+      "status": "active",
+      "author": "Tythee",
+      "desc": "This mod implements Nvidia Reflex in Minecraft to reduce rendering latency.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "refurbished_furniture-fabric-26.2-1.0.25.jar",
+      "name": "MrCrayfish's Furniture Mod: Refurbished",
+      "category": "Gameplay & Utility",
+      "size_kb": 6576.5,
+      "status": "active",
+      "author": "MrCrayfish",
+      "desc": "The next generation of MrCrayfish's Furniture Mod, built from the ground up with brand-new blocks, models, original sounds, and gameplay mechanics. Experience the new yet familiar charm of the original mod, and furnish your house with the hundreds of new and original decorations and functional blocks. Jump into new gameplay mechanics with the introduction of the electricity system to power all your appliances and electronics.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "rightclickharvest-fabric-4.6.2+26.2.x.jar",
+      "name": "Right Click Harvest",
+      "category": "Gameplay & Utility",
+      "size_kb": 272.6,
+      "status": "active",
+      "author": "Jamalam",
+      "desc": "Right click crops to harvest them - with style.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "rrls-5.2.8+mc.26.2.jar",
+      "name": "Remove Reloading Screen",
+      "category": "Gameplay & Utility",
+      "size_kb": 115.4,
+      "status": "active",
+      "author": "dima_dencep",
+      "desc": "Makes resource packs load in the background, allowing you to do other things while waiting!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "rsls-1.2.2.jar",
+      "name": "Raise Sound Limit Simplified",
+      "category": "Gameplay & Utility",
+      "size_kb": 50.1,
+      "status": "active",
+      "author": "ishland",
+      "desc": "A mod that raises Minecraft sound sources limit in a simple way",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "shatterlib-fabric-0.7.0-beta.1+26.2.jar",
+      "name": "ShatterLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 496.0,
+      "status": "active",
+      "author": "Shatterbyte",
+      "desc": "Collection of shared code for Shatterbyte's mods",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "shogi-fabric-26.2-26.2.0.5.jar",
+      "name": "Shogi",
+      "category": "Gameplay & Utility",
+      "size_kb": 442.1,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Rule-based properties and configuration for everything",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "shulkerboxtooltip-fabric-5.4.0+26.2.jar",
+      "name": "Shulker Box Tooltip",
+      "category": "Gameplay & Utility",
+      "size_kb": 409.3,
+      "status": "active",
+      "author": "MisterPeModder",
+      "desc": "What's in my shulker box?",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "simple_snowy_fix-fabric-26.1-26.2-2.2.1.jar",
+      "name": "Simple Snowy Fix",
+      "category": "Gameplay & Utility",
+      "size_kb": 116.7,
+      "status": "active",
+      "author": "KostromDan",
+      "desc": "Fixes incorrect snow generation on tree leaves MC-119599",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "simplemagnets-1.1.12-fabric-mc26.2.jar",
+      "name": "Simple Magnets",
+      "category": "Gameplay & Utility",
+      "size_kb": 152.6,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Simple Magnets adds Magnets that pickup items around the player!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "skinlayers3d-fabric-1.11.2-mc26.2.jar",
+      "name": "3d-Skin-Layers",
+      "category": "Visuals & Shaders",
+      "size_kb": 1920.3,
+      "status": "active",
+      "author": "tr7zw",
+      "desc": "Renders the player skin layer in 3d",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "skyboxify-3.3.1+26.2-fabric.jar",
+      "name": "Skyboxify",
+      "category": "Gameplay & Utility",
+      "size_kb": 299.9,
+      "status": "active",
+      "author": "lowercasebtw",
+      "desc": "A skybox mod that allows you to use OptiFine skies in Fabric 1.21+",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "snowundertrees-fabric-26.1.2-1.6.1.jar",
+      "name": "Snow Under Trees",
+      "category": "Gameplay & Utility",
+      "size_kb": 247.3,
+      "status": "active",
+      "author": "bl4ckscor3",
+      "desc": "Adds snow under trees in snowy biomes.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sodium-extra-fabric-0.9.3+mc26.2.jar",
+      "name": "Sodium Extra",
+      "category": "Optimization",
+      "size_kb": 468.2,
+      "status": "active",
+      "author": "FlashyReese",
+      "desc": "Features that shouldn't be in Sodium.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sodium-fabric-0.9.1+mc26.2.jar",
+      "name": "Sodium",
+      "category": "Optimization",
+      "size_kb": 1800.5,
+      "status": "active",
+      "author": "JellySquid (jellysquid3)",
+      "desc": "Sodium is a powerful rendering engine for Minecraft which greatly improves frame rates and micro-stutter, while fixing many graphical issues",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sodium-shadowy-path-blocks-fabric-7.0.0.jar",
+      "name": "Sodium Shadowy Path Blocks",
+      "category": "Optimization",
+      "size_kb": 66.1,
+      "status": "active",
+      "author": "Rynnavinx",
+      "desc": "SSPB reintroduces vanilla-like smooth lighting to non-full blocks (e.g. dirt paths and how they have dark shading when directly next to a full block) when using Sodium.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sound-physics-remastered-fabric-1.5.1+26.2.jar",
+      "name": "Sound Physics Remastered",
+      "category": "Audio & Immersion",
+      "size_kb": 196.9,
+      "status": "active",
+      "author": "Sonic Ether",
+      "desc": "Provides realistic sound attenuation, reverberation, and absorption through blocks.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sounds-2.5.1+edge+26.2-fabric.jar",
+      "name": "Sounds",
+      "category": "Audio & Immersion",
+      "size_kb": 7949.4,
+      "status": "active",
+      "author": "IMB11",
+      "desc": "A highly configurable sound overhaul mod that adds new sound effects while improving vanilla sounds too.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "spark-1.10.173-fabric.jar",
+      "name": "spark",
+      "category": "Gameplay & Utility",
+      "size_kb": 3796.1,
+      "status": "active",
+      "author": "Luck",
+      "desc": "spark is a performance profiling plugin/mod for Minecraft clients, servers and proxies.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "spawn-animations-compats-16.0.jar",
+      "name": "Spawn Animations Compats",
+      "category": "Gameplay & Utility",
+      "size_kb": 76.5,
+      "status": "active",
+      "author": "Fyoncle",
+      "desc": "A datapack that adds compatibility for Spawn Animations with 50+ mods.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "spawnanimations-v1.11.5-mc1.17-26.2.9-mod.jar",
+      "name": "Spawn Animations",
+      "category": "Visuals & Shaders",
+      "size_kb": 220.9,
+      "status": "active",
+      "author": "Tschipcraft",
+      "desc": "Hostile mobs dig out of the ground or poof into existence when they spawn!\n§lWorks with:§r Zombies, Husks, Drowned, Skeletons, Strays, Bogged, Wither Skeletons, Spiders, Cave Spiders, Creepers, Endermen, Slimes, Magma Cubes, Zombified Piglins, Striders and Giants.\nThis data pack is designed to be as unintrusive as possible. Hidden entities including their worn armor and tools will only be invisible and silent.\nExecute the command §o/function §ospawnanimations:settings§r for a world-specific settings menu and/or install MidnightLib for global settings across all worlds.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "starterkit-26.2.0-8.1.jar",
+      "name": "Starter Kit",
+      "category": "Gameplay & Utility",
+      "size_kb": 272.1,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Gives players who join the world for the first time configurable starter gear.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "structureessentials-fabric-26.2-5.0.jar",
+      "name": "Structure Essentials Mod",
+      "category": "World Generation",
+      "size_kb": 57.7,
+      "status": "active",
+      "author": "Someaddons",
+      "desc": "Essential utilities for structures",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "structurify-fabric-2.0.33+mc26.2.jar",
+      "name": "Structurify",
+      "category": "Gameplay & Utility",
+      "size_kb": 469.9,
+      "status": "active",
+      "author": "Faboslav",
+      "desc": "Configuration mod that makes customizing world generation features easy and accessible without creating datapacks.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "supermartijn642configlib-1.1.8-fabric-mc26.2.jar",
+      "name": "SuperMartijn642's Config Library",
+      "category": "Gameplay & Utility",
+      "size_kb": 200.5,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Config Lib makes dealing with config files just a bit easier.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "supermartijn642corelib-1.1.24-fabric-mc26.2.jar",
+      "name": "SuperMartijn642's Core Lib",
+      "category": "Core & Libraries",
+      "size_kb": 665.5,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "SuperMartijn642's Core Lib adds lots of basic implementations for guis that allow for similar code between Minecraft 1.12, 1.14, 1.15, and 1.16!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "sway-2.4.3-fabric+26.2.jar",
+      "name": "SWAY",
+      "category": "Gameplay & Utility",
+      "size_kb": 74.2,
+      "status": "active",
+      "author": "RazorPlay01",
+      "desc": "Realistic foliage interaction and deformation for Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "trashcans-1.1.0-fabric-mc26.2.jar",
+      "name": "Trash Cans",
+      "category": "Gameplay & Utility",
+      "size_kb": 182.5,
+      "status": "active",
+      "author": "SuperMartijn642",
+      "desc": "Trash Cans adds Trash Cans which can be used to void items, liquids and energy!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "trashslot-fabric-26.2-26.2.0.2.jar",
+      "name": "TrashSlot",
+      "category": "Gameplay & Utility",
+      "size_kb": 145.1,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Adds a trash slot to the inventory screen that allows deletion of unwanted items.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "veinminer-client-fabric-2.12.0.jar",
+      "name": "Veinminer Client",
+      "category": "Gameplay & Utility",
+      "size_kb": 191.3,
+      "status": "active",
+      "author": "Miraculixx, Max Bossing",
+      "desc": "Client addon for Veinminer to add a hotkey and veinmining preview",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "veinminer-fabric-2.12.0.jar",
+      "name": "Veinminer",
+      "category": "Gameplay & Utility",
+      "size_kb": 510.5,
+      "status": "active",
+      "author": "Miraculixx, Max Bossing",
+      "desc": "Mine the whole vein at the same time with a single block break",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "villagernames-26.2.0-8.5.jar",
+      "name": "Villager Names",
+      "category": "Gameplay & Utility",
+      "size_kb": 78.3,
+      "status": "active",
+      "author": "Rick South",
+      "desc": "Gives all villagers and villager-like entities their own name.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "visuality-0.7.14+26.2.jar",
+      "name": "Visuality",
+      "category": "Visuals & Shaders",
+      "size_kb": 79.2,
+      "status": "active",
+      "author": "PinkGoosik",
+      "desc": "Little visual improvements by adding a bunch of new particles.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "vmp-fabric-mc26.2-0.2.0+beta.7.236-all.jar",
+      "name": "Very Many Players",
+      "category": "Optimization",
+      "size_kb": 400.2,
+      "status": "active",
+      "author": "ishland",
+      "desc": "A Fabric mod designed to improve server performance at high playercounts",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "voicechat-fabric-2.6.22+26.2.jar",
+      "name": "Simple Voice Chat",
+      "category": "Audio & Immersion",
+      "size_kb": 5431.0,
+      "status": "active",
+      "author": "Max Henkel",
+      "desc": "A working voice chat in Minecraft!",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "watermedia-3.0.0.23.jar",
+      "name": "WaterMedia",
+      "category": "Gameplay & Utility",
+      "size_kb": 3540.5,
+      "status": "active",
+      "author": "SrRapero720",
+      "desc": "Multimedia engine, provides a richful API to store, load, decode and renderice multimedia in 3D environments like VULKAN and OPENGL",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "watermedia_binaries-3.0.0.6.jar",
+      "name": "WaterMedia: Binaries",
+      "category": "Gameplay & Utility",
+      "size_kb": 140357.2,
+      "status": "active",
+      "author": "SrRapero720",
+      "desc": "Dependency for WATERMeDIA containing native binaries for different platforms and some libraries.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "waystones-fabric-26.2-26.2.0.9.jar",
+      "name": "Waystones",
+      "category": "Gameplay & Utility",
+      "size_kb": 1185.5,
+      "status": "active",
+      "author": "BlayTheNinth",
+      "desc": "Teleport back to activated waystones. For Survival, Adventure or Servers.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "xptome-fabric-26.1.2-2.5.1.jar",
+      "name": "XP Tome",
+      "category": "Gameplay & Utility",
+      "size_kb": 41.7,
+      "status": "active",
+      "author": "bl4ckscor3",
+      "desc": "Adds a book that can store a configurable amount of XP.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "yeetusexperimentus-fabric-102.0.0.jar",
+      "name": "Yeetus Experimentus",
+      "category": "Gameplay & Utility",
+      "size_kb": 552.6,
+      "status": "active",
+      "author": "Sunekaer",
+      "desc": "Disables the Experimental Settings popup, which appears when you create or load world.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "yet_another_config_lib_v3-3.9.5+26.2-fabric.jar",
+      "name": "YetAnotherConfigLib",
+      "category": "Gameplay & Utility",
+      "size_kb": 1098.8,
+      "status": "active",
+      "author": "isXander",
+      "desc": "YetAnotherConfigLib (yacl) is just that. A builder-based configuration library for Minecraft.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "zfastnoise-1.0.40+26.2.jar",
+      "name": "Fast Noise",
+      "category": "Gameplay & Utility",
+      "size_kb": 463.1,
+      "status": "active",
+      "author": "ZenXArch",
+      "desc": "Vanilla worldgen optimization mod",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    },
+    {
+      "filename": "zoomify-2.16.1+26.2.jar",
+      "name": "Zoomify",
+      "category": "Gameplay & Utility",
+      "size_kb": 549.0,
+      "status": "active",
+      "author": "isXander",
+      "desc": "A zoom mod with infinite customizability.",
+      "icon_url": "https://api.iconify.design/lucide:package.svg"
+    }
+  ]
+}

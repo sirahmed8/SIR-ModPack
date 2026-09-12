@@ -10,10 +10,10 @@ The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft
 ```mermaid
 flowchart TD
     subgraph Client Application Layer ["Client Application Layer (PyWebView + Windows DWM)"]
-        A[SIR ModPack.exe dispatcher]
-        B[--mode launcher: Standalone Launcher Pro]
-        C[--mode installer: Auto-Healing Installer]
-        D[--mode server: Dedicated Host & Tunnel Manager]
+        A[SIR Ecosystem Desktop Suite]
+        B[SIR Launcher: Standalone Launcher]
+        C[SIR Installer: Auto-Healing Delta Installer]
+        D[SIR Server Manager: Dedicated Host & Tunnel Manager]
     end
 
     subgraph Core Bridge & Hardware Engine ["Core Bridge & Hardware Engine (launcher_core)"]
@@ -78,10 +78,10 @@ flowchart TD
   - **Content Managers:** Visual management for Mods (228 Modern Fabric mods & 28 Legacy Forge mods), Dedicated Dual Shaders (`SIR Modern Shader.zip` / `SIR Legacy Shader.zip`), Dual Resource Packs (`SIR Modern.zip` with Patrix 3D POM models / `SIR Legacy.zip`), Worlds/Saves, and Game Logs.
 
 ### 2. `SIR Installer.exe` (Standalone Smart Auto-Healing Installer)
-- **Technology:** 16.6 MB standalone executable with cloud payload streaming and elevated UAC privileges.
+- **Technology:** Standalone executable with cloud payload streaming, delta auto-healing, and elevated UAC privileges.
 - **Features:**
-  - **Cloud CDN Downloader:** Streams modular archives (`payload_mods_26.2.zip`, `payload_mods_1.8.9.zip`, `payload_packs.zip`, `payload_shaders.zip`, `payload_configs.zip`) from GitHub Releases with live download speed (`MB/s`) and percentage tracking.
-  - **Anti-Compromise & Anti-Corruption Engine:** Structural CRC verification (`is_valid_zip`) quarantines damaged archives and auto-recovers clean copies.
+  - **GitHub Single-File Delta Fetcher:** Automatically detects missing or corrupted files across profiles, mods, shaders, and packs, streaming ONLY the individual missing files directly from GitHub (`raw.githubusercontent.com` and GitHub Releases) without re-downloading entire profiles.
+  - **Anti-Compromise & Anti-Corruption Engine:** Structural CRC and streaming SHA-256 verification quarantines damaged archives and auto-recovers clean copies.
   - **Power Governor:** User toggle between **Turbo Mode** (all CPU threads) and **Smooth / Eco Mode** (background I/O priority for 0-lag responsiveness).
   - **Zero-Data Loss Deployer:** Non-destructive updates that preserve user save worlds, custom keybinds, and screenshot albums.
 
@@ -91,6 +91,12 @@ flowchart TD
   - **Playit.gg Zero-Port Tunnel:** Public TCP tunnel automation allowing friends to join private servers without router configuration.
   - **Live Telemetry Gauges:** Real-time monitoring of tick rate (TPS: 20.0), connected players, and RAM consumption.
   - **Auto-Restart Watchdog:** Automatic recovery and log diagnostic snapshotting in case of crash events.
+
+### 4. `In-Game SIR Mod` (`sir-mod-26.2-1.0.0.jar` • Right-Shift In-Game Studio)
+- **Technology:** Dedicated native Fabric mod bound to `Right Shift` (`key.keyboard.right.shift`) with ModMenu API integration.
+- **Features:**
+  - **9 Core Competitive HUD Modules:** FPS counter, dual CPS meters with burst frequency graphs, ping & latency monitor, translucent cyber pill Armor/Status badges, full Keystrokes visualization, authentic 1.7 sword block-hitting kinematics, dynamic C-zoom camera, toggle sprint/sneak, and 0ms fast hit registration.
+  - **Bidirectional Persistence:** Seamlessly syncs user preferences to `config/sirmod.json`, `config/inventoryhud.json`, `config/notenoughanimations.json`, and vanilla `options.txt`.
 
 ---
 

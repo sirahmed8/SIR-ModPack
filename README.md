@@ -27,10 +27,11 @@ The suite provides standalone desktop binaries, direct native JVM execution, rea
 
 | Application | Binary / Portal | Description |
 | :--- | :--- | :--- |
-| **SIR Launcher Pro** | `SIR Launcher.exe` | Standalone desktop launcher with native Direct JVM Launch Pipeline, Win32 Kernel Telemetry, 3D Skin Studio, Quick Presets, and Cloud Self-Healing. |
-| **SIR Installer** | `SIR Installer.exe` | Autonomous auto-healing installer with CSS spring animations, cloud payload streaming, CRC archive validation, and zero-data-loss upgrades. |
+| **SIR Launcher** | `SIR Launcher.exe` | Standalone desktop launcher with native Direct JVM Launch Pipeline, Win32 Kernel Telemetry, 3D Skin Studio, Quick Presets, and GitHub Single-File Delta Auto-Healer. |
+| **SIR Installer** | `SIR Installer.exe` | Autonomous auto-healing installer with CSS spring animations, cloud payload streaming, GitHub Delta Fetcher, and zero-data-loss upgrades. |
 | **SIR Server Manager** | `SIR Server Manager.exe` | Dedicated multiplayer server manager with CSS spring animations, custom CyberSelect menus, live TPS gauges, and Playit.gg zero-port public tunneling. |
-| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 32 prerendered static routes, AI assistant, live server radar, and skin wardrobe. |
+| **In-Game SIR Mod** | `sir-mod-26.2-1.0.0.jar` | Native client Fabric mod (Right-Shift) providing 9 competitive HUD overlays, 1.7 block-hitting, and instant latency polling. |
+| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 37 prerendered static routes, AI assistant, live server radar, and skin wardrobe. |
 
 ---
 

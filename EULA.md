@@ -13,7 +13,7 @@ By downloading, installing, launching, executing, or using **SIR Launcher**, **S
 ## 🎮 2. Mojang Studios & Microsoft Brand Compliance
 **NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.**
 
-1. **Independent Community Project:** Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is an independent community project and is **NOT an official Minecraft product**, nor is it approved by, associated with, or affiliated with Mojang AB or Microsoft.
+1. **Independent Gaming Platform:** Minecraft is a registered trademark of Mojang AB and Microsoft Corporation. The SIR ModPack Ecosystem is an independent gaming platform under the SIR Software Agreement and is **NOT an official Minecraft product**, nor is it approved by, associated with, or affiliated with Mojang AB or Microsoft.
 2. **Commercial Use Guidelines:** This distribution complies with Mojang Studios' Commercial Usage Guidelines and Brand & Asset Guidelines. No proprietary Minecraft source code, vanilla game JARs, or official assets are sold or commercialized. All vanilla assets are fetched dynamically from official Mojang/Microsoft CDNs.
 
 ## 🔧 2.1 Bytecode Modification Acknowledgment
