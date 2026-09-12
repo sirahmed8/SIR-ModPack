@@ -59,24 +59,6 @@ function renderSettings() {
   }
 }
 
-window.saveHudSettings = function() {
-  const hudConfig = {
-    fps: document.getElementById('hud-toggle-fps')?.checked ?? true,
-    cps: document.getElementById('hud-toggle-cps')?.checked ?? true,
-    ping: document.getElementById('hud-toggle-ping')?.checked ?? true,
-    armor: document.getElementById('hud-toggle-armor')?.checked ?? true,
-    keys: document.getElementById('hud-toggle-keys')?.checked ?? true,
-    blockhit: document.getElementById('hud-toggle-blockhit')?.checked ?? true,
-    zoom: document.getElementById('hud-toggle-zoom')?.checked ?? true,
-    sprint: document.getElementById('hud-toggle-sprint')?.checked ?? true,
-    tcp: document.getElementById('hud-toggle-tcp')?.checked ?? true,
-  };
-  localStorage.setItem('sir_hud_config', JSON.stringify(hudConfig));
-  if (window.pywebview && window.pywebview.api && window.pywebview.api.save_hud_settings) {
-    try { window.pywebview.api.save_hud_settings(hudConfig); } catch(e) {}
-  }
-};
-
 async function saveAllSettings() {
   const ramSlider = document.getElementById('ram-slider');
   if (ramSlider) {
@@ -99,7 +81,6 @@ async function saveAllSettings() {
   }
   localStorage.setItem('sir_ram_gb', STATE.ramGb);
   localStorage.setItem('sir_jvm_args', jvmArgs);
-  saveHudSettings();
   showToast('✓ Settings saved!', 'success');
 }
 

@@ -947,7 +947,9 @@ class NativeMinecraftRunner:
                 "-XX:+UseStringDeduplication",
             ] + branding_flags
         else:
-            use_zgc = bool(extra_flags and any("UseZGC" in str(f) for f in extra_flags))
+            # Modern versions (26.2 / 1.21+) on Java 21/25:
+            # Default to ultra-low-latency Generational ZGC for sub-millisecond pauses unless G1GC is explicitly requested
+            use_g1gc = bool(extra_flags and any("UseG1GC" in str(f) for f in extra_flags))
             args = [
                 ram_params["xms_flag"],
                 ram_params["xmx_flag"],
@@ -961,7 +963,7 @@ class NativeMinecraftRunner:
                 "-XX:+AlwaysPreTouch",
                 "-XX:+UseStringDeduplication",
             ] + branding_flags
-            if use_zgc:
+            if not use_g1gc:
                 args.extend([
                     "-XX:+UseZGC",
                     "-XX:+ZGenerational",
