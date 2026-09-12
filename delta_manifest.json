@@ -4,7 +4,7 @@
   "generated_at": 1788853520,
   "iso_timestamp": "2026-09-08T07:45:20Z",
   "total_files": 2783,
-  "total_size_bytes": 5808010232,
+  "total_size_bytes": 5810578659,
   "files": {
     "capes/TestPlayer_cape.png": {
       "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
@@ -3781,8 +3781,8 @@
       "category": "mod"
     },
     "instances/1.8.9/minecraft/options.txt": {
-      "sha256": "5cd75b44dfb0bb68d21954a04edf523bf4b074c391ffc7c2b4388024437535d3",
-      "size": 735,
+      "sha256": "f0a6bbbe4a76c6cf1cbf991b76691896ebfa04e62f00c66f7897cd52c6ffedf7",
+      "size": 610,
       "mtime": 1788852922,
       "category": "instance_meta"
     },
@@ -3973,8 +3973,8 @@
       "category": "config"
     },
     "instances/26.2-balanced/instance.cfg": {
-      "sha256": "6ff1f36fe7dc6b719802de010fab62913cd97f8c7178756487bb96533980cef1",
-      "size": 388,
+      "sha256": "b031e8dba9d7490ccad23bcaa05bc7f5b71522662367202aa7b1d0dcba263d6c",
+      "size": 389,
       "mtime": 1788838530,
       "category": "instance_meta"
     },
@@ -5605,8 +5605,8 @@
       "category": "config"
     },
     "instances/26.2-performance/instance.cfg": {
-      "sha256": "431976e5aaa4f60144b48cfd5270119f8f7d05ba3dc5b607356ec8ec0e459dcd",
-      "size": 391,
+      "sha256": "46dc214794589ac6c9cebf5d98ca434a9e6c2f31b68ee1527b1d20ac169b9d83",
+      "size": 392,
       "mtime": 1788838530,
       "category": "instance_meta"
     },
@@ -9265,8 +9265,8 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/instance.cfg": {
-      "sha256": "ed9de6ad8a484180a4fc714988aa49a9914c330c985084e0a7e8b0b00d767431",
-      "size": 387,
+      "sha256": "426f2ad78b498d9e1888ac0d964fc8fc5e85aba5843d00f05cb77ff3abe16566",
+      "size": 388,
       "mtime": 1788838530,
       "category": "instance_meta"
     },
@@ -14917,8 +14917,8 @@
       "category": "config"
     },
     "instances/26.2/instance.cfg": {
-      "sha256": "0d2a3338480133798c56bcf3303adf1fba5e6103a18c09a27cf1e1da17e944fe",
-      "size": 388,
+      "sha256": "a8816c9c653638bad09e685190de9aa6d9cfe14a7cbce12612340b2c7abc7ddb",
+      "size": 389,
       "mtime": 1788838530,
       "category": "instance_meta"
     },
@@ -15427,8 +15427,8 @@
       "category": "mod"
     },
     "mods/ForgeConfigAPIPort-v26.2.1-mc26.2.x-Fabric.jar": {
-      "sha256": "66700a0aa85c30ddeb8081bd72a85e939ca5004441e9847ad411fe470446d658",
-      "size": 610866,
+      "sha256": "1b4b17fc4150481447201152604688c74726d6631c9a626dd21f2c5e2b3df1ac",
+      "size": 609550,
       "mtime": 1788467650,
       "category": "mod"
     },
@@ -15583,8 +15583,8 @@
       "category": "mod"
     },
     "mods/PlayerAnimationLibMerged-1.2.6+mc.26.2.jar": {
-      "sha256": "6d195602644278eb9e648f23d305462bbd19b7d74efcb68166fff379b5666173",
-      "size": 416797,
+      "sha256": "97af3288dd39643bf3607bf9ff5c3293022793559236586a6783fe71dd66e6bd",
+      "size": 419757,
       "mtime": 1788467652,
       "category": "mod"
     },
@@ -15829,8 +15829,8 @@
       "category": "mod"
     },
     "mods/collective-26.2.0-8.39.jar": {
-      "sha256": "4d8eff443bdb22d534f77bf19f54b0ebc1af0e24efcb9b055a52539aaa338c32",
-      "size": 1087249,
+      "sha256": "ce0704323bc06d381ed0aa63029fcd9f78289120d70c6ea4a8a6c8cf9f4ed26a",
+      "size": 1084412,
       "mtime": 1788467657,
       "category": "mod"
     },
@@ -15955,8 +15955,8 @@
       "category": "mod"
     },
     "mods/fabric-api-0.159.0+26.2.jar": {
-      "sha256": "aa92b677756d4e0d70b3da8c11d551a82b7c664709ea9065dc9758c6a38253e8",
-      "size": 2531477,
+      "sha256": "3f3a5d96e6a8f554a72e71fb507d6a979ca16d9190c305ceb1300f1d01e733ee",
+      "size": 2535793,
       "mtime": 1788467662,
       "category": "mod"
     },
@@ -15985,8 +15985,8 @@
       "category": "mod"
     },
     "mods/fallingleaves-2.0.7+26.1.jar": {
-      "sha256": "7203d2f253ded3c88501419be3cdcd453f463f3d021459147555cf8ac28beda1",
-      "size": 185992,
+      "sha256": "db941c6c53a0353d8b7d07f1755315d8fe39d08a75cbd3b1516b258c130d0177",
+      "size": 182516,
       "mtime": 1788467664,
       "category": "mod"
     },
@@ -16117,8 +16117,8 @@
       "category": "mod"
     },
     "mods/iris-fabric-1.11.2+mc26.2.jar": {
-      "sha256": "62468521b92632975a6973f6578d228c01ca944e316a1806df1bfd37bca420d6",
-      "size": 2861691,
+      "sha256": "df0e2ccddaea17b191eda32b21c979e131bc9d4ef4f831113b50b461fc4a3804",
+      "size": 2820763,
       "mtime": 1788467671,
       "category": "mod"
     },
@@ -16561,8 +16561,8 @@
       "category": "mod"
     },
     "mods/supermartijn642configlib-1.1.8-fabric-mc26.2.jar": {
-      "sha256": "c9ee8ea6940c167d9db1ada85f9a8243f80efc489a5f1ad97071e468cfe2e7b5",
-      "size": 205269,
+      "sha256": "3546d8d49ac587aa3aed70b0cd68461366a6f78b9575b8f7ba757866905aca6f",
+      "size": 206149,
       "mtime": 1788467691,
       "category": "mod"
     },
@@ -16657,8 +16657,8 @@
       "category": "mod"
     },
     "mods/yet_another_config_lib_v3-3.9.5+26.2-fabric.jar": {
-      "sha256": "b28cd090c01ce22fdab5413a7916368258fcdd03c43fcdcac2066174d62356f4",
-      "size": 1125148,
+      "sha256": "ad8a20f00a5f0337f53aeaf391d8286a0d498814ab508c346f7c8e4b0eff3858",
+      "size": 1121528,
       "mtime": 1788467703,
       "category": "mod"
     },
@@ -16675,8 +16675,8 @@
       "category": "mod"
     },
     "resourcepacks/SIR Legacy.zip": {
-      "sha256": "7f2bf998e09c3f20db328144a62e2e289fb6627fe569292cefc646145b0e172e",
-      "size": 37567893,
+      "sha256": "cc23d2d6c20b5cda564855b31186f35263855b074d91e733f2a5a2fca24f1320",
+      "size": 37052826,
       "mtime": 1788193941,
       "category": "resourcepack"
     },
@@ -16687,14 +16687,14 @@
       "category": "resourcepack"
     },
     "shaderpacks/SIR Legacy Shader.zip": {
-      "sha256": "b7edfe2454e6a3ca3a9fb1995c5b623ad53978e5fab0c7ede4179bdd1f253964",
-      "size": 364346,
+      "sha256": "1c8ab379decab3999112596515f378c228d6d06076505a0d5c42662daa051f2b",
+      "size": 1453336,
       "mtime": 1788838362,
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "dd0af1b34fad0e3fc00cab401144868ce2a298cc2f6a5e401ed8fb43f253f0fc",
+      "size": 3819981,
       "mtime": 1788838344,
       "category": "shader"
     },
