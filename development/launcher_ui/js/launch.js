@@ -171,8 +171,28 @@ async function launchGame(instId = null, serverIp = null, serverPort = null) {
 
   // 4. Trigger asynchronous game launch
   try {
+    let launchFn = null;
     if (window.pywebview && window.pywebview.api) {
-      const res = await window.pywebview.api.launch_game(targetInst, serverIp, serverPort);
+      launchFn = window.pywebview.api.launch_game 
+        || window.pywebview.api.launch_instance 
+        || (window.pywebview.api.instances && window.pywebview.api.instances.launch_instance);
+      
+      // If bridge object exists but functions are still binding during early click, wait up to 3.5s
+      if (typeof launchFn !== 'function') {
+        for (let wait = 0; wait < 35; wait++) {
+          await new Promise(r => setTimeout(r, 100));
+          if (window.pywebview && window.pywebview.api) {
+            launchFn = window.pywebview.api.launch_game 
+              || window.pywebview.api.launch_instance 
+              || (window.pywebview.api.instances && window.pywebview.api.instances.launch_instance);
+            if (typeof launchFn === 'function') break;
+          }
+        }
+      }
+    }
+
+    if (typeof launchFn === 'function') {
+      const res = await launchFn(targetInst, serverIp, serverPort);
 
       if (res && res.error) {
         if (logPollInterval) clearInterval(logPollInterval);
@@ -209,6 +229,13 @@ async function launchGame(instId = null, serverIp = null, serverPort = null) {
           if (consoleSpinner) consoleSpinner.className = "w-2.5 h-2.5 rounded-full bg-emerald-400";
         }, 180000);
       }
+    } else if (window.pywebview) {
+      if (logPollInterval) clearInterval(logPollInterval);
+      throw new Error(
+        STATE.currentLang === 'ar'
+          ? "واجهة الجسر البرمجي للتشغيل غير جاهزة بعد، يرجى المحاولة مرة أخرى."
+          : "Launcher bridge execution handler is not ready yet. Please wait a moment and try again."
+      );
     } else {
       setTimeout(() => {
         if (logPollInterval) clearInterval(logPollInterval);

@@ -88,7 +88,21 @@ class LauncherBridgeAPI:
 
         # Trigger background initial server pings and discord rpc
         self.servers.refresh_live_pings_async()
-        threading.Thread(target=self.discord.update_presence, daemon=True).start()
+        # Prevent pywebview from slow recursive introspection into internal sub-service objects
+        for s in (
+            self.auth, self.instances, self.servers, self.cloud_sync,
+            self.cleaner, self.repair, self.satellite, self.mods,
+            self.shaders, self.gallery, self.store, self.controls,
+            self.worlds, self.packs, self.discord, self.logs,
+            self.rcon, self.exporter, self.hardware, self.screenshot_tools,
+            self.syncer, self.skin_studio, self.cloner, self.java,
+            self.lunar_bridge, self.loopback, self.async_tasks
+        ):
+            if s is not None:
+                try:
+                    s._serializable = False
+                except Exception:
+                    pass
 
     def set_window(self, window):
         """Attaches active pywebview window for asynchronous event dispatches."""
@@ -353,6 +367,10 @@ class LauncherBridgeAPI:
 
     def clone_instance(self, inst_id, new_name=None):
         return self.instances.clone_instance(inst_id, new_name)
+
+    def launch_instance(self, inst_id=None, server_ip=None, server_port=None):
+        """Direct alias for launch_game providing bidirectional API compatibility."""
+        return self.launch_game(inst_id=inst_id, server_ip=server_ip, server_port=server_port)
 
     def launch_game(self, inst_id=None, server_ip=None, server_port=None):
         if not inst_id:
