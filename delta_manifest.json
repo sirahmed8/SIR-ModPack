@@ -4,7 +4,7 @@
   "generated_at": 1788853520,
   "iso_timestamp": "2026-09-08T07:45:20Z",
   "total_files": 2783,
-  "total_size_bytes": 5810578659,
+  "total_size_bytes": 5735511059,
   "files": {
     "capes/TestPlayer_cape.png": {
       "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
@@ -16681,8 +16681,8 @@
       "category": "resourcepack"
     },
     "resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "cbfbfafc0d63ee9d46a94415feb97c5bd28e1dc2b6e4846d27a83a103f6fcb15",
+      "size": 77720467,
       "mtime": 1788833911,
       "category": "resourcepack"
     },

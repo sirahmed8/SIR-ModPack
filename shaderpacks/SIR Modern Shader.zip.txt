@@ -1,0 +1,18 @@
+# SIR Modern Shader Balanced High-Performance Profile
+# Optimized for high-fidelity PBR/POM with smooth 120-144+ FPS
+shadowMapResolution=1024
+shadowDistance=96.0
+SHADOW_FILTER_SAMPLE_COUNT=7
+reflection_quality=16.0
+SSR_STEPS=18
+VL_SAMPLES=6
+LPV_ENABLED=false
+POM=true
+MATERIAL_AO=true
+Screen_Space_Reflections=true
+Sky_reflection=true
+Rough_reflections=true
+Porosity=true
+Ambient_SSS=true
+MOB_SSS=true
+MISC_BLOCK_SSS=true

@@ -36,6 +36,5 @@ instances/*/natives/
 
 # Distribution Packages (Over 95MB GitHub limit, distributed via Releases/CDN)
 SIR_Apps_Suite.zip
-SIR Modern.zip
 *watermedia_binaries*
 
