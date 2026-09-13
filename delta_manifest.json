@@ -4,7 +4,7 @@
   "generated_at": 1788853520,
   "iso_timestamp": "2026-09-08T07:45:20Z",
   "total_files": 2783,
-  "total_size_bytes": 5735511059,
+  "total_size_bytes": 5735511042,
   "files": {
     "capes/TestPlayer_cape.png": {
       "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
@@ -16699,8 +16699,8 @@
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip.txt": {
-      "sha256": "5ef9676fa380538fe6dba6336d80603db8c7c262167d0450d25eed1920064b12",
-      "size": 457,
+      "sha256": "d79ae856df7d09832f5dae4f66de66110723a41d8003d33a5fee350636152e7f",
+      "size": 440,
       "mtime": 1788831817,
       "category": "shader"
     }
