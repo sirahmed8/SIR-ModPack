@@ -13,7 +13,7 @@ import urllib.parse
 class ServerService:
     """Multi-threaded high-speed TCP socket pinger, live NBT servers.dat reader, and real-time Minecraft status engine."""
     
-    def __init__(self, root_dir=None):
+    def __init__(self, root_dir=None, auto_refresh=True):
         self.root_dir = root_dir or os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         self.cached_results = {}
         
@@ -112,7 +112,8 @@ class ServerService:
         ]
 
         # Trigger live background fetch
-        self.refresh_all_servers_async()
+        if auto_refresh:
+            self.refresh_all_servers_async()
 
     def _read_nbt_tag(self, stream):
         tag_type = stream.read(1)
