@@ -4,7 +4,7 @@
   "generated_at": 1788853520,
   "iso_timestamp": "2026-09-08T07:45:20Z",
   "total_files": 2783,
-  "total_size_bytes": 5735511042,
+  "total_size_bytes": 4558885416,
   "files": {
     "capes/TestPlayer_cape.png": {
       "sha256": "56550953c106a15d4c42ebf794a6e3a40dcacb6f85ec612592e6b44626d82593",
@@ -475,8 +475,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-balanced/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -523,8 +523,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-balanced/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -1285,8 +1285,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-performance/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -1303,8 +1303,8 @@
       "category": "shader"
     },
     "instances/1.8.9-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -1345,8 +1345,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-performance/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -1357,8 +1357,8 @@
       "category": "shader"
     },
     "instances/1.8.9-performance/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -3367,8 +3367,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-ultra/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -3385,8 +3385,8 @@
       "category": "shader"
     },
     "instances/1.8.9-ultra/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -3439,8 +3439,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9-ultra/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -3451,8 +3451,8 @@
       "category": "shader"
     },
     "instances/1.8.9-ultra/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -3805,8 +3805,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -3865,8 +3865,8 @@
       "category": "resourcepack"
     },
     "instances/1.8.9/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -4303,8 +4303,8 @@
       "category": "mod"
     },
     "instances/26.2-balanced/minecraft/mods/JustEnoughResources-Fabric-26.2-1.11.0.43.jar": {
-      "sha256": "1042bee9a087c06f7eb820594b9e16a63695e4d1d2c434727f3d38788298b262",
-      "size": 257362,
+      "sha256": "79dc570ef1a561b9de901dc5c62f3aa46f7dfb94d04cceb514b590b5c5aa4a92",
+      "size": 256911,
       "mtime": 1788475045,
       "category": "mod"
     },
@@ -5449,8 +5449,8 @@
       "category": "resourcepack"
     },
     "instances/26.2-balanced/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -5461,8 +5461,8 @@
       "category": "instance_meta"
     },
     "instances/26.2-balanced/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -5491,14 +5491,14 @@
       "category": "resourcepack"
     },
     "instances/26.2-balanced/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
     "instances/26.2-balanced/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -5935,8 +5935,8 @@
       "category": "mod"
     },
     "instances/26.2-performance/minecraft/mods/JustEnoughResources-Fabric-26.2-1.11.0.43.jar": {
-      "sha256": "1042bee9a087c06f7eb820594b9e16a63695e4d1d2c434727f3d38788298b262",
-      "size": 257362,
+      "sha256": "79dc570ef1a561b9de901dc5c62f3aa46f7dfb94d04cceb514b590b5c5aa4a92",
+      "size": 256911,
       "mtime": 1788475045,
       "category": "mod"
     },
@@ -7087,8 +7087,8 @@
       "category": "resourcepack"
     },
     "instances/26.2-performance/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -7099,8 +7099,8 @@
       "category": "instance_meta"
     },
     "instances/26.2-performance/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -7129,14 +7129,14 @@
       "category": "resourcepack"
     },
     "instances/26.2-performance/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
     "instances/26.2-performance/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -13579,8 +13579,8 @@
       "category": "mod"
     },
     "instances/26.2-ultra/minecraft/mods/JustEnoughResources-Fabric-26.2-1.11.0.43.jar": {
-      "sha256": "1042bee9a087c06f7eb820594b9e16a63695e4d1d2c434727f3d38788298b262",
-      "size": 257362,
+      "sha256": "79dc570ef1a561b9de901dc5c62f3aa46f7dfb94d04cceb514b590b5c5aa4a92",
+      "size": 256911,
       "mtime": 1788475045,
       "category": "mod"
     },
@@ -14725,8 +14725,8 @@
       "category": "resourcepack"
     },
     "instances/26.2-ultra/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -14743,8 +14743,8 @@
       "category": "instance_meta"
     },
     "instances/26.2-ultra/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -14785,8 +14785,8 @@
       "category": "resourcepack"
     },
     "instances/26.2-ultra/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -14803,8 +14803,8 @@
       "category": "shader"
     },
     "instances/26.2-ultra/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -15193,8 +15193,8 @@
       "category": "resourcepack"
     },
     "instances/26.2/minecraft/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -15205,8 +15205,8 @@
       "category": "instance_meta"
     },
     "instances/26.2/minecraft/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -15259,8 +15259,8 @@
       "category": "resourcepack"
     },
     "instances/26.2/resourcepacks/SIR Modern.zip": {
-      "sha256": "618269df2c362868fddaa0d57128bf2c046678053aa7be0beb831b9ec06e1aef",
-      "size": 152788067,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -15271,8 +15271,8 @@
       "category": "shader"
     },
     "instances/26.2/shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "88763a2ac6d25db8e5cf429e695e4071878e52bdebe183838aaac32a3bd15e53",
-      "size": 1781335,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
@@ -15511,8 +15511,8 @@
       "category": "mod"
     },
     "mods/JustEnoughResources-Fabric-26.2-1.11.0.43.jar": {
-      "sha256": "1042bee9a087c06f7eb820594b9e16a63695e4d1d2c434727f3d38788298b262",
-      "size": 257362,
+      "sha256": "79dc570ef1a561b9de901dc5c62f3aa46f7dfb94d04cceb514b590b5c5aa4a92",
+      "size": 256911,
       "mtime": 1788475045,
       "category": "mod"
     },
@@ -16681,8 +16681,8 @@
       "category": "resourcepack"
     },
     "resourcepacks/SIR Modern.zip": {
-      "sha256": "cbfbfafc0d63ee9d46a94415feb97c5bd28e1dc2b6e4846d27a83a103f6fcb15",
-      "size": 77720467,
+      "sha256": "fbb36237771f457c3eda4a20e6dcfb4bc643017b18518c638e601e49bb9978f5",
+      "size": 77720137,
       "mtime": 1788833911,
       "category": "resourcepack"
     },
@@ -16693,8 +16693,8 @@
       "category": "shader"
     },
     "shaderpacks/SIR Modern Shader.zip": {
-      "sha256": "dd0af1b34fad0e3fc00cab401144868ce2a298cc2f6a5e401ed8fb43f253f0fc",
-      "size": 3819981,
+      "sha256": "bc7e67abc91834624a58782a65e6e0c6863a854c37ffec08c33d1abe92a08a12",
+      "size": 3819953,
       "mtime": 1788838344,
       "category": "shader"
     },
