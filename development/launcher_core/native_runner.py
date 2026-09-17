@@ -916,6 +916,7 @@ class NativeMinecraftRunner:
         mc_version: str = "26.2",
         extra_flags: Optional[List[str]] = None,
         game_dir: str = "",
+        java_version: int = 25,
     ) -> List[str]:
         """Constructs Aikar's tuned high-performance JVM optimization flags with strict RAM bounds."""
         ram_params = calculate_ram_parameters(max_ram=ram_gb, min_ram=min_ram_gb, mc_version=mc_version)
@@ -964,10 +965,9 @@ class NativeMinecraftRunner:
                 "-XX:+UseStringDeduplication",
             ] + branding_flags
             if use_zgc:
-                args.extend([
-                    "-XX:+UseZGC",
-                    "-XX:+ZGenerational",
-                ])
+                args.append("-XX:+UseZGC")
+                if java_version < 24:
+                    args.append("-XX:+ZGenerational")
             else:
                 args.extend([
                     "-XX:+UseG1GC",
@@ -1001,12 +1001,17 @@ class NativeMinecraftRunner:
                     # Filter out conflicting GC thread overrides for legacy HotSpot JVM
                     if is_legacy and any(k in s_flag for k in ["ParallelGCThreads", "ConcGCThreads", "UnlockExperimentalVMOptions"]):
                         continue
+                    # In JDK 24+, -XX:+ZGenerational support was removed (Generational ZGC is default)
+                    if (java_version >= 24 or not is_legacy) and "-XX:+ZGenerational" in s_flag:
+                        continue
                     if s_flag and s_flag not in args:
                         args.append(s_flag)
                 elif isinstance(flag, (list, tuple)):
                     for sub in flag:
                         s_sub = str(sub).strip()
                         if is_legacy and any(k in s_sub for k in ["ParallelGCThreads", "ConcGCThreads", "UnlockExperimentalVMOptions"]):
+                            continue
+                        if (java_version >= 24 or not is_legacy) and "-XX:+ZGenerational" in s_sub:
                             continue
                         if s_sub and s_sub not in args:
                             args.append(s_sub)
@@ -1288,6 +1293,15 @@ class NativeMinecraftRunner:
                     extra_jvm.append(clean_tok)
 
         eff_game_dir = os.path.join(instance_dir, "minecraft") if os.path.isdir(os.path.join(instance_dir, "minecraft")) else instance_dir
+
+        # Pre-seed PhysicsMod cache directories to prevent NoSuchFileException
+        try:
+            cloth_cache = os.path.join(eff_game_dir, ".physics_mod_cache", "cloth")
+            os.makedirs(cloth_cache, exist_ok=True)
+        except Exception:
+            pass
+
+        eff_java_version = major if (valid_java and major > 0) else (8 if is_legacy else 25)
         jvm_args = self.build_jvm_args(
             ram_gb=eff_max_ram,
             natives_dir=natives_dir,
@@ -1296,6 +1310,7 @@ class NativeMinecraftRunner:
             mc_version=eff_mc_ver,
             extra_flags=extra_jvm,
             game_dir=eff_game_dir,
+            java_version=eff_java_version,
         )
         game_args = self.build_game_args(
             version_json=v_json,
