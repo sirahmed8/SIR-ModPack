@@ -17,7 +17,7 @@ preferredGraphicsBackend:"default"
 graphicsPreset:"custom"
 prioritizeChunkUpdates:1
 fullscreen:false
-exclusiveFullscreen:true
+exclusiveFullscreen:false
 gamma:0.0
 guiScale:2
 maxAnisotropyBit:2

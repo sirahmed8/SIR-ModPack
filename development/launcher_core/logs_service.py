@@ -53,6 +53,7 @@ class ProcessLogStreamer:
         self.detected_crash_snippet: Optional[str] = None
         self.is_running = True
         self._stop_event = threading.Event()
+        self._shutdown_initiated = False
 
         os.makedirs(os.path.dirname(os.path.abspath(log_file)), exist_ok=True)
 
@@ -122,6 +123,13 @@ class ProcessLogStreamer:
                                 self.detected_crash_snippet = line.strip()
                                 break
 
+                    # Monitor for Minecraft shutdown initiation to enforce clean termination
+                    # and prevent non-daemon worker threads (e.g. pool-10-thread-1) from stalling exit
+                    if not self._shutdown_initiated:
+                        if "Stopping!" in line or "Releasing all resources during client shutdown" in line:
+                            self._shutdown_initiated = True
+                            threading.Thread(target=self._enforce_clean_shutdown, daemon=True, name="Shutdown-Enforcer").start()
+
                     if self.on_line_callback:
                         try:
                             self.on_line_callback(line)
@@ -131,6 +139,18 @@ class ProcessLogStreamer:
             pass
         finally:
             self.is_running = False
+
+    def _enforce_clean_shutdown(self) -> None:
+        """Grants a 2.5s grace period for Minecraft to write options/chunks, then terminates lingering worker threads."""
+        time.sleep(2.5)
+        if self.proc.poll() is None:
+            try:
+                self.proc.terminate()
+                time.sleep(0.5)
+                if self.proc.poll() is None:
+                    self.proc.kill()
+            except Exception:
+                pass
 
     def _exit_watcher(self) -> None:
         """Waits for process termination and triggers crash diagnostics or exit callbacks."""
@@ -175,6 +195,15 @@ class ProcessLogStreamer:
                     recent_text or f"Process exited with code {exit_code}\nSnippet: {self.detected_crash_snippet or 'None'}",
                     os.path.basename(self.log_file)
                 )
+
+            # Suppress false-positive crashes when client shut down normally but had delayed post-main exit
+            if (crash_diag and crash_diag.get("type") == "POST_MAIN_SHUTDOWN_TIMEOUT") or (self._shutdown_initiated and not self.detected_crash_type):
+                if self.on_exit_callback:
+                    try:
+                        self.on_exit_callback(0)
+                    except Exception:
+                        pass
+                return
 
             diag_payload = {
                 "exit_code": exit_code,

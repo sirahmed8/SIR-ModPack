@@ -992,7 +992,9 @@ class NativeMinecraftRunner:
             args.extend(["-XX:ParallelGCThreads=4", "-XX:ConcGCThreads=2"])
         else:
             cpu = os.cpu_count() or 8
-            args.extend([f"-XX:ParallelGCThreads={cpu}", f"-XX:ConcGCThreads={max(2, cpu // 2)}"])
+            parallel_threads = min(6, max(2, cpu // 2))
+            conc_threads = max(1, min(3, parallel_threads // 2))
+            args.extend([f"-XX:ParallelGCThreads={parallel_threads}", f"-XX:ConcGCThreads={conc_threads}"])
 
         if extra_flags:
             for flag in extra_flags:
@@ -1139,6 +1141,7 @@ class NativeMinecraftRunner:
         pid = proc_or_pid.pid if hasattr(proc_or_pid, "pid") else proc_or_pid
 
         def _worker():
+            has_seen_window = False
             while True:
                 if hasattr(proc_or_pid, "poll") and proc_or_pid.poll() is not None:
                     break
@@ -1155,18 +1158,32 @@ class NativeMinecraftRunner:
                 try:
                     proc_type = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p)
                     user32.EnumWindows(proc_type(_enum_windows_proc), 0)
-                    for h in found_hwnds:
-                        length = user32.GetWindowTextLengthW(h)
-                        if length > 0:
-                            buf = ctypes.create_unicode_buffer(length + 1)
-                            user32.GetWindowTextW(h, buf, length + 1)
-                            curr = buf.value
-                            if any(token in curr for token in ["Minecraft", "GLFW", "LWJGL", "1.21", "1.8", "26.2", "SIR Launcher"]):
-                                if not curr.endswith("- SIR Launcher") or curr != target_title:
-                                    user32.SetWindowTextW(h, target_title)
+                    if found_hwnds:
+                        has_seen_window = True
+                        for h in found_hwnds:
+                            length = user32.GetWindowTextLengthW(h)
+                            if length > 0:
+                                buf = ctypes.create_unicode_buffer(length + 1)
+                                user32.GetWindowTextW(h, buf, length + 1)
+                                curr = buf.value
+                                if any(token in curr for token in ["Minecraft", "GLFW", "LWJGL", "1.21", "1.8", "26.2", "SIR Launcher"]):
+                                    if not curr.endswith("- SIR Launcher") or curr != target_title:
+                                        user32.SetWindowTextW(h, target_title)
+                    elif has_seen_window:
+                        # Window was closed by user; grant 2.0s for options/chunks to save, then terminate lingering process
+                        time.sleep(2.0)
+                        if hasattr(proc_or_pid, "poll") and proc_or_pid.poll() is None:
+                            try:
+                                proc_or_pid.terminate()
+                                time.sleep(0.5)
+                                if proc_or_pid.poll() is None:
+                                    proc_or_pid.kill()
+                            except Exception:
+                                pass
+                        break
                 except Exception:
                     pass
-                time.sleep(2.0)
+                time.sleep(1.5)
 
         threading.Thread(target=_worker, daemon=True).start()
 

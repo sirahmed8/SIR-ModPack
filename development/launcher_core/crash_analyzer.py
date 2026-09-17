@@ -57,6 +57,19 @@ class CrashAnalyzer:
             }
 
         # -------------------------------------------------------------
+        # 0. Post-Main Shutdown Watchdog (Non-fatal exit timeout)
+        # -------------------------------------------------------------
+        if "Client shutdown from post-main" in content or "Watchdog (Client shutdown from post-main)" in content:
+            return {
+                "type": "POST_MAIN_SHUTDOWN_TIMEOUT",
+                "cause": "Minecraft client finished executing normally; background non-daemon worker threads delayed process exit.",
+                "conflicting_mods": [],
+                "solutions": ["No action required: game session exited successfully."],
+                "auto_fixable": False,
+                "fix": "Clean exit completed.",
+            }
+
+        # -------------------------------------------------------------
         # 0a. Java Version Mismatch (e.g. Java 21 vs 25 on 26.2)
         # -------------------------------------------------------------
         if (

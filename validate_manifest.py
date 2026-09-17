@@ -114,7 +114,9 @@ def validate_manifest():
                 MUTABLE_SUFFIXES = [
                     "options.txt", "servers.dat", "usercache.json", "sodium-options.json",
                     "dev_cosmetics.json", "instance.cfg", "mmc-pack.json",
-                    "patcher.toml", "customskinloader.json",
+                    "patcher.toml", "customskinloader.json", "sodium-fingerprint.json",
+                    "iris.properties", "scalablelux.properties", "controlify.json",
+                    "profile-1.json", "jade.json", "SIR Modern Shader.zip.txt",
                 ]
                 is_mutable_user_setting = any(path_str.endswith(s) for s in MUTABLE_SUFFIXES)
                 if is_mutable_user_setting and not (os.environ.get("STRICT_TEMPLATE_VERIFY") == "1"):
