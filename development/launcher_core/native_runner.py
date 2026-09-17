@@ -978,7 +978,7 @@ class NativeMinecraftRunner:
                     f"-XX:G1HeapRegionSize={ram_params['region_size']}",
                     "-XX:G1HeapWastePercent=5",
                     "-XX:G1MixedGCCountTarget=4",
-                    "-XX:InitiatingHeapOccupancyPercent=15",
+                    "-XX:InitiatingHeapOccupancyPercent=45",
                     "-XX:G1MixedGCLiveThresholdPercent=90",
                     "-XX:G1RSetUpdatingPauseTimePercent=5",
                     "-XX:SurvivorRatio=32",

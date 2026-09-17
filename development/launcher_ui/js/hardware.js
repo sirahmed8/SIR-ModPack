@@ -108,16 +108,20 @@
       }
     };
 
-    const total = data.total_ram_gb !== undefined ? `${data.total_ram_gb} GB Total` : '16.0 GB Total';
-    const avail = data.avail_ram_gb !== undefined ? `${data.avail_ram_gb} GB Available` : '8.0 GB Available';
-    const ramPct = data.ram_load_pct ?? data.ram_pct ?? 45;
-    const cores = data.cpu_cores ?? data.cpu_count ?? 8;
-    const cpuPct = data.cpu_load_pct ?? data.cpu_pct ?? 5;
+    // Unify TelemetryPacket schema and legacy flat metrics
+    const cpu = data.cpu || {};
+    const ram = data.ram || {};
+    const gpuObj = data.gpu || {};
+    const total = data.total_ram_gb !== undefined ? `${data.total_ram_gb} GB Total` : (ram.total_mb ? `${(ram.total_mb / 1024).toFixed(1)} GB Total` : '16.0 GB Total');
+    const avail = data.avail_ram_gb !== undefined ? `${data.avail_ram_gb} GB Available` : (ram.total_mb && ram.used_mb ? `${((ram.total_mb - ram.used_mb) / 1024).toFixed(1)} GB Available` : '8.0 GB Available');
+    const ramPct = ram.percent ?? data.ram_load_pct ?? data.ram_pct ?? 45;
+    const cores = cpu.core_count ?? data.cpu_cores ?? data.cpu_count ?? 8;
+    const cpuPct = cpu.usage_percent ?? data.cpu_load_pct ?? data.cpu_pct ?? 5;
     const recRam = data.recommended_ram_gb ?? data.rec_ram_gb ?? 8;
     const tier = data.power_tier || 'High Performance Tier';
-    const gpu = data.gpu_name || 'Primary GPU';
+    const gpu = gpuObj.model || data.gpu_name || 'Primary GPU';
     const rec = data.recommendation || `System detected: ${cores} CPU Threads, ${total}, ${gpu}. Optimal allocation: ${recRam} GB Dedicated Heap.`;
-    const timeStr = data.timestamp || new Date().toLocaleTimeString();
+    const timeStr = typeof data.timestamp === 'number' ? new Date(data.timestamp).toLocaleTimeString() : (data.timestamp || new Date().toLocaleTimeString());
 
     set('hw-total-ram', total);
     set('hw-avail-ram', avail);
@@ -214,7 +218,7 @@
     if (_hardwarePollingInterval) clearInterval(_hardwarePollingInterval);
     _hardwarePollingInterval = setInterval(() => {
       refreshHardwareTelemetry();
-    }, 1000);
+    }, 1200);
 
     setTimeout(refreshHardwareTelemetry, 50);
   }
