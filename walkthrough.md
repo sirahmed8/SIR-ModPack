@@ -192,33 +192,38 @@ python build_ecosystem.py
   - `SIR Server Manager.exe` (26.3 MB)
   - `SIR Installer.exe` (25.1 MB)
 
-### Step 7: Official Release Baseline & Dual-Repo Push
+### Step 7: v2.4.0 Official Release Baseline & Dual-Repo Push
 - **Public Repo (`public_repo/` -> `https://github.com/sirahmed8/SIR-ModPack.git`):**
-  - Baseline commit: `f03fb339`
-  - Message: `feat: v1.0.0 Official Release — Independent Gaming Platform`
+  - Release commit: `98127e48`
+  - Message: `release: v2.4.0 ecosystem overhaul, legal compliance, and window lifecycle engine`
   - Branch: `main`
   - Assets: Binaries, core engines, shaders, resource packs, test suite, and bilingual docs.
 - **Private Repo (`website-next/` -> `https://github.com/sirahmed8/SIR-ModPack-private.git`):**
-  - Baseline commit: `27af205`
-  - Message: `feat: v1.0.0 Official Release — Independent Gaming Platform`
+  - Release commit: `4e5123b`
+  - Message: `release: v2.4.0 web platform, refund policy, admin security gate, and anti-vibe design`
   - Branch: `main`
   - Assets: Next.js 16 web application, Firebase Hosting & Realtime Database config, bilingual docs, and public web assets.
 
-### Step 9: Global Docs, Localization & GitHub CI/CD Specialist Deployment
-- **Comprehensive Master Arabic Manual (`README_AR.md`)**:
-  - Authored detailed Arabic master documentation across `README_AR.md`, `public_repo/README_AR.md`, and `website-next/README_AR.md`.
-  - Thoroughly covers Modern 26.2 (Fabric 0.19.4, ASM engine, ZGC), Legacy 1.8.9 (Forge, 28 mods, 0ms input lag), isolated dual shaders, 3D POM/PBR, ocean physics waves, Potato PC preset, R-Shift HUD in-game studio, Lunar Client turbo tuning, desktop applications suite, Next.js 16 Web Hub, and installation guides.
-- **Legal & Licensing Integrity Audit**:
-  - Audited `LICENSE.md`, `AGREEMENTS.md`, `EULA.md`, `TERMS.md`, `PRIVACY.md`, `COOKIES.md`, `README.md`, `PROJECT.md`, `CHANGELOG.md`.
-  - Confirmed identity strictly as **"Independent Gaming Platform"** under the **SIR Software Agreement**.
-  - Verified **zero claims** of open-source, FOSS, GPL, MIT, or Apache licenses in platform documentation.
-  - Standardized official governance email strictly as **`a7medorabe7@gmail.com`** across all files.
-- **GitHub Actions CI/CD Automation (`public_repo/.github/workflows/`)**:
-  - **`ci.yml`**: Multi-platform matrix on Python 3.11, 3.12, 3.13 across `windows-latest` and `ubuntu-latest`, automated manifest schema and hash validation, automated ecosystem doctor verification, and unit test suite execution.
-  - **`release.yml`**: Tag trigger (`v*`), automated SHA-256 release checksums generation (`SHA256SUMS.txt`), and automated release packaging.
-  - **Community Standards**: `bug_report.md`, `feature_request.md`, and `PULL_REQUEST_TEMPLATE.md`.
+### Step 8: Global Docs, Legal Harmonization & Firebase Deploy
+- **Complete Markdown Documentation Refresh**:
+  - `README.md` & `README_AR.md`: Harmonized to v2.4.0 (2026.2 LTS), anti-vibe design, hybrid GPU resolution, window lifecycle, zero raw emojis, zero em-dashes.
+  - `CHANGELOG.md`: Added top v2.4.0 entry, updated QA table to 406 tests and 38 static routes, purged all storage talk.
+  - `PROJECT.md`: Updated to Gen 9 (v2.4.0), all milestones completed, zero storage talk.
+  - `PROJECT_ARCHITECTURE_EXPLANATION.md` & `ARCHITECTURE.md`: Synchronized 6-tier profile matrix, 38 static routes, and WindowLifecycleService.
+  - `RELEASE_NOTES.md`: Updated to v2.4.0 LTS with highlights on anti-vibe design, hybrid GPU cure, and admin security gate.
+- **Enterprise Legal & Policy Suite**:
+  - `PRIVACY.md` & `/privacy`: Updated to v2.4.0 LTS, zero-telemetry, diagnostic assistant rebranding.
+  - `TERMS.md` & `/terms`: Updated to v2.4.0 LTS, digital goods withdrawal, statutory 14-day policy.
+  - `COOKIES.md` & `/cookies`: Updated to v2.4.0 LTS, cookie consent matrix, local storage studio.
+  - `EULA.md` & `/eula`: Updated to v2.4.0 LTS, Mojang compliance, bytecode modification acknowledgment.
+  - `AGREEMENTS.md` & `/agreements`: Updated to v2.4.0 LTS, fair play, distribution protocols, zero-telemetry.
+  - `/refund`: Dedicated statutory 14-day digital refund policy route.
 - **Automated Verification**:
-  - `python validate_manifest.py`: 100% VALID (2,783/2,783 files verified).
+  - `python validate_manifest.py`: 100% VALID (2,987/2,987 files verified in root & public_repo).
   - `python ecosystem_doctor.py`: 100% HEALTHY across all 6 diagnostic layers.
-  - `python -m unittest discover -s tests -p "test_*.py"`: 368/368 unit tests passed (0 failures, 0 errors).
+  - `python -m unittest discover -s tests -p "test_*.py"`: 406/406 root unit tests passed (100% OK).
+  - `python -m unittest discover -s public_repo/tests -p "test_*.py"`: 394/394 public_repo tests passed (100% OK).
+  - `npm run build` in `website-next`: 38/38 static routes compiled with Turbopack (EXIT 0).
+  - `firebase deploy --only "hosting,database,firestore"`: 272 assets deployed to `https://sir-modpack.web.app`.
+
 
