@@ -1,5 +1,5 @@
 /**
- * cloud_sync.js — Google Cloud Authentication & Firebase Persistence UI Integration.
+ * cloud_sync.js : Google Cloud Authentication & Firebase Persistence UI Integration.
  */
 
 window.CLOUD_STATE = {

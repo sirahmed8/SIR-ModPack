@@ -43,7 +43,7 @@ function switchLegalDoc(doc) {
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">2. User Responsibility & Mod Integrity</h4>
         <p>All mods, shaders, and resource packs provided in SIR ModPack are curated for stability, safety, and security. You agree not to use the suite for malicious network disruption, unauthorized server exploits, piracy, or commercial resale.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">3. Mod Compatibility & Local Bytecode Processing</h4>
-        <p>The SIR Launcher performs automated local-only ASM bytecode compatibility processing on installed mod JAR files to ensure compatibility with Minecraft 26.2's official namespace. This processing occurs entirely on your local machine — zero bytecode, class data, or transformation results are ever transmitted externally.</p>
+        <p>The SIR Launcher performs automated local-only ASM bytecode compatibility processing on installed mod JAR files to ensure compatibility with Minecraft 26.2's official namespace. This processing occurs entirely on your local machine: zero bytecode, class data, or transformation results are ever transmitted externally.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">4. Disclaimer & Limitation of Liability</h4>
         <p>SIR Launcher is provided on an "AS-IS" and "AS-AVAILABLE" basis without warranties of any kind. The developers shall not be liable for any server penalties, third-party mod conflicts, or hardware instability resulting from extreme overclocks.</p>
         <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mt-3">5. Governance & Legal Contact</h4>
@@ -76,9 +76,9 @@ function switchLegalDoc(doc) {
     `,
     mojang: `
       <div class="space-y-3 text-xs leading-relaxed">
-        <h4 class="font-bold text-purple-300 text-xs uppercase tracking-wider">1. Mojang Studios Brand & EULA Compliance</h4>
+        <h4 class="font-bold text-sky-300 text-xs uppercase tracking-wider">1. Mojang Studios Brand & EULA Compliance</h4>
         <p>SIR Launcher and SIR ModPack are NOT official Minecraft products and are NOT approved by or associated with Mojang Studios or Microsoft Corporation. All Minecraft assets, textures, sounds, and trademarks belong to Mojang Studios and Microsoft Corporation.</p>
-        <h4 class="font-bold text-purple-300 text-xs uppercase tracking-wider mt-3">2. Commercial & Account Usage</h4>
+        <h4 class="font-bold text-sky-300 text-xs uppercase tracking-wider mt-3">2. Commercial & Account Usage</h4>
         <p>In full compliance with Mojang's Commercial Usage Guidelines and End User License Agreement (<a href="https://minecraft.net/eula" target="_blank" class="text-cyan-400 underline">minecraft.net/eula</a>), SIR ModPack does not monetize game binaries or charge for core game access. Connecting to official multiplayer networks requires a valid Minecraft license.</p>
       </div>
     `

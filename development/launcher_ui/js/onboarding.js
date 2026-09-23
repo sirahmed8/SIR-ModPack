@@ -1,5 +1,5 @@
 /**
- * onboarding.js — First-Time User Welcome Onboarding Wizard for SIR Launcher.
+ * onboarding.js : First-Time User Welcome Onboarding Wizard for SIR Launcher.
  * Features:
  * - Multi-step guided setup (Welcome -> Language/Theme -> Google Auth -> Finish)
  * - Auto-detects hardware and sets default optimal presets
@@ -161,7 +161,7 @@ function selectOnboardingEngine(engineKey) {
 
   if (engineKey === 'modern') {
     if (modernCard) modernCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-cyan-500/15 border-2 border-cyan-400 ring-2 ring-cyan-400/50 space-y-1.5 select-none";
-    if (legacyCard) legacyCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-purple-500/5 border border-purple-500/20 hover:border-purple-500/40 space-y-1.5 select-none";
+    if (legacyCard) legacyCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-sky-500/5 border border-sky-500/20 hover:border-sky-500/40 space-y-1.5 select-none";
     if (modernBadge) modernBadge.classList.remove('hidden');
     if (legacyBadge) legacyBadge.classList.add('hidden');
     if (recProfile) {
@@ -172,13 +172,13 @@ function selectOnboardingEngine(engineKey) {
       showToast('✓ Selected Modern 26.2 (Fabric 0.19 · 221 Mods · Raytracing)', 'info');
     }
   } else {
-    if (legacyCard) legacyCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-purple-500/15 border-2 border-purple-400 ring-2 ring-purple-400/50 space-y-1.5 select-none";
+    if (legacyCard) legacyCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-sky-500/15 border-2 border-sky-400 ring-2 ring-sky-400/50 space-y-1.5 select-none";
     if (modernCard) modernCard.className = "cursor-pointer transition-all hover:scale-[1.02] active:scale-95 p-3.5 rounded-2xl bg-cyan-500/5 border border-cyan-500/20 hover:border-cyan-500/40 space-y-1.5 select-none";
     if (legacyBadge) legacyBadge.classList.remove('hidden');
     if (modernBadge) modernBadge.classList.add('hidden');
     if (recProfile) {
       recProfile.textContent = "Legacy 1.8.9 Ultra";
-      recProfile.className = "font-bold text-purple-300";
+      recProfile.className = "font-bold text-sky-300";
     }
     if (typeof showToast === 'function') {
       showToast('✓ Selected Legacy 1.8.9 (Forge PvP · 28 Mods · 600+ FPS)', 'info');

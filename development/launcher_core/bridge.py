@@ -386,68 +386,128 @@ class LauncherBridgeAPI:
         res = self.instances.launch_instance(
             inst_id, account, on_log_callback=_log_forwarder, server_ip=server_ip, server_port=server_port
         )
+        self.launch_game_post_action(res)
+        return res
 
-        # Handle post-launch window behavior
-        if res.get("success"):
-            action = self.instances.settings.get("window_launch_action", "tray_trim")
-            if action == "tray_trim":
-                if self.window:
-                    try:
-                        self.window.hide()
-                    except Exception:
-                        pass
-                # When game terminates, unhide window
-                streamer = res.get("streamer")
-                if streamer and hasattr(streamer, "on_exit_callback"):
-                    prev_exit_cb = streamer.on_exit_callback
-                    def _on_game_exit(code):
-                        if prev_exit_cb:
-                            try:
-                                prev_exit_cb(code)
-                            except Exception:
-                                pass
-                        tray = TrayService.get_instance()
-                        if tray:
-                            tray.restore_and_focus_window(maximize=True)
-                        elif self.window:
-                            try:
-                                self.window.show()
-                                self.window.restore()
-                                self.window.maximize()
-                            except Exception:
-                                pass
+    def restore_launcher_window(self, maximize: bool = True):
+        """Unhides, restores, and brings the launcher window to the absolute foreground."""
+        tray = TrayService.get_instance()
+        if tray:
+            try:
+                tray.restore_and_focus_window(maximize=maximize)
+            except Exception:
+                pass
+        elif self.window:
+            try:
+                self.window.show()
+                self.window.restore()
+                if maximize:
+                    self.window.maximize()
+            except Exception:
+                pass
+
+        if sys.platform == "win32":
+            try:
+                import ctypes
+                user32 = ctypes.windll.user32
+                pid = os.getpid()
+                found = {"hwnd": 0}
+
+                @ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p)
+                def _find_wnd(hwnd, _):
+                    owner = ctypes.c_ulong()
+                    user32.GetWindowThreadProcessId(hwnd, ctypes.byref(owner))
+                    if owner.value == pid and user32.GetWindow(hwnd, 4) == 0:
+                        found["hwnd"] = hwnd
+                        return False
+                    return True
+
+                user32.EnumWindows(_find_wnd, None)
+                if found["hwnd"]:
+                    user32.ShowWindow(found["hwnd"], 9)  # SW_RESTORE
+                    if maximize:
+                        user32.ShowWindow(found["hwnd"], 3)  # SW_MAXIMIZE
+                    user32.SetForegroundWindow(found["hwnd"])
+            except Exception:
+                pass
+
+    def launch_game_post_action(self, res):
+        """Manages launcher window behavior upon game start and sets up reliable auto-reopen handlers."""
+        if not res.get("success"):
+            return
+
+        action = self.instances.settings.get("window_launch_action", "tray_trim")
+        if action == "tray_trim":
+            # Ensure tray service is actively running before hiding main window
+            tray = TrayService.get_instance()
+            if tray and not tray.is_running:
+                try:
+                    tray.start()
+                except Exception:
+                    pass
+
+            if self.window:
+                try:
+                    self.window.hide()
+                except Exception:
+                    pass
+
+            restored = {"done": False}
+
+            def _trigger_reopen():
+                if not restored["done"]:
+                    restored["done"] = True
+                    self.restore_launcher_window(maximize=True)
+
+            # 1. Hook process log streamer exit callback
+            streamer = res.get("streamer")
+            if streamer and hasattr(streamer, "on_exit_callback"):
+                prev_exit_cb = streamer.on_exit_callback
+
+                def _on_game_exit(code):
+                    if prev_exit_cb:
+                        try:
+                            prev_exit_cb(code)
+                        except Exception:
+                            pass
+                    _trigger_reopen()
+
+                streamer.on_exit_callback = _on_game_exit
+
+            # 2. Resilient fallback watchdog polling process PID
+            game_pid = res.get("pid")
+            if game_pid and isinstance(game_pid, int):
+                def _pid_watcher():
+                    while True:
+                        time.sleep(1.0)
                         if sys.platform == "win32":
                             try:
                                 import ctypes
-                                user32 = ctypes.windll.user32
-                                pid = os.getpid()
-                                found = {"hwnd": 0}
-
-                                @ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_void_p, ctypes.c_void_p)
-                                def _find_wnd(hwnd, _):
-                                    owner = ctypes.c_ulong()
-                                    user32.GetWindowThreadProcessId(hwnd, ctypes.byref(owner))
-                                    if owner.value == pid and user32.GetWindow(hwnd, 4) == 0:
-                                        found["hwnd"] = hwnd
-                                        return False
-                                    return True
-
-                                user32.EnumWindows(_find_wnd, None)
-                                if found["hwnd"]:
-                                    user32.ShowWindow(found["hwnd"], 9)  # SW_RESTORE
-                                    user32.ShowWindow(found["hwnd"], 3)  # SW_MAXIMIZE
-                                    user32.SetForegroundWindow(found["hwnd"])
+                                handle = ctypes.windll.kernel32.OpenProcess(0x1000, False, game_pid)
+                                if not handle:
+                                    break
+                                exit_code = ctypes.c_ulong()
+                                ctypes.windll.kernel32.GetExitCodeProcess(handle, ctypes.byref(exit_code))
+                                ctypes.windll.kernel32.CloseHandle(handle)
+                                if exit_code.value != 259:  # STILL_ACTIVE
+                                    break
                             except Exception:
-                                pass
-                    streamer.on_exit_callback = _on_game_exit
-            elif action == "close":
-                if self.window:
-                    try:
-                        self.window.destroy()
-                    except Exception:
-                        pass
+                                break
+                        else:
+                            try:
+                                os.kill(game_pid, 0)
+                            except OSError:
+                                break
+                    _trigger_reopen()
 
-        return res
+                threading.Thread(target=_pid_watcher, daemon=True).start()
+
+        elif action == "close":
+            if self.window:
+                try:
+                    self.window.destroy()
+                except Exception:
+                    pass
 
     def get_window_lifecycle_settings(self):
         settings = self.instances.load_settings()

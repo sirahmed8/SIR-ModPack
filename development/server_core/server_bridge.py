@@ -286,7 +286,11 @@ class ServerBridgeAPI:
             "public_ip_display": "127.0.0.1:25565",
             "playit_custom_domain": "myserver.playit.gg:25565",
             "jvm_flags": "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC",
-            "server_port": 25565
+            "server_port": 25565,
+            "window_close_action": "tray",
+            "window_server_start_action": "keep_open",
+            "window_minimize_action": "taskbar",
+            "autostart_on_boot": False,
         }
         if os.path.exists(self.settings_file):
             try:
@@ -314,6 +318,31 @@ class ServerBridgeAPI:
             return {"success": True}
         except Exception as e:
             return {"success": False, "error": str(e)}
+
+    # --- WINDOW LIFECYCLE & AUTOSTART ---
+    def get_window_lifecycle_settings(self):
+        """Returns persisted window lifecycle settings and active Windows startup registration."""
+        settings = self.load_settings()
+        from server_core.server_tray_service import is_server_autostart_enabled
+        is_autostart = is_server_autostart_enabled() if sys.platform == "win32" else False
+        return {
+            "window_close_action": settings.get("window_close_action", "tray"),
+            "window_server_start_action": settings.get("window_server_start_action", "keep_open"),
+            "window_minimize_action": settings.get("window_minimize_action", "taskbar"),
+            "autostart_on_boot": is_autostart or bool(settings.get("autostart_on_boot", False)),
+        }
+
+    def save_window_lifecycle_settings(self, data):
+        """Persists window lifecycle settings and updates Windows registry HKCU autostart."""
+        if not isinstance(data, dict):
+            return {"success": False, "error": "Invalid data payload"}
+        if "autostart_on_boot" in data:
+            from server_core.server_tray_service import set_server_autostart
+            val = bool(data["autostart_on_boot"])
+            if sys.platform == "win32":
+                set_server_autostart(val)
+        self.save_settings(data)
+        return {"success": True, "settings": self.get_window_lifecycle_settings()}
 
     # --- GOOGLE CLOUD AUTH & PROFILE ---
     def get_cloud_auth_profile(self):
@@ -502,6 +531,21 @@ class ServerBridgeAPI:
                 message=f"Dedicated Server ({v}) started successfully on port 25565."
             )
 
+            # Honor window lifecycle behavior on server start
+            start_action = self.settings.get("window_server_start_action", "keep_open")
+            if start_action == "tray_trim":
+                if self.window:
+                    try:
+                        self.window.hide()
+                    except Exception:
+                        pass
+            elif start_action == "minimize":
+                if self.window:
+                    try:
+                        self.window.minimize()
+                    except Exception:
+                        pass
+
             return {"success": True, "message": f"Server started successfully for version {v}."}
         except Exception as e:
             self.is_running = False
@@ -607,6 +651,17 @@ class ServerBridgeAPI:
                 self.is_running = False
                 self.online_players = []
                 self._notify_tray()
+                if self.settings.get("window_server_start_action") == "tray_trim":
+                    try:
+                        from server_core.server_tray_service import ServerTrayService
+                        tray = ServerTrayService.get_instance()
+                        if tray:
+                            tray.restore_and_focus_window(maximize=False)
+                        elif self.window:
+                            self.window.show()
+                            self.window.restore()
+                    except Exception:
+                        pass
 
             threading.Thread(target=_wait_and_kill, daemon=True).start()
             self._notify_tray()

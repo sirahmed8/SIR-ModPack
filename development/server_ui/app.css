@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SIR SERVER ORCHESTRATOR PRO — DUAL THEME (CYBER DARK / CLEAN LIGHT)
+   SIR SERVER ORCHESTRATOR PRO : DUAL THEME (CYBER DARK / CLEAN LIGHT)
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700;800&family=Tajawal:wght@500;700;800;900&display=swap');
@@ -334,7 +334,7 @@ button:active, .btn-action:active, .nav-btn:active, .settings-tab-btn:active, .s
 
 
 /* ==========================================================================
-   SIR SERVER ORCHESTRATOR PRO — UNIVERSAL THEME ENGINE
+   SIR SERVER ORCHESTRATOR PRO : UNIVERSAL THEME ENGINE
    ========================================================================== */
 
 body, aside, header, main, .feature-card, .btn-secondary, input, select, textarea, button {
@@ -403,7 +403,7 @@ html.light .theme-seg-btn.active {
 
 
 /* ==========================================================================
-   RANGE SLIDER — LIGHT MODE STYLES
+   RANGE SLIDER : LIGHT MODE STYLES
    ========================================================================== */
 input[type="range"] {
   -webkit-appearance: none;

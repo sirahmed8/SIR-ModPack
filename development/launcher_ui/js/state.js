@@ -1,5 +1,5 @@
 // =============================================================================
-//   SIR LAUNCHER 2026.1 — HIGH-PERFORMANCE PRESENTATION CONTROLLER
+//   SIR LAUNCHER 2026.1 : HIGH-PERFORMANCE PRESENTATION CONTROLLER
 // =============================================================================
 
 const STATE = {

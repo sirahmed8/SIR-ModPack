@@ -168,7 +168,7 @@ function renderAccounts() {
               ${isAct ? '<span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_6px_#00e5ff]"></span>' : `
                 <button onclick="selectAccount('${escapeHtml(acc.name)}')" class="px-2 py-0.5 rounded bg-slate-800 text-[10px] font-bold text-slate-300 hover:text-cyan-300 cursor-pointer">Use</button>
               `}
-              <button onclick="removeAccount('${escapeHtml(acc.name)}')" class="p-1.5 rounded-full text-slate-500 hover:text-rose-400 hover:bg-rose-500/15 text-xs transition-all flex items-center justify-center w-6 h-6 cursor-pointer" title="Remove Account">✕</button>
+              <button onclick="removeAccount('${escapeHtml(acc.name)}')" class="p-1.5 rounded-md text-slate-500 hover:text-rose-400 hover:bg-rose-500/15 text-xs transition-all flex items-center justify-center w-6 h-6 cursor-pointer" title="Remove Account">✕</button>
             </div>
           </div>
         `;

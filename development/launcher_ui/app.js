@@ -1,5 +1,5 @@
 // =============================================================================
-// SIR Launcher — Modular Bootstrap Orchestrator
+// SIR Launcher : Modular Bootstrap Orchestrator
 // Clean Architecture Standard • Fully Typed & Event-Wired
 // =============================================================================
 
@@ -172,7 +172,7 @@ setTimeout(() => { if (_bridgePoller) clearInterval(_bridgePoller); }, 6000);
 
 
 // =============================================================================
-// MISSING UTILITY FUNCTIONS — SERVER, INSTANCES, SHADERS, HARDWARE
+// MISSING UTILITY FUNCTIONS : SERVER, INSTANCES, SHADERS, HARDWARE
 // =============================================================================
 
 function copyIp(host) {
@@ -376,7 +376,7 @@ async function applyShader(presetId) {
   showToast(`✓ Activated Shader: ${cleanName}`, 'success');
 }
 
-// Hardware Telemetry Bridge — Clean delegation to window.HardwareTelemetry (js/hardware.js)
+// Hardware Telemetry Bridge : Clean delegation to window.HardwareTelemetry (js/hardware.js)
 function applyHardwareTelemetryData(data) {
   if (window.HardwareTelemetry && typeof window.HardwareTelemetry.applyHardwareTelemetryData === 'function') {
     return window.HardwareTelemetry.applyHardwareTelemetryData(data);

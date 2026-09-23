@@ -1,14 +1,14 @@
-# 🍪 SIR ModPack — Cookie & Local Storage Governance Policy
-### *Version 1.0.0 • Official Release • Legally Enforced Transparency*
+# SIR ModPack: Cookie & Local Storage Governance Policy
+### *Version 2.4.0 LTS | Legally Enforced Transparency*
 
 ---
 
-## 🧭 1. Overview & Zero-Tracker Guarantee
+## 1. Overview & Zero-Tracker Guarantee
 The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, **zero third-party marketing beacons**, and **zero cross-site tracking scripts**. We only utilize necessary browser storage mechanisms (`localStorage`, `sessionStorage`, and essential functional cookies) to maintain your preferences and accelerate page delivery.
 
 ---
 
-## 📋 2. Comprehensive Client Storage Matrix
+## 2. Comprehensive Client Storage Matrix
 
 | Storage Key / Token | Storage Mechanism | Category | Technical Purpose | Lifespan |
 |---|---|---|---|---|
@@ -28,13 +28,13 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-## 🛠️ 3. User Controls & 1-Click Cache Management
+## 3. User Controls & 1-Click Cache Management
 - **Interactive Storage Studio:** You can inspect real-time storage usage and prune expired cache items anytime at [`/cookies`](https://sir-modpack.web.app/cookies).
 - **1-Click Local Purge:** You can completely clear all cached profiles and local settings directly in your browser or via the desktop launcher settings.
 
 ---
 
-## 📬 4. Contact & Legal Inquiries
+## 4. Contact & Legal Inquiries
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
@@ -43,17 +43,17 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-# 🍪 وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
-### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • شفافية تقنية كاملة وانعدام تام للتتبع*
+# وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
+### *الإصدار v2.4.0 LTS الرسمي | منظومة برمجية متطورة ومستقلة | شفافية تقنية كاملة وانعدام تام للتتبع*
 
 ---
 
-## 🧭 1. نظرة عامة وضمان انعدام التتبع الإعلاني
+## 1. نظرة عامة وضمان انعدام التتبع الإعلاني
 تستخدم منصة SIR ModPack (`sir-modpack.web.app`) **صفر ملفات تعريف ارتباط إعلانية**، و**صفر أدوات تتبع تسويقية**، و**صفر سكريبتات مراقبة عبر المواقع**. نستخدم حصرياً آليات التخزين المحلية الضرورية في المتصفح (`localStorage`، و`sessionStorage`، وكوكيز وظيفية أساسية) لتذكر تفضيلاتك وتسريع استجابة الواجهة.
 
 ---
 
-## 📋 2. جدول عناصر التخزين المحلي والتقني
+## 2. جدول عناصر التخزين المحلي والتقني
 
 | المفتاح البرمجي | آلية التخزين | الفئة | الغرض التقني والوظيفي | فترة الصلاحية |
 |---|---|---|---|---|
@@ -73,13 +73,13 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-## 🛠️ 3. التحكم الإداري ومسح التخزين بضغطة زر
+## 3. التحكم الإداري ومسح التخزين بضغطة زر
 - **استوديو التخزين التفاعلي:** يمكنك فحص وتعديل أو حذف أي عنصر من عناصر التخزين في أي وقت عبر صفحة [`/cookies`](https://sir-modpack.web.app/cookies).
 - **المسح الشامل الفوري:** يمكنك تفريغ كافة البيانات المؤقتة والإعدادات بضغطة زر واحدة من داخل إعدادات اللانشر المكتبي أو المتصفح.
 
 ---
 
-## 📬 4. قنوات الدعم والتواصل
+## 4. قنوات الدعم والتواصل
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **الدعم الفني الرسمي:** أداة الإبلاغ المدمجة في اللانشر (Bug Reporter) وملاحظات المجتمع.
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)

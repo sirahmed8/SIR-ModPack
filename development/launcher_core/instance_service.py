@@ -735,7 +735,7 @@ class InstanceService:
         return {"success": True, "deleted": matched_id, "message": f"✓ Deleted profile: {inst.get('name')}"}
 
     def _launch_result(self, *, success, profile_id, instance_id="", mode="offline", pid=None,
-                       message="", error_code="", log_path="", error=""):
+                       message="", error_code="", log_path="", error="", streamer=None):
         """Return the stable launch contract consumed by every desktop mode."""
         result = {
             "success": bool(success),
@@ -747,6 +747,8 @@ class InstanceService:
             "errorCode": error_code,
             "logPath": log_path,
         }
+        if streamer is not None:
+            result["streamer"] = streamer
         if error:
             result["error"] = error
         return result
@@ -1032,6 +1034,7 @@ class InstanceService:
                     pid=pid,
                     message=f"✓ Launched {inst['name']} (Native Java Direct Engine)",
                     log_path=log_path,
+                    streamer=native_res.get("streamer"),
                 )
 
         # 2. Secondary Fallback: Managed Runner (if Prism present)

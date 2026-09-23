@@ -69,7 +69,7 @@
       </button>
 
       <!-- Shared Google Cloud Profile (Streamlined Avatar Pill) -->
-      <div id="server-cloud-profile" onclick="handleServerCloudProfileClick()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700/80 shadow-sm text-xs font-semibold cursor-pointer transition-all active:scale-95 shrink-0" title="Google Cloud Profile — Click to manage sync">
+      <div id="server-cloud-profile" onclick="handleServerCloudProfileClick()" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700/80 shadow-sm text-xs font-semibold cursor-pointer transition-all active:scale-95 shrink-0" title="Google Cloud Profile : Click to manage sync">
         <div id="server-cloud-avatar" class="w-5 h-5 rounded-full bg-cyan-400 flex items-center justify-center text-slate-950 text-[10px] font-black shrink-0">G</div>
         <span id="server-cloud-name" class="font-semibold text-slate-300 truncate max-w-[90px] hidden sm:inline">Sign In</span>
       </div>
@@ -114,7 +114,7 @@
 
         <!-- 4. 3D Players Studio -->
         <button onclick="switchView('players')" id="nav-players" class="nav-btn group relative" data-tooltip="Players & Whitelist">
-          <i data-lucide="users" class="w-5 h-5 text-purple-400"></i>
+          <i data-lucide="users" class="w-5 h-5 text-sky-400"></i>
           <div class="nav-tooltip" data-i18n="navPlayers">3D Player Studio</div>
         </button>
 
@@ -154,8 +154,8 @@
             <!-- Left Info & Version Selector -->
             <div class="space-y-3 flex-1 text-center md:text-left">
               <div class="flex items-center justify-center md:justify-start gap-2 flex-wrap">
-                <span id="dashboard-hostmode-badge" class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-3 py-0.5 text-xs font-black">⚡ SIR HOST ACTIVE</span>
-                <span id="dashboard-version-badge" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-3 py-0.5 text-xs font-mono font-bold">Fabric 1.21.4 (Modern 26.2)</span>
+                <span id="dashboard-hostmode-badge" class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-md px-3 py-0.5 text-xs font-black">SIR HOST ACTIVE</span>
+                <span id="dashboard-version-badge" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-3 py-0.5 text-xs font-mono font-bold">Fabric 1.21.4 (Modern 26.2)</span>
               </div>
               <h2 class="text-2xl font-black text-title tracking-tight" data-i18n="heroTitle">Dedicated World Server Station</h2>
               <p class="text-xs text-body leading-relaxed max-w-xl font-medium" data-i18n="heroDesc">
@@ -267,10 +267,10 @@
           <div class="feature-card p-4 space-y-2">
             <div class="flex items-center justify-between text-xs text-muted font-bold">
               <span data-i18n="uptimeLabel">Server Uptime</span>
-              <i data-lucide="clock" class="w-4 h-4 text-purple-500 dark:text-purple-400"></i>
+              <i data-lucide="clock" class="w-4 h-4 text-sky-500 dark:text-sky-400"></i>
             </div>
             <div class="flex items-baseline gap-2">
-              <span id="gauge-uptime" class="text-2xl font-black text-purple-600 dark:text-purple-400 font-mono">00:00:00</span>
+              <span id="gauge-uptime" class="text-2xl font-black text-sky-600 dark:text-sky-400 font-mono">00:00:00</span>
             </div>
             <p class="text-[11px] text-muted font-medium">Local Host Mode Active</p>
           </div>
@@ -305,7 +305,7 @@
             <p class="text-xs text-muted">Unified connectivity: Playit.gg zero-port tunnel relay & high-speed local WLAN station.</p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            <span class="flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               <span>Watchdog Active</span>
             </span>
@@ -358,10 +358,10 @@
           <div class="feature-card p-4 space-y-2">
             <div class="flex items-center justify-between text-xs">
               <span class="text-muted font-semibold flex items-center gap-1.5">
-                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-purple-400"></i>
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-sky-400"></i>
                 <span>Auto-Reconnect Guard</span>
               </span>
-              <span class="font-mono text-[11px] font-bold text-purple-400">Protected</span>
+              <span class="font-mono text-[11px] font-bold text-sky-400">Protected</span>
             </div>
             <p class="text-[11px] text-muted leading-tight">Automatically re-establishes tunnel if internet drops without restarting server.</p>
             <div class="pt-1 flex items-center justify-between text-[11px] text-slate-400 font-mono">
@@ -390,7 +390,7 @@
             <div class="space-y-2">
               <input type="text" id="input-playit-domain" placeholder="e.g. irvine-speller.tun.ply.gg:25565" class="input-modern w-full font-mono text-xs">
               <button onclick="savePlayitCustomDomain()" class="w-full py-2 px-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 text-xs font-black shadow-md active:scale-95 transition-all cursor-pointer">
-                💾 Save Active Domain
+                Save Active Domain
               </button>
             </div>
             <div class="flex flex-col gap-2 pt-1 border-t border-border-color">
@@ -475,7 +475,7 @@
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
               <span class="text-[11px] font-mono font-bold text-title ml-2">Minecraft Server Stdout & RCON Stream</span>
             </div>
-            <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-[10px] px-2.5 py-0.5 rounded-full border border-cyan-500/30 font-mono">Live Stream</span>
+            <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 text-[10px] px-2.5 py-0.5 rounded-md border border-cyan-500/30 font-mono">Live Stream</span>
           </div>
 
           <div id="full-logs-stream" class="h-[420px] p-4 overflow-y-auto whitespace-pre-wrap leading-relaxed text-[11px] font-mono text-body custom-scrollbar select-text"></div>
@@ -495,7 +495,7 @@
       <section id="view-players" class="view-panel max-w-5xl mx-auto space-y-6">
         <div>
           <h2 class="text-xl font-bold text-title flex items-center gap-2">
-            <i data-lucide="users" class="w-5 h-5 text-purple-500 dark:text-purple-400"></i>
+            <i data-lucide="users" class="w-5 h-5 text-sky-500 dark:text-sky-400"></i>
             <span>Connected Players & Permissions</span>
           </h2>
           <p class="text-xs text-muted">Manage active players, grant operator privileges, or kick unruly users.</p>
@@ -592,7 +592,7 @@
           <div>
             <h3 class="text-base font-black text-title flex items-center gap-2">
               Server Hosting Quick Reference & Architecture Guide
-              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">OFFICIAL v1.0.0</span>
+              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">OFFICIAL v1.0.0</span>
             </h3>
             <p class="text-xs text-muted">Complete walkthrough for LAN, Dedicated Hosting, Playit.gg Cloud Tunnels & Bedrock Cross-Play</p>
           </div>
@@ -641,7 +641,7 @@
           <!-- Method 4: Bedrock Cross-Play -->
           <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-border-color space-y-2">
             <div class="flex items-center gap-2 text-xs font-black text-title">
-              <i data-lucide="smartphone" class="w-4 h-4 text-purple-400"></i>
+              <i data-lucide="smartphone" class="w-4 h-4 text-sky-400"></i>
               <span>4. Bedrock Cross-Play (GeyserMC)</span>
             </div>
             <p class="text-[11px] text-body dark:text-slate-300 text-slate-700 leading-relaxed">
@@ -685,7 +685,7 @@
           <div>
             <h3 class="text-base font-black text-title flex items-center gap-2">
               Server Orchestrator Configuration & Suite
-              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full px-2.5 py-0.5 text-[10px] font-bold font-mono">v1.0.0</span>
+              <span class="badge-tag bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-md px-2.5 py-0.5 text-[10px] font-bold font-mono">v1.0.0</span>
             </h3>
             <p class="text-xs text-muted">JVM allocation, network tunnels, tactile audio, developer feedback & legal governance</p>
           </div>
@@ -711,8 +711,12 @@
               <div class="settings-nav-tooltip">Network & Tunnels</div>
             </button>
             <button onclick="switchServerSettingsTab('appearance')" id="modal-tab-btn-appearance" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Appearance & Audio">
-              <i data-lucide="palette" class="w-5 h-5 text-purple-400"></i>
+              <i data-lucide="palette" class="w-5 h-5 text-sky-400"></i>
               <div class="settings-nav-tooltip">Appearance & Audio</div>
+            </button>
+            <button onclick="switchServerSettingsTab('window')" id="modal-tab-btn-window" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Window Lifecycle">
+              <i data-lucide="app-window" class="w-5 h-5 text-blue-400"></i>
+              <div class="settings-nav-tooltip">Window Lifecycle</div>
             </button>
             <button onclick="switchServerSettingsTab('feedback')" id="modal-tab-btn-feedback" class="settings-nav-btn group relative w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/60 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-slate-700/50 transition-all duration-200 cursor-pointer" data-tooltip="Feedback">
               <i data-lucide="message-square" class="w-5 h-5 text-amber-400"></i>
@@ -822,7 +826,7 @@
                 <div class="space-y-1">
                   <div class="flex items-center gap-2">
                     <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Aikar's Garbage Collection Flags</span>
-                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">G1GC TUNED</span>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">G1GC TUNED</span>
                   </div>
                   <p class="text-[10px] text-muted">Optimizes G1GC pause times to prevent tick stutter during chunk generation</p>
                 </div>
@@ -897,7 +901,7 @@
                     <span>Cyber Dark</span>
                   </button>
                   <button onclick="setThemeMode('auto')" id="modal-theme-btn-auto" class="theme-choice-btn py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/40">
-                    <i data-lucide="monitor" class="w-3.5 h-3.5 text-purple-400"></i>
+                    <i data-lucide="monitor" class="w-3.5 h-3.5 text-sky-400"></i>
                     <span>System Auto</span>
                   </button>
                   <button onclick="setThemeMode('light')" id="modal-theme-btn-light" class="theme-choice-btn py-2.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-cyan-500 text-xs font-bold flex items-center justify-center gap-2 cursor-pointer transition-all text-slate-700 dark:text-slate-200 bg-slate-50 dark:bg-slate-950/40">
@@ -922,6 +926,175 @@
               </div>
             </div>
 
+            <!-- TAB: WINDOW LIFECYCLE -->
+            <div id="modal-tab-window" class="settings-tab-content space-y-4">
+              <!-- Header Card -->
+              <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-50 via-slate-100 to-cyan-50 dark:from-blue-950/30 dark:via-slate-900/60 dark:to-cyan-950/30 border border-blue-500/20 shadow-sm space-y-1">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="app-window" class="w-4 h-4 text-blue-400"></i>
+                    <h4 class="text-xs font-black text-slate-900 dark:text-white">Window Lifecycle & Process Automation</h4>
+                  </div>
+                  <span class="badge-tag bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">ZERO FOOTPRINT</span>
+                </div>
+                <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
+                  Configure window state transitions, system tray minimization, and background runtime memory behavior for the server orchestrator.
+                </p>
+              </div>
+
+              <!-- When Starting Server -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="play-circle" class="w-4 h-4 text-cyan-400"></i>
+                    <span class="text-xs font-bold text-slate-800 dark:text-slate-200">When Starting Dedicated Server</span>
+                  </div>
+                  <span class="text-[9px] font-mono text-cyan-500 font-bold uppercase tracking-wider">Start Action</span>
+                </div>
+                <p class="text-[11px] text-muted">Choose what happens to the Server Manager window when you start the server.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <!-- Card 1: Hide to System Tray -->
+                  <div onclick="selectServerWindowStartCard('tray_trim')" id="swlcard-tray_trim" class="swl-card p-3 rounded-xl border transition-all cursor-pointer active:scale-[0.98] relative flex flex-col justify-between space-y-2 bg-slate-900/60 border-slate-800 hover:border-slate-700">
+                    <div class="flex items-start justify-between">
+                      <div class="w-8 h-8 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                        <i data-lucide="minimize-2" class="w-3.5 h-3.5"></i>
+                      </div>
+                      <div class="swl-radio-indicator w-3.5 h-3.5 rounded-full border border-slate-600 flex items-center justify-center"></div>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-slate-100">Hide to System Tray</div>
+                      <div class="text-[10px] text-muted">Runs headless in background tray to maximize RAM for Java.</div>
+                    </div>
+                    <span class="text-[8px] font-mono text-cyan-500 font-bold uppercase">Recommended</span>
+                  </div>
+
+                  <!-- Card 2: Keep Open -->
+                  <div onclick="selectServerWindowStartCard('keep_open')" id="swlcard-keep_open" class="swl-card p-3 rounded-xl border transition-all cursor-pointer active:scale-[0.98] relative flex flex-col justify-between space-y-2 bg-slate-900/60 border-slate-800 hover:border-slate-700">
+                    <div class="flex items-start justify-between">
+                      <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 shrink-0">
+                        <i data-lucide="monitor" class="w-3.5 h-3.5"></i>
+                      </div>
+                      <div class="swl-radio-indicator w-3.5 h-3.5 rounded-full border border-slate-600 flex items-center justify-center"></div>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-slate-100">Keep Window Open</div>
+                      <div class="text-[10px] text-muted">Leaves dashboard and live terminal visible at all times.</div>
+                    </div>
+                    <span class="text-[8px] font-mono text-slate-500 font-bold uppercase">Multi-Monitor</span>
+                  </div>
+
+                  <!-- Card 3: Minimize to Taskbar -->
+                  <div onclick="selectServerWindowStartCard('minimize')" id="swlcard-minimize" class="swl-card p-3 rounded-xl border transition-all cursor-pointer active:scale-[0.98] relative flex flex-col justify-between space-y-2 bg-slate-900/60 border-slate-800 hover:border-slate-700">
+                    <div class="flex items-start justify-between">
+                      <div class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300 shrink-0">
+                        <i data-lucide="minus" class="w-3.5 h-3.5"></i>
+                      </div>
+                      <div class="swl-radio-indicator w-3.5 h-3.5 rounded-full border border-slate-600 flex items-center justify-center"></div>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900 dark:text-slate-100">Minimize to Taskbar</div>
+                      <div class="text-[10px] text-muted">Standard taskbar minimization when server execution begins.</div>
+                    </div>
+                    <span class="text-[8px] font-mono text-slate-500 font-bold uppercase">Standard</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- When Closing Window & When Minimizing Window Grid -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- When Closing Window -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="x-circle" class="w-4 h-4 text-rose-400"></i>
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200">When Closing Window (X)</span>
+                    </div>
+                    <span class="text-[9px] font-mono text-rose-400 font-bold uppercase">Close Action</span>
+                  </div>
+                  <p class="text-[10px] text-muted">Action when clicking the window close button.</p>
+
+                  <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 cursor-pointer hover:border-slate-400 dark:hover:border-slate-700 transition-all">
+                      <input type="radio" name="server_window_close_action" id="swclose-tray" value="tray" onchange="saveServerWindowLifecycleSetting('window_close_action', 'tray')" checked class="accent-cyan-400">
+                      <div class="text-xs">
+                        <div class="font-bold text-slate-900 dark:text-slate-200">Minimize to System Tray</div>
+                        <div class="text-[10px] text-muted">Keep server active in background notification area.</div>
+                      </div>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 cursor-pointer hover:border-slate-400 dark:hover:border-slate-700 transition-all">
+                      <input type="radio" name="server_window_close_action" id="swclose-taskbar" value="taskbar" onchange="saveServerWindowLifecycleSetting('window_close_action', 'taskbar')" class="accent-cyan-400">
+                      <div class="text-xs">
+                        <div class="font-bold text-slate-900 dark:text-slate-200">Minimize to Taskbar</div>
+                        <div class="text-[10px] text-muted">Standard taskbar minimize behavior.</div>
+                      </div>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 cursor-pointer hover:border-slate-400 dark:hover:border-slate-700 transition-all">
+                      <input type="radio" name="server_window_close_action" id="swclose-exit" value="exit" onchange="saveServerWindowLifecycleSetting('window_close_action', 'exit')" class="accent-cyan-400">
+                      <div class="text-xs">
+                        <div class="font-bold text-slate-900 dark:text-slate-200">Stop Server & Exit Completely</div>
+                        <div class="text-[10px] text-muted">Safely flushes world chunks and terminates all processes.</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- When Minimizing Window -->
+                <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="minus-circle" class="w-4 h-4 text-cyan-400"></i>
+                      <span class="text-xs font-bold text-slate-800 dark:text-slate-200">When Minimizing Window (_)</span>
+                    </div>
+                    <span class="text-[9px] font-mono text-cyan-400 font-bold uppercase">Minimize Action</span>
+                  </div>
+                  <p class="text-[10px] text-muted">Action when clicking the window minimize button.</p>
+
+                  <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 cursor-pointer hover:border-slate-400 dark:hover:border-slate-700 transition-all">
+                      <input type="radio" name="server_window_minimize_action" id="swmin-taskbar" value="taskbar" onchange="saveServerWindowLifecycleSetting('window_minimize_action', 'taskbar')" checked class="accent-cyan-400">
+                      <div class="text-xs">
+                        <div class="font-bold text-slate-900 dark:text-slate-200">Minimize to Taskbar (Default)</div>
+                        <div class="text-[10px] text-muted">Standard Windows taskbar minimization.</div>
+                      </div>
+                    </label>
+
+                    <label class="flex items-center gap-3 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 cursor-pointer hover:border-slate-400 dark:hover:border-slate-700 transition-all">
+                      <input type="radio" name="server_window_minimize_action" id="swmin-tray" value="tray" onchange="saveServerWindowLifecycleSetting('window_minimize_action', 'tray')" class="accent-cyan-400">
+                      <div class="text-xs">
+                        <div class="font-bold text-slate-900 dark:text-slate-200">Minimize to System Tray</div>
+                        <div class="text-[10px] text-muted">Hides taskbar button and keeps icon in notification area.</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Windows Startup Auto-Launch -->
+              <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="power" class="w-4 h-4 text-amber-400"></i>
+                    <span class="text-xs font-bold text-slate-800 dark:text-slate-200">Windows Startup Auto-Launch</span>
+                  </div>
+                  <span class="text-[9px] font-mono text-amber-400 font-bold uppercase">HKCU Run</span>
+                </div>
+                <p class="text-[10px] text-muted">Automatically start SIR Server Manager when Windows boots or user logs in.</p>
+                <div class="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 flex items-center justify-between">
+                  <div>
+                    <div class="text-xs font-bold text-slate-900 dark:text-slate-200">Launch on Windows Startup</div>
+                    <div class="text-[10px] text-muted">Starts silently in background system tray without opening window.</div>
+                  </div>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="server-toggle-autostart-boot" onchange="toggleServerAutostartBoot(this.checked)" class="sr-only peer">
+                    <div class="w-11 h-6 bg-slate-200 dark:bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-cyan-500"></div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
             <!-- TAB 4: FEEDBACK (RENAMED FROM DEVELOPER HIGHWAY) -->
             <div id="modal-tab-feedback" class="settings-tab-content space-y-4">
               <div class="p-4 rounded-2xl bg-gradient-to-r from-cyan-50 to-slate-100 dark:from-cyan-950/30 dark:to-slate-900/50 border border-cyan-500/20 shadow-sm space-y-3">
@@ -930,7 +1103,7 @@
                     <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
                     <h4 class="text-xs font-black text-slate-900 dark:text-white">Feedback & Engineering Desk</h4>
                   </div>
-                  <span class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">24-48H RESPONSE</span>
+                  <span class="badge-tag bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">24-48H RESPONSE</span>
                 </div>
                 <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                   Found an issue or have an architectural idea for the Server Orchestrator? Submit directly through this in-app feedback channel. Every report generates an official tracked Ticket ID (<span class="font-mono text-amber-600 dark:text-amber-400 font-bold">SIR-SRV-XXXXXX</span>).
@@ -1018,7 +1191,7 @@
               <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
                 <div class="flex items-center justify-between">
                   <span class="text-[11px] font-bold text-slate-600 dark:text-slate-400 font-mono">DIAGNOSTIC AUDIT LOG:</span>
-                  <span id="diagnostics-status-pill" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">READY</span>
+                  <span id="diagnostics-status-pill" class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">READY</span>
                 </div>
                 <div id="diagnostics-log-box" class="h-24 p-3 bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 rounded-xl font-mono text-[11px] text-slate-800 dark:text-slate-300 overflow-y-auto custom-scrollbar leading-relaxed">
                   Diagnostic engine initialized. Click "Run Integrity Audit" to perform full system scan.
@@ -1036,7 +1209,7 @@
                   </h4>
                   <p class="text-[11px] text-muted">Mojang Server EULA Compliance • Zero-Telemetry Architecture • Host Terms</p>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">v1.0.0</span>
+                <span class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">v1.0.0</span>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1044,10 +1217,10 @@
                 <div class="theme-card p-4 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-sm text-slate-800 dark:text-white space-y-3">
                   <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
                     <div class="flex items-center gap-2">
-                      <i data-lucide="shield-check" class="w-4 h-4 text-purple-400"></i>
+                      <i data-lucide="shield-check" class="w-4 h-4 text-sky-400"></i>
                       <h5 class="text-xs font-bold text-slate-800 dark:text-white">Mojang Server EULA</h5>
                     </div>
-                    <span class="badge-tag bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">COMPLIANT</span>
+                    <span class="badge-tag bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">COMPLIANT</span>
                   </div>
                   <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                     Dedicated servers adhere to Mojang's End User License Agreement (<a href="https://minecraft.net/eula" target="_blank" class="text-cyan-600 dark:text-cyan-400 underline font-mono">minecraft.net/eula</a>). SIR ModPack does not monetize server JARs, mods, or Mojang assets.
@@ -1065,7 +1238,7 @@
                       <i data-lucide="lock" class="w-4 h-4 text-cyan-400"></i>
                       <h5 class="text-xs font-bold text-slate-800 dark:text-white">Zero-Telemetry & Privacy</h5>
                     </div>
-                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">LOCAL FIRST</span>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">LOCAL FIRST</span>
                   </div>
                   <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                     Console logs, player connection logs, whitelists, and world snapshots are stored strictly on your local PC. No telemetry or player metadata is ever tracked or uploaded.
@@ -1082,7 +1255,7 @@
                       <i data-lucide="file-text" class="w-4 h-4 text-amber-400"></i>
                       <h5 class="text-xs font-bold text-slate-800 dark:text-white">SIR Software Agreement</h5>
                     </div>
-                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold">OFFICIAL & INDEPENDENT</span>
+                    <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold">OFFICIAL & INDEPENDENT</span>
                   </div>
                   <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                     SIR ModPack is an Independent Gaming Platform provided under the SIR Software Agreement. Provided AS-IS with zero warranty, no paywalls, and no monetization.
@@ -1100,7 +1273,7 @@
                     <i data-lucide="cloud" class="w-5 h-5 text-cyan-400"></i>
                     <h4 class="text-xs font-black text-slate-900 dark:text-white">Native Google Account Suite & Firebase Cloud Sync</h4>
                   </div>
-                  <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-full px-2.5 py-0.5 text-[9px] font-bold">ENCRYPTED SYNC</span>
+                  <span class="badge-tag bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 rounded-md px-2.5 py-0.5 text-[9px] font-bold">ENCRYPTED SYNC</span>
                 </div>
                 <p class="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed">
                   Link your Google Account to back up server orchestrator configurations, custom domain mappings, and whitelist rules securely to your private cloud storage.

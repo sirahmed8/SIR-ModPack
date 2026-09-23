@@ -215,7 +215,7 @@ async function launchGame(instId = null, serverIp = null, serverPort = null) {
         showToast('⚠ ' + res.error, 'error');
       } else if (res && res.success) {
         const pidStr = res.pid ? `(PID ${res.pid})` : '';
-        if (consoleStatus) consoleStatus.innerText = `✓ Launched ${targetInst} ${pidStr} — Streaming stdout/stderr...`;
+        if (consoleStatus) consoleStatus.innerText = `✓ Launched ${targetInst} ${pidStr} : Streaming stdout/stderr...`;
         if (consoleSpinner) consoleSpinner.className = "w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse";
         if (consoleBox) {
           consoleBox.innerHTML += `\n<div class="text-emerald-400 font-bold">[SIR Launch] ✓ Game running successfully ${pidStr}! Streaming live runtime output...</div>\n`;

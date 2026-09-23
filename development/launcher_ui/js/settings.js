@@ -68,6 +68,11 @@ async function saveAllSettings() {
   const jvmInput = document.getElementById('setting-jvm-args');
   const jvmArgs = jvmInput ? jvmInput.value.trim() : '';
 
+  const autoCheckEl = document.getElementById('toggle-auto-check-updates');
+  const autoDownloadEl = document.getElementById('toggle-auto-download-updates');
+  const autoCheck = autoCheckEl ? autoCheckEl.checked : true;
+  const autoDownload = autoDownloadEl ? autoDownloadEl.checked : false;
+
   if (window.pywebview && window.pywebview.api) {
     try {
       await window.pywebview.api.save_settings({
@@ -75,12 +80,16 @@ async function saveAllSettings() {
         power_governor: STATE.powerGovernor,
         jvm_args: jvmArgs,
         theme: STATE.themeMode,
-        lang: STATE.currentLang
+        lang: STATE.currentLang,
+        auto_check_updates: autoCheck,
+        auto_download_updates: autoDownload
       });
     } catch {}
   }
   localStorage.setItem('sir_ram_gb', STATE.ramGb);
   localStorage.setItem('sir_jvm_args', jvmArgs);
+  localStorage.setItem('sir_auto_check_updates', autoCheck);
+  localStorage.setItem('sir_auto_download_updates', autoDownload);
   showToast('✓ Settings saved!', 'success');
 }
 
@@ -104,7 +113,9 @@ function switchSettingsTab(tabKey) {
     }
   });
 
-  if (tabKey === 'accounts') {
+  if (tabKey === 'general') {
+    loadUpdaterSettings();
+  } else if (tabKey === 'accounts') {
     renderSettingsAccountsList();
   } else if (tabKey === 'window') {
     loadWindowLifecycleSettings();
@@ -293,19 +304,25 @@ function setAppLanguage(lang) {
 
 // --- AUTO-UPDATER SETTINGS & MANUAL CHECK ---
 async function loadUpdaterSettings() {
+  const autoCheckEl = document.getElementById('toggle-auto-check-updates');
+  const autoDownloadEl = document.getElementById('toggle-auto-download-updates');
   if (window.pywebview && window.pywebview.api) {
     try {
       const s = await window.pywebview.api.get_settings();
-      const autoCheckEl = document.getElementById('toggle-auto-check-updates');
-      const autoDownloadEl = document.getElementById('toggle-auto-download-updates');
-      if (autoCheckEl) autoCheckEl.checked = s.auto_check_updates ?? true;
-      if (autoDownloadEl) autoDownloadEl.checked = s.auto_download_updates ?? false;
+      if (autoCheckEl && s.auto_check_updates !== undefined) autoCheckEl.checked = !!s.auto_check_updates;
+      if (autoDownloadEl && s.auto_download_updates !== undefined) autoDownloadEl.checked = !!s.auto_download_updates;
     } catch {}
+  } else {
+    const savedCheck = localStorage.getItem('sir_auto_check_updates');
+    const savedDownload = localStorage.getItem('sir_auto_download_updates');
+    if (autoCheckEl && savedCheck !== null) autoCheckEl.checked = savedCheck === 'true';
+    if (autoDownloadEl && savedDownload !== null) autoDownloadEl.checked = savedDownload === 'true';
   }
 }
 window.loadUpdaterSettings = loadUpdaterSettings;
 
 async function saveUpdaterSetting(key, val) {
+  localStorage.setItem('sir_' + key, val);
   if (window.pywebview && window.pywebview.api) {
     try {
       const cur = await window.pywebview.api.get_settings();
@@ -397,6 +414,7 @@ window.openSettingsModal = function(tab = 'general') {
     if (modal) modal.classList.remove('hidden');
   }
   renderSettings();
+  loadUpdaterSettings();
   switchSettingsTab(tab);
   if (window.refreshLucideIcons) refreshLucideIcons();
 };

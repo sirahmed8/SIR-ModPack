@@ -89,7 +89,7 @@ function changeLanguage(lang) {
 }
 
 // =============================================================================
-// SIR SERVER ORCHESTRATOR PRO — CLIENT CONTROLLER & HARDWARE ENGINE
+// SIR SERVER ORCHESTRATOR PRO : CLIENT CONTROLLER & HARDWARE ENGINE
 // =============================================================================
 
 const STATE = {
@@ -701,7 +701,7 @@ function renderPlayersList(players) {
       </div>
       <div class="flex items-center justify-between gap-1 pt-2 border-t border-slate-200 dark:border-slate-800/80">
         <button onclick="executePlayerAction('op', '${p}')" class="p-2 rounded-xl btn-secondary text-amber-500 hover:bg-amber-500/20" title="Grant Server Operator (OP)"><i data-lucide="shield" class="w-3.5 h-3.5"></i></button>
-        <button onclick="executePlayerAction('gamemode', '${p}', 'creative')" class="p-2 rounded-xl btn-secondary text-purple-400 hover:bg-purple-500/20" title="Switch to Creative Mode"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i></button>
+        <button onclick="executePlayerAction('gamemode', '${p}', 'creative')" class="p-2 rounded-xl btn-secondary text-sky-400 hover:bg-sky-500/20" title="Switch to Creative Mode"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i></button>
         <button onclick="executePlayerAction('teleport', '${p}', '0 ~ 0')" class="p-2 rounded-xl btn-secondary text-cyan-400 hover:bg-cyan-500/20" title="Teleport to World Spawn"><i data-lucide="compass" class="w-3.5 h-3.5"></i></button>
         <button onclick="executePlayerAction('kick', '${p}')" class="p-2 rounded-xl btn-secondary text-rose-400 hover:bg-rose-500/20" title="Kick Player"><i data-lucide="log-out" class="w-3.5 h-3.5"></i></button>
         <button onclick="executePlayerAction('ban', '${p}')" class="p-2 rounded-xl btn-secondary text-red-500 hover:bg-red-500/20" title="Ban Player"><i data-lucide="ban" class="w-3.5 h-3.5"></i></button>
@@ -785,7 +785,7 @@ async function fetchPluginsCatalog() {
                 </button>
               ` : `
                 <button onclick="installPlugin('${p.id}')" class="w-full py-2 px-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-black shadow-md transition-all cursor-pointer">
-                  ⚡ 1-Click Install
+                  1-Click Install
                 </button>
               `}
             </div>
@@ -998,13 +998,13 @@ async function selectHostMode(mode) {
 
   if (mode === 'sir_host' && btnSir) {
     btnSir.className = "px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all bg-emerald-500/15 border-emerald-500/50 text-emerald-600 dark:text-emerald-400 shadow-sm";
-    if (hostBadge) hostBadge.innerText = "⚡ SIR HOST (WLAN) ACTIVE";
+    if (hostBadge) hostBadge.innerText = "SIR HOST (WLAN) ACTIVE";
   } else if (mode === 'playit_tunnel' && btnPlayit) {
     btnPlayit.className = "px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all bg-cyan-500/15 border-cyan-500/50 text-cyan-600 dark:text-cyan-400 shadow-sm";
-    if (hostBadge) hostBadge.innerText = "🌐 PLAYIT.GG TUNNEL ACTIVE";
+    if (hostBadge) hostBadge.innerText = "PLAYIT.GG TUNNEL ACTIVE";
   } else if (mode === 'both' && btnBoth) {
     btnBoth.className = "px-3 py-2 rounded-xl text-xs font-bold border flex items-center justify-center gap-1.5 transition-all bg-amber-500/15 border-amber-500/50 text-amber-600 dark:text-amber-400 shadow-sm";
-    if (hostBadge) hostBadge.innerText = "⚡ DUAL HOST (BOTH) ACTIVE";
+    if (hostBadge) hostBadge.innerText = "DUAL HOST (BOTH) ACTIVE";
   }
 
   if (window.pywebview && window.pywebview.api) {
@@ -1053,16 +1053,16 @@ function onViewDistanceChange(val) {
   if (valEl) valEl.innerText = `${chunks} Chunks`;
   if (hintEl) {
     if (chunks <= 8) {
-      hintEl.innerText = `⚡ Fast Performance (${chunks} Chunks - Low CPU)`;
+      hintEl.innerText = `Fast Performance (${chunks} Chunks - Low CPU)`;
       hintEl.className = "text-[10px] text-emerald-400 font-mono";
     } else if (chunks <= 14) {
-      hintEl.innerText = `✨ Balanced (${chunks} Chunks - Recommended)`;
+      hintEl.innerText = `Balanced (${chunks} Chunks - Recommended)`;
       hintEl.className = "text-[10px] text-cyan-400 font-mono";
     } else if (chunks <= 22) {
-      hintEl.innerText = `🌟 High Render Radius (${chunks} Chunks)`;
-      hintEl.className = "text-[10px] text-purple-400 font-mono";
+      hintEl.innerText = `High Render Radius (${chunks} Chunks)`;
+      hintEl.className = "text-[10px] text-sky-400 font-mono";
     } else {
-      hintEl.innerText = `🚀 Ultra Extreme Radius (${chunks} Chunks - High RAM)`;
+      hintEl.innerText = `Ultra Extreme Radius (${chunks} Chunks - High RAM)`;
       hintEl.className = "text-[10px] text-amber-400 font-mono";
     }
   }
@@ -1076,16 +1076,16 @@ function onMaxPlayersChange(val) {
   if (valEl) valEl.innerText = `${count} Players`;
   if (hintEl) {
     if (count <= 4) {
-      hintEl.innerText = `👥 Duo & Small Co-op (${count} Max Players)`;
+      hintEl.innerText = `Duo & Small Co-op (${count} Max Players)`;
       hintEl.className = "text-[10px] text-cyan-400 font-mono";
     } else if (count <= 10) {
-      hintEl.innerText = `⚔️ Party Squad & Friends SMP (${count} Max Players)`;
+      hintEl.innerText = `Party Squad & Friends SMP (${count} Max Players)`;
       hintEl.className = "text-[10px] text-emerald-400 font-mono";
     } else if (count <= 30) {
-      hintEl.innerText = `🏰 Standard SMP Server (${count} Max Players)`;
-      hintEl.className = "text-[10px] text-purple-400 font-mono";
+      hintEl.innerText = `Standard SMP Server (${count} Max Players)`;
+      hintEl.className = "text-[10px] text-sky-400 font-mono";
     } else {
-      hintEl.innerText = `🌐 Mega Multiplayer Network (${count} Max Players)`;
+      hintEl.innerText = `Mega Multiplayer Network (${count} Max Players)`;
       hintEl.className = "text-[10px] text-amber-400 font-mono";
     }
   }
@@ -1170,7 +1170,7 @@ async function loadBackups() {
       container.innerHTML = items.map(b => `
         <div class="feature-card p-4 flex items-center justify-between">
           <div class="flex items-center gap-3">
-            <div class="p-2.5 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400">
+            <div class="p-2.5 rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
               <i data-lucide="file-archive" class="w-5 h-5"></i>
             </div>
             <div>
@@ -1422,7 +1422,7 @@ async function fetchServerBroadcast() {
       const txt = document.getElementById('server-broadcast-text');
       const act = document.getElementById('server-broadcast-actions');
       if (cat) cat.textContent = (data.category || 'BROADCAST') + ':';
-      if (txt) txt.textContent = `${data.title} — ${data.message || ''}`;
+      if (txt) txt.textContent = `${data.title} : ${data.message || ''}`;
       if (act) {
         if (data.buttonUrl) {
           act.innerHTML = `<a href="${data.buttonUrl}" target="_blank" class="px-2.5 py-0.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-[10px] transition-all flex items-center gap-1">${data.buttonLabel || 'Open'}</a>`;
@@ -1603,6 +1603,7 @@ window.openServerSettingsModal = async function(initialTab = 'engine') {
 
   // Refresh Cloud Profile UI
   await fetchCloudProfile();
+  loadServerWindowLifecycleSettings();
 
   if (window.lucide) lucide.createIcons();
 };
@@ -1612,6 +1613,102 @@ window.closeServerSettingsModal = function() {
   if (modal) modal.classList.add('hidden');
 };
 
+// --- SERVER WINDOW LIFECYCLE CONTROLS ---
+function updateServerWindowStartCardUI(action) {
+  const cards = ['tray_trim', 'keep_open', 'minimize'];
+  cards.forEach(c => {
+    const cardEl = document.getElementById(`swlcard-${c}`);
+    if (!cardEl) return;
+    const isSelected = c === action;
+    if (isSelected) {
+      cardEl.className = 'swl-card p-3 rounded-xl border transition-all cursor-pointer active:scale-[0.98] relative flex flex-col justify-between space-y-2 bg-cyan-500/10 border-cyan-500/50 shadow-[0_0_15px_rgba(6,182,212,0.15)]';
+      const ind = cardEl.querySelector('.swl-radio-indicator');
+      if (ind) {
+        ind.className = 'swl-radio-indicator w-3.5 h-3.5 rounded-full border border-cyan-400 flex items-center justify-center bg-cyan-500 shadow-[0_0_8px_#00e5ff]';
+        ind.innerHTML = '<div class="w-1.5 h-1.5 rounded-full bg-slate-950"></div>';
+      }
+    } else {
+      cardEl.className = 'swl-card p-3 rounded-xl border transition-all cursor-pointer active:scale-[0.98] relative flex flex-col justify-between space-y-2 bg-slate-900/60 border-slate-800 hover:border-slate-700';
+      const ind = cardEl.querySelector('.swl-radio-indicator');
+      if (ind) {
+        ind.className = 'swl-radio-indicator w-3.5 h-3.5 rounded-full border border-slate-600 flex items-center justify-center';
+        ind.innerHTML = '';
+      }
+    }
+  });
+}
+window.updateServerWindowStartCardUI = updateServerWindowStartCardUI;
+
+function selectServerWindowStartCard(action) {
+  updateServerWindowStartCardUI(action);
+  saveServerWindowLifecycleSetting('window_server_start_action', action);
+}
+window.selectServerWindowStartCard = selectServerWindowStartCard;
+
+async function loadServerWindowLifecycleSettings() {
+  window.__isHydratingServerSettings = true;
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.get_window_lifecycle_settings) {
+    try {
+      const res = await window.pywebview.api.get_window_lifecycle_settings();
+      if (res) {
+        const wClose = document.getElementById(`swclose-${res.window_close_action}`);
+        if (wClose) wClose.checked = true;
+
+        const startAction = res.window_server_start_action || 'keep_open';
+        updateServerWindowStartCardUI(startAction);
+
+        const wMin = document.getElementById(`swmin-${res.window_minimize_action}`);
+        if (wMin) wMin.checked = true;
+
+        const toggleBoot = document.getElementById('server-toggle-autostart-boot');
+        if (toggleBoot) toggleBoot.checked = !!res.autostart_on_boot;
+      }
+    } catch (e) {}
+    finally {
+      setTimeout(() => { window.__isHydratingServerSettings = false; }, 50);
+    }
+  } else {
+    const savedClose = localStorage.getItem('sir_server_wclose') || 'tray';
+    const savedStart = localStorage.getItem('sir_server_wstart') || 'keep_open';
+    const savedMin = localStorage.getItem('sir_server_wmin') || 'taskbar';
+    const savedBoot = localStorage.getItem('sir_server_wboot') === 'true';
+
+    const wClose = document.getElementById(`swclose-${savedClose}`);
+    if (wClose) wClose.checked = true;
+    updateServerWindowStartCardUI(savedStart);
+    const wMin = document.getElementById(`swmin-${savedMin}`);
+    if (wMin) wMin.checked = true;
+    const toggleBoot = document.getElementById('server-toggle-autostart-boot');
+    if (toggleBoot) toggleBoot.checked = savedBoot;
+    window.__isHydratingServerSettings = false;
+  }
+}
+window.loadServerWindowLifecycleSettings = loadServerWindowLifecycleSettings;
+
+async function saveServerWindowLifecycleSetting(key, value) {
+  if (window.__isHydratingServerSettings) return;
+  localStorage.setItem('sir_server_' + key, value);
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.save_window_lifecycle_settings) {
+    try {
+      await window.pywebview.api.save_window_lifecycle_settings({ [key]: value });
+      showToast('✓ Window Lifecycle updated!', 'success');
+    } catch (e) {}
+  }
+}
+window.saveServerWindowLifecycleSetting = saveServerWindowLifecycleSetting;
+
+async function toggleServerAutostartBoot(checked) {
+  if (window.__isHydratingServerSettings) return;
+  localStorage.setItem('sir_server_wboot', checked ? 'true' : 'false');
+  if (window.pywebview && window.pywebview.api && window.pywebview.api.save_window_lifecycle_settings) {
+    try {
+      await window.pywebview.api.save_window_lifecycle_settings({ autostart_on_boot: checked });
+      showToast(checked ? '✓ Server Manager added to Windows Startup' : '✓ Removed from Windows Startup', 'success');
+    } catch (e) {}
+  }
+}
+window.toggleServerAutostartBoot = toggleServerAutostartBoot;
+
 window.switchServerSettingsTab = function(tabId) {
   document.querySelectorAll('.settings-nav-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.settings-tab-content').forEach(content => content.classList.remove('active'));
@@ -1620,6 +1717,10 @@ window.switchServerSettingsTab = function(tabId) {
   const content = document.getElementById(`modal-tab-${tabId}`);
   if (btn) btn.classList.add('active');
   if (content) content.classList.add('active');
+
+  if (tabId === 'window') {
+    loadServerWindowLifecycleSettings();
+  }
 
   if (window.lucide) lucide.createIcons();
 };
@@ -1771,7 +1872,7 @@ window.runServerIntegrityCheck = async function() {
   const pill = document.getElementById('diagnostics-status-pill');
   if (pill) {
     pill.textContent = 'RUNNING...';
-    pill.className = 'badge-tag bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold';
+    pill.className = 'badge-tag bg-amber-500/10 text-amber-400 border border-amber-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold';
   }
 
   if (logBox) logBox.innerHTML = 'Starting comprehensive server integrity audit...<br>';
@@ -1787,9 +1888,9 @@ window.runServerIntegrityCheck = async function() {
       }
       if (pill) {
         pill.textContent = '100% HEALTHY';
-        pill.className = 'badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold';
+        pill.className = 'badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold';
       }
-      showToast('✓ Server Integrity Audit Complete — 100% Healthy!', 'success');
+      showToast('✓ Server Integrity Audit Complete : 100% Healthy!', 'success');
       return;
     } catch (e) {
       if (logBox) logBox.innerHTML += `<span class="text-rose-400">Error: ${e}</span><br>`;
@@ -1802,7 +1903,7 @@ window.runServerIntegrityCheck = async function() {
   }
   if (pill) {
     pill.textContent = '100% HEALTHY';
-    pill.className = 'badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full px-2 py-0.5 text-[9px] font-bold';
+    pill.className = 'badge-tag bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-md px-2 py-0.5 text-[9px] font-bold';
   }
   showToast('✓ Server Integrity 100% Healthy!', 'success');
 };

@@ -14,6 +14,7 @@ from __future__ import annotations
 import os
 import sys
 import threading
+import time
 from typing import Any, Callable, Optional
 
 
@@ -144,7 +145,7 @@ class ServerTrayService:
                     if win_text.startswith("SIR Server"):
                         return True
 
-                    # Suppress ghost dummy windows created by pystray or .NET WinForms / WebView2 broadcast events
+                    # Suppress ghost dummy windows created by pystray, GDI+, or .NET WinForms / WebView2 broadcast events
                     is_ghost_dummy = (
                         "pystray" in class_name
                         or "pystray" in win_text.lower()
@@ -152,6 +153,8 @@ class ServerTrayService:
                         or "broadcastevent" in win_text.lower()
                         or ".net-broadcast" in class_name
                         or ".net-broadcast" in win_text.lower()
+                        or "gdi+" in class_name
+                        or "gdi+" in win_text.lower()
                     )
                     if is_ghost_dummy:
                         ex_style = user32.GetWindowLongW(hwnd, GWL_EXSTYLE)
@@ -164,6 +167,15 @@ class ServerTrayService:
             user32.EnumWindows(_enum_cb, None)
         except Exception:
             pass
+
+    @classmethod
+    def start_suppression_loop(cls) -> None:
+        """Runs a persistent daemon loop to suppress lazy GDI+ and tray helper windows."""
+        def _loop():
+            for _ in range(20):
+                time.sleep(1.0)
+                cls._suppress_dummy_tray_windows()
+        threading.Thread(target=_loop, daemon=True).start()
 
     def restore_and_focus_window(self, maximize: bool = False) -> None:
         """Unhides, restores, and brings the server manager window to the absolute foreground."""
@@ -337,7 +349,9 @@ class ServerTrayService:
                 )
                 self.icon.run_detached()
                 self._is_running = True
-                threading.Timer(0.5, self._suppress_dummy_tray_windows).start()
+                self._suppress_dummy_tray_windows()
+                threading.Timer(0.3, self._suppress_dummy_tray_windows).start()
+                self.start_suppression_loop()
                 return True
             except Exception as e:
                 print(f"[ServerTrayService] Unable to initialize system tray: {e}", file=sys.stderr)

@@ -17,7 +17,7 @@ const PRESET_CAPES = [
   { 
     id: "sir_founder", 
     name: "SIR Founder Obsidian Neon", 
-    tag: "✨ Exclusive Founder", 
+    tag: "Exclusive Founder", 
     gradient: "from-cyan-900 to-slate-950",
     url: "capes/sir_founder.png",
     desc: "The signature glowing obsidian cape crafted exclusively for SIR ecosystem founders with dynamic cyan circuitry."
@@ -25,7 +25,7 @@ const PRESET_CAPES = [
   { 
     id: "ender_dragon", 
     name: "Ender Void Dragon Wings", 
-    tag: "🔮 Animated Mythic", 
+    tag: "Animated Mythic", 
     gradient: "from-purple-900 to-slate-950",
     url: "capes/ender_dragon.png",
     desc: "Mystic animated void particles with the radiant eye of the Ender Dragon glowing in the dark."
@@ -33,7 +33,7 @@ const PRESET_CAPES = [
   { 
     id: "optifine_banner", 
     name: "OptiFine Ultra Crimson", 
-    tag: "⚡ Classic OF Edition", 
+    tag: "Classic OF Edition", 
     gradient: "from-red-900 to-slate-950",
     url: "capes/optifine_banner.png",
     desc: "The legendary OptiFine white 'OF' heraldic crest on a vibrant gradient crimson canvas."
@@ -41,7 +41,7 @@ const PRESET_CAPES = [
   { 
     id: "lunar_astral", 
     name: "Lunar Astral Galaxy", 
-    tag: "🌌 Cosmic Nebula Flow", 
+    tag: "Cosmic Nebula Flow", 
     gradient: "from-indigo-900 to-slate-950",
     url: "capes/lunar_astral.png",
     desc: "Deep space cosmic dust and shooting stars shimmering across an indigo twilight sky."
@@ -49,7 +49,7 @@ const PRESET_CAPES = [
   { 
     id: "cherry_blossom", 
     name: "Sakura Cherry Blossom 15th", 
-    tag: "🌸 15th Anniversary", 
+    tag: "15th Anniversary", 
     gradient: "from-pink-900 to-slate-950",
     url: "capes/cherry_blossom.png",
     desc: "Pastel pink sakura petals drifting over the official 15th Anniversary commemorative badge."
@@ -57,7 +57,7 @@ const PRESET_CAPES = [
   { 
     id: "diamond_gladiator", 
     name: "Gladiator Diamond Shards", 
-    tag: "💎 Ranked Diamond", 
+    tag: "Ranked Diamond", 
     gradient: "from-blue-900 to-slate-950",
     url: "capes/diamond_gladiator.png",
     desc: "Forged from pure BedWars diamond shards with reflective geometric crystal facets."
@@ -386,12 +386,12 @@ function renderStudioCapes() {
           : (isLight ? 'bg-white border-slate-200 hover:border-slate-300' : 'bg-slate-900/60 border-slate-800 hover:border-slate-700')
       }">
         <div class="flex items-center justify-between mb-2">
-          <span class="badge-tag text-[9px] font-mono font-bold px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">${escapeHtml(cape.tag)}</span>
+          <span class="badge-tag text-[9px] font-mono font-bold px-2 py-0.5 rounded-md bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">${escapeHtml(cape.tag)}</span>
           <span class="w-2.5 h-2.5 rounded-full ${isSel ? 'bg-emerald-400 shadow-[0_0_8px_#38ef7d]' : 'bg-slate-700'}"></span>
         </div>
         <div class="flex items-center gap-3">
           <div class="w-10 h-14 rounded-lg bg-gradient-to-br ${cape.gradient} border border-cyan-500/30 shadow-md flex items-center justify-center text-cyan-300 text-base font-bold shrink-0">
-            🛡️
+            <svg class="w-5 h-5 text-cyan-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="min-w-0 flex-1">
             <h5 class="text-xs font-black text-slate-900 dark:text-slate-100 truncate">${escapeHtml(cape.name)}</h5>

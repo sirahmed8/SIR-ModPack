@@ -12,7 +12,6 @@
     "animate_only_visible_textures": true
   },
   "notifications": {
-    "hide_donation_prompt": true,
-    "has_edited_fullscreen_option": true
+    "hide_donation_prompt": true
   }
 }

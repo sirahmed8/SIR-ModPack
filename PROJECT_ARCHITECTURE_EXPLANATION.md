@@ -1,11 +1,11 @@
-# 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • September 2026*
+# SIR ModPack: Comprehensive Architectural Blueprint & Engineering Specification
+### *Unified Minecraft Experience | Semantic Versioning v2.4.0 LTS | September 2026*
 
 ---
 
-## 🧭 1. System Architecture Overview
+## 1. System Architecture Overview
 
-The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine with real-time Windows kernel Task Manager telemetry, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (**`SIR Modern Shader.zip`** & **`SIR Legacy Shader.zip`**), dual resource packs (**`SIR Modern.zip`** with Patrix 3D POM models & **`SIR Legacy.zip`** 32x PvP), a dynamic Ocean Physics simulation engine, and an automated ecosystem diagnostic bridge.
+The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine with real-time Windows kernel Task Manager telemetry, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (`SIR Modern Shader.zip` & `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models & `SIR Legacy.zip` 32x PvP), a dynamic Ocean Physics simulation engine, and an automated ecosystem diagnostic bridge.
 
 ```mermaid
 flowchart TD
@@ -26,11 +26,12 @@ flowchart TD
         E --> K[VideoPresetService - Tri-Layer Graphics Engine]
         E --> L[ControlsService - Dual-Mode Keybinding Converter]
         E --> M[CleanerService & Deep Crash Analyzer]
+        E --> M2[WindowLifecycleService - Tray & Watchdog Supervisor]
     end
 
     subgraph Native JVM Pipeline ["Native JVM Pipeline (native_runner.py)"]
         N[Strict RAM Governor -Xmx/-Xms & G1GC]
-        O[Pre-Launch LWJGL 2 / 3 DLL Extractor]
+        O[Pre-Launch Options Sanitizer - Windowed Mode Guardian]
         P[Dynamic Classpath Assembly - Fabric 26.2 / Forge 1.8.9]
         Q[Stable JRE 21 LTS / JRE 8 Locator]
     end
@@ -45,8 +46,8 @@ flowchart TD
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
-        W[Next.js 16 App Router - 32 Static Routes]
-        W --> W1[AiChatbot.tsx: Gemini 4-Tier AI Waterfall]
+        W[Next.js 16 App Router - 38 Static Routes]
+        W --> W1[AiChatbot.tsx: SIR Diagnostic & Configuration Assistant]
         W --> W2[Firebase Realtime Database: Presence & OTA Releases]
         W --> W3[Firestore: Telemetry & Client Error Reporting]
     end
@@ -272,35 +273,35 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 
 ---
 
-# 🏗️ المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
-### *تجربة ماينكرافت الموحدة • الإصدار v1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة*
+# المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
+### *تجربة ماينكرافت الموحدة | الإصدار v2.4.0 LTS الرسمي | منظومة برمجية متطورة ومستقلة*
 
 ---
 
-## 🧭 1. نظرة عامة على معمارية النظام
+## 1. نظرة عامة على معمارية النظام
 تعتبر **منظومة SIR ModPack** بيئة تشغيل متكاملة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 221 مود ومحرك معالجة البايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة موحدة خالية من التعقيد.
 
 تتألف المنظومة من 4 طبقات رئيسية:
 1. **طبقة التطبيقات المكتبية:** ملف الموزع التنفيذي المستقل `SIR ModPack.exe` الذي يوجه الأوامر بسلاسة إلى المشغل المكتبي (`--mode launcher`)، أو المثبت الذاتي الشافي (`--mode installer`)، أو مدير الخوادم والأنفاق (`--mode server`).
-2. **محرك الجسر المكتبي:** جسر غير متزامن فائق السرعة (`launcher_core`) يدير المصادقة، وتعديل السكنات بتقنية 3D WebGL، ومراقبة العتاد اللحظية عبر دوال Win32، والتخزين الذري للملفات.
-3. **خط إطلاق JVM المباشر:** استدعاء مباشر لحزم OpenJDK 25 الأصلية 64-bit مع استخراج مكتبات LWJGL 2/3 وتطبيق معاملات إدارة الذاكرة G1GC بدقة.
-4. **مصفوفة البروفايلات الفيزيائية (8 بروفايلات):** 4 بروفايلات للنسخة الحديثة (Ultra, Balanced, Performance, Vanilla+) و 4 بروفايلات للنسخة الكلاسيكية (PvP Battle Suite, Ultra Visuals, Balanced Bedwars, Zero-Delay).
+2. **محرك الجسر المكتبي:** جسر غير متزامن فائق السرعة (`launcher_core`) يدير المصادقة، وتعديل السكنات بتقنية 3D WebGL، ومراقبة العتاد اللحظية عبر دوال Win32، وإدارة دورة حياة النوافذ.
+3. **خط إطلاق JVM المباشر:** استدعاء مباشر لحزم OpenJDK 25 الأصلية 64-bit مع تطهير إعدادات العرض لمنع الشاشات السوداء وتطبيق معاملات إدارة الذاكرة G1GC و ZGC بدقة.
+4. **مصفوفة البروفايلات الفيزيائية (6 بروفايلات):** 3 بروفايلات للنسخة الحديثة (Ultra, Balanced, Performance) و 3 بروفايلات للنسخة الكلاسيكية (Ultra Visuals, Balanced Bedwars, Performance).
 
 ---
 
-## 🔧 2. محرك التوافق ومعالجة البايتكود (ASM Pipeline)
+## 2. محرك التوافق ومعالجة البايتكود (ASM Pipeline)
 - **معالجة الأسماء عبر 5 مراحل:** فحص وإصلاح ملفات Access Widener والمودات المتداخلة (Jar-in-Jar) حتى 4 مستويات لضمان التوافق المطلق مع فضاء الأسماء الرسمي لماينكرافت.
 - **تجريد التوقيعات:** إزالة التوقيعات التالفة لملفات اللعبة الأساسية محلياً للسماح بتحميل الكلاسات المعدلة دون أي عوائق تشغيل.
 
 ---
 
-## 🔒 3. بروتوكولات الأمان وسيادة البيانات
+## 3. بروتوكولات الأمان وسيادة البيانات
 - **تخزين ذري شامل (Universal Atomic Persistence):** كتابة الإعدادات أولاً في ملفات مؤقتة واستبدالها بنظام أقفال NTFS التراجعية لمنع تلف الملفات نهائياً.
 - **انعدام التتبع (Zero-Telemetry):** لا يتم جمع أو إرسال أي بيانات شخصية أو سجلات لعب خارجية، وتتم المصادقة السحابية حصرياً عبر Google OAuth و Firebase بتشفير TLS 1.3.
 
 ---
 
-## 📬 4. قنوات الدعم والمجتمع
+## 4. قنوات الدعم والمجتمع
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
 - **بوابة الويب الرسمية:** [https://sir-modpack.web.app](https://sir-modpack.web.app)

@@ -1,5 +1,5 @@
 /**
- * SIR Launcher — Hardware Telemetry & RAM Governor Module
+ * SIR Launcher : Hardware Telemetry & RAM Governor Module
  * Real-time kernel metrics, sparkline graphing, and connection state management.
  */
 

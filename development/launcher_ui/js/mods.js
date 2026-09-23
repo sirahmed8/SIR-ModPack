@@ -158,13 +158,13 @@ const SIR_MODS_DOCS = {
     version: "v1.0.0",
     author: "PrideSyria & SIR Team",
     icon: "sparkles",
-    iconColor: "text-purple-400",
-    badge: "🎨 Classic Optical Filters",
+    iconColor: "text-sky-400",
+    badge: "Classic Optical Filters",
     weblink: "https://sir-modpack.web.app/mods?doc=super_secret_settings",
     desc: "Restores the iconic Minecraft 1.8.9 'Super Secret Settings' GLSL post-processing shaders and retro filters directly into Modern Minecraft 26.2 without performance overhead.",
     architecture: `
-      <div class="p-3.5 rounded-2xl bg-purple-950/30 border border-purple-500/30 space-y-2">
-        <h4 class="text-xs font-bold text-purple-300 flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Retro Post-Processing Suite</h4>
+      <div class="p-3.5 rounded-2xl bg-sky-950/30 border border-sky-500/30 space-y-2">
+        <h4 class="text-xs font-bold text-sky-300 flex items-center gap-1.5"><i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Retro Post-Processing Suite</h4>
         <ul class="space-y-1.5 text-[11px] text-slate-300">
           <li><strong>• 16 Classic Filters:</strong> Phosphor CRT, Sobel Outline, 8-Bit Pixelate, Desaturate, Invert, Blur, and Scanlines.</li>
           <li><strong>• Iris & Sodium Compatible:</strong> Executes downstream of the rasterizer pipeline without causing framebuffer conflicts.</li>
@@ -340,7 +340,7 @@ const OFFICIAL_SIR_MODS = [
     name: "HAVOC PvP Injector & Kernel Engine",
     version: "1.0.0",
     category: "PvP Engine",
-    badge: "⚔️ Competitive PvP",
+    badge: "Competitive PvP",
     author: "HAVOC Team",
     gradient: "from-rose-950/60 via-red-900/40 to-slate-900/90",
     icon: "swords",
@@ -354,11 +354,11 @@ const OFFICIAL_SIR_MODS = [
     name: "Super Secret Settings Fix",
     version: "1.0.0",
     category: "Visuals",
-    badge: "🎨 Classic Optical Filters",
+    badge: "Classic Optical Filters",
     author: "PrideSyria",
-    gradient: "from-purple-950/60 via-indigo-900/40 to-slate-900/90",
+    gradient: "from-sky-950/60 via-blue-900/40 to-slate-900/90",
     icon: "sparkles",
-    iconColor: "text-purple-400",
+    iconColor: "text-sky-400",
     desc: "Restores classic Minecraft retro post-processing shaders, CRT filters, and secret visual camera passes seamlessly.",
     features: ["Post-Processing Restorer", "Retro CRT & 8-Bit Shaders", "Smooth Camera FX", "Zero Performance Cost"],
     link: "https://sir-modpack.web.app/shaders"
@@ -368,7 +368,7 @@ const OFFICIAL_SIR_MODS = [
     name: "PlayerAPI Integration",
     version: "1.8.9",
     category: "Animations",
-    badge: "🏃 Player Movement Hub",
+    badge: "Player Movement Hub",
     author: "PrideSyria",
     gradient: "from-emerald-950/60 via-teal-900/40 to-slate-900/90",
     icon: "activity",
@@ -382,7 +382,7 @@ const OFFICIAL_SIR_MODS = [
     name: "Sharpness Particles FX",
     version: "1.8.9",
     category: "PvP Visuals",
-    badge: "✨ Particle Burst",
+    badge: "Particle Burst",
     author: "PrideSyria",
     gradient: "from-amber-950/60 via-yellow-900/40 to-slate-900/90",
     icon: "zap",
@@ -396,7 +396,7 @@ const OFFICIAL_SIR_MODS = [
     name: "InGameAccountSwitcher (IAS)",
     version: "9.0.7",
     category: "Accounts",
-    badge: "🔑 Offline & Alt Switcher",
+    badge: "Offline & Alt Switcher",
     author: "The_Fireplace",
     gradient: "from-blue-950/60 via-slate-900/40 to-slate-900/90",
     icon: "users",

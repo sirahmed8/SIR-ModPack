@@ -65,7 +65,7 @@ button svg.lucide {
   /* Curvature Tokens (Ergonomic Hierarchy) */
   --radius-card: 24px;
   --radius-modal: 24px;
-  --radius-pill: 14px;
+  --radius-pill: 8px;
   --radius-btn: 10px;
   --radius-input: 10px;
   --radius-full: 9999px;
@@ -221,7 +221,7 @@ body {
 .header-pill {
   height: 36px;
   padding: 0 14px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: rgba(16, 22, 36, 0.8);
   border: 1px solid var(--border-subtle);
   font-size: 12px;
@@ -322,7 +322,7 @@ html.light .card-modern:hover {
 /* Filter Pills with Glowing Active Ring */
 .filter-pill {
   padding: 7px 16px;
-  border-radius: 14px;
+  border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
   color: #94a3b8;
@@ -346,13 +346,13 @@ html.light .card-modern:hover {
   box-shadow: 0 0 10px rgba(0, 229, 255, 0.25), inset 0 0 4px rgba(0, 229, 255, 0.1);
 }
 
-/* Badge Tags with Rounded Pill Geometry */
+/* Badge Tags with Rounded Geometric Structure */
 .badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   padding: 3px 9px;
-  border-radius: 9999px;
+  border-radius: 6px;
   font-size: 10px;
   font-weight: 800;
   border-width: 1px;
@@ -729,7 +729,7 @@ input[type="checkbox"]:checked {
 
 
 /* ==========================================================================
-   SIR LAUNCHER — UNIVERSAL DUAL THEME ENGINE (DARK / LIGHT / SYSTEM AUTO)
+   SIR LAUNCHER: UNIVERSAL DUAL THEME ENGINE (DARK / LIGHT / SYSTEM AUTO)
    ========================================================================== */
 
 :root {
@@ -1629,7 +1629,7 @@ html.light #legal-doc-content {
 
 
 /* ==========================================================================
-   3D SKIN STUDIO — COMPLETE LIGHT MODE OVERRIDES
+   3D SKIN STUDIO: COMPLETE LIGHT MODE OVERRIDES
    ========================================================================== */
 
 /* Preview stage: keep dark background (skin looks best on dark) but clean borders */
@@ -1659,7 +1659,7 @@ html.light div.bg-\[\#080c14\] label {
   color: #475569 !important;
 }
 
-/* Angle switcher dock bar inside skin stage — Light Mode clean glassmorphism */
+/* Angle switcher dock bar inside skin stage: Light Mode clean glassmorphism */
 html.light div[class*="bg-slate-900\/90"][class*="backdrop-blur"] {
   background: rgba(255, 255, 255, 0.92) !important;
   border: 1px solid #cbd5e1 !important;
@@ -1716,17 +1716,17 @@ html.light #studio-capes-grid .feature-card {
 }
 
 /* ==========================================================================
-   GAME LOGS & RCON TERMINAL — Always developer dark on both themes
+   GAME LOGS & RCON TERMINAL: Always developer dark on both themes
    ========================================================================== */
 
-/* Game logs terminal — always dark regardless of theme */
+/* Game logs terminal: always dark regardless of theme */
 #game-logs-output,
 #rcon-console-output {
   background: #04070d !important;
   color: #38ef7d !important;
 }
 
-/* Terminal window bar — Light Mode */
+/* Terminal window bar: Light Mode */
 html.light #view-logs .feature-card,
 html.light #logs-terminal-card,
 html.light div[class*="bg-[#04070d]"] {
@@ -1745,7 +1745,7 @@ html.light #game-logs-output {
   color: #1e293b !important;
 }
 
-/* RCON console box — Light Mode */
+/* RCON console box: Light Mode */
 html.light #view-rcon .feature-card[class*="bg-[#05080e]"],
 html.light div[class*="bg-[#05080e]"] {
   background: #ffffff !important;
@@ -1757,7 +1757,7 @@ html.light #rcon-console-output {
 }
 
 /* ==========================================================================
-   HARDWARE TELEMETRY — Light mode card overrides
+   HARDWARE TELEMETRY: Light mode card overrides
    ========================================================================== */
 
 html.light #view-hardware .feature-card {
@@ -1786,7 +1786,7 @@ html.light div[class*="border-cyan-500/40"][class*="bg-[#080e1a]"] {
 }
 
 /* ==========================================================================
-   SHADERS FINE-TUNING PANELS — Light mode
+   SHADERS FINE-TUNING PANELS: Light mode
    ========================================================================== */
 
 html.light #view-shaders div[class*="bg-[#07"],
@@ -1803,7 +1803,7 @@ html.light div[class*="border-cyan-500/40"][class*="shadow-cyan"] {
 }
 
 /* ==========================================================================
-   SERVERS — RCON QUICK ACTION BUTTONS
+   SERVERS: RCON QUICK ACTION BUTTONS
    ========================================================================== */
 
 html.light #view-rcon .filter-pill {
@@ -1819,7 +1819,7 @@ html.light #view-rcon .filter-pill.active {
 }
 
 /* ==========================================================================
-   SATELLITE WAVEFORM — Light mode ping canvas background
+   SATELLITE WAVEFORM: Light mode ping canvas background
    ========================================================================== */
 
 html.light #ping-waveform-canvas,
@@ -1835,7 +1835,7 @@ html.light #satellite-nodes-grid .feature-card {
 }
 
 /* ==========================================================================
-   SCROLLBAR — Light mode clean styling
+   SCROLLBAR: Light mode clean styling
    ========================================================================== */
 
 html.light ::-webkit-scrollbar-track {
@@ -1852,7 +1852,7 @@ html.light ::-webkit-scrollbar-thumb:hover {
 }
 
 /* ==========================================================================
-   LEGAL MODAL — Amber border on light stays saturated
+   LEGAL MODAL: Amber border on light stays saturated
    ========================================================================== */
 
 html.light #legal-eula-modal .modal-card {
@@ -1865,7 +1865,7 @@ html.light div[class*="bg-amber-500/15"] {
 }
 
 /* ==========================================================================
-   CUSTOM DIALOG MODAL — Dual theme safe
+   CUSTOM DIALOG MODAL: Dual theme safe
    ========================================================================== */
 
 html.light #custom-dialog-modal .modal-card {
@@ -1892,7 +1892,7 @@ html.light #ms-device-code-modal div[class*="bg-slate-900"] {
 html.light #ms-auth-status { color: #334155 !important; }
 
 /* ==========================================================================
-   GALLERY — Empty state styling
+   GALLERY: Empty state styling
    ========================================================================== */
 
 html.light #gallery-grid .feature-card {
@@ -2097,17 +2097,17 @@ html.light div[class*="from-cyan-950/40"][class*="to-emerald-950/40"] span[class
 html.light div[class*="from-cyan-950/40"][class*="to-emerald-950/40"] p {
   color: #475569 !important;
 }
-html.light div[class*="from-cyan-950/40"][class*="to-purple-950/40"] {
-  background: linear-gradient(to right, #f0fdfa, #f8fafc, #faf5ff) !important;
+html.light div[class*="from-cyan-950/40"][class*="to-slate-950/40"] {
+  background: linear-gradient(to right, #f0fdfa, #f8fafc, #f1f5f9) !important;
   border-color: #cbd5e1 !important;
 }
-html.light div[class*="from-cyan-950/40"][class*="to-purple-950/40"] h3 {
+html.light div[class*="from-cyan-950/40"][class*="to-slate-950/40"] h3 {
   color: #0f172a !important;
 }
-html.light div[class*="from-cyan-950/40"][class*="to-purple-950/40"] p {
+html.light div[class*="from-cyan-950/40"][class*="to-slate-950/40"] p {
   color: #475569 !important;
 }
-html.light div[class*="from-cyan-950/40"][class*="to-purple-950/40"] div[class*="bg-slate-900"] {
+html.light div[class*="from-cyan-950/40"][class*="to-slate-950/40"] div[class*="bg-slate-900"] {
   background: #ffffff !important;
   border-color: #e2e8f0 !important;
 }

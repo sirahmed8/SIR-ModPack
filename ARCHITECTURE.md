@@ -1,11 +1,11 @@
-# 🏗️ SIR ModPack — Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience • Semantic Versioning v1.0.0 • September 2026*
+# SIR ModPack: Comprehensive Architectural Blueprint & Engineering Specification
+### *Unified Minecraft Experience | Semantic Versioning v2.4.0 LTS | September 2026*
 
 ---
 
-## 🧭 1. System Architecture Overview
+## 1. System Architecture Overview
 
-The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (**`SIR Modern Shader.zip`** & **`SIR Legacy Shader.zip`**), dual resource packs (**`SIR Modern.zip`** with Patrix 3D POM models & **`SIR Legacy.zip`** 32x PvP), a dynamic Ocean Physics simulation engine, and a zero-telemetry hardware diagnostic bridge.
+The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (`SIR Modern Shader.zip` & `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models & `SIR Legacy.zip` 32x PvP), a dynamic Ocean Physics simulation engine, and a zero-telemetry hardware diagnostic bridge.
 
 ```mermaid
 flowchart TD
@@ -26,29 +26,28 @@ flowchart TD
         E --> K[VideoPresetService - Tri-Layer Graphics Engine]
         E --> L[ControlsService - Dual-Mode Keybinding Converter]
         E --> M[CleanerService & Deep Crash Analyzer]
+        E --> M2[WindowLifecycleService - Tray & Watchdog Supervisor]
     end
 
     subgraph Native JVM Pipeline ["Native JVM Pipeline (native_runner.py)"]
         N[Strict RAM Governor -Xmx/-Xms & G1GC]
-        O[Pre-Launch LWJGL 2 / 3 DLL Extractor]
+        O[Pre-Launch Options Sanitizer - Windowed Mode Guardian]
         P[Dynamic Classpath Assembly - Fabric 26.2 / Forge 1.8.9]
         Q[Stable JRE 21 LTS / JRE 8 Locator]
     end
 
-    subgraph Profile Matrix ["Instances Profile Matrix (instances/)"]
+    subgraph Profile Matrix ["Consolidated 6-Tier Profile Matrix (instances/)"]
         M1[26.2-ultra: 16 Chunks, POM, SIR Modern Shader, 144+ FPS]
         M2[26.2-balanced: 12 Chunks, Balanced Shaders, 180+ FPS]
         M3[26.2-performance: 8 Chunks, 0ms Sodium Boost, 350+ FPS]
-        M4[26.2: SIR 26 Vanilla, 0 Mods, Authentic Vanilla Engine, 240+ FPS]
-        L1[1.8.9: PvP Battle Suite, 28 Mods, 500+ FPS]
-        L2[1.8.9-ultra: HD 32x Skyboxes, SIR Legacy Shader, 300+ FPS]
-        L3[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
-        L4[1.8.9-performance: Zero-Delay Max FPS Engine, 600+ FPS]
+        L1[1.8.9-ultra: HD 32x Skyboxes, SIR Legacy Shader, 300+ FPS]
+        L2[1.8.9-balanced: Ranked Bedwars 12 Chunks, 450+ FPS]
+        L3[1.8.9-performance: Zero-Delay Max FPS Engine, 600+ FPS]
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
-        W[Next.js 16 App Router - 34 Static Routes]
-        W --> W1[AiChatbot.tsx: Gemini 4-Tier AI Waterfall]
+        W[Next.js 16 App Router - 38 Static Routes]
+        W --> W1[AiChatbot.tsx: SIR Diagnostic & Configuration Assistant]
         W --> W2[Firebase Realtime Database: Presence & OTA Releases]
         W --> W3[Firestore: Telemetry & Client Error Reporting]
     end

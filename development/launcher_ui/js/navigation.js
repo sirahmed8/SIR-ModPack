@@ -168,7 +168,7 @@ async function renderNewsView() {
     changelogs = [
       {
         version: "v1.0.0",
-        headline: "Official Release — Dual-Engine Architecture & Zero-Defect Release",
+        headline: "Official Release: Dual-Engine Architecture & Zero-Defect Release",
         date: "September 2026",
         tag: "Official Master Release",
         categories: [
@@ -215,7 +215,7 @@ async function renderNewsView() {
             </div>
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-black uppercase bg-amber-500 text-slate-950 shadow-sm">${activeBroadcast.category || "LIVE BROADCAST"}</span>
+                <span class="px-2.5 py-0.5 rounded-md text-[10px] font-mono font-black uppercase bg-amber-500 text-slate-950 shadow-sm">${activeBroadcast.category || "LIVE BROADCAST"}</span>
                 <h4 class="text-sm font-black text-amber-300">${activeBroadcast.title}</h4>
               </div>
               <p class="text-xs text-slate-300 leading-relaxed max-w-2xl">${activeBroadcast.message || ""}</p>
@@ -242,7 +242,7 @@ async function renderNewsView() {
       <div class="feature-card p-6 border-amber-500/50 bg-gradient-to-r from-amber-950/40 via-slate-900/70 to-cyan-950/40 space-y-3 animate-in fade-in-0 slide-in-from-top-2 duration-300">
         <div class="flex items-center justify-between flex-wrap gap-3">
           <div class="flex items-center gap-3">
-            <span class="px-3 py-1 rounded-full text-[11px] font-mono font-black uppercase bg-amber-500 text-slate-950 shadow-md shadow-amber-500/30 flex items-center gap-1.5">
+            <span class="px-3 py-1 rounded-md text-[11px] font-mono font-black uppercase bg-amber-500 text-slate-950 shadow-md shadow-amber-500/30 flex items-center gap-1.5">
               <i data-lucide="radio" class="w-3.5 h-3.5 animate-pulse"></i>
               <span>${activeBroadcast.category || "LIVE BROADCAST"}</span>
             </span>
@@ -264,11 +264,11 @@ async function renderNewsView() {
 
   // Master v1.0.0 Banner
   html += `
-    <div class="feature-card p-6 border-cyan-500/40 bg-gradient-to-r from-cyan-950/50 via-slate-900/70 to-purple-950/50 space-y-4 shadow-xl">
+    <div class="feature-card p-6 border-cyan-500/40 bg-gradient-to-r from-cyan-950/50 via-slate-900/70 to-slate-900/80 space-y-4 shadow-xl">
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex items-center gap-3">
-          <span class="px-3 py-1 rounded-full text-[11px] font-mono font-black uppercase bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/25">v1.0.0 Official</span>
-          <h3 class="text-lg font-black text-white tracking-wide">SIR ModPack v1.0.0 — Official Release</h3>
+          <span class="px-3 py-1 rounded-md text-[11px] font-mono font-black uppercase bg-gradient-to-r from-cyan-400 to-emerald-400 text-slate-950 shadow-md shadow-cyan-500/25">v1.0.0 Official</span>
+          <h3 class="text-lg font-black text-white tracking-wide">SIR ModPack v1.0.0 : Official Release</h3>
         </div>
         <div class="flex items-center gap-2">
           <button onclick="openModal('welcome-modal')" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition-all flex items-center gap-1.5 cursor-pointer">
@@ -300,7 +300,7 @@ async function renderNewsView() {
           <p class="text-[11px] text-slate-400">Dynamic kernel memory trimming flushes background RAM to &lt;45 MB.</p>
         </div>
         <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-          <div class="flex items-center gap-1.5 text-purple-400 font-bold text-xs">
+          <div class="flex items-center gap-1.5 text-sky-400 font-bold text-xs">
             <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
             <span>SIR HUD & Cosmetics</span>
           </div>

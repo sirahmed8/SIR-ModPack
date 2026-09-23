@@ -274,24 +274,24 @@ function updateWhatsNewEngineSelection() {
   if (modernCard && legacyCard) {
     if (isModern) {
       modernCard.className = "p-5 rounded-2xl bg-cyan-950/30 border-2 border-cyan-400/80 space-y-3 relative transition-all shadow-lg shadow-cyan-500/10";
-      legacyCard.className = "p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative transition-all hover:border-purple-500/40";
+      legacyCard.className = "p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative transition-all hover:border-sky-500/40";
       if (modernBtn) {
         modernBtn.className = "w-full py-2.5 rounded-xl bg-cyan-400 text-slate-950 font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-default";
         modernBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i><span>Active Primary Core</span>';
       }
       if (legacyBtn) {
-        legacyBtn.className = "w-full py-2.5 rounded-xl bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer";
+        legacyBtn.className = "w-full py-2.5 rounded-xl bg-slate-800 hover:bg-sky-600 text-slate-200 hover:text-white font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer";
         legacyBtn.innerHTML = '<span>Switch to Legacy 1.8.9</span>';
       }
     } else {
       modernCard.className = "p-5 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative transition-all hover:border-cyan-500/40";
-      legacyCard.className = "p-5 rounded-2xl bg-purple-950/30 border-2 border-purple-400/80 space-y-3 relative transition-all shadow-lg shadow-purple-500/10";
+      legacyCard.className = "p-5 rounded-2xl bg-sky-950/30 border-2 border-sky-400/80 space-y-3 relative transition-all shadow-lg shadow-sky-500/10";
       if (modernBtn) {
         modernBtn.className = "w-full py-2.5 rounded-xl bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 text-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer";
         modernBtn.innerHTML = '<span>Switch to Modern 26.2</span>';
       }
       if (legacyBtn) {
-        legacyBtn.className = "w-full py-2.5 rounded-xl bg-purple-500 text-white font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-default";
+        legacyBtn.className = "w-full py-2.5 rounded-xl bg-sky-400 text-slate-950 font-black text-xs transition-all flex items-center justify-center gap-1.5 cursor-default";
         legacyBtn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i><span>Active Primary Core</span>';
       }
     }

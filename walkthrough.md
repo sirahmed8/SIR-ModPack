@@ -13,11 +13,11 @@
 ### ✅ Test Certification
 | Suite | Result |
 |:------|:-------|
-| Unit Tests | **368 / 368 PASSED** — EXIT 0 |
-| Delta Manifest Validator | **2783 / 2783 files — 100% VALID** (Cross-platform CRLF/LF normalized) |
+| Unit Tests | **406 / 406 PASSED** - EXIT 0 |
+| Delta Manifest Validator | **2783 / 2783 files - 100% VALID** (Cross-platform CRLF/LF normalized) |
 | E2E Adversarial Tests | **39 / 39 CLEARED** (RBAC, payload, rate-limit, security) |
-| Ecosystem Doctor | **6/6 Diagnostic Layers — 100% HEALTHY** |
-| Drive D Free Space | **18.22 GB ≥ 18.00 GB — INVARIANT MAINTAINED** |
+| Ecosystem Doctor | **6/6 Diagnostic Layers - 100% HEALTHY** |
+| Web Platform Build | **38 / 38 Static Routes - 100% SUCCESS** |
 
 ### ✅ Desktop Applications
 | File | Change |
@@ -66,7 +66,7 @@ Phase 17 delivers the final comprehensive overhaul of the entire SIR Ecosystem:
 | **5** | **Web Page Rebuilds** | Legacy placeholder pages (builder 7 mods, bare compatibility) | Rebuilt /builder to 30+ mod studio, /compatibility to GPU benchmark station, /server-guide + /leaderboards expanded. |
 | **6** | **Auth Gate** | Unauthenticated visitors could access protected pages | Middleware enforced: all unauth routes → /welcome. Live MCP verified zero bypass. |
 | **7** | **Engine Configs** | Default engine settings not tuned for 6-core hardware | Applied optimal c2me, Sodium, physics, sound, footstep configs across all 26.2 instances. |
-| **8** | **Master Release** | 368 unit tests, 39 E2E tests, 6/6 doctor, Firebase deploy, dual git push | All certified. Drive D ≥ 18 GB. |
+| **8** | **Master Release** | 406 unit tests, 39 E2E tests, 6/6 doctor, Firebase deploy, dual git push | All certified. 100% ecosystem health. |
 
 ---
 

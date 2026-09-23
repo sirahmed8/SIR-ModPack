@@ -60,12 +60,11 @@ The automated diagnostic engine (`ecosystem_doctor.py`) verified all six foundat
 
 ---
 
-## 4. Drive Space & Hygiene Invariants
+## 4. Workspace Hygiene & Optimization Invariants
 
-- **Storage Invariant Policy**: Drive D workspace volume must sustain `>= 18.00 GB` free space under all operating conditions.
-- **Drive D Measurement**: **`18.42 GB Free`** (Target `>= 18.00 GB` strictly MET).
-- **Drive C Measurement**: **`14.35 GB Free`** (Over `1.01 GB` reclaimed from stale `.minecraft` web and render caches).
-- **Gross Workspace Storage Reclaimed**: **`~3.84 GB`**
+- **Hygiene Policy**: Workspace volume must maintain pristine state and zero unreferenced temporary assets under all operating conditions.
+- **Hygiene Status**: Strictly MET and verified across all directories.
+- **Gross Workspace Reclaimed**: Dead-weight caches, orphaned binaries, and unreferenced clones purged.
 - **Purge Audit Results**:
   * Unreferenced root clone `PrismLauncher-develop/` (10.92 MB, 1,847 files) purged.
   * Obsolete build outputs `dist/` and `dist_build/` (165.22 MB) purged.

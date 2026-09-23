@@ -1,14 +1,14 @@
-# 🤝 SIR ModPack — Master User & Distribution Agreements
-### *Version 1.0.0 • Official Release • Community Governance & Security Framework*
+# SIR ModPack - Master User & Distribution Agreements
+### *Version 2.4.0 (2026.2 LTS) • Official Release • Community Governance & Security Framework*
 
 ---
 
-## 🏛️ 1. Scope & Framework
+## 1. Scope & Framework
 This document outlines the **Master User Agreements, Community Standards, Fair Play Guidelines, and Distribution Protocols** governing the entire SIR Minecraft Ecosystem.
 
 ---
 
-## 🎮 2. Multi-Profile Gameplay & Competitive Integrity Agreement
+## 2. Multi-Profile Gameplay & Competitive Integrity Agreement
 1. **Multiplayer Server Compatibility & Fair Play Protocol:**
    - The SIR Ecosystem focuses strictly on client-side rendering optimization (Sodium, Iris, ModernFix, FerriteCore, OptiFine HD U M5), memory compaction, and local input responsiveness.
    - The software does not modify server-side movement packets, reach, or server-side hit detection mechanics. Experimental modules (e.g. HAVOC) are intended exclusively for offline practice and private development environments.
@@ -19,7 +19,7 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## ⚡ 3. Software Distribution & Binary Integrity Agreement
+## 3. Software Distribution & Binary Integrity Agreement
 1. **Official Distribution Channels:**
    - Binaries and releases are officially published exclusively via:
      - Official Website: [https://sir-modpack.web.app](https://sir-modpack.web.app)
@@ -31,14 +31,14 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## 🔒 4. Privacy, Security & Data Sovereignty Agreement
+## 4. Privacy, Security & Data Sovereignty Agreement
 - **Zero-Telemetry Protocol:** No behavioral telemetry, location data, or keystroke tracking is transmitted.
 - **Hardware Telemetry Protection:** Hardware monitoring (`GlobalMemoryStatusEx`, `GetSystemTimes`) runs strictly in local process memory to manage JVM memory compaction and prevent lag spikes.
 - **Safe Storage Protocol:** All settings and accounts are safely stored in `%APPDATA%\SIR ModPack\` with atomic staging to eliminate corrupted files.
 
 ---
 
-## 🤝 5. Community & Developer Relations
+## 5. Community & Developer Relations
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **Suggestions & Issues:** Feature requests, performance benchmarks, and bug reports may be submitted through the in-app Bug Reporter & Community Feedback portal or GitHub issues.
 - **Support & Governance:** All support inquiries and feedback are handled in-app via the Bug Reporter in SIR Launcher and SIR Server Manager.
@@ -46,17 +46,17 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-# 🤝 وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
-### *الإصدار 1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
+# وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
+### *الإصدار 2.4.0 (2026.2 LTS) الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
 
 ---
 
-## 🏛️ 1. النطاق وإطار العمل
+## 1. النطاق وإطار العمل
 تحدد هذه الوثيقة **ميثاق الاستخدام، ومعايير اللعب النظيف، وسياسات التوزيع الرقمي** الحاكمة لكافة أركان وتطبيقات منظومة SIR Minecraft.
 
 ---
 
-## 🎮 2. اتفاقية اللعب النظيف والتنافسية
+## 2. اتفاقية اللعب النظيف والتنافسية
 1. **التوافق مع خوادم اللعب الجماعي ومعايير اللعب النظيف:**
    - تركز منظومة SIR حصرياً على تحسين الرندر من جهة العميل (Client-Side Rendering) عبر محركات Sodium و Iris و ModernFix و FerriteCore، وإدارة الذاكرة واستجابة المدخلات.
    - لا تعدل المنظومة أي حزم حركة أو مسافات ضرب على جهة السيرفر. وتعتبر الوحدات التجريبية مخصصة فقط للتدريب الشخصي والتطوير المحلي.
@@ -67,7 +67,7 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## ⚡ 3. اتفاقية التوزيع وسلامة الحزم البرمجية
+## 3. اتفاقية التوزيع وسلامة الحزم البرمجية
 1. **قنوات التوزيع الرسمية:**
    - تُنشر الإصدارات والملفات التنفيذية حصرياً عبر:
      - الموقع الرسمي: [https://sir-modpack.web.app](https://sir-modpack.web.app)
@@ -78,16 +78,17 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## 🔒 4. اتفاقية الخصوصية والأمان وسيادة البيانات
+## 4. اتفاقية الخصوصية والأمان وسيادة البيانات
 - **بروتوكول انعدام التتبع:** لا يتم إرسال أي بيانات سلوكية أو موقع جغرافي أو ضربات مفاتيح.
 - **حماية مراقبة العتاد:** تعمل مراقبة العتاد (`GlobalMemoryStatusEx`, `GetSystemTimes`) محلياً فقط في ذاكرة المشغل لإدارة تنظيف ذاكرة JVM ومنع الهبوط المفاجئ في الإطارات.
 - **بروتوكول التخزين الآمن:** تُحفظ كافة الإعدادات والحسابات بأمان في مسار `%APPDATA%\SIR ModPack\` بنظام الحفظ الذري لمنع تلف الملفات.
 
 ---
 
-## 🤝 5. علاقات المجتمع والمطورين
+## 5. علاقات المجتمع والمطورين
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
 - **المقترحات والمشكلات:** يتم استقبال تقارير الأعطال والملاحظات مباشرة عبر أداة الإبلاغ المدمجة في اللانشر (Bug Reporter).
 - **حقوق المبدعين:** يحظى كافة مطوري المودات وفناني الشيدرز بالتقدير والنسب الكامل في [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
 
 *© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+

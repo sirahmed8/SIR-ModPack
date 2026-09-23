@@ -1187,6 +1187,44 @@ class NativeMinecraftRunner:
 
         threading.Thread(target=_worker, daemon=True).start()
 
+    @staticmethod
+    def _sanitize_launch_environment(instance_dir: str, game_dir: str) -> None:
+        """Sanitizes display settings across instance configurations to eliminate DWM/GPU stalls,
+        exclusive fullscreen lockouts, and black screen freezes on launch and exit.
+        """
+        candidate_dirs = {instance_dir, game_dir}
+        for d in candidate_dirs:
+            if not d or not os.path.isdir(d):
+                continue
+            opt_file = os.path.join(d, "options.txt")
+            if os.path.isfile(opt_file):
+                try:
+                    with open(opt_file, "r", encoding="utf-8", errors="ignore") as f:
+                        lines = f.readlines()
+                    modified = False
+                    new_lines = []
+                    for line in lines:
+                        sline = line.strip()
+                        if sline.startswith("fullscreen:"):
+                            new_lines.append("fullscreen:false\n")
+                            modified = True
+                        elif sline.lower().startswith("exclusivefullscreen:"):
+                            new_lines.append("exclusiveFullscreen:false\n")
+                            modified = True
+                        elif sline.startswith("overrideWidth:") and not sline.startswith("overrideWidth:0"):
+                            new_lines.append("overrideWidth:0\n")
+                            modified = True
+                        elif sline.startswith("overrideHeight:") and not sline.startswith("overrideHeight:0"):
+                            new_lines.append("overrideHeight:0\n")
+                            modified = True
+                        else:
+                            new_lines.append(line)
+                    if modified:
+                        with open(opt_file, "w", encoding="utf-8") as f:
+                            f.writelines(new_lines)
+                except Exception as ex:
+                    print(f"[NativeRunner] Notice: Could not sanitize {opt_file}: {ex}")
+
     def launch(
         self,
         instance_dir: str,
@@ -1310,6 +1348,7 @@ class NativeMinecraftRunner:
                     extra_jvm.append(clean_tok)
 
         eff_game_dir = os.path.join(instance_dir, "minecraft") if os.path.isdir(os.path.join(instance_dir, "minecraft")) else instance_dir
+        self._sanitize_launch_environment(instance_dir, eff_game_dir)
 
         # Pre-seed PhysicsMod cache directories to prevent NoSuchFileException
         try:

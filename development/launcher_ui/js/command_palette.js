@@ -1,5 +1,5 @@
 /**
- * command_palette.js — Raycast / Linear Universal Spotlight Command Palette (Ctrl+K / Cmd+K)
+ * command_palette.js : Raycast / Linear Universal Spotlight Command Palette (Ctrl+K / Cmd+K)
  * Provides spotlight fuzzy-search for profiles, navigation, mods, shaders, and system diagnostics.
  */
 
