@@ -6,10 +6,12 @@
 
 ---
 
-## [v2.4.0] : September 2026 : Anti-Vibe Overhaul, Window Lifecycle & Enterprise Hardening
+## [v1.0.0] : September 2026 : The Complete Unified Minecraft Ecosystem Release
 
-> Comprehensive ecosystem-wide design modernization, anti-"vibe coded" geometry and palette overhaul,
-> hybrid GPU launch freeze cure, window lifecycle management, GDPR legal policies, and enterprise security hardening.
+> The complete official release of the SIR ModPack Ecosystem : a fully integrated
+> suite of desktop apps, dual Minecraft engines (Modern 26.2 & Legacy 1.8.9 across 6 consolidated performance tiers),
+> real-time Windows kernel Task Manager telemetry, unversioned Master SIR Shaders, Next.js 16 web platform, and Firebase cloud infrastructure,
+> all under the **SIR Software Agreement**.
 >
 > **406/406 root unit tests passing | 394/394 public_repo tests passing | 100% ecosystem health certified.**
 
@@ -35,19 +37,6 @@
 - **GDPR Cookie Consent & Local Storage Studio**: Standardized cookie governance policy (`COOKIES.md` and `/cookies`) with granular consent keys and zero-tracker guarantees.
 - **Administrative Cryptographic PIN Gate**: Implemented client-side SHA-256 PIN authentication gate on `/admin` with session persistence and brute-force lockout.
 - **Firebase Security Rules Lockdown**: Hardened `database.rules.json` with strict schema validation and unauthenticated write bans on sensitive nodes.
-
----
-
-## [v1.0.0] : September 2026 : Official Release
-
-> The complete initial release of the SIR ModPack Ecosystem : a fully integrated
-> suite of desktop apps, dual Minecraft engines (Modern 26.2 & Legacy 1.8.9 across 6 consolidated performance tiers),
-> real-time Windows kernel Task Manager telemetry, unversioned Master SIR Shaders, Next.js 16 web platform, and Firebase cloud infrastructure,
-> all under the **SIR Software Agreement**.
->
-> **406/406 automated tests passing | 100% ecosystem health certified.**
-
----
 
 ### 🎮 In-Game SIR Mod (`R SHIFT`) & Native Competitive HUD
 - **Custom Native Fabric Mod (`sir-mod-26.2-1.0.0.jar`)** — Developed bespoke client mod bound to `Right Shift` (`key.keyboard.right.shift`) with ModMenu integration.

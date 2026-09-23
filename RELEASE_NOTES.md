@@ -1,5 +1,5 @@
 # SIR ModPack: Release Notes
-## Version: `v2.4.0 LTS Official Release`
+## Version: `v1.0.0 Official Release`
 **Release Date**: September 2026  
 **Platform Classification**: Independent Gaming Platform  
 **Governance & Legal Contact**: `a7medorabe7@gmail.com`  
@@ -7,15 +7,15 @@
 
 ---
 
-## Welcome to SIR ModPack v2.4.0 LTS
+## Welcome to SIR ModPack v1.0.0 Official Release
 
-The **SIR ModPack Ecosystem** marks a major generational milestone with **v2.4.0 LTS**. Built to deliver an enterprise-grade, competition-grade Minecraft experience across both Modern (Fabric 26.2) and Legacy (Forge 1.8.9) architectures across 6 consolidated performance tiers, SIR ModPack unites bleeding-edge rendering optics, zero-overhead client HUD telemetry, automated JVM runtime memory governors, resilient desktop workstation tools, real-time Windows kernel Task Manager parity, and a next-generation cloud web platform with 38 static routes.
+The **SIR ModPack Ecosystem** marks a major generational milestone with **v1.0.0 Official Release**. Built to deliver an enterprise-grade, competition-grade Minecraft experience across both Modern (Fabric 26.2) and Legacy (Forge 1.8.9) architectures across 6 consolidated performance tiers, SIR ModPack unites bleeding-edge rendering optics, zero-overhead client HUD telemetry, automated JVM runtime memory governors, resilient desktop workstation tools, real-time Windows kernel Task Manager parity, and a next-generation cloud web platform with 38 static routes.
 
 Every artifact, configuration, binary, and texture pack in this release has been mathematically audited, SHA-256 hashed, and certified across our 406-case automated test suite and 6-layer diagnostic ecosystem doctor.
 
 ---
 
-## v2.4.0 Key Highlights
+## v1.0.0 Key Highlights
 - **Anti-"Vibe Coded" Design Standard**: Deep obsidian/slate aesthetic with cyan/emerald/sky accents, complete purge of purple/indigo styling, zero pill-shaped buttons, zero raw emojis in UI headers, and scientific geometry (`rounded-md`, `rounded-lg`, `rounded-xl`).
 - **Hybrid GPU Black Screen Cure**: Integrated launch-time `options.txt` sanitizer in `native_runner.py` eliminating DWM display mode deadlocks on dual-GPU laptops (Intel Optimus + NVIDIA RTX).
 - **Window Lifecycle Engine & Ghost Window Elimination**: Dedicated win32 class suppression loop eliminating GDI+ taskbar ghost artifacts, coupled with automated launcher unhiding and foreground elevation upon game termination.

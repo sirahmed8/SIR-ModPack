@@ -1,5 +1,5 @@
 # SIR ModPack - End User License Agreement (EULA)
-### *Version 2.4.0 (2026.2 LTS) • Official Release • Legally Enforced Software License & Usage Agreement*
+### *Version 1.0.0 Official Release • Legally Enforced Software License & Usage Agreement*
 
 ---
 
@@ -72,7 +72,7 @@ This agreement is effective until terminated. Your rights under this license ter
 ---
 
 # وثيقة اتفاقية ترخيص المستخدم النهائي (EULA) لمنظومة SIR ModPack
-### *الإصدار 2.4.0 (2026.2 LTS) الرسمي • ترخيص برمجيات واستخدام ملزم قانوناً • منظومة برمجية متطورة ومستقلة*
+### *الإصدار v1.0.0 الرسمي • ترخيص برمجيات واستخدام ملزم قانوناً • منظومة برمجية متطورة ومستقلة*
 
 ---
 

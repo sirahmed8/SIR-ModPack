@@ -1,5 +1,5 @@
 # SIR ModPack: Cookie & Local Storage Governance Policy
-### *Version 2.4.0 LTS | Legally Enforced Transparency*
+### *Version 1.0.0 Official Release | Legally Enforced Transparency*
 
 ---
 
@@ -44,7 +44,7 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 ---
 
 # وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
-### *الإصدار v2.4.0 LTS الرسمي | منظومة برمجية متطورة ومستقلة | شفافية تقنية كاملة وانعدام تام للتتبع*
+### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | شفافية تقنية كاملة وانعدام تام للتتبع*
 
 ---
 

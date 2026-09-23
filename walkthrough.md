@@ -192,31 +192,29 @@ python build_ecosystem.py
   - `SIR Server Manager.exe` (26.3 MB)
   - `SIR Installer.exe` (25.1 MB)
 
-### Step 7: v2.4.0 Official Release Baseline & Dual-Repo Push
+### Step 7: v1.0.0 Official Release Baseline & Dual-Repo Push
 - **Public Repo (`public_repo/` -> `https://github.com/sirahmed8/SIR-ModPack.git`):**
-  - Release commit: `98127e48`
-  - Message: `release: v2.4.0 ecosystem overhaul, legal compliance, and window lifecycle engine`
+  - Message: `release: v1.0.0 ecosystem overhaul, legal compliance, and window lifecycle engine`
   - Branch: `main`
   - Assets: Binaries, core engines, shaders, resource packs, test suite, and bilingual docs.
 - **Private Repo (`website-next/` -> `https://github.com/sirahmed8/SIR-ModPack-private.git`):**
-  - Release commit: `4e5123b`
-  - Message: `release: v2.4.0 web platform, refund policy, admin security gate, and anti-vibe design`
+  - Message: `release: v1.0.0 web platform, refund policy, admin security gate, and anti-vibe design`
   - Branch: `main`
   - Assets: Next.js 16 web application, Firebase Hosting & Realtime Database config, bilingual docs, and public web assets.
 
 ### Step 8: Global Docs, Legal Harmonization & Firebase Deploy
 - **Complete Markdown Documentation Refresh**:
-  - `README.md` & `README_AR.md`: Harmonized to v2.4.0 (2026.2 LTS), anti-vibe design, hybrid GPU resolution, window lifecycle, zero raw emojis, zero em-dashes.
-  - `CHANGELOG.md`: Added top v2.4.0 entry, updated QA table to 406 tests and 38 static routes, purged all storage talk.
-  - `PROJECT.md`: Updated to Gen 9 (v2.4.0), all milestones completed, zero storage talk.
+  - `README.md` & `README_AR.md`: Harmonized to v1.0.0 Official Release, anti-vibe design, hybrid GPU resolution, window lifecycle, zero raw emojis, zero em-dashes.
+  - `CHANGELOG.md`: Consolidated to single master v1.0.0 entry, updated QA table to 406 tests and 38 static routes, purged all storage talk.
+  - `PROJECT.md`: Updated to Gen 9 (v1.0.0), all milestones completed, zero storage talk.
   - `PROJECT_ARCHITECTURE_EXPLANATION.md` & `ARCHITECTURE.md`: Synchronized 6-tier profile matrix, 38 static routes, and WindowLifecycleService.
-  - `RELEASE_NOTES.md`: Updated to v2.4.0 LTS with highlights on anti-vibe design, hybrid GPU cure, and admin security gate.
+  - `RELEASE_NOTES.md`: Updated to v1.0.0 Official Release with highlights on anti-vibe design, hybrid GPU cure, and admin security gate.
 - **Enterprise Legal & Policy Suite**:
-  - `PRIVACY.md` & `/privacy`: Updated to v2.4.0 LTS, zero-telemetry, diagnostic assistant rebranding.
-  - `TERMS.md` & `/terms`: Updated to v2.4.0 LTS, digital goods withdrawal, statutory 14-day policy.
-  - `COOKIES.md` & `/cookies`: Updated to v2.4.0 LTS, cookie consent matrix, local storage studio.
-  - `EULA.md` & `/eula`: Updated to v2.4.0 LTS, Mojang compliance, bytecode modification acknowledgment.
-  - `AGREEMENTS.md` & `/agreements`: Updated to v2.4.0 LTS, fair play, distribution protocols, zero-telemetry.
+  - `PRIVACY.md` & `/privacy`: Updated to v1.0.0 Official Release, zero-telemetry, diagnostic assistant rebranding.
+  - `TERMS.md` & `/terms`: Updated to v1.0.0 Official Release, digital goods withdrawal, statutory 14-day policy.
+  - `COOKIES.md` & `/cookies`: Updated to v1.0.0 Official Release, cookie consent matrix, local storage studio.
+  - `EULA.md` & `/eula`: Updated to v1.0.0 Official Release, Mojang compliance, bytecode modification acknowledgment.
+  - `AGREEMENTS.md` & `/agreements`: Updated to v1.0.0 Official Release, fair play, distribution protocols, zero-telemetry.
   - `/refund`: Dedicated statutory 14-day digital refund policy route.
 - **Automated Verification**:
   - `python validate_manifest.py`: 100% VALID (2,987/2,987 files verified in root & public_repo).

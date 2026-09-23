@@ -1,5 +1,5 @@
 # SIR ModPack: Terms of Service
-### *Version 2.4.0 LTS | Legally Enforced Compliance*
+### *Version 1.0.0 Official Release | Legally Enforced Compliance*
 
 ---
 
@@ -62,7 +62,7 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 ---
 
 # وثيقة شروط الخدمة الرسمية لمنظومة SIR ModPack
-### *الإصدار v2.4.0 LTS الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني ومعايير مجتمعية ملزمة*
+### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني ومعايير مجتمعية ملزمة*
 
 ---
 

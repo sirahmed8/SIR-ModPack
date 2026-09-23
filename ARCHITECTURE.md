@@ -1,5 +1,5 @@
 # SIR ModPack: Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience | Semantic Versioning v2.4.0 LTS | September 2026*
+### *Unified Minecraft Experience | Semantic Versioning v1.0.0 | September 2026*
 
 ---
 

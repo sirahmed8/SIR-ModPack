@@ -1,4 +1,4 @@
-# Project: SIR ModPack Master Ecosystem Stabilization & Overhaul (Gen 9 - v2.4.0)
+# Project: SIR ModPack Master Ecosystem Stabilization & Overhaul (Gen 9 - v1.0.0)
 
 ## Architecture
 The SIR ModPack ecosystem consists of five interconnected core subsystems:

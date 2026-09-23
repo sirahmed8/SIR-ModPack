@@ -1,5 +1,5 @@
 # SIR ModPack: Unified Minecraft Ecosystem
-### *Unified Minecraft Platform | Desktop Suite | Shaders | Web Platform (v2.4.0 LTS)*
+### *Unified Minecraft Platform | Desktop Suite | Shaders | Web Platform (v1.0.0 Official Release)*
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)

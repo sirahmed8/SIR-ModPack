@@ -1,5 +1,5 @@
 # SIR ModPack: Universal Privacy Policy
-### *Version 2.4.0 LTS | Legally Enforced Compliance*
+### *Version 1.0.0 Official Release | Legally Enforced Compliance*
 
 ---
 
@@ -104,7 +104,7 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 ---
 
 # وثيقة سياسة الخصوصية الرسمية لمنظومة SIR ModPack
-### *الإصدار v2.4.0 LTS الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني وأمان رقمي صارم*
+### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني وأمان رقمي صارم*
 
 ---
 

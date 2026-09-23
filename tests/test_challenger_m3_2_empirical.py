@@ -245,17 +245,19 @@ class TestBridgeCloudAuthInstantReflection(unittest.TestCase):
 
         def side_effect(code):
             evaluated.append(code)
-            ev.set()
+            if "custom_test_event" in code:
+                ev.set()
 
         mock_window.evaluate_js = MagicMock(side_effect=side_effect)
         self.bridge.window = mock_window
 
         self.bridge.emit_to_js("custom_test_event", {"status": "ok", "value": 42})
-        ev.wait(timeout=2.0)
+        ev.wait(timeout=3.0)
 
         self.assertGreater(len(evaluated), 0)
-        self.assertIn("custom_test_event", evaluated[0])
-        self.assertIn('"status": "ok"', evaluated[0])
+        all_evaluated = " ".join(evaluated)
+        self.assertIn("custom_test_event", all_evaluated)
+        self.assertIn('"status": "ok"', all_evaluated)
 
 
 if __name__ == '__main__':

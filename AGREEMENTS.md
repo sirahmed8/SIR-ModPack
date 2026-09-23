@@ -1,5 +1,5 @@
 # SIR ModPack - Master User & Distribution Agreements
-### *Version 2.4.0 (2026.2 LTS) • Official Release • Community Governance & Security Framework*
+### *Version 1.0.0 Official Release • Community Governance & Security Framework*
 
 ---
 
@@ -47,7 +47,7 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 ---
 
 # وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
-### *الإصدار 2.4.0 (2026.2 LTS) الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
+### *الإصدار v1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
 
 ---
 
