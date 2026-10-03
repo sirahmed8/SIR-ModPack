@@ -1,7 +1,9 @@
-# 🛡️ FORMAL QA CERTIFICATION: v1.0.0 OFFICIAL RELEASE
-## SIR ModPack Ecosystem — v1.0.0 Official Release
+# 🛡️ FORMAL QA CERTIFICATION: v1.0.1 OFFICIAL RELEASE
+## SIR ModPack Ecosystem — v1.0.1 Official Release
+**Operating Legal Entity**: SIR ModPack Gaming Technologies & Digital Media (Cairo, Egypt)  
+**Hotline / Support Phone**: +20 102 717 9040  
 **Issuing Authority**: System Auditor & Quality Assurance Commander  
-**Certification Date**: September 8, 2026  
+**Certification Date**: October 2026  
 **Status**: **100% CERTIFIED — ZERO DEFECTS — RELEASE READY**  
 **Platform Identity**: Independent Gaming Platform  
 **Governance & Legal Email**: `a7medorabe7@gmail.com`  

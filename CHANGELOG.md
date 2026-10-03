@@ -6,6 +6,40 @@
 
 ---
 
+## [v1.0.1] - October 2026 : Dedicated App Icons Architecture, Egyptian Supporter Subscriptions, GDPR Art. 17 Data Erasure & AI Engine Discoverability
+
+> Enterprise hardening, dedicated application icon suite, Egyptian monetization in EGP, GDPR Art. 17 data erasure, `/llms.txt` discoverability, and zero-trust security enhancements across desktop and web platforms.
+
+### 🎨 Dedicated Application Icons Architecture
+- **Cohesive Cyberpunk Identity**: Engineered unique, custom-crafted multi-resolution Windows `.ico` files (256x256 down to 16x16) for each component while retaining the master cyan-emerald neon shield brand language:
+  - **SIR Installer (`SIR Installer.exe`) & Desktop Project Folder**: Preserves master crystalline diamond prism inside glowing cyan-emerald shield (`SIR_Icon.ico`). Configured via `desktop.ini` on Windows desktop.
+  - **SIR Launcher (`SIR Launcher.exe`)**: High-speed launch rocket with dual pixelated PvP diamond swords pointing upwards in a neon shield (`SIR_Launcher_Icon.ico`). Embedded into executable resource table via `SIR Launcher.spec`.
+  - **SIR Server Manager (`SIR Server Manager.exe`)**: 3-tier high-tech blade server rack with green/cyan status LEDs and network data bus (`SIR_Server_Manager_Icon.ico`). Embedded into executable resource table via `SIR Server Manager.spec`.
+  - **SIR Web Portal (`SIR ModPack Web Portal.lnk`)**: Cybernetic digital globe with cloud synchronization orbits and browser nexus node (`SIR_Web_Portal_Icon.ico`).
+  - **Stop Web Portal (`Stop SIR ModPack Web Portal.lnk`)**: Glowing cyber power-off toggle glyph with warning crimson and amber accents (`SIR_Stop_Portal_Icon.ico`).
+- **Shortcut & Binary Synchronization**: Desktop shortcuts in `C:\Users\a7med\Desktop\SIR ModPack` updated, Windows Shell icon caches notified via `SHChangeNotify`, and portable suite `SIR_Apps_Suite.zip` repacked.
+
+### 💳 Egyptian Supporter Subscriptions & Transparent Monetization (EGP)
+- **Denominated in Egyptian Pounds**: Deployed transparent, non-predatory supporter tiers:
+  - **Pioneer (Free)**: 0 EGP — 100% full gameplay access, 240+ optimized mods, standard shaders, and complete offline launcher capabilities forever.
+  - **Pro Supporter**: 79 EGP / mo (or 790 EGP / yr) — Unlimited 1-click Gemini AI crash repairs, HD 3D cape exports, cloud profile sync, and VIP Cyan badge.
+  - **Elite Master**: 149 EGP / mo (or 1,490 EGP / yr) — Remote server web orchestrator, priority queue slots, and hardware AI JVM tuner.
+  - **Founder Lifetime**: 699 EGP one-time — Permanent lifetime access to all current and future cloud features with Golden Crown badge.
+- **Local Payment Rails**: Integrated InstaPay Egypt (`a7medorabe7@instapay`), Vodafone Cash / Mobile Wallets (`01027179040`), and Egyptian bank cards.
+- **Dedicated Guaranteed Routes**: Deployed `/pricing` and `/thank-you` routes with a guaranteed **2-hour response-time commitment** from engineering support.
+
+### ⚖️ Legal Compliance Shield & Zero-Trust Hardening
+- **GDPR Art. 17 Self-Serve Permanent Data Erasure**: Authenticated users can permanently delete their cloud profile, linked IGN mappings, desktop launcher sync codes, and Firebase Auth account directly from the user dropdown modal with automated database cleanup.
+- **Full Legal Operating Entity Details**: Added complete business entity block in footer: *SIR ModPack Gaming Technologies & Digital Media*, Cairo, Egypt. Phone: `+20 102 717 9040`, Email: `a7medorabe7@gmail.com`.
+- **Dynamic Timestamps**: Automated dynamic copyright year `{new Date().getFullYear()}` on all web and documentation surfaces.
+- **Persistent Cookie Settings**: Interactive footer button triggering `sir:open-cookie-settings`, enabling immediate storage customization from any route.
+- **Explicit Form Consents**: Added un-prechecked agreement checkbox in `CheckoutModal.tsx` linking to Terms, Privacy, and 14-Day Refund policies.
+- **Zero-Trust Source Code Shield**: Set `productionBrowserSourceMaps: false` and `poweredByHeader: false` in `next.config.ts`.
+- **Mobile Ergonomics**: Added `overflow-x-clip` to layout containers to strictly prevent horizontal viewport blowouts.
+- **AI Search Discoverability**: Published machine-readable `/llms.txt` at domain root for SearchGPT, Perplexity, Claude, and Gemini.
+
+---
+
 ## [v1.0.0] : September 2026 : The Complete Unified Minecraft Ecosystem Release
 
 > The complete official release of the SIR ModPack Ecosystem : a fully integrated

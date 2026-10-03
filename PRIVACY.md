@@ -1,10 +1,10 @@
 # SIR ModPack: Universal Privacy Policy
-### *Version 1.0.0 Official Release | Legally Enforced Compliance*
+### *Version 1.0.1 Official Release | Legally Enforced Compliance (October 2026)*
 
 ---
 
 ## 1. Executive Summary & Privacy-by-Design
-At **SIR ModPack**, user privacy and digital sovereignty are non-negotiable principles. The entire SIR Ecosystem: including the **SIR Desktop Launcher**, **SIR Installer Suite**, **SIR Server Orchestrator**, **Web Platform (`sir-modpack.web.app`)**, and associated modules: is engineered on the strict foundation of **Zero-Telemetry & Privacy-by-Design**.
+At **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt), user privacy and digital sovereignty are non-negotiable principles. The entire SIR Ecosystem: including the **SIR Desktop Launcher**, **SIR Installer Suite**, **SIR Server Orchestrator**, **Web Platform (`sir-modpack.web.app`)**, and associated modules: is engineered on the strict foundation of **Zero-Telemetry & Privacy-by-Design**.
 
 We do **NOT** track, monetize, sell, lease, or aggregate your personal gameplay activity, private browsing history, multiplayer chat logs, or personal credentials.
 
@@ -88,28 +88,32 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 
 ---
 
-## 🗑️ 9. Data Retention & User Deletion Rights
+## 🗑️ 9. Data Retention & User Deletion Rights (GDPR Art. 17 Self-Serve)
 - **Instant Local Erase:** Use the built-in Storage Cleaner in the launcher to purge all cache, logs, and stored credentials in 1 click.
-- **Cloud Account Deletion:** Permanent deletion of any linked web profiles is available at any time via the Web Account Hub.
+- **Self-Serve Cloud Account & Data Deletion (GDPR Art. 17):** Users can permanently delete their cloud profile, bookmarks, and synced data at any time directly through the Web Account Hub (`UserAccountDropdown.tsx` / User Profile). Clicking "Delete Account & Purge Data (GDPR Art. 17)" executes an immediate, irreversible cascade deletion across Firestore user profiles, Realtime Database nodes (`/users/{uid}`), local storage/indexedDB cache, and the underlying Firebase Authentication record.
+- **Dedicated Application Suite Isolation:** The desktop suite incorporates 5 dedicated isolated application assets (`SIR_Icon.ico`, `SIR_Launcher_Icon.ico`, `SIR_Server_Manager_Icon.ico`, `SIR_Web_Portal_Icon.ico`, and `SIR_Stop_Portal_Icon.ico`), ensuring clean OS-level separation without cross-process telemetry.
 
 ---
 
-## 📬 10. Contact & Legal Inquiries
-- **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
+## 📬 10. Contact & Legal Entity Details
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
+- **Legal & Data Protection Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
+- **Official In-App Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-- **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
-- **Official Documentation:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)
+- **Official Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Official Architectural Documentation:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)
 
 ---
 
 # وثيقة سياسة الخصوصية الرسمية لمنظومة SIR ModPack
-### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني وأمان رقمي صارم*
+### *الإصدار v1.0.1 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني وأمان رقمي صارم (أكتوبر 2026)*
 
 ---
 
 ## 1. الملخص التنفيذي والخصوصية المدمجة بالتصميم (Privacy-by-Design)
-تعتبر خصوصية المستخدم وسيادته الرقمية في **SIR ModPack** مبدأً أصيلاً غير قابل للمساومة. تم بناء وهندسة المنظومة بالكامل: بما في ذلك **مشغل SIR Launcher**، و**مثبت SIR Installer**، و**مدير الخوادم SIR Server Manager**، و**بوابة الويب (`sir-modpack.web.app`)**: وفق مبدأ **انعدام التتبع التام والخصوصية بالتصميم (Zero-Telemetry & Privacy-by-Design)**.
+تعتبر خصوصية المستخدم وسيادته الرقمية في **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، جمهورية مصر العربية) مبدأً أصيلاً غير قابل للمساومة. تم بناء وهندسة المنظومة بالكامل: بما في ذلك **مشغل SIR Launcher**، و**مثبت SIR Installer**، و**مدير الخوادم SIR Server Manager**، و**بوابة الويب (`sir-modpack.web.app`)**: وفق مبدأ **انعدام التتبع التام والخصوصية بالتصميم (Zero-Telemetry & Privacy-by-Design)**.
 
 نحن **لا نقوم** بتتبع أو بيع أو تأجير أو تحقيق مكاسب من نشاط لعبك، أو سجل تصفحك، أو محادثات السيرفرات الخاصة، أو بيانات اعتمادك.
 
@@ -148,19 +152,25 @@ Data is processed using industry-standard sub-processors under compliant Data Pr
 - **تنقية المدخلات:** فحص وتعقيم كافة النصوص عبر `lib/security.ts` ضد هجمات XSS وحقن البيانات.
 - **ترويسات أمان HTTP:** تفعيل معايير HSTS و `X-Frame-Options: SAMEORIGIN` و `nosniff` وسياسة أمان المحتوى الصارمة CSP.
 - **عزل جسر المعالجة المحلي:** يرتبط الجسر المكتبي حصرياً بـ `127.0.0.1` مع التحقق برمز أمان في زمن ثابت.
+- **حزمة الأيقونات المخصصة والمستقلة:** تعتمد المنظومة على 5 أيقونات برمجية مستقلة عالية الدقة تفصل التطبيقات على مستوى نظام التشغيل دون أي تداخل في السجلات.
 
 ---
 
-## 🗑️ 5. الاحتفاظ بالبيانات وحقوق الحذف
+## 🗑️ 5. الاحتفاظ بالبيانات وحقوق الحذف الفوري (GDPR Art. 17)
 - **مسح فوري محلي:** يمكنك استخدام منظف التخزين المدمج في اللانشر لحذف جميع الملفات المؤقتة والسجلات بضغطة زر واحدة.
-- **حذف الحساب السحابي:** يمكنك طلب الحذف النهائي والفوري لأي بروفايل سحابي في أي وقت عبر بوابة الويب.
+- **الحذف الفوري الذاتي للبيانات والحساب (المادة 17 من لائحة GDPR):** يمكن للمستخدم في أي وقت حذف حسابه وبياناته نهائياً ومباشرة عبر مركز الحسابات في بوابة الويب (`UserAccountDropdown.tsx` / الملف الشخصي). النقر على "حذف الحساب ومحو البيانات (GDPR Art. 17)" ينفذ عملية شطب متسلسلة وفورية لا رجعة فيها عبر Firestore وقاعدة البيانات اللحظية `/users/{uid}` والتخزين المحلي وحساب المصادقة الأساسي.
 
 ---
 
-## 📬 6. الدعم الفني والاستفسارات
-- **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **الدعم الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) وملاحظات المجتمع داخل SIR Launcher و SIR Server Manager.
+## 📬 6. تفاصيل الكيان القانوني والدعم الفني
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
+- **البريد الإلكتروني الرسمي لحماية البيانات والحوكمة:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي للدعم:** [+20 102 717 9040](tel:+201027179040)
+- **الدعم الفني المدمج:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) وملاحظات المجتمع داخل SIR Launcher و SIR Server Manager.
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **الموقع الرسمي:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **التوثيق المعماري:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)
 
-*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*

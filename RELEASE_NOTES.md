@@ -1,4 +1,31 @@
 # SIR ModPack: Release Notes
+## Version: `v1.0.1 Official Release`
+**Release Date**: October 2026  
+**Operating Legal Entity**: SIR ModPack Gaming Technologies & Digital Media (Cairo, Egypt)  
+**Hotline / Support Phone**: +20 102 717 9040  
+**Governance & Legal Contact**: `a7medorabe7@gmail.com`  
+**License Agreement**: SIR Software Agreement  
+
+---
+
+## 🚀 Welcome to SIR ModPack v1.0.1 Official Release
+
+The **SIR ModPack Ecosystem v1.0.1** introduces dedicated cyberpunk multi-resolution desktop icon sets, expanded web platform routes (42 static prerendered routes), dual-currency subscription infrastructure with native Egyptian Pound (EGP) billing, self-serve GDPR Article 17 automated data erasure, and reinforced legal compliance.
+
+### v1.0.1 Key Highlights
+- **Dedicated 5-Icon Application Suite**: 5 custom multi-resolution (256x256 to 16x16) cyberpunk `.ico` assets:
+  - `SIR_Icon.ico`: Master crystalline diamond prism in glowing hexagonal shield (Installer & folder branding).
+  - `SIR_Launcher_Icon.ico`: High-speed rocket with dual diamond PvP swords in neon cyan/emerald shield.
+  - `SIR_Server_Manager_Icon.ico`: 3-tier blade server rack with green/cyan activity LEDs in glowing cyber shield.
+  - `SIR_Web_Portal_Icon.ico`: Cybernetic digital globe with sync orbits and nexus node (`Launch SIR Web Portal.url`).
+  - `SIR_Stop_Portal_Icon.ico`: Glowing cyber power-off toggle glyph with warning crimson accents (`Stop Local Web Server.bat`).
+- **Web Platform Expansion (42 Static Routes)**: Pre-rendered 42 static routes with zero server-side latency, including `/pricing`, `/thank-you`, `/privacy`, `/terms`, `/cookies`, `/eula`, `/agreements`, `/refund`, and `/refunds`.
+- **Egyptian Subscriptions in EGP & Local Payment Gateways**: Integrated localized pricing (Free 0 EGP, Supporter 99 EGP, Pro 199 EGP, Host 499 EGP) with Vodafone Cash, InstaPay, Fawry, and card options.
+- **GDPR Art. 17 Self-Serve Erasure**: 1-click user account & data purge in `UserAccountDropdown.tsx` cascading across Firestore, Realtime Database (`/users/{uid}`), local storage/indexedDB, and Firebase Authentication.
+- **Production Hardening & Ergonomics**: Disabled production source maps, stripped powered-by headers, added body `overflow-x-clip` for zero mobile overflow, and updated legal disclosures.
+
+---
+
 ## Version: `v1.0.0 Official Release`
 **Release Date**: September 2026  
 **Platform Classification**: Independent Gaming Platform  

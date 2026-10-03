@@ -1,5 +1,5 @@
 # SIR ModPack: Unified Minecraft Ecosystem
-### *Unified Minecraft Platform | Desktop Suite | Shaders | Web Platform (v1.0.0 Official Release)*
+### *Unified Minecraft Platform | Desktop Suite | Shaders | Web Platform (v1.0.1 Official Release)*
 
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19.0-61dafb?logo=react)](https://react.dev/)
@@ -10,28 +10,30 @@
 [![Platform: Official](https://img.shields.io/badge/Platform-Official%20Ecosystem-blue.svg)](LICENSE.md)
 [![Privacy: Zero-Telemetry](https://img.shields.io/badge/Privacy-Zero--Telemetry-cyan.svg)](PRIVACY.md)
 [![Tests: 406 Passing](https://img.shields.io/badge/Tests-406%2F406%20Passed-brightgreen.svg)](walkthrough.md)
-[![Routes: 38 Static](https://img.shields.io/badge/Routes-38%20Prerendered-purple.svg)](https://sir-modpack.web.app)
+[![Routes: 42 Static](https://img.shields.io/badge/Routes-42%20Prerendered-purple.svg)](https://sir-modpack.web.app)
 [![Live: sir-modpack.web.app](https://img.shields.io/badge/Live-sir--modpack.web.app-orange.svg)](https://sir-modpack.web.app)
 
 ---
 
 ## What is SIR ModPack?
 
-**SIR ModPack** is an enterprise-grade, high-throughput Minecraft distribution and desktop suite unifying **Modern 26.2 (Fabric 0.19.4 with 221 active mods and ASM compatibility engine)** and **Legacy 1.8.9 (Forge PvP with 28 mods)** into a single cohesive experience. GitHub is utilized exclusively as a reliable distribution channel for high-speed download mirrors of the standalone desktop binaries, installer, and offline packages.
+**SIR ModPack** is an enterprise-grade, high-throughput Minecraft distribution and desktop suite operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt), unifying **Modern 26.2 (Fabric 0.19.4 with 228 active mods and ASM compatibility engine)** and **Legacy 1.8.9 (Forge PvP with 28 mods)** into a single cohesive experience. GitHub is utilized exclusively as a reliable distribution channel for high-speed download mirrors of the standalone desktop binaries, installer, and offline packages.
 
-The suite provides standalone desktop binaries, direct native JVM execution, real-time Task Manager hardware telemetry, dedicated isolated dual shaders (`SIR Modern Shader.zip` and `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models and `SIR Legacy.zip` 32x PvP), dynamic ocean physics waves, zero-port multiplayer server hosting, and a Next.js 16 web hub with 38 static routes.
+The suite provides standalone desktop binaries, direct native JVM execution, real-time Task Manager hardware telemetry, dedicated isolated dual shaders (`SIR Modern Shader.zip` and `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models and `SIR Legacy.zip` 32x PvP), dynamic ocean physics waves, zero-port multiplayer server hosting, a dedicated 5-icon cyberpunk application suite, and a Next.js 16 web hub with 42 static routes.
 
 ---
 
-## Core Applications
+## Core Applications & Dedicated Icons
 
-| Application | Binary / Portal | Description |
-| :--- | :--- | :--- |
-| **SIR Launcher** | `SIR Launcher.exe` | Standalone desktop launcher with native Direct JVM Launch Pipeline, Win32 Kernel Telemetry, 3D Skin Studio, Quick Presets, Window Lifecycle Engine, and GitHub Single-File Delta Auto-Healer. |
-| **SIR Installer** | `SIR Installer.exe` | Autonomous auto-healing installer with CSS spring animations, cloud payload streaming, GitHub Delta Fetcher, and zero-data-loss upgrades. |
-| **SIR Server Manager** | `SIR Server Manager.exe` | Dedicated multiplayer server manager with CSS spring animations, custom CyberSelect menus, live TPS gauges, persistent lifecycle configuration, and Playit.gg zero-port public tunneling. |
-| **In-Game SIR Mod** | `sir-mod-26.2-1.0.0.jar` | Native client Fabric mod (Right-Shift) providing 9 competitive HUD overlays, 1.7 block-hitting, and instant latency polling. |
-| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | Next.js 16 web hub with 38 prerendered static routes, SIR Diagnostic & Configuration Assistant, live server radar, and skin wardrobe. |
+| Application | Binary / Shortcut | Dedicated Icon Asset | Description |
+| :--- | :--- | :--- | :--- |
+| **SIR Launcher** | `SIR Launcher.exe` | `SIR_Launcher_Icon.ico` | Standalone desktop launcher with native Direct JVM Launch Pipeline, Win32 Kernel Telemetry, 3D Skin Studio, Quick Presets, Window Lifecycle Engine, and GitHub Single-File Delta Auto-Healer. |
+| **SIR Installer** | `SIR Installer.exe` | `SIR_Icon.ico` | Autonomous auto-healing installer with CSS spring animations, cloud payload streaming, GitHub Delta Fetcher, and zero-data-loss upgrades. |
+| **SIR Server Manager** | `SIR Server Manager.exe` | `SIR_Server_Manager_Icon.ico` | Dedicated multiplayer server manager with CSS spring animations, custom CyberSelect menus, live TPS gauges, persistent lifecycle configuration, and Playit.gg zero-port public tunneling. |
+| **Web Portal Nexus** | `Launch SIR Web Portal.url` | `SIR_Web_Portal_Icon.ico` | Direct instant desktop shortcut launching the high-speed web hub at `sir-modpack.web.app`. |
+| **Portal Terminator** | `Stop Local Web Server.bat` | `SIR_Stop_Portal_Icon.ico` | Safe termination utility gracefully shutting down local background development and preview listeners. |
+| **In-Game SIR Mod** | `sir-mod-26.2-1.0.0.jar` | N/A | Native client Fabric mod (Right-Shift) providing 9 competitive HUD overlays, 1.7 block-hitting, and instant latency polling. |
+| **SIR Web Platform** | [sir-modpack.web.app](https://sir-modpack.web.app) | `favicon.ico` | Next.js 16 web hub with 42 prerendered static routes, SIR Diagnostic & Configuration Assistant, live server radar, skin wardrobe, and localized Egyptian subscriptions (EGP). |
 
 ---
 
@@ -123,11 +125,14 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ## Contact & Governance
 
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
 - **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **GitHub Organization:** [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
 
-*Copyright (c) 2026 SIR ModPack Ecosystem. Developed and maintained by SIR Ahmed.*
+*Copyright (c) 2026 SIR ModPack Gaming Technologies & Digital Media. Developed and maintained by SIR Ahmed.*
 

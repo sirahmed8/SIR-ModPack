@@ -1,10 +1,10 @@
 # SIR ModPack: Terms of Service
-### *Version 1.0.0 Official Release | Legally Enforced Compliance*
+### *Version 1.0.1 Official Release | Legally Enforced Compliance (October 2026)*
 
 ---
 
 ## 1. Acceptance of Terms & Age Eligibility
-1. **Acceptance:** By downloading, installing, launching, executing, or accessing any component of the SIR Ecosystem (including **SIR Launcher**, **SIR Installer**, **SIR Server Manager**, custom **Shaders**, **3D Resource Packs**, and the **Web Platform**), you acknowledge and agree to be bound by these Terms. If you do not agree with any part of these terms, you must discontinue use immediately.
+1. **Acceptance:** By downloading, installing, launching, executing, or accessing any component of the SIR Ecosystem operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt), including **SIR Launcher**, **SIR Installer**, **SIR Server Manager**, custom **Shaders**, **3D Resource Packs**, and the **Web Platform**, you acknowledge and agree to be bound by these Terms. If you do not agree with any part of these terms, you must discontinue use immediately.
 2. **Age Eligibility:** You must be at least 13 years of age to create a cloud synchronization account on the SIR Web Platform. Users under 18 must have parental or legal guardian consent before using any cloud synchronization services.
 
 ---
@@ -50,24 +50,27 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 
 ---
 
-## 8. Contact & Legal Inquiries
+## 8. Operating Entity & Legal Inquiries
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
+- **Official In-App Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-- **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
-- **Refund Policy:** [https://sir-modpack.web.app/refund](https://sir-modpack.web.app/refund)
-- **EULA Agreement:** [EULA.md](EULA.md)
-- **Community Agreements:** [AGREEMENTS.md](AGREEMENTS.md)
+- **Official Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
+- **Refund Policy Portal:** [https://sir-modpack.web.app/refund](https://sir-modpack.web.app/refund)
+- **End User License Agreement (EULA):** [EULA.md](EULA.md)
+- **Master Community Agreements:** [AGREEMENTS.md](AGREEMENTS.md)
 
 ---
 
 # وثيقة شروط الخدمة الرسمية لمنظومة SIR ModPack
-### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني ومعايير مجتمعية ملزمة*
+### *الإصدار v1.0.1 الرسمي | منظومة برمجية متطورة ومستقلة | امتثال قانوني ومعايير مجتمعية ملزمة (أكتوبر 2026)*
 
 ---
 
 ## 1. قبول الشروط والأهلية القانونية
-1. **القبول:** بتحميل أو تثبيت أو تشغيل أو الوصول إلى أي مكون من مكونات منظومة SIR (بما في ذلك **SIR Launcher**، ومثبت **SIR Installer**، ومدير الخوادم **SIR Server Manager**، والشيدرز المخصصة، وحزم الموارد 3D، وبوابة الويب)، فإنك تقر وتوافق صراحة على الالتزام بهذه الشروط.
+1. **القبول:** بتحميل أو تثبيت أو تشغيل أو الوصول إلى أي مكون من مكونات منظومة SIR المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر)، بما في ذلك **SIR Launcher**، ومثبت **SIR Installer**، ومدير الخوادم **SIR Server Manager**، والشيدرز المخصصة، وحزم الموارد 3D، وبوابة الويب، فإنك تقر وتوافق صراحة على الالتزام بهذه الشروط.
 2. **الأهلية:** يجب ألا يقل عمر المستخدم عن 13 عاماً لإنشاء حساب مزامنة سحابي على منصة SIR، ويشترط موافقة ولي الأمر للمستخدمين دون 18 عاماً.
 
 ---
@@ -107,8 +110,11 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 
 ---
 
-## 8. قنوات التواصل والدعم الرسمي
+## 8. الكيان القانوني وقنوات التواصل والدعم الرسمي
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
 - **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **الموقع الرسمي:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
@@ -116,4 +122,5 @@ The SIR Ecosystem is provided **"AS IS"**, without warranty of any kind, express
 - **اتفاقية ترخيص المستخدم:** [EULA.md](EULA.md)
 - **ميثاق المجتمع:** [AGREEMENTS.md](AGREEMENTS.md)
 
-*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*

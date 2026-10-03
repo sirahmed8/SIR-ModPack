@@ -1,19 +1,21 @@
 # SIR ModPack: Comprehensive Architectural Blueprint & Engineering Specification
-### *Unified Minecraft Experience | Semantic Versioning v1.0.0 | September 2026*
+### *Unified Minecraft Experience | Semantic Versioning v1.0.1 | October 2026*
 
 ---
 
 ## 1. System Architecture Overview
 
-The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform consisting of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine with real-time Windows kernel Task Manager telemetry, a resilient Native JVM launch pipeline, a full Next.js 16 web platform, dedicated isolated dual shaders (`SIR Modern Shader.zip` & `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models & `SIR Legacy.zip` 32x PvP), a dynamic Ocean Physics simulation engine, and an automated ecosystem diagnostic bridge.
+The **SIR ModPack Ecosystem** is an enterprise-grade, high-performance Minecraft platform operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt). The platform consists of one native dispatcher executable (`SIR ModPack.exe`) with three internal desktop modes, an asynchronous Python core engine with real-time Windows kernel Task Manager telemetry, a resilient Native JVM launch pipeline, a full Next.js 16 web platform with 42 static prerendered routes, dedicated isolated dual shaders (`SIR Modern Shader.zip` & `SIR Legacy Shader.zip`), dual resource packs (`SIR Modern.zip` with Patrix 3D POM models & `SIR Legacy.zip` 32x PvP), a dynamic Ocean Physics simulation engine, a dedicated 5-icon cyberpunk application suite, and an automated ecosystem diagnostic bridge.
 
 ```mermaid
 flowchart TD
-    subgraph Client Application Layer ["Client Application Layer (PyWebView + Windows DWM)"]
+    subgraph Client Application Layer ["Client Application Layer (PyWebView + Windows DWM + Dedicated Icons)"]
         A[SIR Ecosystem Desktop Suite]
-        B[SIR Launcher: Standalone Launcher]
-        C[SIR Installer: Auto-Healing Delta Installer]
-        D[SIR Server Manager: Dedicated Host & Tunnel Manager]
+        B[SIR Launcher: Standalone Launcher • SIR_Launcher_Icon.ico]
+        C[SIR Installer: Auto-Healing Delta Installer • SIR_Icon.ico]
+        D[SIR Server Manager: Dedicated Host & Tunnel • SIR_Server_Manager_Icon.ico]
+        P1[Web Portal Nexus • SIR_Web_Portal_Icon.ico]
+        P2[Portal Terminator • SIR_Stop_Portal_Icon.ico]
     end
 
     subgraph Core Bridge & Hardware Engine ["Core Bridge & Hardware Engine (launcher_core)"]
@@ -30,7 +32,7 @@ flowchart TD
     end
 
     subgraph Native JVM Pipeline ["Native JVM Pipeline (native_runner.py)"]
-        N[Strict RAM Governor -Xmx/-Xms & G1GC]
+        N[Strict RAM Governor -Xmx/-Xms & G1GC / ZGC]
         O[Pre-Launch Options Sanitizer - Windowed Mode Guardian]
         P[Dynamic Classpath Assembly - Fabric 26.2 / Forge 1.8.9]
         Q[Stable JRE 21 LTS / JRE 8 Locator]
@@ -46,10 +48,10 @@ flowchart TD
     end
 
     subgraph Cloud & Web Platform ["Cloud & Web Platform (website-next & Firebase)"]
-        W[Next.js 16 App Router - 38 Static Routes]
+        W[Next.js 16 App Router - 42 Static Routes]
         W --> W1[AiChatbot.tsx: SIR Diagnostic & Configuration Assistant]
         W --> W2[Firebase Realtime Database: Presence & OTA Releases]
-        W --> W3[Firestore: Telemetry & Client Error Reporting]
+        W --> W3[Firestore: Telemetry, Error Reporting & GDPR Art. 17 Deletion]
     end
 
     A --> B
@@ -68,8 +70,9 @@ flowchart TD
 
 ## 💻 2. Client Application Layer
 
-### 1. `SIR Launcher.exe` (Standalone Desktop Launcher Pro)
+### 1. `SIR Launcher.exe` (Standalone Desktop Launcher Pro • `SIR_Launcher_Icon.ico`)
 - **Technology:** Python 3.13 / 3.14 + `pywebview` 6.2 + 20 Domain JavaScript Modules + Tailwind CSS + Lucide Icons + Spring Physics.
+- **Dedicated Icon:** Rocket ship with dual pixelated diamond PvP swords pointing skyward encased in a neon cyan/emerald shield.
 - **Key Modules:**
   - **Launchpad View:** 1-Click launch for Modern 26.2 (Fabric 0.16.10, 228 Mods) and Legacy 1.8.9 (Forge 11.15.1.2318, 28 Mods) with native Direct JVM Launch Engine.
   - **Cloud Self-Healing:** `InstanceService.heal_instance_if_needed()` validates instance integrity, auto-downloading missing jars or configs from Cloud CDN.
@@ -78,22 +81,29 @@ flowchart TD
   - **Hardware & RAM Telemetry:** Real-time Win32 kernel telemetry reading CPU load, memory utilization, and dedicated GPU statistics.
   - **Content Managers:** Visual management for Mods (228 Modern Fabric mods & 28 Legacy Forge mods), Dedicated Dual Shaders (`SIR Modern Shader.zip` / `SIR Legacy Shader.zip`), Dual Resource Packs (`SIR Modern.zip` with Patrix 3D POM models / `SIR Legacy.zip`), Worlds/Saves, and Game Logs.
 
-### 2. `SIR Installer.exe` (Standalone Smart Auto-Healing Installer)
+### 2. `SIR Installer.exe` (Standalone Smart Auto-Healing Installer • `SIR_Icon.ico`)
 - **Technology:** Standalone executable with cloud payload streaming, delta auto-healing, and elevated UAC privileges.
+- **Dedicated Icon:** Master crystalline diamond prism encased in glowing hexagonal cyber shield.
 - **Features:**
   - **GitHub Single-File Delta Fetcher:** Automatically detects missing or corrupted files across profiles, mods, shaders, and packs, streaming ONLY the individual missing files directly from GitHub (`raw.githubusercontent.com` and GitHub Releases) without re-downloading entire profiles.
   - **Anti-Compromise & Anti-Corruption Engine:** Structural CRC and streaming SHA-256 verification quarantines damaged archives and auto-recovers clean copies.
   - **Power Governor:** User toggle between **Turbo Mode** (all CPU threads) and **Smooth / Eco Mode** (background I/O priority for 0-lag responsiveness).
   - **Zero-Data Loss Deployer:** Non-destructive updates that preserve user save worlds, custom keybinds, and screenshot albums.
 
-### 3. `SIR Server Manager.exe` (Standalone Server Host & Tunnel Manager)
+### 3. `SIR Server Manager.exe` (Standalone Server Host & Tunnel Manager • `SIR_Server_Manager_Icon.ico`)
 - **Technology:** Native server manager with custom CyberSelect glassmorphic dropdowns and zero port-forwarding integration.
+- **Dedicated Icon:** 3-tier blade server rack chassis with illuminated activity LEDs and high-speed data buses.
 - **Features:**
   - **Playit.gg Zero-Port Tunnel:** Public TCP tunnel automation allowing friends to join private servers without router configuration.
   - **Live Telemetry Gauges:** Real-time monitoring of tick rate (TPS: 20.0), connected players, and RAM consumption.
   - **Auto-Restart Watchdog:** Automatic recovery and log diagnostic snapshotting in case of crash events.
 
-### 4. `In-Game SIR Mod` (`sir-mod-26.2-1.0.0.jar` • Right-Shift In-Game Studio)
+### 4. `Desktop Shortcut Ecosystem & Dedicated Portals`
+- **Launch SIR Web Portal (`SIR_Web_Portal_Icon.ico`):** Cybernetic digital globe nexus linking instantly to `sir-modpack.web.app`.
+- **Stop Local Web Server (`SIR_Stop_Portal_Icon.ico`):** Cyber power-off glyph with crimson warning halo terminating background portal listeners cleanly.
+- **Desktop Suite Folder (`desktop.ini` • `SIR_Icon.ico`):** Branded desktop directory with master crystalline icon.
+
+### 5. `In-Game SIR Mod` (`sir-mod-26.2-1.0.0.jar` • Right-Shift In-Game Studio)
 - **Technology:** Dedicated native Fabric mod bound to `Right Shift` (`key.keyboard.right.shift`) with ModMenu API integration.
 - **Features:**
   - **9 Core Competitive HUD Modules:** FPS counter, dual CPS meters with burst frequency graphs, ping & latency monitor, translucent cyber pill Armor/Status badges, full Keystrokes visualization, authentic 1.7 sword block-hitting kinematics, dynamic C-zoom camera, toggle sprint/sneak, and 0ms fast hit registration.
@@ -174,13 +184,21 @@ All 8 profile permutations are physically provisioned under `instances/`:
 
 ## 🌐 6. Web Platform & Cloud Highway (`website-next/`)
 
-- **Framework:** Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Framer Motion.
-- **Static Pre-rendered Routes (32 Routes):**
-  - Core: `/`, `/profiles`, `/mods`, `/shaders`, `/servers`, `/skins`, `/capes`, `/seeds`, `/trainer`, `/benchmarks`, `/builder`, `/leaderboards`, `/faq`, `/admin`, `/changelog`, `/compatibility`, `/server-guide`, `/packs`.
-  - Legal & Governance: `/privacy`, `/terms`, `/cookies`, `/eula`, `/agreements`.
-  - API & Syndication: `/api/status`, `/api/updates`, `/api/news`, `/api/servers`, `/news/index.xml`, `/sitemap.xml`, `/robots.txt`.
+- **Framework:** Next.js 16 (App Router), React 19, TypeScript strict, Tailwind CSS v4, Framer Motion.
+- **Static Pre-rendered Routes (42 Routes):**
+  - **Discovery & Core (22 Routes):** `/`, `/profiles`, `/mods`, `/shaders`, `/servers`, `/skins`, `/capes`, `/seeds`, `/trainer`, `/benchmarks`, `/builder`, `/leaderboards`, `/faq`, `/admin`, `/changelog`, `/compatibility`, `/server-guide`, `/packs`, `/main`, `/welcome`, `/download`, `/crash-analyzer`.
+  - **Commercial & Subscriptions (2 Routes):** `/pricing` (Dual-currency tier engine supporting EGP and USD with localized payment gateways including Vodafone Cash, InstaPay, Fawry, and major bank cards), `/thank-you` (VIP onboarding & 2-hour response guarantee).
+  - **Legal & Compliance (7 Routes):** `/privacy`, `/terms`, `/cookies`, `/eula`, `/agreements`, `/refund`, `/refunds`.
+  - **AI Discovery, Feeds & APIs (11 Routes):** `/llms.txt` (Structured AI answer engine discovery specification), `/sitemap.xml`, `/robots.txt`, `/news/index.xml`, `/api/status`, `/api/updates`, `/api/news`, `/api/servers`, etc.
+- **Egyptian Subscription Tier Engine (EGP & USD):**
+  - **Free Tier (0 EGP / $0):** 100% full gameplay, 240+ mods, standard shaders, full offline capability.
+  - **Supporter Tier (99 EGP/mo / $2.99/mo):** Early OTA releases, priority Discord role, custom cape badge.
+  - **Pro Tier (199 EGP/mo / $5.99/mo):** Dedicated cloud server slot, automated backups, 1-click Playit tunnel manager.
+  - **Enterprise / Server Host (499 EGP/mo / $14.99/mo):** Dedicated high-speed tunnel node, 24/7 VIP assistance, SLA guarantee.
+  - **Local Gateways:** Integrated Egyptian payment options via Vodafone Cash, InstaPay, and Fawry alongside international Stripe/Credit Card channels.
 - **Direct Google Cloud OAuth & Loopback Sync Bridge:**
   - Direct 1-click Google OAuth 2.0 PKCE authentication with local loopback listener (`127.0.0.1:52136`), multi-channel token delivery (HTTP POST, HTTP GET, image beacon, `sirlauncher://auth` deep-link).
+  - **Self-Serve GDPR Art. 17 Data Erasure:** Full account & data purge available in 1 click in `UserAccountDropdown.tsx` cascading across Firestore, Realtime Database (`/users/{uid}`), local storage, and Firebase Auth.
   - OTA Release Dispatcher: `releases/latest`
     - Schema: `{"version": str, "installerUrl": str, "bundleUrl": str, "isMandatory": bool, "changelog": str, "releaseDate": str}`
 - **Gemini 4-Tier AI Waterfall:**
@@ -265,8 +283,11 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 
 ---
 
-## 📬 Contact & Governance
+## 📬 Contact & Legal Entity Details
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
 - **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
@@ -274,18 +295,24 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 ---
 
 # المخطط المعماري والمواصفات الهندسية لمنظومة SIR ModPack
-### *تجربة ماينكرافت الموحدة | الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة*
+### *تجربة ماينكرافت الموحدة | الإصدار v1.0.1 الرسمي | منظومة برمجية متطورة ومستقلة (أكتوبر 2026)*
 
 ---
 
 ## 1. نظرة عامة على معمارية النظام
-تعتبر **منظومة SIR ModPack** بيئة تشغيل متكاملة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 221 مود ومحرك معالجة البايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة موحدة خالية من التعقيد.
+تعتبر **منظومة SIR ModPack** المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر) بيئة تشغيل متكاملة فائقة الأداء للألعاب، تجمع بين نسختين متطورتين: **Modern 26.2 (Fabric مع 228 مود ومحرك معالجة البايتكود ASM)** و **Legacy 1.8.9 (Forge PvP مع 28 مود)** في تجربة موحدة خالية من التعقيد.
 
 تتألف المنظومة من 4 طبقات رئيسية:
-1. **طبقة التطبيقات المكتبية:** ملف الموزع التنفيذي المستقل `SIR ModPack.exe` الذي يوجه الأوامر بسلاسة إلى المشغل المكتبي (`--mode launcher`)، أو المثبت الذاتي الشافي (`--mode installer`)، أو مدير الخوادم والأنفاق (`--mode server`).
+1. **طبقة التطبيقات المكتبية مع حزمة الأيقونات المخصصة (5 أيقونات):**
+   - مشغل **SIR Launcher.exe** مع أيقونة الصاروخ والسيوف المزدوجة المتوهجة (`SIR_Launcher_Icon.ico`).
+   - مثبت **SIR Installer.exe** الذاتي الشافي مع أيقونة الدرع الكريستالي الماسي (`SIR_Icon.ico`).
+   - مدير الخوادم **SIR Server Manager.exe** مع أيقونة رف السيرفرات المتوهج بمؤشرات LED (`SIR_Server_Manager_Icon.ico`).
+   - رابط بوابة الويب **Launch SIR Web Portal** مع أيقونة الكرة الأرضية السحابية (`SIR_Web_Portal_Icon.ico`).
+   - مفتاح إيقاف البوابة **Stop Local Web Server** مع أيقونة زر الطاقة التحذيري (`SIR_Stop_Portal_Icon.ico`).
 2. **محرك الجسر المكتبي:** جسر غير متزامن فائق السرعة (`launcher_core`) يدير المصادقة، وتعديل السكنات بتقنية 3D WebGL، ومراقبة العتاد اللحظية عبر دوال Win32، وإدارة دورة حياة النوافذ.
 3. **خط إطلاق JVM المباشر:** استدعاء مباشر لحزم OpenJDK 25 الأصلية 64-bit مع تطهير إعدادات العرض لمنع الشاشات السوداء وتطبيق معاملات إدارة الذاكرة G1GC و ZGC بدقة.
 4. **مصفوفة البروفايلات الفيزيائية (6 بروفايلات):** 3 بروفايلات للنسخة الحديثة (Ultra, Balanced, Performance) و 3 بروفايلات للنسخة الكلاسيكية (Ultra Visuals, Balanced Bedwars, Performance).
+5. **بوابة الويب والخدمات السحابية (42 مساراً مسبق التجهيز):** موقع Next.js 16 كامل يضم 42 مساراً استاتيكياً، مع دعم خطط الاشتراك بالجنيه المصري (EGP) عبر فودافون كاش وإنستاباي وفوري، وميزة الحذف الفوري الذاتي للبيانات وفق المادة 17 من لائحة GDPR.
 
 ---
 
@@ -301,10 +328,14 @@ Minecraft 26.2 abandoned the `intermediary` obfuscation layer — FabricMC's `in
 
 ---
 
-## 4. قنوات الدعم والمجتمع
+## 4. الكيان المشغل وقنوات الدعم والمجتمع
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
 - **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) داخل مشغل SIR Launcher ومدير الخوادم.
 - **بوابة الويب الرسمية:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 
-*© 2026 منظومة SIR ModPack. هندسة وتطوير SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. هندسة وتطوير SIR Ahmed.*

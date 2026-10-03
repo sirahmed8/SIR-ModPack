@@ -1,10 +1,10 @@
 # SIR ModPack - Master User & Distribution Agreements
-### *Version 1.0.0 Official Release • Community Governance & Security Framework*
+### *Version 1.0.1 Official Release • Community Governance & Security Framework (October 2026)*
 
 ---
 
 ## 1. Scope & Framework
-This document outlines the **Master User Agreements, Community Standards, Fair Play Guidelines, and Distribution Protocols** governing the entire SIR Minecraft Ecosystem.
+This document outlines the **Master User Agreements, Community Standards, Fair Play Guidelines, and Distribution Protocols** governing the entire SIR Minecraft Ecosystem operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt).
 
 ---
 
@@ -38,21 +38,25 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## 5. Community & Developer Relations
+## 5. Community, Developer Relations & Operating Entity
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
 - **Suggestions & Issues:** Feature requests, performance benchmarks, and bug reports may be submitted through the in-app Bug Reporter & Community Feedback portal or GitHub issues.
 - **Support & Governance:** All support inquiries and feedback are handled in-app via the Bug Reporter in SIR Launcher and SIR Server Manager.
+- **Dedicated Application Suite:** 5 distinct application assets (`SIR_Icon.ico`, `SIR_Launcher_Icon.ico`, `SIR_Server_Manager_Icon.ico`, `SIR_Web_Portal_Icon.ico`, `SIR_Stop_Portal_Icon.ico`) ensure clear visual identification and non-interfering sandboxing.
 - **Creator Rights:** All mod developers and shader artists receive full credit and attribution in [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
 
 ---
 
 # وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
-### *الإصدار v1.0.0 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق*
+### *الإصدار v1.0.1 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق (أكتوبر 2026)*
 
 ---
 
 ## 1. النطاق وإطار العمل
-تحدد هذه الوثيقة **ميثاق الاستخدام، ومعايير اللعب النظيف، وسياسات التوزيع الرقمي** الحاكمة لكافة أركان وتطبيقات منظومة SIR Minecraft.
+تحدد هذه الوثيقة **ميثاق الاستخدام، ومعايير اللعب النظيف، وسياسات التوزيع الرقمي** الحاكمة لكافة أركان وتطبيقات منظومة SIR Minecraft المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر).
 
 ---
 
@@ -85,10 +89,14 @@ This document outlines the **Master User Agreements, Community Standards, Fair P
 
 ---
 
-## 5. علاقات المجتمع والمطورين
+## 5. الكيان المشغل وعلاقات المجتمع والمطورين
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
 - **المقترحات والمشكلات:** يتم استقبال تقارير الأعطال والملاحظات مباشرة عبر أداة الإبلاغ المدمجة في اللانشر (Bug Reporter).
 - **حقوق المبدعين:** يحظى كافة مطوري المودات وفناني الشيدرز بالتقدير والنسب الكامل في [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
 
-*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*
 

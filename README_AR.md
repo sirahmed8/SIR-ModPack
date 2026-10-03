@@ -1,16 +1,16 @@
 # دليل منظومة SIR ModPack الشامل
-### *المنصة الموحدة المتكاملة لماينكرافت | أجنحة سطح المكتب | الشيدرز البصرية | بوابة السحابة (الإصدار v1.0.0 الرسمي)*
+### *المنصة الموحدة المتكاملة لماينكرافت | أجنحة سطح المكتب | الشيدرز البصرية | بوابة السحابة (الإصدار v1.0.1 الرسمي • أكتوبر 2026)*
 
 <div align="center">
 
 ![SIR ModPack Logo](https://sir-modpack.web.app/images/logo.png)
 
-[![الإصدار](https://img.shields.io/badge/الإصدار-v1.0.0-gold?style=for-the-badge&logo=rocket)](https://sir-modpack.web.app)
+[![الإصدار](https://img.shields.io/badge/الإصدار-v1.0.1-gold?style=for-the-badge&logo=rocket)](https://sir-modpack.web.app)
 [![النموذج القانوني](https://img.shields.io/badge/المنصة-منظومة%20ألعاب%20مستقلة-blue?style=for-the-badge&logo=shield)](LICENSE.md)
 [![الخصوصية](https://img.shields.io/badge/الخصوصية-انعدام%20التتبع%20Zero--Telemetry-cyan?style=for-the-badge&logo=lock)](PRIVACY.md)
 [![الاختبارات الآلية](https://img.shields.io/badge/الاختبارات-406%20ناجحة%20بنسبة%20100%25-brightgreen?style=for-the-badge&logo=checkmarx)](walkthrough.md)
 [![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![المسارات](https://img.shields.io/badge/المسارات-38%20مساراً%20ساكناً-purple?style=for-the-badge)](https://sir-modpack.web.app)
+[![المسارات](https://img.shields.io/badge/المسارات-42%20مساراً%20ساكناً-purple?style=for-the-badge)](https://sir-modpack.web.app)
 [![Java 25](https://img.shields.io/badge/Java-21%20%2F%2025%20LTS-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/)
 
 **[الموقع الرسمي](https://sir-modpack.web.app) • [شروط الخدمة](TERMS.md) • [سياسة الخصوصية](PRIVACY.md) • [اتفاقية الترخيص](LICENSE.md) • [ميثاق المجتمع](AGREEMENTS.md) • [سجل التغييرات](CHANGELOG.md)**
@@ -21,7 +21,7 @@
 
 ## 1. نظرة عامة شاملة على منصة SIR ModPack
 
-منظومة **SIR ModPack (الإصدار v1.0.0 الرسمي)** هي بيئة ألعاب وبرمجيات مكتبية متطورة وهندسة حاسوبية موحدة فائقة الأداء، تم إنشاؤها لتقديم أرقى تجربة ممكنة في عالم ماينكرافت. تُعد المنظومة منصة ألعاب متطورة ومستقلة تخضع لـ **اتفاقية برمجيات منظومة SIR الرسمية (SIR Software Agreement)**، وتجمع في بيئة واحدة بين أحدث تقنيات المعالجة الصورية ومحركات التشغيل المزدوجة.
+منظومة **SIR ModPack (الإصدار v1.0.1 الرسمي)** المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، جمهورية مصر العربية) هي بيئة ألعاب وبرمجيات مكتبية متطورة وهندسة حاسوبية موحدة فائقة الأداء، تم إنشاؤها لتقديم أرقى تجربة ممكنة في عالم ماينكرافت. تُعد المنظومة منصة ألعاب متطورة ومستقلة تخضع لـ **اتفاقية برمجيات منظومة SIR الرسمية (SIR Software Agreement)**، وتجمع في بيئة واحدة بين أحدث تقنيات المعالجة الصورية ومحركات التشغيل المزدوجة.
 
 تدمج المنظومة بين عالمين متميزين:
 1. **المحرك الحديث (Modern 26.2):** تجربة بصرية فائقة الواقعية تدعم أحدث ميزات اللعبة عبر بروفايلات متدرجة فائقة الضبط تحت مظلة بيئة Fabric ومحرك تعديل بايتكود ASM مخصص.
@@ -194,9 +194,12 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 ---
 
-### التواصل الرسمي والحوكمة المجتمعية
+### الكيان المشغل والتواصل الرسمي والحوكمة المجتمعية
 
+- **الكيان القانوني المشغل:** **شركة SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي للدعم:** [+20 102 717 9040](tel:+201027179040)
 - **الدعم الفني المدمج:** أداة الإبلاغ عن المشكلات المدمجة داخل مشغل SIR Launcher ومدير الخوادم SIR Server Manager.
 - **الموقع الإلكتروني الرسمي:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **مستودع التوزيع على GitHub:** [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
@@ -204,7 +207,7 @@ python -m unittest discover -s tests -p "test_*.py" -v
 
 <div align="center">
 
-**© 2026 منظومة SIR ModPack. تم التطوير والهندسة بعناية فائقة بواسطة SIR Ahmed وفريق المشروع.**  
+**© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تم التطوير والهندسة بعناية فائقة بواسطة SIR Ahmed.**  
 *مرخصة ومقدمة للمجتمع بموجب اتفاقية برمجيات SIR الرسمية.*
 
 </div>

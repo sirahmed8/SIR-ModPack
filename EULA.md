@@ -1,10 +1,10 @@
 # SIR ModPack - End User License Agreement (EULA)
-### *Version 1.0.0 Official Release • Legally Enforced Software License & Usage Agreement*
+### *Version 1.0.1 Official Release • Legally Enforced Software License & Usage Agreement (October 2026)*
 
 ---
 
 ## 1. Preamble & Acceptance
-This End User License Agreement ("EULA") is a legal agreement between you (the "User") and the maintainers of the **SIR ModPack Ecosystem** ("SIR Ahmed", "We", or "Maintainers").
+This End User License Agreement ("EULA") is a legal agreement between you (the "User") and **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt), operated by SIR Ahmed and Ecosystem Maintainers ("We", or "Maintainers").
 
 By downloading, installing, launching, executing, or using **SIR Launcher**, **SIR Installer**, **SIR Server Manager**, **SIR ModPack.exe**, custom **SIR Shaders**, **SIR Resource Packs**, or the **SIR Web Platform** (`sir-modpack.web.app`), you unconditionally agree to be bound by the terms and conditions set forth in this EULA. If you disagree with any provision of this EULA, you must immediately cease all usage and delete all installed files and binaries.
 
@@ -62,8 +62,11 @@ This agreement is effective until terminated. Your rights under this license ter
 
 ---
 
-## 8. Contact & Legal Inquiries
+## 8. Operating Entity & Legal Inquiries
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
 - **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Official Web Platform:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
@@ -72,12 +75,12 @@ This agreement is effective until terminated. Your rights under this license ter
 ---
 
 # وثيقة اتفاقية ترخيص المستخدم النهائي (EULA) لمنظومة SIR ModPack
-### *الإصدار v1.0.0 الرسمي • ترخيص برمجيات واستخدام ملزم قانوناً • منظومة برمجية متطورة ومستقلة*
+### *الإصدار v1.0.1 الرسمي • ترخيص برمجيات واستخدام ملزم قانوناً • منظومة برمجية متطورة ومستقلة (أكتوبر 2026)*
 
 ---
 
 ## 1. الديباجة والموافقة
-تعد اتفاقية ترخيص المستخدم النهائي ("EULA") عقداً قانونياً ملزماً بينك (المشار إليك بـ "المستخدم") وبين مطوري ومشرفي **منظومة SIR ModPack** ("SIR Ahmed" أو "المطورون").
+تعد اتفاقية ترخيص المستخدم النهائي ("EULA") عقداً قانونياً ملزماً بينك (المشار إليك بـ "المستخدم") وبين **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر) ومطوري ومشرفي **منظومة SIR ModPack** ("SIR Ahmed" أو "المطورون").
 
 بتحميلك أو تثبيتك أو تشغيلك أو استخدامك لمشغل **SIR Launcher**، ومثبت **SIR Installer**، ومدير الخوادم **SIR Server Manager**، وملف التشغيل **SIR ModPack.exe**، والشيدرز المخصصة، وحزم الموارد 3D، أو بوابة الويب (`sir-modpack.web.app`)، فإنك توافق دون قيد أو شرط على الالتزام بكافة الشروط والأحكام المنصوص عليها في هذه الاتفاقية. إذا كنت لا توافق على أي بند، فيجب عليك التوقف فوراً عن الاستخدام وحذف كافة الملفات.
 
@@ -119,12 +122,16 @@ This agreement is effective until terminated. Your rights under this license ter
 
 ---
 
-## 7. الدعم القانوني والتواصل
+## 7. الكيان المشغل والدعم القانوني والتواصل
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
 - **الدعم الفني الرسمي:** أداة الإبلاغ عن المشكلات المدمجة (Bug Reporter) وملاحظات المجتمع داخل اللانشر.
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **بوابة الويب الرسمية:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **التوثيق المعماري الرسمي:** [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md)
 
-*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*
 

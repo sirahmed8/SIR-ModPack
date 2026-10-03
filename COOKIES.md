@@ -1,10 +1,10 @@
 # SIR ModPack: Cookie & Local Storage Governance Policy
-### *Version 1.0.0 Official Release | Legally Enforced Transparency*
+### *Version 1.0.1 Official Release | Legally Enforced Transparency (October 2026)*
 
 ---
 
 ## 1. Overview & Zero-Tracker Guarantee
-The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, **zero third-party marketing beacons**, and **zero cross-site tracking scripts**. We only utilize necessary browser storage mechanisms (`localStorage`, `sessionStorage`, and essential functional cookies) to maintain your preferences and accelerate page delivery.
+The SIR Web Platform (`sir-modpack.web.app`) operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt) uses **zero advertising cookies**, **zero third-party marketing beacons**, and **zero cross-site tracking scripts**. We only utilize necessary browser storage mechanisms (`localStorage`, `sessionStorage`, and essential functional cookies) to maintain your preferences and accelerate page delivery.
 
 ---
 
@@ -34,9 +34,12 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-## 4. Contact & Legal Inquiries
+## 4. Operating Entity & Legal Inquiries
+- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
+- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
 - **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **Official Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
+- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
+- **Official In-App Support:** In-App Bug Reporter & Community Feedback (accessible in SIR Launcher and SIR Server Manager)
 - **Developer Linktree:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **Official Website:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **Privacy Policy:** [PRIVACY.md](PRIVACY.md)
@@ -44,12 +47,12 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 ---
 
 # وثيقة سياسة ملفات تعريف الارتباط والتخزين المحلي لمنظومة SIR ModPack
-### *الإصدار v1.0.0 الرسمي | منظومة برمجية متطورة ومستقلة | شفافية تقنية كاملة وانعدام تام للتتبع*
+### *الإصدار v1.0.1 الرسمي | منظومة برمجية متطورة ومستقلة | شفافية تقنية كاملة وانعدام تام للتتبع (أكتوبر 2026)*
 
 ---
 
 ## 1. نظرة عامة وضمان انعدام التتبع الإعلاني
-تستخدم منصة SIR ModPack (`sir-modpack.web.app`) **صفر ملفات تعريف ارتباط إعلانية**، و**صفر أدوات تتبع تسويقية**، و**صفر سكريبتات مراقبة عبر المواقع**. نستخدم حصرياً آليات التخزين المحلية الضرورية في المتصفح (`localStorage`، و`sessionStorage`، وكوكيز وظيفية أساسية) لتذكر تفضيلاتك وتسريع استجابة الواجهة.
+تستخدم منصة SIR ModPack (`sir-modpack.web.app`) المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر) **صفر ملفات تعريف ارتباط إعلانية**، و**صفر أدوات تتبع تسويقية**، و**صفر سكريبتات مراقبة عبر المواقع**. نستخدم حصرياً آليات التخزين المحلية الضرورية في المتصفح (`localStorage`، و`sessionStorage`، وكوكيز وظيفية أساسية) لتذكر تفضيلاتك وتسريع استجابة الواجهة.
 
 ---
 
@@ -79,11 +82,15 @@ The SIR Web Platform (`sir-modpack.web.app`) uses **zero advertising cookies**, 
 
 ---
 
-## 4. قنوات الدعم والتواصل
+## 4. الكيان المشغل وقنوات الدعم والتواصل
+- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
+- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
 - **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
+- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
 - **الدعم الفني الرسمي:** أداة الإبلاغ المدمجة في اللانشر (Bug Reporter) وملاحظات المجتمع.
 - **رابط المطور:** [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
 - **الموقع الرسمي:** [https://sir-modpack.web.app](https://sir-modpack.web.app)
 - **سياسة الخصوصية:** [PRIVACY.md](PRIVACY.md)
 
-*© 2026 منظومة SIR ModPack. تطوير وإشراف SIR Ahmed.*
+---
+*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*
