@@ -1,0 +1,10 @@
+{
+  "renderDistance": 128,
+  "headThickness": 1.05,
+  "bodyThickness": 1.05,
+  "alphaThreshold": 0.0,
+  "enableCustomSkins": true,
+  "enableOfflineSkins": true,
+  "compatibilityMode": true,
+  "irisCompatibilityMode": true
+}

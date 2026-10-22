@@ -1,0 +1,9 @@
+{
+  "enableMod": true,
+  "showNCRButton": true,
+  "showReloadButton": true,
+  "verifiedIconEnabled": false,
+  "showServerSafety": false,
+  "hideInsecureMessageIndicators": true,
+  "defaultSigningMode": "NEVER"
+}

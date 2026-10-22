@@ -1,0 +1,35 @@
+{
+  "modId": "sir_core",
+  "version": "1.0.0",
+  "name": "SIR Core System Engine",
+  "settings": {
+    "enableRaytracingEnhancements": true,
+    "enableCrystalWaterShaderHook": true,
+    "enableCircularPhysicsSunMoon": true,
+    "enable3DPOMAutoAlignment": true,
+    "enableHypixelPvPFix": true,
+    "enableDirectSound3D": true,
+    "enableOfflineSkinFetch": true,
+    "enableLowMemoryGC": true,
+    "targetFpsLock": 144,
+    "fastMathOptimization": true,
+    "asynchronousChunkLoading": true,
+    "ambientAudioSpatial": true,
+    "smoothLightingRefinements": true
+  },
+  "compatibility": {
+    "irisShaderSuite": "SIR Master Shaders",
+    "sodiumExtraCompatibility": true,
+    "entityModelFeaturesSync": true,
+    "skinLayers3DWorkaround": true
+  },
+  "profiles": {
+    "active": "ultra_fidelity",
+    "presets": [
+      "ultra_fidelity",
+      "balanced_144fps",
+      "competitive_pvp",
+      "eco_laptop"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "volume": 100,
+  "runningVolume": 100,
+  "wetVolume": 100,
+  "foliageVolume": 100,
+  "customVolume": 100,
+  "footprintSounds": true,
+  "multiplayerSounds": true,
+  "locomotion": 0,
+  "hasJumping": true,
+  "hasLanding": true,
+  "hasWater": true,
+  "hasWander": true,
+  "hasStance": true
+}

@@ -1,0 +1,7 @@
+{
+  "entityCulling": true,
+  "blockEntityCulling": true,
+  "hitboxCulling": true,
+  "skipMarkerArmorStands": true,
+  "tracingDistance": 128
+}

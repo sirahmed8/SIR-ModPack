@@ -1,0 +1,12 @@
+{
+  "active_version": "26.2",
+  "allocated_ram_gb": 8,
+  "host_mode": "laptop_host",
+  "auto_restart_crash": true,
+  "auto_backup_interval_min": 60,
+  "playit_tunnel_enabled": true,
+  "public_ip_display": "127.0.0.1:25565",
+  "playit_custom_domain": "irvine-speller.tun.ply.gg",
+  "jvm_flags": "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC",
+  "server_port": 25565
+}

@@ -1,0 +1,11 @@
+{
+  "fps": true,
+  "cps": true,
+  "ping": true,
+  "armor": true,
+  "keys": true,
+  "blockhit": true,
+  "zoom": true,
+  "sprint": true,
+  "tcp": true
+}

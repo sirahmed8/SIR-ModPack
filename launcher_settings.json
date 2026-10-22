@@ -1,0 +1,23 @@
+{
+  "ram_allocated_gb": 8,
+  "power_governor": "turbo",
+  "selected_instance": "26.2-ultra",
+  "jvm_args_custom": "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200",
+  "enable_sound_fx": true,
+  "theme": "dark",
+  "lang": "en",
+  "discord_rpc": true,
+  "auto_connect_ip": "",
+  "window_close_action": "tray",
+  "window_launch_action": "tray_trim",
+  "window_minimize_action": "taskbar",
+  "autostart_on_boot": false,
+  "auto_check_updates": true,
+  "auto_download_updates": true,
+  "last_seen_release": "1.0.0",
+  "target_type": "sir_launcher",
+  "power_mode": "ultra_eco",
+  "ram_gb": 8,
+  "allocated_ram": 8,
+  "jvm_args": "-XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200"
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "sir_core",
+  "version": "1.0.0",
+  "name": "SIR Core",
+  "description": "Official core ecosystem mod for SIR Ultimate. Features 3-Way Shader/POM synergy, real-time Win32 hardware bridge, JVM Memory Governor, and FPS acceleration.",
+  "authors": [
+    "SIR Ahmed",
+    "SIR Team"
+  ],
+  "contact": {
+    "homepage": "https://sir-modpack.web.app",
+    "sources": "https://github.com/sirahmed8/SIR-ModPack"
+  },
+  "license": "MIT",
+  "icon": "assets/sir_core/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.sir.mod.SIRMod"
+    ],
+    "client": [
+      "net.sir.mod.SIRClientMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.14.0",
+    "minecraft": ">=1.20.0"
+  }
+}

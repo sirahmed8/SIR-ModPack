@@ -1,0 +1,6 @@
+{
+  "triggerSensitivity": 0.8,
+  "fluidLevelDetectHeight": 1,
+  "triggerDepth": 1,
+  "speedModifier": 1.0
+}

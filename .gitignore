@@ -1,0 +1,36 @@
+# Build and Temporary Artifacts
+build_temp/
+dist/
+__pycache__/
+*.pyc
+*.spec
+website-next/
+
+# Large binary payloads and archives (>50MB)
+*.zip
+*.exe
+desktop.ini
+backups/
+server_backups/
+cache/
+instances/
+server_instances/
+exports/
+logs/
+dist_apps/
+dist_payloads/
+libraries/
+natives/
+public_repo/
+assets/
+source_assets/
+mods/
+shaderpacks/
+resourcepacks/
+skins/
+capes/
+state/
+development/
+prism/
+server/
+bin/

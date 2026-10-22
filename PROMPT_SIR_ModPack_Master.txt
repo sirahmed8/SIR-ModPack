@@ -1,0 +1,784 @@
+# ULTIMATE MASTER DIRECTIVE: D:\Projects\SIR ModPack
+# PRODUCTION GENESIS BLUEPRINT: v1.0.0 FULL-ECOSYSTEM PRODUCTION RELEASE & ZERO-DEFECT ARCHITECTURE
+# MISSION DIRECTIVE: CHIEF SYSTEMS ARCHITECT, FULL-STACK LEAD & RUNTIME SPECIALIST
+# TARGET RELEASE: STRICTLY v1.0.0 (PRODUCTION GENESIS)
+# PLATFORM IDENTITY: STRICTLY "100% Free & Independent Platform" under Free Independent Software Agreement — ZERO OPEN-SOURCE CLAIMS
+# REPOSITORIES:
+#   - Public GitHub Repository: https://github.com/sirahmed8/SIR-ModPack.git (Desktop Apps, Engines, Shaders, Resources, Tests, Docs)
+#   - Private GitHub Repository: https://github.com/sirahmed8/SIR-ModPack-private.git (Next.js Web Portal, Firebase Functions, Configs)
+# LIVING RECOVERY: `tasks.md` (Project Root) & `continuation_checkpoint.md` (Living Checkpoints)
+
+---
+
+## 1. EXECUTIVE MANDATE, OPERATIONAL PHILOSOPHY & GOVERNANCE
+
+### 1.1 The "Daily Task" Standard & 1000x Engineering Excellence
+This directive defines an active, continuous, daily engineering mission. Every execution cycle must deliver tangible, measurable leaps in software quality: cleaner humanized code, superior UI/UX ergonomics, refined backend logic, hardened security, eliminated technical debt, and polished user-facing capabilities across all applications and the web platform.
+
+You are NOT a passive script executor. You are the Chief Systems Architect and Principal Full-Stack Engineer. You must approach every single file, component, interface, and configuration with world-class craftsmanship:
+1. **Analyze First & Deep System Comprehension**: Before modifying code, conduct an exhaustive survey of the target files, their architectural role, dependencies, data flow, and failure modes. Understand the entire ecosystem thoroughly before touching code.
+2. **Strategic Planning & Living Task Lists**: Formulate a structured, multi-phase plan. Immediately generate and continuously update `tasks.md` in the project root (`D:\Projects\SIR ModPack\tasks.md`), logging every atomic objective with progress checkboxes (`[ ]` / `[x]`). Maintain living checkpoints so no progress is ever lost when usage limits are reached.
+3. **Sequential Single-Agent Execution (STRICTLY NO `/teamwork-preview` OR SUBAGENTS)**: Do NOT use `/teamwork-preview` and do NOT spawn background subagents. Execute all work sequentially as a single, focused agent. Spawning multiple subagents rapidly exhausts API token quotas and triggers usage limit cutoffs. Work methodically step-by-step through each file and task without parallel bloat.
+4. **Humanity in Engineering vs Random Spaghetti**: Eliminate awkward AI boilerplate, repetitive loops, disorganized hacks, and dead code. Refactor the codebase into clean, modular, typed, self-documenting code that feels crafted by world-class human engineers (Linear, Apple, Raycast, Vercel standard).
+5. **Zero Waste & Zero Dead Weight**: Purge every unused library, dead route, unreferenced function, orphaned asset, duplicate code block, and redundant line across all repositories.
+6. **Holistic Cascade Editing**: Never perform isolated "tunnel-vision" edits. When you modify a function signature, CSS token, bridge API, or data contract, you MUST immediately trace and update every caller, event listener, stylesheet, schema validator, and documentation reference that touches it.
+7. **Production Engineering & Zero Fake/Mock Data**: Strictly zero hardcoded mock arrays, fake metrics, unpersisted temporary variables, or empty button stubs. Every single UI control, toggle, slider, dropdown, and form MUST be backed by genuine runtime state and real persistent storage (SQLite, JSON configuration, Firebase Firestore / Realtime DB, or native OS APIs).
+8. **Preservation of Core Contracts**: Never break existing public APIs, IPC bridges, or user configurations. Enhance and expand capabilities while maintaining backward compatibility and bulletproof defensive error handling.
+
+### 1.2 Dual-Repository Architecture & Privacy Boundary
+- **Public GitHub Repository** (`public_repo/` -> `https://github.com/sirahmed8/SIR-ModPack.git`):
+  Houses all desktop applications (`SIR Launcher`, `SIR Server Manager`, `SIR Installer`), core Python engines, IPC bridges, resource packs (`SIR Modern.zip`), custom shaders, profile manifests, test suites, and bilingual markdown documentation.
+- **Private GitHub Repository** (`website-next/` -> `https://github.com/sirahmed8/SIR-ModPack-private.git`):
+  Houses the production Next.js web application (`https://sir-modpack.web.app`), Firebase Cloud Functions, Firestore/Realtime Database rules, authentication handlers, and proprietary web assets.
+
+### 1.3 Platform Identity: Free Independent Software Agreement
+- **Official Identity**: Strictly **"100% Free & Independent Platform"** operating under the **Free Independent Software Agreement**.
+- **Zero Open-Source Claims**: Strictly ZERO occurrences of "open source", "open-source", "FOSS", "GPL", "MIT", or "Apache License" anywhere in UI text, tooltips, dialogs, metadata, or documentation.
+- **Official Legal & Governance Contact**: Strictly **`a7medorabe7@gmail.com`**. Update all references across legal pages, markdown files, and desktop applications. Scrub all occurrences of `support@sir-modpack.com`.
+- **Target Release Tag**: Strictly **`v1.0.0` or `v1.0.0 Genesis`** (never use informal phrases like "final version").
+
+### 1.4 Genesis Clean Slate & Repository Commit History Reset
+The ecosystem must feel like a brand-new, clean start rather than an endlessly patched prototype:
+1. **Clean Slate Living Files**:
+   - Reset `tasks.md` in the project root to a pristine, unified Phase-based execution checklist.
+   - Reset `continuation_checkpoint.md` and `implementation_plan.md` to a clean Genesis baseline.
+2. **Repository Commit History Reset / Squashing**:
+   - In both GitHub repositories (`public_repo/` for desktop apps and `website-next/` for website):
+     * Consolidate and squash the commit history into a single, clean, professional Genesis release commit:
+       - **Public Repo**: `feat(genesis): v1.0.0 Genesis Production Release — The Ultimate Independent Minecraft Ecosystem`
+       - **Private Repo**: `feat(genesis): v1.0.0 Genesis Production Web Platform — Next.js 16 & Firebase Hosting`
+     * DO NOT rewrite or delete any source files or assets; simply reset the git commit pointer so the repository history is clean, elegant, and ready for public/production presentation.
+
+---
+
+## 2. UNIFIED ARCHITECTURAL SPECIFICATIONS & ENGINEERING PILLARS
+
+The entire technical execution is organized into 8 comprehensive engineering pillars:
+
+```
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                   SIR ECOSYSTEM PRODUCTION GENESIS ARCHITECTURE                  │
+├───────────────────┬───────────────────┬───────────────────┬──────────────────────┤
+│     PILLAR 1      │     PILLAR 2      │     PILLAR 3      │      PILLAR 4        │
+│   SIR Launcher    │ Google Cloud &    │ SIR Server Mgr    │ SIR Installer Pro    │
+│  Stability & UI   │ Firebase Identity │ Slim Rail & CLS   │ Deduplication & EULA │
+├───────────────────┼───────────────────┼───────────────────┼──────────────────────┤
+│     PILLAR 5      │     PILLAR 6      │     PILLAR 7      │      PILLAR 8        │
+│   Next.js 16 Web  │  Bilingual Docs   │ Production QA &   │ Quota Resilience &   │
+│  Customization Hub│  & Legal Parity   │ 360+ Unit Tests   │ Resume Protocol      │
+└───────────────────┴───────────────────┴───────────────────┴──────────────────────┘
+```
+
+---
+
+### PILLAR 1: SIR Launcher — Stability, Process Lifecycle, System Tray & UI/UX Mastery
+*(Note: Tasks 1.1 to 1.7 [Lifecycle, Toggle Switches, RAM Slider, Dropzone CSS, Crash Elimination] are 100% verified and certified complete in production).*
+
+#### 1.8 Fix Intermittent "0 Active Mods" & "Installed (0)" Due to 3s Race Timeout
+- **Target Files**:
+  - `development/launcher_ui/app.js` (lines 37-46)
+  - `development/launcher_ui/bootstrap_cache.js`
+  - `development/launcher_ui/js/mods.js`
+  - `public_repo/development/launcher_ui/app.js`
+- **Surgical Implementation**:
+  1. In `app.js`, eliminate the aggressive 3000ms race timeout (`safeAsync`) on `loadModsFromBridge`. On cold boots or slower drives, scanning 228 mod JARs takes 3.5–5s; timing out after 3s leaves `STATE.mods = []` and displays "0 Active Mods". Expand timeout to 15s non-blocking async execution.
+  2. In `bootstrap_cache.js`, pre-hydrate the cached mod count (`228+ Mods`) so frame-0 never flashes 0 mods.
+  3. In `js/mods.js`, if `STATE.mods` is loading, display a graceful loading skeleton rather than immediately locking into `0 Active Mods`.
+
+#### 1.9 Fix Mods Tab "Open Folder" Action with Auto-Directory Creation
+- **Target Files**:
+  - `development/launcher_core/instance_service.py` (lines 1074-1092)
+  - `development/launcher_ui/app.js` (line 186)
+  - `public_repo/development/launcher_core/instance_service.py`
+  - `public_repo/development/launcher_ui/app.js`
+- **Surgical Implementation**:
+  1. In `instance_service.py` `open_instance_mods_folder()`, if none of the candidate mod directories exist on disk, do NOT fail silently. Automatically create the directory with `os.makedirs(target_dir, exist_ok=True)` and invoke `os.startfile(target_dir)`.
+  2. In `app.js` `openInstanceMods(instId)`, handle the promise returned by `pywebview.api.open_mods_folder(instId)`, and display a helpful toast on completion.
+
+#### 1.10 3D Skin Studio Full Light Mode Contrast & Themed Dock Overhaul
+- **Target Files**:
+  - `development/launcher_ui/app.css` (lines 1527-1533)
+  - `development/launcher_ui/index.html` (lines 792, 801-819)
+  - `public_repo/development/launcher_ui/app.css`
+  - `public_repo/development/launcher_ui/index.html`
+- **Surgical Implementation**:
+  1. In `app.css`, permanently scrub the forced dark override `html.light [class*="from-[#080d1a]"] { background: #101828 !important; }`.
+  2. In Light Mode, render the 3D stage with an elegant, soft, high-contrast studio gradient:
+     `background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%) !important; border: 1px solid #cbd5e1 !important;`.
+  3. In `index.html`, theme the 3D control dock buttons (`anim-btn-idle`, `anim-btn-walk`, `anim-btn-run`, `studio-btn-elytra`, etc.) and badges (`studio-model-badge`, `studio-cape-badge`) with responsive classes (`bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700`) so they look native in Light Mode.
+
+#### 1.11 Suppress Ghost Taskbar Previews (.NET-BroadcastEventWindow & GDI+ Window)
+- **Target Files**:
+  - `development/launcher_core/tray_service.py` (lines 147-155)
+  - `public_repo/development/launcher_core/tray_service.py`
+- **Surgical Implementation**:
+  1. In `_suppress_dummy_tray_windows()`, expand window detection beyond `"pystray"`. Specifically target helper windows created by WinForms, .NET message loops, and GDI+:
+     - Class name or window title containing: `windowsforms`, `.net-broadcast`, `gdi+`, or `pystray`.
+     - Windows with empty titles that are NOT Chromium/WebView2/Edge and NOT the main launcher window.
+  2. Apply `WS_EX_TOOLWINDOW`, strip `WS_EX_APPWINDOW`, and execute `user32.ShowWindow(hwnd, 0)` (`SW_HIDE`) and `SetWindowPos` with `SWP_FRAMECHANGED` so Windows 11 never renders ghost preview thumbnails on the taskbar.
+
+#### 1.12 Dynamic Mod Cards Theme Bleed Elimination (Zero White Cards in Dark Mode)
+- **Target Files**:
+  - `development/launcher_ui/js/mods.js` (lines 442–534)
+  - `development/launcher_ui/js/theme.js` (lines 11–45)
+  - `public_repo/development/launcher_ui/js/mods.js`
+  - `public_repo/development/launcher_ui/js/theme.js`
+- **Surgical Implementation**:
+  1. In `mods.js`, permanently eliminate hardcoded JavaScript ternary strings (`isLight ? 'bg-white...' : ...`). When a user switches themes, static strings baked into the DOM do not react. Replace them with pure responsive Tailwind utility classes:
+     - `feature-card`: `bg-white dark:bg-slate-900/60 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100`.
+     - Official highlight cards: `bg-white dark:bg-gradient-to-r ${s.gradient} border-slate-200 dark:border-cyan-500/30 text-slate-900 dark:text-white`.
+  2. In `theme.js` `applyResolvedTheme()`, immediately re-render dynamic views:
+     ```javascript
+     if (typeof renderMods === 'function' && document.getElementById('mods-list')) renderMods();
+     if (typeof renderAccounts === 'function') renderAccounts();
+     ```
+
+#### 1.13 3D Skin Studio Dock & Badges Full Light Mode Overhaul
+- **Target Files**:
+  - `development/launcher_ui/app.css` (lines 1548–1552)
+  - `development/launcher_ui/js/skins.js` (lines 123–133)
+  - `public_repo/development/launcher_ui/app.css`
+  - `public_repo/development/launcher_ui/js/skins.js`
+- **Surgical Implementation**:
+  1. In `app.css`, permanently scrub the forced dark override:
+     `html.light div[class*="bg-slate-900\/90"][class*="backdrop-blur"] { background: rgba(15, 23, 42, 0.85) !important; }`.
+  2. In Light Mode, render the dock bar with clean white glassmorphism:
+     `background: rgba(255, 255, 255, 0.92) !important; border: 1px solid #cbd5e1 !important; box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;`.
+  3. In `skins.js` line 129, remove the hardcoded `bg-slate-800 text-slate-400` button class override. In Light Mode, render inactive buttons with `bg-white text-slate-700 border-slate-200 hover:bg-slate-100`.
+
+#### 1.14 Account Manager Dropdown "Connect" Click Propagation & Full Modal Empty Card Resolution
+- **Target Files**:
+  - `development/launcher_ui/js/state.js` (or `helpers.js`)
+  - `development/launcher_ui/js/cloud_sync.js` (lines 170–245, 263–315)
+  - `development/launcher_ui/js/modals.js` (lines 129–142)
+  - `development/launcher_ui/index.html` (lines 167, 1919–1933)
+  - `public_repo/development/launcher_ui/js/state.js`
+  - `public_repo/development/launcher_ui/js/cloud_sync.js`
+  - `public_repo/development/launcher_ui/js/modals.js`
+  - `public_repo/development/launcher_ui/index.html`
+- **Surgical Implementation**:
+  1. **Global `window.escapeHtml` Export (Root Cause Fix)**:
+     In `development/launcher_ui/js/state.js` (which executes first on startup), define and attach `window.escapeHtml` to the global scope:
+     ```javascript
+     window.escapeHtml = function(str) {
+       if (str === null || str === undefined) return '';
+       return String(str)
+         .replace(/&/g, '&amp;')
+         .replace(/</g, '&lt;')
+         .replace(/>/g, '&gt;')
+         .replace(/"/g, '&quot;')
+         .replace(/'/g, '&#039;');
+     };
+     ```
+     `command_palette.js` had `escapeHtml` trapped inside a private IIFE closure. When `renderGoogleCloudAccountCard()` or `renderAccounts()` ran, it threw an uncaught `ReferenceError: escapeHtml is not defined`, aborting execution and leaving `#google-cloud-account-card` as a completely empty purple box! Defining `window.escapeHtml` globally permanently resolves this crash.
+  2. In `cloud_sync.js` `renderAccountMenuGoogleCard()`, ensure the dynamic "Connect" button includes `event.stopPropagation(); triggerGoogleLogin();` so clicks are never swallowed by the parent dropdown menu dismiss listener.
+  3. In `modals.js` `openModal(id)`, when opening `account-manager-modal`, immediately invoke `renderGoogleCloudAccountCard()` and `renderAccounts()`.
+  4. In `cloud_sync.js` `renderGoogleCloudAccountCard()`, when unauthenticated, render an inviting, high-contrast "Connect Google Cloud Account" banner card with official Google branding and clear explanation, or if disconnected and collapsed, hide the card (`card.classList.add('hidden')`) rather than leaving an empty purple rectangle in the modal.
+
+#### 1.15 Bulletproof "Open Folder" Action with Windows Explorer Fallback
+- **Target Files**:
+  - `development/launcher_core/instance_service.py` (lines 1074–1097)
+  - `development/launcher_ui/app.js` (lines 186–205)
+  - `public_repo/development/launcher_core/instance_service.py`
+  - `public_repo/development/launcher_ui/app.js`
+- **Surgical Implementation**:
+  1. In `instance_service.py` `open_instance_mods_folder()`, expand path resolution to include:
+     - `os.path.join(self.instances_dir, inst_id, "minecraft", "mods")`
+     - `os.path.join(self.instances_dir, inst_id, "mods")`
+     - `os.path.join(self.root_dir, "SIR Package", "instances", inst_id, "minecraft", "mods")`
+     - `os.path.join(self.root_dir, "instances", inst_id, "minecraft", "mods")`
+  2. Automatically create the directory if missing via `os.makedirs(target_dir, exist_ok=True)`.
+  3. Use `subprocess.Popen(['explorer', os.path.normpath(target_dir)])` alongside `os.startfile(target_dir)` in a try/except block to ensure Windows Explorer opens 100% reliably.
+
+#### 1.16 Real-Time Live Game Log Streaming in Logs Tab
+- **Target Files**:
+  - `development/launcher_ui/js/launch.js` (lines 343–365)
+  - `development/launcher_ui/js/diagnostics.js` (lines 1–40)
+  - `development/launcher_ui/js/navigation.js`
+  - `public_repo/development/launcher_ui/js/launch.js`
+  - `public_repo/development/launcher_ui/js/diagnostics.js`
+- **Surgical Implementation**:
+  1. In `launch.js` `appendLaunchConsoleLog(line)`, append live output lines to BOTH `#launch-live-log-box` AND `#game-logs-output`.
+  2. In `diagnostics.js` `refreshLogs()`, when the game is running or when switching to the Logs tab (`switchTab('logs')`), actively read and tail the real physical `minecraft/logs/latest.log` file from the active instance rather than falling back to static 3-line mock text.
+
+#### 1.17 Eliminate 1.8.9 Visuals Black Screen & Prune Duplicate Minimap Mods
+- **Target Files**:
+  - `SIR Package/instances/1.8.9*/minecraft/mods/`
+  - `instances/1.8.9*/minecraft/mods/`
+  - `development/launcher_core/video_preset_service.py` (lines 210–235)
+  - `development/launcher_core/instance_service.py` (lines 1190–1205)
+- **Surgical Implementation**:
+  1. Prune duplicate `journeymap-1.8.9-5.2.4-unlimited.jar` across all 1.8.9 instance folders, retaining ONLY `Xaeros_Minimap_FP21.10.40_Forge_1.8.9.jar`. This immediately eliminates the double-minimap HUD clash seen in game screenshots.
+  2. In `video_preset_service.py` and `instance_service.py`, set default `shaderPack=OFF` on 1.8.9 to prevent OpenGL framebuffer blackouts caused by incompatible OptiFine legacy shaders.
+
+#### 1.18 Preserve User Video Settings & Sound Options Across Game Launches
+- **Target Files**:
+  - `development/launcher_core/instance_service.py` (lines 1150–1235)
+  - `development/launcher_core/video_preset_service.py`
+  - `public_repo/development/launcher_core/instance_service.py`
+- **Surgical Implementation**:
+  1. In `apply_video_preset()`, do NOT unconditionally overwrite existing `options.txt`, `optionsof.txt`, or audio settings on every game launch!
+  2. If `options.txt` already exists on disk, read existing user options, preserve all user-configured render distances, FOV, keybindings, and sound levels (specifically respecting `soundCategory_music:0.0` so music does NOT play when turned off), and only inject necessary compatibility defaults (e.g. `onboardAccessibility: false`).
+  3. Write full default options ONLY when `options.txt` does not exist (first run) or when the user explicitly triggers "Reset Video Settings" in launcher.
+
+#### 1.19 Multi-Instance Deep-Link Forwarding & Direct Server Auto-Launch Pipeline
+- **Target Files**:
+  - `development/launcher_source/SIR_Launcher_Modern.py` (lines 99–126, 134–165)
+  - `development/launcher_ui/js/navigation.js` (lines 333–362)
+  - `public_repo/development/launcher_source/SIR_Launcher_Modern.py`
+  - `public_repo/development/launcher_ui/js/navigation.js`
+- **Surgical Implementation**:
+  1. In `SIR_Launcher_Modern.py` `_enforce_single_instance()`: when an existing instance is running, check if `sys.argv[1]` has `sirlauncher://`. If present, write `{"raw": sys.argv[1], "timestamp": time.time()}` to `pending_deeplink.json` in `DATA_ROOT` before restoring window and exiting.
+  2. In `SIR_Launcher_Modern.py` `main()`: run a background daemon thread checking `pending_deeplink.json` every 400ms. On detection, parse URL parameters and evaluate `window.handleIncomingDeepLink(parsed)` on the active window.
+  3. In `navigation.js`: implement `window.handleIncomingDeepLink(dl)`. If `action === 'join'` or `params.ip`, immediately invoke `joinServer(serverIp)` which boots Minecraft directly into that multiplayer server via `--server <ip> --port <port>`. In `checkAndExecuteDeepLink()`, directly launch into the server rather than only switching tabs.
+
+#### 1.20 Eliminate Multiplayer Disconnect by Pruning Incompatible `nyctography` Mod & Auto-Reconciliation
+- **Target Files**:
+  - `%APPDATA%\SIR ModPack\instances\*\minecraft\mods\`
+  - `SIR Package\instances\*\minecraft\mods\`
+  - `instances\*\minecraft\mods\`
+  - `development/launcher_core/instance_service.py`
+  - `public_repo/development/launcher_core/instance_service.py`
+- **Surgical Implementation**:
+  1. **Direct Pruning of Incompatible Mod**:
+     Purge and permanently delete `Nyctography-fabric-MC26.2-26.2.0.1.jar` (and any `*nyctography*.jar`) across all instance mod folders in `%APPDATA%\SIR ModPack\instances\` (`26.2-balanced`, `26.2-performance`, `26.2-ultra`).
+  2. **Root Cause Identification & Resolution**:
+     Mod `nyctography` registers a custom banner pattern tag `nyctography:pattern_item/nyctography` into `minecraft:banner_pattern`. When connecting to vanilla, cracked, or Paper servers (e.g. `blocksmc.com`, Hypixel, Minemen), the server's network configuration packet omits this mod's private tags. The client-side Fabric Minecraft detects a missing tag in the synchronized registry, throwing `java.lang.IllegalStateException: Missing tag TagKey[minecraft:banner_pattern / nyctography:pattern_item/nyctography]` and abruptly disconnecting with `Client disconnected with reason: Network Protocol Error`. Pruning this jar permanently restores flawless multiplayer connectivity across all servers!
+  3. **Automated Mod Directory Reconciliation in `instance_service.py`**:
+     In `_sync_instance_files()`, implement automated obsolete mod cleanup: when syncing instance folders, actively scan and prune any mod jar matching known incompatible/obsolete patterns (e.g. `*nyctography*`, duplicate `journeymap-1.8.9*`) from the destination `%APPDATA%` instance folders so users never suffer stale jar network crashes.
+
+---
+
+### PILLAR 2: Google Cloud Identity, Authentic OAuth Flow & Cross-App Firebase Sync
+
+#### 2.1 Authentic Google OAuth 2.0 Consent Screen Flow (Zero Silent Bypasses)
+- **Target Files**:
+  - `website-next/app/auth/desktop/page.tsx`
+  - `development/launcher_core/cloud_sync_service.py`
+- **Surgical Implementation**:
+  1. In `website-next/app/auth/desktop/page.tsx`, eliminate the silent auto-forwarding of stale browser sessions (`else if (user && isMounted) { sendTokenToDesktop(user); }`).
+  2. Configure `GoogleAuthProvider` to enforce account selection:
+     ```typescript
+     googleProvider.setCustomParameters({ prompt: 'select_account' });
+     ```
+  3. When accessed via `/auth/desktop?port=...`:
+     - If the browser already has an active Firebase session, present a clean, high-contrast Account Confirmation card:
+       * Display user avatar, `displayName`, and `email`.
+       * **Primary CTA**: `[✓ Link this Account to Desktop Suite]` -> transmits token to `http://127.0.0.1:${port}/auth/callback`.
+       * **Secondary CTA**: `[🔄 Switch / Sign in with Another Google Account]` -> signs out and invokes `signInWithPopup(auth, googleProvider)` with `prompt: 'select_account'`.
+     - If unauthenticated or switching accounts, launch `signInWithPopup(auth, googleProvider)` with `{ prompt: 'select_account' }`. If popups are blocked, display a prominent, beautifully styled `[G Sign in with Google]` button with official Google branding.
+  4. In `cloud_sync_service.py`, append `&prompt=select_account` to `auth_url`:
+     ```python
+     auth_url = f"{AUTH_BRIDGE_URL}?port={self._active_port}&prompt=select_account"
+     ```
+
+#### 2.2 Launcher Frame-0 Cloud Pre-Hydration & Live IPC RPC Synchronization
+- **Target Files**:
+  - `development/launcher_source/SIR_Launcher_Modern.py`
+  - `development/launcher_core/bridge.py`
+  - `development/launcher_ui/js/cloud_sync.js`
+  - `development/launcher_ui/js/helpers.js`
+  - `development/launcher_ui/js/modals.js`
+- **Surgical Implementation**:
+  1. **Instant Frame-0 Pre-Hydration**:
+     In `SIR_Launcher_Modern.py`, write `window.__SIR_CLOUD_BOOTSTRAP__ = {json.dumps(api.get_cloud_status())};` into `bootstrap_cache.js` on startup.
+  2. **Direct Window RPC on Auth Callback**:
+     In `bridge.py` (`_on_cloud_auth_change`), directly evaluate the JS callback on the WebView window in addition to dispatching `sir_cloud_auth_changed`:
+     ```python
+     def _on_cloud_auth_change(self, profile):
+         self.emit_to_js("sir_cloud_auth_changed", profile)
+         if self.window:
+             try:
+                 js = f"if (window.onCloudAuthSuccess) window.onCloudAuthSuccess({json.dumps(profile)});"
+                 self.window.evaluate_js(js)
+             except Exception:
+                 pass
+             try:
+                 self.window.restore()
+                 self.window.show()
+             except Exception:
+                 pass
+     ```
+  3. **Frontend Dynamic Rehydration & Event Wiring**:
+     - In `cloud_sync.js`, pre-hydrate immediately on script load from `window.__SIR_CLOUD_BOOTSTRAP__` or `localStorage.getItem('sir_cloud_session')`.
+     - Implement `window.onCloudAuthSuccess = function(profile)` to immediately update `window.CLOUD_STATE`, call `renderGoogleCloudAccountCard()`, `renderAccountMenuGoogleCard()`, `renderAccounts()`, and `renderLaunchpad()`.
+     - Persist the authenticated session to `localStorage.setItem('sir_cloud_session', JSON.stringify(profile))`.
+     - Add a listener for `pywebviewready` to immediately run `fetchLatestCloudStatus()`.
+     - Re-sync on window `focus` and `visibilitychange`.
+  4. **Dynamic Refresh on Dropdown & Modal Open**:
+     - In `helpers.js`, when opening `#account-menu`, call `renderAccountMenuGoogleCard()` and `fetchLatestCloudStatus()`.
+     - In `modals.js`, when opening `#account-manager-modal`, call `renderGoogleCloudAccountCard()` and `fetchLatestCloudStatus()`.
+
+#### 2.3 Account Manager Studio Ergonomic Spacing & Light Mode Contrast
+- **Target Files**:
+  - `development/launcher_ui/index.html`
+  - `development/launcher_ui/app.css`
+- **Surgical Implementation**:
+  1. In `index.html`, add `mb-6` to `#google-cloud-account-card`:
+     ```html
+     <!-- Dedicated Google Cloud Account Entity Card -->
+     <div id="google-cloud-account-card" class="p-4 rounded-2xl bg-gradient-to-r from-cyan-950/30 via-slate-900/60 to-purple-950/30 border border-cyan-500/30 space-y-3 mb-6">
+       <!-- Dynamically rendered by renderGoogleCloudAccountCard() -->
+     </div>
+     ```
+     This creates an ergonomic 24px margin, permanently resolving the collision where the card touched the `Registered Profiles` header and action buttons (`[☁ Sync Cloud]`, `[+ Microsoft]`, `[+ Offline]`).
+  2. In `app.css`, add responsive Light Mode styling:
+     ```css
+     html.light #google-cloud-account-card {
+       background: #f8fafc !important;
+       border-color: #cbd5e1 !important;
+       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+     }
+     html.light #google-cloud-account-card span.text-white {
+       color: #0f172a !important;
+     }
+     html.light #google-cloud-account-card p.text-slate-400 {
+       color: #64748b !important;
+     }
+     ```
+
+#### 2.4 Decouple Google Cloud Identity from Minecraft Game Accounts
+- **Target Files**:
+  - `development/launcher_core/accounts.py`
+  - `development/launcher_core/cloud_sync_service.py`
+  - `development/launcher_ui/js/auth.js`
+- **Surgical Implementation**:
+  1. Save Google Cloud identity strictly in `%APPDATA%\SIR ModPack\cloud_session.json`.
+  2. Ensure `accounts.json` contains ONLY genuine playable Minecraft game accounts (Microsoft MSA or Offline IAS). Purge any dummy `google_cloud` entries from `accounts.json`.
+  3. Filter out any accidental `google_cloud` entries from game profile lists in `auth.js` and `accounts.py`.
+
+#### 2.5 Complete Elimination of 6-Digit "Sync Code"
+- **Target Files**:
+  - `development/launcher_core/auth_service.py`
+  - `development/launcher_ui/js/auth.js`
+  - `development/launcher_ui/index.html`
+  - `website-next/`
+- **Surgical Implementation**:
+  1. Remove all legacy "Enter 6-digit sync code" dialogs, inputs, and RPC endpoints.
+  2. Migrate 100% of cloud sync operations to Google Cloud OAuth + Firebase Realtime Database.
+
+#### 2.6 Fix Google Cloud "Connect" Button & Chrome Private Network Access (PNA) CORS Headers
+- **Target Files**:
+  - `development/launcher_core/cloud_sync_service.py` (lines 165-195)
+  - `development/launcher_ui/js/cloud_sync.js` (lines 317-347)
+  - `development/launcher_ui/index.html` (line 167)
+  - `website-next/app/auth/desktop/page.tsx` (lines 75-104)
+  - `public_repo/development/launcher_core/cloud_sync_service.py`
+  - `public_repo/development/launcher_ui/js/cloud_sync.js`
+- **Surgical Implementation**:
+  1. In `cloud_sync_service.py`, add `Access-Control-Allow-Private-Network: true` to both `do_OPTIONS` and `do_POST` in `AuthCallbackHandler`. Modern Chrome and Edge require this header under the W3C Private Network Access (PNA) spec when an HTTPS page (`https://sir-modpack.web.app`) sends an API callback to a local private loopback (`http://127.0.0.1:49152`).
+  2. In `cloud_sync_service.py` `start_google_login()`, execute `os.startfile(auth_url)` unconditionally on Windows (with `subprocess.Popen(['cmd', '/c', 'start', '', auth_url])` fallback) to guarantee the browser opens and comes to the front without being swallowed by Python's `webbrowser` module in frozen environments.
+  3. In `development/launcher_ui/index.html` and `cloud_sync.js`, ensure clicking "Connect" stops event propagation (`event.stopPropagation()`) so the parent account dropdown menu does not instantly snap closed or cancel the click.
+  4. In `website-next/app/auth/desktop/page.tsx`, ensure `sendTokenToDesktop` handles PNA preflight failures cleanly, provides an immediate retry CTA, and clearly indicates successful transmission to the desktop client.
+  5. In `website-next/app/auth/desktop/page.tsx`, implement the native deep-link fallback button: `[⚡ Link Directly to Desktop Suite]` linking to `sirlauncher://auth?uid=${user.uid}&email=${encodeURIComponent(user.email)}&name=${encodeURIComponent(user.displayName||'')}&photo=${encodeURIComponent(user.photoURL||'')}&token=${idToken}`, ensuring 1-click instant linking even if browser mixed-content security blocks localhost fetch.
+
+---
+
+### PILLAR 3: SIR Server Manager — Orchestration, Layout Stability & Ergonomics
+*(Note: Tasks 3.1 to 3.4 [Slim Icon Rail, Port Number Spinners, Playit Portal Link, and WLAN Dropdown z-index] are 100% verified and certified complete in production).*
+
+#### 3.5 Expansion of 1-Click Server Plugins & Mods Store (14+ Curated Addons)
+- **Target Files**:
+  - `development/server_core/plugins_service.py`
+  - `development/server_ui/server.js`
+- **Surgical Implementation**:
+  1. Expand the server store catalog with 14+ essential, pre-configured server plugins and mods (e.g. EssentialsX, LuckPerms, Vault, Chunky, GeyserMC, Floodgate, ViaVersion, Spark).
+  2. Ensure 1-click download, installation, and dependency resolution operate with live progress tracking.
+
+#### 3.6 Dynamic Network Interface Discovery for Preferred WLAN Dropdown
+- **Target Files**:
+  - `development/server_core/server_bridge.py`
+  - `development/server_ui/index.html` (lines 873-889)
+  - `development/server_ui/app.js` (lines 1384-1425)
+  - `public_repo/development/server_core/server_bridge.py`
+  - `public_repo/development/server_ui/index.html`
+  - `public_repo/development/server_ui/app.js`
+- **Surgical Implementation**:
+  1. In `server_bridge.py`, implement `get_network_adapters(self)`:
+     - Enumerate all active host IPv4 network interfaces (Wi-Fi, Ethernet, LAN) using Python socket / net routines.
+     - Return structured list: `[{"name": "Auto-Detect Primary Adapter", "ip": "auto"}, {"name": "Wi-Fi (192.168.1.X)", "ip": "192.168.1.X"}, ...]`.
+  2. In `app.js` `openServerSettingsModal()`, call `pywebview.api.get_network_adapters()` when opening the Network tab and dynamically render the option pills inside `#wlan-dropdown-menu`.
+  3. Ensure `#wlan-dropdown-btn` click event stops propagation, properly toggles the menu, and stays above modal overflow with `z-index: 1000`.
+
+#### 3.7 Global Interactive Input & Search Box Glow Outline Animations
+- **Target Files**:
+  - `development/server_ui/app.css`
+  - `public_repo/development/server_ui/app.css`
+- **Surgical Implementation**:
+  1. In `app.css`, implement the ecosystem standard `.input-modern` and global input focus animations across all text, search, number, password, and textarea fields:
+     ```css
+     .input-modern, input[type="text"], input[type="search"], input[type="number"], input[type="password"], textarea {
+       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+       outline: none !important;
+     }
+     .input-modern:focus, input[type="text"]:focus, input[type="search"]:focus, input[type="number"]:focus, input[type="password"]:focus, textarea:focus {
+       border-color: rgba(34, 211, 238, 0.7) !important;
+       box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.5), 0 0 16px rgba(6, 182, 212, 0.25) !important;
+       transform: translateY(-1px);
+     }
+     ```
+  2. In Light Mode, apply clean sky-blue glow (`rgba(14, 165, 233, 0.4)`) with high-contrast text and borders.
+
+#### 3.8 Smooth Open & Close Scale/Opacity Transitions for Dropdown Lists
+- **Target Files**:
+  - `development/server_ui/app.css`
+  - `development/server_ui/app.js`
+  - `public_repo/development/server_ui/app.css`
+  - `public_repo/development/server_ui/app.js`
+- **Surgical Implementation**:
+  1. In `app.css`, ensure `.custom-dropdown-menu` has a physics-based entrance and exit:
+     ```css
+     .custom-dropdown-menu {
+       opacity: 0;
+       visibility: hidden;
+       transform: translateY(-8px) scale(0.96);
+       transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+       pointer-events: none;
+     }
+     .custom-dropdown-menu.active {
+       opacity: 1;
+       visibility: visible;
+       transform: translateY(0) scale(1);
+       pointer-events: auto;
+     }
+     .custom-dropdown-menu.closing {
+       opacity: 0;
+       transform: translateY(-6px) scale(0.97);
+       pointer-events: none;
+     }
+     ```
+  2. In `app.js`, when closing dropdowns, apply the `.closing` class for 180ms before removing `.active`, ensuring smooth animated dismissals rather than sudden vanishing cuts.
+
+#### 3.9 Fixed-Width Stable Header Layout on Hosting Mode Switch (Zero Layout Jumps & Zero Header Clipping)
+- **Target Files**:
+  - `development/server_ui/index.html` (lines 58–85)
+  - `development/server_ui/app.js` (lines 440–465)
+  - `development/server_core/server_bridge.py` (lines 485–515)
+  - `public_repo/development/server_ui/index.html`
+  - `public_repo/development/server_ui/app.js`
+  - `public_repo/development/server_core/server_bridge.py`
+- **Surgical Implementation**:
+  1. **Strict Responsive Width Constraints**:
+     In `index.html` and `server.css`, prevent the public IP button and header action cluster from expanding and pushing `#server-cloud-profile` (`Ahmed Alaa (Sir Alaa)`) against the window controls and cutting it off:
+     - On the IP button container: enforce `min-w-[130px] max-w-[185px] shrink-0 overflow-hidden`.
+     - On `#top-public-ip-label`: enforce `max-w-[140px] truncate font-mono text-xs`.
+     - On `#server-cloud-profile`: enforce `min-w-[150px] max-w-[175px] shrink-0 overflow-hidden` with `#server-cloud-name` having `max-w-[105px] truncate`.
+     - On `#top-status-badge`: enforce `min-w-[150px] max-w-[165px] shrink-0`.
+     - On the header itself (`<header>`): ensure `overflow-hidden px-5` so elements stay mathematically bounded within the pywebview window at standard 1200px width.
+  2. **Dual-Host Mode String Formatting in `server_bridge.py`**:
+     In `server_bridge.py` line 506, format the Dual Host display string concisely:
+     `public_ip = f"{custom_domain} (+W)"` (or `f"{custom_domain}"` with `[+LAN]` badge), storing the complete multi-address text in the tooltip (`title`) and clipboard payload so the label never violently inflates the container.
+  3. Enforce `shrink-0` across `#top-status-badge`, the IP pill button, `Direct Join`, and `#server-cloud-profile` so buttons NEVER resize awkwardly, squash each other, or get pushed out of the viewport.
+
+---
+
+### PILLAR 4: SIR Installer Pro — Deduplication Guarantee, Speedometer & Bilingual Wizard
+*(Note: Task 4.2 [Full Bilingual Arabic/English Localization for Installer EULA] is 100% verified and certified complete in production).*
+
+#### 4.1 Installer Pro File Overwrite & Deduplication Guarantee
+- **Target Files**:
+  - `development/installer_source/SIR_Installer_Modern.py`
+  - `development/installer_core/install_engine.py`
+- **Surgical Implementation**:
+  1. Unconditionally overwrite and replace existing destination files during re-installation or update runs.
+  2. Prune obsolete duplicate mod versions (e.g. older jar variants) in `mods/` so only the latest compatible jar remains.
+  3. Clean temporary extraction staging caches upon installation completion.
+
+---
+
+### PILLAR 5: Next.js 16 Production Web Platform — Hub Unification, Benchmarks & Zero Dead Weight
+*(Note: Task 5.1 [Skins Studio & Capes Studio Unification into Customization Hub] is 100% verified and certified complete in production).*
+
+#### 5.2 Professional Clean Profile Names in Benchmarks (Zero Overpowered Hype)
+- **Target Files**:
+  - `website-next/app/benchmarks/page.tsx` (lines 474–481)
+  - `website-next/components/CyberSelect.tsx`
+- **Surgical Implementation**:
+  1. Scrub all exaggerated FPS claims, "Ultra" marketing tags, and overpowered names. Standardize strictly on clean, professional Genesis version designations:
+     - `extreme` -> `SIR 26.2 — Visuals` (Badge: `Visuals`)
+     - `balanced` -> `SIR 26.2 — Balanced` (Badge: `Balanced`)
+     - `comp` -> `SIR 26.2 — Performance` (Badge: `Performance`)
+     - `legacy` -> `SIR 1.8.9 — Performance` (Badge: `Legacy`)
+     - `vanilla_modern` -> `Vanilla 26.2 Baseline` (Badge: `Vanilla`)
+     - `all` -> `All Profiles (Side-by-Side Comparison)` (Badge: `Overview`)
+  2. In Arabic:
+     - `SIR 26.2 — بروفايل المرئيات` (Visuals)
+     - `SIR 26.2 — بروفايل المتوازن` (Balanced)
+     - `SIR 26.2 — بروفايل الأداء` (Performance)
+     - `SIR 1.8.9 — بروفايل الكلاسيكي` (Legacy)
+     - `ماين كرافت فانيلا 26.2 القياسي` (Vanilla)
+     - `كافة البروفايلات (مقارنة شاملة)` (Overview)
+  3. Fix z-index stacking on CyberSelect dropdowns so the "Target Game / Modpack Profile" menu never renders behind the "Target Display Resolution" menu.
+
+#### 5.3 Mod Cards UI/UX Light/Dark Theme Bleed Elimination & Verified Count
+- **Target Files**:
+  - `website-next/app/mods/page.tsx` (lines 335–455, 540–555)
+- **Surgical Implementation**:
+  1. Eliminate broken dynamic Tailwind interpolation (`dark:${s.gradient}` and `dark:${s.border}`) which fails Tailwind JIT compilation and causes cards to render as white cards with white text in Dark Mode.
+  2. Standardize Official SIR Custom Engine Suite cards with static, compiled responsive classes:
+     - **Card Container**: `bg-white dark:bg-[#0b101b] border border-slate-200 dark:border-slate-800 shadow-md dark:shadow-xl text-slate-900 dark:text-white`.
+     - **Card Titles & Headings**: `text-slate-900 dark:text-white font-black`.
+     - **Subtitle & In-House Labels**: `text-slate-500 dark:text-slate-400 font-mono`.
+     - **Description**: `text-slate-600 dark:text-slate-300`.
+     - **Features Separators & Items**: `border-slate-100 dark:border-slate-800 text-slate-700 dark:text-slate-300`.
+     - **Icon Containers**: `bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800`.
+     - **Pill Badges**: `bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-500/30`.
+  3. In line 548, permanently remove the `(+30)` from the button label:
+     `<span>{isAr ? "عرض المزيد من المودات" : "View More Mods"}</span>`.
+  4. In line 551, display the real verified count dynamically:
+     `{isAr ? `عرض ${Math.min(visibleLocalCount, filteredLocalMods.length)} من أصل ${filteredLocalMods.length} مود معتمد` : `Showing ${Math.min(visibleLocalCount, filteredLocalMods.length)} of ${filteredLocalMods.length} verified mods`}` (ensuring exactly 216 verified mods is shown).
+
+#### 5.4 Live Servers Radar Official Favicon API & Missing Icon Resolution
+- **Target Files**:
+  - `website-next/app/servers/page.tsx` (lines 80–275, 379–406, 760–782)
+  - `website-next/public/servers/`
+  - `development/launcher_ui/js/servers.js` (lines 565–595)
+- **Surgical Implementation**:
+  1. In `website-next/app/servers/page.tsx` line 774, permanently eliminate the `via-white` class from Dark Mode. It creates a blinding pure-white horizontal stripe right across the center of featured server cards in Dark Mode:
+     `bg-gradient-to-b from-cyan-50/70 via-slate-50 to-white dark:from-[#121c2d] dark:via-[#0c121e] dark:to-[#080d15] border-cyan-400 dark:border-cyan-500/40 shadow-lg`.
+  2. In `website-next/app/servers/page.tsx` line 767, prioritize `server.icon` FIRST so official local assets are NEVER overridden by remote fallback APIs that return generic grass blocks:
+     ```typescript
+     const iconUrl = (server.icon && !server.icon.includes('placeholder')) ? server.icon : (status?.iconUrl || `https://api.mcstatus.io/v2/icon/${server.ip}`);
+     ```
+  3. For Hypixel, Minemen, Pika, Jartex, BlockMC, and CubeCraft, guarantee the local official icons (`/servers/*.png`) are displayed in both Light and Dark modes.
+  4. In `development/launcher_ui/js/servers.js`, ensure `primaryIcon` uses `assets/servers/${srv.id}.png` if present, falling back to `https://api.mcstatus.io/v2/icon/${srv.host}` and then vector monogram.
+
+#### 5.5 100x Modern Overhaul of Curated World Seeds Explorer
+- **Target Files**:
+  - `website-next/app/seeds/page.tsx`
+- **Surgical Implementation**:
+  1. Upgrade the entire Seeds page to Linear/Vercel top-tier standards with full Dual Theme (Light & Dark) support.
+  2. Modernize seed entries with:
+     - 26.2 and 1.8.9 version tags.
+     - Structure badges: `Ancient City`, `Trial Chambers`, `Cherry Grove`, `Woodland Mansion`, `Desert Temple`, `Ocean Monument`.
+     - Exact spawn coordinates with 1-click clipboard copy + tactile checkmark.
+     - 1-Click `/tp` command copy for instant in-game teleportation.
+  3. Redesign the Procedural Real-Time Seed Generator box with animated gradient borders, fast rolling animation, and seed verification statistics.
+  4. Ensure all cards adapt cleanly between crisp Light Mode (`bg-white border-slate-200 shadow-sm`) and sleek Dark Mode (`bg-[#0c121e] border-slate-800`).
+
+#### 5.6 Verified Competitive Leaderboards Google Cloud Profile Integration
+- **Target Files**:
+  - `website-next/app/leaderboards/page.tsx` (lines 235–245)
+  - `website-next/lib/leaderboard.ts` (lines 40–80)
+  - `website-next/app/trainer/page.tsx`
+- **Surgical Implementation**:
+  1. In `leaderboard.ts` `recordBenchmarkScore()`, accept optional `userPhotoUrl?: string | null` and store it in `avatarUrl`.
+  2. In `app/trainer/page.tsx`, when the user completes a benchmark run, retrieve `user?.photoURL` from `useEcosystem()` and pass it to `recordBenchmarkScore()`.
+  3. In `app/leaderboards/page.tsx`, when displaying records:
+     - If the record belongs to the signed-in user or has a valid `photoURL`, render their authentic Google Cloud profile picture with a rounded-full / rounded-2xl avatar ring.
+     - Provide graceful fallback to `https://mc-heads.net/avatar/{username}/64` or Steve.
+
+#### 5.7 Multiplayer Radar Direct Auto-Connect & Hypixel Quick-Play Pipeline
+- **Target Files**:
+  - `development/launcher_ui/js/servers.js` (lines 821–830)
+  - `development/launcher_ui/js/launch.js` (lines 75–100, 168–175)
+  - `development/launcher_core/bridge.py` (lines 202–215)
+  - `development/launcher_core/instance_service.py` (lines 880–915)
+  - `public_repo/development/launcher_ui/js/servers.js`
+  - `public_repo/development/launcher_ui/js/launch.js`
+  - `public_repo/development/launcher_core/bridge.py`
+  - `public_repo/development/launcher_core/instance_service.py`
+- **Surgical Implementation**:
+  1. In `servers.js` `joinServer(ip)`:
+     - Parse server host and optional port (default 25565).
+     - Switch active tab to `launchpad`.
+     - Invoke `launchGame(STATE.selectedInstanceId, host, port)`.
+  2. In `launch.js` `launchGame(instId = null, serverIp = null, serverPort = null)`:
+     - Forward `serverIp` and `serverPort` to `window.pywebview.api.launch_game(targetInst, serverIp, serverPort)`.
+  3. In `bridge.py` `launch_game(self, inst_id=None, server_ip=None, server_port=None)`:
+     - Forward `server_ip` and `server_port` to `self.instances.launch_instance(...)`.
+  4. In `instance_service.py` `launch_instance(self, inst_id, account, ..., server_ip=None, server_port=None)`:
+     - Forward `server_ip` and `server_port` directly to `NativeMinecraftRunner.build_game_args(..., server_ip=server_ip, server_port=server_port)`.
+  5. Result: Clicking "Connect" on any server card in the Multiplayer Radar (Hypixel, Minemen, Pika, etc.) boots Minecraft directly into that multiplayer server via `--server` / `--quickPlayMultiplayer` instead of opening the game to the idle main menu.
+
+#### 5.8 High-Performance Desktop Navigation Bar Links & Ergonomic Header
+- **Target Files**:
+  - `website-next/components/Navbar.tsx` (lines 170–210)
+  - `website-next/components/navbar/NavLinks.tsx`
+- **Surgical Implementation**:
+  1. In `website-next/components/Navbar.tsx`, render the imported `NavLinks` component centrally on desktop displays:
+     ```tsx
+     <div className="hidden lg:flex items-center gap-1 xl:gap-2">
+       <NavLinks items={navLinks} />
+     </div>
+     ```
+  2. Ensure each desktop navigation link has smooth spring hover effects (`hover:bg-slate-100 dark:hover:bg-slate-800/60`), active pill indicators (`bg-cyan-50 dark:bg-cyan-500/10 text-cyan-700 dark:text-[#00e5ff] font-bold`), and eliminates the empty desert in the middle of the navbar on wide screens.
+  3. Keep the mobile menu hamburger button for mobile/tablet screens while allowing desktop users to navigate all pages in 1 click without opening the sidemenu.
+
+---
+
+### PILLAR 6: Comprehensive Bilingual Documentation & Legal Suite (All 8 Core Documents)
+- Root: `D:\Projects\SIR ModPack\`
+- Public Repo: `public_repo/`
+- Website: `website-next/`
+
+#### 6.1 Strict Legal & Documentation Invariants
+1. **100% Arabic Language Parity**: Every single document must have an authentic, highly professional Arabic translation (`العربية`) alongside English (`English`).
+2. **Official Platform Identity**: Strictly **"100% Free & Independent Platform"** operating under the **Free Independent Software Agreement**. Strictly ZERO occurrences of "open source", "FOSS", "GPL", "MIT", or "Apache".
+3. **Official Legal & Governance Contact**: Strictly **`a7medorabe7@gmail.com`**. Scrub every occurrence of `support@sir-modpack.com`.
+4. **Release Version**: Strictly **`v1.0.0` (Production Genesis)**.
+
+#### 6.2 The 8 Core Documents Matrix
+1. **`PRIVACY.md`**: Comprehensive privacy policy covering local data storage, Google Cloud authentication, Firebase encrypted sync, zero telemetry selling, user data rights, and GDPR/CCPA compliance.
+2. **`TERMS.md`**: Master Terms of Service defining platform independence, acceptable use, community guidelines, account security, and disclaimers.
+3. **`COOKIES.md`**: Cookie and local storage policy detailing local caching, theme tokens, session storage, and zero third-party tracker cookies.
+4. **`EULA.md`**: End User License Agreement granting free personal usage rights under the Free Independent Software Agreement, detailing warranty disclaimers and limitation of liability.
+5. **`AGREEMENTS.md`**: Master Community Agreements detailing server hosting guidelines, fair play, mod redistribution terms, and content creator usage rights.
+6. **`PROJECT_ARCHITECTURE_EXPLANATION.md`**: In-depth technical architecture blueprint detailing the multi-tier desktop architecture, Python IPC bridges, EdgeChromium rendering, Firebase Cloud persistence, shader pipelines, and security model.
+7. **`CHANGELOG.md`**: Full release changelog detailing the journey to v1.0.0 Genesis, highlighting all 36 engineering advancements, performance optimizations, and bug fixes.
+8. **`README.md`**: World-class visual presentation of the SIR Ecosystem, installation guides, desktop app feature breakdown, server orchestration guide, web portal links, and support contacts.
+
+---
+
+### PILLAR 7: Production Engineering Standards, Zero Fake Data & Test Suite (360+ Tests)
+
+#### 7.1 Production Quality Standards
+1. **Real Data Persistence**: Zero hardcoded mock arrays, fake metrics, or unpersisted state.
+2. **Defensive Error Handling**: Wrap every async bridge and IPC call in defensive try/catch blocks with user-facing toasts.
+3. **High-Signal Performance**: Zero CLS, zero memory leaks, debounced searches, and clean console logs.
+
+#### 7.2 Full Automated Unit Test Suite Validation (360+ Tests)
+- **Target Suite**: `tests/test_*.py`
+- **Verification Command**:
+  ```powershell
+  python -m unittest discover -s tests -p "test_*.py"
+  ```
+- Ensure all 360+ tests PASS with 0 failures and 0 errors, validating tray callbacks, window lifecycle, cloud sync, RAM presets, and settings persistence.
+
+---
+
+### PILLAR 8: Sequential Execution, Token Quota Resilience & Seamless "Continue" Protocol
+
+#### 8.1 Strictly Prohibit `/teamwork-preview` & Subagent Spawning
+- **STRICTLY PROHIBITED**: Do NOT run `/teamwork-preview` and do NOT launch background subagents.
+- **Why**: Multi-agent teamwork previews and concurrent subagents consume massive amounts of tokens, cause duplicate file reads, and rapidly trigger model usage quota limits.
+- **Single-Agent Discipline**: Execute all 8 pillars directly, sequentially, and surgically as a single, focused lead engineer in the main thread.
+
+#### 8.2 Inevitable Usage Limit Awareness & Halting Protocol
+- **Expect Quota/Usage Interruption**: Due to the comprehensive scope of this v1.0.0 Genesis mission, your token or usage quota may be reached during execution. When this happens, your session will halt mid-task.
+- **User "continue" Workflow**: The user (Ahmed) will simply type **"continue"** when the session pauses or when quota resets.
+- **Zero-Skip & Zero-Hallucination Mandate**:
+  * When told "continue", you MUST NEVER assume or hallucinate that unfinished tasks were already completed.
+  * You MUST NEVER skip any remaining tasks or jump straight to building/deploying.
+  * You MUST NOT start over from Phase 1 or redo already completed work.
+  * You must resume execution seamlessly as if nothing happened, continuing with the exact next micro-step in the sequence.
+
+---
+
+## 3. LIVING STATE MANAGEMENT (`tasks.md` & `continuation_checkpoint.md`)
+
+### 3.1 Root `tasks.md` Protocol
+The executing agent MUST immediately generate and maintain `tasks.md` in the project root (`D:\Projects\SIR ModPack\tasks.md`):
+- Organize tasks into structured, checkable phases:
+  * `## Phase 1: Clean Slate Initialization & Sequential Execution Setup (No Subagents)`
+  * `## Phase 2: SIR Launcher Stability, System Tray & UI/UX Perfection`
+  * `## Phase 3: Google Cloud Identity, Authentic OAuth Flow & Dynamic UI Sync`
+  * `## Phase 4: SIR Server Manager Slim Rail, Layout Stability & Addons Store`
+  * `## Phase 5: SIR Installer Pro Deduplication & Bilingual Wizard`
+  * `## Phase 6: Next.js 16 Production Web Platform & Hub Unification`
+  * `## Phase 7: Bilingual Documentation & Legal Markdown Suite (All 8 Files + Arabic)`
+  * `## Phase 8: Comprehensive Unit Test Suite Validation (360+ Tests)`
+  * `## Phase 9: Web Production Build (`npm run build`) & Firebase Live Deploy`
+  * `## Phase 10: PyInstaller Desktop Applications Compilation`
+  * `## Phase 11: Clean Slate Commit Reset & Dual-Repo Push (Public & Private)`
+- **Atomic Progress Checkmarking**: Check off items (`- [x]`) immediately after modifying and verifying each individual file—NEVER batch checkmarks at the end.
+
+### 3.2 Living Checkpoint Protocol (`continuation_checkpoint.md`)
+Before ending any turn, or whenever approaching tool/context/usage limits, continuously write or update `continuation_checkpoint.md` in the project root:
+- Document:
+  1. Current Phase number and Pillar title.
+  2. The exact file path and function that was JUST completed.
+  3. The exact **NEXT ACTION** — the precise file, line, and code change to execute immediately upon resuming.
+- **Resuming on "continue"**: When the user says "continue", your **FIRST AND IMMEDIATE ACTION** is to view `continuation_checkpoint.md` and `tasks.md`, find the next uncompleted task, and immediately execute it with zero delay, zero repeated questions, and zero skipped steps.
+
+---
+
+## 4. MASTER 8-STEP VERIFICATION, COMPILATION, DEPLOYMENT & DUAL-REPO HIGHWAY
+
+Execute the following 8-step highway in strict chronological order:
+
+### Step 1: Automated Unit Test Suite Execution
+- **Command**:
+  ```powershell
+  python -m unittest discover -s tests -p "test_*.py"
+  ```
+- **Acceptance Criteria**: 360+ tests passing, 0 failures, 0 errors.
+
+### Step 2: Ecosystem Health Doctor Audit
+- **Command**:
+  ```powershell
+  python development/doctor.py --all --verbose
+  ```
+- **Acceptance Criteria**: 100% HEALTHY across Binaries, Shaders, Resource Packs, Mods Catalog, Instance Profiles, and Distributables.
+
+### Step 3: Bilingual Documentation & Legal Parity Audit
+- Verify all 8 core markdown documents (`PRIVACY.md`, `TERMS.md`, `COOKIES.md`, `EULA.md`, `AGREEMENTS.md`, `PROJECT_ARCHITECTURE_EXPLANATION.md`, `CHANGELOG.md`, `README.md`) have complete English and Arabic parity and are synchronized across root, `public_repo/`, and `website-next/`.
+- Verify governance email is strictly `a7medorabe7@gmail.com`.
+- Verify zero open-source / FOSS / GPL / MIT claims.
+
+### Step 4: Next.js Web Platform Production Build
+- **Commands**:
+  ```powershell
+  cd "D:\Projects\SIR ModPack\website-next"
+  npm run build
+  ```
+- **Acceptance Criteria**: Next.js 16 build succeeds with zero type errors and all static routes prerendered.
+
+### Step 5: Firebase Hosting & Database Live Deployment
+- **Commands**:
+  ```powershell
+  cd "D:\Projects\SIR ModPack\website-next"
+  firebase deploy --only hosting,database
+  ```
+- **Acceptance Criteria**: Successfully deployed to live URL: `https://sir-modpack.web.app`.
+
+### Step 6: PyInstaller Desktop Binaries Compilation & Public Repo Sync
+- **Commands**:
+  ```powershell
+  cd "D:\Projects\SIR ModPack"
+  pyinstaller --clean --noconfirm "SIR Installer.spec"
+  pyinstaller --clean --noconfirm "SIR Launcher.spec"
+  pyinstaller --clean --noconfirm "SIR Server Manager.spec"
+  Copy-Item "dist\SIR Launcher.exe" "public_repo\" -Force
+  Copy-Item "dist\SIR Server Manager.exe" "public_repo\" -Force
+  Copy-Item "dist\SIR Installer.exe" "public_repo\" -Force
+  ```
+- **Acceptance Criteria**: All 3 executables compiled into `dist/`, synchronized to `public_repo/`, and verified for zero-defect launch.
+
+### Step 7: Dual-Repo Clean Commit History Reset & Push
+- **Public Repository (`public_repo/` -> Desktop Suite, Engines, Shaders, Tests, Docs)**:
+  ```powershell
+  cd "D:\Projects\SIR ModPack\public_repo"
+  git checkout --orphan temp_genesis
+  git add -A
+  git commit -m "feat(genesis): v1.0.0 Genesis Production Release — The Ultimate Independent Minecraft Ecosystem"
+  git branch -D main
+  git branch -m main
+  git push -f origin main
+  ```
+- **Private Repository (`website-next/` -> Web Platform, Firebase Configs, Assets)**:
+  ```powershell
+  cd "D:\Projects\SIR ModPack\website-next"
+  git checkout --orphan temp_genesis
+  git add -A
+  git commit -m "feat(genesis): v1.0.0 Genesis Production Web Platform — Next.js 16 & Firebase Hosting"
+  git branch -D main
+  git branch -m main
+  git push -f origin main
+  ```
+
+### Step 8: Final Certification & Ready-to-Test Presentation
+- Present the final verification summary to the user with clickable file links, live deployment URLs, executable test paths, and a clean bill of ecosystem health.
+
+---
+
+## 5. FINAL EXECUTION MANDATE
+
+You are fully equipped with the definitive Production Genesis blueprint.
+1. Read this directive in its entirety.
+2. Initialize `D:\Projects\SIR ModPack\tasks.md`.
+3. Execute sequentially as a single agent (DO NOT launch subagents or run `/teamwork-preview`).
+4. Execute all 8 Unified Engineering Pillars.
+5. Continuously maintain `tasks.md` and `continuation_checkpoint.md` so interruptions can be resumed instantly with "continue".
+6. Run the 8-Step Verification, Build, Deployment & Clean Slate Push Highway.
+7. Make everything 1000x better, rock-solid, and ready to test and share!

@@ -1,0 +1,8 @@
+{
+  "hud_batching": true,
+  "font_rendering": true,
+  "fast_text_lookup": true,
+  "particle_batching": true,
+  "map_rendering": true,
+  "fast_buffer_upload": true
+}
