@@ -1,118 +1,25 @@
-# SIR ModPack - Master User & Distribution Agreements
-### *Version 1.0.1 Official Release • Community Governance & Security Framework (October 2026)*
+# Master Legal Agreement & Compliance Shield
+**Product / Workspace**: SIR ModPack Ecosystem (SIR ModPack)  
+**Operator**: SIR Gaming Labs — Sir Ahmed (Ahmed Alaa)  
+**Document Code**: MLA-SIR_MODPACK_ECOSYSTEM-2026  
+**Last Revised**: October 2026  
 
 ---
 
-## 1. Scope & Framework
-This document outlines the **Master User Agreements, Community Standards, Fair Play Guidelines, and Distribution Protocols** governing the entire SIR Minecraft Ecosystem operated by **SIR ModPack Gaming Technologies & Digital Media** (Cairo, Egypt).
+## Comprehensive Legal Index
+This Master Agreement consolidates all binding legal governance frameworks for **SIR ModPack Ecosystem**:
+
+1. **Privacy Policy**: [PRIVACY_POLICY.md](./PRIVACY_POLICY.md)
+2. **Terms of Service**: [TERMS_OF_SERVICE.md](./TERMS_OF_SERVICE.md)
+3. **Cookie & Local Storage Policy**: [COOKIE_POLICY.md](./COOKIE_POLICY.md)
+4. **Refund & Cancellation Policy**: [REFUND_POLICY.md](./REFUND_POLICY.md)
 
 ---
 
-## 2. Multi-Profile Gameplay & Competitive Integrity Agreement
-1. **Multiplayer Server Compatibility & Fair Play Protocol:**
-   - The SIR Ecosystem focuses strictly on client-side rendering optimization (Sodium, Iris, ModernFix, FerriteCore, OptiFine HD U M5), memory compaction, and local input responsiveness.
-   - The software does not modify server-side movement packets, reach, or server-side hit detection mechanics. Experimental modules (e.g. HAVOC) are intended exclusively for offline practice and private development environments.
-   - Users agree to adhere to specific multiplayer server rules (including Hypixel, Minemen Club, GommeHD, and Bedwars practice servers). Users are solely responsible for ensuring their active client mods adhere to each server's specific modification rules.
-2. **Offline & Local Sandbox Identity Management:**
-   - Offline UUIDv5 generation is provided strictly for private local LAN play, custom sandbox development, and educational environments.
-   - Users acknowledge that accessing official Mojang authentication services requires an official, purchased Minecraft account. The ecosystem does not facilitate copyright infringement or bypass official account verification.
-
----
-
-## 3. Software Distribution & Binary Integrity Agreement
-1. **Official Distribution Channels:**
-   - Binaries and releases are officially published exclusively via:
-     - Official Website: [https://sir-modpack.web.app](https://sir-modpack.web.app)
-     - Developer Repository: [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
-     - Developer Linktree: [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-2. **Autonomous Auto-Healing & Payloads:**
-   - The SIR Installer and Launcher include built-in CRC32 / SHA-256 integrity validators.
-   - If corrupted files or missing native DLLs are detected, the ecosystem automatically pulls clean replacement assets over TLS 1.3 encryption.
-
----
-
-## 4. Privacy, Security & Data Sovereignty Agreement
-- **Zero-Telemetry Protocol:** No behavioral telemetry, location data, or keystroke tracking is transmitted.
-- **Hardware Telemetry Protection:** Hardware monitoring (`GlobalMemoryStatusEx`, `GetSystemTimes`) runs strictly in local process memory to manage JVM memory compaction and prevent lag spikes.
-- **Safe Storage Protocol:** All settings and accounts are safely stored in `%APPDATA%\SIR ModPack\` with atomic staging to eliminate corrupted files.
-
----
-
-## 5. Supporter Monetization & Fair Play Agreement
-- **100% Free Core Gameplay:** Base Minecraft performance, 240+ mods, 2048 shaders, and desktop launcher are free forever without paywalls or forced advertisements.
-- **Optional Supporter Contributions:** Supporter tiers (Pro 79 EGP, Elite 149 EGP, Founder 699 EGP) power high-compute cloud AI diagnostics, dedicated server orchestrator, and cloud backups.
-- **Local Egyptian Payment Rails:** Payments are supported via InstaPay (`a7medorabe7@instapay`), Vodafone Cash (`01027179040`), local cards, and international Priority Access.
-- **Statutory 14-Day Refund Guarantee:** Full refund requests within 14 days of purchase are honored via [`/refund`](https://sir-modpack.web.app/refund).
-
----
-
-## 6. Community, Developer Relations & Operating Entity
-- **Operating Legal Entity:** **SIR ModPack Gaming Technologies & Digital Media**
-- **Headquarters & Jurisdiction:** Cairo, Arab Republic of Egypt
-- **Legal & Governance Official Email:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **Official Support Phone / Hotline:** [+20 102 717 9040](tel:+201027179040)
-- **Suggestions & Issues:** Feature requests, performance benchmarks, and bug reports may be submitted through the in-app Bug Reporter & Community Feedback portal or GitHub issues.
-- **Support & Governance:** All support inquiries and feedback are handled in-app via the Bug Reporter in SIR Launcher and SIR Server Manager.
-- **Dedicated Application Suite:** 5 distinct application assets (`SIR_Icon.ico`, `SIR_Launcher_Icon.ico`, `SIR_Server_Manager_Icon.ico`, `SIR_Web_Portal_Icon.ico`, `SIR_Stop_Portal_Icon.ico`) ensure clear visual identification and non-interfering sandboxing.
-- **Creator Rights:** All mod developers and shader artists receive full credit and attribution in [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
-
----
-
-# وثيقة ميثاق المجتمع واتفاقيات التوزيع لمنظومة SIR ModPack
-### *الإصدار v1.0.1 الرسمي • منظومة برمجية متطورة ومستقلة • حوكمة مجتمعية وأمان فائق (أكتوبر 2026)*
-
----
-
-## 1. النطاق وإطار العمل
-تحدد هذه الوثيقة **ميثاق الاستخدام، ومعايير اللعب النظيف، وسياسات التوزيع الرقمي** الحاكمة لكافة أركان وتطبيقات منظومة SIR Minecraft المشغلة بواسطة **شركة SIR ModPack Gaming Technologies & Digital Media** (القاهرة، مصر).
-
----
-
-## 2. اتفاقية اللعب النظيف والتنافسية
-1. **التوافق مع خوادم اللعب الجماعي ومعايير اللعب النظيف:**
-   - تركز منظومة SIR حصرياً على تحسين الرندر من جهة العميل (Client-Side Rendering) عبر محركات Sodium و Iris و ModernFix و FerriteCore، وإدارة الذاكرة واستجابة المدخلات.
-   - لا تعدل المنظومة أي حزم حركة أو مسافات ضرب على جهة السيرفر. وتعتبر الوحدات التجريبية مخصصة فقط للتدريب الشخصي والتطوير المحلي.
-   - يلتزم المستخدم باتباع قواعد كل سيرفر يتصل به بشكل فردي ويتحمل مسؤوليته الكاملة.
-2. **إدارة الهوية المحلية وبروفايلات الأوفلاين:**
-   - توفير المعرفات المحلية (UUIDv5) مخصص فقط للعب عبر الشبكة المحلية (LAN) والبيئات التعليمية والتطوير.
-   - يقر المستخدم بأن الوصول إلى السيرفرات الرسمية يتطلب حساب ماينكرافت أصلياً معتمداً من Mojang.
-
----
-
-## 3. اتفاقية التوزيع وسلامة الحزم البرمجية
-1. **قنوات التوزيع الرسمية:**
-   - تُنشر الإصدارات والملفات التنفيذية حصرياً عبر:
-     - الموقع الرسمي: [https://sir-modpack.web.app](https://sir-modpack.web.app)
-     - مستودع المطور: [https://github.com/sirahmed8/SIR-ModPack](https://github.com/sirahmed8/SIR-ModPack)
-     - رابط المطور: [https://linktr.ee/sir.ahmed](https://linktr.ee/sir.ahmed)
-2. **الفحص الذاتي والاستشفاء التلقائي:**
-   - يتضمن المثبت واللانشر فاحصاً مدمجاً لسلامة الملفات بتقنيات CRC32 / SHA-256، ويتم جلب أي ملف تالف تلقائياً عبر اتصال مشفر TLS 1.3.
-
----
-
-## 4. اتفاقية الخصوصية والأمان وسيادة البيانات
-- **بروتوكول انعدام التتبع:** لا يتم إرسال أي بيانات سلوكية أو موقع جغرافي أو ضربات مفاتيح.
-- **حماية مراقبة العتاد:** تعمل مراقبة العتاد (`GlobalMemoryStatusEx`, `GetSystemTimes`) محلياً فقط في ذاكرة المشغل لإدارة تنظيف ذاكرة JVM ومنع الهبوط المفاجئ في الإطارات.
-- **بروتوكول التخزين الآمن:** تُحفظ كافة الإعدادات والحسابات بأمان في مسار `%APPDATA%\SIR ModPack\` بنظام الحفظ الذري لمنع تلف الملفات.
-
----
-
-## 5. ميثاق اشتراكات الداعمين والشفافية المالية
-- **مجانية اللعبة الأساسية 100%:** اللعبة بكافة موداتها (240+ مود) وشيدرزها ومشغلها مجانية بالكامل مدى الحياة دون قيود.
-- **باقات الداعمين:** باقات الدعم (79 ج.م، 149 ج.م، 699 ج.م) مخصصة فقط لتمويل البنية السحابية الفائقة للمساعد الذكي وإدارة الخوادم عن بعد.
-- **بوابات الدفع الوطنية:** الدفع متاح عبر InstaPay وفودافون كاش والبطاقات البنكية المصرية وقائمة الأولوية الدولية.
-- **ضمان الاسترجاع القانوني (14 يوماً):** نلتزم برد كامل المبالغ عند الطلب خلال 14 يوماً عبر [`/refund`](https://sir-modpack.web.app/refund).
-
----
-
-## 6. الكيان المشغل وعلاقات المجتمع والمطورين
-- **الكيان القانوني المشغل:** **SIR ModPack Gaming Technologies & Digital Media**
-- **المقر القضائي والإداري:** القاهرة، جمهورية مصر العربية
-- **البريد الإلكتروني الرسمي للحوكمة والشؤون القانونية:** [a7medorabe7@gmail.com](mailto:a7medorabe7@gmail.com)
-- **الهاتف والخط الساخن الرسمي:** [+20 102 717 9040](tel:+201027179040)
-- **المقترحات والمشكلات:** يتم استقبال تقارير الأعطال والملاحظات مباشرة عبر أداة الإبلاغ المدمجة في اللانشر (Bug Reporter).
-- **حقوق المبدعين:** يحظى كافة مطوري المودات وفناني الشيدرز بالتقدير والنسب الكامل في [PROJECT_ARCHITECTURE_EXPLANATION.md](PROJECT_ARCHITECTURE_EXPLANATION.md).
-
----
-*© 2026 شركة SIR ModPack Gaming Technologies & Digital Media. تطوير وإشراف SIR Ahmed.*
-
+## Core Regulatory Guarantees Summary
+- **Zero AI Training on User Data**: Guaranteed under Section 3 of Privacy Policy.
+- **Liability Cap**: Strictly capped at the greater of $100 USD or 12-month fees paid under Section 5 of Terms of Service.
+- **Warranty Disclaimer**: Software provided strictly "AS IS" under Section 4 of Terms of Service.
+- **1-Click Subscription Cancellation**: Enforced under Section 3 of Terms and Refund Policy.
+- **Pre-Consent Cookie Blocking**: Equal-prominence "Reject All" button enforced under Cookie Policy.
+- **Data Sovereignty**: Full self-serve GDPR Article 17 account and data deletion support.
