@@ -1,0 +1,20 @@
+{
+  "project": "SIR ModPack",
+  "title": "SIR ModPack 144+ FPS Gaming Ecosystem",
+  "title_ar": "حزمة مودات سير للألعاب والأداء الفائق 144+ إطار",
+  "version": "1.0.0",
+  "updated_at": "2026-10-26T08:21:11.700012+00:00",
+  "zip_package": {
+    "file_name": "SIR_Apps_Suite.zip",
+    "size_bytes": 119638177,
+    "size_mb": 114.1,
+    "sha256": "8227ba3f134682d5e0359e58cb671110ace4e6a13ee0022a75ff01e5f34d2cf6",
+    "relative_url": "/downloads/SIR_Apps_Suite.zip"
+  },
+  "main_executable": {
+    "file_name": "SIR Installer.exe",
+    "size_bytes": 23255807,
+    "sha256": "294ab77cebccba8bf48f97802f0c50fd7f9258f8aef7c42bb6e2b05faf3a829a",
+    "relative_url": "/downloads/SIR Installer.exe"
+  }
+}
