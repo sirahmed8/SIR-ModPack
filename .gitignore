@@ -34,3 +34,6 @@ development/
 prism/
 server/
 bin/
+
+public/downloads/
+site/downloads/
