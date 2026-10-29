@@ -37,3 +37,8 @@ bin/
 
 public/downloads/
 site/downloads/
+
+# local launcher account data (tokens, uuids): never commit (removed from history 2026-10-29)
+/accounts.json
+/ias_accounts.json
+/SIR Launcher/accounts.json
